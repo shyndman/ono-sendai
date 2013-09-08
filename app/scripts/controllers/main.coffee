@@ -4,5 +4,4 @@ angular.module('deckBuilderApp')
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
-    ]
-  )
+    ])
