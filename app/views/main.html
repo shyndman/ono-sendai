@@ -2,7 +2,9 @@
   <h1>'Allo, 'Allo!</h1>
   <p>You now have</p>
   <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+      <li ng-repeat="card in allCards">
+        <img ng-src="{{card.imagesrc}}">
+      </li>
   </ul>
   <p>installed.</p>
   <h3>Enjoy coding! - Yeoman</h3>

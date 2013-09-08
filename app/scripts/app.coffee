@@ -1,4 +1,4 @@
-angular.module('deckBuilderApp', ['ngRoute'])
+angular.module('deckBuilder', ['ngRoute'])
   .config(($routeProvider) ->
     $routeProvider
       .when('/',
