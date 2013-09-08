@@ -1,5 +1,6 @@
 angular.module('deckBuilder', ['ngRoute'])
-  .config(($routeProvider) ->
+  .config(($locationProvider, $routeProvider) ->
+    $locationProvider.html5Mode(true)
     $routeProvider
       .when('/',
         templateUrl: 'views/main.html',
