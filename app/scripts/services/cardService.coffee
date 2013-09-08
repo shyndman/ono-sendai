@@ -18,6 +18,7 @@ class CardService
       .then(({ data: @_cards, status, headers }) =>
         @_indexCards(@_cards)
         @_cards)
+      .then((cards) => _.sortBy(cards, 'faction'))
       .catch((err) => console.error 'Error loading cards', err)
 
   _indexCards: (cards) =>
