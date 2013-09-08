@@ -11,7 +11,7 @@ class CardService
       @field 'title', boost: 5,
       @field 'text',
       @field 'faction', boost: 10
-      @ref 'url')
+      @ref 'title')
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -21,10 +21,15 @@ class CardService
       .catch((err) => console.error 'Error loading cards', err)
 
   _indexCards: (cards) =>
-    @_cardsByUrl = _.object(_.zip(_.pluck(cards, 'url', cards)))
+    @_titleize(cards)
+    @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title', cards)))
     for card in cards
       @_index.add(card)
     return
+
+  _titleize: (cards) ->
+    _.each(cards, (card) ->
+      card.title = _.last(card.title.split('/')))
 
   cards: -> @_cardsPromise
 
