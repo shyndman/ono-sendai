@@ -1,11 +1,7 @@
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="card in allCards">
-        <img ng-src="{{card.imagesrc}}">
-      </li>
+  <ul class="list-unstyled">
+    <li ng-repeat="card in allCards">
+      <img bn-lazy-src="{{card.imagesrc}}" width="300" height="418" class="card">
+    </li>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
 </div>
