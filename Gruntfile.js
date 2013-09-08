@@ -344,6 +344,8 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadTasks('./tasks/');
+
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -368,6 +370,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'card_meta',
+    'card_img',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
