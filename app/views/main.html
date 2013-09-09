@@ -1,7 +1,10 @@
 <div class="hero-unit">
-  <ul class="list-unstyled">
-    <li ng-repeat="card in allCards">
-      <img bn-lazy-src="{{card.imagesrc}}" width="205" height="285" class="card">
-    </li>
-  </ul>
+  <div ng-repeat="(faction, cards) in allCards" style="clear:both">
+    <h2>{{faction}} <small>{{cards[0].side}}</small></h2>
+    <ul class="list-unstyled">
+      <li ng-repeat="card in cards">
+        <img bn-lazy-src="{{card.imagesrc}}" width="205" height="285" class="card">
+      </li>
+    </ul>
+  </div>
 </div>
