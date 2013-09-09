@@ -1,9 +1,26 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div>
+    <div class="navbar-header">
+      <span class="navbar-brand" href="#">Ono-Sendai</span>
+    </div>
+    <p class="navbar-text">Side:</p>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary navbar-btn active">
+        <input type="radio" name="options" ng-model="filter.side" value="corp" > Corp
+      </label>
+      <label class="btn btn-primary navbar-btn">
+        <input type="radio" name="options" ng-model="filter.side" value="runner"> Runner
+      </label>
+    </div>
+  </div>
+</nav>
+
 <div class="cards">
   <div ng-repeat="(faction, cards) in allCards" style="clear:both">
-    <h1>{{cards[0].faction}} <small>{{cards[0].side}}</small></h1>
+    <h3>{{cards[0].faction}} <small>{{cards[0].side}}</small></h3>
     <ul class="list-unstyled">
       <li ng-repeat="card in cards">
-        <img bn-lazy-src="{{card.imagesrc}}" width="205" height="285" class="card">
+        <img bn-lazy-src="{{card.imagesrc}}" width="184" height="265" class="card">
       </li>
     </ul>
   </div>
