@@ -20,7 +20,7 @@ class CardService
         @_cards)
       .then((cards) =>
         _.groupBy(
-          _.sortBy(cards, 'faction'), 'faction'))
+          _.sortBy(cards, 'faction'), (card) -> "#{ card.faction }-#{ card.side }"))
       .catch((err) => console.error 'Error loading cards', err)
 
   _indexCards: (cards) =>
