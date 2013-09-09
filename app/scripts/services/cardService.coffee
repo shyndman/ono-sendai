@@ -21,8 +21,12 @@ class CardService
         @_cards)
       .then((cards) =>
         _.groupBy(
-          _.sortBy(cards, (card) -> "#{ card.side }-#{ card.faction }"), (card) -> "#{ card.side }-#{ card.faction }"))
+          _.sortBy(cards, (card) -> "#{ card.side }-#{ card.faction }"),
+          (card) -> "#{ card.side }-#{ card.faction }"))
       .catch((err) => console.error 'Error loading cards', err)
+
+  filter: (filter_obj) ->
+    @_cardsPromise.then(_.partial(@_applyFilter, filter_obj))
 
   search: (query) ->
     for { ref } in @_index.search(query)
