@@ -1,3 +1,5 @@
 angular.module('deckBuilder')
   .controller('MainCtrl', (cardService, $scope) ->
-    $scope.allCards = cardService.cards())
+    $scope.filter = side: 'Corp'
+    cardService.cards((cards) ->
+      $scope.allCards = cards))

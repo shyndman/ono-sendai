@@ -3,7 +3,8 @@
 class CardService
   CARDS_URL = '/data/cards.json'
 
-  constructor: ($http, @lunrService) ->
+  constructor: ($http, lunrService) ->
+    @lunrService = lunrService
     @_cards = []
 
     # Construct the card index
@@ -11,18 +12,17 @@ class CardService
       @field 'title', boost: 5,
       @field 'text',
       @field 'faction', boost: 10
-      @ref 'title')
+      @field 'type'
+      @ref 'title'
+      @pipeline.before(lunr.stopWordFilter, lunrService.dediacticify))
     window.index = @
 
+    console.log 'creating card service'
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: @_cards, status, headers }) =>
+      .success((@_cards, status, headers) =>
         @_indexCards(@_cards)
-        @_cards)
-      .then((cards) =>
-        _.groupBy(
-          _.sortBy(cards, (card) -> "#{ card.side }-#{ card.faction }"),
-          (card) -> "#{ card.side }-#{ card.faction }"))
+        @onCards?(@_cards))
       .catch((err) => console.error 'Error loading cards', err)
 
   filter: (filter_obj) ->
@@ -43,7 +43,11 @@ class CardService
     _.each(cards, (card) ->
       card.title = _.last(card.title.split('/')))
 
-  cards: -> @_cardsPromise
+  cards: (callback) ->
+    if !_.isEmpty(@_cards)
+      callback @_cards
+    else
+      @onCards = callback
 
 angular.module('deckBuilder')
   .service 'cardService', ($http, lunrService) ->
