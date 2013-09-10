@@ -3,23 +3,37 @@
     <div class="navbar-header">
       <span class="navbar-brand" href="#">Ono-Sendai</span>
     </div>
-    <p class="navbar-text">Side:</p>
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary navbar-btn active">
-        <input type="radio" name="options" ng-model="filter.side" value="corp" > Corp
+    <form class="navbar-form navbar-left">
+      <label class="radio-inline">
+        <input type="radio" name="side" ng-model="filter.side" value="Corp"> Corp
       </label>
-      <label class="btn btn-primary navbar-btn">
-        <input type="radio" name="options" ng-model="filter.side" value="runner"> Runner
+      <label class="radio-inline">
+        <input type="radio" name="side" ng-model="filter.side" value="Runner"> Runner
       </label>
-    </div>
+      <div class="form-group" style="visibility: hidden">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+    <!--form class="navbar-form">
+      <p class="navbar-text">Side:</p>
+      <label class="radio-inline">
+        <input type="radio" name="side" ng-model="filter.side" value="Corp"> Corp
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="side" ng-model="filter.side" value="Runner"> Runner
+      </label>
+    </form-->
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
+      </div>
+    </form>
   </div>
 </nav>
 
-<div class="cards">
-  <div ng-repeat="(faction, cards) in allCards" style="clear:both">
-    <h3>{{cards[0].faction}} <small>{{cards[0].side}}</small></h3>
+  <div class="cards">
     <ul class="list-unstyled">
-      <li ng-repeat="card in cards">
+      <li ng-repeat="card in allCards | cardFilter:filter.side:filter.search">
         <img bn-lazy-src="{{card.imagesrc}}" width="184" height="265" class="card">
       </li>
     </ul>
