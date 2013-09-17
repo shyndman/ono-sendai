@@ -3,7 +3,7 @@
 describe 'Filter: cardFilter', () ->
 
   # load the filter's module
-  beforeEach module 'deckBuilderApp'
+  beforeEach module 'deckBuilder'
 
   # initialize a new instance of the filter before each test
   cardFilter = {}

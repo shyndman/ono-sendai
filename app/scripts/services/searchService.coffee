@@ -1,5 +1,5 @@
 # Wraps lunr, and exposes additional pipeline functions.
-class LunrService
+class SearchService
   constructor: ->
     lunr.Pipeline.registerFunction(@dediacticify, 'dediacticify')
 
@@ -21,5 +21,5 @@ class LunrService
     token
 
 angular.module('deckBuilder')
-  .service 'lunrService', () ->
-    new LunrService()
+  .service 'searchService', () ->
+    new searchService()

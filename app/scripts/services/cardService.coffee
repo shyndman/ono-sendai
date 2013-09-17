@@ -3,18 +3,18 @@
 class CardService
   CARDS_URL = '/data/cards.json'
 
-  constructor: ($http, @lunrService) ->
-    @lunrService = lunrService
+  constructor: ($http, @searchService) ->
+    @searchService = searchService
     @_cards = []
 
     # Construct the card index
-    @_index = @lunrService.createIndex(-> # Scoped to lunr
+    @_index = @searchService.createIndex(-> # Scoped to lunr
       @field 'title', boost: 5,
       @field 'text',
       @field 'faction', boost: 10
       @field 'type'
       @ref 'title'
-      @pipeline.add(lunrService.dediacticify))
+      @pipeline.add(searchService.dediacticify))
     window.index = @
 
     console.log 'creating card service'
@@ -50,5 +50,5 @@ class CardService
       @onCards = callback
 
 angular.module('deckBuilder')
-  .service 'cardService', ($http, lunrService) ->
-    new CardService($http, lunrService)
+  .service 'cardService', ($http, searchService) ->
+    new CardService($http, searchService)
