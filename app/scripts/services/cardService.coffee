@@ -3,7 +3,7 @@
 class CardService
   CARDS_URL = '/data/cards.json'
 
-  constructor: ($http, lunrService) ->
+  constructor: ($http, @lunrService) ->
     @lunrService = lunrService
     @_cards = []
 
@@ -14,7 +14,7 @@ class CardService
       @field 'faction', boost: 10
       @field 'type'
       @ref 'title'
-      @pipeline.before(lunr.stopWordFilter, lunrService.dediacticify))
+      @pipeline.add(lunrService.dediacticify))
     window.index = @
 
     console.log 'creating card service'

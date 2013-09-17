@@ -1,11 +1,12 @@
-class LunrWrapper
+# Wraps lunr, and exposes additional pipeline functions.
+class LunrService
   constructor: ->
     lunr.Pipeline.registerFunction(@dediacticify, 'dediacticify')
 
   createIndex: (indexFn) -> lunr(indexFn)
 
   dediacticify: (token, tokenIndex, tokens) ->
-    diacritics =[
+    diacritics = [
       /[\300-\306]/g, /[\340-\346]/g, # A, a
       /[\310-\313]/g, /[\350-\353]/g, # E, e
       /[\314-\317]/g, /[\354-\357]/g, # I, i
@@ -21,4 +22,4 @@ class LunrWrapper
 
 angular.module('deckBuilder')
   .service 'lunrService', () ->
-    new LunrWrapper()
+    new LunrService()
