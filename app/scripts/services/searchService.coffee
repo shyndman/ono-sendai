@@ -1,25 +1,53 @@
-# Wraps lunr, and exposes additional pipeline functions.
+# Wraps a client-side search engine library to expose search functionality to the application,
+# in the style of the application.
 class SearchService
-  constructor: ->
-    lunr.Pipeline.registerFunction(@dediacticify, 'dediacticify')
+  constructor: (@$q) ->
+    @_dbName = 'cards'
+    @_searchEngine = new fullproof.BooleanEngine();
+    @_engineReadyDeferred = @$q.defer()
+    @_engineReady = @_engineReadyDeferred.promise
+    window.search = @search
 
-  createIndex: (indexFn) -> lunr(indexFn)
+  indexCards: (cards) ->
+    initializer = =>
+      text = ([ title, text, flavor, faction ].join(' ') for { title, text, flavor, faction } in cards)
+      values = (title for { title } in cards)
+      injector.injectBulk(text, values, callback)
 
-  dediacticify: (token, tokenIndex, tokens) ->
-    diacritics = [
-      /[\300-\306]/g, /[\340-\346]/g, # A, a
-      /[\310-\313]/g, /[\350-\353]/g, # E, e
-      /[\314-\317]/g, /[\354-\357]/g, # I, i
-      /[\322-\330]/g, /[\362-\370]/g, # O, o
-      /[\331-\334]/g, /[\371-\374]/g, # U, u
-      /[\321]/g,      /[\361]/g,      # N, n
-      /[\307]/g,      /[\347]/g,      # C, c
-    ]
-    chars = ['A','a','E','e','I','i','O','o','U','u','N','n','C','c']
-    for [search, replace] in _.zip(diacritics, chars)
-      token = token.replace(search, replace)
-    token
+    normalIndex  = _.extend(@_normalIndex(), initializer: initializer)
+    stemmedIndex = _.extend(@_stemmedIndex(), initializer: initializer)
+
+    @_searchEngine.open([ normalIndex, stemmedIndex ],
+      (=>
+        console.info 'Search engine ready'
+        @_engineReadyDeferred.resolve(true)),
+      (=> console.error 'Search engine failed to initialize'));
+
+  # Retuns a promise that will resolve to an array of cards matching the provided query.
+  search: (query) =>
+    @_engineReady.then => # Wait until the engine is ready before attempting a search
+      deferred = @$q.defer()
+      @_searchEngine.lookup(query, (resultSet) =>
+        console.debug('Search results', resultSet.data)
+        deferred.resolve(resultSet.data))
+      deferred.promise
+
+  # Simple index for quick/exact matching
+  _normalIndex: ->
+    name: "normalIndex"
+    analyzer: new fullproof.StandardAnalyzer(
+      fullproof.normalizer.to_lowercase_nomark,
+      fullproof.normalizer.remove_duplicate_letters)
+    capabilities: new fullproof.Capabilities().setUseScores(false).setDbName(@_dbName)
+
+  # More complex index, including a metaphone analyzer
+  _stemmedIndex: ->
+    name: "stemmedIndex"
+    analyzer: new fullproof.StandardAnalyzer(
+      fullproof.normalizer.to_lowercase_nomark,
+      fullproof.english.metaphone)
+    capabilities: new fullproof.Capabilities().setUseScores(false).setDbName(@_dbName)
 
 angular.module('deckBuilder')
-  .service 'searchService', () ->
-    new searchService()
+  .service 'searchService', ($q) ->
+    new SearchService($q)
