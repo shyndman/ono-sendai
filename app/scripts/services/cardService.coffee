@@ -1,54 +1,70 @@
-'use strict';
-
+# A service for loading, filtering and grouping cards.
 class CardService
+  CARD_ORDINALS =
+    Identity:  0
+    # Runner
+    Event:     1
+    Hardware:  2
+    Program:   3
+    Resource:  4
+    # Corp
+    Agenda:    5
+    Asset:     6
+    Operation: 7
+    ICE:       8
+    Upgrade:   9
+
   CARDS_URL = '/data/cards.json'
 
   constructor: ($http, @searchService) ->
     @searchService = searchService
     @_cards = []
 
-    # Construct the card index
-    @_index = @searchService.createIndex(-> # Scoped to lunr
-      @field 'title', boost: 5,
-      @field 'text',
-      @field 'faction', boost: 10
-      @field 'type'
-      @ref 'title'
-      @pipeline.add(searchService.dediacticify))
-    window.index = @
-
-    console.log 'creating card service'
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .success((@_cards, status, headers) =>
-        @_indexCards(@_cards)
-        @onCards?(@_cards))
-      .catch((err) => console.error 'Error loading cards', err)
+      .then(({ data: @_cards, status, headers }) =>
+        window.cards = @_cards
+        @searchService.indexCards(@_cards)
+        @_cards)
 
-  filter: (filter_obj) ->
-    @_cardsPromise.then(_.partial(@_applyFilter, filter_obj))
+  getCards: (filter = {}) ->
+    @_cardsPromise
+      .then(_.partial(@_searchCards, filter))
+      .then(_.partial(@_filterCards, filter))
+      .then(_.partial(@_groupCards, filter))
 
-  search: (query) ->
-    for { ref } in @_index.search(query)
-      @_cardsByTitle[ref]
-
-  _indexCards: (cards) =>
-    @_titleize(cards)
-    @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title'), cards))
-    for card in cards
-      @_index.add(card)
-    return
-
-  _titleize: (cards) ->
-    _.each(cards, (card) ->
-      card.title = _.last(card.title.split('/')))
-
-  cards: (callback) ->
-    if !_.isEmpty(@_cards)
-      callback @_cards
+  _searchCards: ({ search }) =>
+    if _.trim(search).length > 0
+      @searchService.search(search)
     else
-      @onCards = callback
+      @_cards
 
-angular.module('deckBuilder')
-  .service 'cardService', ($http, searchService) ->
-    new CardService($http, searchService)
+  _filterCards: (filter, cards) =>
+    card for card in cards when @_matchesFilter(filter, card)
+
+  _matchesFilter: (card, filter) =>
+    card.side == filter.side
+
+  _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
+    primaryGroups =
+      _.chain(cards)
+       .groupBy(primaryGrouping)
+       .pairs()
+       .map((pair) -> title: pair[0], cards: pair[1])
+       .sortBy('title')
+       .value()
+
+    for group in primaryGroups
+      group.cards =
+        _.chain(group.cards)
+         .groupBy(secondaryGrouping)
+         .pairs()
+         .map((pair) ->
+           title: pair[0],
+           cards: _.sortBy(pair[1], 'title'))
+         .sortBy((subgroup) -> CARD_ORDINALS[subgroup.title])
+         .value()
+
+    primaryGroups
+
+angular.module('deckBuilder').service 'cardService', CardService

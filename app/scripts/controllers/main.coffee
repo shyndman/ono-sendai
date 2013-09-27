@@ -1,5 +1,13 @@
 angular.module('deckBuilder')
   .controller('MainCtrl', (cardService, $scope) ->
-    $scope.filter = side: 'Corp'
-    cardService.cards((cards) ->
-      $scope.allCards = cards))
+
+    # Set up filter defaults
+    $scope.filter =
+      side: 'Corp'
+      primaryGrouping: 'faction'
+      secondaryGrouping: 'type'
+
+    # Register a function to change the cards array when filters change.
+    $scope.$watch('filter', ((filter)->
+      $scope.cards = cardService.getCards(filter)
+    ), true))
