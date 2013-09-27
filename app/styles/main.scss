@@ -15,13 +15,11 @@ body {
   overflow-y: scroll;
 }
 
+.group-title {
+  padding-top: 7px;
+}
+
 .card {
   float: left;
   margin: 0.8em;
-}
-
-.cards {
-  h3 {
-    padding-top: 20px;
-  }
 }
