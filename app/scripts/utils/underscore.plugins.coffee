@@ -1,6 +1,6 @@
 _.mixin
-  multiSorter: (sort_fns...) ->
+  multiSort: (sortFns...) ->
     (a, b) ->
-      for fn in sort_fns
+      for fn in sortFns
         return order if (order = fn(a, b)) isnt 0
       order
