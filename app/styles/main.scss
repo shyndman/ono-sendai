@@ -1,7 +1,6 @@
-$iconSpritePath: "../images/glyphicons-halflings.png";
-$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
-
+$FontAwesomePath: "/bower_components/font-awesome/font";
 @import "bootstrap-sass/lib/bootstrap";
+@import "font-awesome/scss/font-awesome";
 
 /* Put your CSS here */
 html, body {
