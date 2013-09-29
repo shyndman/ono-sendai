@@ -41,29 +41,22 @@ angular.module('deckBuilder')
       // I start monitoring the given image for visibility
       // and then render it when necessary.
       function addImage(image) {
-
         images.push(image);
 
         if (!renderTimer) {
-
           startRenderTimer();
-
         }
 
         if (!isWatchingWindow) {
-
           startWatchingWindow();
-
         }
-
       }
-
 
       // I remove the given image from the render queue.
       function removeImage(image) {
         // Remove the given image from the render queue.
         for (var i = 0 ; i < images.length ; i++) {
-          if (images[ i ] === image) {
+          if (images[i] === image) {
             images.splice(i, 1);
             break;
           }
@@ -83,10 +76,8 @@ angular.module('deckBuilder')
       // PRIVATE METHODS.
       // ---
 
-
       // I check the document height to see if it's changed.
       function checkDocumentHeight() {
-
         // If the render time is currently active, then
         // don't bother getting the document height -
         // it won't actually do anything.
@@ -107,7 +98,6 @@ angular.module('deckBuilder')
         startRenderTimer();
       }
 
-
       // I check the lazy-load images that have yet to
       // be rendered.
       function checkImages() {
@@ -127,7 +117,7 @@ angular.module('deckBuilder')
         // that are now in the viewport and those that
         // still remain hidden.
         for (var i = 0 ; i < images.length ; i++) {
-          var image = images[ i ];
+          var image = images[i];
 
           if (image.isVisible(topFoldOffset, bottomFoldOffset)) {
             visible.push(image);
@@ -138,9 +128,7 @@ angular.module('deckBuilder')
 
         // Update the DOM with new image source values.
         for (var i = 0 ; i < visible.length ; i++) {
-
-          visible[ i ].render();
-
+          visible[i].render();
         }
 
         // Keep the still-hidden images as the new
@@ -154,38 +142,26 @@ angular.module('deckBuilder')
         // If we've rendered all the images, then stop
         // monitoring the window for changes.
         if (!images.length) {
-
           stopWatchingWindow();
-
         }
-
       }
-
 
       // I clear the render timer so that we can easily
       // check to see if the timer is running.
       function clearRenderTimer() {
-
         clearTimeout(renderTimer);
-
         renderTimer = null;
-
       }
-
 
       // I start the render time, allowing more images to
       // be added to the images queue before the render
       // action is executed.
       function startRenderTimer() {
-
         renderTimer = setTimeout(checkImages, renderDelay);
-
       }
-
 
       // I start watching the window for changes in dimension.
       function startWatchingWindow() {
-
         isWatchingWindow = true;
 
         // Listen for window changes.
@@ -194,13 +170,10 @@ angular.module('deckBuilder')
 
         // Set up a timer to watch for document-height changes.
         documentTimer = setInterval(checkDocumentHeight, documentDelay);
-
       }
-
 
       // I stop watching the window for changes in dimension.
       function stopWatchingWindow() {
-
         isWatchingWindow = false;
 
         // Stop watching for window changes.
@@ -209,28 +182,20 @@ angular.module('deckBuilder')
 
         // Stop watching for document changes.
         clearInterval(documentTimer);
-
       }
-
 
       // I start the render time if the window changes.
       function windowChanged() {
-
         if (!renderTimer) {
-
           startRenderTimer();
-
         }
-
       }
-
 
       // Return the public API.
       return({
         addImage: addImage,
         removeImage: removeImage
       });
-
     })();
 
 
@@ -240,7 +205,6 @@ angular.module('deckBuilder')
 
     // I represent a single lazy-load image.
     function LazyImage(element) {
-
       // I am the interpolated LAZY SRC attribute of
       // the image as reported by AngularJS.
       var source = null;
@@ -260,79 +224,62 @@ angular.module('deckBuilder')
       // PUBLIC METHODS.
       // ---
 
-
       // I determine if the element is above the given
       // fold of the page.
       function isVisible(topFoldOffset, bottomFoldOffset) {
+        // If the element is not visible because it
+        // is hidden, don't bother testing it.
+        if (!element.is(":visible")) {
+          return false;
+        }
 
-      // If the element is not visible because it
-      // is hidden, don't bother testing it.
-      if (!element.is(":visible")) {
+        // If the height has not yet been calculated,
+        // the cache it for the duration of the page.
+        if (height === null) {
+          height = element.height();
+        }
 
-        return(false);
+        // Update the dimensions of the element.
+        var top = element.offset().top;
+        var bottom = (top + height);
 
+        // Return true if the element is:
+        // 1. The top offset is in view.
+        // 2. The bottom offset is in view.
+        // 3. The element is overlapping the viewport.
+        return(
+          (
+            (top <= bottomFoldOffset) &&
+            (top >= topFoldOffset)
+           )
+          ||
+          (
+            (bottom <= bottomFoldOffset) &&
+            (bottom >= topFoldOffset)
+           )
+          ||
+          (
+            (top <= topFoldOffset) &&
+            (bottom >= bottomFoldOffset)
+           )
+         );
       }
-
-      // If the height has not yet been calculated,
-      // the cache it for the duration of the page.
-      if (height === null) {
-
-        height = element.height();
-
-      }
-
-      // Update the dimensions of the element.
-      var top = element.offset().top;
-      var bottom = (top + height);
-
-      // Return true if the element is:
-      // 1. The top offset is in view.
-      // 2. The bottom offset is in view.
-      // 3. The element is overlapping the viewport.
-      return(
-        (
-          (top <= bottomFoldOffset) &&
-          (top >= topFoldOffset)
-         )
-        ||
-        (
-          (bottom <= bottomFoldOffset) &&
-          (bottom >= topFoldOffset)
-         )
-        ||
-        (
-          (top <= topFoldOffset) &&
-          (bottom >= bottomFoldOffset)
-         )
-       );
-
-      }
-
 
       // I move the cached source into the live source.
       function render() {
-
         isRendered = true;
-
         renderSource();
-
       }
-
 
       // I set the interpolated source value reported
       // by the directive / AngularJS.
       function setSource(newSource) {
-
         source = newSource;
 
         if (isRendered) {
-
           renderSource();
-
         }
-
       }
-
 
       // ---
       // PRIVATE METHODS.
@@ -342,7 +289,7 @@ angular.module('deckBuilder')
       // I load the lazy source value into the actual
       // source value of the image element.
       function renderSource() {
-        element[ 0 ].src = source;
+        element[0].src = source;
       }
 
 
@@ -392,4 +339,3 @@ angular.module('deckBuilder')
     });
   }
 );
-
