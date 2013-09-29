@@ -1,7 +1,7 @@
 // I lazily load the images, when they come into view.
 
 angular.module('deckBuilder')
-  .directive("bnLazySrc", function( $window, $document ) {
+  .directive("bnLazySrc", function($window, $document) {
     // I manage all the images that are currently being
     // monitored on the page for lazy loading.
     var lazyLoader = (function() {
@@ -17,7 +17,7 @@ angular.module('deckBuilder')
       var renderDelay = 100;
 
       // I cache the window element as a jQuery reference.
-      var win = $( $window );
+      var win = $($window);
 
       // I cache the document document height so that
       // we can respond to changes in the height due to
@@ -40,17 +40,17 @@ angular.module('deckBuilder')
 
       // I start monitoring the given image for visibility
       // and then render it when necessary.
-      function addImage( image ) {
+      function addImage(image) {
 
-        images.push( image );
+        images.push(image);
 
-        if ( ! renderTimer ) {
+        if (!renderTimer) {
 
           startRenderTimer();
 
         }
 
-        if ( ! isWatchingWindow ) {
+        if (!isWatchingWindow) {
 
           startWatchingWindow();
 
@@ -60,31 +60,22 @@ angular.module('deckBuilder')
 
 
       // I remove the given image from the render queue.
-      function removeImage( image ) {
-
+      function removeImage(image) {
         // Remove the given image from the render queue.
-        for ( var i = 0 ; i < images.length ; i++ ) {
-
-          if ( images[ i ] === image ) {
-
-            images.splice( i, 1 );
+        for (var i = 0 ; i < images.length ; i++) {
+          if (images[ i ] === image) {
+            images.splice(i, 1);
             break;
-
           }
-
         }
 
         // If removing the given image has cleared the
         // render queue, then we can stop monitoring
         // the window and the image queue.
-        if ( ! images.length ) {
-
+        if (!images.length) {
           clearRenderTimer();
-
           stopWatchingWindow();
-
         }
-
       }
 
 
@@ -99,34 +90,27 @@ angular.module('deckBuilder')
         // If the render time is currently active, then
         // don't bother getting the document height -
         // it won't actually do anything.
-        if ( renderTimer ) {
-
+        if (renderTimer) {
           return;
-
         }
 
         var currentDocumentHeight = doc.height();
 
         // If the height has not changed, then ignore -
         // no more images could have come into view.
-        if ( currentDocumentHeight === documentHeight ) {
-
+        if (currentDocumentHeight === documentHeight) {
           return;
-
         }
 
         // Cache the new document height.
         documentHeight = currentDocumentHeight;
-
         startRenderTimer();
-
       }
 
 
       // I check the lazy-load images that have yet to
       // be rendered.
       function checkImages() {
-
         var visible = [];
         var hidden = [];
 
@@ -136,30 +120,24 @@ angular.module('deckBuilder')
 
         // Calculate the viewport offsets.
         var topFoldOffset = scrollTop;
-        var bottomFoldOffset = ( topFoldOffset + windowHeight );
+        var bottomFoldOffset = (topFoldOffset + windowHeight + 200);
 
         // Query the DOM for layout and seperate the
         // images into two different categories: those
         // that are now in the viewport and those that
         // still remain hidden.
-        for ( var i = 0 ; i < images.length ; i++ ) {
-
+        for (var i = 0 ; i < images.length ; i++) {
           var image = images[ i ];
 
-          if ( image.isVisible( topFoldOffset, bottomFoldOffset ) ) {
-
-            visible.push( image );
-
+          if (image.isVisible(topFoldOffset, bottomFoldOffset)) {
+            visible.push(image);
           } else {
-
-            hidden.push( image );
-
+            hidden.push(image);
           }
-
         }
 
         // Update the DOM with new image source values.
-        for ( var i = 0 ; i < visible.length ; i++ ) {
+        for (var i = 0 ; i < visible.length ; i++) {
 
           visible[ i ].render();
 
@@ -175,7 +153,7 @@ angular.module('deckBuilder')
 
         // If we've rendered all the images, then stop
         // monitoring the window for changes.
-        if ( ! images.length ) {
+        if (!images.length) {
 
           stopWatchingWindow();
 
@@ -188,7 +166,7 @@ angular.module('deckBuilder')
       // check to see if the timer is running.
       function clearRenderTimer() {
 
-        clearTimeout( renderTimer );
+        clearTimeout(renderTimer);
 
         renderTimer = null;
 
@@ -200,7 +178,7 @@ angular.module('deckBuilder')
       // action is executed.
       function startRenderTimer() {
 
-        renderTimer = setTimeout( checkImages, renderDelay );
+        renderTimer = setTimeout(checkImages, renderDelay);
 
       }
 
@@ -211,11 +189,11 @@ angular.module('deckBuilder')
         isWatchingWindow = true;
 
         // Listen for window changes.
-        win.on( "resize.bnLazySrc", windowChanged );
-        win.on( "scroll.bnLazySrc", windowChanged );
+        win.on("resize.bnLazySrc", windowChanged);
+        win.on("scroll.bnLazySrc", windowChanged);
 
         // Set up a timer to watch for document-height changes.
-        documentTimer = setInterval( checkDocumentHeight, documentDelay );
+        documentTimer = setInterval(checkDocumentHeight, documentDelay);
 
       }
 
@@ -226,11 +204,11 @@ angular.module('deckBuilder')
         isWatchingWindow = false;
 
         // Stop watching for window changes.
-        win.off( "resize.bnLazySrc" );
-        win.off( "scroll.bnLazySrc" );
+        win.off("resize.bnLazySrc");
+        win.off("scroll.bnLazySrc");
 
         // Stop watching for document changes.
-        clearInterval( documentTimer );
+        clearInterval(documentTimer);
 
       }
 
@@ -238,7 +216,7 @@ angular.module('deckBuilder')
       // I start the render time if the window changes.
       function windowChanged() {
 
-        if ( ! renderTimer ) {
+        if (!renderTimer) {
 
           startRenderTimer();
 
@@ -261,7 +239,7 @@ angular.module('deckBuilder')
 
 
     // I represent a single lazy-load image.
-    function LazyImage( element ) {
+    function LazyImage(element) {
 
       // I am the interpolated LAZY SRC attribute of
       // the image as reported by AngularJS.
@@ -285,19 +263,19 @@ angular.module('deckBuilder')
 
       // I determine if the element is above the given
       // fold of the page.
-      function isVisible( topFoldOffset, bottomFoldOffset ) {
+      function isVisible(topFoldOffset, bottomFoldOffset) {
 
       // If the element is not visible because it
       // is hidden, don't bother testing it.
-      if ( ! element.is( ":visible" ) ) {
+      if (!element.is(":visible")) {
 
-        return( false );
+        return(false);
 
       }
 
       // If the height has not yet been calculated,
       // the cache it for the duration of the page.
-      if ( height === null ) {
+      if (height === null) {
 
         height = element.height();
 
@@ -305,7 +283,7 @@ angular.module('deckBuilder')
 
       // Update the dimensions of the element.
       var top = element.offset().top;
-      var bottom = ( top + height );
+      var bottom = (top + height);
 
       // Return true if the element is:
       // 1. The top offset is in view.
@@ -313,20 +291,20 @@ angular.module('deckBuilder')
       // 3. The element is overlapping the viewport.
       return(
         (
-          ( top <= bottomFoldOffset ) &&
-          ( top >= topFoldOffset )
-          )
+          (top <= bottomFoldOffset) &&
+          (top >= topFoldOffset)
+         )
         ||
         (
-          ( bottom <= bottomFoldOffset ) &&
-          ( bottom >= topFoldOffset )
-          )
+          (bottom <= bottomFoldOffset) &&
+          (bottom >= topFoldOffset)
+         )
         ||
         (
-          ( top <= topFoldOffset ) &&
-          ( bottom >= bottomFoldOffset )
-          )
-        );
+          (top <= topFoldOffset) &&
+          (bottom >= bottomFoldOffset)
+         )
+       );
 
       }
 
@@ -343,11 +321,11 @@ angular.module('deckBuilder')
 
       // I set the interpolated source value reported
       // by the directive / AngularJS.
-      function setSource( newSource ) {
+      function setSource(newSource) {
 
         source = newSource;
 
-        if ( isRendered ) {
+        if (isRendered) {
 
           renderSource();
 
@@ -364,9 +342,7 @@ angular.module('deckBuilder')
       // I load the lazy source value into the actual
       // source value of the image element.
       function renderSource() {
-
         element[ 0 ].src = source;
-
       }
 
 
@@ -384,23 +360,19 @@ angular.module('deckBuilder')
 
 
     // I bind the UI events to the scope.
-    function link( $scope, element, attributes ) {
-
-      var lazyImage = new LazyImage( element );
+    function link($scope, element, attributes) {
+      var lazyImage = new LazyImage(element);
 
       // Start watching the image for changes in its
       // visibility.
-      lazyLoader.addImage( lazyImage );
-
+      lazyLoader.addImage(lazyImage);
 
       // Since the lazy-src will likely need some sort
       // of string interpolation, we do not want to
       attributes.$observe(
         "bnLazySrc",
-        function( newSource ) {
-
-          lazyImage.setSource( newSource );
-
+        function(newSource) {
+          lazyImage.setSource(newSource);
         });
 
       // When the scope is destroyed, we need to remove
@@ -408,9 +380,7 @@ angular.module('deckBuilder')
       $scope.$on(
         "$destroy",
         function() {
-
-          lazyLoader.removeImage( lazyImage );
-
+          lazyLoader.removeImage(lazyImage);
         });
     }
 
