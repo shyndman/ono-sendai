@@ -12,7 +12,9 @@ class SearchService
     @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title'), cards))
 
     initializer = (injector, callback) =>
-      text = ([ title, text, type, flavor, faction ].join(' ') for { title, text, type, flavor, faction } in cards)
+      text =
+        for { title, text, type, subtype, flavor, faction } in cards
+          [ title, text, type, subtype, flavor, faction ].join(' ')
       values = (title for { title } in cards)
       injector.injectBulk(text, values, callback)
 
