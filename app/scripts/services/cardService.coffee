@@ -50,21 +50,35 @@ class CardService
       _.chain(cards)
        .groupBy(primaryGrouping)
        .pairs()
-       .map((pair) -> title: pair[0], cards: pair[1])
-       .sortBy('title')
+       .map((pair) =>
+         sortField: pair[0],
+         title: @_groupTitle(pair[0]),
+         cards: pair[1])
+       .sortBy('sortField')
        .value()
 
+    # Build secondary groups
     for group in primaryGroups
       group.cards =
         _.chain(group.cards)
          .groupBy(secondaryGrouping)
          .pairs()
-         .map((pair) ->
-           title: pair[0],
+         .map((pair) =>
+           title: @_groupTitle(pair[0]),
+           sortField: pair[0],
            cards: _.sortBy(pair[1], 'title'))
-         .sortBy((subgroup) -> CARD_ORDINALS[subgroup.title])
+         .sortBy((subgroup) -> CARD_ORDINALS[subgroup.sortField])
          .value()
 
     primaryGroups
+
+  _groupTitle: (groupName) ->
+    switch groupName
+      when 'Agenda', 'Asset', 'Operation', 'Upgrade'
+        "#{groupName}s"
+      when 'Identity'
+        'Identities'
+      else
+        groupName
 
 angular.module('deckBuilder').service 'cardService', CardService
