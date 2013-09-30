@@ -17,13 +17,13 @@ angular.module('deckBuilder')
       var renderDelay = 100;
 
       // I cache the window element as a jQuery reference.
-      var win = $($window);
+      var win = $('.scrollable');
 
       // I cache the document document height so that
       // we can respond to changes in the height due to
       // dynamic content.
       var doc = $document;
-      var documentHeight = doc.height();
+      var documentHeight = win.height();
       var documentTimer = null;
       var documentDelay = 2000;
 
@@ -85,7 +85,7 @@ angular.module('deckBuilder')
           return;
         }
 
-        var currentDocumentHeight = doc.height();
+        var currentDocumentHeight = win.height();
 
         // If the height has not changed, then ignore -
         // no more images could have come into view.
@@ -106,11 +106,10 @@ angular.module('deckBuilder')
 
         // Determine the window dimensions.
         var windowHeight = win.height();
-        var scrollTop = win.scrollTop();
 
         // Calculate the viewport offsets.
-        var topFoldOffset = scrollTop;
-        var bottomFoldOffset = (topFoldOffset + windowHeight + 200);
+        var topFoldOffset = 0;
+        var bottomFoldOffset = windowHeight;
 
         // Query the DOM for layout and seperate the
         // images into two different categories: those
@@ -165,7 +164,7 @@ angular.module('deckBuilder')
         isWatchingWindow = true;
 
         // Listen for window changes.
-        win.on("resize.bnLazySrc", windowChanged);
+        $(window).on("resize.bnLazySrc", windowChanged);
         win.on("scroll.bnLazySrc", windowChanged);
 
         // Set up a timer to watch for document-height changes.
@@ -177,7 +176,7 @@ angular.module('deckBuilder')
         isWatchingWindow = false;
 
         // Stop watching for window changes.
-        win.off("resize.bnLazySrc");
+        $('window').off("resize.bnLazySrc");
         win.off("scroll.bnLazySrc");
 
         // Stop watching for document changes.
@@ -240,7 +239,7 @@ angular.module('deckBuilder')
         }
 
         // Update the dimensions of the element.
-        var top = element.offset().top;
+        var top = element.position().top;
         var bottom = (top + height);
 
         // Return true if the element is:
@@ -316,19 +315,15 @@ angular.module('deckBuilder')
 
       // Since the lazy-src will likely need some sort
       // of string interpolation, we do not want to
-      attributes.$observe(
-        "bnLazySrc",
-        function(newSource) {
-          lazyImage.setSource(newSource);
-        });
+      attributes.$observe("bnLazySrc", function(newSource) {
+        lazyImage.setSource(newSource);
+      });
 
       // When the scope is destroyed, we need to remove
       // the image from the render queue.
-      $scope.$on(
-        "$destroy",
-        function() {
-          lazyLoader.removeImage(lazyImage);
-        });
+      $scope.$on("$destroy", function() {
+        lazyLoader.removeImage(lazyImage);
+      });
     }
 
 
