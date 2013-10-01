@@ -1,7 +1,7 @@
 // I lazily load the images, when they come into view.
 
 angular.module('deckBuilder')
-  .directive("bnLazySrc", function($window, $document) {
+  .directive("bnLazySrc", function() {
     // I manage all the images that are currently being
     // monitored on the page for lazy loading.
     var lazyLoader = (function() {
@@ -22,7 +22,6 @@ angular.module('deckBuilder')
       // I cache the document document height so that
       // we can respond to changes in the height due to
       // dynamic content.
-      var doc = $document;
       var documentHeight = page.height();
       var documentTimer = null;
       var documentDelay = 2000;
