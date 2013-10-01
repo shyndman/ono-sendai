@@ -27,10 +27,10 @@ body {
   min-height: 52px; // For whatever reason, the bootstrap default of 50px is too little
 
   .navbar-brand {
+    width: 210px;
     font-family: 'anr';
     text-transform: uppercase;
-    position: relative;
-    top: 3px;
+    text-align: center;
 
     .anr-symbol {
       height: 23px;
