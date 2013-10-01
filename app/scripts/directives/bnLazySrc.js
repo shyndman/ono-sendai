@@ -16,14 +16,14 @@ angular.module('deckBuilder')
       var renderTimer = null;
       var renderDelay = 100;
 
-      // I cache the window element as a jQuery reference.
-      var win = $('.scrollable');
+      // I cache the page element as a jQuery reference.
+      var page = $('.page');
 
       // I cache the document document height so that
       // we can respond to changes in the height due to
       // dynamic content.
       var doc = $document;
-      var documentHeight = win.height();
+      var documentHeight = page.height();
       var documentTimer = null;
       var documentDelay = 2000;
 
@@ -85,7 +85,7 @@ angular.module('deckBuilder')
           return;
         }
 
-        var currentDocumentHeight = win.height();
+        var currentDocumentHeight = page.height();
 
         // If the height has not changed, then ignore -
         // no more images could have come into view.
@@ -104,12 +104,9 @@ angular.module('deckBuilder')
         var visible = [];
         var hidden = [];
 
-        // Determine the window dimensions.
-        var windowHeight = win.height();
-
         // Calculate the viewport offsets.
         var topFoldOffset = 0;
-        var bottomFoldOffset = windowHeight;
+        var bottomFoldOffset = page.height();
 
         // Query the DOM for layout and seperate the
         // images into two different categories: those
@@ -165,7 +162,7 @@ angular.module('deckBuilder')
 
         // Listen for window changes.
         $(window).on("resize.bnLazySrc", windowChanged);
-        win.on("scroll.bnLazySrc", windowChanged);
+        page.on("scroll.bnLazySrc", windowChanged);
 
         // Set up a timer to watch for document-height changes.
         documentTimer = setInterval(checkDocumentHeight, documentDelay);
@@ -177,7 +174,7 @@ angular.module('deckBuilder')
 
         // Stop watching for window changes.
         $('window').off("resize.bnLazySrc");
-        win.off("scroll.bnLazySrc");
+        page.off("scroll.bnLazySrc");
 
         // Stop watching for document changes.
         clearInterval(documentTimer);
@@ -325,7 +322,6 @@ angular.module('deckBuilder')
         lazyLoader.removeImage(lazyImage);
       });
     }
-
 
     // Return the directive configuration.
     return({
