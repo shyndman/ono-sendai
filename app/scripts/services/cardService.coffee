@@ -73,8 +73,9 @@ class CardService
     primaryGroups
 
   _groupTitle: (groupName) ->
+    # TODO This needs a rethink/refactor
     switch groupName
-      when 'Agenda', 'Asset', 'Operation', 'Upgrade'
+      when 'Agenda', 'Asset', 'Operation', 'Upgrade', 'Event', 'Program', 'Resource'
         "#{groupName}s"
       when 'Identity'
         'Identities'
