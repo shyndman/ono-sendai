@@ -12,7 +12,8 @@
     "underscore": "~1.5.2",
     "underscore.string": "~2.3.3",
     "Fuse": "https://github.com/krisk/Fuse.git",
-    "font-awesome": "~3.2.1"
+    "font-awesome": "~3.2.1",
+    "lunr.js": "~0.4.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
