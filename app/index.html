@@ -44,7 +44,11 @@
     </div>
   </nav>
 
-  <div class="page scrollable" ng-view></div>
+  <div class="page-and-sidebars">
+    <div id="left-sidebar" class="sidebar"></div>
+    <div class="page scrollable" ng-view></div>
+    <div id="right-sidebar" class="sidebar"></div>
+  </div>
 
   <!-- build:js scripts/lib.js -->
   <script src="bower_components/jquery/jquery.js"></script>

@@ -1,7 +1,11 @@
+// Library imports
 $FontAwesomePath: "/bower_components/font-awesome/font";
 @import "bootstrap-sass/lib/bootstrap";
 @import "font-awesome/scss/font-awesome";
+
+// Application imports
 @import "fonts";
+@import "sidebar";
 
 body, html {
   width: 100%;
