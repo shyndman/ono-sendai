@@ -42,8 +42,6 @@ class SearchService
               .stripTags()
               .words()
               .value()
-              .map (token) ->
-                token.replace(/^\W+/, '').replace(/\W+$/, '').toLowerCase()
 
   _dediacriticFilter: (token, tokenIndex, tokens) =>
     _.stripDiacritics(token)
