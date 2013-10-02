@@ -18,6 +18,9 @@ class SearchService
     @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title'), cards))
     @_index.add(card) for card in @cards
 
+    # Remove the stop word filter, so that we can do prefix matching properly
+    @_index.pipeline.remove(lunr.stopWordFilter)
+
   # Retuns a promise that will resolve to an array of cards matching the provided query.
   search: (query) =>
     cards = @_mapResultsToCards(@_index.search(query))
