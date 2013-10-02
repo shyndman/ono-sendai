@@ -6,8 +6,8 @@ _.mixin
       order
 
 
-accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõøśșțùúüûñçżź"
-accentsTo    = "aaaaaaaaaceeeeeiiiilnoooooosstuuuunczz"
+accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
+accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
 accentsRegex = ///[#{accentsFrom}]///g
 accentsMapping = _.object(_.zip(accentsFrom.split(''), accentsTo.split('')))
 
