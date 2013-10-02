@@ -21,6 +21,7 @@
   <![endif]-->
 
   <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
 
@@ -38,9 +39,6 @@
           <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
         </div>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown"><a href="#">Advanced Filter</a></li>
-      </div>
     </div>
   </nav>
 
@@ -57,15 +55,16 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/underscore.string/lib/underscore.string.js"></script>
+  <script src="bower_components/lunr.js/lunr.js"></script>
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/app.js -->
+  <script src="scripts/utils/underscore-plugins.js"></script>
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/services/cardService.js"></script>
   <script src="scripts/directives/bnLazySrc.js"></script>
   <script src="scripts/services/searchService.js"></script>
-  <script src="components/fullproof/fullproof-all.js"></script>
   <script src="scripts/directives/card.js"></script>
   <!-- endbuild -->
 </body>
