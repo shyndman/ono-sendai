@@ -1,0 +1,11 @@
+<div class="input-group input-group-sm">
+  <div class="input-group-btn">
+    <button id="cost-operator-btn" type="button" class="btn btn-default dropdown-toggle">{{ operator }} <span class="caret"></span></button>
+    <ul class="dropdown-menu open">
+      <li ng-repeat="op in comparisonOperators">
+        <a ng-click="filter.cost.operator = op">{{op}}</a>
+      </li>
+    </ul>
+  </div>
+  <input type="number" class="form-control" ng-model="filter.cost.value">
+</div>

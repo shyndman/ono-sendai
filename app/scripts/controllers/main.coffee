@@ -6,6 +6,12 @@ angular.module('deckBuilder')
       side: 'Corp'
       primaryGrouping: 'faction'
       secondaryGrouping: 'type'
+      cost: {
+        operator: '='
+      }
+      influence: {
+        operator: '='
+      }
 
     # Register a function to change the cards array when filters change.
     $rootScope.$watch('filter', ((filter)->

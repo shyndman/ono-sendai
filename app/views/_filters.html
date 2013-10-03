@@ -1,23 +1,87 @@
-<small>If deck building, in-faction-only option</small>
+<!--
+NOTES:
+* If deck building, in-faction-only option
+* Extract the numeric
+-->
 
-<form role="form">
-  General
+<form class="form" role="form" >
+  <!-- Cost -->
   <div class="form-group">
-    <label for="cost">Cost</label>
-    <div>Determine control</div>
+    <label class="control-label">Cost</label>
+    <numeric-filter id="cost-filter" ng-model="filter.cost"></numeric-filter>
   </div>
+
+  <!-- Influence -->
   <div class="form-group">
-    <label for="influence">Outside Influence <i class="icon-question-sign"></i></label>
-    <div>Determine control</div>
+    <label for="influence-operator-btn" class="control-label">Influence</label>
+    <numeric-filter ng-model="filter.influence"></numeric-filter>
+  </div>
+
+  <h5>ICE</h5>
+
+  <!-- ICE strength -->
+  <div class="form-group">
+    <label for="ice-strength-operator-btn" class="control-label">Strength</label>
+    <numeric-filter ng-model="filter.iceStrength"></numeric-filter>
+  </div>
+
+  <h5>Programs</h5>
+
+  <!-- Breaker strength -->
+  <div class="form-group">
+    <label for="breaker-strength-operator-btn" class="control-label">Strength</label>
+    <numeric-filter ng-model="filter.breakerStrength"></numeric-filter>
+  </div>
+
+  <!-- Memory units -->
+  <div class="form-group">
+    <label for="memory-unit-operator-btn" class="control-label">MU</label>
+    <numeric-filter ng-model="filter.memoryUnits"></numeric-filter>
+  </div>
+
+  <h5>Agendas</h5>
+
+  <!-- Agenda points -->
+  <div class="form-group">
+    <label for="agenda-points-operator-btn" class="control-label">Points</label>
+    <numeric-filter ng-model="filter.agendaPoints"></numeric-filter>
   </div>
 </form>
 
-<h5>ICE</h5>
-<h6>Strength</h6>
+<!--form role="form">
+  <ul>
+    <li>
+      General
+      <div class="form-group">
+        <label for="cost">Cost</label>
+        <div>
 
-<h5>Programs</h5>
-<h6>Strength</h6>
-<h6>MU</h6>
-
-<h5>Agendas</h5>
-<h6>Points</h6>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="influence">Outside Influence <i class="icon-question-sign"></i></label>
+        <div>Determine control</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h5>ICE</h5>
+        <h6>Subtype</h6>
+        <h6>Strength</h6>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h5>Programs</h5>
+        <h6>Strength</h6>
+        <h6>MU</h6>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h5>Agendas</h5>
+        <h6>Points</h6>
+      </div>
+    </li>
+  </ul>
+</form-->
