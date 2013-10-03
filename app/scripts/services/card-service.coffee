@@ -16,6 +16,8 @@ class CardService
 
   CARDS_URL = '/data/cards.json'
 
+  comparisonOperators: ['=', '<', '≤', '>', '≥']
+
   constructor: ($http, @searchService) ->
     @searchService = searchService
     @_cards = []
@@ -51,19 +53,21 @@ class CardService
        .groupBy(primaryGrouping)
        .pairs()
        .map((pair) =>
+         id: pair[0],
          sortField: pair[0],
          title: @_groupTitle(pair[0]),
-         cards: pair[1])
+         subgroups: pair[1])
        .sortBy('sortField')
        .value()
 
     # Build secondary groups
     for group in primaryGroups
-      group.cards =
-        _.chain(group.cards)
+      group.subgroups =
+        _.chain(group.subgroups)
          .groupBy(secondaryGrouping)
          .pairs()
          .map((pair) =>
+           id: "#{group.id}-#{pair[0]}",
            title: @_groupTitle(pair[0]),
            sortField: pair[0],
            cards: _.sortBy(pair[1], 'title'))

@@ -1,4 +1,6 @@
-// I lazily load the images, when they come into view.
+// By Ben Nadel, with a few minor changes
+// https://github.com/bennadel
+// http://www.bennadel.com/blog/2498-Lazy-Loading-Image-With-AngularJS.htm
 
 angular.module('deckBuilder')
   .directive("bnLazySrc", function() {
