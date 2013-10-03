@@ -21,6 +21,13 @@ body {
   overflow: hidden;
 }
 
+// The spinners look like crap
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .anr-symbol {
   font-family: 'anr_symbols';
 }
