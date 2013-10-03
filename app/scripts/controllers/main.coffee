@@ -9,5 +9,6 @@ angular.module('deckBuilder')
 
     # Register a function to change the cards array when filters change.
     $rootScope.$watch('filter', ((filter)->
-      $rootScope.cards = cardService.getCards(filter)
+        cardService.getCards(filter).then((cardGroups) ->
+          $rootScope.cardGroups = cardGroups)
     ), true))
