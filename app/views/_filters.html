@@ -1,54 +1,53 @@
 <!--
 NOTES:
 * If deck building, in-faction-only option
-* Extract the numeric
 -->
 
 <form class="form" role="form" >
   <!-- Cost -->
   <div class="form-group">
-    <label class="control-label">Cost</label>
+    <label for="cost-operator-btn" class="control-label anr-symbol">¥</label>
     <numeric-filter id="cost-filter" ng-model="filter.cost"></numeric-filter>
   </div>
 
   <!-- Influence -->
   <div class="form-group">
-    <label for="influence-operator-btn" class="control-label">Influence</label>
+    <label for="influence-operator-btn" class="control-label"><i class="icon-group"></i></label>
     <numeric-filter ng-model="filter.influence"></numeric-filter>
   </div>
 
   <!-- Trash Cost -->
   <div class="form-group">
-    <label for="trash-cost-operator-btn" class="control-label">Trash Cost</label>
+    <label for="trash-cost-operator-btn" class="control-label anr-symbol">⏏</label>
     <numeric-filter ng-model="filter.trashCost"></numeric-filter>
   </div>
 
 
-  <h5 class="checkbox"><label><input type="checkbox"> ICE</label></h5>
+  <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.ice.enabled"> ICE</label></h5>
 
   <!-- ICE strength -->
   <div class="form-group">
-    <label for="ice-strength-operator-btn" class="control-label">Strength</label>
-    <numeric-filter ng-model="filter.iceStrength"></numeric-filter>
+    <label for="ice-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
+    <numeric-filter ng-model="filter.ice.strength"></numeric-filter>
   </div>
 
   <!-- ICE strength -->
   <div class="form-group">
-    <label for="subroutine-count-operator-btn" class="control-label">Subroutines</label>
-    <numeric-filter ng-model="filter.subroutineCount"></numeric-filter>
+    <label for="subroutine-count-operator-btn" class="control-label anr-symbol">⏎</label>
+    <numeric-filter ng-model="filter.ice.subroutineCount"></numeric-filter>
   </div>
 
   <h5 class="checkbox"><label><input type="checkbox"> Programs</label></h5>
 
   <!-- Breaker strength -->
   <div class="form-group">
-    <label for="breaker-strength-operator-btn" class="control-label">Strength</label>
+    <label for="breaker-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
     <numeric-filter ng-model="filter.breakerStrength"></numeric-filter>
   </div>
 
   <!-- Memory units -->
-  <div class="form-group">
-    <label for="memory-unit-operator-btn" class="control-label">MU</label>
+  <div class="form-group mu-form-group">
+    <label for="memory-unit-operator-btn" class="control-label anr-symbol">⎗</label>
     <numeric-filter ng-model="filter.memoryUnits"></numeric-filter>
   </div>
 
@@ -56,7 +55,7 @@ NOTES:
 
   <!-- Agenda points -->
   <div class="form-group">
-    <label for="agenda-points-operator-btn" class="control-label">Points</label>
+    <label for="agenda-points-operator-btn" class="control-label"><i class="icon-asterisk"></i></label>
     <numeric-filter ng-model="filter.agendaPoints"></numeric-filter>
   </div>
 </form>

@@ -23,10 +23,28 @@
     label {
       display: block;
       font-weight: bold;
+      letter-spacing: 0.3px;
     }
 
     input {
       float: right;
+    }
+  }
+
+  .form-group {
+    padding: 0 10px 0 5px;
+
+    > .control-label {
+      float: left;
+      width: 25px;
+      text-align: center;
+      position: relative;
+      top: 6px;
+    }
+
+    // Smaller text for memory units, cause the font sucks
+    &.mu-form-group > .control-label {
+      font-size: 0.8em;
     }
   }
 }
