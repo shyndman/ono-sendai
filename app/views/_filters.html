@@ -1,6 +1,7 @@
 <!--
 NOTES:
 * If deck building, in-faction-only option
+* DRY this up
 -->
 
 <form class="form form-horizontal" role="form">
@@ -8,56 +9,82 @@ NOTES:
 
   <!-- Cost -->
   <div class="form-group">
-    <label for="cost-operator-btn" class="control-label anr-symbol">¥</label>
-    <numeric-filter id="cost-filter" ng-model="filter.cost"></numeric-filter>
+    <label for="cost-filter-operator" class="control-label anr-symbol">¥</label>
+    <numeric-filter id="cost-filter" filter-attr="filter.general.cost" placeholder="Cost"></numeric-filter>
   </div>
 
   <!-- Influence -->
   <div class="form-group">
-    <label for="influence-operator-btn" class="control-label"><i class="icon-group"></i></label>
-    <numeric-filter ng-model="filter.influence"></numeric-filter>
+    <label for="influence-filter-operator" class="control-label"><i class="icon-group"></i></label>
+    <numeric-filter id="influence-filter" filter-attr="filter.general.influence" placeholder="Influence"></numeric-filter>
   </div>
 
-  <!-- Trash Cost -->
-  <div class="form-group trash-cost-form-group">
-    <label for="trash-cost-operator-btn" class="control-label anr-symbol">⏏</label>
-    <numeric-filter ng-model="filter.trashCost"></numeric-filter>
-  </div>
+  <!-- ******* IDENTITIES ******* -->
+  <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.identities.enabled"> Identities</label></h5>
 
-  <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.ice.enabled"> ICE</label></h5>
+  <div ng-switch="filter.side">
+    <div ng-switch-when="Runner">
+      <!-- ******** PROGRAMS ******** -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.programs.enabled"> Programs</label></h5>
+      <div ng-show="filter.programs.enabled">
+        <!-- Breaker strength -->
+        <div class="form-group">
+          <label for="breaker-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
+          <numeric-filter filter-attr="filter.programs.breakerStrength" placeholder="Strength"></numeric-filter>
+        </div>
 
-  <!-- ICE strength -->
-  <div class="form-group">
-    <label for="ice-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
-    <numeric-filter ng-model="filter.ice.strength"></numeric-filter>
-  </div>
+        <!-- Memory units -->
+        <div class="form-group mu-form-group">
+          <label for="memory-unit-operator-btn" class="control-label anr-symbol">⎗</label>
+          <numeric-filter filter-attr="filter.programs.memoryUnits" placeholder="Memory Units"></numeric-filter>
+        </div>
+      </div>
+    </div>
 
-  <!-- ICE subroutine count -->
-  <div class="form-group">
-    <label for="subroutine-count-operator-btn" class="control-label anr-symbol">⏎</label>
-    <numeric-filter ng-model="filter.ice.subroutineCount"></numeric-filter>
-  </div>
+    <div ng-switch-when="Corp">
+      <!-- ********* AGENDAS ******** -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.agendas.enabled"> Agendas</label></h5>
+      <div ng-show="filter.agendas.enabled">
+        <!-- Agenda points -->
+        <div class="form-group">
+          <label for="agenda-points-operator" class="control-label"><i class="icon-asterisk"></i></label>
+          <numeric-filter filter-attr="filter.agendas.points" placeholder="Agenda Points"></numeric-filter>
+        </div>
+      </div>
 
-  <h5 class="checkbox"><label><input type="checkbox"> Programs</label></h5>
+      <!-- ********* Assets ********* -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.assets.enabled"> Assets</label></h5>
+      <div ng-show="filter.assets.enabled">
+        <!-- Trash Cost -->
+        <div class="form-group trash-cost-form-group">
+          <label for="trash-cost-operator" class="control-label anr-symbol">⏏</label>
+          <numeric-filter id="trash-cost" filter-attr="filter.general.trashCost" placeholder="Trash Cost"></numeric-filter>
+        </div>
+      </div>
 
-  <!-- Breaker strength -->
-  <div class="form-group">
-    <label for="breaker-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
-    <numeric-filter ng-model="filter.breakerStrength"></numeric-filter>
-  </div>
+      <!-- ******* OPERATIONS ******* -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.operations.enabled"> Operations</label></h5>
 
-  <!-- Memory units -->
-  <div class="form-group mu-form-group">
-    <label for="memory-unit-operator-btn" class="control-label anr-symbol">⎗</label>
-    <numeric-filter ng-model="filter.memoryUnits"></numeric-filter>
-  </div>
+      <!-- ********** ICE *********** -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.ice.enabled"> ICE</label></h5>
+      <div ng-show="filter.ice.enabled">
+        <!-- ICE strength -->
+        <div class="form-group">
+          <label for="ice-strength-operator" class="control-label"><i class="icon-signal"></i></label>
+          <numeric-filter id="ice-strength" filter-attr="filter.ice.strength" placeholder="Strength"></numeric-filter>
+        </div>
 
-  <h5 class="checkbox"><label><input type="checkbox"> Agendas</label></h5>
+        <!-- ICE subroutine count -->
+        <div class="form-group">
+          <label for="subroutine-count-operator" class="control-label anr-symbol">⏎</label>
+          <numeric-filter id="subroutine-count" filter-attr="filter.ice.subroutineCount" placeholder="# Subroutines"></numeric-filter>
+        </div>
+      </div>
 
-  <!-- Agenda points -->
-  <div class="form-group">
-    <label for="agenda-points-operator-btn" class="control-label"><i class="icon-asterisk"></i></label>
-    <numeric-filter ng-model="filter.agendaPoints"></numeric-filter>
+
+      <!-- ******* OPERATIONS ******* -->
+      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>
+    </div>
   </div>
 </form>
 
