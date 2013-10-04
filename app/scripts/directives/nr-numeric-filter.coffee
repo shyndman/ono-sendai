@@ -3,9 +3,11 @@
 angular.module('deckBuilder')
   .directive('numericFilter', (cardService) ->
     templateUrl: '/views/directives/nr-numeric-filter.html'
+    scope:
+      filter: '=filterAttr'
+      placeholder: '@placeholder'
+      id: '@id'
     restrict: 'E'
-    require: 'ngModel'
-    link: (scope, element, attrs, ctrl) ->
+    link: (scope, element, attrs) ->
       scope.comparisonOperators = cardService.comparisonOperators
-      # element.text 'this is the nrNumericFilter directive'
   )
