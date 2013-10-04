@@ -32,19 +32,20 @@
   }
 
   .form-group {
-    padding: 0 10px 0 5px;
+    padding: 0 10px 0 3px;
+    margin: 8px 0;
 
     > .control-label {
       float: left;
-      width: 25px;
+      width: 45px;
       text-align: center;
-      position: relative;
-      top: 6px;
     }
 
     // Smaller text for memory units, cause the font sucks
-    &.mu-form-group > .control-label {
-      font-size: 0.8em;
+    &.mu-form-group, &.trash-cost-form-group {
+      > .control-label {
+        font-size: 0.8em;
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ NOTES:
 * If deck building, in-faction-only option
 -->
 
-<form class="form" role="form" >
+<form class="form form-horizontal" role="form">
   <!-- Cost -->
   <div class="form-group">
     <label for="cost-operator-btn" class="control-label anr-symbol">¥</label>
@@ -17,7 +17,7 @@ NOTES:
   </div>
 
   <!-- Trash Cost -->
-  <div class="form-group">
+  <div class="form-group trash-cost-form-group">
     <label for="trash-cost-operator-btn" class="control-label anr-symbol">⏏</label>
     <numeric-filter ng-model="filter.trashCost"></numeric-filter>
   </div>
