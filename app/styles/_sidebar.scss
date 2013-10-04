@@ -4,6 +4,30 @@
   border-right: 1px solid $navbar-default-border;
 }
 
-#left-sidebar {
+#filter-bar {
   width: 212px;
+
+  h5 {
+    background: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    display: block;
+    font-weight: bold;
+    color: #9b9b9b;
+    text-shadow: 1px 1px 3px white;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 0 5px;
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      float: right;
+    }
+  }
 }
+
