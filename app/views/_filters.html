@@ -4,6 +4,8 @@ NOTES:
 -->
 
 <form class="form form-horizontal" role="form">
+  <h5 class="checkbox" style="border-top: none;"><label>General</label></h5>
+
   <!-- Cost -->
   <div class="form-group">
     <label for="cost-operator-btn" class="control-label anr-symbol">¥</label>
@@ -22,7 +24,6 @@ NOTES:
     <numeric-filter ng-model="filter.trashCost"></numeric-filter>
   </div>
 
-
   <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.ice.enabled"> ICE</label></h5>
 
   <!-- ICE strength -->
@@ -31,7 +32,7 @@ NOTES:
     <numeric-filter ng-model="filter.ice.strength"></numeric-filter>
   </div>
 
-  <!-- ICE strength -->
+  <!-- ICE subroutine count -->
   <div class="form-group">
     <label for="subroutine-count-operator-btn" class="control-label anr-symbol">⏎</label>
     <numeric-filter ng-model="filter.ice.subroutineCount"></numeric-filter>
