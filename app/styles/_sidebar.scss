@@ -8,17 +8,19 @@
   width: 212px;
 
   h5 {
+    margin-bottom: 2px;
+    padding: 0 5px;
+
     background: #f8f8f8;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
-    display: block;
-    font-weight: bold;
+
     color: #9b9b9b;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.8;
     text-shadow: 1px 1px 3px white;
     text-transform: uppercase;
-    font-size: 12px;
-    line-height: 1.8;
-    padding: 0 5px;
 
     label {
       display: block;
@@ -32,13 +34,18 @@
   }
 
   .form-group {
-    padding: 0 10px 0 3px;
+    padding: 0 5px 0 3px;
     margin: 8px 0;
 
     > .control-label {
       float: left;
       width: 45px;
       text-align: center;
+    }
+
+    numeric-filter {
+      float: left;
+      width: 146px;
     }
 
     // Smaller text for memory units, cause the font sucks
