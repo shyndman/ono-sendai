@@ -24,6 +24,7 @@
     "grunt-concurrent": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
     "connect-livereload": "~0.2.0",
+    "connect-modrewrite": "~0.5.9",
     "grunt-google-cdn": "~0.2.0",
     "grunt-ngmin": "~0.0.2",
     "time-grunt": "~0.1.0",

@@ -26,6 +26,8 @@ module.exports = function (grunt) {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
+  var modRewrite = require('connect-modrewrite');
+
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
@@ -79,6 +81,9 @@ module.exports = function (grunt) {
         options: {
           middleware: function (connect) {
             return [
+              modRewrite([
+                '!\\.html|\\.js|\\.css|\\.png|\\.json|\\.woff|\\.ttf$ /index.html [L]'
+              ]),
               lrSnippet,
               mountFolder(connect, '.tmp'),
               mountFolder(connect, yeomanConfig.app)
