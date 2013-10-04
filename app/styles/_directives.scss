@@ -8,5 +8,9 @@ numeric-filter {
   .dropdown-menu {
     min-width: inherit;
     left: -3px;
+
+    a {
+      outline: none;
+    }
   }
 }
