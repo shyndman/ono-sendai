@@ -14,7 +14,8 @@
     "Fuse": "https://github.com/krisk/Fuse.git",
     "font-awesome": "~3.2.1",
     "lunr.js": "~0.4.2",
-    "jwerty": "~0.3.2"
+    "jwerty": "~0.3.2",
+    "angular-bootstrap": "https://github.com/angular-ui/bootstrap.git#8cbeff0ffe960f5f46b9b886fa3db2d0c1ff2a9f"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
