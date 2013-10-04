@@ -14,6 +14,44 @@ class CardService
     ICE:       8
     Upgrade:   9
 
+  # Describes how various type-specific filters map onto the underlying cards.json datastructure,
+  # and what filter operations should be performed.
+  TYPE_FILTER_MAPPING =
+    identities: {
+      cardType: 'Identity'
+      influenceLimit:
+        type: 'numeric'
+        cardField: 'influencelimit'
+      minimumDeckSize:
+        type: 'numeric'
+        cardField: 'minimumdecksize'
+    }
+    ice: {
+      cardType: 'ICE'
+      subroutineCount:
+        type: 'numeric'
+        cardField: 'subroutinecount'
+      strength:
+        type: 'numeric'
+        cardField: 'strength'
+    }
+    agendas: {
+      cardType: 'Agenda'
+      points:
+        type: 'numeric'
+        cardField: 'agendapoints'
+    }
+    assets: {
+      cardType: 'Asset'
+    }
+    operations: {
+      cardType: 'Operation'
+    }
+    upgrades: {
+      cardtype: 'Upgrade'
+    }
+
+
   CARDS_URL = '/data/cards.json'
 
   comparisonOperators: ['=', '<', '≤', '>', '≥']
@@ -42,10 +80,15 @@ class CardService
       @_cards
 
   _filterCards: (filter, cards) =>
-    card for card in cards when @_matchesFilter(filter, card)
+    enabledTypes = @_enabledTypes(filter)
+    card for card in cards when @_matchesFilter(card, filter, enabledTypes: enabledTypes)
 
-  _matchesFilter: (card, filter) =>
-    card.side == filter.side
+  _matchesFilter: (card, filter, { enabledTypes }) =>
+    return (card.side == filter.side) and
+           (if enabledTypes? then enabledTypes[card.type] else true)
+
+  _enabledTypes: (filter) =>
+    _.object([ descriptor.cardType, filter[name].enabled ] for name, descriptor of TYPE_FILTER_MAPPING)
 
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
