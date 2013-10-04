@@ -15,12 +15,25 @@ NOTES:
 
   <!-- Influence -->
   <div class="form-group">
-    <label for="influence-filter-operator" class="control-label"><i class="icon-group"></i></label>
-    <numeric-filter id="influence-filter" filter-attr="filter.general.influence" placeholder="Influence"></numeric-filter>
+    <label for="influence-value-filter-operator" class="control-label"><i class="icon-group"></i></label>
+    <numeric-filter id="influence-value-filter" filter-attr="filter.general.influenceValue" placeholder="Influence"></numeric-filter>
   </div>
 
   <!-- ******* IDENTITIES ******* -->
   <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.identities.enabled"> Identities</label></h5>
+  <div ng-show="filter.identities.enabled">
+    <!-- Influence limit -->
+    <div class="form-group">
+      <label for="influence-limit-filter-operator" class="control-label"><i class="icon-group"></i></label>
+      <numeric-filter id="influence-limit-filter" filter-attr="filter.identities.influenceLimit" placeholder="Influence Limit"></numeric-filter>
+    </div>
+
+    <!-- Minimum deck size -->
+    <div class="form-group">
+      <label for="minimum-deck-size-filter-operator" class="control-label"><i class="icon-stackexchange"></i></label>
+      <numeric-filter id="minimum-deck-size-filter" filter-attr="filter.identities.minimumDeckSize" placeholder="Min. Deck Size"></numeric-filter>
+    </div>
+  </div>
 
   <div ng-switch="filter.side">
     <div ng-switch-when="Runner">
@@ -80,7 +93,6 @@ NOTES:
           <numeric-filter id="subroutine-count" filter-attr="filter.ice.subroutineCount" placeholder="# Subroutines"></numeric-filter>
         </div>
       </div>
-
 
       <!-- ******* OPERATIONS ******* -->
       <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>

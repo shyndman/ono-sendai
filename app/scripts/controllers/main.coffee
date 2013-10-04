@@ -9,16 +9,33 @@ angular.module('deckBuilder')
       general:
         cost:
           operator: '='
-        influence:
+        influenceValue:
           operator: '='
         trashCost:
           operator: '='
+
+      identities:
+        enabled: true
+        influenceLimit:
+          operator: '='
+        minimumDeckSize:
+          operator: '='
+
       ice:
+        enabled: true
         subroutineCount:
           operator: '='
         strength:
           operator: '='
+
+      assets:
+        enabled: true
+
+      operations:
+        enabled: true
+
       agendas:
+        enabled: true
         points:
           operator: '='
 
