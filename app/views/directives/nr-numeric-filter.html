@@ -3,7 +3,7 @@
     <button id="{{id}}-operator" type="button" class="btn btn-default dropdown-toggle">{{ filter.operator }} <span class="caret"></span></button>
     <ul class="dropdown-menu open">
       <li ng-repeat="op in comparisonOperators">
-        <a ng-click="filter.operator = op" tabindex="0">{{op}}</a>
+        <a ng-click="filter.operator = op" tabindex="-1">{{op}}</a>
       </li>
     </ul>
   </div>
