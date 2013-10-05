@@ -78,34 +78,36 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cards {
   h2 {
+    $underline-opacity: 0.3;
+
     padding: 5px 7px;
     margin: 5px;
-
-    color: $neutral-dark-color;
-    border-bottom: 1px solid $neutral-dark-color;
 
     font-size: 22px;
     font-weight: 200;
     letter-spacing: 0.4px;
 
+    color: $neutral-dark-color;
+    border-bottom: 1px solid transparentize($neutral-dark-color, (1 - $underline-opacity));
+
     &.haas-bioroid {
       color: $haas-light-color;
-      border-bottom: 1px solid $haas-light-color;
+      border-bottom: 1px solid transparentize($haas-light-color, (1 - $underline-opacity));
     }
 
     &.jinteki {
       color: $jinteki-dark-color;
-      border-bottom: 1px solid $jinteki-dark-color;
+      border-bottom: 1px solid transparentize($jinteki-dark-color, (1 - $underline-opacity));
     }
 
     &.nbn {
       color: $nbn-dark-color;
-      border-bottom: 1px solid $nbn-dark-color;
+      border-bottom: 1px solid transparentize($nbn-dark-color, (1 - $underline-opacity));
     }
 
     &.weyland {
       color: $weyland-dark-color;
-      border-bottom: 1px solid $weyland-dark-color;
+      border-bottom: 1px solid transparentize($weyland-dark-color, (1 - $underline-opacity));
     }
 
     small {
