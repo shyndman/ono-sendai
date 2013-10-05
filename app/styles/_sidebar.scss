@@ -1,6 +1,7 @@
 
 .sidebar {
   border-right: 1px solid $navbar-default-border;
+  user-select: none;
 }
 
 #filter-bar {
