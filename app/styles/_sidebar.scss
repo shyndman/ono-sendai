@@ -32,15 +32,16 @@
     .check-status {
       float: right;
       position: relative;
-      top: -5px;
-      font-size: 15px;
-      color: cornflowerblue;
+      top: -4px;
+      font-size: 14px;
 
       .checked {
         display: none;
+        color: cornflowerblue;
       }
       .unchecked {
         display: block;
+        color: #aaa;
       }
     }
 
