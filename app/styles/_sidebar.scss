@@ -29,8 +29,35 @@
       letter-spacing: 0.3px;
     }
 
-    input {
+    .check-status {
       float: right;
+      position: relative;
+      top: -5px;
+      font-size: 15px;
+      color: cornflowerblue;
+
+      .checked {
+        display: none;
+      }
+      .unchecked {
+        display: block;
+      }
+    }
+
+    input:checked + .check-status {
+      .checked {
+        display: block;
+      }
+      .unchecked {
+        display: none;
+      }
+    }
+
+    // Hide the default visuals
+    input {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
     }
   }
 
