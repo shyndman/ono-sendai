@@ -22,11 +22,7 @@ NOTES:
   <!-- ******* IDENTITIES ******* -->
   <h5 class="checkbox">
     <label>
-      <input type="checkbox" ng-model="filter.identities.enabled">
-      <span class="check-status">
-        <span class="checked"><i class="icon-ok-sign"></i></span>
-        <span class="unchecked"><i class="icon-circle-blank"></i></span>
-      </span>
+      <input type="checkbox" tabindex="-1" ng-model="filter.identities.enabled">
       Identities
     </label>
   </h5>
@@ -48,7 +44,7 @@ NOTES:
   <div ng-switch="filter.side">
     <div ng-switch-when="Runner">
       <!-- ******** PROGRAMS ******** -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.programs.enabled"> Programs</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.programs.enabled"> Programs</label></h5>
       <div ng-show="filter.programs.enabled">
         <!-- Breaker strength -->
         <div class="form-group">
@@ -66,7 +62,7 @@ NOTES:
 
     <div ng-switch-when="Corp">
       <!-- ********* AGENDAS ******** -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.agendas.enabled"> Agendas</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.agendas.enabled"> Agendas</label></h5>
       <div ng-show="filter.agendas.enabled">
         <!-- Agenda points -->
         <div class="form-group">
@@ -76,7 +72,7 @@ NOTES:
       </div>
 
       <!-- ********* Assets ********* -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.assets.enabled"> Assets</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.assets.enabled"> Assets</label></h5>
       <div ng-show="filter.assets.enabled">
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
@@ -86,10 +82,10 @@ NOTES:
       </div>
 
       <!-- ******* OPERATIONS ******* -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.operations.enabled"> Operations</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.operations.enabled"> Operations</label></h5>
 
       <!-- ********** ICE *********** -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.ice.enabled"> ICE</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.ice.enabled"> ICE</label></h5>
       <div ng-show="filter.ice.enabled">
         <!-- ICE strength -->
         <div class="form-group">
@@ -105,7 +101,7 @@ NOTES:
       </div>
 
       <!-- ******** UPGRADES ******** -->
-      <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>
+      <h5 class="checkbox"><label><input type="checkbox" tabindex="-1" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>
       <div ng-show="filter.upgrades.enabled">
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
