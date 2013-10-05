@@ -61,7 +61,9 @@ class CardService
           type: 'numeric'
           cardField: 'trash'
     }
-    operations: { cardType: 'Operation' },
+    operations: {
+      cardType: 'Operation'
+    },
     upgrades:   {
       cardType: 'Upgrade'
       fieldFilters:
@@ -133,8 +135,8 @@ class CardService
   _buildTypeFilters: (filterArgs) =>
     # TODO re-evaluate the names used here -- it's feeling a bit confusing and wordy
     typeFilters = {}
-    for name, descriptor of TYPE_FILTER_MAPPING when filterArgs[name]?.enabled and descriptor.fieldFilters?
-      typeFilterArgs = filterArgs[name]
+    for typeName, descriptor of TYPE_FILTER_MAPPING when filterArgs[typeName]?.enabled and descriptor.fieldFilters?
+      typeFilterArgs = filterArgs[typeName]
 
       # Generate a list of filter functions for this type
       fieldFilterFuncs =
