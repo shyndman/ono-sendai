@@ -73,10 +73,10 @@ class CardService
   OPERATORS = {
     'and': (predicates, args...) ->
       for p in predicates
-        if !p(args...)
+        if not p(args...)
           return false
       true
-    '=': (a, b) -> a == b
+    '=': (a, b) -> a is b
     '<': (a, b) -> a < b
     '≤': (a, b) -> a <= b
     '>': (a, b) -> a > b
@@ -120,7 +120,7 @@ class CardService
 
   # Returns true if the provided card matches
   _matchesFilter: (card, filterArgs, { enabledTypes, typeFilters }) =>
-    return (card.side == filterArgs.side) and
+    return (card.side is filterArgs.side) and
            (if enabledTypes? then enabledTypes[card.type] else true) and
            (if typeFilters?.general? then typeFilters.general(card) else true) and
            (if typeFilters?[card.type]? then typeFilters[card.type](card) else true)
@@ -140,16 +140,16 @@ class CardService
       fieldFilterFuncs =
         for filterName, filterDescriptor of descriptor.fieldFilters
           fieldFilterArgs = typeFilterArgs[filterName]
-          if !fieldFilterArgs?
+          if not fieldFilterArgs?
             continue
 
           switch filterDescriptor.type
             when 'numeric'
-              if !fieldFilterArgs.value? or !fieldFilterArgs.operator?
+              if not fieldFilterArgs.value? or not fieldFilterArgs.operator?
                 continue
               @_buildNumericFilter(filterDescriptor, fieldFilterArgs) # loop tail
 
-      if !_.isEmpty(fieldFilterFuncs)
+      if not _.isEmpty(fieldFilterFuncs)
         typeFilters[descriptor.cardType] = _.partial(OPERATORS.and, fieldFilterFuncs)
 
     typeFilters
@@ -177,7 +177,7 @@ class CardService
        .groupBy(primaryGrouping)
        .pairs()
        .map((pair) =>
-         id: pair[0],
+         id: pair[0].toLowerCase(),
          sortField: pair[0],
          title: @_groupTitle(pair[0]),
          subgroups: pair[1])
@@ -191,7 +191,7 @@ class CardService
          .groupBy(secondaryGrouping)
          .pairs()
          .map((pair) =>
-           id: "#{group.id}-#{pair[0]}",
+           id: "#{group.id} #{_.dasherize(pair[0])}",
            title: @_groupTitle(pair[0]),
            sortField: pair[0],
            cards: _.sortBy(pair[1], 'title'))
