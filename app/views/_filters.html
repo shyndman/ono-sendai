@@ -22,16 +22,16 @@ NOTES:
   <!-- ******* IDENTITIES ******* -->
   <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.identities.enabled"> Identities</label></h5>
   <div ng-show="filter.identities.enabled">
-    <!-- Influence limit -->
-    <div class="form-group">
-      <label for="influence-limit-filter-operator" class="control-label"><i class="icon-group"></i></label>
-      <numeric-filter id="influence-limit-filter" filter-attr="filter.identities.influenceLimit" placeholder="Influence Limit"></numeric-filter>
-    </div>
-
     <!-- Minimum deck size -->
     <div class="form-group">
       <label for="minimum-deck-size-filter-operator" class="control-label"><i class="icon-stackexchange"></i></label>
       <numeric-filter id="minimum-deck-size-filter" filter-attr="filter.identities.minimumDeckSize" placeholder="Min. Deck Size"></numeric-filter>
+    </div>
+
+    <!-- Influence limit -->
+    <div class="form-group">
+      <label for="influence-limit-filter-operator" class="control-label"><i class="icon-group"></i></label>
+      <numeric-filter id="influence-limit-filter" filter-attr="filter.identities.influenceLimit" placeholder="Influence Limit"></numeric-filter>
     </div>
   </div>
 
@@ -71,7 +71,7 @@ NOTES:
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
           <label for="trash-cost-operator" class="control-label anr-symbol">⏏</label>
-          <numeric-filter id="trash-cost" filter-attr="filter.general.trashCost" placeholder="Trash Cost"></numeric-filter>
+          <numeric-filter id="trash-cost" filter-attr="filter.assets.trashCost" placeholder="Trash Cost"></numeric-filter>
         </div>
       </div>
 
@@ -94,7 +94,7 @@ NOTES:
         </div>
       </div>
 
-      <!-- ******* OPERATIONS ******* -->
+      <!-- ******** UPGRADES ******** -->
       <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>
     </div>
   </div>

@@ -44,7 +44,7 @@ angular.module('deckBuilder')
     restrict: 'CA'
     link: (scope, element, attrs) ->
       element.keydown (e) ->
-        return unless jwerty.is('esc/up/down/enter', e)
+        return unless jwerty.is('esc/up/down/enter/space', e)
 
         e.preventDefault()
         e.stopPropagation()
@@ -59,7 +59,7 @@ angular.module('deckBuilder')
           toggle.click()
           toggle.focus()
           return
-        else if jwerty.is('enter', e)
+        else if jwerty.is('enter/space', e)
           $(e.target).click()
           toggle.focus()
           return

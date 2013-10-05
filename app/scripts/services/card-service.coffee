@@ -17,39 +17,65 @@ class CardService
   # Describes how various type-specific filters map onto the underlying cards.json datastructure,
   # and what filter operations should be performed.
   TYPE_FILTER_MAPPING =
+    general: {
+      cardType: 'general'
+      fieldFilters:
+        cost:
+          type: 'numeric'
+          cardField: [ 'advancementcost', 'cost' ]
+        influenceValue:
+          type: 'numeric'
+          cardField: 'factioncost'
+    }
     identities: {
       cardType: 'Identity'
-      influenceLimit:
-        type: 'numeric'
-        cardField: 'influencelimit'
-      minimumDeckSize:
-        type: 'numeric'
-        cardField: 'minimumdecksize'
+      fieldFilters:
+        influenceLimit:
+          type: 'numeric'
+          cardField: 'influencelimit'
+        minimumDeckSize:
+          type: 'numeric'
+          cardField: 'minimumdecksize'
     }
     ice: {
       cardType: 'ICE'
-      subroutineCount:
-        type: 'numeric'
-        cardField: 'subroutinecount'
-      strength:
-        type: 'numeric'
-        cardField: 'strength'
+      fieldFilters:
+        subroutineCount:
+          type: 'numeric'
+          cardField: 'subroutinecount'
+        strength:
+          type: 'numeric'
+          cardField: 'strength'
     }
     agendas: {
       cardType: 'Agenda'
-      points:
-        type: 'numeric'
-        cardField: 'agendapoints'
+      fieldFilters:
+        points:
+          type: 'numeric'
+          cardField: 'agendapoints'
     }
     assets: {
       cardType: 'Asset'
+      fieldFilters:
+        trashCost:
+          type: 'numeric'
+          cardField: 'trash'
     }
-    operations: {
-      cardType: 'Operation'
-    }
-    upgrades: {
-      cardtype: 'Upgrade'
-    }
+    operations: { cardType: 'Operation' },
+    upgrades:   { cardType: 'Upgrade' }
+
+  OPERATORS = {
+    'and': (predicates, args...) ->
+      for p in predicates
+        if !p(args...)
+          return false
+      true
+    '=': (a, b) -> a == b
+    '<': (a, b) -> a < b
+    '≤': (a, b) -> a <= b
+    '>': (a, b) -> a > b
+    '≥': (a, b) -> a >= b
+  }
 
 
   CARDS_URL = '/data/cards.json'
@@ -63,15 +89,16 @@ class CardService
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
       .then(({ data: @_cards, status, headers }) =>
-        window.cards = @_cards
+        window.cards = @_cards # DEBUG
+        @_augmentCards(@_cards)
         @searchService.indexCards(@_cards)
         @_cards)
 
-  getCards: (filter = {}) ->
+  getCards: (filterArgs = {}) ->
     @_cardsPromise
-      .then(_.partial(@_searchCards, filter))
-      .then(_.partial(@_filterCards, filter))
-      .then(_.partial(@_groupCards, filter))
+      .then(_.partial(@_searchCards, filterArgs))
+      .then(_.partial(@_filterCards, filterArgs))
+      .then(_.partial(@_groupCards, filterArgs))
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
@@ -79,16 +106,64 @@ class CardService
     else
       @_cards
 
-  _filterCards: (filter, cards) =>
-    enabledTypes = @_enabledTypes(filter)
-    card for card in cards when @_matchesFilter(card, filter, enabledTypes: enabledTypes)
+  _filterCards: (filterArgs, cards) =>
+    enabledTypes = @_enabledTypes(filterArgs)
+    typeFilters = @_buildTypeFilters(filterArgs)
 
-  _matchesFilter: (card, filter, { enabledTypes }) =>
-    return (card.side == filter.side) and
-           (if enabledTypes? then enabledTypes[card.type] else true)
+    card for card in cards when @_matchesFilter(card, filterArgs, { enabledTypes, typeFilters })
 
-  _enabledTypes: (filter) =>
-    _.object([ descriptor.cardType, filter[name].enabled ] for name, descriptor of TYPE_FILTER_MAPPING)
+  # Returns true if the provided card matches
+  _matchesFilter: (card, filterArgs, { enabledTypes, typeFilters }) =>
+    return (card.side == filterArgs.side) and
+           (if enabledTypes? then enabledTypes[card.type] else true) and
+           (if typeFilters?.general? then typeFilters.general(card) else true) and
+           (if typeFilters?[card.type]? then typeFilters[card.type](card) else true)
+
+  # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
+  # they should be returned (true) or not (false).
+  _enabledTypes: (filterArgs) =>
+    _.object([ descriptor.cardType, filterArgs[name].enabled ] for name, descriptor of TYPE_FILTER_MAPPING)
+
+  _buildTypeFilters: (filterArgs) =>
+    # TODO re-evaluate the names used here -- it's feeling a bit confusing and wordy
+    typeFilters = {}
+    for name, descriptor of TYPE_FILTER_MAPPING when filterArgs[name]?.enabled and descriptor.fieldFilters?
+      typeFilterArgs = filterArgs[name]
+
+      # Generate a list of filter functions for this type
+      fieldFilterFuncs =
+        for filterName, filterDescriptor of descriptor.fieldFilters
+          fieldFilterArgs = typeFilterArgs[filterName]
+          if !fieldFilterArgs?
+            continue
+
+          switch filterDescriptor.type
+            when 'numeric'
+              if !fieldFilterArgs.value? or !fieldFilterArgs.operator?
+                continue
+              @_buildNumericFilter(filterDescriptor, fieldFilterArgs) # loop tail
+
+      if !_.isEmpty(fieldFilterFuncs)
+        typeFilters[descriptor.cardType] = _.partial(OPERATORS.and, fieldFilterFuncs)
+
+    typeFilters
+
+  # Returns a function that takes a card as an argument, returning true if it passes
+  # the filter, or false otherwise
+  _buildNumericFilter: (filterDescriptor, filterArgs) ->
+    (card) ->
+      cardFields =
+        if _.isArray(filterDescriptor.cardField)
+          filterDescriptor.cardField
+        else
+          [filterDescriptor.cardField]
+
+      for field in cardFields when card[field]?
+        fieldVal = card[field]
+        return OPERATORS[filterArgs.operator](fieldVal, filterArgs.value)
+
+      console.warn('Card has none of the expected fields', card: card, expectedFields: cardFields)
+      true
 
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
@@ -128,5 +203,10 @@ class CardService
         'Identities'
       else
         groupName
+
+  _augmentCards: (cards) ->
+    for card in cards
+      if card.type is 'ICE'
+        card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
 
 angular.module('deckBuilder').service 'cardService', CardService

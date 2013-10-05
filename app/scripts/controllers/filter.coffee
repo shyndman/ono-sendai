@@ -9,11 +9,10 @@ angular.module('deckBuilder')
       primaryGrouping: 'faction'
       secondaryGrouping: 'type'
       general:
+        enabled: true
         cost:
           operator: '='
         influenceValue:
-          operator: '='
-        trashCost:
           operator: '='
 
       identities:
@@ -35,7 +34,11 @@ angular.module('deckBuilder')
         points:
           operator: '='
 
-      assets: enabled: true
+      assets:
+        enabled: true
+        trashCost:
+          operator: '='
+
       operations: enabled: true
       upgrades: enabled: true
 
