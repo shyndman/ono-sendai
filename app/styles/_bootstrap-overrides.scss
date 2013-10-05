@@ -1,0 +1,7 @@
+// Not everything can be controlled through variables, so we have to directly override
+// some styles
+
+.form-control {
+  font-weight: 200;
+  box-shadow: none;
+}

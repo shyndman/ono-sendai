@@ -1,22 +1,22 @@
 <div class="cards">
   <div ng-repeat="group in cardGroups track by group.id" style="clear:both">
-    <h2 class="group-title {{group.id}}">{{group.title}}<small>{{group.cards[0].side}}</small></h2>
     <div ng-repeat="subgroup in group.subgroups track by subgroup.id" style="clear: both">
-      <h3 class="group-title">
-        {{subgroup.title}}
-        <small>(<ng-pluralize
+
+      <!-- Group header -->
+      <h2 class="{{group.id}} {{subground.id}}">{{subgroup.title}}<small>{{group.title}}</small>
+        <!--small>(<ng-pluralize
             count="subgroup.cards.length"
             when="{
               '1': '1 card',
               'other': '{} cards'
             }"></ng-pluralize>)
-        </small>
-      </h3>
+        </small-->
+      </h2>
+
       <ul class="list-unstyled">
         <li ng-repeat="card in subgroup.cards">
           <card>
             <img bn-lazy-src="{{card.imagesrc}}" class="card-graphic" alt="{{card.title}}">
-            <img src="/images/card-shadow.png" class="card-shadow">
           </card>
         </li>
       </ul>
