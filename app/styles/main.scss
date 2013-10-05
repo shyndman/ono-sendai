@@ -75,30 +75,33 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 5px 7px;
     margin: 5px;
 
-    color: rgba(255, 255, 255, 0.95);
     font-size: 22px;
     font-weight: 200;
     letter-spacing: 0.4px;
 
-    background: linear-gradient(to right, $neutral-dark-color 30%, $neutral-light-color);
-    box-shadow: inset 1px 1px 20px 4px rgba(0, 0, 0, 0.1),
-                1px 1px 4px lightgray;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-
     &.haas-bioroid {
-      background: linear-gradient(to right, $haas-dark-color 30%, $haas-light-color);
+      color: $haas-light-color;
+      border-bottom: 1px solid $haas-light-color;
     }
 
     &.jinteki {
-      background: linear-gradient(to right, $jinteki-dark-color 30%, $jinteki-light-color);
+      color: $jinteki-dark-color;
+      border-bottom: 1px solid $jinteki-dark-color;
     }
 
     &.nbn {
-      background: linear-gradient(to right, $nbn-dark-color 30%, $nbn-light-color);
+      color: $nbn-dark-color;
+      border-bottom: 1px solid $nbn-dark-color;
     }
 
     &.weyland {
-      background: linear-gradient(to right, $weyland-dark-color 30%, $weyland-light-color);
+      color: $weyland-dark-color;
+      border-bottom: 1px solid $weyland-dark-color;
+    }
+
+    &.neutral {
+      color: $neutral-light-color;
+      border-bottom: 1px solid $neutral-light-color;
     }
   }
 
