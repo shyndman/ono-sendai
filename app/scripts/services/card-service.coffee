@@ -62,7 +62,13 @@ class CardService
           cardField: 'trash'
     }
     operations: { cardType: 'Operation' },
-    upgrades:   { cardType: 'Upgrade' }
+    upgrades:   {
+      cardType: 'Upgrade'
+      fieldFilters:
+        trashCost:
+          type: 'numeric'
+          cardField: 'trash'
+    }
 
   OPERATORS = {
     'and': (predicates, args...) ->

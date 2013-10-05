@@ -70,8 +70,8 @@ NOTES:
       <div ng-show="filter.assets.enabled">
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
-          <label for="trash-cost-operator" class="control-label anr-symbol">⏏</label>
-          <numeric-filter id="trash-cost" filter-attr="filter.assets.trashCost" placeholder="Trash Cost"></numeric-filter>
+          <label for="asset-trash-cost-operator" class="control-label anr-symbol">⏏</label>
+          <numeric-filter id="asset-trash-cost" filter-attr="filter.assets.trashCost" placeholder="Trash Cost"></numeric-filter>
         </div>
       </div>
 
@@ -96,6 +96,13 @@ NOTES:
 
       <!-- ******** UPGRADES ******** -->
       <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.upgrades.enabled"> Upgrades</label></h5>
+      <div ng-show="filter.upgrades.enabled">
+        <!-- Trash Cost -->
+        <div class="form-group trash-cost-form-group">
+          <label for="upgrade-trash-cost-operator" class="control-label anr-symbol">⏏</label>
+          <numeric-filter id="upgrade-trash-cost" filter-attr="filter.upgrades.trashCost" placeholder="Trash Cost"></numeric-filter>
+        </div>
+      </div>
     </div>
   </div>
 </form>

@@ -39,6 +39,11 @@ angular.module('deckBuilder')
         trashCost:
           operator: '='
 
-      operations: enabled: true
-      upgrades: enabled: true
+      operations:
+        enabled: true
+
+      upgrades:
+        enabled: true
+        trashCost:
+          operator: '='
 
