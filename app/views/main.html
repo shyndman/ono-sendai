@@ -1,6 +1,6 @@
 <div class="cards">
   <div ng-repeat="group in cardGroups track by group.id" style="clear:both">
-    <h2 class="group-title">{{group.title}} <small>{{group.cards[0].side}}</small></h2>
+    <h2 class="group-title {{group.id}}">{{group.title}}<small>{{group.cards[0].side}}</small></h2>
     <div ng-repeat="subgroup in group.subgroups track by subgroup.id" style="clear: both">
       <h3 class="group-title">
         {{subgroup.title}}
