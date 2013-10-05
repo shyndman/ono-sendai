@@ -72,13 +72,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cards {
   h2 {
-    font-size: 22px;
     padding: 5px 7px;
     margin: 5px;
-    border-radius: 4px;
+
     color: rgba(255, 255, 255, 0.95);
+    font-size: 22px;
     font-weight: 200;
     letter-spacing: 0.4px;
+
     background: linear-gradient(to right, $neutral-dark-color 30%, $neutral-light-color);
     box-shadow: inset 1px 1px 20px 4px rgba(0, 0, 0, 0.1),
                 1px 1px 4px lightgray;
@@ -116,9 +117,9 @@ card {
   width: 216px;
   height: 302px;
   float: left;
-  margin: 5px;
+  margin: -4px;
   cursor: pointer;
-  transform: scale3d(0.93, 0.93, 1);
+  transform: scale3d(0.85, 0.85, 1);
   transition: transform $hover-duration;
 
   .card-graphic {
@@ -131,7 +132,7 @@ card {
   // We don't use box-shadow most of the time, but instead use a static image, so that
   // we get better scroll performance.
   .card-shadow {
-    transition: opacity $hover-duration;
+    transition: opacity ($hover-duration - .5s) ease-in;
     position: absolute;
     width: 103.5%;
     top: -4px;
@@ -139,7 +140,7 @@ card {
     z-index: -1;
   }
 
-  &:hover {
+  &.selected {
     transform: scale3d(1, 1, 1);
 
     .card-graphic {
