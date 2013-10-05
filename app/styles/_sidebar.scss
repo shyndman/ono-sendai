@@ -29,32 +29,7 @@
       letter-spacing: 0.3px;
     }
 
-    .check-status {
-      float: right;
-      position: relative;
-      top: -4px;
-      font-size: 14px;
-
-      .checked {
-        display: none;
-        color: cornflowerblue;
-      }
-      .unchecked {
-        display: block;
-        color: #aaa;
-      }
-    }
-
-    input:checked + .check-status {
-      .checked {
-        display: block;
-      }
-      .unchecked {
-        display: none;
-      }
-    }
-
-    // Hide the default visuals
+    // Hide the checkbox
     input {
       position: absolute;
       top: -9999px;
