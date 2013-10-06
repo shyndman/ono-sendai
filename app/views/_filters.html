@@ -9,34 +9,29 @@ NOTES:
 
   <!-- Cost -->
   <div class="form-group">
-    <label for="cost-filter-operator" class="control-label anr-symbol">¥</label>
+    <label for="cost-filter-operator" class="control-label anr-symbol"><i class="icon-credit"></i></label>
     <numeric-filter id="cost-filter" filter-attr="filter.general.cost" placeholder="Cost"></numeric-filter>
   </div>
 
   <!-- Influence -->
   <div class="form-group">
-    <label for="influence-value-filter-operator" class="control-label"><i class="icon-group"></i></label>
+    <label for="influence-value-filter-operator" class="control-label"><i class="icon-influence"></i></label>
     <numeric-filter id="influence-value-filter" filter-attr="filter.general.influenceValue" placeholder="Influence"></numeric-filter>
   </div>
 
   <!-- ******* IDENTITIES ******* -->
-  <h5 class="checkbox">
-    <label>
-      <input type="checkbox" tabindex="-1" ng-model="filter.identities.enabled">
-      Identities
-    </label>
-  </h5>
+  <h5 class="checkbox"><label><input type="checkbox" ng-model="filter.identities.enabled">Identities</label></h5>
 
   <div ng-show="filter.identities.enabled">
     <!-- Minimum deck size -->
     <div class="form-group">
-      <label for="minimum-deck-size-filter-operator" class="control-label"><i class="icon-stackexchange"></i></label>
+      <label for="minimum-deck-size-filter-operator" class="control-label"><i class="icon-minimum-deck-size"></i></label>
       <numeric-filter id="minimum-deck-size-filter" filter-attr="filter.identities.minimumDeckSize" placeholder="Min. Deck Size"></numeric-filter>
     </div>
 
     <!-- Influence limit -->
     <div class="form-group">
-      <label for="influence-limit-filter-operator" class="control-label"><i class="icon-group"></i></label>
+      <label for="influence-limit-filter-operator" class="control-label"><i class="icon-influence"></i></label>
       <numeric-filter id="influence-limit-filter" filter-attr="filter.identities.influenceLimit" placeholder="Influence Limit"></numeric-filter>
     </div>
   </div>
@@ -48,13 +43,13 @@ NOTES:
       <div ng-show="filter.programs.enabled">
         <!-- Breaker strength -->
         <div class="form-group">
-          <label for="breaker-strength-operator-btn" class="control-label"><i class="icon-signal"></i></label>
+          <label for="breaker-strength-operator-btn" class="control-label"><i class="icon-strength"></i></label>
           <numeric-filter filter-attr="filter.programs.breakerStrength" placeholder="Strength"></numeric-filter>
         </div>
 
         <!-- Memory units -->
         <div class="form-group mu-form-group">
-          <label for="memory-unit-operator-btn" class="control-label anr-symbol">⎗</label>
+          <label for="memory-unit-operator-btn" class="control-label"><i class="icon-memory-unit"></i></label>
           <numeric-filter filter-attr="filter.programs.memoryUnits" placeholder="Memory Units"></numeric-filter>
         </div>
       </div>
@@ -66,7 +61,7 @@ NOTES:
       <div ng-show="filter.agendas.enabled">
         <!-- Agenda points -->
         <div class="form-group">
-          <label for="agenda-points-operator" class="control-label"><i class="icon-asterisk"></i></label>
+          <label for="agenda-points-operator" class="control-label"><i class="icon-agenda-point"></i></label>
           <numeric-filter id="agenda-points" filter-attr="filter.agendas.points" placeholder="Agenda Points"></numeric-filter>
         </div>
       </div>
@@ -76,7 +71,7 @@ NOTES:
       <div ng-show="filter.assets.enabled">
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
-          <label for="asset-trash-cost-operator" class="control-label anr-symbol">⏏</label>
+          <label for="asset-trash-cost-operator" class="control-label"><i class="icon-trash-cost"></i></label>
           <numeric-filter id="asset-trash-cost" filter-attr="filter.assets.trashCost" placeholder="Trash Cost"></numeric-filter>
         </div>
       </div>
@@ -89,13 +84,13 @@ NOTES:
       <div ng-show="filter.ice.enabled">
         <!-- ICE strength -->
         <div class="form-group">
-          <label for="ice-strength-operator" class="control-label"><i class="icon-signal"></i></label>
+          <label for="ice-strength-operator" class="control-label"><i class="icon-strength"></i></label>
           <numeric-filter id="ice-strength" filter-attr="filter.ice.strength" placeholder="Strength"></numeric-filter>
         </div>
 
         <!-- ICE subroutine count -->
         <div class="form-group">
-          <label for="subroutine-count-operator" class="control-label anr-symbol">⏎</label>
+          <label for="subroutine-count-operator" class="control-label"><i class="icon-subroutine"></i></label>
           <numeric-filter id="subroutine-count" filter-attr="filter.ice.subroutineCount" placeholder="# Subroutines"></numeric-filter>
         </div>
       </div>
@@ -105,7 +100,7 @@ NOTES:
       <div ng-show="filter.upgrades.enabled">
         <!-- Trash Cost -->
         <div class="form-group trash-cost-form-group">
-          <label for="upgrade-trash-cost-operator" class="control-label anr-symbol">⏏</label>
+          <label for="upgrade-trash-cost-operator" class="control-label"><i class="icon-trash-cost"></i></label>
           <numeric-filter id="upgrade-trash-cost" filter-attr="filter.upgrades.trashCost" placeholder="Trash Cost"></numeric-filter>
         </div>
       </div>

@@ -1,0 +1,44 @@
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "anr_symbols";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-credit:before { content: '\e807'; }
+.icon-influence:before { content: '\e801'; }
+.icon-memory-unit:before { content: '\e809'; }
+.icon-link-strength:before { content: '\e80a'; }
+.icon-subroutine:before { content: '\e80c'; }
+.icon-trash-cost:before { content: '\e80b'; }
+.icon-click:before { content: '\e808'; }
+.icon-unchecked:before { content: '\e800'; }
+.icon-agenda-point:before { content: '\e803'; }
+.icon-minimum-deck-size:before { content: '\e804'; }
+.icon-type:before { content: '\e805'; }
+.icon-strength:before { content: '\e806'; }
+.icon-checked:before { content: '\e802'; }
