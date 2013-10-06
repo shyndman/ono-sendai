@@ -4,11 +4,11 @@
 // Library imports
 $FontAwesomePath: "/bower_components/font-awesome/font";
 @import "bootstrap-sass/lib/bootstrap";
-@import "font-awesome/scss/font-awesome";
 
 // Application imports
 @import "bootstrap-overrides";
 @import "fonts";
+@import "icons";
 @import "directives";
 @import "sidebar";
 
