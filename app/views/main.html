@@ -13,13 +13,9 @@
         </small-->
       </h2>
 
-      <ul class="list-unstyled">
-        <li ng-repeat="card in subgroup.cards">
-          <card>
-            <img bn-lazy-src="{{card.imagesrc}}" class="card-graphic" alt="{{card.title}}">
-          </card>
-        </li>
-      </ul>
+      <card ng-repeat="card in subgroup.cards">
+        <img bn-lazy-src="{{card.imagesrc}}" class="card-graphic" alt="{{card.title}}">
+      </card>
     </div>
   </div>
 </div>
