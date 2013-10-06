@@ -1,7 +1,7 @@
 # Wraps a client-side search engine library to expose search functionality to the application.
 class SearchService
   constructor: (@$q) ->
-    filters = [ @_dediacriticFilter ]
+    filters = [ _.stripDiacritics ]
     lunr.tokenizer = @_tokenize
     @_index = lunr ->
       @pipeline.before (->), filter for filter in filters
@@ -45,9 +45,6 @@ class SearchService
               .stripTags()
               .words()
               .value()
-
-  _dediacriticFilter: (token, tokenIndex, tokens) =>
-    _.stripDiacritics(token)
 
 # Register the service
 angular.module('deckBuilder').service 'searchService', SearchService
