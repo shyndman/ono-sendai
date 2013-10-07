@@ -16,7 +16,7 @@ _.mixin
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
 accentsRegex = ///[#{accentsFrom}]///g
-accentsMapping = _.object(_.zip(accentsFrom.split(''), accentsTo.split('')))
+accentsMapping = _.object(_.zip(_.str.chars(accentsFrom), _.str.chars(accentsTo)))
 
 _.mixin
   stripDiacritics: (str) ->
