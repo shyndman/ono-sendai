@@ -1,8 +1,8 @@
 'use strict'
 
 angular.module('deckBuilder')
-  .controller('FilterCtrl', ($scope) ->
-
+  .controller('FilterCtrl', ($scope, filterUI) ->
+    $scope.filterUI = filterUI
     $scope.selectGroup = (group) ->
       $scope.filter.selectedGroup = group
 

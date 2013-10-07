@@ -57,16 +57,14 @@ class CardService
 
   _filterCards: (filterArgs, cards) =>
     enabledTypes = @_enabledTypes(filterArgs)
-    typeFilters = @_buildTypeFilters(filterArgs, enabledTypes)
-
-    card for card in cards when @_matchesFilter(card, filterArgs, { enabledTypes, typeFilters })
+    filterFn = @_buildFilterFunction(filterArgs, enabledTypes)
+    card for card in cards when @_matchesFilter(card, filterArgs, { enabledTypes, filterFn })
 
   # Returns true if the provided card matches
-  _matchesFilter: (card, filterArgs, { enabledTypes, typeFilters }) =>
+  _matchesFilter: (card, filterArgs, { enabledTypes, filterFn }) =>
     return (card.side is filterArgs.side) and
            (if enabledTypes? then enabledTypes[card.type] else true) and
-           (if typeFilters?.general? then typeFilters.general(card) else true) and
-           (if typeFilters?[card.type]? then typeFilters[card.type](card) else true)
+           (if filterFn? then filterFn(card) else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
   # they should be returned (true) or not (false).
@@ -80,50 +78,30 @@ class CardService
       enabledTypes[cardType] = true
       enabledTypes
 
-  _buildTypeFilters: (filterArgs, enabledTypes) =>
-    typesToFilter = _.filter(filterArgs.filterGroups, (group) =>
-      cardType = @filterDescriptors[group.name].cardType
-      enabledTypes?[cardType] or group.name is 'general')
+  _buildFilterFunction: (filterArgs, enabledTypes) =>
+    filterGroups = ['general']
+    if filterArgs.selectedGroup
+      filterGroups.push(filterArgs.selectedGroup.name)
 
-    fieldsToFilter = _(typesToFilter)
-      .chain()
-      .map((g) -> [g.name, g.fieldFilters])
-      .object()
-      .value()
+    filters = _.flatten(
+      for groupName in filterGroups
+        groupDesc = @filterDescriptors[groupName]
+        continue if not groupDesc.fieldFilters?
 
-    return _.isEmpty(fieldsToFilter)
+        for fieldName, fieldDesc of groupDesc.fieldFilters
+          filterArg = filterArgs.fieldFilters[fieldName]
+          switch fieldDesc.type
+            when 'numeric'
+              if not filterArg.value? or not filterArg.operator?
+                continue
+              @_buildNumericFilter(fieldDesc, filterArg) # loop tail
+            when 'subtype'
+              ;)
 
-    for typeName, fieldFilters of fieldsToFilter
-      for filterArg in fieldFilters
-        filterDesc = @filterDescriptors[typeName].fieldFilters[filterArg.name]
-        switch filterDesc.type
-          when 'numeric'
-            if not filterArg.value? or not filterArg.operator?
-              continue
-            @_buildNumericFilter(filterDesc, filterArg) # loop tail
-          when 'subtype'
-            ;
-
-
-
-    # # TODO re-evaluate the names used here -- it's feeling a bit confusing and wordy
-    # typeFilters = {}
-    # for typeName, descriptor of @filterDescriptors when filterArgs[typeName]?.enabled and descriptor.fieldFilters?
-    #   typeFilterArgs = filterArgs[typeName]
-
-    #   # Generate a list of filter functions for this type
-    #   fieldFilterFuncs =
-    #     for filterName, filterDescriptor of descriptor.fieldFilters
-    #       fieldFilterArgs = typeFilterArgs[filterName]
-    #       if not fieldFilterArgs?
-    #         continue
-
-
-
-    #   if not _.isEmpty(fieldFilterFuncs)
-    #     typeFilters[descriptor.cardType] = _.partial(OPERATORS.and, fieldFilterFuncs)
-
-    # typeFilters
+    if _.isEmpty(filters)
+      null
+    else
+      _.partial(OPERATORS.and, filters)
 
   # Returns a function that takes a card as an argument, returning true if it passes
   # the filter, or false otherwise

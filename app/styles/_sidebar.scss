@@ -1,6 +1,5 @@
 
 .sidebar {
-  border-right: 1px solid $navbar-default-border;
   user-select: none;
 }
 
@@ -8,6 +7,7 @@
   width: 212px;
   min-width: 212px;
   overflow-y: auto;
+  border-right: 1px solid $navbar-default-border;
 
   .filter-group.general {
     h5 {
@@ -28,9 +28,14 @@
     letter-spacing: 0.3px;
     cursor: pointer;
 
-    background: #f8f8f8; // linear-gradient(, #f2f2f2);
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
+    background: #f8f8f8;
+    border:  1px solid $navbar-default-border;
+    border-left: none;
+    border-right: none;
+  }
+
+  .filter-group.active h5 {
+    // Figure out what we want to do here
   }
 
   .form-group {

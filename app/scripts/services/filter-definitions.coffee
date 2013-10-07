@@ -1,22 +1,44 @@
 angular.module('deckBuilder')
-  # Describes the filter user interface structure, as well as defaults for controls.
+  # Contains default values for the filters manipulated by the user interface
   .value('filterDefaults',
     side: 'Corp'
     primaryGrouping: 'faction'
     secondaryGrouping: 'type'
-    filterGroups: [
+    fieldFilters:
+      cost:
+        operator: '='
+      influenceValue:
+        operator: '='
+      influenceLimit:
+        operator: '='
+      minimumDeckSize:
+        operator: '='
+      points:
+        operator: '='
+      assetTrashCost:
+        operator: '='
+      subroutineCount:
+        operator: '='
+      iceStrength:
+        operator: '='
+      influence:
+        operator: '='
+      upgradeTrashCost:
+        operator: '='
+  )
+  # Describes the ordering, appearance and functionality of the filter sidebar
+  .constant('filterUI',
+    [
       {
         name: 'general'
         fieldFilters: [
           {
             name: 'cost'
-            operator: '='
             placeholder: 'Cost'
             icon: 'credit'
           }
           {
             name: 'influenceValue'
-            operator: '='
             placeholder: 'Influence'
             icon: 'influence'
           }
@@ -27,13 +49,11 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'influenceLimit'
-            operator: '='
             placeholder: 'Influence Limit'
             icon: 'influence'
           }
           {
             name: 'minimumDeckSize'
-            operator: '='
             placeholder: 'Min. Deck Size'
             icon: 'minimum-deck-size'
           }
@@ -44,7 +64,6 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'points'
-            operator: '='
             placeholder: 'Agenda Points'
             icon: 'agenda-point'
           }
@@ -54,8 +73,7 @@ angular.module('deckBuilder')
         name: 'assets'
         fieldFilters: [
           {
-            name: 'trashCost'
-            operator: '='
+            name: 'assetTrashCost'
             placeholder: 'Trash Cost'
             icon: 'trash-cost'
           }
@@ -69,13 +87,11 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'subroutineCount'
-            operator: '='
             placeholder: '# Subroutines'
             icon: 'subroutine'
           }
           {
-            name: 'strength'
-            operator: '='
+            name: 'iceStrength'
             placeholder: 'Strength'
             icon: 'strength'
           }
@@ -85,8 +101,7 @@ angular.module('deckBuilder')
         name: 'upgrades'
         fieldFilters: [
           {
-            name: 'trashCost'
-            operator: '='
+            name: 'upgradeTrashCost'
             placeholder: 'Trash Cost'
             icon: 'trash-cost'
           }
@@ -94,7 +109,6 @@ angular.module('deckBuilder')
       }
     ]
   )
-
   # Filter descriptors describe how the card service should interpret filter information coming from the user interface.
   .constant('filterDescriptors',
     general: {
