@@ -91,6 +91,8 @@ class CardService
       .object()
       .value()
 
+    return _.isEmpty(fieldsToFilter)
+
     for typeName, fieldFilters of fieldsToFilter
       for filterArg in fieldFilters
         filterDesc = @filterDescriptors[typeName].fieldFilters[filterArg.name]
