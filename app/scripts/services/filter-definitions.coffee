@@ -137,7 +137,7 @@ angular.module('deckBuilder')
         subroutineCount:
           type: 'numeric'
           cardField: 'subroutinecount'
-        strength:
+        iceStrength:
           type: 'numeric'
           cardField: 'strength'
     }
@@ -151,7 +151,7 @@ angular.module('deckBuilder')
     assets: {
       cardType: 'Asset'
       fieldFilters:
-        trashCost:
+        assetTrashCost:
           type: 'numeric'
           cardField: 'trash'
     }
@@ -161,7 +161,7 @@ angular.module('deckBuilder')
     upgrades:   {
       cardType: 'Upgrade'
       fieldFilters:
-        trashCost:
+        upgradeTrashCost:
           type: 'numeric'
           cardField: 'trash'
     })
