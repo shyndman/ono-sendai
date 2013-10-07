@@ -5,6 +5,13 @@ _.mixin
         return order if (order = fn(a, b)) isnt 0
       order
 
+  concat: ([arrays...]) ->
+    arr = []
+    for a in arrays
+      continue unless a?
+      arr = arr.concat(a)
+    arr
+
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"

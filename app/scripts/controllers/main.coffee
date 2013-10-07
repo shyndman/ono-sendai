@@ -1,4 +1,4 @@
 
 angular.module('deckBuilder')
-  .controller('MainCtrl', ($scope, filterDefinitions) ->
-    $scope.filter = filterDefinitions)
+  .controller('MainCtrl', ($scope, filterDefaults) ->
+    $scope.filter = filterDefaults)
