@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ono-Sendai</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" size="16x16" href="/images/3c06bd4b.favicon-16.png">
+  <link rel="icon" type="image/png" size="32x32" href="/images/2bddae59.favicon-32.png">
+  <link rel="stylesheet" href="styles/7ed85d91.main.css">
+</head>
+<body ng-app="deckBuilder" ng-controller="MainCtrl">
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+  <![endif]-->
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div>
+      <div class="navbar-header">
+        <span class="navbar-brand">Ono-Sendai</span>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" tabindex="-1">Card Browser</a></li>
+        <li><a href="#" tabindex="-1">Deck Builder</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <div class="page-and-sidebars">
+    <div id="filter-bar" class="sidebar" ng-include="'views/_filters.html'"></div>
+    <div class="page scrollable" ng-view=""></div>
+    <div id="right-sidebar" class="sidebar"></div>
+  </div>
+
+  <script src="scripts/a45aaaef.lib.js"></script>
+
+  <script src="scripts/69637533.app.js"></script>
+</body>
+</html>

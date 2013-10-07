@@ -1,0 +1,23 @@
+<div ng-controller="DatepickerDemoCtrl">
+    <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+    <div ng-model="dt" style="width: 280px">
+        <datepicker min="minDate" show-weeks="showWeeks"></datepicker>
+    </div>
+
+    <hr>
+
+    <div class="input-group">
+        <input class="form-control" type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+        <span class="input-group-btn">
+            <button class="btn btn-info" ng-click="open()"> <span class="glyphicon glyphicon-calendar"></span> </button>
+        </span>
+    </div>
+
+    <hr />
+    <button class="btn btn-sm btn-info" ng-click="today()">Today</button>
+    <button class="btn btn-sm btn-info" ng-click="dt = '2009-08-24'">2009-08-24</button>
+    <button class="btn btn-sm btn-success" ng-click="toggleWeeks()" tooltip="For inline datepicker">Toggle Weeks</button>
+    <button class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+    <button class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
+</div>
