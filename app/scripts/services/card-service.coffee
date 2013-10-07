@@ -165,4 +165,6 @@ class CardService
       if card.type is 'ICE'
         card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
 
-angular.module('deckBuilder').service('cardService', CardService)
+angular.module('deckBuilder')
+  .service 'cardService', ($http, searchService, filterDescriptors) ->
+    new CardService($http, searchService, filterDescriptors)

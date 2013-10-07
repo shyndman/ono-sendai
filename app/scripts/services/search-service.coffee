@@ -47,4 +47,6 @@ class SearchService
               .value()
 
 # Register the service
-angular.module('deckBuilder').service 'searchService', SearchService
+angular.module('deckBuilder')
+  .service 'searchService', ($q) ->
+    new SearchService($q)
