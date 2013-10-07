@@ -4,6 +4,6 @@ angular.module('deckBuilder', ['ngRoute'])
   .config(($locationProvider, $routeProvider) ->
     $routeProvider
       .when('/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl')
+        templateUrl: 'views/cards.html',
+        controller: 'CardsCtrl')
       .otherwise(redirectTo: '/'))

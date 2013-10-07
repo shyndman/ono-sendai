@@ -1,49 +1,25 @@
 'use strict'
 
 angular.module('deckBuilder')
-  .controller 'FilterCtrl', ($rootScope) ->
+  .controller('FilterCtrl', ($scope, filterUI) ->
+    $scope.filterUI = filterUI
+    $scope.selectGroup = (group) ->
+      $scope.filter.selectedGroup = group
 
-    # Set up filter defaults
-    $rootScope.filter =
-      side: 'Corp'
-      primaryGrouping: 'faction'
-      secondaryGrouping: 'type'
-      general:
-        enabled: true
-        cost:
-          operator: '='
-        influenceValue:
-          operator: '='
+      if group.name is 'general'
+        $scope.filter.primaryGrouping = 'faction'
+        $scope.filter.secondaryGrouping = 'type'
+      else
+        $scope.filter.primaryGrouping = 'type'
+        $scope.filter.secondaryGrouping = 'faction'
 
-      identities:
-        enabled: true
-        influenceLimit:
-          operator: '='
-        minimumDeckSize:
-          operator: '='
+    $scope.isActiveGroup = (group, selectedGroup) ->
+      if selectedGroup?
+        group.name is selectedGroup?.name
+      else
+        group.name is 'general'
 
-      ice:
-        enabled: true
-        subroutineCount:
-          operator: '='
-        strength:
-          operator: '='
-
-      agendas:
-        enabled: true
-        points:
-          operator: '='
-
-      assets:
-        enabled: true
-        trashCost:
-          operator: '='
-
-      operations:
-        enabled: true
-
-      upgrades:
-        enabled: true
-        trashCost:
-          operator: '='
-
+    $scope.areFieldsShown = (group, selectedGroup) ->
+      (group.name is 'general' and (!selectedGroup? or selectedGroup?.showGeneral)) or
+      (selectedGroup?.name == group.name)
+  )

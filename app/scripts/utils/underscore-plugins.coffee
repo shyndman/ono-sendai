@@ -5,11 +5,18 @@ _.mixin
         return order if (order = fn(a, b)) isnt 0
       order
 
+  concat: ([arrays...]) ->
+    arr = []
+    for a in arrays
+      continue unless a?
+      arr = arr.concat(a)
+    arr
+
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
 accentsRegex = ///[#{accentsFrom}]///g
-accentsMapping = _.object(_.zip(accentsFrom.split(''), accentsTo.split('')))
+accentsMapping = _.object(_.zip(_.str.chars(accentsFrom), _.str.chars(accentsTo)))
 
 _.mixin
   stripDiacritics: (str) ->

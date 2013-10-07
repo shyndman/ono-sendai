@@ -4,4 +4,10 @@
 .form-control {
   font-weight: 200;
   box-shadow: none;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
+
+

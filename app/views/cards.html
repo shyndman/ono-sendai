@@ -1,9 +1,8 @@
 <div class="cards">
   <div ng-repeat="group in cardGroups track by group.id" style="clear:both">
     <div ng-repeat="subgroup in group.subgroups track by subgroup.id" style="clear: both">
-
       <!-- Group header -->
-      <h2 class="{{group.id}} {{subground.id}}">{{subgroup.title}}<small>{{group.title}}</small>
+      <h2 class="{{group.id + ' ' + subgroup.id}}">{{subgroup.title}}<small>{{group.title}}</small>
         <!--small>(<ng-pluralize
             count="subgroup.cards.length"
             when="{
