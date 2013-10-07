@@ -117,8 +117,7 @@ class CardService
         fieldVal = card[field]
         return OPERATORS[filterArgs.operator](fieldVal, filterArgs.value)
 
-      console.warn('Card has none of the expected fields', card: card, expectedFields: cardFields)
-      true
+      false
 
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
