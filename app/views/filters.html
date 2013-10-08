@@ -13,7 +13,7 @@ NOTES:
 
     <div ng-repeat="field in group.fieldFilters"
          ng-show="isFieldShown(field, group, filter.selectedGroup)"
-         class="filter-group-fields {{field.name}} form-group">
+         class="filter-group-field {{field.name}} form-group">
 
       <label for="{{field.name}}-filter-operator" class="control-label">
         <i class="icon-{{field.icon}}"></i>
@@ -26,11 +26,22 @@ NOTES:
             <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
           </div>
         </div>
+        <div ng-switch-when="faction">
+          <div class="btn-group">
+            <button
+              class="btn btn-default btn-sm"
+              ng-repeat="faction in field.factions[filter.side.toLowerCase()]"
+              ng-model="filter.shownFactions[faction.model]"
+              btn-checkbox>{{faction.abbr}}
+            </button>
+          </div>
+        </div>
         <div ng-switch-when="numeric">
           <numeric-filter
             id="{{field.name}}-filter"
             filter-attr="filter.fieldFilters[field.name]"
-            placeholder="{{field.placeholder}}"></numeric-filter>
+            placeholder="{{field.placeholder}}">
+          </numeric-filter>
         </div>
       </div>
     </div>

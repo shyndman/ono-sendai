@@ -27,6 +27,6 @@ angular.module('deckBuilder')
         true
 
     $scope.isFieldShown = (field, group, selectedGroup) ->
-      (group.name is 'general' and !selectedGroup.hideGeneral) or
+      (group.name is 'general' and !selectedGroup.hiddenGeneralFields?[field.name]) or
       (selectedGroup.name == group.name)
   )

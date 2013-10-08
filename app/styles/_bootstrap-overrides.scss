@@ -10,6 +10,18 @@
   }
 }
 
+.btn-default {
+  &:focus {
+    border: 1px solid #66afe9 !important; // We need to show all borders when part of a button group
+    background-color: white;
+
+    &.active {
+      background-color: #ebebeb;
+    }
+  }
+}
+
+
 .navbar-default .navbar-nav > .active {
   > a, > a:hover, > a:focus {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);

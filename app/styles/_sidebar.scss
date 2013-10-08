@@ -54,7 +54,7 @@ $sidebar-width: 212px;
     }
   }
 
-  .filter-group-fields {
+  .filter-group-field {
     padding: 0 15px 0 3px;
     margin: 8px 0;
 
@@ -63,6 +63,13 @@ $sidebar-width: 212px;
       width: 45px;
       text-align: center;
       color: #777;
+    }
+
+    &.faction {
+      button {
+        padding-left: 6px;
+        padding-right: 6px;
+      }
     }
   }
 }

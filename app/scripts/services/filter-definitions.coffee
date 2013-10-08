@@ -4,6 +4,18 @@ angular.module('deckBuilder')
     side: 'Corp'
     primaryGrouping: 'faction'
     secondaryGrouping: 'type'
+
+    shownFactions:
+      haasBioroid: true
+      jinteki: true
+      nbn: true
+      weyland: true
+      corpNeutral: true
+      anarch: true
+      criminal: true
+      shaper: true
+      runnerNeutral: true
+
     fieldFilters:
       cost:
         operator: '='
@@ -38,6 +50,61 @@ angular.module('deckBuilder')
             icon: 'side'
           }
           {
+            name: 'faction'
+            type: 'faction'
+            icon: 'faction'
+            factions:
+              corp: [
+                {
+                  name: 'Haas-Bioroid'
+                  abbr: 'HB'
+                  model: 'haasBioroid'
+                }
+                {
+                  name: 'Jinteki'
+                  abbr: 'J'
+                  model: 'jinteki'
+                }
+                {
+                  name: 'NBN'
+                  abbr: 'NBN'
+                  model: 'nbn'
+                }
+                {
+                  name: 'Weyland Consortium'
+                  abbr: 'W'
+                  model: 'weyland'
+                }
+                {
+                  name: 'Neutral'
+                  abbr: 'N'
+                  model: 'corpNeutral'
+                }
+              ]
+              runner: [
+                {
+                  name: 'Anarch'
+                  abbr: 'A'
+                  model: 'anarch'
+                }
+                {
+                  name: 'Criminal'
+                  abbr: 'C'
+                  model: 'criminal'
+                }
+                {
+                  name: 'Shaper'
+                  abbr: 'S'
+                  model: 'shaper'
+                }
+                {
+                  name: 'Neutral'
+                  abbr: 'N'
+                  model: 'runnerNeutral'
+                }
+              ]
+          }
+          {
             name: 'cost'
             type: 'numeric'
             placeholder: 'Cost'
@@ -53,7 +120,9 @@ angular.module('deckBuilder')
       },
       {
         name: 'identities'
-        hideGeneral: true
+        hiddenGeneralFields:
+          cost: true
+          influenceValue: true
         fieldFilters: [
           {
             name: 'influenceLimit'
