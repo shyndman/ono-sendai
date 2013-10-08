@@ -167,8 +167,11 @@ class CardService
 
   _augmentCards: (cards) ->
     for card in cards
-      if card.type is 'ICE'
-        card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
+      switch card.type
+        when 'ICE'
+          card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
+        when 'Identity'
+          delete card.cost
 
 angular.module('deckBuilder')
   .service 'cardService', ($http, searchService, filterDescriptors) ->
