@@ -44,13 +44,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: 'anr';
     text-transform: uppercase;
     text-align: center;
-
-    .anr-symbol {
-      height: 23px;
-      display: inline-block;
-      font-size: 0.9em;
-      vertical-align: text-bottom;
-    }
+    padding-top: 18px;
   }
 
   .navbar-nav > li > a {
