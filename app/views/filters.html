@@ -13,7 +13,9 @@ NOTES:
          ng-show="areFieldsShown(group, filter.selectedGroup)"
          class="form-group">
       <label for="{{field.name}}-filter-operator" class="control-label"><i class="icon-{{field.icon}}"></i></label>
-      <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}"></numeric-filter>
+      <div ng-switch on="field.type">
+        <numeric-filter ng-switch-when="numeric" id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}"></numeric-filter>
+      </div>
     </div>
   </div>
 </form>

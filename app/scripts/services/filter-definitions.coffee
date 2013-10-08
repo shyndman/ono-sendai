@@ -34,11 +34,13 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'cost'
+            type: 'numeric'
             placeholder: 'Cost'
             icon: 'credit'
           }
           {
             name: 'influenceValue'
+            type: 'numeric'
             placeholder: 'Influence'
             icon: 'influence'
           }
@@ -50,11 +52,13 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'influenceLimit'
+            type: 'numeric'
             placeholder: 'Influence Limit'
             icon: 'influence'
           }
           {
             name: 'minimumDeckSize'
+            type: 'numeric'
             placeholder: 'Min. Deck Size'
             icon: 'minimum-deck-size'
           }
@@ -65,6 +69,7 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'points'
+            type: 'numeric'
             placeholder: 'Agenda Points'
             icon: 'agenda-point'
           }
@@ -75,6 +80,7 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'assetTrashCost'
+            type: 'numeric'
             placeholder: 'Trash Cost'
             icon: 'trash-cost'
           }
@@ -88,11 +94,13 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'subroutineCount'
+            type: 'numeric'
             placeholder: '# Subroutines'
             icon: 'subroutine'
           }
           {
             name: 'iceStrength'
+            type: 'numeric'
             placeholder: 'Strength'
             icon: 'strength'
           }
@@ -103,6 +111,7 @@ angular.module('deckBuilder')
         fieldFilters: [
           {
             name: 'upgradeTrashCost'
+            type: 'numeric'
             placeholder: 'Trash Cost'
             icon: 'trash-cost'
           }
