@@ -46,9 +46,6 @@ angular.module('deckBuilder')
       parent = element.parent()
       toggle = parent.find('.dropdown-toggle')
 
-      element.click (e) ->
-        toggle.focus()
-
       element.keydown (e) ->
         return unless jwerty.is('esc/up/down/enter/space', e)
 
@@ -65,7 +62,6 @@ angular.module('deckBuilder')
           return
         else if jwerty.is('enter/space', e)
           $(e.target).click()
-          toggle.focus()
           return
 
         items = element.find('a')
