@@ -4,19 +4,17 @@ angular.module('deckBuilder')
     side: 'Corp'
     primaryGrouping: 'faction'
     secondaryGrouping: 'type'
-
-    shownFactions:
-      haasBioroid: true
-      jinteki: true
-      nbn: true
-      weyland: true
-      corpNeutral: true
-      anarch: true
-      criminal: true
-      shaper: true
-      runnerNeutral: true
-
     fieldFilters:
+      factions:
+        haasBioroid: true
+        jinteki: true
+        nbn: true
+        weyland: true
+        corpNeutral: true
+        anarch: true
+        criminal: true
+        shaper: true
+        runnerNeutral: true
       cost:
         operator: '='
       influenceValue:
@@ -219,6 +217,9 @@ angular.module('deckBuilder')
     general: {
       cardType: 'general'
       fieldFilters:
+        faction:
+          type: 'inSet'
+          cardField: 'Faction'
         cost:
           type: 'numeric'
           cardField: [ 'advancementcost', 'cost' ]

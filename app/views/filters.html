@@ -31,7 +31,7 @@ NOTES:
             <button
               class="btn btn-default btn-sm"
               ng-repeat="faction in field.factions[filter.side.toLowerCase()]"
-              ng-model="filter.shownFactions[faction.model]"
+              ng-model="filter.fieldFilters.factions[faction.model]"
               btn-checkbox>{{faction.abbr}}
             </button>
           </div>
