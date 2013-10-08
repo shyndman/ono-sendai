@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('deckBuilder')
   .controller('FilterCtrl', ($scope, filterUI) ->
     $scope.filterUI = filterUI
@@ -18,10 +16,13 @@ angular.module('deckBuilder')
     $scope.isActiveGroup = (group, selectedGroup) ->
       group.name is selectedGroup.name
 
-    $scope.isGroupShown = (group) ->
-      true
+    $scope.isGroupShown = (group, currentSide) ->
+      if group.side?
+        group.side == currentSide
+      else
+        true
 
-    $scope.areFieldsShown = (group, selectedGroup) ->
+    $scope.isFieldShown = (field, group, selectedGroup) ->
       (group.name is 'general' and !selectedGroup.hideGeneral) or
       (selectedGroup.name == group.name)
   )

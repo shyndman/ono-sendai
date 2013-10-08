@@ -33,6 +33,11 @@ angular.module('deckBuilder')
         name: 'general'
         fieldFilters: [
           {
+            name: 'side'
+            type: 'side'
+            icon: 'side'
+          }
+          {
             name: 'cost'
             type: 'numeric'
             placeholder: 'Cost'
@@ -66,6 +71,7 @@ angular.module('deckBuilder')
       },
       {
         name: 'agendas'
+        side: 'Corp'
         fieldFilters: [
           {
             name: 'points'
@@ -77,6 +83,7 @@ angular.module('deckBuilder')
       },
       {
         name: 'assets'
+        side: 'Corp'
         fieldFilters: [
           {
             name: 'assetTrashCost'
@@ -88,9 +95,11 @@ angular.module('deckBuilder')
       },
       {
         name: 'operations'
+        side: 'Corp'
       },
       {
         name: 'ice'
+        side: 'Corp'
         fieldFilters: [
           {
             name: 'subroutineCount'
@@ -108,6 +117,7 @@ angular.module('deckBuilder')
       },
       {
         name: 'upgrades'
+        side: 'Corp'
         fieldFilters: [
           {
             name: 'upgradeTrashCost'
@@ -116,6 +126,22 @@ angular.module('deckBuilder')
             icon: 'trash-cost'
           }
         ]
+      },
+      {
+        name: 'events'
+        side: 'Runner'
+      },
+      {
+        name: 'hardware'
+        side: 'Runner'
+      },
+      {
+        name: 'programs'
+        side: 'Runner'
+      },
+      {
+        name: 'resources'
+        side: 'Runner'
       }
     ]
   )
@@ -169,10 +195,22 @@ angular.module('deckBuilder')
     operations: {
       cardType: 'Operation'
     },
-    upgrades:   {
+    upgrades: {
       cardType: 'Upgrade'
       fieldFilters:
         upgradeTrashCost:
           type: 'numeric'
           cardField: 'trash'
+    }
+    events: {
+      cardType: 'Event'
+    }
+    hardware: {
+      cardType: 'Hardware'
+    }
+    programs: {
+      cardType: 'Program'
+    }
+    resources: {
+      cardType: 'Resource'
     })
