@@ -80,7 +80,9 @@ class CardService
 
   _buildFilterFunction: (filterArgs, enabledTypes) =>
     filterGroups = ['general']
-    if filterArgs.selectedGroup
+    selGroup = filterArgs.selectedGroup
+    if selGroup?
+      filterGroups = [] if @filterDescriptors[selGroup.name].excludeGeneral
       filterGroups.push(filterArgs.selectedGroup.name)
 
     filters = _.flatten(

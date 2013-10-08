@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', (cardService, $scope) ->
+  .controller('CardsCtrl', (cardService, $scope, $window) ->
 
     $scope.$watch('filter', ((filter)->
       # We don't directly assign the promise, because if we do, even cards that

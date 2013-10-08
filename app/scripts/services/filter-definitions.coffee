@@ -46,7 +46,7 @@ angular.module('deckBuilder')
       },
       {
         name: 'identities'
-        showGeneral: false
+        hideGeneral: true
         fieldFilters: [
           {
             name: 'influenceLimit'
@@ -62,7 +62,6 @@ angular.module('deckBuilder')
       },
       {
         name: 'agendas'
-        showGeneral: true
         fieldFilters: [
           {
             name: 'points'
@@ -73,7 +72,6 @@ angular.module('deckBuilder')
       },
       {
         name: 'assets'
-        showGeneral: true
         fieldFilters: [
           {
             name: 'assetTrashCost'
@@ -84,11 +82,9 @@ angular.module('deckBuilder')
       },
       {
         name: 'operations'
-        showGeneral: true
       },
       {
         name: 'ice'
-        showGeneral: true
         fieldFilters: [
           {
             name: 'subroutineCount'
@@ -104,7 +100,6 @@ angular.module('deckBuilder')
       },
       {
         name: 'upgrades'
-        showGeneral: true
         fieldFilters: [
           {
             name: 'upgradeTrashCost'
@@ -129,6 +124,7 @@ angular.module('deckBuilder')
     }
     identities: {
       cardType: 'Identity'
+      excludeGeneral: true
       fieldFilters:
         influenceLimit:
           type: 'numeric'

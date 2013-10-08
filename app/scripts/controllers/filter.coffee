@@ -20,6 +20,6 @@ angular.module('deckBuilder')
         group.name is 'general'
 
     $scope.areFieldsShown = (group, selectedGroup) ->
-      (group.name is 'general' and (!selectedGroup? or selectedGroup?.showGeneral)) or
+      (group.name is 'general' and !selectedGroup?.hideGeneral) or
       (selectedGroup?.name == group.name)
   )
