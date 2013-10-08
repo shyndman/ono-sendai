@@ -36,6 +36,7 @@ $sidebar-width: 212px;
   }
 
   h5 {
+    margin-top: 0;
     margin-bottom: 2px;
     padding: 5px 4px 5px 10px;
 
@@ -55,6 +56,7 @@ $sidebar-width: 212px;
   }
 
   .filter-group.active h5 {
+    // box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     // Figure out what we want to do here
   }
 
