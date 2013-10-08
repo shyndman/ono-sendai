@@ -4,12 +4,34 @@ NOTES:
 -->
 
 <form class="form form-horizontal" role="form" ng-controller="FilterCtrl">
-  <div ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.selectedGroup) }" class="filter-group {{group.name}}">
+  <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.selectedGroup) }" ng-show="isGroupShown(group, filter.side)">
 
     <h5 ng-click="selectGroup(group)">{{group.name}}</h5>
-    <div ng-repeat="field in group.fieldFilters" ng-show="areFieldsShown(group, filter.selectedGroup)" class="form-group">
-      <label for="{{field.name}}-filter-operator" class="control-label"><i class="icon-{{field.icon}}"></i></label>
-      <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}"></numeric-filter>
+
+    <div ng-repeat="field in group.fieldFilters" ng-show="isFieldShown(field, group, filter.selectedGroup)" class="filter-group-field {{field.name}} form-group">
+
+      <label for="{{field.name}}-filter-operator" class="control-label">
+        <i class="icon-{{field.icon}}"></i>
+      </label>
+
+      <div ng-switch="" on="field.type">
+        <div ng-switch-when="side">
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
+            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
+          </div>
+        </div>
+        <div ng-switch-when="faction">
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm" ng-repeat="faction in field.factions[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.factions[faction.model]" btn-checkbox="">{{faction.abbr}}
+            </button>
+          </div>
+        </div>
+        <div ng-switch-when="numeric">
+          <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}">
+          </numeric-filter>
+        </div>
+      </div>
     </div>
   </div>
 </form>
