@@ -109,6 +109,21 @@ input[type=number]::-webkit-outer-spin-button {
       border-bottom: 1px solid transparentize($weyland-dark-color, (1 - $underline-opacity));
     }
 
+    &.anarch {
+      color: $anarch-dark-color;
+      border-bottom: 1px solid transparentize($anarch-dark-color, (1 - $underline-opacity));
+    }
+
+    &.criminal {
+      color: $criminal-dark-color;
+      border-bottom: 1px solid transparentize($criminal-dark-color, (1 - $underline-opacity));
+    }
+
+    &.shaper {
+      color: $shaper-dark-color;
+      border-bottom: 1px solid transparentize($shaper-dark-color, (1 - $underline-opacity));
+    }
+
     small {
       margin-left: 10px;
       font-size: 17px;
