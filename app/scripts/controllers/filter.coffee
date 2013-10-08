@@ -6,6 +6,8 @@ angular.module('deckBuilder')
 
     $scope.$watch 'filter.side', (newSide) ->
       $scope.filter.selectedGroup = generalGroup
+      $scope.filter.primaryGrouping = 'faction'
+      $scope.filter.secondaryGrouping = 'type'
 
     $scope.selectGroup = (group) ->
       $scope.filter.selectedGroup = group
