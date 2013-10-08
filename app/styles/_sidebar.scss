@@ -4,7 +4,7 @@ $sidebar-width: 212px;
   user-select: none;
 }
 
-#transformation-bar {
+.transformation-bar {
   height: 30px;
   min-height: 30px;
   border-bottom: 1px solid #e7e7e7;
@@ -14,6 +14,12 @@ $sidebar-width: 212px;
   .btn {
     font-size: 12px;
     height: 30px;
+    background: none;
+    border: none;
+
+    &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
+      background: #f4f4f4;
+    }
   }
 }
 
