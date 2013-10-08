@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/png" size="16x16" href="images/3c06bd4b.favicon-16.png">
   <link rel="icon" type="image/png" size="32x32" href="images/2bddae59.favicon-32.png">
-  <link rel="stylesheet" href="styles/e610b3be.main.css">
+  <link rel="stylesheet" href="styles/797ed077.main.css">
 </head>
 <body ng-app="deckBuilder" ng-controller="MainCtrl">
   <!--[if lt IE 7]>
@@ -40,14 +40,17 @@
     </div>
   </nav>
 
-  <div class="page-and-sidebars">
+  <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar" ng-include="'views/filters.html'"></div>
-    <div class="page scrollable" ng-view=""></div>
+    <div class="app-inner-layout">
+      <div class="transformation-bar" ng-include="'views/transformations.html'"></div>
+      <div class="page scrollable" ng-view=""></div>
+    </div>
     <div id="right-sidebar" class="sidebar"></div>
   </div>
 
-  <script src="scripts/1c017856.lib.js"></script>
+  <script src="scripts/13e5becc.lib.js"></script>
 
-  <script src="scripts/f2f88e94.app.js"></script>
+  <script src="scripts/37cbdb22.app.js"></script>
 </body>
 </html>

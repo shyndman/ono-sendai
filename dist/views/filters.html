@@ -6,7 +6,7 @@ NOTES:
 <form class="form form-horizontal" role="form" ng-controller="FilterCtrl">
   <div ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.selectedGroup) }" class="filter-group {{group.name}}">
 
-    <h5 class="checkbox" ng-click="selectGroup(group)">{{group.name}}</h5>
+    <h5 ng-click="selectGroup(group)">{{group.name}}</h5>
     <div ng-repeat="field in group.fieldFilters" ng-show="areFieldsShown(group, filter.selectedGroup)" class="form-group">
       <label for="{{field.name}}-filter-operator" class="control-label"><i class="icon-{{field.icon}}"></i></label>
       <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}"></numeric-filter>
