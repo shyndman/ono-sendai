@@ -1,3 +1,9 @@
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+$headings-font-weight: 200;
+$btn-font-weight: 200;
+
 // Not everything can be controlled through variables, so we have to directly override
 // some styles
 
@@ -9,5 +15,3 @@
     box-shadow: none;
   }
 }
-
-
