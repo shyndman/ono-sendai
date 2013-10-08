@@ -20,16 +20,18 @@ NOTES:
       </label>
 
       <div ng-switch on="field.type">
-        <div ng-switch-when="side"
-             class="btn-group">
-          <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
-          <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
+        <div ng-switch-when="side">
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
+            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
+          </div>
         </div>
-        <numeric-filter
-             ng-switch-when="numeric"
-             id="{{field.name}}-filter"
-             filter-attr="filter.fieldFilters[field.name]"
-             placeholder="{{field.placeholder}}" >
+        <div ng-switch-when="numeric">
+          <numeric-filter
+            id="{{field.name}}-filter"
+            filter-attr="filter.fieldFilters[field.name]"
+            placeholder="{{field.placeholder}}"></numeric-filter>
+        </div>
       </div>
     </div>
   </div>
