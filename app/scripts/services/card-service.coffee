@@ -98,7 +98,10 @@ class CardService
                 continue
               @_buildNumericFilter(fieldDesc, filterArg) # loop tail
             when 'subtype'
-              ;)
+              ;
+            else
+              console.warn "Unknown filter type: #{ fieldDesc.type }"
+              continue)
 
     if _.isEmpty(filters)
       null
