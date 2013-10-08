@@ -43,6 +43,12 @@ angular.module('deckBuilder')
   .directive('dropdownMenu', ($document) ->
     restrict: 'CA'
     link: (scope, element, attrs) ->
+      parent = element.parent()
+      toggle = parent.find('.dropdown-toggle')
+
+      element.click (e) ->
+        toggle.focus()
+
       element.keydown (e) ->
         return unless jwerty.is('esc/up/down/enter/space', e)
 
@@ -51,9 +57,7 @@ angular.module('deckBuilder')
 
         return if element.is('.disabled, :disabled')
 
-        parent = element.parent()
         isActive = parent.hasClass('open')
-        toggle = parent.find('.dropdown-toggle')
 
         if jwerty.is('esc', e)
           toggle.click()
