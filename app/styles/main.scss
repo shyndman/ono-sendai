@@ -67,6 +67,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .app-inner-layout {
   width: 100%;
+  width: calc(100% - #{$sidebar-width}); // This is so Safari doesn't give too much space to the inner layout
   display: flex;
   flex-group: 1;
   flex-direction: column;

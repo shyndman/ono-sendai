@@ -1,3 +1,4 @@
+$sidebar-width: 212px;
 
 .sidebar {
   user-select: none;
@@ -17,8 +18,8 @@
 }
 
 #filter-bar {
-  width: 212px;
-  min-width: 212px;
+  width: $sidebar-width;
+  min-width: $sidebar-width;
   overflow-y: auto;
   border-right: 1px solid $navbar-default-border;
 
