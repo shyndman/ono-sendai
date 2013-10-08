@@ -125,9 +125,18 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     small {
+      font-weight: 200;
+    }
+
+    small.secondary-group {
       margin-left: 10px;
       font-size: 17px;
-      font-weight: 200;
+    }
+
+    small.card-count {
+      float: right;
+      font-size: 13px;
+      margin: 11px 10px 0 0;
     }
   }
 }
