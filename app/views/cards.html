@@ -1,4 +1,4 @@
-<div class="cards">
+<div ng-controller="CardsCtrl" class="cards">
   <div ng-repeat="group in cardGroups track by group.id" style="clear:both">
     <div ng-repeat="subgroup in group.subgroups track by subgroup.id" style="clear: both">
       <!-- Group header -->
