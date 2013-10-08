@@ -3,6 +3,19 @@
   user-select: none;
 }
 
+#transformation-bar {
+  height: 30px;
+  min-height: 30px;
+  border-bottom: 1px solid #e7e7e7;
+  background: #f8f8f8;
+  text-align: right;
+
+  .btn {
+    font-size: 12px;
+    height: 30px;
+  }
+}
+
 #filter-bar {
   width: 212px;
   min-width: 212px;

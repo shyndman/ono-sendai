@@ -42,9 +42,12 @@
     </div>
   </nav>
 
-  <div class="page-and-sidebars">
+  <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar" ng-include="'views/filters.html'"></div>
-    <div class="page scrollable" ng-view></div>
+    <div class="app-inner-layout">
+      <div id="transformation-bar" ng-include="'views/transformations.html'"></div>
+      <div class="page scrollable" ng-view></div>
+    </div>
     <div id="right-sidebar" class="sidebar"></div>
   </div>
 
