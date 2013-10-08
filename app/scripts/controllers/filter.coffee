@@ -1,7 +1,11 @@
 angular.module('deckBuilder')
   .controller('FilterCtrl', ($scope, filterUI) ->
     $scope.filterUI = filterUI
-    $scope.filter.selectedGroup = _.findWhere(filterUI, name: 'general')
+    generalGroup = _.findWhere(filterUI, name: 'general')
+    $scope.filter.selectedGroup = generalGroup
+
+    $scope.$watch 'filter.side', (newSide) ->
+      $scope.filter.selectedGroup = generalGroup
 
     $scope.selectGroup = (group) ->
       $scope.filter.selectedGroup = group
