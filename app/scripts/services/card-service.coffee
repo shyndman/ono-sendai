@@ -167,6 +167,12 @@ class CardService
 
   _augmentCards: (cards) ->
     for card in cards
+      card.subtypes =
+        if card.subtype?
+          card.subtype.split(' - ')
+        else
+          []
+
       switch card.type
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
