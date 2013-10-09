@@ -40,11 +40,13 @@ class SearchService
       obj.map (t) -> t.toLowerCase()
     else
       str = obj.toString().replace(/[\[\]{}'"]/g, ' ')
-      words =
-        _(str).chain()
-              .stripTags()
-              .words()
-              .value()
+      _(str)
+        .chain()
+        .stripTags()
+        .words()
+        .map((word) -> word.split('-'))
+        .flatten()
+        .value()
 
 # Register the service
 angular.module('deckBuilder')
