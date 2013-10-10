@@ -149,7 +149,7 @@ class CardService
         .map((pair) =>
           id: pair[0].toLowerCase(),
           sortField: pair[0],
-          title: @_groupTitle(pair[0]),
+          title: pair[0]
           subgroups: pair[1])
         .sortBy('sortField')
         .value()
@@ -163,23 +163,13 @@ class CardService
           .pairs()
           .map((pair) =>
             id: "#{pair[0].toLowerCase()}",
-            title: @_groupTitle(pair[0]),
+            title: pair[0]
             sortField: pair[0],
             cards: _.sortBy(pair[1], 'title'))
           .sortBy((subgroup) -> CARD_ORDINALS[subgroup.sortField])
           .value()
 
     primaryGroups
-
-  _groupTitle: (groupName) ->
-    # TODO This needs a rethink/refactor
-    switch groupName
-      when 'Agenda', 'Asset', 'Operation', 'Upgrade', 'Event', 'Program', 'Resource'
-        "#{groupName}s"
-      when 'Identity'
-        'Identities'
-      else
-        groupName
 
   _augmentCards: (cards) ->
     for card in cards
