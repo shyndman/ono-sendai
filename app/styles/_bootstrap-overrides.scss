@@ -1,10 +1,12 @@
+$focus-transition-duration: 0.2s;
+
 // Not everything can be controlled through variables, so we have to directly override
 // some styles
 
 .form-control {
   font-weight: 200;
   box-shadow: none;
-  transition-duration: 0.2s;
+  transition-duration: $focus-transition-duration;
 
   &:focus {
     box-shadow: none;
@@ -23,6 +25,10 @@
 }
 
 .btn-group  {
+  > .btn {
+    transition: border-color ease-in-out $focus-transition-duration;
+  }
+
   > .btn:focus + .btn {
     border-left: 1px solid $input-border-focus;
   }
