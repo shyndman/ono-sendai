@@ -142,14 +142,13 @@ class CardService
     primaryGroups =
       _(cards)
         .chain()
+        .sortBy(primaryGrouping)
         .groupBy(primaryGrouping)
         .pairs()
         .map((pair) =>
           id: pair[0].toLowerCase(),
-          sortField: pair[0],
           title: pair[0]
           subgroups: pair[1])
-        .sortBy('sortField')
         .value()
 
     # Build secondary groups
@@ -157,14 +156,13 @@ class CardService
       group.subgroups =
         _(group.subgroups)
           .chain()
+          .sortBy(secondaryGrouping)
           .groupBy(secondaryGrouping)
           .pairs()
           .map((pair) =>
             id: "#{pair[0].toLowerCase()}",
             title: pair[0]
-            sortField: pair[0],
             cards: _.sortBy(pair[1], 'title'))
-          .sortBy((subgroup) -> CARD_ORDINALS[subgroup.sortField])
           .value()
 
     primaryGroups
