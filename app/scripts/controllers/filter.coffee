@@ -9,7 +9,7 @@ angular.module('deckBuilder')
       $scope.filter.primaryGrouping = 'faction'
       $scope.filter.secondaryGrouping = 'type'
 
-    $scope.selectGroup = (group) ->
+    $scope.activateGroup = (group) ->
       $scope.filter.activeGroup = group
 
       if group.name is 'general'
