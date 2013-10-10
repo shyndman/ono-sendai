@@ -30,8 +30,8 @@ NOTES:
           <div class="btn-group">
             <button
               class="btn btn-default btn-sm"
-              ng-repeat="faction in field.factions[filter.side.toLowerCase()]"
-              ng-model="filter.fieldFilters.factions[faction.model]"
+              ng-repeat="faction in field.faction[filter.side.toLowerCase()]"
+              ng-model="filter.fieldFilters.faction[faction.model]"
               btn-checkbox>{{faction.abbr}}
             </button>
           </div>

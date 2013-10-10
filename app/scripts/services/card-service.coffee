@@ -97,8 +97,8 @@ class CardService
               if not filterArg.value? or not filterArg.operator?
                 continue
               @_buildNumericFilter(fieldDesc, filterArg) # loop tail
-            when 'subtype'
-              ;
+            when 'inSet'
+              @_buildInSetFilter(fieldDesc, filterArg)
             else
               console.warn "Unknown filter type: #{ fieldDesc.type }"
               continue)
@@ -108,8 +108,7 @@ class CardService
     else
       _.partial(OPERATORS.and, filters)
 
-  # Returns a function that takes a card as an argument, returning true if it passes
-  # the filter, or false otherwise
+  # TODO document
   _buildNumericFilter: (filterDescriptor, filterArgs) ->
     (card) ->
       cardFields =
@@ -123,6 +122,23 @@ class CardService
         return OPERATORS[filterArgs.operator](fieldVal, filterArgs.value)
 
       false
+
+  # TODO document
+  _buildInSetFilter: (filterDescriptor, filterArgs) ->
+    (card) ->
+      # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
+      #     This could probably be accomplished differently, but quick and dirty for now.
+      fieldVal =
+        if filterDescriptor.cardField is 'faction'
+          "#{ card.side }: #{ card.faction }"
+        else
+          card[filterDescriptor.cardField]
+
+      # Now that we have the card value, we have to map it to the boolean field in the filter
+      # argument.
+      filterArgs[filterDescriptor.modelMappings[fieldVal]]
+
+
 
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
