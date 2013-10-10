@@ -29,7 +29,7 @@ angular.module('deckBuilder')
       var documentDelay = 2000;
 
       // I determine if the window dimension events
-      // (ie. resize, scroll) are currenlty being
+      // (ie. resize, scroll) are currently being
       // monitored for changes.
       var isWatchingWindow = false;
 
@@ -191,7 +191,8 @@ angular.module('deckBuilder')
       // Return the public API.
       return({
         addImage: addImage,
-        removeImage: removeImage
+        removeImage: removeImage,
+        windowChanged: windowChanged
       });
     })();
 
@@ -304,7 +305,7 @@ angular.module('deckBuilder')
 
 
     // I bind the UI events to the scope.
-    function link($scope, element, attributes) {
+    function link(scope, element, attributes) {
       var lazyImage = new LazyImage(element);
 
       // Start watching the image for changes in its
@@ -317,9 +318,14 @@ angular.module('deckBuilder')
         lazyImage.setSource(newSource);
       });
 
+      // Whenever the card filter changes, poke the lazy loader to check for visible images.
+      scope.$watch('filter', function() {
+        lazyLoader.windowChanged();
+      }, true)
+
       // When the scope is destroyed, we need to remove
       // the image from the render queue.
-      $scope.$on("$destroy", function() {
+      scope.$on("$destroy", function() {
         lazyLoader.removeImage(lazyImage);
       });
     }
