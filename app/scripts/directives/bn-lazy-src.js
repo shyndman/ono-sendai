@@ -1,4 +1,6 @@
 // By Ben Nadel, with a few minor changes
+// TODO This needs a rewrite/rethink, because it's gotten to the point where it's no longer
+//      generic.
 // https://github.com/bennadel
 // http://www.bennadel.com/blog/2498-Lazy-Loading-Image-With-AngularJS.htm
 
