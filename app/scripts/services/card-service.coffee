@@ -138,8 +138,6 @@ class CardService
       # argument.
       filterArgs[filterDescriptor.modelMappings[fieldVal]]
 
-
-
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
       _(cards)
