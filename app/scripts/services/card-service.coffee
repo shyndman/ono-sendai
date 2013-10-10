@@ -69,7 +69,7 @@ class CardService
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
   # they should be returned (true) or not (false).
   _enabledTypes: (filterArgs) =>
-    selName = filterArgs.selectedGroup?.name
+    selName = filterArgs.activeGroup?.name
     if !selName? or selName is 'general'
       null
     else
@@ -80,10 +80,10 @@ class CardService
 
   _buildFilterFunction: (filterArgs, enabledTypes) =>
     filterGroups = ['general']
-    selGroup = filterArgs.selectedGroup
+    selGroup = filterArgs.activeGroup
     if selGroup?
       filterGroups = [] if @filterDescriptors[selGroup.name].excludeGeneral
-      filterGroups.push(filterArgs.selectedGroup.name)
+      filterGroups.push(filterArgs.activeGroup.name)
 
     filters = _.flatten(
       for groupName in filterGroups
