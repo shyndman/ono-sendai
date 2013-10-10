@@ -85,43 +85,43 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 200;
     letter-spacing: 0.4px;
 
-    color: $neutral-dark-color;
+    color: $neutral-color;
     background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid transparentize($neutral-dark-color, (1 - $underline-opacity));
+    border-bottom: 1px solid transparentize($neutral-color, (1 - $underline-opacity));
 
     &.haas-bioroid {
-      color: $haas-light-color;
-      border-bottom: 1px solid transparentize($haas-light-color, (1 - $underline-opacity));
+      color: $haas-color;
+      border-bottom: 1px solid transparentize($haas-color, (1 - $underline-opacity));
     }
 
     &.jinteki {
-      color: $jinteki-dark-color;
-      border-bottom: 1px solid transparentize($jinteki-dark-color, (1 - $underline-opacity));
+      color: $jinteki-color;
+      border-bottom: 1px solid transparentize($jinteki-color, (1 - $underline-opacity));
     }
 
     &.nbn {
-      color: $nbn-dark-color;
-      border-bottom: 1px solid transparentize($nbn-dark-color, (1 - $underline-opacity));
+      color: $nbn-color;
+      border-bottom: 1px solid transparentize($nbn-color, (1 - $underline-opacity));
     }
 
     &.weyland {
-      color: $weyland-dark-color;
-      border-bottom: 1px solid transparentize($weyland-dark-color, (1 - $underline-opacity));
+      color: $weyland-color;
+      border-bottom: 1px solid transparentize($weyland-color, (1 - $underline-opacity));
     }
 
     &.anarch {
-      color: $anarch-dark-color;
-      border-bottom: 1px solid transparentize($anarch-dark-color, (1 - $underline-opacity));
+      color: $anarch-color;
+      border-bottom: 1px solid transparentize($anarch-color, (1 - $underline-opacity));
     }
 
     &.criminal {
-      color: $criminal-dark-color;
-      border-bottom: 1px solid transparentize($criminal-dark-color, (1 - $underline-opacity));
+      color: $criminal-color;
+      border-bottom: 1px solid transparentize($criminal-color, (1 - $underline-opacity));
     }
 
     &.shaper {
-      color: $shaper-dark-color;
-      border-bottom: 1px solid transparentize($shaper-dark-color, (1 - $underline-opacity));
+      color: $shaper-color;
+      border-bottom: 1px solid transparentize($shaper-color, (1 - $underline-opacity));
     }
 
     small {

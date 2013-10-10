@@ -69,7 +69,7 @@ class CardService
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
   # they should be returned (true) or not (false).
   _enabledTypes: (filterArgs) =>
-    selName = filterArgs.selectedGroup?.name
+    selName = filterArgs.activeGroup?.name
     if !selName? or selName is 'general'
       null
     else
@@ -80,10 +80,10 @@ class CardService
 
   _buildFilterFunction: (filterArgs, enabledTypes) =>
     filterGroups = ['general']
-    selGroup = filterArgs.selectedGroup
+    selGroup = filterArgs.activeGroup
     if selGroup?
       filterGroups = [] if @filterDescriptors[selGroup.name].excludeGeneral
-      filterGroups.push(filterArgs.selectedGroup.name)
+      filterGroups.push(filterArgs.activeGroup.name)
 
     filters = _.flatten(
       for groupName in filterGroups
@@ -97,8 +97,8 @@ class CardService
               if not filterArg.value? or not filterArg.operator?
                 continue
               @_buildNumericFilter(fieldDesc, filterArg) # loop tail
-            when 'subtype'
-              ;
+            when 'inSet'
+              @_buildInSetFilter(fieldDesc, filterArg)
             else
               console.warn "Unknown filter type: #{ fieldDesc.type }"
               continue)
@@ -108,8 +108,7 @@ class CardService
     else
       _.partial(OPERATORS.and, filters)
 
-  # Returns a function that takes a card as an argument, returning true if it passes
-  # the filter, or false otherwise
+  # TODO document
   _buildNumericFilter: (filterDescriptor, filterArgs) ->
     (card) ->
       cardFields =
@@ -123,6 +122,23 @@ class CardService
         return OPERATORS[filterArgs.operator](fieldVal, filterArgs.value)
 
       false
+
+  # TODO document
+  _buildInSetFilter: (filterDescriptor, filterArgs) ->
+    (card) ->
+      # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
+      #     This could probably be accomplished differently, but quick and dirty for now.
+      fieldVal =
+        if filterDescriptor.cardField is 'faction'
+          "#{ card.side }: #{ card.faction }"
+        else
+          card[filterDescriptor.cardField]
+
+      # Now that we have the card value, we have to map it to the boolean field in the filter
+      # argument.
+      filterArgs[filterDescriptor.modelMappings[fieldVal]]
+
+
 
   _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
     primaryGroups =
@@ -167,6 +183,12 @@ class CardService
 
   _augmentCards: (cards) ->
     for card in cards
+      card.subtypes =
+        if card.subtype?
+          card.subtype.split(' - ')
+        else
+          []
+
       switch card.type
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0

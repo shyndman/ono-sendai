@@ -5,7 +5,7 @@ angular.module('deckBuilder')
     primaryGrouping: 'faction'
     secondaryGrouping: 'type'
     fieldFilters:
-      factions:
+      faction:
         haasBioroid: true
         jinteki: true
         nbn: true
@@ -51,7 +51,7 @@ angular.module('deckBuilder')
             name: 'faction'
             type: 'faction'
             icon: 'faction'
-            factions:
+            faction:
               corp: [
                 {
                   name: 'Haas-Bioroid'
@@ -215,11 +215,20 @@ angular.module('deckBuilder')
   # Filter descriptors describe how the card service should interpret filter information coming from the user interface.
   .constant('filterDescriptors',
     general: {
-      cardType: 'general'
       fieldFilters:
         faction:
           type: 'inSet'
-          cardField: 'Faction'
+          cardField: 'faction'
+          modelMappings:
+            'Corp: Haas-Bioroid': 'haasBioroid'
+            'Corp: Jinteki': 'jinteki'
+            'Corp: NBN': 'nbn'
+            'Corp: Weyland Consortium': 'weyland'
+            'Corp: Neutral': 'corpNeutral'
+            'Runner: Anarch': 'anarch'
+            'Runner: Criminal': 'criminal'
+            'Runner: Shaper': 'shaper'
+            'Runner: Neutral': 'runnerNeutral'
         cost:
           type: 'numeric'
           cardField: [ 'advancementcost', 'cost' ]

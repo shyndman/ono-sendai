@@ -4,6 +4,7 @@
 .form-control {
   font-weight: 200;
   box-shadow: none;
+  transition-duration: 0.2s;
 
   &:focus {
     box-shadow: none;
@@ -12,12 +13,27 @@
 
 .btn-default {
   &:focus {
-    border: 1px solid #66afe9 !important; // We need to show all borders when part of a button group
+    border-color: $input-border-focus;
     background-color: white;
 
     &.active {
       background-color: #ebebeb;
     }
+  }
+}
+
+.btn-group  {
+  > .btn:focus + .btn {
+    border-left: 1px solid $input-border-focus;
+  }
+}
+
+.input-group {
+  > .input-group-btn > button {
+    &:focus {
+      border-color: $input-border-focus;
+    }
+    border-right-width: 1px !important;
   }
 }
 

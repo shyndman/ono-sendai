@@ -2,15 +2,15 @@ angular.module('deckBuilder')
   .controller('FilterCtrl', ($scope, filterUI) ->
     $scope.filterUI = filterUI
     generalGroup = _.findWhere(filterUI, name: 'general')
-    $scope.filter.selectedGroup = generalGroup
+    $scope.filter.activeGroup = generalGroup
 
     $scope.$watch 'filter.side', (newSide) ->
-      $scope.filter.selectedGroup = generalGroup
+      $scope.filter.activeGroup = generalGroup
       $scope.filter.primaryGrouping = 'faction'
       $scope.filter.secondaryGrouping = 'type'
 
     $scope.selectGroup = (group) ->
-      $scope.filter.selectedGroup = group
+      $scope.filter.activeGroup = group
 
       if group.name is 'general'
         $scope.filter.primaryGrouping = 'faction'
@@ -19,8 +19,11 @@ angular.module('deckBuilder')
         $scope.filter.primaryGrouping = 'type'
         $scope.filter.secondaryGrouping = 'faction'
 
-    $scope.isActiveGroup = (group, selectedGroup) ->
-      group.name is selectedGroup.name
+    $scope.isActiveGroup = (group, activeGroup) ->
+      if activeGroup
+        group.name is activeGroup.name
+      else
+        false
 
     $scope.isGroupShown = (group, currentSide) ->
       if group.side?
@@ -28,7 +31,10 @@ angular.module('deckBuilder')
       else
         true
 
-    $scope.isFieldShown = (field, group, selectedGroup) ->
-      (group.name is 'general' and !selectedGroup.hiddenGeneralFields?[field.name]) or
-      (selectedGroup.name == group.name)
+    $scope.isFieldShown = (field, group, activeGroup) ->
+      if activeGroup
+        (group.name is 'general' and !activeGroup.hiddenGeneralFields?[field.name]) or
+        (activeGroup.name == group.name)
+      else
+        false
   )

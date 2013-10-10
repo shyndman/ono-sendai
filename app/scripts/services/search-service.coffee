@@ -11,6 +11,7 @@ class SearchService
       @field 'type'
       @field 'subtype'
       @field 'text'
+      @field 'setname'
     window.search = @_index.search.bind(@_index) # DEBUG
 
   indexCards: (@cards) =>
