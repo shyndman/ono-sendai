@@ -1,5 +1,6 @@
 angular.module('deckBuilder')
   .filter 'groupTitle', ->
+    # input is always a string, because of how the grouping process works
     (input, grouping) ->
       switch grouping
         when 'type'
