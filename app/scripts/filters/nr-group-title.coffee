@@ -12,10 +12,16 @@ angular.module('deckBuilder')
               input
         when 'cost'
           input = parseInt(input)
-          ret = "#{input} Credit"
-          ret += 's' if input == 0 or input > 1
-          ret
+          if !_.isNaN(input)
+            ret = "#{input} Credit"
+            ret += 's' if input == 0 or input > 1
+            ret
+          else
+            "Cost N/A"
         when 'factioncost'
-          "#{input} Influence"
+          if input isnt 'undefined'
+            "#{input} Influence"
+          else
+            "Influence N/A"
         else
           input
