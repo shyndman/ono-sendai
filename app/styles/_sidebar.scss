@@ -21,6 +21,10 @@ $sidebar-width: 212px;
       background: #f4f4f4;
     }
   }
+
+  .btn-group .btn:focus + .btn {
+    border: none;
+  }
 }
 
 #filter-bar {
@@ -44,13 +48,16 @@ $sidebar-width: 212px;
       text-shadow: 1px 1px 3px white;
       text-transform: uppercase;
       font-weight: 200;
-      letter-spacing: 0.3px;
       cursor: pointer;
 
       background: #f8f8f8;
       border:  1px solid $navbar-default-border;
       border-left: none;
       border-right: none;
+
+      @include retina {
+        letter-spacing: 0.3px;
+      }
     }
   }
 

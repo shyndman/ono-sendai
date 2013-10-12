@@ -39,7 +39,7 @@ $focus-transition-duration: 0.2s;
     &:focus {
       border-color: $input-border-focus;
     }
-    border-right-width: 1px !important;
+    border-right-width: 1px;
   }
 }
 

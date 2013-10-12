@@ -6,6 +6,10 @@
 
 angular.module('deckBuilder')
   .directive("bnLazySrc", function() {
+    // Extends the logical boundaries of the page by this delta. Images within
+    // this region will begin loading if not already loaded.
+    var documentBoundaryExtension = 500;
+
     // I manage all the images that are currently being
     // monitored on the page for lazy loading.
     var lazyLoader = (function() {
@@ -34,7 +38,6 @@ angular.module('deckBuilder')
       // (ie. resize, scroll) are currently being
       // monitored for changes.
       var isWatchingWindow = false;
-
 
       // ---
       // PUBLIC METHODS.
@@ -227,6 +230,9 @@ angular.module('deckBuilder')
       // I determine if the element is above the given
       // fold of the page.
       function isVisible(topFoldOffset, bottomFoldOffset) {
+        topFoldOffset -= documentBoundaryExtension;
+        bottomFoldOffset += documentBoundaryExtension;
+
         // If the element is not visible because it
         // is hidden, don't bother testing it.
         if (!element.is(":visible")) {
