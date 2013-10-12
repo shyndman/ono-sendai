@@ -3,6 +3,10 @@ $focus-transition-duration: 0.2s;
 // Not everything can be controlled through variables, so we have to directly override
 // some styles
 
+label {
+  font-weight: 200;
+}
+
 .form-control {
   font-weight: 200;
   box-shadow: none;

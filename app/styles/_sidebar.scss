@@ -11,6 +11,15 @@ $sidebar-width: 212px;
   background: #fbfbfb;
   text-align: right;
 
+  .control-label {
+    position: relative;
+    top: 1px;
+    margin-right: 6px;
+
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+
   .btn {
     font-size: 12px;
     height: 30px;
