@@ -48,6 +48,7 @@ class CardService
       .then(_.partial(@_searchCards, filterArgs))
       .then(_.partial(@_filterCards, filterArgs))
       .then(_.partial(@_groupCards, filterArgs))
+      .catch((e) -> console.error(e)) # TODO Robustify
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
