@@ -2,8 +2,7 @@ angular.module('deckBuilder')
   # Contains default values for the filters manipulated by the user interface
   .value('filterDefaults',
     side: 'Corp'
-    primaryGrouping: 'faction'
-    secondaryGrouping: 'type'
+    groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:
         haasBioroid: true

@@ -1,6 +1,4 @@
 _.mixin
-  multiGroup: ()
-
   # Sorts an array by a sequence of comparison functions (of the type generally provided to
   # Array#sort. If the first function in the list of functions reports equality between two
   # elements will then use the next function in the sequence, then the next, and so on.

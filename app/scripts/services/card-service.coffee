@@ -16,6 +16,22 @@ class CardService
     ICE:       8
     Upgrade:   9
 
+  SET_ORDINALS =
+    'Core Set': 0
+    'What Lies Ahead':      1
+    'Trace Amount':         2
+    'Cyber Exodus':         3
+    'A Study in Static':    4
+    "Humanity's Shadow":    5
+    'Future Proof':         6
+    'Creation and Control': 7
+    'Opening Moves':        8
+    'Second Thoughts':      9
+    'Mala Tempora':        10
+    'True Colors':         11
+    'Fear and Loathing':   12
+    'Double Time':         13
+
   OPERATORS = {
     'and': (predicates, args...) ->
       for p in predicates
@@ -139,34 +155,35 @@ class CardService
       # argument.
       filterArgs[filterDescriptor.modelMappings[fieldVal]]
 
-  _groupCards: ({ primaryGrouping, secondaryGrouping }, cards) =>
-    primaryGroups =
-      _(cards)
+  _groupCards: ({ groupings }, cards) =>
+    sortFns =
+      _(groupings)
         .chain()
-        .sortBy(primaryGrouping)
-        .groupBy(primaryGrouping)
-        .pairs()
-        .map((pair) =>
-          id: pair[0].toLowerCase(),
-          title: pair[0]
-          subgroups: pair[1])
+        .concat(['title'])
+        .map(@_sortFnFor)
         .value()
 
-    # Build secondary groups
-    for group in primaryGroups
-      group.subgroups =
-        _(group.subgroups)
-          .chain()
-          .sortBy(secondaryGrouping)
-          .groupBy(secondaryGrouping)
-          .pairs()
-          .map((pair) =>
-            id: "#{pair[0].toLowerCase()}",
-            title: pair[0]
-            cards: _.sortBy(pair[1], 'title'))
-          .value()
+    _(cards)
+      .chain()
+      .multiSort(sortFns...)
+      .groupBy((card) -> _.map(groupings, (g) -> card[g]))
+      .pairs()
+      .map((pair) =>
+        id: pair[0].replace(/,/g, ' ').toLowerCase(),
+        title: pair[0]
+        cards: pair[1])
+      .value()
 
-    primaryGroups
+  _sortFnFor: (fieldName) =>
+    switch fieldName
+      when 'type'
+        (a, b) -> CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+      when 'cost', 'factioncost'
+        (a, b) -> a[fieldName] - b[fieldName]
+      when 'setname'
+        (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
+      else
+        (a, b) -> a[fieldName].localeCompare(b[fieldName])
 
   _augmentCards: (cards) ->
     for card in cards
