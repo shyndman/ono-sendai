@@ -71,6 +71,7 @@ input[type=number]::-webkit-outer-spin-button {
 .page {
   flex-grow: 1;
   overflow-y: scroll;
+  overflow-scrolling: touch;
   overflow-x: hidden;
   position: relative;
 }
