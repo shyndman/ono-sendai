@@ -16,6 +16,17 @@ class CardService
     ICE:       8
     Upgrade:   9
 
+  FACTION_ORDINALS =
+    'Anarch':             0
+    'Criminal':           1
+    'Haas-Bioroid':       2
+    'Jinteki':            3
+    'NBN':                4
+    'Shaper':             5
+    'Weyland Consortium': 6
+    'Neutral':            7
+
+
   # TODO It would be nice if this could come from the outside, or be represented in cards.json
   SET_ORDINALS =
     'Core Set':              0
@@ -183,6 +194,8 @@ class CardService
     switch fieldName
       when 'type'
         (a, b) -> CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+      when 'faction'
+        (a, b) -> FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
       when 'cost', 'factioncost'
         (a, b) -> a[fieldName] - b[fieldName]
       when 'setname'
