@@ -200,7 +200,7 @@ class CardService
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
         when 'Identity'
-          delete card.cost
+          delete card.cost # It's unclear why the raw data has this field on identities -- it shouldn't
 
 angular.module('deckBuilder')
   .service 'cardService', ($http, searchService, filterDescriptors) ->
