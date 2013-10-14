@@ -237,7 +237,9 @@ angular.module('deckBuilder')
     }
     identities: {
       cardType: 'Identity'
-      excludeGeneral: true
+      excludedGeneralFields:
+        cost: true
+        influenceValue: true
       fieldFilters:
         influenceLimit:
           type: 'numeric'
