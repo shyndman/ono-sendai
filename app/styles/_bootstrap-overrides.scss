@@ -11,6 +11,7 @@ label {
   font-weight: 200;
   box-shadow: none;
   transition-duration: $focus-transition-duration;
+  -webkit-appearance: none; // Get rid of inset shadows on iOS
 
   &:focus {
     box-shadow: none;
