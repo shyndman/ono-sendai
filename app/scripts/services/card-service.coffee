@@ -18,19 +18,19 @@ class CardService
 
   SET_ORDINALS =
     'Core Set':              0
-    'What Lies Ahead':       1
-    'Trace Amount':          2
-    'Cyber Exodus':          3
-    'A Study in Static':     4
-    "Humanity's Shadow":     5
-    'Future Proof':          6
-    'Creation and Control':  7
-    'Opening Moves':         8
-    'Second Thoughts':       9
-    'Mala Tempora':         10
-    'True Colors':          11
-    'Fear and Loathing':    12
-    'Double Time':          13
+    'What Lies Ahead':       1 # Dec '12
+    'Trace Amount':          2 # Jan '13
+    'Cyber Exodus':          3 # Feb '13
+    'A Study in Static':     4 # Mar '13
+    "Humanity's Shadow":     5 # May '13
+    'Future Proof':          6 # June '13
+    'Creation and Control':  7 # July '13
+    'Opening Moves':         8 # Sept '13
+    'Second Thoughts':       9 # Nov '13
+    'Mala Tempora':         10 # Dec '13
+    'True Colors':          11 # Jan '13
+    'Fear and Loathing':    12 # Feb '13
+    'Double Time':          13 # ?
 
   OPERATORS = {
     'and': (predicates, args...) ->
@@ -97,63 +97,66 @@ class CardService
 
   _buildFilterFunction: (filterArgs, enabledTypes) =>
     filterGroups = ['general']
-    selGroup = filterArgs.activeGroup
-    if selGroup?
-      filterGroups = [] if @filterDescriptors[selGroup.name].excludeGeneral
-      filterGroups.push(filterArgs.activeGroup.name)
+    filterGroups.push filterArgs.activeGroup.name if filterArgs.activeGroup
+    excludeFields = filterArgs.activeGroup?.excludedGeneralFields? || {}
 
-    filters = _.flatten(
-      for groupName in filterGroups
-        groupDesc = @filterDescriptors[groupName]
-        continue if not groupDesc.fieldFilters?
-
-        for fieldName, fieldDesc of groupDesc.fieldFilters
-          filterArg = filterArgs.fieldFilters[fieldName]
-          switch fieldDesc.type
-            when 'numeric'
-              if not filterArg.value? or not filterArg.operator?
-                continue
-              @_buildNumericFilter(fieldDesc, filterArg) # loop tail
-            when 'inSet'
-              @_buildInSetFilter(fieldDesc, filterArg)
-            else
-              console.warn "Unknown filter type: #{ fieldDesc.type }"
-              continue)
+    filters = _(filterGroups)
+      .chain()
+      .map((name) => @filterDescriptors[name])
+      .filter((group) => group.fieldFilters?)
+      .pluck('fieldFilters')
+      .map((fields) =>
+        _.map(fields, (field, name) =>
+          if !excludeFields[name]?
+            @_buildFilter(field, filterArgs.fieldFilters[name])))
+      .flatten()
+      .compact()
+      .value()
 
     if _.isEmpty(filters)
       null
     else
       _.partial(OPERATORS.and, filters)
 
+  _buildFilter: (filterDesc, filterArg) ->
+    switch filterDesc.type
+      when 'numeric'
+        if filterArg.value? and filterArg.operator?
+          @_buildNumericFilter(filterDesc, filterArg)
+      when 'inSet'
+        @_buildInSetFilter(filterDesc, filterArg)
+      else
+        console.warn "Unknown filter type: #{ filterDesc.type }"
+
   # TODO document
-  _buildNumericFilter: (filterDescriptor, filterArgs) ->
+  _buildNumericFilter: (filterDesc, filterArg) ->
     (card) ->
       cardFields =
-        if _.isArray(filterDescriptor.cardField)
-          filterDescriptor.cardField
+        if _.isArray(filterDesc.cardField)
+          filterDesc.cardField
         else
-          [filterDescriptor.cardField]
+          [filterDesc.cardField]
 
       for field in cardFields when card[field]?
         fieldVal = card[field]
-        return OPERATORS[filterArgs.operator](fieldVal, filterArgs.value)
+        return OPERATORS[filterArg.operator](fieldVal, filterArg.value)
 
       false
 
   # TODO document
-  _buildInSetFilter: (filterDescriptor, filterArgs) ->
+  _buildInSetFilter: (filterDesc, filterArg) ->
     (card) ->
       # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
       #     This could probably be accomplished differently, but quick and dirty for now.
       fieldVal =
-        if filterDescriptor.cardField is 'faction'
+        if filterDesc.cardField is 'faction'
           "#{ card.side }: #{ card.faction }"
         else
-          card[filterDescriptor.cardField]
+          card[filterDesc.cardField]
 
-      # Now that we have the card value, we have to map it to the boolean field in the filter
+      # Now that we have the card value, we have to map it to the boolean "set" field in the filter
       # argument.
-      filterArgs[filterDescriptor.modelMappings[fieldVal]]
+      filterArg[filterDesc.modelMappings[fieldVal]]
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
@@ -182,7 +185,7 @@ class CardService
         (a, b) -> a[fieldName] - b[fieldName]
       when 'setname'
         (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
-      else # String
+      else
         (a, b) -> a[fieldName].localeCompare(b[fieldName])
 
   _augmentCards: (cards) ->
@@ -197,7 +200,7 @@ class CardService
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
         when 'Identity'
-          delete card.cost
+          delete card.cost # It's unclear why the raw data has this field on identities -- it shouldn't
 
 angular.module('deckBuilder')
   .service 'cardService', ($http, searchService, filterDescriptors) ->
