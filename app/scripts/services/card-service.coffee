@@ -35,13 +35,13 @@ class CardService
     'Cyber Exodus':          3 # Feb '13
     'A Study in Static':     4 # Mar '13
     "Humanity's Shadow":     5 # May '13
-    'Future Proof':          6 # June '13
-    'Creation and Control':  7 # July '13
-    'Opening Moves':         8 # Sept '13
+    'Future Proof':          6 # Jun '13
+    'Creation and Control':  7 # Jul '13
+    'Opening Moves':         8 # Sep '13
     'Second Thoughts':       9 # Nov '13
     'Mala Tempora':         10 # Dec '13
-    'True Colors':          11 # Jan '13
-    'Fear and Loathing':    12 # Feb '13
+    'True Colors':          11 # Jan '14
+    'Fear and Loathing':    12 # Feb '14
     'Double Time':          13 # ?
 
   OPERATORS = {
