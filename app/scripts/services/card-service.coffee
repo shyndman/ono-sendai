@@ -60,11 +60,12 @@ class CardService
         @_cards)
 
   getCards: (filterArgs = {}) ->
+    # Each step in the card fetch pipeline can choose to be asynchronous if needed
     @_cardsPromise
       .then(_.partial(@_searchCards, filterArgs))
       .then(_.partial(@_filterCards, filterArgs))
       .then(_.partial(@_groupCards, filterArgs))
-      .catch((e) -> console.error(e)) # TODO Robustify
+      .catch((e) -> console.error(e)) # TODO Robustify -- notify admin
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
@@ -77,7 +78,7 @@ class CardService
     filterFn = @_buildFilterFunction(filterArgs, enabledTypes)
     card for card in cards when @_matchesFilter(card, filterArgs, { enabledTypes, filterFn })
 
-  # Returns true if the provided card matches
+  # Returns true if the provided card passes the filters.
   _matchesFilter: (card, filterArgs, { enabledTypes, filterFn }) =>
     return (card.side is filterArgs.side) and
            (if enabledTypes? then enabledTypes[card.type] else true) and
