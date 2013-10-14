@@ -39,7 +39,6 @@ $sidebar-width: 212px;
 #filter-bar {
   width: $sidebar-width;
   min-width: $sidebar-width;
-  overflow-y: auto;
   border-right: 1px solid $navbar-default-border;
 
   .filter-group {
