@@ -1,28 +1,42 @@
-angular.module('deckBuilder')
-  .filter 'groupTitle', ->
-    # input is always a string, because of how the grouping process works
-    (input, grouping) ->
-      switch grouping
-        when 'type'
-          switch input
-            when 'Agenda', 'Asset', 'Operation', 'Upgrade', 'Event', 'Program', 'Resource'
-              "#{input}s"
-            when 'Identity'
-              'Identities'
-            else
-              input
-        when 'cost'
-          input = parseInt(input)
-          if !_.isNaN(input)
-            ret = "#{input} Credit"
-            ret += 's' if input == 0 or input > 1
-            ret
-          else
-            "Cost N/A"
-        when 'factioncost'
-          if input isnt 'undefined'
-            "#{input} Influence"
-          else
-            "Influence N/A"
+# groupName is always a string, because of how the grouping process works
+groupTitle = (groupName, grouping) ->
+  switch grouping
+    when 'type'
+      switch groupName
+        when 'Agenda', 'Asset', 'Operation', 'Upgrade', 'Event', 'Program', 'Resource'
+          "#{groupName}s"
+        when 'Identity'
+          'Identities'
         else
-          input
+          groupName
+    when 'cost'
+      groupName = parseInt(groupName)
+      if !_.isNaN(groupName)
+        ret = "#{groupName} Credit"
+        ret += 's' if groupName == 0 or groupName > 1
+        ret
+      else
+        "Cost N/A"
+    when 'factioncost'
+      if groupName isnt ''
+        "#{groupName} Influence"
+      else
+        "Influence N/A"
+    else
+      groupName
+
+angular.module('deckBuilder')
+  .filter('primaryGroupTitle', ->
+    (groupTitles, groupings) ->
+      if groupings.length > 1
+        groupTitle(groupTitles[1], groupings[1])
+      else
+        groupTitle(groupTitles[0], groupings[0])
+    )
+  .filter('secondaryGroupTitle', ->
+    (groupTitles, groupings) ->
+      if groupings.length > 1
+        groupTitle(groupTitles[0], groupings[0])
+      else
+        ''
+    )
