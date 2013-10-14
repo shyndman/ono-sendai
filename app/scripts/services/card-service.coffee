@@ -17,20 +17,20 @@ class CardService
     Upgrade:   9
 
   SET_ORDINALS =
-    'Core Set': 0
-    'What Lies Ahead':      1
-    'Trace Amount':         2
-    'Cyber Exodus':         3
-    'A Study in Static':    4
-    "Humanity's Shadow":    5
-    'Future Proof':         6
-    'Creation and Control': 7
-    'Opening Moves':        8
-    'Second Thoughts':      9
-    'Mala Tempora':        10
-    'True Colors':         11
-    'Fear and Loathing':   12
-    'Double Time':         13
+    'Core Set':              0
+    'What Lies Ahead':       1
+    'Trace Amount':          2
+    'Cyber Exodus':          3
+    'A Study in Static':     4
+    "Humanity's Shadow":     5
+    'Future Proof':          6
+    'Creation and Control':  7
+    'Opening Moves':         8
+    'Second Thoughts':       9
+    'Mala Tempora':         10
+    'True Colors':          11
+    'Fear and Loathing':    12
+    'Double Time':          13
 
   OPERATORS = {
     'and': (predicates, args...) ->
@@ -170,7 +170,7 @@ class CardService
       .pairs()
       .map((pair) =>
         id: pair[0].replace(/,/g, ' ').toLowerCase(),
-        title: pair[0]
+        title: pair[0].split(',')
         cards: pair[1])
       .value()
 
@@ -182,7 +182,7 @@ class CardService
         (a, b) -> a[fieldName] - b[fieldName]
       when 'setname'
         (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
-      else
+      else # String
         (a, b) -> a[fieldName].localeCompare(b[fieldName])
 
   _augmentCards: (cards) ->
