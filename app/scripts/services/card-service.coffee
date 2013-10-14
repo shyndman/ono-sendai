@@ -16,6 +16,7 @@ class CardService
     ICE:       8
     Upgrade:   9
 
+  # TODO It would be nice if this could come from the outside, or be represented in cards.json
   SET_ORDINALS =
     'Core Set':              0
     'What Lies Ahead':       1 # Dec '12
@@ -204,5 +205,7 @@ class CardService
           delete card.cost # It's unclear why the raw data has this field on identities -- it shouldn't
 
 angular.module('deckBuilder')
+  # Note that we do not pass the constructor function directly, as it prevents ngMin from
+  # properly rewriting the code to be minify-friendly.
   .service 'cardService', ($http, searchService, filterDescriptors) ->
     new CardService($http, searchService, filterDescriptors)
