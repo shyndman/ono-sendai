@@ -25,23 +25,7 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div>
-      <div class="navbar-header">
-        <span class="navbar-brand">Ono-Sendai</span>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#" tabindex="-1">Card Browser</a></li>
-        <li><a href="#" tabindex="-1">Deck Builder</a></li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" ng-model="filter.search">
-        </div>
-      </form>
-    </div>
-  </nav>
-
+  <nr-nav></nr-nav>
   <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar scrollable" ng-include="'views/filters.html'"></div>
     <div class="app-inner-layout">
@@ -74,6 +58,7 @@
   <script src="scripts/services/card-service.js"></script>
   <script src="scripts/services/search-service.js"></script>
   <script src="scripts/directives/nr-numeric-filter.js"></script>
+  <script src="scripts/directives/nr-nav.js"></script>
   <script src="scripts/directives/ui-dropdown.js"></script>
   <script src="scripts/directives/bn-lazy-src.js"></script>
   <script src="scripts/controllers/filter.js"></script>
