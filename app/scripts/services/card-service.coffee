@@ -57,6 +57,10 @@ class CardService
     '≥': (a, b) -> a >= b
   }
 
+  subTypes:
+    corp: {}
+    runner: {}
+
   comparisonOperators: ['=', '<', '≤', '>', '≥']
 
   constructor: ($http, @searchService, @filterDescriptors) ->
@@ -203,13 +207,21 @@ class CardService
       else
         (a, b) -> a[fieldName].localeCompare(b[fieldName])
 
-  _augmentCards: (cards) ->
+  _augmentCards: (cards) =>
     for card in cards
       card.subtypes =
         if card.subtype?
           card.subtype.split(' - ')
         else
           []
+
+      # Increment the occurrences of each of the card's subtypes
+      side = card.side.toLowerCase()
+      for st in card.subtypes
+        if @subTypes[side][st]?
+          @subTypes[side][st]++
+        else
+          @subTypes[side][st] = 1
 
       switch card.type
         when 'ICE'
