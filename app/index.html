@@ -29,7 +29,7 @@
   <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar scrollable" ng-include="'views/filters.html'"></div>
     <div class="app-inner-layout">
-      <div class="transformation-bar" ng-include="'views/transformations.html'"></div>
+      <nr-subnav></nr-subnav>
       <div class="page scrollable" ng-include="'views/cards.html'"></div>
     </div>
     <div id="right-sidebar" class="sidebar"></div>
@@ -64,6 +64,7 @@
   <script src="scripts/controllers/filter.js"></script>
   <script src="scripts/services/filter-definitions.js"></script>
   <script src="scripts/filters/nr-group-title.js"></script>
+  <script src="scripts/directives/nr-subnav.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
