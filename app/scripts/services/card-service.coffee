@@ -200,7 +200,11 @@ class CardService
       when 'faction'
         (a, b) -> FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
       when 'cost', 'factioncost'
-        (a, b) -> a[fieldName] - b[fieldName]
+        (a, b) ->
+          if a[fieldName] is undefined or b[fieldName] is undefined
+            0 # Allow the next sort to take precedence
+          else
+            a[fieldName] - b[fieldName]
       when 'setname'
         (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
       else
