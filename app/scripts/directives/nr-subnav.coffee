@@ -1,6 +1,6 @@
 angular.module('deckBuilder')
   .directive('nrSubnav', ->
     templateUrl: 'views/directives/nr-subnav.html'
-    replace: true
+    replace: false
     restrict: 'E'
   )
