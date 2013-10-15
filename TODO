@@ -1,2 +1,9 @@
 * Collapsed mode for card groups
-* Improve grouping with intelligent subgroupings
+* Indicate which filter group is active
+* Move corp/runner to transform bar (need better name for that, btw)
+* Hotkeys
+* Zoom
+* Focus last selected value on dropdowns (may require rewrite)
+* Add runner card filters
+* Add max to numeric filter
+

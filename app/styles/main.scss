@@ -68,10 +68,13 @@ input[type=number]::-webkit-outer-spin-button {
   flex-direction: column;
 }
 
+.scrollable {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // Momentum scrolling on iOS
+}
+
 .page {
   flex-grow: 1;
-  overflow-y: scroll;
-  overflow-scrolling: touch;
   overflow-x: hidden;
   position: relative;
 }
@@ -167,5 +170,12 @@ card {
     .card-shadow {
       opacity: 0;
     }
+  }
+
+  @media only screen
+      and (min-device-width : 768px)
+      and (max-device-width : 1024px)  {
+    width: 145px;
+    height: auto;
   }
 }
