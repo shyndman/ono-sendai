@@ -3,7 +3,7 @@
 describe 'Directive: nrSubtypeFilter', () ->
 
   # load the directive's module
-  beforeEach module 'deckBuilderApp'
+  beforeEach module 'deckBuilder'
 
   scope = {}
 
