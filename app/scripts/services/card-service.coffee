@@ -44,7 +44,7 @@ class CardService
     'Fear and Loathing':    12 # Feb '14
     'Double Time':          13 # ?
 
-  OPERATORS = {
+  OPERATORS =
     'and': (predicates, args...) ->
       for p in predicates
         if not p(args...)
@@ -55,7 +55,6 @@ class CardService
     '≤': (a, b) -> a <= b
     '>': (a, b) -> a > b
     '≥': (a, b) -> a >= b
-  }
 
   subTypes:
     corp: {}
