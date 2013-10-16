@@ -34,6 +34,10 @@ angular.module('deckBuilder')
         operator: '='
       upgradeTrashCost:
         operator: '='
+      memoryUnits:
+        operator: '='
+      baseLink:
+        operator: '='
   )
   # Describes the ordering, appearance and functionality of the filter sidebar
   .constant('filterUI',
@@ -133,6 +137,13 @@ angular.module('deckBuilder')
             placeholder: 'Min. Deck Size'
             icon: 'minimum-deck-size'
           }
+          {
+            side: 'Runner'
+            name: 'baseLink'
+            type: 'numeric'
+            placeholder: 'Base Link'
+            icon: 'link-strength'
+          }
         ]
       },
       {
@@ -204,6 +215,14 @@ angular.module('deckBuilder')
       {
         name: 'programs'
         side: 'Runner'
+        fieldFilters: [
+          {
+            name: 'memoryUnits'
+            type: 'numeric'
+            placeholder: 'Memory Units'
+            icon: 'memory-unit'
+          }
+        ]
       },
       {
         name: 'resources'
@@ -247,6 +266,10 @@ angular.module('deckBuilder')
         minimumDeckSize:
           type: 'numeric'
           cardField: 'minimumdecksize'
+        baseLink:
+          type: 'numeric'
+          cardField: 'baselink'
+          inclusionPredicate: (filterArgs) -> filterArgs.side is 'Runner'
     }
     ice: {
       cardType: 'ICE'
@@ -290,6 +313,10 @@ angular.module('deckBuilder')
     }
     programs: {
       cardType: 'Program'
+      fieldFilters:
+        memoryUnits:
+          type: 'numeric'
+          cardField: 'memoryunits'
     }
     resources: {
       cardType: 'Resource'

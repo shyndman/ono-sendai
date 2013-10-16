@@ -1,6 +1,6 @@
 'use strict'
 
-describe 'Directive: nrNumericFilter', () ->
+describe 'Directive: nrSubtypeFilter', () ->
 
   # load the directive's module
   beforeEach module 'deckBuilder'
@@ -11,6 +11,6 @@ describe 'Directive: nrNumericFilter', () ->
     scope = $rootScope.$new()
 
   it 'should make hidden element visible', inject ($compile) ->
-    element = angular.element '<nr-numeric-filter></nr-numeric-filter>'
+    element = angular.element '<nr-subtype-filter></nr-subtype-filter>'
     element = $compile(element) scope
-    expect(element.text()).toBe 'this is the nrNumericFilter directive'
+    expect(element.text()).toBe 'this is the nrSubtypeFilter directive'

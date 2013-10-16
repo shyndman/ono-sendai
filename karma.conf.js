@@ -13,10 +13,24 @@ module.exports = function(config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/scripts/*.js',
-      'app/scripts/**/*.js',
+      'app/bower_components/underscore/underscore.js',
+      'app/bower_components/underscore.string/lib/underscore.string.js',
+      'app/bower_components/jquery/jquery.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/angular-bootstrap/src/bindHtml/bindHtml.js',
+      'app/bower_components/angular-bootstrap/src/position/position.js',
+      'app/bower_components/angular-bootstrap/src/tooltip/tooltip.js',
+      'app/bower_components/angular-bootstrap/src/buttons/buttons.js',
+      'app/bower_components/lunr.js/lunr.js',
+      'app/bower_components/jwerty/jwerty.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      'app/scripts/*.js',
+      '.tmp/scripts/*.js',
+      'app/scripts/**/*.js',
+      '.tmp/scripts/**/*.js',
+      '.tmp/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
@@ -42,7 +56,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['ChromeCanary'],
 
 
     // Continuous Integration mode

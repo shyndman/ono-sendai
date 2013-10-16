@@ -31,10 +31,13 @@ angular.module('deckBuilder')
       else
         true
 
-    $scope.isFieldShown = (field, group, activeGroup) ->
+    $scope.isFieldShown = (field, group, activeGroup, currentSide) ->
       if activeGroup
         (group.name is 'general' and !activeGroup.hiddenGeneralFields?[field.name]) or
-        (activeGroup.name == group.name)
+        (
+          activeGroup.name == group.name and
+          (field.side is undefined or field.side == currentSide)
+        )
       else
         false
   )

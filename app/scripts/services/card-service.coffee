@@ -16,6 +16,17 @@ class CardService
     ICE:       8
     Upgrade:   9
 
+  FACTION_ORDINALS =
+    'Anarch':             0
+    'Criminal':           1
+    'Haas-Bioroid':       2
+    'Jinteki':            3
+    'NBN':                4
+    'Shaper':             5
+    'Weyland Consortium': 6
+    'Neutral':            7
+
+
   # TODO It would be nice if this could come from the outside, or be represented in cards.json
   SET_ORDINALS =
     'Core Set':              0
@@ -24,16 +35,16 @@ class CardService
     'Cyber Exodus':          3 # Feb '13
     'A Study in Static':     4 # Mar '13
     "Humanity's Shadow":     5 # May '13
-    'Future Proof':          6 # June '13
-    'Creation and Control':  7 # July '13
-    'Opening Moves':         8 # Sept '13
+    'Future Proof':          6 # Jun '13
+    'Creation and Control':  7 # Jul '13
+    'Opening Moves':         8 # Sep '13
     'Second Thoughts':       9 # Nov '13
     'Mala Tempora':         10 # Dec '13
-    'True Colors':          11 # Jan '13
-    'Fear and Loathing':    12 # Feb '13
+    'True Colors':          11 # Jan '14
+    'Fear and Loathing':    12 # Feb '14
     'Double Time':          13 # ?
 
-  OPERATORS = {
+  OPERATORS =
     'and': (predicates, args...) ->
       for p in predicates
         if not p(args...)
@@ -44,7 +55,10 @@ class CardService
     '≤': (a, b) -> a <= b
     '>': (a, b) -> a > b
     '≥': (a, b) -> a >= b
-  }
+
+  subTypes:
+    corp: {}
+    runner: {}
 
   comparisonOperators: ['=', '<', '≤', '>', '≥']
 
@@ -109,7 +123,7 @@ class CardService
       .pluck('fieldFilters')
       .map((fields) =>
         _.map(fields, (field, name) =>
-          if !excludeFields[name]?
+          if !excludeFields[name]? and (!field.inclusionPredicate? or field.inclusionPredicate(filterArgs))
             @_buildFilter(field, filterArgs.fieldFilters[name])))
       .flatten()
       .compact()
@@ -183,20 +197,34 @@ class CardService
     switch fieldName
       when 'type'
         (a, b) -> CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+      when 'faction'
+        (a, b) -> FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
       when 'cost', 'factioncost'
-        (a, b) -> a[fieldName] - b[fieldName]
+        (a, b) ->
+          if a[fieldName] is undefined or b[fieldName] is undefined
+            0 # Allow the next sort to take precedence
+          else
+            a[fieldName] - b[fieldName]
       when 'setname'
         (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
       else
         (a, b) -> a[fieldName].localeCompare(b[fieldName])
 
-  _augmentCards: (cards) ->
+  _augmentCards: (cards) =>
     for card in cards
       card.subtypes =
         if card.subtype?
           card.subtype.split(' - ')
         else
           []
+
+      # Increment the occurrences of each of the card's subtypes
+      side = card.side.toLowerCase()
+      for st in card.subtypes
+        if @subTypes[side][st]?
+          @subTypes[side][st]++
+        else
+          @subTypes[side][st] = 1
 
       switch card.type
         when 'ICE'
