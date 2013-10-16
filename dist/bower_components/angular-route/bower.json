@@ -1,7 +1,7 @@
 {
-  "name": "angular-animate",
+  "name": "angular-route",
   "version": "1.2.0-rc.3",
-  "main": "./angular-animate.js",
+  "main": "./angular-route.js",
   "dependencies": {
     "angular": "1.2.0-rc.3"
   }
