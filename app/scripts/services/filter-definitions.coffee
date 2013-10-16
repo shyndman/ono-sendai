@@ -34,6 +34,8 @@ angular.module('deckBuilder')
         operator: '='
       upgradeTrashCost:
         operator: '='
+      memoryUnits:
+        operator: '='
   )
   # Describes the ordering, appearance and functionality of the filter sidebar
   .constant('filterUI',
@@ -204,6 +206,14 @@ angular.module('deckBuilder')
       {
         name: 'programs'
         side: 'Runner'
+        fieldFilters: [
+          {
+            name: 'memoryUnits'
+            type: 'numeric'
+            placeholder: 'Memory Units'
+            icon: 'memory-unit'
+          }
+        ]
       },
       {
         name: 'resources'
@@ -290,6 +300,10 @@ angular.module('deckBuilder')
     }
     programs: {
       cardType: 'Program'
+      fieldFilters:
+        memoryUnits:
+          type: 'numeric'
+          cardField: 'memoryunits'
     }
     resources: {
       cardType: 'Resource'
