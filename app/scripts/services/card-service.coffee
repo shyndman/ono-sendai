@@ -123,7 +123,7 @@ class CardService
       .pluck('fieldFilters')
       .map((fields) =>
         _.map(fields, (field, name) =>
-          if !excludeFields[name]?
+          if !excludeFields[name]? and (!field.inclusionPredicate? or field.inclusionPredicate(filterArgs))
             @_buildFilter(field, filterArgs.fieldFilters[name])))
       .flatten()
       .compact()

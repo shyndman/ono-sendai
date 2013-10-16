@@ -36,6 +36,8 @@ angular.module('deckBuilder')
         operator: '='
       memoryUnits:
         operator: '='
+      baseLink:
+        operator: '='
   )
   # Describes the ordering, appearance and functionality of the filter sidebar
   .constant('filterUI',
@@ -134,6 +136,13 @@ angular.module('deckBuilder')
             type: 'numeric'
             placeholder: 'Min. Deck Size'
             icon: 'minimum-deck-size'
+          }
+          {
+            side: 'Runner'
+            name: 'baseLink'
+            type: 'numeric'
+            placeholder: 'Base Link'
+            icon: 'link-strength'
           }
         ]
       },
@@ -257,6 +266,10 @@ angular.module('deckBuilder')
         minimumDeckSize:
           type: 'numeric'
           cardField: 'minimumdecksize'
+        baseLink:
+          type: 'numeric'
+          cardField: 'baselink'
+          inclusionPredicate: (filterArgs) -> filterArgs.side is 'Runner'
     }
     ice: {
       cardType: 'ICE'

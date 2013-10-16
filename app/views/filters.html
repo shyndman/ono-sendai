@@ -13,7 +13,7 @@ NOTES:
 
     <div class="filter-group-field {{field.name}} form-group"
          ng-repeat="field in group.fieldFilters"
-         ng-show="isFieldShown(field, group, filter.activeGroup)">
+         ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
       <label for="{{field.name}}-filter-operator" class="control-label">
         <i class="icon-{{field.icon}}"></i>
