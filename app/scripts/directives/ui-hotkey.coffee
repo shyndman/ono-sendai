@@ -7,9 +7,14 @@ angular.module('deckBuilder')
     link: (scope, element, attrs) ->
       console.info "Binding element to #{attrs.uiHotkey}", element
 
-      focusElement = (e) ->
-        element.focus().select()
+      # Focuses or clicks the hotkeyed element, depending on its type
+      invokeHotkey = (e) ->
         e.preventDefault()
+        if element.is('button, .btn')
+          e.click()
+        else
+          element.focus().select()
 
-      jwerty.key(attrs.uiHotkey, focusElement)
+      if attrs.uiHotkey
+        jwerty.key(attrs.uiHotkey, invokeHotkey)
   )
