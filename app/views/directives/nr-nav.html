@@ -9,9 +9,11 @@
     </ul>
     <form class="navbar-form navbar-right" role="search">
       <div class="form-group">
-        <input type="search" class="form-control" placeholder="Search" autofocus
+        <input class="form-control" type="search" placeholder="Search"
                ng-model="filter.search"
-               ui-hotkey="cmd+F/ctrl+F">
+               ui-hotkey="cmd+F/ctrl+F"
+               object-test="{ a: 'b' }"
+               autofocus>
       </div>
     </form>
   </div>
