@@ -1,9 +1,13 @@
-* Collapsed mode for card groups
-* Indicate which filter group is active
-* Move corp/runner to transform bar (need better name for that, btw)
-* Hotkeys
-* Zoom
-* Focus last selected value on dropdowns (may require rewrite)
-* Add runner card filters
-* Add max to numeric filter
+TODOs
+  * Collapsed mode for card groups
+  * Indicate which filter group is active
+  * Move corp/runner to transform bar (need better name for that, btw)
+  * Hotkeys
+  * Zoom
+  * Focus last selected value on dropdowns (may require rewrite)
+  * Add runner card filters
+  * Add max to numeric filter
+  * Make it clear that moving back to the general filter will remove filters
 
+Angular Questions
+  * Where should shared DOM functionality live? DOM services?
