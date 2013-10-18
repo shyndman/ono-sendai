@@ -1,0 +1,61 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ono-Sendai</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="icon" type="image/png" size="16x16" href="images/favicon-16.png" />
+  <link rel="icon" type="image/png" size="32x32" href="images/favicon-32.png" />
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/grid-test.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="deckBuilder">
+  <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div style="width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;">
+    <nr-card-grid cards="cards" zoom="2"></nr-card-grid>
+  </div>
+
+  <!-- build:js scripts/lib.js -->
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/underscore.string/lib/underscore.string.js"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-bootstrap/src/bindHtml/bindHtml.js"></script>
+  <script src="bower_components/angular-bootstrap/src/position/position.js"></script>
+  <script src="bower_components/angular-bootstrap/src/tooltip/tooltip.js"></script>
+  <script src="bower_components/angular-bootstrap/src/buttons/buttons.js"></script>
+  <script src="bower_components/lunr.js/lunr.js"></script>
+  <script src="bower_components/jwerty/jwerty.js"></script>
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/app.js -->
+  <script src="scripts/utils/underscore-plugins.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/cards.js"></script>
+  <script src="scripts/services/card-service.js"></script>
+  <script src="scripts/services/search-service.js"></script>
+  <script src="scripts/directives/nr-numeric-filter.js"></script>
+  <script src="scripts/directives/nr-nav.js"></script>
+  <script src="scripts/directives/ui-dropdown.js"></script>
+  <script src="scripts/controllers/filter.js"></script>
+  <script src="scripts/services/filter-definitions.js"></script>
+  <script src="scripts/filters/nr-group-title.js"></script>
+  <script src="scripts/directives/nr-subtype-filter.js"></script>
+  <script src="scripts/directives/nr-subnav.js"></script>
+  <script src="scripts/directives/ui-hotkey.js"></script>
+  <script src="scripts/directives/nr-card-grid.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
