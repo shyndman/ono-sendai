@@ -2,10 +2,10 @@
 @import "variables";
 
 // Library imports
-$FontAwesomePath: "/bower_components/font-awesome/font";
 @import "bootstrap-sass/lib/bootstrap";
 
 // Application imports
+@import "grid";
 @import "mixins";
 @import "bootstrap-overrides";
 @import "fonts";
