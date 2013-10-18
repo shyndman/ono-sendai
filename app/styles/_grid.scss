@@ -1,10 +1,18 @@
 // Describes styles for the card grid
 
 nr-card-grid {
+  position: relative;
   display: block;
-  width: 100%;
-  height: 100%;
   background: #eee;
+
+  // XXX
+  // This is incredibly important, because if we don't have it, setting the grid's height during a
+  // transition of the grid items will internally set it to the position of the bottom-most grid item
+  // (which is in transition).
+  //
+  // With overflow hidden, the height set in the style property is respected, and any ancestors with
+  // overflow: scroll will work properly.
+  overflow: hidden;
 
   .grid-item {
     position: absolute;
@@ -15,8 +23,9 @@ nr-card-grid {
     transition: 0.5s ease-in-out transform;
 
     // DEBUG
-    width: 300px;
-    height: 418px;
+    $scale: 0.25;
+    width: 300px * $scale;
+    height: 409px * $scale;
 
     background: magenta;
   }
