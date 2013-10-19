@@ -15,13 +15,18 @@
   <link rel="stylesheet" href="styles/grid-test.css">
   <!-- endbuild -->
 </head>
-<body ng-app="deckBuilder">
+<body ng-app="deckBuilder" ng-init="grid.zoom = 1.5">
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div style="width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;">
-    <nr-card-grid cards="cards" zoom="2"></nr-card-grid>
+  <div class="grid-test">
+    <div class="controls">
+      <input type="range" ng-model="grid.zoom" step="0.2" min="0.6" max="3.2">
+    </div>
+    <div class="scroller">
+      <nr-card-grid cards="cards" zoom="grid.zoom"></nr-card-grid>
+    </div>
   </div>
 
   <!-- build:js scripts/lib.js -->

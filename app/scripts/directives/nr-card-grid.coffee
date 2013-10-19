@@ -38,6 +38,7 @@ angular.module('deckBuilder')
         minimumGutterWidth = 60 # XXX Should this be externally configurable?
         bottomMargin = 30
         gridWidth = element.width()
+        itemPositions = []
 
         # Returns true if the grid has changed width
         hasGridChangedWidth = ->
@@ -68,15 +69,16 @@ angular.module('deckBuilder')
           numRows = Math.ceil(items.length / numColumns)
 
           gutterWidth = (gridWidth - (numColumns * itemSize.width)) / numGutters
-          columnPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+          colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
           rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
 
-          for item, i in items
-            x = columnPositions[i % numColumns]
-            y = rowPositions[Math.floor(i / numColumns)]
-            item.style[transformProperty] = "translate3d(#{x}px, #{y}px, 0) scale(#{scope.zoom})"
-
           element.height(_.last(rowPositions) + itemSize.height)
+
+          for item, i in items
+            itemPositions[i] = x: colPositions[i % numColumns],
+                               y: rowPositions[Math.floor(i / numColumns)]
+            item.style[transformProperty] =
+              "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0) scale(#{scope.zoom})"
 
         # Watch for resizes that may affect grid size, requiring a re-layout
         windowResized = ->
@@ -84,16 +86,20 @@ angular.module('deckBuilder')
             console.info 'Laying out grid (grid width change)'
             layout()
 
-        $($window).resize _.debounce(windowResized, 50)
+        $($window).resize _.debounce(windowResized, 300)
 
         scope.$watch('cards', (newVal) ->
           console.info 'Laying out grid (cards change)'
           layout()
         )
 
-        scope.$watch('zoom', (newVal) ->
-          gridItems().css('scale', newVal)
-        )
+        zoomChanged = (newVal) ->
+          console.info 'Laying out grid (zoom change)'
+          for item, i in gridItems()
+
+          layout()
+
+        scope.$watch('zoom', _.debounce(zoomChanged, 50))
 
         scope.cards = [1..300]
     }

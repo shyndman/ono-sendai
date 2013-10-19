@@ -16,3 +16,19 @@ body {
   overflow: hidden;
   font-weight: 200;
 }
+
+.grid-test {
+  display: flex;
+  flex-direction: column;
+
+  .controls {
+    min-height: 30px;
+  }
+
+  .scroller {
+    position: relative;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
