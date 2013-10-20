@@ -94,9 +94,9 @@ class CardService
 
   # Returns true if the provided card passes the filters.
   _matchesFilter: (card, filterArgs, { enabledTypes, filterFn }) =>
-    return (card.side is filterArgs.side) and
-           (if enabledTypes? then enabledTypes[card.type] else true) and
-           (if filterFn?     then filterFn(card)          else true)
+    return (if filterArgs.side? then card.side is filterArgs.side else true) and # TODO This should be extracted into filter functions
+           (if enabledTypes?    then enabledTypes[card.type]      else true) and
+           (if filterFn?        then filterFn(card)               else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
   # they should be returned (true) or not (false).

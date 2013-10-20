@@ -3,6 +3,10 @@
 # * may be interesting to look into direct modification of stylesheet rules for zooming
 #   if performance ends up being a problem
 
+# HOW THIS WORKS
+#
+#
+
 angular.module('deckBuilder')
   .directive('nrCardGrid', ($window) ->
     div = $('<div></div>')[0]
@@ -58,7 +62,7 @@ angular.module('deckBuilder')
           width: item.width() * scope.zoom
           height: item.height() * scope.zoom
 
-        layout = ->
+        layoutNow = ->
           items = gridItems()
           if !items.length
             return
@@ -74,10 +78,24 @@ angular.module('deckBuilder')
 
           element.height(_.last(rowPositions) + itemSize.height)
 
-          for item, i in items
+          for __, i in items
             itemPositions[i] =
               x: colPositions[i % numColumns],
               y: rowPositions[Math.floor(i / numColumns)]
+
+          applyItemStyles()
+
+        # We provide a debounced version, so we don't layout too much
+        layout = _.debounce(layoutNow, 300)
+
+        applyItemStyles = ->
+          if _.isEmpty(itemPositions)
+            return
+          console.log gridItems()[0].style
+          items = gridItems()
+          len = items.length
+          for item, i in items
+            item.style.zIndex = len - i
             item.style[transformProperty] =
               "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0) scale(#{scope.zoom})"
 
@@ -87,21 +105,30 @@ angular.module('deckBuilder')
             console.info 'Laying out grid (grid width change)'
             layout()
 
-        $($window).resize _.debounce(windowResized, 300)
+        $($window).resize(windowResized)
 
-        scope.$watch('cards', (newVal) ->
+        scope.$watch('cards', (newVal, oldVal) ->
           console.info 'Laying out grid (cards change)'
           layout()
         )
 
+        inContinuousZoom = false
+        scope.$on('zoomStart', ->
+          element.removeClass('transitioned')
+          inContinuousZoom = true)
+        scope.$on('zoomEnd', ->
+          inContinuousZoom = false
+          element.addClass('transitioned')
+          layoutNow())
+
         zoomChanged = (newVal) ->
-          console.info 'Laying out grid (zoom change)'
-          # for item, i in gridItems()
+          console.info 'Changing item sizes (zoom change)'
+          applyItemStyles()
 
-          layout()
+          if !inContinuousZoom
+            console.info 'Laying out grid (zoom change)'
+            layout() # Trigger a re-layout (debounced)
 
-        scope.$watch('zoom', _.debounce(zoomChanged, 50))
-
-        scope.cards = [1..300]
+        scope.$watch('zoom', zoomChanged)
     }
   ) # end directive def

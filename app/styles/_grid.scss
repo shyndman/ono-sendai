@@ -3,7 +3,6 @@
 nr-card-grid {
   position: relative;
   display: block;
-  background: #eee;
 
   // XXX
   // This is incredibly important, because if we don't have it, setting the grid's height during a
@@ -19,15 +18,19 @@ nr-card-grid {
     top: 0;
     left: 0;
 
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
     transform-origin: 0 0;
-    transition: 0.5s ease-in-out transform;
 
     // DEBUG
     $scale: 0.25;
     border-radius: 16px * $scale;
     width: 300px * $scale;
     height: 409px * $scale;
+  }
 
-    background: #faa;
+  &.transitioned {
+    .grid-item {
+      transition: 0.3s ease-in-out transform;
+    }
   }
 }

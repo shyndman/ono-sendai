@@ -15,14 +15,17 @@
   <link rel="stylesheet" href="styles/grid-test.css">
   <!-- endbuild -->
 </head>
-<body ng-app="deckBuilder" ng-init="grid.zoom = 2.4">
+<body ng-app="deckBuilder" ng-controller="GridTestCtrl">
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <div class="grid-test">
     <div class="controls">
-      <input type="range" ng-model="grid.zoom" step="0.2" min="1.6" max="3.8">
+      <input type="range" step="0.05" min="1.6" max="3.8"
+        ng-model="grid.zoom"
+        ng-mousedown="broadcastZoomStart()"
+        ng-mouseup="broadcastZoomEnd()">
       {{grid.zoom}}
     </div>
     <div class="scroller">
@@ -50,6 +53,7 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/cards.js"></script>
+  <script src="scripts/controllers/grid-test.js"></script>
   <script src="scripts/services/card-service.js"></script>
   <script src="scripts/services/search-service.js"></script>
   <script src="scripts/directives/nr-numeric-filter.js"></script>
