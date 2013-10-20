@@ -28,7 +28,7 @@ body {
   .scroller {
     position: relative;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
   }
 }

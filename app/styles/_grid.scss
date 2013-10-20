@@ -24,6 +24,7 @@ nr-card-grid {
 
     // DEBUG
     $scale: 0.25;
+    border-radius: 16px * $scale;
     width: 300px * $scale;
     height: 409px * $scale;
 

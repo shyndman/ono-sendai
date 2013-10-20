@@ -35,8 +35,8 @@ angular.module('deckBuilder')
       }
       restrict: 'E'
       link: (scope, element, attrs) ->
-        minimumGutterWidth = 60 # XXX Should this be externally configurable?
-        bottomMargin = 30
+        minimumGutterWidth = 20 # XXX Should this be externally configurable?
+        bottomMargin = 20
         gridWidth = element.width()
         itemPositions = []
 
@@ -75,8 +75,9 @@ angular.module('deckBuilder')
           element.height(_.last(rowPositions) + itemSize.height)
 
           for item, i in items
-            itemPositions[i] = x: colPositions[i % numColumns],
-                               y: rowPositions[Math.floor(i / numColumns)]
+            itemPositions[i] =
+              x: colPositions[i % numColumns],
+              y: rowPositions[Math.floor(i / numColumns)]
             item.style[transformProperty] =
               "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0) scale(#{scope.zoom})"
 
@@ -95,7 +96,7 @@ angular.module('deckBuilder')
 
         zoomChanged = (newVal) ->
           console.info 'Laying out grid (zoom change)'
-          for item, i in gridItems()
+          # for item, i in gridItems()
 
           layout()
 

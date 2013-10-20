@@ -15,14 +15,15 @@
   <link rel="stylesheet" href="styles/grid-test.css">
   <!-- endbuild -->
 </head>
-<body ng-app="deckBuilder" ng-init="grid.zoom = 1.5">
+<body ng-app="deckBuilder" ng-init="grid.zoom = 2.4">
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <div class="grid-test">
     <div class="controls">
-      <input type="range" ng-model="grid.zoom" step="0.2" min="0.6" max="3.2">
+      <input type="range" ng-model="grid.zoom" step="0.2" min="1.6" max="3.8">
+      {{grid.zoom}}
     </div>
     <div class="scroller">
       <nr-card-grid cards="cards" zoom="grid.zoom"></nr-card-grid>
