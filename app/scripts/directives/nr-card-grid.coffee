@@ -65,12 +65,12 @@ angular.module('deckBuilder')
           if !items.length
             return
 
-          itemSize = getItemSize(items.first())
+          itemSize   = getItemSize(items.first())
           numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
           numGutters = numColumns - 1
-          numRows = Math.ceil(items.length / numColumns)
+          numRows    = Math.ceil(items.length / numColumns)
 
-          gutterWidth = (gridWidth - (numColumns * itemSize.width)) / numGutters
+          gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
           colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
           rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
 
