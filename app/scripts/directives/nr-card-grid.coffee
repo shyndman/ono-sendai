@@ -1,9 +1,7 @@
 # NOTES
 # * big card looks great at w=340
-# * may be interesting to look into direct modification of stylesheet rules for zooming
-#   if performance ends up being a problem
 
-# HOW THIS WORKS
+# HOW THIS THING WORKS
 #
 #
 
@@ -39,7 +37,7 @@ angular.module('deckBuilder')
       }
       restrict: 'E'
       link: (scope, element, attrs) ->
-        minimumGutterWidth = 40 # XXX Should this be externally configurable?
+        minimumGutterWidth = 30
         bottomMargin = 40
         gridWidth = element.width()
         itemPositions = []
@@ -78,7 +76,7 @@ angular.module('deckBuilder')
 
           element.height(_.last(rowPositions) + itemSize.height)
 
-          for __, i in items
+          for i in [0...items.length]
             itemPositions[i] =
               x: colPositions[i % numColumns],
               y: rowPositions[Math.floor(i / numColumns)]
@@ -86,7 +84,7 @@ angular.module('deckBuilder')
           applyItemStyles()
 
         # We provide a debounced version, so we don't layout too much
-        layout = _.debounce(layoutNow, 300)
+        layout = _.debounce(layoutNow, 200)
 
         applyItemStyles = ->
           if _.isEmpty(itemPositions)
@@ -98,6 +96,7 @@ angular.module('deckBuilder')
             item.style.zIndex = len - i
             item.style[transformProperty] =
               "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0) scale(#{scope.zoom})"
+          return
 
         # Watch for resizes that may affect grid size, requiring a re-layout
         windowResized = ->
