@@ -4,30 +4,34 @@ nr-card-grid {
   position: relative;
   display: block;
 
-  // XXX
-  // This is incredibly important, because if we don't have it, setting the grid's height during a
-  // transition of the grid items will internally set it to the position of the bottom-most grid item
-  // (which is in transition).
-  //
-  // With overflow hidden, the height set in the style property is respected, and any ancestors with
-  // overflow: scroll will work properly.
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-  $grid-item-width: 300px;
-  $grid-item-radius: 16px;
+  .grid {
+    // XXX
+    // This is incredibly important, because if we don't have it, setting the grid's height during a
+    // transition of the grid items will internally set it to the position of the bottom-most grid item
+    // (which is in transition).
+    //
+    // With overflow hidden, the height set in the style property is respected, and any ancestors with
+    // overflow: scroll will work properly.
+    overflow: hidden;
+  }
+
+  @mixin scale-card($scale) {
+    width: 300px * $scale;
+    height: auto;
+    border-radius: 16px * $scale;
+    box-shadow: 0px 1px 6px * $scale rgba(0, 0, 0, 0.3);
+  }
 
   .grid-item {
     position: absolute;
     top: 0;
     left: 0;
-
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
     transform-origin: 0 0;
 
-    // DEBUG
-    border-radius: $grid-item-radius;
-    width: $grid-item-width;
-    height: auto;
+    @include scale-card(1);
   }
 
   &.transitioned {
@@ -38,11 +42,7 @@ nr-card-grid {
 
   &.downscaled {
     .grid-item {
-      $scale: 1/2;
-      border-radius: $grid-item-radius * $scale;
-      width: $grid-item-width * $scale;
-      box-shadow: 0px 1px 6px * $scale rgba(0, 0, 0, 0.3);
+      @include scale-card(1/2);
     }
-
   }
 }

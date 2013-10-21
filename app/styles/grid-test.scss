@@ -24,10 +24,7 @@ body {
     min-height: 30px;
   }
 
-  .scroller {
-    position: relative;
+  nr-card-grid {
     flex-grow: 1;
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
 }

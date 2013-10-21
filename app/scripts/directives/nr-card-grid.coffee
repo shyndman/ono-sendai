@@ -39,7 +39,8 @@ angular.module('deckBuilder')
       link: (scope, element, attrs) ->
         minimumGutterWidth = 30
         bottomMargin = 40
-        gridWidth = element.width()
+        grid = element.find('.grid')
+        gridWidth = grid.width()
         itemPositions = []
         inContinuousZoom = false
 
@@ -49,7 +50,7 @@ angular.module('deckBuilder')
 
         # Returns true if the grid has changed width
         hasGridChangedWidth = ->
-          if gridWidth != (newGridWidth = element.width())
+          if gridWidth != (newGridWidth = grid.width())
             gridWidth = newGridWidth
             true
           else
@@ -68,11 +69,25 @@ angular.module('deckBuilder')
             height: item.height() * scaleFactor
           }
 
+        # TODO This should be part of a service
+        cssDurationToMs = (duration) ->
+          if match = duration.match /(\d+)ms/
+            Number(match[1])
+          else if match = duration.match /(\d+)s/
+            Number(match[1]) * 1000
+
+        # TODO This should be part of a service
+        getTransitionDuration = (item) ->
+          transitionValues = $window.getComputedStyle(item[0])[transitionProperty].split(/\s+/)
+          cssDurationToMs(transitionValues[1]) + cssDurationToMs(transitionValues[3])
+
         layoutNow = (scaleImages = false) ->
           items = gridItems()
           if !items.length
             return
 
+          # First, we *might* downscale the images. It may be done earlier in the process (for example, in
+          # zoom start/end)
           scalePromise =
             if scaleImages
               downscaleItems()
@@ -89,14 +104,25 @@ angular.module('deckBuilder')
             colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
             rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
 
-            element.height(_.last(rowPositions) + itemSize.height)
-
             for i in [0...items.length]
               itemPositions[i] =
                 x: colPositions[i % numColumns],
                 y: rowPositions[Math.floor(i / numColumns)]
 
-            applyItemStyles())
+            # Determine which card is in the top left, so that we can keep it focused
+            scrollTop = element.scrollTop()
+            topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
+            topLeftCardIdx = topVisibleRow * colPositions.length
+
+
+            applyItemStyles()
+            grid.height(_.last(rowPositions) + itemSize.height)
+
+            # If we're in transition mode, return a promise that will resolve after
+            # transition delay + transition duration.
+            if element.hasClass('transitioned')
+              $timeout((->), getTransitionDuration(items.first()) + 1000) # Adds a second of fudge
+          )
           .then(->
             if scaleImages
               upscaleItems())
@@ -137,7 +163,7 @@ angular.module('deckBuilder')
           console.info 'Downscaling cards'
           scaleImages(2)
 
-        upscaleImages = ->
+        upscaleItems = ->
           console.info 'Upscaling cards'
           scaleImages(1)
 
@@ -169,7 +195,7 @@ angular.module('deckBuilder')
 
         scope.$on 'zoomEnd', ->
           inContinuousZoom = false
-          upscaleImages()
+          upscaleItems()
           applyItemStyles()
           _.defer -> element.addClass('transitioned')
 
