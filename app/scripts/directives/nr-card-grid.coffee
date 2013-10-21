@@ -6,7 +6,7 @@
 #
 
 angular.module('deckBuilder')
-  .directive('nrCardGrid', ($window) ->
+  .directive('nrCardGrid', ($window, $q, $timeout) ->
     div = $('<div></div>')[0]
 
     # TODO This really feel like it should live in a service or something
@@ -42,6 +42,7 @@ angular.module('deckBuilder')
         gridWidth = element.width()
         itemPositions = []
         inContinuousZoom = false
+
         # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
         # because we swap in lower resolution images before
         inverseDownscaleFactor = 1
@@ -54,8 +55,7 @@ angular.module('deckBuilder')
           else
             false
 
-        gridItems = ->
-          element.find('.grid-item')
+        gridItems = -> element.find('.grid-item')
 
         # TODO Double check performance on this method. It's likely that we can memoize it if it
         #      ends up being a problem.
@@ -63,31 +63,43 @@ angular.module('deckBuilder')
         getItemSize = (item) ->
           scaleFactor = scope.zoom * inverseDownscaleFactor
 
-          width:  item.width() * scaleFactor
-          height: item.height() * scaleFactor
+          {
+            width:  item.width() * scaleFactor
+            height: item.height() * scaleFactor
+          }
 
-        layoutNow = ->
+        layoutNow = (scaleImages = false) ->
           items = gridItems()
           if !items.length
             return
 
-          itemSize   = getItemSize(items.first())
-          numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
-          numGutters = numColumns - 1
-          numRows    = Math.ceil(items.length / numColumns)
+          scalePromise =
+            if scaleImages
+              downscaleItems()
+            else
+              $q.when()
 
-          gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-          colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
-          rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
+          scalePromise.then(->
+            itemSize   = getItemSize(items.first())
+            numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+            numGutters = numColumns - 1
+            numRows    = Math.ceil(items.length / numColumns)
 
-          element.height(_.last(rowPositions) + itemSize.height)
+            gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
+            colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+            rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
 
-          for i in [0...items.length]
-            itemPositions[i] =
-              x: colPositions[i % numColumns],
-              y: rowPositions[Math.floor(i / numColumns)]
+            element.height(_.last(rowPositions) + itemSize.height)
 
-          applyItemStyles()
+            for i in [0...items.length]
+              itemPositions[i] =
+                x: colPositions[i % numColumns],
+                y: rowPositions[Math.floor(i / numColumns)]
+
+            applyItemStyles())
+          .then(->
+            if scaleImages
+              upscaleItems())
 
         # We provide a debounced version, so we don't layout too much
         layout = _.debounce(layoutNow, 200)
@@ -109,7 +121,7 @@ angular.module('deckBuilder')
         windowResized = ->
           if hasGridChangedWidth()
             console.info 'Laying out grid (grid width change)'
-            layout()
+            layout(true)
 
         $($window).resize(windowResized)
 
@@ -122,25 +134,37 @@ angular.module('deckBuilder')
         # will record the scale factor so that we can use transform: scale to have them appear at the same
         # correct size.
         downscaleItems = ->
-          if inverseDownscaleFactor isnt 1
-            return
-
-          element.addClass('downscaled')
-          inverseDownscaleFactor = 2
+          console.info 'Downscaling cards'
+          scaleImages(2)
 
         upscaleImages = ->
-          if inverseDownscaleFactor is 1
-            return
+          console.info 'Upscaling cards'
+          scaleImages(1)
 
-          element.removeClass('downscaled')
-          inverseDownscaleFactor = 1
+        scaleImages = (scaleFactor) ->
+          if inverseDownscaleFactor is scaleFactor
+            $q.when() # Return a resolved promise if we have nothing to do
+          else
+            inverseDownscaleFactor = scaleFactor
+
+            # Record whether we're marked as transitioned, which we will restore after
+            # a defer.
+            hasTransitioned = element.hasClass('transitioned')
+            element.removeClass('transitioned')
+
+            # Scale the images
+            element.toggleClass('downscaled', scaleFactor isnt 1)
+            applyItemStyles()
+
+            # Returns a promise
+            $timeout -> element.toggleClass('transitioned', hasTransitioned)
 
         # *~*~*~*~ ZOOMING
 
         scope.$on 'zoomStart', ->
           element.removeClass('transitioned')
           downscaleItems()
-          applyItemStyles()
+
           inContinuousZoom = true
 
         scope.$on 'zoomEnd', ->
