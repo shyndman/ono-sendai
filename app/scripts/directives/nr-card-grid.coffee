@@ -39,8 +39,8 @@ angular.module('deckBuilder')
       }
       restrict: 'E'
       link: (scope, element, attrs) ->
-        minimumGutterWidth = 20 # XXX Should this be externally configurable?
-        bottomMargin = 20
+        minimumGutterWidth = 40 # XXX Should this be externally configurable?
+        bottomMargin = 40
         gridWidth = element.width()
         itemPositions = []
 
@@ -123,11 +123,10 @@ angular.module('deckBuilder')
 
         zoomChanged = (newVal) ->
           console.info 'Changing item sizes (zoom change)'
-          applyItemStyles()
-
-          if !inContinuousZoom
-            console.info 'Laying out grid (zoom change)'
-            layout() # Trigger a re-layout (debounced)
+          if inContinuousZoom
+            layoutNow()
+          else
+            layout()
 
         scope.$watch('zoom', zoomChanged)
     }
