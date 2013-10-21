@@ -41,6 +41,10 @@ angular.module('deckBuilder')
         bottomMargin = 40
         gridWidth = element.width()
         itemPositions = []
+        inContinuousZoom = false
+        # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
+        # because we swap in lower resolution images before
+        inverseDownscaleFactor = 1
 
         # Returns true if the grid has changed width
         hasGridChangedWidth = ->
@@ -57,8 +61,10 @@ angular.module('deckBuilder')
         #      ends up being a problem.
         # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
         getItemSize = (item) ->
-          width: item.width() * scope.zoom
-          height: item.height() * scope.zoom
+          scaleFactor = scope.zoom * inverseDownscaleFactor
+
+          width:  item.width() * scaleFactor
+          height: item.height() * scaleFactor
 
         layoutNow = ->
           items = gridItems()
@@ -89,13 +95,14 @@ angular.module('deckBuilder')
         applyItemStyles = ->
           if _.isEmpty(itemPositions)
             return
-          console.log gridItems()[0].style
+
           items = gridItems()
           len = items.length
           for item, i in items
             item.style.zIndex = len - i
             item.style[transformProperty] =
-              "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0) scale(#{scope.zoom})"
+              "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0)
+                     scale(#{Number(scope.zoom) * inverseDownscaleFactor})"
           return
 
         # Watch for resizes that may affect grid size, requiring a re-layout
@@ -111,14 +118,36 @@ angular.module('deckBuilder')
           layout()
         )
 
-        inContinuousZoom = false
-        scope.$on('zoomStart', ->
+        # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
+        # will record the scale factor so that we can use transform: scale to have them appear at the same
+        # correct size.
+        downscaleItems = ->
+          if inverseDownscaleFactor isnt 1
+            return
+
+          element.addClass('downscaled')
+          inverseDownscaleFactor = 2
+
+        upscaleImages = ->
+          if inverseDownscaleFactor is 1
+            return
+
+          element.removeClass('downscaled')
+          inverseDownscaleFactor = 1
+
+        # *~*~*~*~ ZOOMING
+
+        scope.$on 'zoomStart', ->
           element.removeClass('transitioned')
-          inContinuousZoom = true)
-        scope.$on('zoomEnd', ->
+          downscaleItems()
+          applyItemStyles()
+          inContinuousZoom = true
+
+        scope.$on 'zoomEnd', ->
           inContinuousZoom = false
-          element.addClass('transitioned')
-          layoutNow())
+          upscaleImages()
+          applyItemStyles()
+          _.defer -> element.addClass('transitioned')
 
         zoomChanged = (newVal) ->
           console.info 'Changing item sizes (zoom change)'

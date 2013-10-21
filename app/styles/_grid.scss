@@ -13,6 +13,9 @@ nr-card-grid {
   // overflow: scroll will work properly.
   overflow: hidden;
 
+  $grid-item-width: 300px;
+  $grid-item-radius: 16px;
+
   .grid-item {
     position: absolute;
     top: 0;
@@ -22,15 +25,24 @@ nr-card-grid {
     transform-origin: 0 0;
 
     // DEBUG
-    $scale: 0.25;
-    border-radius: 16px * $scale;
-    width: 300px * $scale;
-    height: 409px * $scale;
+    border-radius: $grid-item-radius;
+    width: $grid-item-width;
+    height: auto;
   }
 
   &.transitioned {
     .grid-item {
       transition: 0.5s ease-in-out transform;
     }
+  }
+
+  &.downscaled {
+    .grid-item {
+      $scale: 1/2;
+      border-radius: $grid-item-radius * $scale;
+      width: $grid-item-width * $scale;
+      box-shadow: 0px 1px 6px * $scale rgba(0, 0, 0, 0.3);
+    }
+
   }
 }
