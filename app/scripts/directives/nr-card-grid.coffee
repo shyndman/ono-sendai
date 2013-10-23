@@ -213,16 +213,12 @@ angular.module('deckBuilder')
         # *~*~*~*~ ZOOMING
 
         scope.$on 'zoomStart', ->
-          element.removeClass('transitioned')
           downscaleItems()
-
           inContinuousZoom = true
 
         scope.$on 'zoomEnd', ->
           inContinuousZoom = false
           upscaleItems()
-          applyItemStyles()
-          _.defer -> element.addClass('transitioned')
 
         zoomChanged = (newVal) ->
           console.info 'Changing item sizes (zoom change)'
