@@ -41,12 +41,34 @@ angular.module('deckBuilder')
         bottomMargin = 40
         grid = element.find('.grid')
         gridWidth = grid.width()
-        itemPositions = []
         inContinuousZoom = false
+
+        # Cached state
+        itemSize = null
+        focusedCardIdx = null
+        focusedCardOverflow = null # Percentage of the focused card above the fold
+        colPositions = []
+        rowPositions = []
+        itemPositions = []
 
         # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
         # because we swap in lower resolution images before
         inverseDownscaleFactor = 1
+
+        # Determine which card is in the top left, so that we can keep it focused through zooming
+        scrollChanged = ->
+          console.info 'Recalculating focal point'
+          scrollTop = element.scrollTop()
+          topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
+          focusedCardIdx = topVisibleRow * colPositions.length
+          focusedCardOverflow = (scrollTop - rowPositions[topVisibleRow]) / itemSize.height
+          console.info 'Focused card', focusedCardIdx, focusedCardOverflow
+
+        element.scroll(_.debounce(scrollChanged, 100))
+
+        scrollToFocusedCard = ->
+          row = Math.floor(focusedCardIdx / colPositions.length)
+          element.scrollTop(rowPositions[row] + itemSize.height * focusedCardOverflow)
 
         # Returns true if the grid has changed width
         hasGridChangedWidth = ->
@@ -101,7 +123,7 @@ angular.module('deckBuilder')
             numRows    = Math.ceil(items.length / numColumns)
 
             gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-            colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+            colPositions = (i * (itemSize.width + gutterWidth)   for i in [0...numColumns])
             rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
 
             for i in [0...items.length]
@@ -109,14 +131,9 @@ angular.module('deckBuilder')
                 x: colPositions[i % numColumns],
                 y: rowPositions[Math.floor(i / numColumns)]
 
-            # Determine which card is in the top left, so that we can keep it focused
-            scrollTop = element.scrollTop()
-            topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
-            topLeftCardIdx = topVisibleRow * colPositions.length
-
-
             applyItemStyles()
             grid.height(_.last(rowPositions) + itemSize.height)
+            scrollToFocusedCard()
 
             # If we're in transition mode, return a promise that will resolve after
             # transition delay + transition duration.
@@ -125,7 +142,8 @@ angular.module('deckBuilder')
           )
           .then(->
             if scaleImages
-              upscaleItems())
+              ;)
+              # upscaleItems())
 
         # We provide a debounced version, so we don't layout too much
         layout = _.debounce(layoutNow, 200)
