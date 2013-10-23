@@ -10,4 +10,5 @@ TODOs
   * Make it clear that moving back to the general filter will remove filters
 
 Angular Questions
-  * Where should shared DOM functionality live? DOM services?
+  * Where should shared DOM functionality live? DOM services? Move the methods in
+    nr-card grid when you get a chance.
