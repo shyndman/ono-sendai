@@ -62,7 +62,6 @@ angular.module('deckBuilder')
           topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
           focusedCardIdx = topVisibleRow * colPositions.length
           focusedCardOverflow = (scrollTop - rowPositions[topVisibleRow]) / itemSize.height
-          console.info 'Focused card', focusedCardIdx, focusedCardOverflow
 
         element.scroll(_.debounce(scrollChanged, 100))
 
