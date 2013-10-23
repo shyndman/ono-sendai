@@ -57,7 +57,6 @@ angular.module('deckBuilder')
 
         # Determine which card is in the top left, so that we can keep it focused through zooming
         scrollChanged = ->
-          console.info 'Recalculating focal point'
           scrollTop = element.scrollTop()
           topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
           focusedCardIdx = topVisibleRow * colPositions.length
@@ -65,9 +64,12 @@ angular.module('deckBuilder')
 
         element.scroll(_.debounce(scrollChanged, 100))
 
-        scrollToFocusedCard = ->
+        # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
+        #      is too jumpy.
+        scrollToFocusedCard = (transitionDuration) ->
           row = Math.floor(focusedCardIdx / colPositions.length)
-          element.scrollTop(rowPositions[row] + itemSize.height * focusedCardOverflow)
+          newScrollTop = rowPositions[row] + itemSize.height * focusedCardOverflow
+          element.scrollTop(newScrollTop)
 
         # Returns true if the grid has changed width
         hasGridChangedWidth = ->
@@ -94,7 +96,7 @@ angular.module('deckBuilder')
         cssDurationToMs = (duration) ->
           if match = duration.match /(\d+)ms/
             Number(match[1])
-          else if match = duration.match /(\d+)s/
+          else if match = duration.match /(\d+(\.\d+)?)s/
             Number(match[1]) * 1000
 
         # TODO This should be part of a service
@@ -132,17 +134,23 @@ angular.module('deckBuilder')
 
             applyItemStyles()
             grid.height(_.last(rowPositions) + itemSize.height)
-            scrollToFocusedCard()
+
+            transitionDuration =
+              if element.hasClass('transitioned')
+                getTransitionDuration(items.first())
+              else
+                0
+            scrollToFocusedCard(transitionDuration)
 
             # If we're in transition mode, return a promise that will resolve after
             # transition delay + transition duration.
             if element.hasClass('transitioned')
-              $timeout((->), getTransitionDuration(items.first()) + 1000) # Adds a second of fudge
+              $timeout((->), transitionDuration + 1000) # Adds a second of fudge
           )
           .then(->
             if scaleImages
-              ;)
-              # upscaleItems())
+              upscaleItems())
+
 
         # We provide a debounced version, so we don't layout too much
         layout = _.debounce(layoutNow, 200)
@@ -178,13 +186,13 @@ angular.module('deckBuilder')
         # correct size.
         downscaleItems = ->
           console.info 'Downscaling cards'
-          scaleImages(2)
+          scaleItems(2)
 
         upscaleItems = ->
           console.info 'Upscaling cards'
-          scaleImages(1)
+          scaleItems(1)
 
-        scaleImages = (scaleFactor) ->
+        scaleItems = (scaleFactor) ->
           if inverseDownscaleFactor is scaleFactor
             $q.when() # Return a resolved promise if we have nothing to do
           else
