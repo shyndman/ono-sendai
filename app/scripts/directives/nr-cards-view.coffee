@@ -54,8 +54,6 @@ angular.module('deckBuilder')
 
       gridItems = -> element.find('.grid-item')
 
-      # TODO Double check performance on this method. It's likely that we can memoize it if it
-      #      ends up being a problem.
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
       getItemSize = (item) ->
         scaleFactor = scope.zoom * inverseDownscaleFactor
