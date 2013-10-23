@@ -6,7 +6,6 @@ angular.module('deckBuilder')
     templateUrl: 'views/directives/nr-cards-view.html'
     scope: {
       cards: '='
-      selectedCard: '='
       zoom: '='
     }
     link: (scope, element, attrs) ->
