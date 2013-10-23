@@ -101,6 +101,10 @@ angular.module('deckBuilder')
         # Returns a promise that is resolved when any transitions complete, or undefined if there is no
         # transition.
         performGridLayout = ->
+          items = gridItems()
+          if !items.length
+            return
+
           itemSize   = getItemSize(items.first())
           numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
           numGutters = numColumns - 1
@@ -131,10 +135,6 @@ angular.module('deckBuilder')
             $timeout((->), transitionDuration + 1000) # Adds a second of fudge
 
         layoutNow = (scaleImages = false) ->
-          items = gridItems()
-          if !items.length
-            return
-
           # First, we *might* downscale the images. It may be done earlier in the process (for example, in
           # zoom start/end)
           scalePromise =
