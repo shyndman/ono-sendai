@@ -18,7 +18,7 @@ angular.module('deckBuilder')
         $scope.selectedCard = null
 
     link: (scope, element, attrs) ->
-      mode = 'grid'
+      layoutMode = 'grid'
       minimumGutterWidth = 30
       bottomMargin = 40
       transformProperty = cssUtils.getVendorPropertyName('transform')
@@ -121,7 +121,7 @@ angular.module('deckBuilder')
 
         # Determines the layout function based on the mode we're in
         layoutFn =
-          if mode is 'grid'
+          if layoutMode is 'grid'
             performGridLayout
           else
             performDetailLayout
