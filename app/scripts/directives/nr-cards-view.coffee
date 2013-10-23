@@ -124,7 +124,6 @@ angular.module('deckBuilder')
             if scaleImages
               upscaleItems())
 
-
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 200)
 
