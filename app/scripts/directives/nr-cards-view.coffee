@@ -8,6 +8,15 @@ angular.module('deckBuilder')
       cards: '='
       zoom: '='
     }
+    # Contains business logic for card selection
+    controller: ($scope) ->
+      $scope.selectCard = (card) ->
+        console.info "Selected card changing to #{ card.title }"
+        $scope.selectedCard = card
+      $scope.deselectCard = ->
+        console.info 'Card deselected'
+        $scope.selectedCard = null
+
     link: (scope, element, attrs) ->
       mode = 'grid'
       minimumGutterWidth = 30
