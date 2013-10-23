@@ -3,6 +3,7 @@
 angular.module('deckBuilder')
   .directive('nrCardsView', ($window, $q, $timeout, cssUtils) ->
     restrict: 'E'
+    transclude: true
     templateUrl: 'views/directives/nr-cards-view.html'
     scope: {
       cards: '='

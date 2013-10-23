@@ -28,7 +28,9 @@
         ng-mouseup="broadcastZoomEnd()">
       {{grid.zoom}}
     </div>
-    <nr-cards-view cards="cards" zoom="grid.zoom"></nr-cards-view>
+    <nr-cards-view cards="cards" zoom="grid.zoom">
+      <img ng-src="{{card.imagesrc}}" class="grid-item" ng-click="selectCard(card)" ng-repeat="card in cards">
+    </nr-cards-view>
   </div>
 
   <!-- build:js scripts/lib.js -->
