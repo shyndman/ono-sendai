@@ -1,12 +1,7 @@
-# NOTES
-# * big card looks great at w=340
-
-# HOW THIS THING WORKS
-#
-#
+# This component is responsible for dealing with cards, including user input and layout.
 
 angular.module('deckBuilder')
-  .directive('nrCardGrid', ($window, $q, $timeout) ->
+  .directive('nrCardsView', ($window, $q, $timeout) ->
     div = $('<div></div>')[0]
 
     # TODO This really feel like it should live in a service or something
@@ -29,7 +24,7 @@ angular.module('deckBuilder')
     transitionProperty = getVendorPropertyName('transition')
 
     {
-      templateUrl: 'views/directives/nr-card-grid.html'
+      templateUrl: 'views/directives/nr-cards-view.html'
       scope: {
         cards: '='
         selectedCard: '='
@@ -37,13 +32,12 @@ angular.module('deckBuilder')
       }
       restrict: 'E'
       link: (scope, element, attrs) ->
+        mode = 'grid'
         minimumGutterWidth = 30
         bottomMargin = 40
         grid = element.find('.grid')
         gridWidth = grid.width()
         inContinuousZoom = false
-
-        # Cached state
         itemSize = null
         focusedCardIdx = null
         focusedCardOverflow = null # Percentage of the focused card above the fold
@@ -104,6 +98,38 @@ angular.module('deckBuilder')
           transitionValues = $window.getComputedStyle(item[0])[transitionProperty].split(/\s+/)
           cssDurationToMs(transitionValues[1]) + cssDurationToMs(transitionValues[3])
 
+        # Returns a promise that is resolved when any transitions complete, or undefined if there is no
+        # transition.
+        performGridLayout = ->
+          itemSize   = getItemSize(items.first())
+          numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+          numGutters = numColumns - 1
+          numRows    = Math.ceil(items.length / numColumns)
+
+          gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
+          colPositions = (i * (itemSize.width + gutterWidth)   for i in [0...numColumns])
+          rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
+
+          for i in [0...items.length]
+            itemPositions[i] =
+              x: colPositions[i % numColumns],
+              y: rowPositions[Math.floor(i / numColumns)]
+
+          applyItemStyles()
+          grid.height(_.last(rowPositions) + itemSize.height)
+
+          transitionDuration =
+            if element.hasClass('transitioned')
+              getTransitionDuration(items.first())
+            else
+              0
+          scrollToFocusedCard(transitionDuration)
+
+          # If we're in transition mode, return a promise that will resolve after
+          # transition delay + transition duration.
+          if element.hasClass('transitioned')
+            $timeout((->), transitionDuration + 1000) # Adds a second of fudge
+
         layoutNow = (scaleImages = false) ->
           items = gridItems()
           if !items.length
@@ -117,42 +143,21 @@ angular.module('deckBuilder')
             else
               $q.when()
 
-          scalePromise.then(->
-            itemSize   = getItemSize(items.first())
-            numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
-            numGutters = numColumns - 1
-            numRows    = Math.ceil(items.length / numColumns)
+          # Determines the layout function based on the mode we're in
+          layoutFn =
+            if mode is 'grid'
+              performGridLayout
+            else
+              performDetailLayout
 
-            gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-            colPositions = (i * (itemSize.width + gutterWidth)   for i in [0...numColumns])
-            rowPositions = (i * (itemSize.height + bottomMargin) for i in [0...numRows])
-
-            for i in [0...items.length]
-              itemPositions[i] =
-                x: colPositions[i % numColumns],
-                y: rowPositions[Math.floor(i / numColumns)]
-
-            applyItemStyles()
-            grid.height(_.last(rowPositions) + itemSize.height)
-
-            transitionDuration =
-              if element.hasClass('transitioned')
-                getTransitionDuration(items.first())
-              else
-                0
-            scrollToFocusedCard(transitionDuration)
-
-            # If we're in transition mode, return a promise that will resolve after
-            # transition delay + transition duration.
-            if element.hasClass('transitioned')
-              $timeout((->), transitionDuration + 1000) # Adds a second of fudge
-          )
-          .then(->
-            if scaleImages
-              upscaleItems())
+          scalePromise
+            .then(layoutFn)
+            .then(->
+              if scaleImages
+                upscaleItems())
 
 
-        # We provide a debounced version, so we don't layout too much
+        # We provide a debounced version, so we don't layout too much during user input
         layout = _.debounce(layoutNow, 200)
 
         applyItemStyles = ->
@@ -207,7 +212,8 @@ angular.module('deckBuilder')
             element.toggleClass('downscaled', scaleFactor isnt 1)
             applyItemStyles()
 
-            # Returns a promise
+            # Give the browser an opportunity to update the visuals, before restoring
+            # the transitioned class.
             $timeout -> element.toggleClass('transitioned', hasTransitioned)
 
         # *~*~*~*~ ZOOMING

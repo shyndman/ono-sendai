@@ -1,4 +1,4 @@
-describe 'Directive: nrCardGrid', () ->
+describe 'Directive: nrCardsView', () ->
 
   # load the directive's module
   beforeEach module 'deckBuilder'
@@ -9,6 +9,5 @@ describe 'Directive: nrCardGrid', () ->
     scope = $rootScope.$new()
 
   it 'should make hidden element visible', inject ($compile) ->
-    element = angular.element '<nr-card-grid></nr-card-grid>'
+    element = angular.element '<nr-cards-grid></nr-cards-grid>'
     element = $compile(element) scope
-    expect(element.text()).toBe 'this is the nrCardGrid directive'
