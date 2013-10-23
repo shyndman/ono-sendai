@@ -108,7 +108,7 @@ angular.module('deckBuilder')
         # If we're in transition mode, return a promise that will resolve after
         # transition delay + transition duration.
         if element.hasClass('transitioned')
-          $timeout((->), transitionDuration + 1000) # Adds a second of fudge
+          $timeout(_.noop, transitionDuration + 1000) # Adds a second of fudge
 
       layoutNow = (scaleImages = false) ->
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in

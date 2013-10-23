@@ -17,6 +17,8 @@ _.mixin
       arr = arr.concat(a)
     arr
 
+  # Nada, nothing, beans, bupkis
+  noop: ->
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
