@@ -2,13 +2,13 @@
 
 angular.module('deckBuilder')
   .directive('nrCardsView', ($window, $q, $timeout, cssUtils) ->
+    restrict: 'E'
     templateUrl: 'views/directives/nr-cards-view.html'
     scope: {
       cards: '='
       selectedCard: '='
       zoom: '='
     }
-    restrict: 'E'
     link: (scope, element, attrs) ->
       mode = 'grid'
       minimumGutterWidth = 30
