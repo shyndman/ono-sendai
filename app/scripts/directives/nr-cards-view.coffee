@@ -156,11 +156,6 @@ angular.module('deckBuilder')
 
       $($window).resize(windowResized)
 
-      scope.$watch('cards', (newVal, oldVal) ->
-        console.info 'Laying out grid (cards change)'
-        layout()
-      )
-
       # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
@@ -189,7 +184,25 @@ angular.module('deckBuilder')
 
           # Give the browser an opportunity to update the visuals, before restoring
           # the transitioned class.
-          $timeout -> element.toggleClass('transitioned', hasTransitioned)
+          if hasTransitioned
+            $timeout -> element.toggleClass('transitioned', hasTransitioned)
+          else
+            $q.when() # Empty promise :)
+
+      # *~*~*~*~ CARDS
+
+      scope.$watch 'selectedCard', (newVal, oldVal) ->
+        layoutMode =
+          if newVal
+            'detail'
+          else
+            console.info 'No cards selected. Displaying cards in grid mode'
+            'grid'
+        layout()
+
+      scope.$watch 'cards', (newVal, oldVal) ->
+        console.info 'Laying out grid (cards change)'
+        layout()
 
       # *~*~*~*~ ZOOMING
 
