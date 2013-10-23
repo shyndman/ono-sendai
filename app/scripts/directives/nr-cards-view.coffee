@@ -30,6 +30,9 @@ angular.module('deckBuilder')
 
       # Determine which card is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
+        if inContinuousZoom
+          return
+
         scrollTop = element.scrollTop()
         topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
         focusedCardIdx = topVisibleRow * colPositions.length
