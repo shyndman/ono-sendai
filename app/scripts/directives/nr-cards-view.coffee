@@ -190,8 +190,8 @@ angular.module('deckBuilder')
         inContinuousZoom = true
 
       scope.$on 'zoomEnd', ->
-        inContinuousZoom = false
         upscaleItems()
+        inContinuousZoom = false
 
       zoomChanged = (newVal) ->
         console.info 'Changing item sizes (zoom change)'
