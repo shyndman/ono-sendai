@@ -13,6 +13,7 @@ angular.module('deckBuilder')
       mode = 'grid'
       minimumGutterWidth = 30
       bottomMargin = 40
+      transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
       gridWidth = grid.width()
       inContinuousZoom = false
@@ -130,7 +131,6 @@ angular.module('deckBuilder')
         if _.isEmpty(itemPositions)
           return
 
-        transformProperty = cssUtils.getVendorPropertyName('transform')
         items = gridItems()
         len = items.length
         for item, i in items
