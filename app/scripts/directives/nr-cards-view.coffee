@@ -21,7 +21,7 @@ angular.module('deckBuilder')
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
       minimumGutterWidth = 30
-      bottomMargin = 40
+      vMargin = 10
       transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
       gridWidth = grid.width()
@@ -98,14 +98,11 @@ angular.module('deckBuilder')
 
         # Helper function for calculating row positions (modifies variables in enclosing scope)
         calculateNextRow = (headerRow = false) ->
-          rowHeight = if headerRow then headerSize.height else itemSize.height + bottomMargin
-
-          if rowPositions.length is 0
-            rowPositions.push(0)
-          else
-            rowPositions.push(_.last(rowPositions) + _.last(rowHeights))
-
+          rowHeight = if headerRow then headerSize.height else itemSize.height
+          rowHeight += 2 * vMargin
+          rowPosition = if rowPositions.length is 0 then 0 else _.last(rowPositions) + _.last(rowHeights)
           rowHeights.push(rowHeight)
+          rowPositions.push(rowPosition)
 
         for item, i in items
           if item.classList.contains('grid-item')
@@ -115,13 +112,13 @@ angular.module('deckBuilder')
 
             itemPositions[itemIdx++] =
               x: colPositions[groupItemIdx % numColumns],
-              y: rowPositions[row]
+              y: rowPositions[row] + vMargin
             groupItemIdx++
           else if item.classList.contains('grid-header')
             calculateNextRow(true)
             headerPositions[headerIdx++] =
               x: 0
-              y: _.last(rowPositions)
+              y: _.last(rowPositions) + vMargin
 
             # Update bookkeeping for row positioning
             combinedHeaderHeights += headerSize.height
@@ -150,7 +147,7 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-
+        # TODO
 
         transitionDuration =
           if element.hasClass('transitioned')
