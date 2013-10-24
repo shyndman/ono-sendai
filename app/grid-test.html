@@ -30,7 +30,7 @@
         <div ng-switch="cardOrGroup.isHeader">
           <!-- Group header -->
           <div ng-switch-when="true" ng-init="group = cardOrGroup">
-            <h2 class="{{group.id}} grid-item-header">
+            <h2 class="{{group.id}} grid-header">
               <small class="card-count"><ng-pluralize
                   count="group.cards.length"
                   when="{
