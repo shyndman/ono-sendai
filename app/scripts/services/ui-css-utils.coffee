@@ -58,10 +58,12 @@ class CssUtils
   getComputedMargin: (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
     margin = @_getComputedMargin(item, computedStyle)
 
-    top:    @getComputedTopMargin(item, computedStyle) || margin
-    right:  @getComputedRightMargin(item, computedStyle) || margin
-    bottom: @getComputedBottomMargin(item, computedStyle) || margin
-    left:   @getComputedLeftMargin(item, computedStyle) || margin
+    {
+      top:    @getComputedTopMargin(item, computedStyle) || margin
+      right:  @getComputedRightMargin(item, computedStyle) || margin
+      bottom: @getComputedBottomMargin(item, computedStyle) || margin
+      left:   @getComputedLeftMargin(item, computedStyle) || margin
+    }
 
   _node: (item) ->
     if item instanceof $

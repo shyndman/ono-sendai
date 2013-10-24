@@ -14,7 +14,7 @@ nr-cards-view {
     // With overflow hidden, the height set in the style property is respected, and any ancestors with
     // overflow: scroll will work properly.
     overflow: hidden;
-    margin: 0 5px;
+    margin: 0 15px;
     position: relative;
   }
 
@@ -41,7 +41,7 @@ nr-cards-view {
   }
 
   &.transitioned {
-    .grid-item {
+    .grid-item, .grid-header {
       transition: 0.5s ease-in-out transform;
     }
   }

@@ -27,10 +27,10 @@ angular.module('deckBuilder')
       gridWidth = grid.width()
       inContinuousZoom = false
       itemSize = null
-      focusedCardIdx = null
-      focusedCardOverflow = null # Percentage of the focused card above the fold
+      focusedElement = null # Element visible in the top left of the grid
+      focusedElementChop = null # Percentage of the focused element chopped off above
       colPositions = []
-      rowPositions = []
+      rowInfos = []
       itemPositions = []
       headerPositions = []
 
@@ -52,7 +52,7 @@ angular.module('deckBuilder')
       # Just the grid headers
       gridHeaders = -> element.find('.grid-header')
 
-      # Returns and interspersed array of grid items and headers (in DOM order)
+      # Returns and interspersed array of grid items and headers (in document order)
       gridItemsAndHeaders = -> element.find('.grid-item,.grid-header')
 
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
@@ -67,6 +67,12 @@ angular.module('deckBuilder')
           width:  cssUtils.getComputedWidth(item) * scaleFactor
           height: cssUtils.getComputedHeight(item) * scaleFactor
         }
+
+      isGridItem = (item) ->
+        item.classList.contains('grid-item')
+
+      isGridHeader = (item) ->
+        item.classList.contains('grid-header')
 
       # Returns a promise that is resolved when any transitions complete, or undefined if there is no
       # transition.
@@ -85,49 +91,54 @@ angular.module('deckBuilder')
         numRows = Math.ceil(items.length / numColumns)
 
         gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-        colPositions = (i * (itemSize.width + gutterWidth)   for i in [0...numColumns])
-        rowPositions = []
-        rowHeights = []
-        combinedHeaderHeights = 0
+        colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+        rowInfos = []
+        itemPositions = []
+        headerPositions = []
 
-        itemIdx = 0
         groupItemIdx = 0
-        headerIdx = 0
-        rowBump = -1
         baseRow = 0
 
-        # Helper function for calculating row positions (modifies variables in enclosing scope)
-        calculateNextRow = (headerRow = false) ->
+        # Helper function for calculating row information, such as sizing (modifies variables in enclosing scope)
+        calculateNextRow = (firstElement, headerRow = false) ->
+          lastRow = _.last(rowInfos)
           rowHeight = if headerRow then headerSize.height else itemSize.height
           rowHeight += 2 * vMargin
-          rowPosition = if rowPositions.length is 0 then 0 else _.last(rowPositions) + _.last(rowHeights)
-          rowHeights.push(rowHeight)
-          rowPositions.push(rowPosition)
+          rowPosition = if lastRow then lastRow.position + lastRow.height else 0
 
+          rowInfo = firstElement: firstElement, height: rowHeight, position: rowPosition
+          rowInfos.push rowInfo
+          rowInfo
+
+        # Loop over items, calculating their coordinates
         for item, i in items
-          if item.classList.contains('grid-item')
+          if isGridItem(item)
             row = Math.floor(groupItemIdx / numColumns) + baseRow
-            if row == rowPositions.length
-              calculateNextRow()
+            if row == rowInfos.length
+              calculateNextRow(item)
 
-            itemPositions[itemIdx++] =
+            item.idx = itemPositions.push(
               x: colPositions[groupItemIdx % numColumns],
-              y: rowPositions[row] + vMargin
+              y: rowInfos[row].position + vMargin
+            ) - 1
+            item.row = row
             groupItemIdx++
-          else if item.classList.contains('grid-header')
-            calculateNextRow(true)
-            headerPositions[headerIdx++] =
+
+          else # if isGridHeader(item)
+            rowInfo = calculateNextRow(item, true)
+            item.idx = headerPositions.push(
               x: 0
-              y: _.last(rowPositions) + vMargin
+              y: rowInfo.position + vMargin
+            ) - 1
+            item.row = rowInfos.length - 1
 
             # Update bookkeeping for row positioning
-            combinedHeaderHeights += headerSize.height
-            baseRow = rowPositions.length
+            baseRow = rowInfos.length
             groupItemIdx = 0
-            rowBump++
 
         applyItemStyles()
-        grid.height(_.last(rowPositions) + itemSize.height)
+        lastRow = _.last(rowInfos)
+        grid.height(lastRow.position + lastRow.height)
 
         transitionDuration =
           if element.hasClass('transitioned')
@@ -139,7 +150,7 @@ angular.module('deckBuilder')
         # If we're in transition mode, return a promise that will resolve after
         # transition delay + transition duration.
         if element.hasClass('transitioned')
-          $timeout(_.noop, transitionDuration + 1000) # Adds a second of fudge
+          $timeout(_.noop, transitionDuration)
 
       #
       performDetailLayout = ->
@@ -158,7 +169,7 @@ angular.module('deckBuilder')
         # If we're in transition mode, return a promise that will resolve after
         # transition delay + transition duration.
         if element.hasClass('transitioned')
-          $timeout((->), transitionDuration + 1000) # Adds a second of fudge
+          $timeout((->), transitionDuration) # Adds a second of fudge
 
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
@@ -220,22 +231,28 @@ angular.module('deckBuilder')
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
       scrollToFocusedCard = (transitionDuration) ->
-        if !focusedCardIdx?
+        if !focusedElement?
           return
 
-        row = Math.floor(focusedCardIdx / colPositions.length)
-        newScrollTop = rowPositions[row] + itemSize.height * focusedCardOverflow
+        rowInfo = rowInfos[focusedElement.row]
+        newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
         element.scrollTop(newScrollTop)
 
-      # Determine which card is in the top left, so that we can keep it focused through zooming
+      # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
         if inContinuousZoom
           return
 
         scrollTop = element.scrollTop()
-        topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
-        focusedCardIdx = topVisibleRow * colPositions.length
-        focusedCardOverflow = (scrollTop - rowPositions[topVisibleRow]) / itemSize.height
+
+        # Find the focused row
+        i = _.sortedIndex(rowInfos, position: scrollTop, (info) -> info.position) - 1
+        i = 0 if i < 0
+        rowInfo = rowInfos[i]
+
+        # Grab the element
+        focusedElement = rowInfo.firstElement
+        focusedElementChop = (scrollTop - rowInfo.position) / rowInfo.height
 
       element.scroll(_.debounce(scrollChanged, 100))
 
@@ -298,7 +315,6 @@ angular.module('deckBuilder')
         inContinuousZoom = false
 
       zoomChanged = (newVal) ->
-        $log.info 'Changing item sizes (zoom change)'
         if inContinuousZoom
           layoutNow()
         else
