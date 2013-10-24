@@ -20,17 +20,23 @@ nr-cards-view {
 
   @mixin scale-card($scale) {
     width: 300px * $scale;
-    height: auto;
+    height: 418px * $scale;
     border-radius: 16px * $scale;
     box-shadow: 0px 1px 6px * $scale rgba(0, 0, 0, 0.3);
   }
 
-  .grid-item {
+  .grid-header, .grid-item {
     position: absolute;
     top: 0;
     left: 0;
-    transform-origin: 0 0;
+  }
 
+  .grid-header {
+    width: 100%;
+  }
+
+  .grid-item {
+    transform-origin: 0 0;
     @include scale-card(1);
   }
 
