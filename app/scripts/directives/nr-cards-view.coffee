@@ -53,6 +53,10 @@ angular.module('deckBuilder')
           false
 
       gridItems = -> element.find('.grid-item')
+      gridHeaders = -> element.find('.grid-header')
+
+      # Returns and interspersed array of grid items and headers (in DOM order)
+      gridItemsAndHeaders = -> element.find('.grid-item, .grid-header')
 
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
       getItemSize = (item) ->
