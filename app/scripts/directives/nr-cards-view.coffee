@@ -20,7 +20,7 @@ angular.module('deckBuilder')
 
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
-      minimumGutterWidth = 30
+      minimumGutterWidth = 20
       vMargin = 10
       transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
@@ -185,7 +185,7 @@ angular.module('deckBuilder')
               upscaleItems())
 
       # We provide a debounced version, so we don't layout too much during user input
-      layout = _.debounce(layoutNow, 200)
+      layout = _.debounce(layoutNow, 300)
 
       applyItemStyles = ->
         if !_.isEmpty(itemPositions)
