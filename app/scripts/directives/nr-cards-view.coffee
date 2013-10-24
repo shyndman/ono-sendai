@@ -1,7 +1,7 @@
 # This component is responsible for dealing with cards, including user input and layout.
 
 angular.module('deckBuilder')
-  .directive('nrCardsView', ($window, $q, $timeout, cssUtils) ->
+  .directive('nrCardsView', ($window, $q, $log, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     templateUrl: 'views/directives/nr-cards-view.html'
@@ -12,10 +12,10 @@ angular.module('deckBuilder')
     # Contains business logic for card selection
     controller: ($scope) ->
       $scope.selectCard = (card) ->
-        console.info "Selected card changing to #{ card.title }"
+        $log.info "Selected card changing to #{ card.title }"
         $scope.selectedCard = card
       $scope.deselectCard = ->
-        console.info 'Card deselected'
+        $log.info 'Card deselected'
         $scope.selectedCard = null
 
     link: (scope, element, attrs) ->
@@ -36,18 +36,6 @@ angular.module('deckBuilder')
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
       # because we swap in lower resolution images before
       inverseDownscaleFactor = 1
-
-      # Determine which card is in the top left, so that we can keep it focused through zooming
-      scrollChanged = ->
-        if inContinuousZoom
-          return
-
-        scrollTop = element.scrollTop()
-        topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
-        focusedCardIdx = topVisibleRow * colPositions.length
-        focusedCardOverflow = (scrollTop - rowPositions[topVisibleRow]) / itemSize.height
-
-      element.scroll(_.debounce(scrollChanged, 100))
 
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
@@ -111,6 +99,26 @@ angular.module('deckBuilder')
         if element.hasClass('transitioned')
           $timeout(_.noop, transitionDuration + 1000) # Adds a second of fudge
 
+      #
+      performDetailLayout = ->
+        items = gridItems()
+        if !items.length
+          return
+
+
+
+        transitionDuration =
+          if element.hasClass('transitioned')
+            cssUtils.getTransitionDuration(items.first())
+          else
+            0
+
+        # If we're in transition mode, return a promise that will resolve after
+        # transition delay + transition duration.
+        if element.hasClass('transitioned')
+          $timeout((->), transitionDuration + 1000) # Adds a second of fudge
+
+
       layoutNow = (scaleImages = false) ->
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
         # zoom start/end)
@@ -152,20 +160,34 @@ angular.module('deckBuilder')
       # Watch for resizes that may affect grid size, requiring a re-layout
       windowResized = ->
         if hasGridChangedWidth()
-          console.info 'Laying out grid (grid width change)'
+          $log.info 'Laying out grid (grid width change)'
           layout(true)
 
       $($window).resize(windowResized)
+
+      # *~*~*~*~ SCROLLING
+
+      # Determine which card is in the top left, so that we can keep it focused through zooming
+      scrollChanged = ->
+        if inContinuousZoom
+          return
+
+        scrollTop = element.scrollTop()
+        topVisibleRow = Math.max(_.sortedIndex(rowPositions, scrollTop) - 1, 0)
+        focusedCardIdx = topVisibleRow * colPositions.length
+        focusedCardOverflow = (scrollTop - rowPositions[topVisibleRow]) / itemSize.height
+
+      element.scroll(_.debounce(scrollChanged, 100))
 
       # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
       downscaleItems = ->
-        console.info 'Downscaling cards'
+        $log.info 'Downscaling cards'
         scaleItems(2)
 
       upscaleItems = ->
-        console.info 'Upscaling cards'
+        $log.info 'Upscaling cards'
         scaleItems(1)
 
       scaleItems = (scaleFactor) ->
@@ -197,12 +219,12 @@ angular.module('deckBuilder')
           if newVal
             'detail'
           else
-            console.info 'No cards selected. Displaying cards in grid mode'
+            $log.info 'No cards selected. Displaying cards in grid mode'
             'grid'
         layout()
 
       scope.$watch 'cards', (newVal, oldVal) ->
-        console.info 'Laying out grid (cards change)'
+        $log.info 'Laying out grid (cards change)'
         layout()
 
       # *~*~*~*~ ZOOMING
@@ -216,7 +238,7 @@ angular.module('deckBuilder')
         inContinuousZoom = false
 
       zoomChanged = (newVal) ->
-        console.info 'Changing item sizes (zoom change)'
+        $log.info 'Changing item sizes (zoom change)'
         if inContinuousZoom
           layoutNow()
         else
