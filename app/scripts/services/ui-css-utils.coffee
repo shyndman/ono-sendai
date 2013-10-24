@@ -3,6 +3,14 @@ class CssUtils
   constructor: (@$window) ->
     @div = @$window.document.createElement('div')
 
+  # Higher order function for generating computed property length property getters.
+  @_lengthProperty: (propName) ->
+    (item) ->
+      item = @_raw(item)
+      console.log @$window.getComputedStyle(item)
+      px = @$window.getComputedStyle(item)[propName]
+      @cssPixelLengthToNumber(px)
+
   # Returns a the name of a CSS property when given the base name.
   # i.e. An argument of "transform" may return "WebkitTransform".
   getVendorPropertyName: _.memoize (prop) ->
@@ -27,12 +35,26 @@ class CssUtils
     else if match = duration.match /(\d+(\.\d+)?)s/
       Number(match[1]) * 1000
 
+  cssPixelLengthToNumber: (length) ->
+    match = length.match /^(\d+(\.\d+)?)/
+    Number(match[1])
+
   # Returns the total duration of an item's transition, including delay.
   # WARNING This assumes a single transitioned property.
   getTransitionDuration: (item) ->
+    item = @_raw(item)
     transitionProperty = @getVendorPropertyName('transition')
-    transitionValues = @$window.getComputedStyle(item[0])[transitionProperty].split(/\s+/)
+    transitionValues = @$window.getComputedStyle(item)[transitionProperty].split(/\s+/)
     @cssDurationToMs(transitionValues[1]) + @cssDurationToMs(transitionValues[3])
+
+  getComputedHeight: @_lengthProperty('height')
+  getComputedWidth:  @_lengthProperty('width')
+
+  _raw: (item) ->
+    if item instanceof $
+      item.get(0)
+    else
+      item
 
 angular.module('deckBuilder')
   .service 'cssUtils', ($window) -> new CssUtils($window)
