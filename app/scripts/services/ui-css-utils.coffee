@@ -2,13 +2,12 @@
 class CssUtils
   constructor: (@$window) ->
     @div = @$window.document.createElement('div')
+    @transitionProperty = @getVendorPropertyName('transition')
 
   # Higher order function for generating computed property length property getters.
   @_lengthProperty: (propName) ->
-    (item) ->
-      item = @_raw(item)
-      console.log @$window.getComputedStyle(item)
-      px = @$window.getComputedStyle(item)[propName]
+    (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
+      px = computedStyle[propName]
       @cssPixelLengthToNumber(px)
 
   # Returns a the name of a CSS property when given the base name.
@@ -36,21 +35,35 @@ class CssUtils
       Number(match[1]) * 1000
 
   cssPixelLengthToNumber: (length) ->
-    match = length.match /^(\d+(\.\d+)?)/
-    Number(match[1])
+    if length
+      match = length.match /^(\d+(\.\d+)?)/
+      Number(match[1])
+    else
+      0
 
   # Returns the total duration of an item's transition, including delay.
   # WARNING This assumes a single transitioned property.
-  getTransitionDuration: (item) ->
-    item = @_raw(item)
-    transitionProperty = @getVendorPropertyName('transition')
-    transitionValues = @$window.getComputedStyle(item)[transitionProperty].split(/\s+/)
+  getTransitionDuration: (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
+    transitionValues = computedStyle[@transitionProperty].split(/\s+/)
     @cssDurationToMs(transitionValues[1]) + @cssDurationToMs(transitionValues[3])
 
-  getComputedHeight: @_lengthProperty('height')
-  getComputedWidth:  @_lengthProperty('width')
+  getComputedHeight       : @_lengthProperty('height')
+  getComputedWidth        : @_lengthProperty('width')
+  getComputedTopMargin    : @_lengthProperty('topMargin')
+  getComputedRightMargin  : @_lengthProperty('rightMargin')
+  getComputedBottomMargin : @_lengthProperty('bottomMargin')
+  getComputedLeftMargin   : @_lengthProperty('leftMargin')
+  _getComputedMargin      : @_lengthProperty('margin')
 
-  _raw: (item) ->
+  getComputedMargin: (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
+    margin = @_getComputedMargin(item, computedStyle)
+
+    top:    @getComputedTopMargin(item, computedStyle) || margin
+    right:  @getComputedRightMargin(item, computedStyle) || margin
+    bottom: @getComputedBottomMargin(item, computedStyle) || margin
+    left:   @getComputedLeftMargin(item, computedStyle) || margin
+
+  _node: (item) ->
     if item instanceof $
       item.get(0)
     else
