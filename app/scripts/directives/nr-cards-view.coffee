@@ -266,12 +266,12 @@ angular.module('deckBuilder')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.4
+        scope.zoom > 0.35
 
       upscaleTo = ->
         if scope.zoom > 0.5
           1
-        else if scope.zoom > 0.4
+        else if scope.zoom > 0.35
           2
         # else if scope.zoom > 0.3
         #   3
@@ -328,7 +328,7 @@ angular.module('deckBuilder')
         $log.info 'Laying out grid (cards change)'
         $timeout ->
           invalidateGridContents()
-          layoutNow()
+          layoutNow(true)
 
       # *~*~*~*~ ZOOMING
 
