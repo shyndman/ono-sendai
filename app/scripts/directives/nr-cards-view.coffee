@@ -81,6 +81,8 @@ angular.module('deckBuilder')
         if !items.length
           return
 
+        $log.info "Performing grid layout on #{ items.length } items"
+
         firstItem = $(_.find(items, (item) -> item.classList.contains('grid-item')))
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
         itemSize = getItemSize(firstItem)
@@ -228,6 +230,8 @@ angular.module('deckBuilder')
 
       # *~*~*~*~ SCROLLING
 
+      scrollParent = element.parents('.scrollable').first()
+
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
       scrollToFocusedCard = (transitionDuration) ->
@@ -236,14 +240,14 @@ angular.module('deckBuilder')
 
         rowInfo = rowInfos[focusedElement.row]
         newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
-        element.scrollTop(newScrollTop)
+        scrollParent.scrollTop(newScrollTop)
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
         if inContinuousZoom
           return
 
-        scrollTop = element.scrollTop()
+        scrollTop = scrollParent.scrollTop()
 
         # Find the focused row
         i = _.sortedIndex(rowInfos, position: scrollTop, (info) -> info.position) - 1
@@ -254,7 +258,7 @@ angular.module('deckBuilder')
         focusedElement = rowInfo.firstElement
         focusedElementChop = (scrollTop - rowInfo.position) / rowInfo.height
 
-      element.scroll(_.debounce(scrollChanged, 100))
+      scrollParent.scroll(_.debounce(scrollChanged, 100))
 
       # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
@@ -302,7 +306,7 @@ angular.module('deckBuilder')
 
       scope.$watch 'cards', (newVal, oldVal) ->
         $log.info 'Laying out grid (cards change)'
-        layout()
+        layoutNow()
 
       # *~*~*~*~ ZOOMING
 

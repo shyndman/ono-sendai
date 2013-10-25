@@ -2,8 +2,6 @@
 
 nr-cards-view {
   display: block;
-  overflow-y: scroll;
-  overflow-x: hidden;
 
   .grid {
     // XXX
@@ -14,7 +12,7 @@ nr-cards-view {
     // With overflow hidden, the height set in the style property is respected, and any ancestors with
     // overflow: scroll will work properly.
     overflow: hidden;
-    margin: 0 15px;
+    margin: 0 10px;
     position: relative;
   }
 
