@@ -1,7 +1,13 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($scope, $window, $log, cardService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, cardService) ->
     $scope.selectedCard = null
-    $scope.grid = zoom: 0.5
+
+    $rootScope.broadcastZoomStart = ->
+      $scope.$broadcast 'zoomStart'
+
+    $rootScope.broadcastZoomEnd = ->
+      $scope.$broadcast 'zoomEnd'
+
 
     linearizeCardGroups = (cardGroups) ->
       _(cardGroups)

@@ -219,7 +219,7 @@ angular.module('deckBuilder')
       windowResized = ->
         if hasGridChangedWidth()
           $log.info 'Laying out grid (grid width change)'
-          layout(true)
+          layoutNow(true)
 
       $($window).resize(windowResized)
 
