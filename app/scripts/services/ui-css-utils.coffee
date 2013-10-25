@@ -4,12 +4,6 @@ class CssUtils
     @div = @$window.document.createElement('div')
     @transitionProperty = @getVendorPropertyName('transition')
 
-  # Higher order function for generating computed property length property getters.
-  @_lengthProperty: (propName) ->
-    (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
-      px = computedStyle[propName]
-      @cssPixelLengthToNumber(px)
-
   # Returns a the name of a CSS property when given the base name.
   # i.e. An argument of "transform" may return "WebkitTransform".
   getVendorPropertyName: _.memoize (prop) ->
@@ -46,24 +40,6 @@ class CssUtils
   getTransitionDuration: (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
     transitionValues = computedStyle[@transitionProperty].split(/\s+/)
     @cssDurationToMs(transitionValues[1]) + @cssDurationToMs(transitionValues[3])
-
-  getComputedHeight       : @_lengthProperty('height')
-  getComputedWidth        : @_lengthProperty('width')
-  getComputedTopMargin    : @_lengthProperty('topMargin')
-  getComputedRightMargin  : @_lengthProperty('rightMargin')
-  getComputedBottomMargin : @_lengthProperty('bottomMargin')
-  getComputedLeftMargin   : @_lengthProperty('leftMargin')
-  _getComputedMargin      : @_lengthProperty('margin')
-
-  getComputedMargin: (item, computedStyle = @$window.getComputedStyle(@_node(item))) ->
-    margin = @_getComputedMargin(item, computedStyle)
-
-    {
-      top:    @getComputedTopMargin(item, computedStyle) || margin
-      right:  @getComputedRightMargin(item, computedStyle) || margin
-      bottom: @getComputedBottomMargin(item, computedStyle) || margin
-      left:   @getComputedLeftMargin(item, computedStyle) || margin
-    }
 
   _node: (item) ->
     if item instanceof $

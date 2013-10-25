@@ -2,3 +2,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; // Momentum scrolling on iOS
 }
+
+.scrollable.always-scrollable {
+  overflow-y: scroll;
+}

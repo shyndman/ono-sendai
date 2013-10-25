@@ -8,16 +8,8 @@ angular.module('deckBuilder')
     scope: {
       cards: '='
       zoom: '='
+      selectedCard: '='
     }
-    # Contains business logic for card selection
-    controller: ($scope) ->
-      $scope.selectCard = (card) ->
-        $log.info "Selected card changing to #{ card.title }"
-        $scope.selectedCard = card
-      $scope.deselectCard = ->
-        $log.info 'Card deselected'
-        $scope.selectedCard = null
-
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
       minimumGutterWidth = 20
@@ -25,8 +17,10 @@ angular.module('deckBuilder')
       transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
       gridWidth = grid.width()
+      sizeInvalidated = true
       inContinuousZoom = false
-      itemSize = null
+      itemSize = undefined
+      headerSize = undefined
       focusedElement = null # Element visible in the top left of the grid
       focusedElementChop = null # Percentage of the focused element chopped off above
       colPositions = []
@@ -63,10 +57,8 @@ angular.module('deckBuilder')
           else
             scope.zoom * inverseDownscaleFactor
 
-        {
-          width:  cssUtils.getComputedWidth(item) * scaleFactor
-          height: cssUtils.getComputedHeight(item) * scaleFactor
-        }
+        width: parseFloat(item.css('width')) * scaleFactor
+        height: parseFloat(item.css('height')) * scaleFactor
 
       isGridItem = (item) ->
         item.classList.contains('grid-item')
@@ -85,8 +77,11 @@ angular.module('deckBuilder')
 
         firstItem = $(_.find(items, (item) -> item.classList.contains('grid-item')))
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
-        itemSize = getItemSize(firstItem)
-        headerSize = getItemSize(firstHeader, true)
+
+        if sizeInvalidated
+          itemSize = getItemSize(firstItem)
+          headerSize = getItemSize(firstHeader, true)
+          sizeInvalidated = false
 
         numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
         numGutters = numColumns - 1
@@ -224,7 +219,7 @@ angular.module('deckBuilder')
       windowResized = ->
         if hasGridChangedWidth()
           $log.info 'Laying out grid (grid width change)'
-          layout(true)
+          layoutNow(true)
 
       $($window).resize(windowResized)
 
@@ -319,6 +314,7 @@ angular.module('deckBuilder')
         inContinuousZoom = false
 
       zoomChanged = (newVal) ->
+        sizeInvalidated = true
         if inContinuousZoom
           layoutNow()
         else
