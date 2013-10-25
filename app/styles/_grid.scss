@@ -20,7 +20,7 @@ nr-cards-view {
     width: 300px * $scale;
     height: 418px * $scale;
     border-radius: 16px * $scale;
-    box-shadow: 0px 1px 6px * $scale rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px * $scale 6px * $scale rgba(0, 0, 0, 0.3);
   }
 
   .grid-header, .grid-item {

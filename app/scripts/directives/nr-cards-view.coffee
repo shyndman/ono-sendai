@@ -12,21 +12,22 @@ angular.module('deckBuilder')
     }
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
-      minimumGutterWidth = 20
-      vMargin = 10
-      transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
       gridWidth = grid.width()
-      sizeInvalidated = true
+      minimumGutterWidth = 20
+      vMargin = 10
+      hMargin = 6
       inContinuousZoom = false
-      itemSize = undefined
-      headerSize = undefined
+      gridItems = null
+      gridHeaders = null
+      gridItemsAndHeaders = null
       focusedElement = null # Element visible in the top left of the grid
       focusedElementChop = null # Percentage of the focused element chopped off above
-      colPositions = []
       rowInfos = []
       itemPositions = []
       headerPositions = []
+      sizeCache = {}
+      transformProperty = cssUtils.getVendorPropertyName('transform')
 
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
       # because we swap in lower resolution images before
@@ -40,25 +41,30 @@ angular.module('deckBuilder')
         else
           false
 
-      # Just the grid items
-      gridItems = -> element.find('.grid-item')
-
-      # Just the grid headers
-      gridHeaders = -> element.find('.grid-header')
-
-      # Returns and interspersed array of grid items and headers (in document order)
-      gridItemsAndHeaders = -> element.find('.grid-item,.grid-header')
+      invalidateGridContents = ->
+        gridItems = element.find('.grid-item')
+        gridHeaders = element.find('.grid-header')
+        gridItemsAndHeaders = element.find('.grid-item,.grid-header')
 
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
-      getItemSize = (item, noScale = false) ->
+      getItemSize = (type, item, noScale = false) ->
         scaleFactor =
           if noScale
             1
           else
             scope.zoom * inverseDownscaleFactor
 
-        width: parseFloat(item.css('width')) * scaleFactor
-        height: parseFloat(item.css('height')) * scaleFactor
+        # NOTE: These are extremely expensive calculations. Do them once, only.
+        sizeCache[type] ?= {}
+        sizeCache[type][inverseDownscaleFactor] ?=
+          width: parseFloat(item.css('width'))
+          height: parseFloat(item.css('height'))
+        baseSize = sizeCache[type][inverseDownscaleFactor]
+
+        {
+          width: baseSize.width * scaleFactor
+          height: baseSize.height * scaleFactor
+        }
 
       isGridItem = (item) ->
         item.classList.contains('grid-item')
@@ -69,24 +75,23 @@ angular.module('deckBuilder')
       # Returns a promise that is resolved when any transitions complete, or undefined if there is no
       # transition.
       performGridLayout = ->
-        items = gridItemsAndHeaders()
+        items = gridItemsAndHeaders
         if !items.length
           return
 
         firstItem = $(_.find(items, (item) -> item.classList.contains('grid-item')))
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
 
-        if sizeInvalidated
-          itemSize = getItemSize(firstItem)
-          headerSize = getItemSize(firstHeader, true)
-          sizeInvalidated = false
+        itemSize = getItemSize('item', firstItem)
+        headerSize = getItemSize('header', firstHeader, true)
 
-        numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+        availableGridWidth = gridWidth - hMargin * 2
+        numColumns = Math.floor((availableGridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
         numGutters = numColumns - 1
         numRows = Math.ceil(items.length / numColumns)
 
-        gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-        colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+        gutterWidth  = (availableGridWidth - (numColumns * itemSize.width)) / numGutters
+        colPositions = (i * (itemSize.width + gutterWidth) + hMargin for i in [0...numColumns])
         rowInfos = []
         itemPositions = []
         headerPositions = []
@@ -149,7 +154,7 @@ angular.module('deckBuilder')
 
       #
       performDetailLayout = ->
-        items = gridItems()
+        items = gridItems
         if !items.length
           return
 
@@ -195,7 +200,7 @@ angular.module('deckBuilder')
 
       applyItemStyles = ->
         if !_.isEmpty(itemPositions)
-          items = gridItems()
+          items = gridItems
           len = items.length
           for item, i in items
             item.style.zIndex = len - i
@@ -204,7 +209,7 @@ angular.module('deckBuilder')
                      scale(#{Number(scope.zoom) * inverseDownscaleFactor})"
 
         if !_.isEmpty(headerPositions)
-          items = gridHeaders()
+          items = gridHeaders
           len = items.length
           for item, i in items
             item.style.zIndex = len - i
@@ -270,7 +275,7 @@ angular.module('deckBuilder')
           $log.info 'Upscaling cards'
           scaleItems(1)
         else
-          $log.info 'Upscaling not deemed necessary'
+          $log.info 'Upscaling not performed (zoom level too low)'
 
       scaleItems = (scaleFactor) ->
         if inverseDownscaleFactor is scaleFactor
@@ -307,7 +312,9 @@ angular.module('deckBuilder')
 
       scope.$watch 'cards', (newVal, oldVal) ->
         $log.info 'Laying out grid (cards change)'
-        layoutNow()
+        $timeout ->
+          invalidateGridContents()
+          layoutNow()
 
       # *~*~*~*~ ZOOMING
 
@@ -320,7 +327,6 @@ angular.module('deckBuilder')
         inContinuousZoom = false
 
       zoomChanged = (newVal) ->
-        sizeInvalidated = true
         if inContinuousZoom
           layoutNow()
         else
