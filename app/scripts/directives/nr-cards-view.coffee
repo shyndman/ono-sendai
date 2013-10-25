@@ -30,7 +30,7 @@ angular.module('deckBuilder')
       transformProperty = cssUtils.getVendorPropertyName('transform')
 
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
-      # because we swap in lower resolution images before
+      # because we swap in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
 
       # Returns true if the grid has changed width
