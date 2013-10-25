@@ -79,10 +79,13 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-        firstItem = $(_.find(items, (item) -> item.classList.contains('grid-item')))
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
+        # NOTE: We get the second item, and not the first, because we need an item to attach a transition
+        #       event listener to *an* item, and the first item doesn't necessarily move. :)
+        notFirst = true
+        secondItem = $(_.find(items, (item) -> item.classList.contains('grid-item') and (notFirst = !notFirst)))
 
-        itemSize = getItemSize('item', firstItem)
+        itemSize = getItemSize('item', secondItem)
         headerSize = getItemSize('header', firstHeader, true)
 
         availableGridWidth = gridWidth - hMargin * 2
@@ -146,13 +149,23 @@ angular.module('deckBuilder')
             0
         scrollToFocusedCard(transitionDuration)
 
+        # Resizes the grid, possibly after transition completion
+        newGridHeight = lastRow.position + lastRow.height
         resizeGrid = ->
-          grid.height(lastRow.position + lastRow.height)
+          $log.debug "Resizing height to #{ newGridHeight.toFixed(0) }px"
+          grid.height(newGridHeight)
 
         # If we're in transition mode, return a promise that will resolve after
-        # transition delay + transition duration.
+        # the transition has completed.
         if element.hasClass('transitioned')
-          $timeout(resizeGrid, transitionDuration + 500)
+          transitionPromise = cssUtils.getTransitionEndPromise(secondItem)
+
+          # Resize the grid immediately if its going to be growing
+          if newGridHeight > grid.height()
+            resizeGrid()
+            transitionPromise
+          else
+            transitionPromise.then(resizeGrid)
         else
           resizeGrid()
 
@@ -161,19 +174,6 @@ angular.module('deckBuilder')
         items = gridItems
         if !items.length
           return
-
-        # TODO
-
-        transitionDuration =
-          if element.hasClass('transitioned')
-            cssUtils.getTransitionDuration(items.first())
-          else
-            0
-
-        # If we're in transition mode, return a promise that will resolve after
-        # transition delay + transition duration.
-        if element.hasClass('transitioned')
-          $timeout((->), transitionDuration) # Adds a second of fudge
 
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
@@ -212,8 +212,8 @@ angular.module('deckBuilder')
 
             item.style.zIndex = len - i
             item.style[transformProperty] =
-              "translate3d(#{pos.x}px, #{pos.y}px, 0)
-                     scale(#{Number(scope.zoom) * inverseDownscaleFactor})"
+              "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
+                     scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
 
         if !_.isEmpty(headerPositions)
           len = items.length

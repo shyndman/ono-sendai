@@ -4,7 +4,7 @@ groupTitle = (groupName, grouping) ->
     when 'type'
       switch groupName
         when 'Agenda', 'Asset', 'Operation', 'Upgrade', 'Event', 'Program', 'Resource'
-          "#{groupName}s"
+          "#{ groupName }s"
         when 'Identity'
           'Identities'
         else
@@ -12,14 +12,14 @@ groupTitle = (groupName, grouping) ->
     when 'cost'
       groupName = parseInt(groupName)
       if !_.isNaN(groupName)
-        ret = "#{groupName} Credit"
+        ret = "#{ groupName } Credit"
         ret += 's' if groupName == 0 or groupName > 1
         ret
       else
         "Cost N/A"
     when 'factioncost'
       if groupName isnt ''
-        "#{groupName} Influence"
+        "#{ groupName } Influence"
       else
         "Influence N/A"
     else

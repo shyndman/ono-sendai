@@ -1,8 +1,16 @@
 # Provides common CSS utilities (to directives)
 class CssUtils
-  constructor: (@$window) ->
+  # Maps transition style property names to their associated event types
+  TRANSITION_END_EVENTS =
+    'WebkitTransition' : 'webkitTransitionEnd'
+    'MozTransition'    : 'transitionend'
+    'OTransition'      : 'oTransitionEnd otransitionend'
+    'transition'       : 'transitionend'
+
+  constructor: (@$window, @$q, @$log) ->
     @div = @$window.document.createElement('div')
     @transitionProperty = @getVendorPropertyName('transition')
+    @transitionEndEvent = TRANSITION_END_EVENTS[@transitionProperty]
 
   # Returns a the name of a CSS property when given the base name.
   # i.e. An argument of "transform" may return "WebkitTransform".
@@ -22,7 +30,7 @@ class CssUtils
         return vendorProp
 
   # Takes a CSS duration value, and converts it into a number representing the number of milliseconds.
-  cssDurationToMs = (duration) ->
+  cssDurationToMs: (duration) ->
     if match = duration.match /(\d+)ms/
       Number(match[1])
     else if match = duration.match /(\d+(\.\d+)?)s/
@@ -41,6 +49,14 @@ class CssUtils
     transitionValues = computedStyle[@transitionProperty].split(/\s+/)
     @cssDurationToMs(transitionValues[1]) + @cssDurationToMs(transitionValues[3])
 
+  # Returns a promise that will be resolved when the items transition completes.
+  getTransitionEndPromise: (item) ->
+    deferred = @$q.defer()
+    item.one @transitionEndEvent, onEnd = =>
+      @$log.debug 'Transition complete'
+      deferred.resolve()
+    deferred.promise
+
   _node: (item) ->
     if item instanceof $
       item.get(0)
@@ -48,5 +64,5 @@ class CssUtils
       item
 
 angular.module('deckBuilder')
-  .service 'cssUtils', ($window) -> new CssUtils($window)
+  .service 'cssUtils', ($window, $q, $log) -> new CssUtils($window, $q, $log)
 
