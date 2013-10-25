@@ -14,6 +14,7 @@ angular.module('deckBuilder')
       layoutMode = 'grid'
       minimumGutterWidth = 20
       vMargin = 10
+      hMargin = 6
       transformProperty = cssUtils.getVendorPropertyName('transform')
       grid = element.find('.grid')
       gridWidth = grid.width()
@@ -81,12 +82,13 @@ angular.module('deckBuilder')
           headerSize = getItemSize(firstHeader, true)
           sizeInvalidated = false
 
-        numColumns = Math.floor((gridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+        availableGridWidth = gridWidth - hMargin * 2
+        numColumns = Math.floor((availableGridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
         numGutters = numColumns - 1
         numRows = Math.ceil(items.length / numColumns)
 
-        gutterWidth  = (gridWidth - (numColumns * itemSize.width)) / numGutters
-        colPositions = (i * (itemSize.width + gutterWidth) for i in [0...numColumns])
+        gutterWidth  = (availableGridWidth - (numColumns * itemSize.width)) / numGutters
+        colPositions = (i * (itemSize.width + gutterWidth) + hMargin for i in [0...numColumns])
         rowInfos = []
         itemPositions = []
         headerPositions = []
