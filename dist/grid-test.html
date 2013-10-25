@@ -11,12 +11,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <link rel="icon" type="image/png" size="16x16" href="images/3c06bd4b.favicon-16.png">
   <link rel="icon" type="image/png" size="32x32" href="images/2bddae59.favicon-32.png">
-  <link rel="stylesheet" href="styles/a1c779a9.main.css">
+  <link rel="stylesheet" href="styles/da99dae1.main.css">
 </head>
 <body ng-app="deckBuilder" ng-controller="GridTestCtrl">
   <div class="grid-test">
     <div class="controls">
-      <input type="range" step="0.00625" min="0.4" max="1.2" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
+      <input type="range" step="0.00625" min="0.4" max="1" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
       {{grid.zoom}}
     </div>
     <nr-cards-view class="cards" cards="cards" zoom="grid.zoom">
@@ -46,6 +46,6 @@
 
   <script src="scripts/2e975e50.lib.js"></script>
 
-  <script src="scripts/eff60f07.app.js"></script>
+  <script src="scripts/163e0527.app.js"></script>
 </body>
 </html>

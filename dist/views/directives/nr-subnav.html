@@ -1,3 +1,6 @@
+<label class="control-label">Zoom:</label>
+<input type="range" step="0.00625" min="0.3" max="1.0" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()" class="ng-pristine ng-valid">
+
 <label class="control-label">Group:</label>
 <div class="btn-group">
   <button class="btn btn-default" ng-model="filter.groupings" btn-radio="['faction', 'type']">Faction</button>
