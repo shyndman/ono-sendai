@@ -22,5 +22,5 @@
   },
   "_source": "git://github.com/epeli/underscore.string.git",
   "_target": "~2.3.3",
-  "_direct": true
+  "_originalSource": "underscore.string"
 }

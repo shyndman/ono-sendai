@@ -59,7 +59,6 @@
       var $input = this.$element.find('input')
         .prop('checked', !this.$element.hasClass('active'))
         .trigger('change')
-      console.log($input[0])
       if ($input.prop('type') === 'radio') $parent.find('.active').removeClass('active')
     }
 

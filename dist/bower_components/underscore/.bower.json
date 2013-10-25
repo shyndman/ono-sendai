@@ -10,5 +10,5 @@
   },
   "_source": "git://github.com/jashkenas/underscore.git",
   "_target": "~1.5.2",
-  "_direct": true
+  "_originalSource": "underscore"
 }

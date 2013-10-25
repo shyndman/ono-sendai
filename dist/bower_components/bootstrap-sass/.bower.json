@@ -19,5 +19,6 @@
     "commit": "a7388cfd69bedc23bcc56043e0db263027463882"
   },
   "_source": "git://github.com/jlong/sass-twitter-bootstrap.git",
-  "_target": "~3.0"
+  "_target": "~3.0",
+  "_originalSource": "bootstrap-sass"
 }
