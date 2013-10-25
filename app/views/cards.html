@@ -19,7 +19,7 @@
 
           <!-- Card -->
           <div ng-switch-default ng-init="card = cardOrGroup">
-            <img ng-src="{{card.imagesrc}}" class="grid-item" ng-click="selectCard(card)">
+            <img ng-src="{{card.imagesrc}}" ng-attr-title="{{card.title}}" class="grid-item" ng-click="selectCard(card)">
           </div>
         </div>
       </div>
