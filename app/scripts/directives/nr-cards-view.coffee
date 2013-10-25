@@ -73,8 +73,6 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-        $log.info "Performing grid layout on #{ items.length } items"
-
         firstItem = $(_.find(items, (item) -> item.classList.contains('grid-item')))
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
 
@@ -255,6 +253,11 @@ angular.module('deckBuilder')
 
       scrollParent.scroll(_.debounce(scrollChanged, 100))
 
+      # *~*~*~*~ SCALING
+
+      isUpscaleRequired = ->
+        scope.zoom > 0.5
+
       # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
@@ -263,8 +266,11 @@ angular.module('deckBuilder')
         scaleItems(2)
 
       upscaleItems = ->
-        $log.info 'Upscaling cards'
-        scaleItems(1)
+        if isUpscaleRequired()
+          $log.info 'Upscaling cards'
+          scaleItems(1)
+        else
+          $log.info 'Upscaling not deemed necessary'
 
       scaleItems = (scaleFactor) ->
         if inverseDownscaleFactor is scaleFactor
