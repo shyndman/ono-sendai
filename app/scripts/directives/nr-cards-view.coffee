@@ -280,10 +280,8 @@ angular.module('deckBuilder')
           1
         else if scope.zoom > 0.35
           2
-        # else if scope.zoom > 0.3
-        #   3
 
-      # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
+      # Halve the resolution of grid items so the GPU uses less texture memory during transforms. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
       downscaleItems = ->
