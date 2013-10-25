@@ -1,7 +1,7 @@
 _.mixin(_.str.exports()); # Make underscore.string functions available under the _ namespace
 
 angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip'])
-  .config(->
+  .config ->
     # Prints a console welcome message
     titleColors = ['#000']
     fadeColors = ['#2D053D', '#440C59', '#60157C', '#79209D', '#9927BF']
@@ -16,4 +16,4 @@ angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip'])
     console.log('')
 
     # Sidesteps the 300ms click event on mobile devices
-    FastClick.attach(document.body))
+    FastClick.attach(document.body)
