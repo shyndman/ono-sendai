@@ -261,6 +261,9 @@ angular.module('deckBuilder')
         i = 0 if i < 0
         rowInfo = rowInfos[i]
 
+        if focusedElement isnt rowInfo.firstElement
+          $log.debug 'New focus element determined "%s"', $(rowInfo.firstElement).attr('title')
+
         # Grab the element
         focusedElement = rowInfo.firstElement
         focusedElementChop = (scrollTop - rowInfo.position) / rowInfo.height
@@ -284,13 +287,14 @@ angular.module('deckBuilder')
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
       downscaleItems = ->
-        $log.debug 'Downscaling cards'
-        scaleItems(3)
+        scale = 3
+        $log.debug "Downscaling cards to 1/#{ scale }"
+        scaleItems(scale)
 
       upscaleItems = ->
         if isUpscaleRequired()
           scale = upscaleTo()
-          $log.debug "Upscaling cards to #{ scale }"
+          $log.debug "Upscaling cards to 1/#{ scale }"
           scaleItems(scale)
         else
           $log.debug 'Upscaling not performed (zoom level too low)'
@@ -337,12 +341,12 @@ angular.module('deckBuilder')
       # *~*~*~*~ ZOOMING
 
       scope.$on 'zoomStart', ->
-        console.groupCollapsed?('Continuous zoom')
+        console.group?('Continuous zoom')
         $timeout -> downscaleItems()
         inContinuousZoom = true
 
       scope.$on 'zoomEnd', ->
-        $log.debug "Zoom: #{ scope.zoom }"
+        $log.debug "New zoom level: #{ scope.zoom }"
         upscaleItems()
         inContinuousZoom = false
         console.groupEnd?('Continuous zoom')

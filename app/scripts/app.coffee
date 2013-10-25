@@ -12,7 +12,7 @@ angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip'])
       .value()
     fade = _.repeat('%c ', fadeColors.length)
 
-    console.log("%c ONO-SENDAI by scott hyndman #{fade}", styles...)
+    console.log("%c ONO-SENDAI by scott hyndman#{fade}", styles...)
     console.log('')
 
     # Sidesteps the 300ms click event on mobile devices

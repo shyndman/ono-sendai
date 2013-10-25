@@ -4,7 +4,7 @@
         <div ng-switch="cardOrGroup.isHeader">
           <!-- Group header -->
           <div ng-switch-when="true" ng-init="group = cardOrGroup">
-            <h2 class="{{group.id}} grid-header">
+            <h2 class="{{group.id}} grid-header" title="{{group.id}}">
               <small class="card-count"><ng-pluralize
                   count="group.cards.length"
                   when="{
