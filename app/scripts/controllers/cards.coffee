@@ -26,5 +26,4 @@ angular.module('deckBuilder')
       # the old ones.
       cardService.getCards(filter).then (cardGroups) ->
         $scope.cardsAndGroups = linearizeCardGroups(cardGroups)
-
     ), true)) # True to make sure field changes trigger this watch
