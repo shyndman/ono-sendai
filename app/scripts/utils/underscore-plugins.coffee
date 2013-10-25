@@ -20,6 +20,12 @@ _.mixin
   # Nada, nothing, beans, bupkis
   noop: ->
 
+  profile: (fn) ->
+    (args...) ->
+      console.profile()
+      fn(args...)
+      console.profileEnd()
+
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
 accentsRegex = ///[#{accentsFrom}]///g
