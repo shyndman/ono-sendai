@@ -138,7 +138,6 @@ angular.module('deckBuilder')
 
         applyItemStyles()
         lastRow = _.last(rowInfos)
-        grid.height(lastRow.position + lastRow.height)
 
         transitionDuration =
           if element.hasClass('transitioned')
@@ -147,10 +146,16 @@ angular.module('deckBuilder')
             0
         scrollToFocusedCard(transitionDuration)
 
+        resizeGrid = ->
+          console.log lastRow.position + lastRow.height
+          grid.height(lastRow.position + lastRow.height)
+
         # If we're in transition mode, return a promise that will resolve after
         # transition delay + transition duration.
         if element.hasClass('transitioned')
-          $timeout(_.noop, transitionDuration)
+          $timeout(resizeGrid, transitionDuration + 500)
+        else
+          resizeGrid()
 
       #
       performDetailLayout = ->
@@ -222,7 +227,7 @@ angular.module('deckBuilder')
       windowResized = ->
         if hasGridChangedWidth()
           $log.info 'Laying out grid (grid width change)'
-          layoutNow(true)
+          layoutNow(false)
 
       $($window).resize(windowResized)
 
@@ -261,19 +266,28 @@ angular.module('deckBuilder')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.5
+        scope.zoom > 0.4
+
+      upscaleTo = ->
+        if scope.zoom > 0.5
+          1
+        else if scope.zoom > 0.4
+          2
+        # else if scope.zoom > 0.3
+        #   3
 
       # Halve the resolution of grid items so the GPU uses less texture memory during transitions. We
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
       downscaleItems = ->
         $log.info 'Downscaling cards'
-        scaleItems(2)
+        scaleItems(3)
 
       upscaleItems = ->
         if isUpscaleRequired()
-          $log.info 'Upscaling cards'
-          scaleItems(1)
+          scale = upscaleTo()
+          $log.info "Upscaling cards to #{ scale }"
+          scaleItems(scale)
         else
           $log.info 'Upscaling not performed (zoom level too low)'
 
@@ -281,15 +295,15 @@ angular.module('deckBuilder')
         if inverseDownscaleFactor is scaleFactor
           $q.when() # Return a resolved promise if we have nothing to do
         else
-          inverseDownscaleFactor = scaleFactor
-
           # Record whether we're marked as transitioned, which we will restore after
           # a defer.
           hasTransitioned = element.hasClass('transitioned')
           element.removeClass('transitioned')
 
-          # Scale the images
-          element.toggleClass('downscaled', scaleFactor isnt 1)
+          # Remove the old scale, and add the new one if necessary
+          element.removeClass("downscaled-1-#{ inverseDownscaleFactor }")
+          inverseDownscaleFactor = scaleFactor
+          element.toggleClass("downscaled-1-#{ scaleFactor }", scaleFactor isnt 1)
           applyItemStyles()
 
           # Give the browser an opportunity to update the visuals, before restoring
@@ -323,6 +337,7 @@ angular.module('deckBuilder')
         inContinuousZoom = true
 
       scope.$on 'zoomEnd', ->
+        $log.info "Zoom: #{ scope.zoom }"
         upscaleItems()
         inContinuousZoom = false
 
