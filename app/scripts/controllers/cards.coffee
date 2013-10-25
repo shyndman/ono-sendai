@@ -1,6 +1,6 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', (cardService, $scope, $window) ->
-
+  .controller('CardsCtrl', ($scope, $window, $log, cardService) ->
+    $scope.selectedCard = null
     $scope.grid = zoom: 0.5
 
     linearizeCardGroups = (cardGroups) ->
@@ -10,6 +10,14 @@ angular.module('deckBuilder')
           [_.extend(group, isHeader: true), group.cards])
         .flatten()
         .value()
+
+    $scope.selectCard = (card) ->
+      $log.info "Selected card changing to #{ card.title }"
+      $scope.selectedCard = card
+
+    $scope.deselectCard = ->
+      $log.info 'Card deselected'
+      $scope.selectedCard = null
 
     $scope.$watch('filter', ((filter)->
       # NOTE
