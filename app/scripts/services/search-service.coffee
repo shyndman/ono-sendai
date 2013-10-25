@@ -1,10 +1,14 @@
 # Wraps a client-side search engine library to expose search functionality to the application.
 class SearchService
   constructor: (@$q) ->
-    filters = [ _.stripDiacritics ]
+    filters = [ { lbl: 'stripDiacritics', fn: _.stripDiacritics } ]
+
+    for { lbl, fn } in filters
+      lunr.Pipeline.registerFunction fn, lbl
+
     lunr.tokenizer = @_tokenize
     @_index = lunr ->
-      @pipeline.before (->), filter for filter in filters
+      @pipeline.before (->), fn for { fn } in filters
       @ref 'title'
       @field 'title', boost: 10
       @field 'faction', boost: 5
