@@ -6,7 +6,7 @@ angular.module('deckBuilder')
     transclude: true
     templateUrl: 'views/directives/nr-cards-view.html'
     scope: {
-      cards: '='
+      cardFilter: '='
       zoom: '='
       selectedCard: '='
     }
@@ -42,9 +42,12 @@ angular.module('deckBuilder')
           false
 
       invalidateGridContents = ->
-        gridItems = element.find('.grid-item')
-        gridHeaders = element.find('.grid-header')
-        gridItemsAndHeaders = element.find('.grid-item,.grid-header')
+        itemSel = '.grid-item:not(.ng-hide)'
+        headerSel = '.grid-header:not(.ng-hide)'
+
+        gridItems = element.find(itemSel)
+        gridHeaders = element.find(headerSel)
+        gridItemsAndHeaders = element.find("#{ itemSel }, #{ headerSel }")
 
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
       getItemSize = (type, item, noScale = false) ->
@@ -151,9 +154,7 @@ angular.module('deckBuilder')
 
         # Resizes the grid, possibly after transition completion
         newGridHeight = lastRow.position + lastRow.height
-        resizeGrid = ->
-          $log.debug "Resizing height to #{ newGridHeight.toFixed(0) }px"
-          grid.height(newGridHeight)
+        resizeGrid = -> grid.height(newGridHeight)
 
         # If we're in transition mode, return a promise that will resolve after
         # the transition has completed.
@@ -242,7 +243,7 @@ angular.module('deckBuilder')
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
       scrollToFocusedCard = ->
-        if !focusedElement? or rowInfos.length < focusedElement.row
+        if !focusedElement? or rowInfos.length <= focusedElement.row
           scrollParent.scrollTop(0)
         else
           rowInfo = rowInfos[focusedElement.row]
@@ -319,9 +320,10 @@ angular.module('deckBuilder')
           else
             $q.when() # Empty promise :)
 
+
       # *~*~*~*~ CARDS
 
-      scope.$watch 'selectedCard', (newVal, oldVal) ->
+      selectedCardChanged = (newVal, oldVal) ->
         layoutMode =
           if newVal
             'detail'
@@ -329,12 +331,16 @@ angular.module('deckBuilder')
             $log.debug 'No cards selected. Displaying cards in grid mode'
             'grid'
         layout()
+      scope.$watch('selectedCard', selectedCardChanged)
 
-      scope.$watch 'cards', (newVal, oldVal) ->
-        $log.debug 'Laying out grid (cards change)'
+      cardFilterChanged = (newVal, oldVal) ->
+        $log.debug 'Laying out grid (filter change)'
         $timeout ->
           invalidateGridContents()
           layoutNow(true)
+        return
+      scope.$watch('cardFilter', cardFilterChanged, true)
+
 
       # *~*~*~*~ ZOOMING
 

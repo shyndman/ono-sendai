@@ -1,6 +1,6 @@
 <div ng-controller="CardsCtrl">
-  <nr-cards-view class="cards" cards="cardsAndGroups" zoom="grid.zoom">
-      <div ng-repeat="cardOrGroup in cardsAndGroups track by cardOrGroup.id">
+  <nr-cards-view class="cards" card-filter="cardFilter" zoom="grid.zoom">
+      <div ng-repeat="cardOrGroup in cards | sortCards:cardFilter track by cardOrGroup.id">
         <div ng-switch="cardOrGroup.isHeader">
           <!-- Group header -->
           <div ng-switch-when="true" ng-init="group = cardOrGroup">
@@ -19,7 +19,11 @@
 
           <!-- Card -->
           <div ng-switch-default ng-init="card = cardOrGroup">
-            <img ng-src="{{card.imagesrc}}" ng-attr-title="{{card.title}}" class="grid-item" ng-click="selectCard(card)">
+            <img class="grid-item"
+                 ng-src="{{card.imagesrc}}"
+                 ng-click="selectCard(card)"
+                 ng-attr-title="{{card.title}}"
+                 ng-show="isCardShown(card, cardFilter)">
           </div>
         </div>
       </div>

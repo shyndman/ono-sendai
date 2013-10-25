@@ -73,16 +73,21 @@ class CardService
         @_augmentCards(@_cards)
         @_cards)
 
-  getCards: (filterArgs = {}) ->
-    console.time?('Card search')
+  getCards: -> @_cardsPromise
 
-    # Each step in the card fetch pipeline can choose to be asynchronous if needed
+  # Returns a mapping of card identifiers to their display ordinals. If a card's id does not
+  # appear in the map, it did not pass the filter.
+  buildFilterMap: (filterArgs = {}) ->
+    console.time?('Card search, filter and group')
+
+    # Each step in the card filtering pipeline can choose to be asynchronous if needed
     @_cardsPromise
       .then(_.partial(@_searchCards, filterArgs))
       .then(_.partial(@_filterCards, filterArgs))
       .then(_.partial(@_groupCards, filterArgs))
-      .catch((e) -> console.error(e)) # TODO Robustify -- notify admin
-      .finally(-> console.timeEnd('Card search'))
+      .then(_.partial(@_extractFilterMap, filterArgs))
+      # .catch((e) -> console.error(e)) TODO Handle errors here, or generally in an $exceptionHandler
+      .finally(-> console.timeEnd?('Card search, filter and group'))
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
@@ -190,10 +195,19 @@ class CardService
       .groupBy((card) -> _.map(groupings, (g) -> card[g]))
       .pairs()
       .map((pair) =>
-        id: pair[0].replace(/,/g, ' ').toLowerCase(),
+        id: pair[0].replace(/,/g, ' ').toLowerCase()
+        type: 'group'
         title: pair[0].split(',')
         cards: pair[1])
       .value()
+
+  _extractFilterMap: (filterArgs, groups) ->
+    ordinal = 0
+    filterMap = {}
+    _(groups).each((group) ->
+      _.each(group.cards, (c) ->
+        filterMap[c.id] = ordinal: ordinal++, group: group))
+    filterMap
 
   _sortFnFor: (fieldName) =>
     switch fieldName
