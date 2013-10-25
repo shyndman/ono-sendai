@@ -147,7 +147,6 @@ angular.module('deckBuilder')
         scrollToFocusedCard(transitionDuration)
 
         resizeGrid = ->
-          console.log lastRow.position + lastRow.height
           grid.height(lastRow.position + lastRow.height)
 
         # If we're in transition mode, return a promise that will resolve after
@@ -226,7 +225,7 @@ angular.module('deckBuilder')
       # Watch for resizes that may affect grid size, requiring a re-layout
       windowResized = ->
         if hasGridChangedWidth()
-          $log.info 'Laying out grid (grid width change)'
+          $log.debug 'Laying out grid (grid width change)'
           layoutNow(false)
 
       $($window).resize(windowResized)
@@ -280,16 +279,16 @@ angular.module('deckBuilder')
       # will record the scale factor so that we can use transform: scale to have them appear at the same
       # correct size.
       downscaleItems = ->
-        $log.info 'Downscaling cards'
+        $log.debug 'Downscaling cards'
         scaleItems(3)
 
       upscaleItems = ->
         if isUpscaleRequired()
           scale = upscaleTo()
-          $log.info "Upscaling cards to #{ scale }"
+          $log.debug "Upscaling cards to #{ scale }"
           scaleItems(scale)
         else
-          $log.info 'Upscaling not performed (zoom level too low)'
+          $log.debug 'Upscaling not performed (zoom level too low)'
 
       scaleItems = (scaleFactor) ->
         if inverseDownscaleFactor is scaleFactor
@@ -320,12 +319,12 @@ angular.module('deckBuilder')
           if newVal
             'detail'
           else
-            $log.info 'No cards selected. Displaying cards in grid mode'
+            $log.debug 'No cards selected. Displaying cards in grid mode'
             'grid'
         layout()
 
       scope.$watch 'cards', (newVal, oldVal) ->
-        $log.info 'Laying out grid (cards change)'
+        $log.debug 'Laying out grid (cards change)'
         $timeout ->
           invalidateGridContents()
           layoutNow(true)
@@ -333,13 +332,15 @@ angular.module('deckBuilder')
       # *~*~*~*~ ZOOMING
 
       scope.$on 'zoomStart', ->
-        downscaleItems()
+        console.groupCollapsed?('Continuous zoom')
+        $timeout -> downscaleItems()
         inContinuousZoom = true
 
       scope.$on 'zoomEnd', ->
-        $log.info "Zoom: #{ scope.zoom }"
+        $log.debug "Zoom: #{ scope.zoom }"
         upscaleItems()
         inContinuousZoom = false
+        console.groupEnd?('Continuous zoom')
 
       zoomChanged = (newVal) ->
         if inContinuousZoom

@@ -61,7 +61,7 @@ class CardService
 
   comparisonOperators: ['=', '<', '≤', '>', '≥']
 
-  constructor: ($http, @searchService, @filterDescriptors) ->
+  constructor: ($http, @$log, @searchService, @filterDescriptors) ->
     @searchService = searchService
     @_cards = []
 
@@ -74,12 +74,15 @@ class CardService
         @_cards)
 
   getCards: (filterArgs = {}) ->
+    console.time?('Card search')
+
     # Each step in the card fetch pipeline can choose to be asynchronous if needed
     @_cardsPromise
       .then(_.partial(@_searchCards, filterArgs))
       .then(_.partial(@_filterCards, filterArgs))
       .then(_.partial(@_groupCards, filterArgs))
       .catch((e) -> console.error(e)) # TODO Robustify -- notify admin
+      .finally(-> console.timeEnd('Card search'))
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
@@ -237,5 +240,5 @@ class CardService
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
   # properly rewriting the code to be minify-friendly.
-  .service 'cardService', ($http, searchService, filterDescriptors) ->
-    new CardService($http, searchService, filterDescriptors)
+  .service 'cardService', ($http, $log, searchService, filterDescriptors) ->
+    new CardService($http, $log, searchService, filterDescriptors)
