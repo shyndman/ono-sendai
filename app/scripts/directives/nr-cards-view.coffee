@@ -206,16 +206,21 @@ angular.module('deckBuilder')
         if !_.isEmpty(itemPositions)
           items = gridItems
           len = items.length
-          for item, i in items
+          for pos, i in itemPositions
+            break if i == gridItems.length
+            item = gridItems[i]
+
             item.style.zIndex = len - i
             item.style[transformProperty] =
-              "translate3d(#{itemPositions[i].x}px, #{itemPositions[i].y}px, 0)
+              "translate3d(#{pos.x}px, #{pos.y}px, 0)
                      scale(#{Number(scope.zoom) * inverseDownscaleFactor})"
 
         if !_.isEmpty(headerPositions)
-          items = gridHeaders
           len = items.length
-          for item, i in items
+          for pos, i in headerPositions
+            break if i == gridHeaders.length
+            item = gridHeaders[i]
+
             item.style.zIndex = len - i
             item.style[transformProperty] =
               "translate3d(#{headerPositions[i].x}px, #{headerPositions[i].y}px, 0)"
@@ -236,13 +241,13 @@ angular.module('deckBuilder')
 
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
-      scrollToFocusedCard = (transitionDuration) ->
-        if !focusedElement?
-          return
-
-        rowInfo = rowInfos[focusedElement.row]
-        newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
-        scrollParent.scrollTop(newScrollTop)
+      scrollToFocusedCard = ->
+        if !focusedElement? or rowInfos.length < focusedElement.row
+          scrollParent.scrollTop(0)
+        else
+          rowInfo = rowInfos[focusedElement.row]
+          newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
+          scrollParent.scrollTop(newScrollTop)
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
