@@ -12,23 +12,44 @@
   <link rel="icon" type="image/png" size="16x16" href="images/favicon-16.png" />
   <link rel="icon" type="image/png" size="32x32" href="images/favicon-32.png" />
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/grid-test.css">
   <!-- endbuild -->
 </head>
 <body ng-app="deckBuilder" ng-controller="GridTestCtrl">
-  <!--[if lt IE 9]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
   <div class="grid-test">
     <div class="controls">
-      <input type="range" step="0.0125" min="0.4" max="1.2"
+      <input type="range" step="0.00625" min="0.4" max="1.2"
         ng-model="grid.zoom"
         ng-mousedown="broadcastZoomStart()"
         ng-mouseup="broadcastZoomEnd()">
       {{grid.zoom}}
     </div>
-    <nr-card-grid cards="cards" zoom="grid.zoom"></nr-card-grid>
+    <nr-cards-view class="cards" cards="cards" zoom="grid.zoom">
+      <div ng-repeat="cardOrGroup in cardsAndGroups track by cardOrGroup.id">
+        <div ng-switch="cardOrGroup.isHeader">
+          <!-- Group header -->
+          <div ng-switch-when="true" ng-init="group = cardOrGroup">
+            <h2 class="{{group.id}} grid-header">
+              <small class="card-count"><ng-pluralize
+                  count="group.cards.length"
+                  when="{
+                    '1': '1 card',
+                    'other': '{} cards'
+                  }"></ng-pluralize>
+              </small>
+              {{group.title|primaryGroupTitle:filter.groupings}}
+              <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
+            </h2>
+          </div>
+
+          <!-- Card -->
+          <div ng-switch-default ng-init="card = cardOrGroup">
+            <img ng-src="{{card.imagesrc}}" class="grid-item" ng-click="selectCard(card)">
+          </div>
+        </div>
+      </div>
+    </nr-cards-view>
   </div>
 
   <!-- build:js scripts/lib.js -->
@@ -63,7 +84,8 @@
   <script src="scripts/directives/nr-subtype-filter.js"></script>
   <script src="scripts/directives/nr-subnav.js"></script>
   <script src="scripts/directives/ui-hotkey.js"></script>
-  <script src="scripts/directives/nr-card-grid.js"></script>
+  <script src="scripts/directives/nr-cards-view.js"></script>
+  <script src="scripts/services/ui-css-utils.js"></script>
   <!-- endbuild -->
 </body>
 </html>

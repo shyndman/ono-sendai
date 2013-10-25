@@ -1,20 +1,27 @@
-<div ng-controller="CardsCtrl" class="cards">
-  <div ng-repeat="group in cardGroups track by group.id" style="clear:both">
-    <!-- Group header -->
-    <h2 class="{{group.id}}">
-      <small class="card-count"><ng-pluralize
-          count="group.cards.length"
-          when="{
-            '1': '1 card',
-            'other': '{} cards'
-          }"></ng-pluralize>
-      </small>
-      {{group.title|primaryGroupTitle:filter.groupings}}
-      <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
-    </h2>
+<div ng-controller="CardsCtrl">
+  <nr-cards-view class="cards" cards="cardsAndGroups" zoom="grid.zoom">
+      <div ng-repeat="cardOrGroup in cardsAndGroups track by cardOrGroup.id">
+        <div ng-switch="cardOrGroup.isHeader">
+          <!-- Group header -->
+          <div ng-switch-when="true" ng-init="group = cardOrGroup">
+            <h2 class="{{group.id}} grid-header">
+              <small class="card-count"><ng-pluralize
+                  count="group.cards.length"
+                  when="{
+                    '1': '1 card',
+                    'other': '{} cards'
+                  }"></ng-pluralize>
+              </small>
+              {{group.title|primaryGroupTitle:filter.groupings}}
+              <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
+            </h2>
+          </div>
 
-    <card ng-repeat="card in group.cards">
-      <img src="{{card.imagesrc}}" class="card-graphic" alt="{{card.title}}">
-    </card>
-  </div>
+          <!-- Card -->
+          <div ng-switch-default ng-init="card = cardOrGroup">
+            <img ng-src="{{card.imagesrc}}" class="grid-item" ng-click="selectCard(card)">
+          </div>
+        </div>
+      </div>
+  </nr-cards-view>
 </div>

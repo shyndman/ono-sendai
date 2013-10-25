@@ -217,6 +217,9 @@ class CardService
         else
           []
 
+      # Does the trick for now
+      card.id = card.imagesrc
+
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
