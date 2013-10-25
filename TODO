@@ -10,6 +10,10 @@ TODOs
   * Make it clear that moving back to the general filter will remove filters
   * Card search in top right, keyword filter in general filters
 
-Angular Questions
-  * Where should shared DOM functionality live? DOM services? Move the methods in
-    nr-card grid when you get a chance.
+SIDE PROJECT
+  Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
+  monitoring the live application.
+
+  Characteristics to test for
+  * Scrolling
+  * Image scale
