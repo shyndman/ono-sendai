@@ -20,11 +20,32 @@ _.mixin
   # Nada, nothing, beans, bupkis
   noop: ->
 
-  profile: (fn) ->
-    (args...) ->
-      console.profile()
-      fn(args...)
-      console.profileEnd()
+
+  # *~*~*~*~ DEBUG HELPERS
+
+  # Profiles immediately
+  profile: (name, fn) ->
+    if !fn
+      fn = name
+      name = ''
+    console.profile(name)
+    ret = fn()
+    console.profileEnd(name)
+    ret
+
+  # Returns a function that will be profiled whenever invoked
+  # name (optional)
+  profiled: (name, fn) ->
+    (args...) -> _.profile(name, _.partial(fn, args...))
+
+  time: (name, fn) ->
+    console.time(name)
+    ret = fn()
+    console.timeEnd(name)
+    ret
+
+  timed: (name, fn) ->
+    (args...) -> _.time(name, _.partial(fn, args...))
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
