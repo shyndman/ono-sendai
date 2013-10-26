@@ -29,11 +29,11 @@ angular.module('deckBuilder')
       sizeCache = {}
       transformProperty = cssUtils.getVendorPropertyName('transform')
 
-      # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
-      # because we swap in lower resolution images before doing most transformations.
+      # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary because we swap
+      # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
 
-      # Returns true if the grid has changed width
+      # Returns true if the grid has changed width since last invocation
       hasGridChangedWidth = ->
         if gridWidth != (newGridWidth = grid.width())
           gridWidth = newGridWidth
@@ -46,7 +46,8 @@ angular.module('deckBuilder')
         gridHeaders = element.find('.grid-header')
         gridItemsAndHeaders = element.find('.grid-item,.grid-header')
 
-      # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
+      # NOTE Assumes uniform sizing for all grid items of a given type (which in our case is not a problem,
+      # but we end up re-using this, consider it)
       getItemSize = (type, item, noScale = false) ->
         scaleFactor =
           if noScale
@@ -59,6 +60,7 @@ angular.module('deckBuilder')
         sizeCache[type][inverseDownscaleFactor] ?=
           width: parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
+
         baseSize = sizeCache[type][inverseDownscaleFactor]
 
         {
@@ -72,8 +74,8 @@ angular.module('deckBuilder')
       isGridHeader = (item) ->
         item.classList.contains('grid-header')
 
-      # Returns a promise that is resolved when any transitions complete, or undefined if there is no
-      # transition.
+      # Returns a promise that is resolved when any transitions complete, or undefined if there
+      # is no transition.
       performGridLayout = ->
         items = gridItemsAndHeaders
         if !items.length
