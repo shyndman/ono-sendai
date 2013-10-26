@@ -1,12 +1,12 @@
 # This component is responsible for dealing with cards, including user input and layout.
 
 angular.module('deckBuilder')
-  .directive('nrCardsView', ($window, $q, $log, $timeout, cssUtils) ->
+  .directive('nrCardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     templateUrl: 'views/directives/nr-cards-view.html'
     scope: {
-      cardFilter: '='
+      queryResult: '='
       zoom: '='
       selectedCard: '='
     }
@@ -42,8 +42,8 @@ angular.module('deckBuilder')
           false
 
       invalidateGridContents = ->
-        itemSel = '.grid-item:not(.ng-hide)'
-        headerSel = '.grid-header:not(.ng-hide)'
+        itemSel = '.grid-item'
+        headerSel = '.grid-header'
 
         gridItems = element.find(itemSel)
         gridHeaders = element.find(headerSel)
@@ -150,7 +150,7 @@ angular.module('deckBuilder')
             cssUtils.getTransitionDuration(items.first())
           else
             0
-        scrollToFocusedCard(transitionDuration)
+        scrollToFocusedElement(transitionDuration)
 
         # Resizes the grid, possibly after transition completion
         newGridHeight = lastRow.position + lastRow.height
@@ -211,10 +211,14 @@ angular.module('deckBuilder')
             break if i == gridItems.length
             item = gridItems[i]
 
-            item.style.zIndex = len - i
-            item.style[transformProperty] =
-              "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
-                     scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
+            newStyle = "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
+                        scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
+            new_zIndex = len - 1
+
+            if item.style.zIndex isnt new_zIndex
+              item.style.zIndex = new_zIndex
+            if item.style[transformProperty] isnt newStyle
+              item.style[transformProperty] = newStyle
 
         if !_.isEmpty(headerPositions)
           len = items.length
@@ -242,7 +246,7 @@ angular.module('deckBuilder')
 
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
-      scrollToFocusedCard = ->
+      scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
           scrollParent.scrollTop(0)
         else
@@ -333,14 +337,13 @@ angular.module('deckBuilder')
         layout()
       scope.$watch('selectedCard', selectedCardChanged)
 
-      cardFilterChanged = (newVal, oldVal) ->
+      queryResultChanged = (newVal, oldVal) ->
         $log.debug 'Laying out grid (filter change)'
         $timeout ->
           invalidateGridContents()
           layoutNow(true)
         return
-      scope.$watch('cardFilter', cardFilterChanged)
-
+      scope.$watch('queryResult', queryResultChanged)
 
       # *~*~*~*~ ZOOMING
 

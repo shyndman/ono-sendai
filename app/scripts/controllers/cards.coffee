@@ -24,8 +24,8 @@ angular.module('deckBuilder')
       cardFilter[card.id]?
 
     $scope.$watch('filter', ((filter)->
-      $log.debug 'Filter changed. Rebuilding filter map'
-      cardService.buildFilterMap(filter).then (cardFilter) ->
-        $log.debug 'Assigning new card filter'
-        $scope.cardFilter = cardFilter
+      $log.debug 'Filter changed'
+      cardService.query(filter).then (queryResult) ->
+        $log.debug 'Assigning new result set'
+        $scope.queryResult = queryResult
     ), true)) # True to make sure field changes trigger this watch
