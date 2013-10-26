@@ -1,6 +1,5 @@
 _.mixin(_.str.exports()); # Make underscore.string functions available under the _ namespace
 
-
 printWelcomeMessage = ->
   # Build up style information
   titleColors = ['#000']
