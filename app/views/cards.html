@@ -1,31 +1,36 @@
 <div ng-controller="CardsCtrl">
-  <nr-cards-view class="cards" card-filter="cardFilter" zoom="grid.zoom">
-      <div ng-repeat="cardOrGroup in cards | sortCards:cardFilter track by cardOrGroup.id">
-        <div ng-switch="cardOrGroup.isHeader">
-          <!-- Group header -->
-          <div ng-switch-when="true" ng-init="group = cardOrGroup">
-            <h2 class="{{group.id}} grid-header" title="{{group.id}}">
-              <small class="card-count"><ng-pluralize
-                  count="group.cards.length"
-                  when="{
-                    '1': '1 card',
-                    'other': '{} cards'
-                  }"></ng-pluralize>
-              </small>
-              {{group.title|primaryGroupTitle:filter.groupings}}
-              <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
-            </h2>
-          </div>
+  <nr-cards-view class="cards" query-result="queryResult" zoom="grid.zoom">
+    <!-- HEADERS -->
+    <h2 ng-repeat="group in groups track by group.id"
+        class="{{group.id}} grid-header"
+        title="{{group.id}}">
+      <small class="card-count"><ng-pluralize
+          count="group.cards.length"
+          when="{
+            '1': '1 card',
+            'other': '{} cards'
+          }"></ng-pluralize>
+      </small>
+      {{group.title|primaryGroupTitle:filter.groupings}}
+      <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
+    </h2>
 
-          <!-- Card -->
-          <div ng-switch-default ng-init="card = cardOrGroup">
-            <img class="grid-item"
-                 ng-src="{{card.imagesrc}}"
-                 ng-click="selectCard(card)"
-                 ng-attr-title="{{card.title}}"
-                 ng-show="isCardShown(card, cardFilter)">
-          </div>
-        </div>
+    <!--
+      CARDS
+
+      Note:
+      This template is bound once, with all the cards, then never touched again. All
+      sorting and show/hide logic for cards exists in nr-cards-view.
+    -->
+    <div bindonce ng-repeat="card in cards track by card.id">
+      <div>
+        <img class="grid-item"
+             bo-src="card.imagesrc"
+             ng-click="selectCard(card)"
+             bo-title="card.title"
+             bo-attr-card-id="card.id"
+             bo-attr>
       </div>
+    </div>
   </nr-cards-view>
 </div>
