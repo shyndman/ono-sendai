@@ -98,15 +98,13 @@ class CardService
     # Each step in the card filtering pipeline can choose to be asynchronous if needed
     @_cardsPromise
       .then((cards) =>
-        _.logGroup('Card query',
-          _.timed('Total', =>
-            @$log.debug('Args:', queryArgs)
-            filteredCards = @_filterCards(queryArgs, @_searchCards(queryArgs, cards))
-            groups = @_groupCards(queryArgs, filteredCards)
-            resultSet = @_buildQueryResult(queryArgs, groups)
-            @$log.debug("Cards matching query: #{ resultSet.length }")
-          )
-        ))
+        _.logGroup('Card query', _.timed('Query duration', =>
+          @$log.debug('Args:', queryArgs)
+          filteredCards = @_filterCards(queryArgs, @_searchCards(queryArgs, cards))
+          groups = @_groupCards(queryArgs, filteredCards)
+          resultSet = @_buildQueryResult(queryArgs, groups)
+          @$log.debug("Cards matching query: #{ resultSet.length }")
+        )))
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
