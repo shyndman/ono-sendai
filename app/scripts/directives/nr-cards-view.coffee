@@ -339,7 +339,7 @@ angular.module('deckBuilder')
           invalidateGridContents()
           layoutNow(true)
         return
-      scope.$watch('cardFilter', cardFilterChanged, true)
+      scope.$watch('cardFilter', cardFilterChanged)
 
 
       # *~*~*~*~ ZOOMING
