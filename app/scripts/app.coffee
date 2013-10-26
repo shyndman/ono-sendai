@@ -15,7 +15,7 @@ printWelcomeMessage = ->
   fadeFormat = _.repeat('%c ', fadeColors.length)
 
   # Generate content strings
-  len = 18
+  len = 16
   margin = _.repeat(' ', len)
   title  = _.center('ONO-SENDAI', len)
   credit = _.center('by scott hyndman', len)
@@ -25,7 +25,7 @@ printWelcomeMessage = ->
     console.log("#{ fadeFormat }%c #{ str } #{ fadeFormat }", styles...)
   console.log('')
 
-angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip'])
+angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'pasvaz.bindonce'])
   .config ->
     # Very important :)
     printWelcomeMessage()
