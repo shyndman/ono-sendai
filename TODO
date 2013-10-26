@@ -10,6 +10,7 @@ TODOs
   * Make it clear that moving back to the general filter will remove filters
   * Card search in top right, keyword filter in general filters
   * Screensaver with random flavor text
+  * Use grunt-angular-templates
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
