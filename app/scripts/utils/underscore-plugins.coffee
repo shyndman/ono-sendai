@@ -21,31 +21,56 @@ _.mixin
   noop: ->
 
 
-  # *~*~*~*~ DEBUG HELPERS
+# ~*~*~* DEBUGGING UTILITIES
 
-  # Profiles immediately
-  profile: (name, fn) ->
+wrap = (methodName) ->
+  (name, fn) ->
+    (args...) ->
+      thisArg = @
+      _[methodName](name, _.bind(fn, thisArg, args...))
+
+_.mixin
+  # Profiles immediately.
+  profile: (nameOrFn, fn) ->
     if !fn
-      fn = name
+      fn = nameOrFn
       name = ''
-    console.profile(name)
-    ret = fn()
-    console.profileEnd(name)
-    ret
+    else
+      name = nameOrFn
+
+    try
+      console.profile(name)
+      fn()
+    finally
+      console.profileEnd(name)
+
+  # Times the provided function, and returns the result.
+  time: (name, fn) ->
+    try
+      console.time(name)
+      fn()
+    finally
+      console.timeEnd(name)
+
+  # Creates a new log group around the specified function
+  logGroup: (name, fn) ->
+    try
+      console.group(name)
+      fn()
+    finally
+      console.groupEnd(name)
 
   # Returns a function that will be profiled whenever invoked
-  # name (optional)
-  profiled: (name, fn) ->
-    (args...) -> _.profile(name, _.partial(fn, args...))
+  profiled: wrap('profile')
 
-  time: (name, fn) ->
-    console.time(name)
-    ret = fn()
-    console.timeEnd(name)
-    ret
+  # Returns a function that will be timed whenever invoked
+  timed: wrap('time')
 
-  timed: (name, fn) ->
-    (args...) -> _.time(name, _.partial(fn, args...))
+  # Returns a function that will be wrapped in a log group whenever invoked.
+  logGrouped: wrap('logGroup')
+
+
+  # ~*~*~* DIACRITICS
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
