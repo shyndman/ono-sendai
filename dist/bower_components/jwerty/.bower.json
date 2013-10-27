@@ -30,6 +30,5 @@
   },
   "_source": "git://github.com/keithamus/jwerty.git",
   "_target": "~0.3.2",
-  "_originalSource": "jwerty",
-  "_direct": true
+  "_originalSource": "jwerty"
 }
