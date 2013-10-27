@@ -12,6 +12,7 @@ TODOs
   * Screensaver with random flavor text
   * Fix grunt-angular-templates
   * Put cards in sort order in the DOM on load
+  * UI should not delay on filter changes
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
