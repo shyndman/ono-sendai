@@ -9,9 +9,11 @@
   <title>Ono-Sendai</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <link rel="icon" type="image/png" size="32x32" href="images/2bddae59.favicon-32.png">
-  <link rel="icon" type="image/png" size="16x16" href="images/3c06bd4b.favicon-16.png">
-  <link rel="stylesheet" href="styles/b832f822.main.css">
+  <link rel="icon" type="image/png" size="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" size="16x16" href="images/favicon-16.png">
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 </head>
 <body ng-app="deckBuilder" ng-controller="MainCtrl">
   <!--[if lt IE 9]>
@@ -28,9 +30,40 @@
     <div id="right-sidebar" class="sidebar"></div>
   </div>
 
-  <script src="scripts/1c475d14.lib.js"></script>
+  <!-- build:js scripts/lib.js -->
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/underscore.string/lib/underscore.string.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-bindonce/bindonce.js"></script>
+  <script src="bower_components/angular-bootstrap/src/bindHtml/bindHtml.js"></script>
+  <script src="bower_components/angular-bootstrap/src/position/position.js"></script>
+  <script src="bower_components/angular-bootstrap/src/tooltip/tooltip.js"></script>
+  <script src="bower_components/angular-bootstrap/src/buttons/buttons.js"></script>
+  <script src="bower_components/lunr.js/lunr.js"></script>
+  <script src="bower_components/jwerty/jwerty.js"></script>
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- endbuild -->
 
-  <script src="scripts/6454c097.app.js"></script>
+  <!-- build:js({.tmp,app}) scripts/app.js -->
+  <script src="scripts/utils/underscore-plugins.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/cards.js"></script>
+  <script src="scripts/services/card-service.js"></script>
+  <script src="scripts/services/search-service.js"></script>
+  <script src="scripts/directives/nr-numeric-filter.js"></script>
+  <script src="scripts/directives/nr-nav.js"></script>
+  <script src="scripts/directives/ui-dropdown.js"></script>
+  <script src="scripts/controllers/filter.js"></script>
+  <script src="scripts/services/filter-definitions.js"></script>
+  <script src="scripts/filters/nr-group-title.js"></script>
+  <script src="scripts/directives/nr-subtype-filter.js"></script>
+  <script src="scripts/directives/nr-subnav.js"></script>
+  <script src="scripts/directives/ui-hotkey.js"></script>
+  <script src="scripts/directives/nr-cards-view.js"></script>
+  <script src="scripts/services/ui-css-utils.js"></script>
+  <!-- endbuild -->
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
