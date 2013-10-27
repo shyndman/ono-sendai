@@ -223,7 +223,7 @@ module.exports = function (grunt) {
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        basedir: '<%= yeoman.dist %>',
+        assetsDirs: ['<%= yeoman.dist %>/{,styles}'],
         dirs: ['<%= yeoman.dist %>']
       }
     },
@@ -400,7 +400,7 @@ module.exports = function (grunt) {
     'cdnify',
     'ngmin',
     'cssmin',
-    // 'svgmin', currently breaks the logo
+    // 'svgmin', //currently breaks the logo
     'uglify',
     'rev',
     'usemin'
