@@ -19,6 +19,14 @@ class QueryResult
   isShown: (id) ->
     @ordering[id]?
 
+  # Applies the query result's ordering to a collection of objects. idFn is applied
+  # to each element in order to map the element to card identifiers.
+  #
+  # Elements that do not appear in the query results are placed at the end of the collection.
+  applyOrdering: (collection, idFn) ->
+    _.sortBy collection, (ele) =>
+      @ordering[idFn(ele)] ? Number.MAX_VALUE
+
 # A service for loading, filtering and grouping cards.
 class CardService
   CARDS_URL = 'data/cards.json'

@@ -1,10 +1,14 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, cardService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService) ->
     $scope.selectedCard = null
 
-    cardService.getCards().then((cards) ->
-      $log.debug 'Assigning cards'
-      $scope.cards = cards)
+
+    # Assign cards to the scope once, but order them according to the default filter so the first images
+    # to load are the ones visible to the user.
+    $q.all([cardService.getCards(), cardService.query($scope.filter)])
+      .then(([ cards, queryResult ]) ->
+        $log.debug 'Assigning cards with default ordering'
+        $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id))
 
     $rootScope.broadcastZoomStart = ->
       $scope.$broadcast 'zoomStart'
