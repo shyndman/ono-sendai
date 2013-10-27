@@ -393,13 +393,14 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'ngtemplates:dist',
+    // 'ngtemplates:dist', // failing -- look into it later
     'autoprefixer',
     'concat',
     'copy:dist',
     'cdnify',
     'ngmin',
     'cssmin',
+    // 'svgmin', currently breaks the logo
     'uglify',
     'rev',
     'usemin'
