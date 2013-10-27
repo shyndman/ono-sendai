@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="470px" height="470px" viewBox="0 0 470 470" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>logo</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <path id="path-1" d="M265.807556,0 L265.807556,250 L350,250 L350,0 L500,0 L500,500 L235.859772,500 L235.859772,250 L150,250 L150,500 L0,500 L0,0 L265.807556,0 Z M265.807556,0"></path>
+        <mask id="mask-2" sketch:name="Shape" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup" transform="translate(235.000000, 235.000000) scale(-1, 1) rotate(-235.000000) translate(-235.000000, -235.000000) translate(-15.000000, -15.000000)">
+            <g id="Clipped" sketch:type="MSShapeGroup">
+                <use id="Shape" xlink:href="#path-1"></use>
+                <path d="M485,250 C485,120.213078 379.786922,15 250,15 C120.213078,15 15,120.213078 15,250 C15,379.786922 120.213078,485 250,485 C379.786922,485 485,379.786922 485,250 Z M45,250 C45,136.78162 136.78162,45 250,45 C363.21838,45 455,136.78162 455,250 C455,363.21838 363.21838,455 250,455 C136.78162,455 45,363.21838 45,250 Z M45,250" id="Oval" fill="#5E5E5E" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Clipped" transform="translate(175.000000, 6.000000)" fill="#5E5E5E" sketch:type="MSShapeGroup">
+                <g id="Group" transform="translate(0.000000, 0.000000)">
+                    <path d="M121,465 L151,465 L151,2.84217094e-14 L121,2.84217094e-14 L121,465 Z M121,465" id="Shape"></path>
+                    <path d="M1,494 L31,494 L31,26 L1,26 L1,494 Z M1,494" id="Shape"></path>
+                    <path d="M61,464 L91,464 L91,30 L61,30 L61,464 Z M61,464" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
