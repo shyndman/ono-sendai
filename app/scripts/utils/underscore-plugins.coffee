@@ -20,11 +20,57 @@ _.mixin
   # Nada, nothing, beans, bupkis
   noop: ->
 
-  profile: (fn) ->
+
+# ~*~*~* DEBUGGING UTILITIES
+
+wrap = (methodName) ->
+  (name, fn) ->
     (args...) ->
-      console.profile()
-      fn(args...)
-      console.profileEnd()
+      thisArg = @
+      _[methodName](name, _.bind(fn, thisArg, args...))
+
+_.mixin
+  # Profiles the provided function.
+  profile: (nameOrFn, fn) ->
+    if !fn
+      fn = nameOrFn
+      name = ''
+    else
+      name = nameOrFn
+
+    try
+      console.profile(name)
+      fn()
+    finally
+      console.profileEnd(name)
+
+  # Times the provided function.
+  time: (name, fn) ->
+    try
+      console.time(name)
+      fn()
+    finally
+      console.timeEnd(name)
+
+  # Creates a new log group (console.group) around the specified function.
+  logGroup: (name, fn) ->
+    try
+      console.group(name)
+      fn()
+    finally
+      console.groupEnd(name)
+
+  # Returns a function that will be profiled whenever invoked
+  profiled: wrap('profile')
+
+  # Returns a function that will be timed whenever invoked
+  timed: wrap('time')
+
+  # Returns a function that will be wrapped in a log group whenever invoked.
+  logGrouped: wrap('logGroup')
+
+
+  # ~*~*~* DIACRITICS
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"

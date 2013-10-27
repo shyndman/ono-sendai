@@ -6,18 +6,9 @@ angular.module('deckBuilder')
 
     $scope.$watch 'filter.side', (newSide) ->
       $scope.filter.activeGroup = generalGroup
-      $scope.filter.primaryGrouping = 'faction'
-      $scope.filter.secondaryGrouping = 'type'
 
     $scope.activateGroup = (group) ->
       $scope.filter.activeGroup = group
-
-      if group.name is 'general'
-        $scope.filter.primaryGrouping = 'faction'
-        $scope.filter.secondaryGrouping = 'type'
-      else
-        $scope.filter.primaryGrouping = 'type'
-        $scope.filter.secondaryGrouping = 'faction'
 
     $scope.isActiveGroup = (group, activeGroup) ->
       if activeGroup

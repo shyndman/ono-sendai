@@ -2,20 +2,15 @@ angular.module('deckBuilder')
   .controller('CardsCtrl', ($rootScope, $scope, $window, $log, cardService) ->
     $scope.selectedCard = null
 
+    cardService.getCards().then((cards) ->
+      $log.debug 'Assigning cards'
+      $scope.cards = cards)
+
     $rootScope.broadcastZoomStart = ->
       $scope.$broadcast 'zoomStart'
 
     $rootScope.broadcastZoomEnd = ->
       $scope.$broadcast 'zoomEnd'
-
-
-    linearizeCardGroups = (cardGroups) ->
-      _(cardGroups)
-        .chain()
-        .map((group) ->
-          [_.extend(group, isHeader: true), group.cards])
-        .flatten()
-        .value()
 
     $scope.selectCard = (card) ->
       $log.info "Selected card changing to #{ card.title }"
@@ -25,11 +20,12 @@ angular.module('deckBuilder')
       $log.info 'Card deselected'
       $scope.selectedCard = null
 
+    $scope.isCardShown = (card, cardFilter) ->
+      cardFilter[card.id]?
+
     $scope.$watch('filter', ((filter)->
-      # NOTE
-      # We don't directly assign the promise, because if we do, even cards that
-      # didn't get filtered out will have new DOM nodes created, rather than reusing
-      # the old ones.
-      cardService.getCards(filter).then (cardGroups) ->
-        $scope.cardsAndGroups = linearizeCardGroups(cardGroups)
+      $log.debug 'Filter changed'
+      cardService.query(filter).then (queryResult) ->
+        $log.debug 'Assigning new query result', queryResult
+        $scope.queryResult = queryResult
     ), true)) # True to make sure field changes trigger this watch

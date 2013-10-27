@@ -1,3 +1,24 @@
+# Contains information about how cards should be sorted and which cards are visible.
+class QueryResult
+  constructor: ->
+    @ordering = {}
+    @groups = {}
+    @length = 0
+    @_ordinalOffset = 0
+
+  # NOTE: cards must be inserted in order
+  addCard: (card, group, ordinal) ->
+    @length++
+    if !@ordering[group.id]?
+      @ordering[group.id] = ordinal + @_ordinalOffset
+      @groups[group.id] = group
+      @_ordinalOffset++
+
+    @ordering[card.id] = ordinal + @_ordinalOffset
+
+  isShown: (id) ->
+    @ordering[id]?
+
 # A service for loading, filtering and grouping cards.
 class CardService
   CARDS_URL = 'data/cards.json'
@@ -73,16 +94,23 @@ class CardService
         @_augmentCards(@_cards)
         @_cards)
 
-  getCards: (filterArgs = {}) ->
-    console.time?('Card search')
+  getCards: -> @_cardsPromise
 
-    # Each step in the card fetch pipeline can choose to be asynchronous if needed
+  # Returns an filter result object, which describes which cards passed the filter, their positions, and group
+  # membership.
+  query: (queryArgs = {}) ->
+
+    # Each step in the card filtering pipeline can choose to be asynchronous if needed
     @_cardsPromise
-      .then(_.partial(@_searchCards, filterArgs))
-      .then(_.partial(@_filterCards, filterArgs))
-      .then(_.partial(@_groupCards, filterArgs))
-      .catch((e) -> console.error(e)) # TODO Robustify -- notify admin
-      .finally(-> console.timeEnd('Card search'))
+      .then((cards) =>
+        _.logGroup('Card query', _.timed('Query duration', =>
+          @$log.debug('Args:', queryArgs)
+          filteredCards = @_filterCards(queryArgs, @_searchCards(queryArgs, cards))
+          groups = @_groupCards(queryArgs, filteredCards)
+          resultSet = @_buildQueryResult(queryArgs, groups)
+          @$log.debug("Cards matching query: #{ resultSet.length }")
+          resultSet
+        )))
 
   _searchCards: ({ search }) =>
     if _.trim(search).length > 0
@@ -90,21 +118,21 @@ class CardService
     else
       @_cards
 
-  _filterCards: (filterArgs, cards) =>
-    enabledTypes = @_enabledTypes(filterArgs)
-    filterFn = @_buildFilterFunction(filterArgs, enabledTypes)
-    card for card in cards when @_matchesFilter(card, filterArgs, { enabledTypes, filterFn })
+  _filterCards: (queryArgs, cards) =>
+    enabledTypes = @_enabledTypes(queryArgs)
+    filterFn = @_buildFilterFunction(queryArgs, enabledTypes)
+    card for card in cards when @_matchesFilter(card, queryArgs, { enabledTypes, filterFn })
 
   # Returns true if the provided card passes the filters.
-  _matchesFilter: (card, filterArgs, { enabledTypes, filterFn }) =>
-    return (if filterArgs.side? then card.side is filterArgs.side else true) and # TODO This should be extracted into filter functions
+  _matchesFilter: (card, queryArgs, { enabledTypes, filterFn }) =>
+    return (if queryArgs.side?  then card.side is queryArgs.side  else true) and # TODO This should be extracted into filter functions
            (if enabledTypes?    then enabledTypes[card.type]      else true) and
            (if filterFn?        then filterFn(card)               else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
   # they should be returned (true) or not (false).
-  _enabledTypes: (filterArgs) =>
-    selName = filterArgs.activeGroup?.name
+  _enabledTypes: (queryArgs) =>
+    selName = queryArgs.activeGroup?.name
     if !selName? or selName is 'general'
       null
     else
@@ -113,10 +141,10 @@ class CardService
       enabledTypes[cardType] = true
       enabledTypes
 
-  _buildFilterFunction: (filterArgs, enabledTypes) =>
+  _buildFilterFunction: (queryArgs, enabledTypes) =>
     filterGroups = ['general']
-    filterGroups.push filterArgs.activeGroup.name if filterArgs.activeGroup
-    excludeFields = filterArgs.activeGroup?.excludedGeneralFields? || {}
+    filterGroups.push queryArgs.activeGroup.name if queryArgs.activeGroup
+    excludeFields = queryArgs.activeGroup?.excludedGeneralFields? || {}
 
     filters = _(filterGroups)
       .chain()
@@ -125,8 +153,8 @@ class CardService
       .pluck('fieldFilters')
       .map((fields) =>
         _.map(fields, (field, name) =>
-          if !excludeFields[name]? and (!field.inclusionPredicate? or field.inclusionPredicate(filterArgs))
-            @_buildFilter(field, filterArgs.fieldFilters[name])))
+          if !excludeFields[name]? and (!field.inclusionPredicate? or field.inclusionPredicate(queryArgs))
+            @_buildFilter(field, queryArgs.fieldFilters[name])))
       .flatten()
       .compact()
       .value()
@@ -190,10 +218,19 @@ class CardService
       .groupBy((card) -> _.map(groupings, (g) -> card[g]))
       .pairs()
       .map((pair) =>
-        id: pair[0].replace(/,/g, ' ').toLowerCase(),
+        id: pair[0].replace(/,/g, ' ').toLowerCase()
+        type: 'group'
         title: pair[0].split(',')
         cards: pair[1])
       .value()
+
+  _buildQueryResult: (queryArgs, groups) ->
+    ordinal = 0
+    queryResult = new QueryResult
+    _(groups).each((group) ->
+      _.each(group.cards, (c) ->
+        queryResult.addCard(c, group, ordinal++)))
+    queryResult
 
   _sortFnFor: (fieldName) =>
     switch fieldName
