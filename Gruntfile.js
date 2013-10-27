@@ -217,9 +217,13 @@ module.exports = function (grunt) {
       }
     },
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
+      html: [
+        '<%= yeoman.dist %>/*.html',
+        '<%= yeoman.dist %>/views/{,*/}*.html'
+      ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
+        basedir: '<%= yeoman.dist %>',
         dirs: ['<%= yeoman.dist %>']
       }
     },
