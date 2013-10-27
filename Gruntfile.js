@@ -204,7 +204,7 @@ module.exports = function (grunt) {
         options: {
           base: '<%= yeoman.app %>',
           concat: '<%= yeoman.dist %>/scripts/app.js',
-          module: yeomanConfig.name
+          module: 'deckBuilder'
         },
         src: '<%= yeoman.app %>/views/**.html',
         dest: '.tmp/scripts/templateCache.js'
