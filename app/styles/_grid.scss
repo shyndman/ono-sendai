@@ -2,6 +2,7 @@
 
 nr-cards-view {
   display: block;
+  user-select: none;
 
   .grid {
     // XXX

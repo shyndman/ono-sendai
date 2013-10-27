@@ -23,9 +23,17 @@ label {
     border-color: $input-border-focus;
     background-color: white;
 
-    &.active {
+    &.active, &.active:hover {
       background-color: #ebebeb;
     }
+  }
+
+  &.active:hover {
+    background-color: #ebebeb;
+  }
+
+  &:hover {
+    background-color: white;
   }
 }
 
@@ -47,7 +55,6 @@ label {
     border-right-width: 1px;
   }
 }
-
 
 .navbar-default .navbar-nav > .active {
   > a, > a:hover, > a:focus {
