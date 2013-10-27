@@ -199,6 +199,17 @@ module.exports = function (grunt) {
         }
       }
     },
+    ngtemplates: {
+      dist: {
+        options: {
+          base: '<%= yeoman.app %>',
+          concat: '<%= yeoman.dist %>/scripts/app.js',
+          module: yeomanConfig.name
+        },
+        src: '<%= yeoman.app %>/views/**.html',
+        dest: '.tmp/scripts/templateCache.js'
+      }
+    },
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
@@ -376,11 +387,10 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'card_meta',
-    'card_img',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
+    'ngtemplates:dist',
     'autoprefixer',
     'concat',
     'copy:dist',
