@@ -23,13 +23,13 @@
       This template is bound once, with all the cards, then never touched again. All
       sorting and show/hide logic for cards exists in nr-cards-view.
     -->
-    <div bindonce ng-repeat="card in cards track by card.id">
-      <img class="grid-item"
-           bo-src="card.imagesrc"
-           ng-click="selectCard(card)"
-           bo-title="card.title"
-           bo-attr-grid-id="card.id"
-           bo-attr>
-    </div>
+    <img ng-repeat="card in cards track by card.id"
+         bindonce
+         class="grid-item"
+         bo-src="card.imagesrc"
+         ng-click="selectCard(card)"
+         bo-title="card.title"
+         bo-attr-grid-id="card.id"
+         bo-attr>
   </nr-cards-view>
 </div>
