@@ -43,10 +43,17 @@ input[type=number]::-webkit-outer-spin-button {
 
   .navbar-brand {
     width: 210px;
-    font-family: 'anr';
+    padding-top: 18px;
+
+    font-family: orbitron;
     text-transform: uppercase;
     text-align: center;
-    padding-top: 18px;
+
+    .logo {
+      width: 22px;
+      height: 22px;
+      margin: -9px 2px -3px -15px;
+    }
   }
 
   .navbar-nav > li > a {
