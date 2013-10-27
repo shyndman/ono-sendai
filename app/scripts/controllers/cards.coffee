@@ -26,6 +26,6 @@ angular.module('deckBuilder')
     $scope.$watch('filter', ((filter)->
       $log.debug 'Filter changed'
       cardService.query(filter).then (queryResult) ->
-        $log.debug 'Assigning new result set'
+        $log.debug 'Assigning new query result', queryResult
         $scope.queryResult = queryResult
     ), true)) # True to make sure field changes trigger this watch

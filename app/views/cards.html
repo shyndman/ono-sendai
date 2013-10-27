@@ -1,7 +1,8 @@
 <div ng-controller="CardsCtrl">
   <nr-cards-view class="cards" query-result="queryResult" zoom="grid.zoom">
     <!-- HEADERS -->
-    <h2 ng-repeat="group in groups track by group.id"
+    <h2 ng-repeat="(id, group) in queryResult.groups track by id"
+        grid-id="{{group.id}}"
         class="{{group.id}} grid-header"
         title="{{group.id}}">
       <small class="card-count"><ng-pluralize
@@ -23,14 +24,12 @@
       sorting and show/hide logic for cards exists in nr-cards-view.
     -->
     <div bindonce ng-repeat="card in cards track by card.id">
-      <div>
-        <img class="grid-item"
-             bo-src="card.imagesrc"
-             ng-click="selectCard(card)"
-             bo-title="card.title"
-             bo-attr-card-id="card.id"
-             bo-attr>
-      </div>
+      <img class="grid-item"
+           bo-src="card.imagesrc"
+           ng-click="selectCard(card)"
+           bo-title="card.title"
+           bo-attr-grid-id="card.id"
+           bo-attr>
     </div>
   </nr-cards-view>
 </div>

@@ -28,8 +28,7 @@ class SearchService
 
   # Retuns a promise that will resolve to an array of cards matching the provided query.
   search: (query) =>
-    cards = @_mapResultsToCards(@_index.search(query))
-    @$q.when(cards)
+    @_mapResultsToCards(@_index.search(query))
 
   _mapResultsToCards: (results) =>
     if !results?

@@ -30,7 +30,7 @@ wrap = (methodName) ->
       _[methodName](name, _.bind(fn, thisArg, args...))
 
 _.mixin
-  # Profiles immediately.
+  # Profiles the provided function.
   profile: (nameOrFn, fn) ->
     if !fn
       fn = nameOrFn
@@ -44,7 +44,7 @@ _.mixin
     finally
       console.profileEnd(name)
 
-  # Times the provided function, and returns the result.
+  # Times the provided function.
   time: (name, fn) ->
     try
       console.time(name)
@@ -52,7 +52,7 @@ _.mixin
     finally
       console.timeEnd(name)
 
-  # Creates a new log group around the specified function
+  # Creates a new log group (console.group) around the specified function.
   logGroup: (name, fn) ->
     try
       console.group(name)

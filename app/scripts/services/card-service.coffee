@@ -1,18 +1,23 @@
 # Contains information about how cards should be sorted and which cards are visible.
 class QueryResult
   constructor: ->
-    @cardIdToFilterInfo = {}
+    @ordering = {}
+    @groups = {}
     @length = 0
+    @_ordinalOffset = 0
 
+  # NOTE: cards must be inserted in order
   addCard: (card, group, ordinal) ->
     @length++
-    @cardIdToFilterInfo[card.id] = ordinal: ordinal, group: group
+    if !@ordering[group.id]?
+      @ordering[group.id] = ordinal + @_ordinalOffset
+      @groups[group.id] = group
+      @_ordinalOffset++
 
-  isCardShown: (card) ->
-    @cardIdToFilterInfo[card.id]?
+    @ordering[card.id] = ordinal + @_ordinalOffset
 
-  getCardFilterInfo: (card) ->
-    @cardIdToFilterInfo[card.id]
+  isShown: (id) ->
+    @ordering[id]?
 
 # A service for loading, filtering and grouping cards.
 class CardService
@@ -104,6 +109,7 @@ class CardService
           groups = @_groupCards(queryArgs, filteredCards)
           resultSet = @_buildQueryResult(queryArgs, groups)
           @$log.debug("Cards matching query: #{ resultSet.length }")
+          resultSet
         )))
 
   _searchCards: ({ search }) =>
@@ -119,7 +125,7 @@ class CardService
 
   # Returns true if the provided card passes the filters.
   _matchesFilter: (card, queryArgs, { enabledTypes, filterFn }) =>
-    return (if queryArgs.side? then card.side is queryArgs.side else true) and # TODO This should be extracted into filter functions
+    return (if queryArgs.side?  then card.side is queryArgs.side  else true) and # TODO This should be extracted into filter functions
            (if enabledTypes?    then enabledTypes[card.type]      else true) and
            (if filterFn?        then filterFn(card)               else true)
 

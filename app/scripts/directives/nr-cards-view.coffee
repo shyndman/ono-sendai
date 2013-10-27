@@ -18,8 +18,8 @@ angular.module('deckBuilder')
       vMargin = 10
       hMargin = 6
       inContinuousZoom = false
-      gridItems = null
-      gridHeaders = null
+      gridItems = $([])
+      gridHeaders = $([])
       gridItemsAndHeaders = null
       focusedElement = null # Element visible in the top left of the grid
       focusedElementChop = null # Percentage of the focused element chopped off above
@@ -28,6 +28,7 @@ angular.module('deckBuilder')
       headerPositions = []
       sizeCache = {}
       transformProperty = cssUtils.getVendorPropertyName('transform')
+      queryResult = null
 
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary
       # because we swap in lower resolution images before doing most transformations.
@@ -41,13 +42,17 @@ angular.module('deckBuilder')
         else
           false
 
-      invalidateGridContents = ->
-        itemSel = '.grid-item'
-        headerSel = '.grid-header'
+      invalidateGridContents = (queryResult) ->
+        sortByQueryResult = (ele) ->
+          queryResult.ordering[ele.attributes['grid-id'].value] ? Number.MAX_VALUE
 
-        gridItems = element.find(itemSel)
-        gridHeaders = element.find(headerSel)
-        gridItemsAndHeaders = element.find("#{ itemSel }, #{ headerSel }")
+        gridItems = element.find('.grid-item')
+        gridHeaders = element.find('.grid-header')
+
+        # Sort the grid items and headers. Push filtered items to the back of the list.
+        gridItemsAndHeaders = $(_.sortBy(gridItems.add(gridHeaders), sortByQueryResult))
+        gridItems = $(_.sortBy(gridItems, sortByQueryResult))
+        gridHeaders = $(_.sortBy(gridHeaders, sortByQueryResult))
 
       # NOTE Assumes uniform sizing for all grid items (which in our case is not a problem)
       getItemSize = (type, item, noScale = false) ->
@@ -105,7 +110,7 @@ angular.module('deckBuilder')
         groupItemIdx = 0
         baseRow = 0
 
-        # Helper function for calculating row information, such as sizing (modifies variables in enclosing scope)
+        # Helper function for calculating row information, such as sizing (modifies rowInfos in enclosing scope)
         calculateNextRow = (firstElement, headerRow = false) ->
           lastRow = _.last(rowInfos)
           rowHeight = if headerRow then headerSize.height else itemSize.height
@@ -117,10 +122,12 @@ angular.module('deckBuilder')
           rowInfo
 
         # Loop over items, calculating their coordinates
+        lastVisibleRow = 0
         for item, i in items
           if isGridItem(item)
             row = Math.floor(groupItemIdx / numColumns) + baseRow
             if row == rowInfos.length
+              lastVisibleRow = row if queryResult.isShown(item.attributes['grid-id'].value)
               calculateNextRow(item)
 
             item.idx = itemPositions.push(
@@ -143,7 +150,6 @@ angular.module('deckBuilder')
             groupItemIdx = 0
 
         applyItemStyles()
-        lastRow = _.last(rowInfos)
 
         transitionDuration =
           if element.hasClass('transitioned')
@@ -153,6 +159,7 @@ angular.module('deckBuilder')
         scrollToFocusedElement(transitionDuration)
 
         # Resizes the grid, possibly after transition completion
+        lastRow = rowInfos[lastVisibleRow]
         newGridHeight = lastRow.position + lastRow.height
         resizeGrid = -> grid.height(newGridHeight)
 
@@ -211,16 +218,21 @@ angular.module('deckBuilder')
             break if i == gridItems.length
             item = gridItems[i]
 
-            newStyle = "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
-                        scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
-            new_zIndex = len - 1
+            if queryResult.isShown(item.attributes['grid-id'].value)
+              $(item).removeClass('hidden')
+              newStyle = "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
+                          scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
+              new_zIndex = len - 1
 
-            if item.style.zIndex isnt new_zIndex
-              item.style.zIndex = new_zIndex
-            if item.style[transformProperty] isnt newStyle
-              item.style[transformProperty] = newStyle
+              if item.style.zIndex isnt new_zIndex
+                item.style.zIndex = new_zIndex
+              if item.style[transformProperty] isnt newStyle
+                item.style[transformProperty] = newStyle
+            else
+              $(item).addClass('hidden')
 
         if !_.isEmpty(headerPositions)
+          items = gridHeaders
           len = items.length
           for pos, i in headerPositions
             break if i == gridHeaders.length
@@ -291,16 +303,17 @@ angular.module('deckBuilder')
       # correct size.
       downscaleItems = ->
         scale = 3
-        $log.debug "Downscaling cards to 1/#{ scale }"
+        $log.debug "Downscaling grid items to 1/#{ scale }"
         scaleItems(scale)
 
       upscaleItems = ->
         if isUpscaleRequired()
           scale = upscaleTo()
-          $log.debug "Upscaling cards to 1/#{ scale }"
+          $log.debug "Upscaling grid items to 1/#{ scale }"
           scaleItems(scale)
         else
           $log.debug 'Upscaling not performed (zoom level too low)'
+          $q.when()
 
       scaleItems = (scaleFactor) ->
         if inverseDownscaleFactor is scaleFactor
@@ -337,18 +350,19 @@ angular.module('deckBuilder')
         layout()
       scope.$watch('selectedCard', selectedCardChanged)
 
-      queryResultChanged = (newVal, oldVal) ->
-        $log.debug 'Laying out grid (filter change)'
+      queryResultChanged = (newVal) ->
+        $log.debug 'Laying out grid (query)'
+        queryResult = newVal
         $timeout ->
-          invalidateGridContents()
-          layoutNow(true)
+          invalidateGridContents(queryResult)
+          layoutNow(element.hasClass('transitioned'))
         return
       scope.$watch('queryResult', queryResultChanged)
 
       # *~*~*~*~ ZOOMING
 
       scope.$on 'zoomStart', ->
-        console.group?('Continuous zoom')
+        console.group?('Zoom')
         $timeout -> downscaleItems()
         inContinuousZoom = true
 
@@ -356,7 +370,7 @@ angular.module('deckBuilder')
         $log.debug "New zoom level: #{ scope.zoom }"
         upscaleItems()
         inContinuousZoom = false
-        console.groupEnd?('Continuous zoom')
+        console.groupEnd?('Zoom')
 
       zoomChanged = (newVal) ->
         if inContinuousZoom
