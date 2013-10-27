@@ -7,10 +7,6 @@
         <mask id="mask-2" sketch:name="Shape" fill="white">
             <use xlink:href="#path-1"></use>
         </mask>
-        <circle id="path-3" cx="240" cy="240" r="240"></circle>
-        <mask id="mask-4" sketch:name="Oval" fill="white">
-            <use xlink:href="#path-3"></use>
-        </mask>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="logo" sketch:type="MSLayerGroup" transform="translate(235.000000, 235.000000) scale(-1, 1) rotate(-235.000000) translate(-235.000000, -235.000000) translate(-15.000000, -15.000000)">
@@ -18,9 +14,8 @@
                 <use id="Shape" xlink:href="#path-1"></use>
                 <path d="M485,250 C485,120.213078 379.786922,15 250,15 C120.213078,15 15,120.213078 15,250 C15,379.786922 120.213078,485 250,485 C379.786922,485 485,379.786922 485,250 Z M45,250 C45,136.78162 136.78162,45 250,45 C363.21838,45 455,136.78162 455,250 C455,363.21838 363.21838,455 250,455 C136.78162,455 45,363.21838 45,250 Z M45,250" id="Oval" fill="#5E5E5E" mask="url(#mask-2)"></path>
             </g>
-            <g id="Clipped" transform="translate(11.000000, 10.000000)" sketch:type="MSShapeGroup">
-                <use id="Oval" xlink:href="#path-3"></use>
-                <g id="Group" mask="url(#mask-4)" transform="translate(164.000000, -4.000000)" fill="#5E5E5E">
+            <g id="Clipped" transform="translate(175.000000, 6.000000)" fill="#5E5E5E" sketch:type="MSShapeGroup">
+                <g id="Group" transform="translate(0.000000, 0.000000)">
                     <path d="M121,465 L151,465 L151,2.84217094e-14 L121,2.84217094e-14 L121,465 Z M121,465" id="Shape"></path>
                     <path d="M1,494 L31,494 L31,26 L1,26 L1,494 Z M1,494" id="Shape"></path>
                     <path d="M61,464 L91,464 L91,30 L61,30 L61,464 Z M61,464" id="Shape"></path>
