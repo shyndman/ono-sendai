@@ -1,13 +1,11 @@
-// Describes styles for the card grid
-
 nr-cards-view {
   display: block;
   user-select: none;
 
-  .grid {
+  .content-container {
     // XXX
-    // This is incredibly important, because if we don't have it, setting the grid's height during a
-    // transition of the grid items will internally set it to the position of the bottom-most grid item
+    // This is incredibly important, because if we don't have it, setting the container's height during a
+    // transition of the grid items will internally set it to the position of the bottom-most container item
     // (which is in transition).
     //
     // With overflow hidden, the height set in the style property is respected, and any ancestors with
