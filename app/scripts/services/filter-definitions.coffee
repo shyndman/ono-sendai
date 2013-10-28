@@ -1,3 +1,5 @@
+
+
 angular.module('deckBuilder')
   # Contains default values for the filters manipulated by the user interface
   .value('filterDefaults',
@@ -56,54 +58,24 @@ angular.module('deckBuilder')
             icon: 'faction'
             faction:
               corp: [
-                {
-                  name: 'Haas-Bioroid'
-                  abbr: 'HB'
-                  model: 'haasBioroid'
-                }
-                {
-                  name: 'Jinteki'
-                  abbr: 'J'
-                  model: 'jinteki'
-                }
-                {
-                  name: 'NBN'
-                  abbr: 'NBN'
-                  model: 'nbn'
-                }
-                {
-                  name: 'Weyland Consortium'
-                  abbr: 'W'
-                  model: 'weyland'
-                }
-                {
-                  name: 'Neutral'
-                  abbr: 'N'
-                  model: 'corpNeutral'
-                }
+                { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'haasBioroid' }
+                { name: 'Jinteki',            abbr: 'J',   model: 'jinteki' }
+                { name: 'NBN',                abbr: 'NBN', model: 'nbn' }
+                { name: 'Weyland Consortium', abbr: 'W',   model: 'weyland' }
+                { name: 'Neutral',            abbr: 'N',   model: 'corpNeutral' }
               ]
               runner: [
-                {
-                  name: 'Anarch'
-                  abbr: 'A'
-                  model: 'anarch'
-                }
-                {
-                  name: 'Criminal'
-                  abbr: 'C'
-                  model: 'criminal'
-                }
-                {
-                  name: 'Shaper'
-                  abbr: 'S'
-                  model: 'shaper'
-                }
-                {
-                  name: 'Neutral'
-                  abbr: 'N'
-                  model: 'runnerNeutral'
-                }
+                { name: 'Anarch',             abbr: 'A',   model: 'anarch' }
+                { name: 'Criminal',           abbr: 'C',   model: 'criminal' }
+                { name: 'Shaper',             abbr: 'S',   model: 'shaper' }
+                { name: 'Neutral',            abbr: 'N',   model: 'runnerNeutral' }
               ]
+          }
+          {
+            name: 'search'
+            type: 'search'
+            placeholder: 'Keyword Search'
+            icon: 'search'
           }
           {
             name: 'cost'
@@ -116,6 +88,7 @@ angular.module('deckBuilder')
             type: 'numeric'
             placeholder: 'Influence'
             icon: 'influence'
+            max: 5
           }
         ]
       },
