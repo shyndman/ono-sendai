@@ -15,7 +15,8 @@ class SearchService
       @field 'type'
       @field 'subtype'
       @field 'text'
-      @field 'setname'
+      # I don't think this makes sense, because it can often lead to search results that don't make sense
+      # @field 'setname'
 
     # DEBUG
     window.searchIndex = @_index
