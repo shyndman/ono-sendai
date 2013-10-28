@@ -1,18 +1,16 @@
 TODOs
   * Collapsed mode for card groups
   * Indicate which filter group is active
-  * Move corp/runner to transform bar (need better name for that, btw)
+  * Move corp/runner to subnav
   * Hotkeys
   * Zoom
   * Focus last selected value on dropdowns (may require rewrite)
-  * Add runner card filters
-  * Add max to numeric filter
+  * Add calculated max for filters
   * Make it clear that moving back to the general filter will remove filters
-  * Card search in top right, keyword filter in general filters
   * Screensaver with random flavor text
   * Fix grunt-angular-templates
-  * Put cards in sort order in the DOM on load
   * UI should not delay on filter changes
+  * Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
