@@ -16,7 +16,10 @@ class SearchService
       @field 'subtype'
       @field 'text'
       @field 'setname'
-    window.search = @_index.search.bind(@_index) # DEBUG
+
+    # DEBUG
+    window.searchIndex = @_index
+    window.search = @_index.search.bind(@_index)
 
   indexCards: (@cards) =>
     # Store a map of cards by their title, for later mapping
