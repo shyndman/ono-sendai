@@ -18,7 +18,7 @@ angular.module('deckBuilder')
         runnerNeutral: true
       cost:
         operator: '='
-      influenceValue:
+      factionCost:
         operator: '='
       influenceLimit:
         operator: '='
@@ -84,7 +84,7 @@ angular.module('deckBuilder')
             icon: 'credit'
           }
           {
-            name: 'influenceValue'
+            name: 'factionCost'
             type: 'numeric'
             placeholder: 'Influence'
             icon: 'influence'
@@ -96,7 +96,7 @@ angular.module('deckBuilder')
         name: 'identities'
         hiddenGeneralFields:
           cost: true
-          influenceValue: true
+          factionCost: true
         fieldFilters: [
           {
             name: 'influenceLimit'
@@ -223,7 +223,7 @@ angular.module('deckBuilder')
         cost:
           type: 'numeric'
           cardField: [ 'advancementcost', 'cost' ]
-        influenceValue:
+        factionCost:
           type: 'numeric'
           cardField: 'factioncost'
     }
@@ -231,7 +231,7 @@ angular.module('deckBuilder')
       cardType: 'Identity'
       excludedGeneralFields:
         cost: true
-        influenceValue: true
+        factionCost: true
       fieldFilters:
         influenceLimit:
           type: 'numeric'
