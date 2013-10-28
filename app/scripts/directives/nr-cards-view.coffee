@@ -203,6 +203,7 @@ angular.module('deckBuilder')
           else
             performDetailLayout
 
+        # Chain it all together
         scalePromise
           .then(layoutFn)
           .then(->
