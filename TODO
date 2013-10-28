@@ -11,6 +11,7 @@ TODOs
   * Fix grunt-angular-templates
   * UI should not delay on filter changes
   * Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
+  * Jinteki/Haas-Bioroid special deck URLs
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
