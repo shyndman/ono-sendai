@@ -26,9 +26,12 @@ printWelcomeMessage = ->
   console.log('')
 
 angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'pasvaz.bindonce'])
-  .config ->
+  .config (locationProvider) ->
     # Very important :)
     printWelcomeMessage()
+
+    # As long as we're deploying to github pages, we're going to leave this off
+    locationProvider.html5Mode(false).hashPrefix('!')
 
     # Sidesteps the 300ms click event on mobile devices
     FastClick.attach(document.body)
