@@ -6,7 +6,7 @@ NOTES:
 <form class="form form-horizontal" role="form" ng-controller="FilterCtrl">
   <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
 
-    <h5 ng-click="activateGroup(group)">{{group.name}}</h5>
+    <h5 ng-click="activateGroup(group)">{{group.name}} <i class="icon-active-group" title="active"></i></h5>
 
     <div class="filter-group-field {{field.name}} form-group" ng-repeat="field in group.fieldFilters" ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
@@ -21,6 +21,9 @@ NOTES:
             <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
           </div>
         </div>
+        <div ng-switch-when="search">
+          <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
+        </div>
         <div ng-switch-when="faction">
           <div class="btn-group">
             <button class="btn btn-default btn-sm" ng-repeat="faction in field.faction[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" btn-checkbox="">{{faction.abbr}}
@@ -28,7 +31,7 @@ NOTES:
           </div>
         </div>
         <div ng-switch-when="numeric">
-          <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}">
+          <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}" max="{{field.max}}">
           </numeric-filter>
         </div>
       </div>
