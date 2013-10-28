@@ -48,3 +48,6 @@
 .icon-previous:before { content: '\e810'; }
 .icon-next:before { content: '\e811'; }
 .icon-agenda-point:before { content: '\e803'; }
+
+// DO NOT OVERWRITE -- Not part of fontello font
+.icon-active-group:before { @extend .icon-unchecked:before; }

@@ -49,7 +49,16 @@ nr-subnav {
   border-right: 1px solid $navbar-default-border;
 
   .filter-group {
-    &.active h5 { /* Figure out what we want to do here */ }
+    &.active:not(.general) h5 {
+      background: #e9e9e9;
+      color: #555;
+      text-shadow: none;
+      border-color: #d0d0d0;
+
+      .icon-active-group {
+        display: block;
+      }
+    }
     &.general h5 { border-top: none; }
 
     h5 {
@@ -73,6 +82,15 @@ nr-subnav {
       @include retina {
         letter-spacing: 0.3px;
       }
+
+      .icon-active-group {
+        display: none;
+        float: right;
+        color: #777;
+        font-size: 7px;
+        position: relative;
+        top: 3px;
+      }
     }
   }
 
@@ -85,6 +103,10 @@ nr-subnav {
       width: 45px;
       text-align: center;
       color: #777;
+    }
+
+    input[type=search] {
+      width: calc(100% - 45px);
     }
 
     &.faction {
