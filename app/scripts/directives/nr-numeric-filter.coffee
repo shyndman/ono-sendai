@@ -5,8 +5,10 @@ angular.module('deckBuilder')
     templateUrl: 'views/directives/nr-numeric-filter.html'
     scope:
       filter: '=filterAttr'
-      placeholder: '@placeholder'
-      id: '@id'
+      placeholder: '@'
+      id: '@'
+      max: '@'
+
     restrict: 'E'
     link: (scope, element, attrs) ->
       scope.comparisonOperators = cardService.comparisonOperators
