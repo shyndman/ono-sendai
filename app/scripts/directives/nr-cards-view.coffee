@@ -12,8 +12,8 @@ angular.module('deckBuilder')
     }
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
-      grid = element.find('.grid')
-      gridWidth = grid.width()
+      container = element.find('.content-container')
+      containerWidth = container.width()
       minimumGutterWidth = 20
       vMargin = 10
       hMargin = 6
@@ -34,10 +34,10 @@ angular.module('deckBuilder')
       # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
 
-      # Returns true if the grid has changed width since last invocation
-      hasGridChangedWidth = ->
-        if gridWidth != (newGridWidth = grid.width())
-          gridWidth = newGridWidth
+      # Returns true if the container has changed width since last invocation
+      hasContainerChangedWidth = ->
+        if containerWidth != (newContainerWidth = container.width())
+          containerWidth = newContainerWidth
           true
         else
           false
@@ -46,8 +46,8 @@ angular.module('deckBuilder')
         elementId = (ele) ->
           ele.attributes['grid-id'].value
 
-        gridItems = element.find('.grid-item')
-        gridHeaders = element.find('.grid-header')
+        gridItems = container.find('.grid-item')
+        gridHeaders = container.find('.grid-header')
 
         # Sort the grid items and headers. Push filtered items to the back of the list.
         gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), elementId))
@@ -98,12 +98,12 @@ angular.module('deckBuilder')
         itemSize = getItemSize('item', secondItem)
         headerSize = getItemSize('header', firstHeader, true)
 
-        availableGridWidth = gridWidth - hMargin * 2
-        numColumns = Math.floor((availableGridWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+        availableWidth = containerWidth - hMargin * 2
+        numColumns = Math.floor((availableWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
         numGutters = numColumns - 1
         numRows = Math.ceil(items.length / numColumns)
 
-        gutterWidth  = (availableGridWidth - (numColumns * itemSize.width)) / numGutters
+        gutterWidth  = (availableWidth - (numColumns * itemSize.width)) / numGutters
         colPositions = (i * (itemSize.width + gutterWidth) + hMargin for i in [0...numColumns])
         rowInfos = []
         itemPositions = []
@@ -162,8 +162,8 @@ angular.module('deckBuilder')
 
         # Resizes the grid, possibly after transition completion
         lastRow = rowInfos[lastVisibleRow]
-        newGridHeight = lastRow.position + lastRow.height
-        resizeGrid = -> grid.height(newGridHeight)
+        newContainerHeight = lastRow.position + lastRow.height
+        resizeGrid = -> container.height(newContainerHeight)
 
         # If we're in transition mode, return a promise that will resolve after
         # the transition has completed.
@@ -171,7 +171,7 @@ angular.module('deckBuilder')
           transitionPromise = cssUtils.getTransitionEndPromise(secondItem)
 
           # Resize the grid immediately if its going to be growing
-          if newGridHeight > grid.height()
+          if newContainerHeight > container.height()
             resizeGrid()
             transitionPromise
           else
@@ -248,7 +248,7 @@ angular.module('deckBuilder')
 
       # Watch for resizes that may affect grid size, requiring a re-layout
       windowResized = ->
-        if hasGridChangedWidth()
+        if hasContainerChangedWidth()
           $log.debug 'Laying out grid (grid width change)'
           layoutNow(false)
 
