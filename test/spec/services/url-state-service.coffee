@@ -3,7 +3,7 @@
 describe 'Service: urlStateService', () ->
 
   # load the service's module
-  beforeEach module 'deckBuilderApp'
+  beforeEach module 'deckBuilder'
 
   # instantiate service
   urlStateService = {}

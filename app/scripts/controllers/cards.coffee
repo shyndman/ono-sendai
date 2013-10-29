@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService, urlStateService) ->
     $scope.selectedCard = null
 
 
@@ -29,6 +29,7 @@ angular.module('deckBuilder')
 
     $scope.$watch('filter', ((filter)->
       $log.debug 'Filter changed'
+      urlStateService.updateUrl(filter)
       cardService.query(filter).then (queryResult) ->
         $log.debug 'Assigning new query result', queryResult
         $scope.queryResult = queryResult
