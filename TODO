@@ -12,6 +12,7 @@ TODOs
   * UI should not delay on filter changes
   * Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
   * Jinteki/Haas-Bioroid special deck URLs
+  * Why does enter switch to corp?
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
