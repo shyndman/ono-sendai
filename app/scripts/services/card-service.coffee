@@ -29,7 +29,7 @@ class QueryResult
 
 # A service for loading, filtering and grouping cards.
 class CardService
-  CARDS_URL = 'data/cards.json'
+  CARDS_URL = '/data/cards.json'
 
   CARD_ORDINALS =
     Identity:  0

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('deckBuilder')
   .directive('subtypeFilter', () ->
     template: '<div></div>'
