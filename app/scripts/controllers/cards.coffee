@@ -2,9 +2,8 @@ angular.module('deckBuilder')
   .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService) ->
     $scope.selectedCard = null
 
-
     # Assign cards to the scope once, but order them according to the default filter so the first images
-    # to load are the ones visible to the user.
+    # to load are the ones on screen.
     $q.all([cardService.getCards(), cardService.query($scope.filter)])
       .then(([ cards, queryResult ]) ->
         $log.debug 'Assigning cards with default ordering'
