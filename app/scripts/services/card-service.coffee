@@ -179,6 +179,8 @@ class CardService
           @_buildNumericFilter(filterDesc, filterArg)
       when 'inSet'
         @_buildInSetFilter(filterDesc, filterArg)
+      when 'search'
+        undefined # Search is handled by another stage in the pipeline
       else
         console.warn "Unknown filter type: #{ filterDesc.type }"
 
@@ -285,5 +287,5 @@ class CardService
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
   # properly rewriting the code to be minify-friendly.
-  .service 'cardService', ($http, $log, searchService, filterDescriptors) ->
-    new CardService($http, $log, searchService, filterDescriptors)
+  .service('cardService', ($http, $log, searchService, filterDescriptors) ->
+    new CardService(arguments...))

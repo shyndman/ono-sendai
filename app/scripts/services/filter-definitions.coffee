@@ -220,6 +220,8 @@ angular.module('deckBuilder')
             'Runner: Criminal': 'criminal'
             'Runner: Shaper': 'shaper'
             'Runner: Neutral': 'runnerNeutral'
+        search:
+          type: 'search'
         cost:
           type: 'numeric'
           cardField: [ 'advancementcost', 'cost' ]
