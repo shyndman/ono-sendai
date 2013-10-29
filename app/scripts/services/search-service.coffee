@@ -48,12 +48,15 @@ class SearchService
       obj.map (t) -> t.toLowerCase()
     else
       str = obj.toString().replace(/[\[\]{}'"]/g, ' ')
+
       _(str)
         .chain()
         .stripTags()
         .words()
         .map((word) -> word.split('-'))
         .flatten()
+        .map((word) ->
+          word.replace(/[^\w\d\s]+$/, ' ').replace(/^[^\w\d\s]+/, ' ').trim())
         .value()
 
 # Register the service
