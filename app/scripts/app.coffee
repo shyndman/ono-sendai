@@ -8,8 +8,11 @@ angular.module('deckBuilder', [
     # Very important :)
     printWelcomeMessage()
 
-    # As long as we're deploying to github pages, we're going to leave this off
-    $locationProvider.html5Mode(false).hashPrefix('!')
+    # HTML5 mode (won't work on GH pages)
+    if (window? and /localhost/.match(window.location.host))
+      $locationProvider.html5Mode(true)
+    else
+      $locationProvider.html5Mode(false).hashPrefix('!')
 
     # Sidesteps the 300ms click event on mobile devices
     FastClick.attach(document.body)
