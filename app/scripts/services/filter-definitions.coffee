@@ -244,7 +244,7 @@ angular.module('deckBuilder')
         baseLink:
           type: 'numeric'
           cardField: 'baselink'
-          inclusionPredicate: (filterArgs) -> filterArgs.side is 'Runner'
+          inclusionPredicate: (queryArgs) -> queryArgs.side is 'Runner'
     }
     ice: {
       cardType: 'ICE'
