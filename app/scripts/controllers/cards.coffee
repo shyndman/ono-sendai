@@ -26,9 +26,14 @@ angular.module('deckBuilder')
     $scope.isCardShown = (card, cardFilter) ->
       cardFilter[card.id]?
 
+    # Limits URL updates. I find it distracting if it happens to ofter.
+    updateUrl = _.debounce(((filter) ->
+      $scope.$apply -> urlStateService.updateUrl(filter)
+    ), 500)
+
     $scope.$watch('filter', ((filter)->
       $log.debug 'Filter changed'
-      urlStateService.updateUrl(filter)
+      updateUrl(filter)
       cardService.query(filter).then (queryResult) ->
         $log.debug 'Assigning new query result', queryResult
         $scope.queryResult = queryResult
