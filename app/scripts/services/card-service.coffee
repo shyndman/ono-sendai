@@ -138,13 +138,15 @@ class CardService
            (if filterFn?        then filterFn(card)               else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
-  # they should be returned (true) or not (false).
+  # they should be returned (true) or not (undefined).
+  #
+  # If null is returned, all cards should be shown.
   _enabledTypes: (queryArgs) =>
-    selName = queryArgs.activeGroup?.name
-    if !selName? or selName is 'general'
+    activeName = queryArgs.activeGroup?.name
+    if !activeName? or activeName is 'general'
       null
     else
-      cardType = @filterDescriptors[selName].cardType
+      cardType = @filterDescriptors[activeName].cardType
       enabledTypes = {}
       enabledTypes[cardType] = true
       enabledTypes
