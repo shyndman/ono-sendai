@@ -11,9 +11,14 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
-  constructor: (@$rootScope, @$location, @$log, @cardService) ->
+  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
+
+    generalFieldFilters = @filterUI[0].fieldFilters
+
+    # Used to provide pretty faction abbreviations to the URL
+    @factionUiMappingsBySide = _.find(generalFieldFilters, (field) -> field.name is 'faction').side
     window.test = @test
 
   # Updates the URL to reflect the current query arguments
@@ -26,27 +31,38 @@ class UrlStateService
 
     search = {}
     for name, desc of relevantFilters
+      arg = queryArgs.fieldFilters[name]
       switch desc.type
         when 'numeric'
-          urlVal = queryArgs.fieldFilters[name].value
-          urlOp = DATA_TO_URL_OPERATORS[queryArgs.fieldFilters[name].operator]
+          urlVal = arg.value
+          urlOp = DATA_TO_URL_OPERATORS[arg.operator]
           search[name] = "#{ urlOp }:#{ urlVal }"
         when 'inSet'
-          search[name] = ''
+          search[name] =
+            switch name
+              when 'faction'
+                relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+                @_factionSearchVal(relevantFactions, arg)
+              else
+                @$log.warn("No URL mapping available for #{ name }")
+                ''
         when 'search'
           search.search = queryArgs.search
 
     @$location.url(url).search(search).replace()
     @generatedUrl = @$location.url()
 
-  _isFilterApplicable: (desc, fieldArgs, allArgs) ->
-    switch desc.type
-      when 'numeric'
-        fieldArgs.operator? and fieldArgs.value?
-      when 'search' # NOTE: Only ever one search field
-        allArgs.search? and !!allArgs.search.length
-      else
-        true
+  # Returns the search value for
+  _factionSearchVal: (factions, arg) ->
+    if _.every(factions, (f) -> arg[f.model])
+      'all'
+    else
+      _(factions)
+        .chain()
+        .filter((f) -> arg[f.model])
+        .pluck('abbr')
+        .value()
+        .join(',')
 
   _locationChanged: (e, newUrl, oldUrl) =>
     # If this service is responsible for the last URL update, don't react to it
@@ -57,5 +73,5 @@ class UrlStateService
 
 angular
   .module('deckBuilder')
-  .service('urlStateService', ($rootScope, $location, $log, cardService) ->
+  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI) ->
     new UrlStateService(arguments...))

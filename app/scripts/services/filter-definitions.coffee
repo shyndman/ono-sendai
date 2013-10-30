@@ -56,7 +56,7 @@ angular.module('deckBuilder')
             name: 'faction'
             type: 'faction'
             icon: 'faction'
-            faction:
+            side:
               corp: [
                 { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'haasBioroid' }
                 { name: 'Jinteki',            abbr: 'J',   model: 'jinteki' }
