@@ -7,8 +7,11 @@ angular.module('deckBuilder')
     $scope.$watch 'filter.side', (newSide) ->
       $scope.filter.activeGroup = generalGroup
 
-    $scope.activateGroup = (group) ->
-      $scope.filter.activeGroup = group
+    $scope.toggleGroup = (group) ->
+      if $scope.filter.activeGroup isnt group
+        $scope.filter.activeGroup = group
+      else
+        $scope.filter.activeGroup = generalGroup
 
     $scope.isActiveGroup = (group, activeGroup) ->
       if activeGroup

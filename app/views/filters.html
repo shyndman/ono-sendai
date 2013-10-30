@@ -9,7 +9,7 @@ NOTES:
        ng-class="{ active: isActiveGroup(group, filter.activeGroup) }"
        ng-show="isGroupShown(group, filter.side)">
 
-    <h5 ng-click="activateGroup(group)">{{group.name}}</h5>
+    <h5 ng-click="toggleGroup(group)">{{group.name}}</h5>
 
     <div class="filter-group-field {{field.name}} form-group"
          ng-repeat="field in group.fieldFilters"
