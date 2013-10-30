@@ -56,8 +56,11 @@ class UrlStateService
     for name, desc of relevantFilters
       switch desc.type
         when 'numeric'
-          search[name + ':val'] = filterArgs.fieldFilters[name].value
-          search[name + ':op'] = DATA_TO_URL_OPERATORS[filterArgs.fieldFilters[name].operator]
+          urlVal = filterArgs.fieldFilters[name].value
+          urlOp = DATA_TO_URL_OPERATORS[filterArgs.fieldFilters[name].operator]
+          search[name] = "#{ urlOp }:#{ urlVal }"
+        when 'inSet'
+          search[name] = ''
         when 'search'
           search.search = filterArgs.search
 
