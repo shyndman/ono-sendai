@@ -15,7 +15,7 @@ class UrlStateService
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
-    generalFieldFilters = @filterUI[0].fieldFilters
+    generalFieldFilters = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
 
     # Used to provide pretty faction abbreviations to the URL
     @factionUiMappingsBySide = _.find(generalFieldFilters, (field) -> field.name is 'faction').side
