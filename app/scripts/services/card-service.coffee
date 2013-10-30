@@ -113,9 +113,11 @@ class CardService
       .then((cards) =>
         _.logGroup('Card query', _.timed('Query duration', =>
           @$log.debug('Args:', queryArgs)
+
           filteredCards = @_filterCards(queryArgs, @_searchCards(queryArgs, cards))
           groups = @_groupCards(queryArgs, filteredCards)
           resultSet = @_buildQueryResult(queryArgs, groups)
+
           @$log.debug("Cards matching query: #{ resultSet.length }")
           resultSet
         )))
