@@ -1,6 +1,16 @@
 'use strict';
 
 class UrlStateService
+  # Mapping of how URLs appear in the data vs how they appear in the URL
+  DATA_TO_URL_OPERATORS =
+    '=': 'eq'
+    '<': 'lt'
+    '≤': 'lte'
+    '>': 'gt'
+    '≥': 'gte'
+
+  URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
+
   constructor: (@$rootScope, @$location, @$log, @filterDescriptors) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
@@ -38,21 +48,28 @@ class UrlStateService
       .compact()
       # Remove
       .map((fieldFilters) =>
-        _.filterObj(fieldFilters, (key, desc) =>
-          !excluded[key]? and @_isFilterApplicable(desc, filterArgs.fieldFilters[key])))
+        _.filterObj(fieldFilters, (name, desc) =>
+          !excluded[name]? and @_isFilterApplicable(desc, filterArgs.fieldFilters[name], filterArgs)))
       .value()...)
 
-    @$log.debug(relevantFilters)
+    search = {}
+    for name, desc of relevantFilters
+      switch desc.type
+        when 'numeric'
+          search[name + ':val'] = filterArgs.fieldFilters[name].value
+          search[name + ':op'] = DATA_TO_URL_OPERATORS[filterArgs.fieldFilters[name].operator]
+        when 'search'
+          search.search = filterArgs.search
 
-    @$location.url url, true
-    @generatedUrl = url
+    @$location.url(url).search(search).replace()
+    @generatedUrl = @$location.url()
 
-  _isFilterApplicable: (desc, args) ->
+  _isFilterApplicable: (desc, fieldArgs, allArgs) ->
     switch desc.type
       when 'numeric'
-        args.operator? and args.value?
-      when 'search'
-        # args.
+        fieldArgs.operator? and fieldArgs.value?
+      when 'search' # NOTE: Only ever one search field
+        allArgs.search? and !!allArgs.search.length
       else
         true
 
