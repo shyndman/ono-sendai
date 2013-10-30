@@ -4,18 +4,18 @@ angular.module('deckBuilder', [
     'ui.bootstrap.buttons',
     'ui.bootstrap.tooltip',
     'pasvaz.bindonce'])
-  .config ($locationProvider) ->
+  .config(($locationProvider) ->
     # Very important :)
     printWelcomeMessage()
 
     # HTML5 mode (won't work on GH pages)
-    if (window? and /localhost/.match(window.location.host))
+    if (window? and /localhost/.test(window.location.host))
       $locationProvider.html5Mode(true)
     else
       $locationProvider.html5Mode(false).hashPrefix('!')
 
     # Sidesteps the 300ms click event on mobile devices
-    FastClick.attach(document.body)
+    FastClick.attach(document.body))
 
 printWelcomeMessage = ->
   # Build up style information
@@ -33,11 +33,11 @@ printWelcomeMessage = ->
 
   # Generate content strings
   len = 16
-  margin = _.repeat(' ', len)
+  padding = _.repeat(' ', len)
   title  = _.center('ONO-SENDAI', len)
   credit = _.center('by scott hyndman', len)
 
   # Print it!
-  _.each [ margin, title, credit, margin ], (str) ->
+  _.each [ padding, title, credit, padding ], (str) ->
     console.log("#{ fadeFormat }%c #{ str } #{ fadeFormat }", styles...)
   console.log('')
