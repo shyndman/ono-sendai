@@ -364,7 +364,7 @@ angular.module('deckBuilder')
       # *~*~*~*~ ZOOMING
 
       scope.$on 'zoomStart', ->
-        console.group?('Zoom')
+        console.groupCollapsed?('Zoom')
         $timeout -> downscaleItems()
         inContinuousZoom = true
 
