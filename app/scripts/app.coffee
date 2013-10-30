@@ -1,5 +1,22 @@
 _.mixin(_.str.exports()); # Make underscore.string functions available under the _ namespace
 
+angular.module('deckBuilder', [
+    'ui.bootstrap.buttons',
+    'ui.bootstrap.tooltip',
+    'pasvaz.bindonce'])
+  .config(($locationProvider) ->
+    # Very important :)
+    printWelcomeMessage()
+
+    # HTML5 mode (won't work on GH pages)
+    if (window? and /localhost/.test(window.location.host))
+      $locationProvider.html5Mode(true)
+    else
+      $locationProvider.html5Mode(false).hashPrefix('!')
+
+    # Sidesteps the 300ms click event on mobile devices
+    FastClick.attach(document.body))
+
 printWelcomeMessage = ->
   # Build up style information
   titleColors = ['#000']
@@ -16,19 +33,11 @@ printWelcomeMessage = ->
 
   # Generate content strings
   len = 16
-  margin = _.repeat(' ', len)
+  padding = _.repeat(' ', len)
   title  = _.center('ONO-SENDAI', len)
   credit = _.center('by scott hyndman', len)
 
   # Print it!
-  _.each [ margin, title, credit, margin ], (str) ->
+  _.each [ padding, title, credit, padding ], (str) ->
     console.log("#{ fadeFormat }%c #{ str } #{ fadeFormat }", styles...)
   console.log('')
-
-angular.module('deckBuilder', ['ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'pasvaz.bindonce'])
-  .config ->
-    # Very important :)
-    printWelcomeMessage()
-
-    # Sidesteps the 300ms click event on mobile devices
-    FastClick.attach(document.body)

@@ -29,7 +29,7 @@ class QueryResult
 
 # A service for loading, filtering and grouping cards.
 class CardService
-  CARDS_URL = 'data/cards.json'
+  CARDS_URL = '/data/cards.json'
 
   CARD_ORDINALS =
     Identity:  0
@@ -133,52 +133,77 @@ class CardService
 
   # Returns true if the provided card passes the filters.
   _matchesFilter: (card, queryArgs, { enabledTypes, filterFn }) =>
-    return (if queryArgs.side?  then card.side is queryArgs.side  else true) and # TODO This should be extracted into filter functions
-           (if enabledTypes?    then enabledTypes[card.type]      else true) and
-           (if filterFn?        then filterFn(card)               else true)
+    return (if queryArgs.side?  then card.side is queryArgs.side else true) and # TODO This should be extracted into filter functions
+           (if enabledTypes?    then enabledTypes[card.type]     else true) and # TODO So should this
+           (if filterFn?        then filterFn(card)              else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
-  # they should be returned (true) or not (false).
+  # they should be returned (true) or not (undefined).
+  #
+  # If null is returned, all cards should be shown.
   _enabledTypes: (queryArgs) =>
-    selName = queryArgs.activeGroup?.name
-    if !selName? or selName is 'general'
+    activeName = queryArgs.activeGroup?.name
+    if !activeName? or activeName is 'general'
       null
     else
-      cardType = @filterDescriptors[selName].cardType
+      cardType = @filterDescriptors[activeName].cardType
       enabledTypes = {}
       enabledTypes[cardType] = true
       enabledTypes
 
-  _buildFilterFunction: (queryArgs, enabledTypes) =>
-    filterGroups = ['general']
-    filterGroups.push queryArgs.activeGroup.name if queryArgs.activeGroup
-    excludeFields = queryArgs.activeGroup?.excludedGeneralFields? || {}
+  # Returns the set of filter descriptors that are currently relevant to the
+  # specified set of arguments.
+  relevantFilters: (queryArgs) =>
+    groups = ['general']
+    excludeds = {} # Fields that will not be used to filter
 
-    filters = _(filterGroups)
+    if queryArgs.activeGroup? and queryArgs.activeGroup.name isnt 'general'
+      groups.push(queryArgs.activeGroup.name)
+      excludeds = @filterDescriptors[queryArgs.activeGroup.name].excludedGeneralFields || {}
+
+    _(groups)
       .chain()
       .map((name) => @filterDescriptors[name])
       .filter((group) => group.fieldFilters?)
       .pluck('fieldFilters')
       .map((fields) =>
-        _.map(fields, (field, name) =>
-          if !excludeFields[name]? and (!field.inclusionPredicate? or field.inclusionPredicate(queryArgs))
-            @_buildFilter(field, queryArgs.fieldFilters[name])))
-      .flatten()
-      .compact()
+        _.filterObj(fields, (name, desc) =>
+          fieldArg = queryArgs.fieldFilters[name]
+          !excludeds[name]? and @_isFilterApplicable(desc, fieldArg, queryArgs)))
+      .map(_.pairs)
+      .flatten(true) # Flatten down 1 level, so we're left with an array of [name, value] pairs
+      .object()      # Objectify
       .value()
 
-    if _.isEmpty(filters)
-      null
-    else
-      _.partial(OPERATORS.and, filters)
+  _isFilterApplicable: (desc, fieldArgs, queryArgs) ->
+    switch desc.type
+      when 'numeric'
+        fieldArgs.operator? and fieldArgs.value?
+      when 'search' # NOTE: Only ever one search field
+        queryArgs.search? and !!queryArgs.search.length
+      else
+        true
 
+  _buildFilterFunction: (queryArgs) =>
+    relevantFilters = @relevantFilters(queryArgs)
+
+    if !_.isEmpty(relevantFilters)
+      filterFns = _(relevantFilters)
+        .chain()
+        .map((desc, name) => @_buildFilter(desc, queryArgs.fieldFilters[name]))
+        .compact()
+        .value()
+      _.partial(OPERATORS.and, filterFns)
+
+  # NOTE: Validation has already been applied to the filters before this point (by _isFilterApplicable)
   _buildFilter: (filterDesc, filterArg) ->
     switch filterDesc.type
       when 'numeric'
-        if filterArg.value? and filterArg.operator?
-          @_buildNumericFilter(filterDesc, filterArg)
+        @_buildNumericFilter(filterDesc, filterArg)
       when 'inSet'
         @_buildInSetFilter(filterDesc, filterArg)
+      when 'search'
+        undefined # Search is handled by another stage in the pipeline
       else
         console.warn "Unknown filter type: #{ filterDesc.type }"
 
@@ -285,5 +310,5 @@ class CardService
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
   # properly rewriting the code to be minify-friendly.
-  .service 'cardService', ($http, $log, searchService, filterDescriptors) ->
-    new CardService($http, $log, searchService, filterDescriptors)
+  .service('cardService', ($http, $log, searchService, filterDescriptors) ->
+    new CardService(arguments...))

@@ -56,7 +56,7 @@ angular.module('deckBuilder')
             name: 'faction'
             type: 'faction'
             icon: 'faction'
-            faction:
+            side:
               corp: [
                 { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'haasBioroid' }
                 { name: 'Jinteki',            abbr: 'J',   model: 'jinteki' }
@@ -220,6 +220,8 @@ angular.module('deckBuilder')
             'Runner: Criminal': 'criminal'
             'Runner: Shaper': 'shaper'
             'Runner: Neutral': 'runnerNeutral'
+        search:
+          type: 'search'
         cost:
           type: 'numeric'
           cardField: [ 'advancementcost', 'cost' ]
@@ -242,7 +244,7 @@ angular.module('deckBuilder')
         baseLink:
           type: 'numeric'
           cardField: 'baselink'
-          inclusionPredicate: (filterArgs) -> filterArgs.side is 'Runner'
+          inclusionPredicate: (queryArgs) -> queryArgs.side is 'Runner'
     }
     ice: {
       cardType: 'ICE'

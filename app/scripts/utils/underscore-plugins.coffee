@@ -1,21 +1,26 @@
 _.mixin
   # Sorts an array by a sequence of comparison functions (of the type generally provided to
-  # Array#sort. If the first function in the list of functions reports equality between two
+  # Array#sort). If the first function in the list of functions reports equality between two
   # elements will then use the next function in the sequence, then the next, and so on.
   multiSort: (arr, sortFns...) ->
     copy = arr.slice()
     copy.sort (a, b) ->
       for fn in sortFns
-        return order if (order = fn(a, b)) isnt 0
+        if (order = fn(a, b)) != 0
+          return order
       order
 
   # Concatenates the provided the array, and returns the result.
-  concat: (arrays...) ->
+  concat: (arrs...) ->
     arr = []
-    for a in arrays
-      continue unless a?
+    for a in arrs when a?
       arr = arr.concat(a)
     arr
+
+  # Returns an object containing only properties that pass a truth test. The
+  # iterator is called with key and value arguments.
+  filterObj: (obj, iterator) ->
+    _.object([key, val] for key, val of obj when iterator(key, val))
 
   # Nada, nothing, beans, bupkis
   noop: ->

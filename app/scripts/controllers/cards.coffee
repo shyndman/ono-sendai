@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService, urlStateService) ->
     $scope.selectedCard = null
 
     # Assign cards to the scope once, but order them according to the default filter so the first images
@@ -26,8 +26,14 @@ angular.module('deckBuilder')
     $scope.isCardShown = (card, cardFilter) ->
       cardFilter[card.id]?
 
+    # Limits URL updates. I find it distracting if it happens to ofter.
+    updateUrl = _.debounce(((filter) ->
+      $scope.$apply -> urlStateService.updateUrl(filter)
+    ), 500)
+
     $scope.$watch('filter', ((filter)->
       $log.debug 'Filter changed'
+      updateUrl(filter)
       cardService.query(filter).then (queryResult) ->
         $log.debug 'Assigning new query result', queryResult
         $scope.queryResult = queryResult
