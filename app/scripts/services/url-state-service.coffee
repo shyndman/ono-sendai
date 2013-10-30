@@ -23,6 +23,8 @@ class UrlStateService
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs) ->
+    @$log.debug('Updating URL with latest query arguments')
+
     relevantFilters = @cardService.relevantFilters(queryArgs)
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
 
@@ -69,7 +71,8 @@ class UrlStateService
     if @$location.url() == @generatedUrl
       return
 
-    @$log.debug "URL changed to #{ @$location.url() }"
+    @$log.debug "URL changed to #{ @$location.url() }. Parsing into query arguments."
+
 
 angular
   .module('deckBuilder')
