@@ -63,11 +63,12 @@ angular.module('deckBuilder')
             scope.zoom * inverseDownscaleFactor
 
         # NOTE: These are extremely expensive calculations. Do them once, only.
-        sizeCache["#{type}:#{inverseDownscaleFactor}"] ?=
+        cacheKey = "#{type}:#{inverseDownscaleFactor}"
+        sizeCache[cacheKey] ?=
           width: parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
-        baseSize = sizeCache["#{type}:#{inverseDownscaleFactor}"]
+        baseSize = sizeCache[cacheKey]
 
         {
           width: baseSize.width * scaleFactor
@@ -295,8 +296,8 @@ angular.module('deckBuilder')
         else if scope.zoom > 0.35
           2
 
-      # Halve the resolution of grid items so the GPU uses less texture memory during transforms. We
-      # will record the scale factor so that we can use transform: scale to have them appear at the same
+      # Change the resolution of grid items so the GPU uses less texture memory during transforms. We
+      # will record the scale factor so that we can use transform: scale CSS to have them appear at the same
       # correct size.
       downscaleItems = ->
         scale = 3
