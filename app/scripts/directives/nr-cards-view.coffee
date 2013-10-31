@@ -63,11 +63,12 @@ angular.module('deckBuilder')
             scope.zoom * inverseDownscaleFactor
 
         # NOTE: These are extremely expensive calculations. Do them once, only.
-        sizeCache["#{type}:#{inverseDownscaleFactor}"] ?=
+        cacheKey = "#{type}:#{inverseDownscaleFactor}"
+        sizeCache[cacheKey] ?=
           width: parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
-        baseSize = sizeCache["#{type}:#{inverseDownscaleFactor}"]
+        baseSize = sizeCache[cacheKey]
 
         {
           width: baseSize.width * scaleFactor
