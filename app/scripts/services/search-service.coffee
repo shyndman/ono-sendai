@@ -1,4 +1,4 @@
-# Wraps a client-side search engine library to expose search functionality to the application.
+# Wraps a client-side search engine library to expose card search functionality to the application.
 class SearchService
   constructor: (@$q) ->
     filters = [ { lbl: 'stripDiacritics', fn: _.stripDiacritics } ]
@@ -15,7 +15,7 @@ class SearchService
       @field 'type'
       @field 'subtype'
       @field 'text'
-      # I don't think this makes sense, because it can often lead to search results that don't make sense
+      # TODO Figure out whether this should stay, because it can often lead to search results that don't make sense
       # @field 'setname'
 
     # DEBUG
@@ -47,10 +47,9 @@ class SearchService
     else if _.isArray(obj)
       obj.map (t) -> t.toLowerCase()
     else
-      str = obj.toString().replace(/[\[\]{}'"]/g, ' ')
-
-      _(str)
+      _(obj.toString())
         .chain()
+        .replace(/[\[\]{}'"]/g, ' ')
         .stripTags()
         .words()
         .map((word) -> word.split('-'))

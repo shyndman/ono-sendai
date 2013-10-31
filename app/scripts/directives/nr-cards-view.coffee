@@ -63,12 +63,11 @@ angular.module('deckBuilder')
             scope.zoom * inverseDownscaleFactor
 
         # NOTE: These are extremely expensive calculations. Do them once, only.
-        sizeCache[type] ?= {}
-        sizeCache[type][inverseDownscaleFactor] ?=
+        sizeCache["#{type}:#{inverseDownscaleFactor}"] ?=
           width: parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
-        baseSize = sizeCache[type][inverseDownscaleFactor]
+        baseSize = sizeCache["#{type}:#{inverseDownscaleFactor}"]
 
         {
           width: baseSize.width * scaleFactor
@@ -151,13 +150,7 @@ angular.module('deckBuilder')
             groupItemIdx = 0
 
         applyItemStyles()
-
-        transitionDuration =
-          if element.hasClass('transitioned')
-            cssUtils.getTransitionDuration(items.first())
-          else
-            0
-        scrollToFocusedElement(transitionDuration)
+        scrollToFocusedElement()
 
         # Resizes the grid, possibly after transition completion
         lastRow = rowInfos[lastVisibleRow]
@@ -178,7 +171,7 @@ angular.module('deckBuilder')
         else
           resizeGrid()
 
-      #
+      # TODO
       performDetailLayout = ->
         items = gridItems
         if !items.length
@@ -254,6 +247,7 @@ angular.module('deckBuilder')
 
       $($window).resize(windowResized)
 
+
       # *~*~*~*~ SCROLLING
 
       scrollParent = element.parents('.scrollable').first()
@@ -288,6 +282,7 @@ angular.module('deckBuilder')
         focusedElementChop = (scrollTop - rowInfo.position) / rowInfo.height
 
       scrollParent.scroll(_.debounce(scrollChanged, 100))
+
 
       # *~*~*~*~ SCALING
 
@@ -360,6 +355,7 @@ angular.module('deckBuilder')
           layoutNow(element.hasClass('transitioned'))
         return
       scope.$watch('queryResult', queryResultChanged)
+
 
       # *~*~*~*~ ZOOMING
 

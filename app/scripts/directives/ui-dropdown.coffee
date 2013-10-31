@@ -36,8 +36,7 @@ angular.module('deckBuilder')
               openElement = null
 
             $document.bind('click', closeMenu))
-    }
-  )
+    })
 
   # Handles keyboard input for the dropdown menu
   .directive('dropdownMenu', ($document) ->

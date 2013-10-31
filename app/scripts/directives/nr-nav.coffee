@@ -1,3 +1,4 @@
+# Top navigation
 angular.module('deckBuilder')
   .directive('nrNav', ->
     templateUrl: '/views/directives/nr-nav.html'
