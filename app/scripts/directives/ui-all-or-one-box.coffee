@@ -32,6 +32,8 @@ angular.module('deckBuilder')
         element.toggleClass('active', flag)
 
       # UI -> Model
+      #   TODO This seriously makes no sense. I'm completely circumventing the $setViewValue system in order
+      #        to make this work properly.
       element.on 'click', ->
         parentModel = getParentModel(scope)
         if element.hasClass('active') # Set all booleans to true
