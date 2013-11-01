@@ -4,45 +4,6 @@ $sidebar-width: 212px;
   user-select: none;
 }
 
-nr-subnav {
-  height: 30px;
-  min-height: 30px;
-  border-bottom: 1px solid #e7e7e7;
-  background: #fbfbfb;
-  text-align: right;
-
-  input[type=range] {
-    margin-right: 20px;
-    width: 140px;
-    position: relative;
-    top: 5px;
-  }
-
-  .control-label {
-    position: relative;
-    top: 1px;
-    margin-right: 12px;
-
-    font-size: 12px;
-    color: #9b9b9b;
-  }
-
-  .btn {
-    font-size: 12px;
-    height: 30px;
-    background: none;
-    border: none;
-
-    &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
-      background: #f4f4f4;
-    }
-  }
-
-  .btn-group .btn:focus + .btn {
-    border: none;
-  }
-}
-
 #filter-bar {
   width: $sidebar-width;
   min-width: $sidebar-width;
@@ -79,6 +40,7 @@ nr-subnav {
       border-left: none;
       border-right: none;
 
+      // Don't use subpixel letter-spacing unless we're on a screen that can support it
       @include retina {
         letter-spacing: 0.3px;
       }
