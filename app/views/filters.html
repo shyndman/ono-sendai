@@ -32,11 +32,12 @@ NOTES:
         <div ng-switch-when="faction">
           <div class="btn-group">
             <button
-              class="btn btn-default btn-sm"
-              ng-repeat="faction in field.side[filter.side.toLowerCase()]"
-              ng-model="filter.fieldFilters.faction[faction.model]"
-              title="{{faction.name}}"
-              btn-checkbox>{{faction.abbr}}
+                class="btn btn-default btn-sm"
+                ng-repeat="faction in field.side[filter.side.toLowerCase()]"
+                ng-model="filter.fieldFilters.faction"
+                ui-all-or-one-box="{{faction.model}}"
+                title="{{faction.name}}">
+              {{faction.abbr}}
             </button>
           </div>
         </div>
