@@ -15,11 +15,11 @@ angular.module('deckBuilder')
       containerWidth = container.width()
       minimumGutterWidth = 20
       vMargin = 10
-      hMargin = 6
+      hMargin = 6 # Margin at the edges
       inContinuousZoom = false
       gridItems = $([])
       gridHeaders = $([])
-      gridItemsAndHeaders = null
+      gridItemsAndHeaders = null # Ordered grid items and headers
       focusedElement = null # Element visible in the top left of the grid
       focusedElementChop = null # Percentage of the focused element chopped off above
       rowInfos = []
