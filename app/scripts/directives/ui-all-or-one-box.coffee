@@ -32,14 +32,12 @@ angular.module('deckBuilder')
 
         element.toggleClass('active', flag)
 
-      homogenizeModel = (value) ->
+      # Returns a copy of the model where all fields have the same value.
+      homogenizedModel = (value) ->
         _.object(_.map(ngModelCtrl.$modelValue, (val, key) -> [key, value]))
 
-      allTrues = ->
-        homogenizeModel(true)
-
-      allFalses = ->
-        homogenizeModel(false)
+      allTrues = _.partial(homogenizedModel, true)
+      allFalses = _.partial(homogenizedModel, false)
 
       # UI -> Model
       element.on 'click', ->
@@ -48,7 +46,7 @@ angular.module('deckBuilder')
             allTrues()
           else
             oneTrue = allFalses()
-            oneTrue[attrs.uiAllOrOneBox] = true
+            oneTrue[boolField] = true
             oneTrue
 
         scope.$apply ->
