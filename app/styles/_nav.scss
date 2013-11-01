@@ -17,12 +17,13 @@ nr-subnav {
         a {
           padding: 5px 23px;
           font-size: 13px;
-          color: #555;
+          color: #777;
           border-bottom: 2px solid transparent;
-          transition: 0.3s border-bottom ease-in-out;
+          transition: 0.3s border-bottom ease-in-out,
+                      0.3s color         ease-in-out;
 
           &:hover {
-            color: #555;
+            color: #777;
             background: none;
             &:not(.active) {
               border-bottom: 2px solid #ccc;
@@ -30,6 +31,7 @@ nr-subnav {
           }
 
           &.active {
+            color: #555;
             border-bottom: 2px solid #66afe9;
           }
         }

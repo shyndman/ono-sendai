@@ -14,40 +14,34 @@ angular.module('deckBuilder')
   #   1. A single button is "active", and its underlying boolean field in the model is true. All others are false.
   #   2. No buttons appear active, and all fields are true.
   #
-  .directive('uiAllOrOneBox', ->
+  .directive('uiAllOrOneBox', ($parse) ->
     restrict: 'A'
     require: 'ngModel'
     link: (scope, element, attrs, ngModelCtrl) ->
-      boolField = attrs.uiAllOrOneBox
+      getParentModel = $parse(attrs.uiAllOrOneBox)
+      field = attrs.uiAllOrOneBoxField
 
       # Model -> UI
       ngModelCtrl.$render = ->
+        parentModel = getParentModel(scope)
         flag =
-          if _.all(ngModelCtrl.$modelValue, (bool) -> bool)
+          if _.all(parentModel, (bool) -> bool)
             false
           else
-            ngModelCtrl.$modelValue[boolField]
-
+            ngModelCtrl.$modelValue
         element.toggleClass('active', flag)
-
-      # Returns a copy of the model where all fields have the same value.
-      homogenizedModel = (value) ->
-        _.object(_.map(ngModelCtrl.$modelValue, (val, key) -> [key, value]))
-
-      allTrues = _.partial(homogenizedModel, true)
-      allFalses = _.partial(homogenizedModel, false)
 
       # UI -> Model
       element.on 'click', ->
-        newModelVal =
-          if element.hasClass('active') # Set all booleans to true
-            allTrues()
-          else
-            oneTrue = allFalses()
-            oneTrue[boolField] = true
-            oneTrue
+        parentModel = getParentModel(scope)
+        if element.hasClass('active') # Set all booleans to true
+          console.log 'Setting all to true'
+          parentModel[key] = true for key, val of parentModel
+        else
+          console.log 'Setting all to false'
+          parentModel[key] = false for key, val of parentModel
+          parentModel[field] = true
 
         scope.$apply ->
-          ngModelCtrl.$setViewValue(newModelVal)
           ngModelCtrl.$render()
   )
