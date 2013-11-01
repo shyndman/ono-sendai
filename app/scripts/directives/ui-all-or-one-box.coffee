@@ -1,5 +1,4 @@
 angular.module('deckBuilder')
-
   # The all or one box is a set of buttons whose behaviour is somewhere in between those of checkboxes and radiobuttons.
   # This set of controls sit in front of sit in front of an object model filled with boolean entries. Example:
   #
@@ -14,7 +13,6 @@ angular.module('deckBuilder')
   #
   #   1. A single button is "active", and its underlying boolean field in the model is true. All others are false.
   #   2. No buttons appear active, and all fields are true.
-  #
   #
   .directive('uiAllOrOneBox', ->
     restrict: 'A'
