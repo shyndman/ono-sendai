@@ -4,6 +4,8 @@ nr-subnav {
   min-height: 30px;
   border-bottom: 1px solid #e7e7e7;
   background: #fbfbfb;
+  box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
+  z-index: 1000000;
 
   nav {
     flex-grow: 1;
@@ -28,7 +30,7 @@ nr-subnav {
           }
 
           &.active {
-            border-bottom: 2px solid #999;
+            border-bottom: 2px solid #66afe9;
           }
         }
       }
