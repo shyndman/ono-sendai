@@ -35,10 +35,8 @@ angular.module('deckBuilder')
       element.on 'click', ->
         parentModel = getParentModel(scope)
         if element.hasClass('active') # Set all booleans to true
-          console.log 'Setting all to true'
           parentModel[key] = true for key, val of parentModel
         else
-          console.log 'Setting all to false'
           parentModel[key] = false for key, val of parentModel
           parentModel[field] = true
 
