@@ -9693,7 +9693,6 @@ function $QProvider() {
   }];
 }
 
-
 /**
  * Constructs a promise manager.
  *
