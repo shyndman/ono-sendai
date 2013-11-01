@@ -48,11 +48,6 @@ angular.module('deckBuilder')
         name: 'general'
         fieldFilters: [
           {
-            name: 'side'
-            type: 'side'
-            icon: 'side'
-          }
-          {
             name: 'faction'
             type: 'faction'
             icon: 'faction'

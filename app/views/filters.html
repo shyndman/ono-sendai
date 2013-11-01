@@ -20,12 +20,6 @@ NOTES:
       </label>
 
       <div ng-switch on="field.type">
-        <div ng-switch-when="side">
-          <div class="btn-group">
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
-          </div>
-        </div>
         <div ng-switch-when="search">
           <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
