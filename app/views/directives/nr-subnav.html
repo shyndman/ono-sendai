@@ -1,18 +1,15 @@
 <nav>
   <ul>
-    <li>
-      <a ng-model="filter.side" btn-radio="'Corp'">Corporation</a>
-    </li>
-    <li>
-      <a ng-model="filter.side" btn-radio="'Runner'">Runner</a>
-    </li>
+    <li><a ng-model="filter.side" btn-radio="'Corp'">Corporation</a></li>
+    <li><a ng-model="filter.side" btn-radio="'Runner'">Runner</a></li>
   </ul>
 </nav>
-
-<div class="transforms">
+<div>
   <label class="control-label">Zoom:</label>
-  <input type="range" step="0.00625" min="0.2" max="1.0" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()" class="ng-pristine ng-valid">
-
+  <input type="range" step="0.00625" min="0.2" max="1.0"
+         ng-model="grid.zoom"
+         ng-mousedown="broadcastZoomStart()"
+         ng-mouseup="broadcastZoomEnd()">
   <label class="control-label">Group:</label>
   <div class="btn-group">
     <button class="btn btn-default" ng-model="filter.groupings" btn-radio="['faction', 'type']">Faction</button>
