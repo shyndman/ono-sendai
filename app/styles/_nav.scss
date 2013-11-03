@@ -40,35 +40,33 @@ nr-subnav {
     }
   }
 
-  .transforms {
-    input[type=range] {
-      margin-right: 20px;
-      width: 140px;
-      position: relative;
-      top: 5px;
-    }
+  input[type=range] {
+    margin-right: 20px;
+    width: 140px;
+    position: relative;
+    top: 5px;
+  }
 
-    .control-label {
-      position: relative;
-      top: 1px;
-      margin-right: 12px;
-      font-size: 12px;
-      color: #9b9b9b;
-    }
+  .control-label {
+    position: relative;
+    top: 1px;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #9b9b9b;
+  }
 
-    .btn {
-      font-size: 12px;
-      height: 30px;
-      background: none;
-      border: none;
+  .btn {
+    font-size: 12px;
+    height: 30px;
+    background: none;
+    border: none;
 
-      &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
-        background: #f4f4f4;
-      }
+    &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
+      background: #f4f4f4;
     }
+  }
 
-    .btn-group .btn:focus + .btn {
-      border: none;
-    }
+  .btn-group .btn:focus + .btn {
+    border: none;
   }
 }
