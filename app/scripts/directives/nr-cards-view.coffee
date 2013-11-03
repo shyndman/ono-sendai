@@ -15,11 +15,11 @@ angular.module('deckBuilder')
       containerWidth = container.width()
       minimumGutterWidth = 20
       vMargin = 10
-      hMargin = 6
+      hMargin = 6 # Margin at the edges
       inContinuousZoom = false
       gridItems = $([])
       gridHeaders = $([])
-      gridItemsAndHeaders = null
+      gridItemsAndHeaders = null # Ordered grid items and headers
       focusedElement = null # Element visible in the top left of the grid
       focusedElementChop = null # Percentage of the focused element chopped off above
       rowInfos = []
@@ -63,12 +63,12 @@ angular.module('deckBuilder')
             scope.zoom * inverseDownscaleFactor
 
         # NOTE: These are extremely expensive calculations. Do them once, only.
-        sizeCache[type] ?= {}
-        sizeCache[type][inverseDownscaleFactor] ?=
+        cacheKey = "#{type}:#{inverseDownscaleFactor}"
+        sizeCache[cacheKey] ?=
           width: parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
-        baseSize = sizeCache[type][inverseDownscaleFactor]
+        baseSize = sizeCache[cacheKey]
 
         {
           width: baseSize.width * scaleFactor
@@ -151,13 +151,7 @@ angular.module('deckBuilder')
             groupItemIdx = 0
 
         applyItemStyles()
-
-        transitionDuration =
-          if element.hasClass('transitioned')
-            cssUtils.getTransitionDuration(items.first())
-          else
-            0
-        scrollToFocusedElement(transitionDuration)
+        scrollToFocusedElement()
 
         # Resizes the grid, possibly after transition completion
         lastRow = rowInfos[lastVisibleRow]
@@ -178,7 +172,7 @@ angular.module('deckBuilder')
         else
           resizeGrid()
 
-      #
+      # TODO
       performDetailLayout = ->
         items = gridItems
         if !items.length
@@ -254,6 +248,7 @@ angular.module('deckBuilder')
 
       $($window).resize(windowResized)
 
+
       # *~*~*~*~ SCROLLING
 
       scrollParent = element.parents('.scrollable').first()
@@ -289,6 +284,7 @@ angular.module('deckBuilder')
 
       scrollParent.scroll(_.debounce(scrollChanged, 100))
 
+
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
@@ -300,8 +296,8 @@ angular.module('deckBuilder')
         else if scope.zoom > 0.35
           2
 
-      # Halve the resolution of grid items so the GPU uses less texture memory during transforms. We
-      # will record the scale factor so that we can use transform: scale to have them appear at the same
+      # Change the resolution of grid items so the GPU uses less texture memory during transforms. We
+      # will record the scale factor so that we can use transform: scale CSS to have them appear at the same
       # correct size.
       downscaleItems = ->
         scale = 3
@@ -360,6 +356,7 @@ angular.module('deckBuilder')
           layoutNow(element.hasClass('transitioned'))
         return
       scope.$watch('queryResult', queryResultChanged)
+
 
       # *~*~*~*~ ZOOMING
 

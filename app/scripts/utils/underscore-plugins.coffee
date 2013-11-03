@@ -17,6 +17,10 @@ _.mixin
       arr = arr.concat(a)
     arr
 
+  # String.replace, but chainable.
+  replace: (str, args...) ->
+    str.replace(args...)
+
   # Returns an object containing only properties that pass a truth test. The
   # iterator is called with key and value arguments.
   filterObj: (obj, iterator) ->

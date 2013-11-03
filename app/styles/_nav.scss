@@ -1,0 +1,72 @@
+nr-subnav {
+  display: flexbox;
+  height: 30px;
+  min-height: 30px;
+  border-bottom: 1px solid #e7e7e7;
+  background: #fbfbfb;
+  box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
+  z-index: 1000000;
+
+  nav {
+    flex-grow: 1;
+
+    ul {
+      @extend .nav;
+      li {
+        float: left;
+        a {
+          padding: 5px 23px;
+          font-size: 13px;
+          color: #777;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          transition: 0.3s border-bottom ease-in-out,
+                      0.3s color         ease-in-out;
+
+          &:hover {
+            color: #777;
+            background: none;
+            &:not(.active) {
+              border-bottom: 2px solid #ccc;
+            }
+          }
+
+          &.active {
+            color: #555;
+            border-bottom: 2px solid #66afe9;
+          }
+        }
+      }
+    }
+  }
+
+  input[type=range] {
+    margin-right: 20px;
+    width: 140px;
+    position: relative;
+    top: 5px;
+  }
+
+  .control-label {
+    position: relative;
+    top: 1px;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+
+  .btn {
+    font-size: 12px;
+    height: 30px;
+    background: none;
+    border: none;
+
+    &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
+      background: #f4f4f4;
+    }
+  }
+
+  .btn-group .btn:focus + .btn {
+    border: none;
+  }
+}

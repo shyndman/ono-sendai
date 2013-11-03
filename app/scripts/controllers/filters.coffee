@@ -3,9 +3,11 @@ angular.module('deckBuilder')
     $scope.filterUI = filterUI
     generalGroup = _.findWhere(filterUI, name: 'general')
     $scope.filter.activeGroup = generalGroup
+    factions = $scope.filter.fieldFilters.faction
 
     $scope.$watch 'filter.side', (newSide) ->
       $scope.filter.activeGroup = generalGroup
+      factions[key] = true for key, val of factions
 
     $scope.toggleGroup = (group) ->
       if $scope.filter.activeGroup isnt group

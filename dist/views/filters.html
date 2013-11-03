@@ -6,7 +6,7 @@ NOTES:
 <form class="form form-horizontal" role="form" ng-controller="FilterCtrl">
   <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
 
-    <h5 ng-click="activateGroup(group)">{{group.name}} <i class="icon-active-group" title="active"></i></h5>
+    <h5 ng-click="toggleGroup(group)">{{group.name}}</h5>
 
     <div class="filter-group-field {{field.name}} form-group" ng-repeat="field in group.fieldFilters" ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
@@ -15,18 +15,13 @@ NOTES:
       </label>
 
       <div ng-switch="" on="field.type">
-        <div ng-switch-when="side">
-          <div class="btn-group">
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
-          </div>
-        </div>
         <div ng-switch-when="search">
           <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
         <div ng-switch-when="faction">
           <div class="btn-group">
-            <button class="btn btn-default btn-sm" ng-repeat="faction in field.faction[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" btn-checkbox="">{{faction.abbr}}
+            <button class="btn btn-default btn-sm" ng-repeat="faction in field.side[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" ui-all-or-one-box="filter.fieldFilters.faction" ui-all-or-one-box-field="{{faction.model}}" title="{{faction.name}}">
+              {{faction.abbr}}
             </button>
           </div>
         </div>

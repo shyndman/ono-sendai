@@ -20,23 +20,19 @@ NOTES:
       </label>
 
       <div ng-switch on="field.type">
-        <div ng-switch-when="side">
-          <div class="btn-group">
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Corp'">Corp</button>
-            <button class="btn btn-default btn-sm" ng-model="filter.side" btn-radio="'Runner'">Runner</button>
-          </div>
-        </div>
         <div ng-switch-when="search">
           <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
         <div ng-switch-when="faction">
           <div class="btn-group">
             <button
-              class="btn btn-default btn-sm"
-              ng-repeat="faction in field.side[filter.side.toLowerCase()]"
-              ng-model="filter.fieldFilters.faction[faction.model]"
-              title="{{faction.name}}"
-              btn-checkbox>{{faction.abbr}}
+                class="btn btn-default btn-sm"
+                ng-repeat="faction in field.side[filter.side.toLowerCase()]"
+                ng-model="filter.fieldFilters.faction[faction.model]"
+                ui-all-or-one-box="filter.fieldFilters.faction"
+                ui-all-or-one-box-field="{{faction.model}}"
+                title="{{faction.name}}">
+              {{faction.abbr}}
             </button>
           </div>
         </div>
