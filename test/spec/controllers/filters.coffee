@@ -1,17 +1,17 @@
 'use strict'
 
-describe 'Controller: FilterCtrl', () ->
+describe 'Controller: FiltersCtrl', () ->
 
   # load the controller's module
   beforeEach module 'deckBuilder'
 
-  FilterCtrl = {}
+  FiltersCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    FilterCtrl = $controller 'FilterCtrl', {
+    FiltersCtrl = $controller 'FiltersCtrl', {
       $scope: scope
     }
 

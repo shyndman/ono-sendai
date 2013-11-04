@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('FilterCtrl', ($scope, filterUI) ->
+  .controller('FiltersCtrl', ($scope, filterUI) ->
     $scope.filterUI = filterUI
     generalGroup = _.findWhere(filterUI, name: 'general')
     $scope.filter.activeGroup = generalGroup
