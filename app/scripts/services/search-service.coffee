@@ -11,7 +11,6 @@ class SearchService
       @pipeline.before (->), fn for { fn } in filters
       @ref 'title'
       @field 'title', boost: 10
-      @field 'faction', boost: 5
       @field 'type'
       @field 'subtype'
       @field 'text'
