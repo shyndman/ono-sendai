@@ -94,13 +94,49 @@ class UrlStateService
 
     if cardsMatch?
       # Side
-      queryArgs.side = _.capitalize(cardsMatch[1])
+      side =  cardsMatch[1]
+      queryArgs.side = _.capitalize(side)
 
       # Active group
       if cardsMatch[2]
         queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
 
-      relevantFilters = @cardService.relevantFilters(queryArgs)
+      relevantFilters = @cardService.relevantFilters(queryArgs, false)
+      search = @$location.search()
+
+      for name, desc of relevantFilters
+        continue unless search[name]?
+
+        switch desc.type
+          when 'search'
+            queryArgs.search = search.search
+
+          when 'numeric'
+            [ op, val ] = search[name].split(':')
+            if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
+              break
+
+            queryArgs.fieldFilters[name] =
+              operator: URL_TO_DATA_OPERATORS[op],
+              value: Number(val)
+
+          when 'inSet'
+            if search[name] == 'all'
+              break
+
+            if name == 'faction'
+              flags = search[name].split(',')
+              debugger
+              relevantFactions = @factionUiMappingsBySide[side]
+              modelFlags = _.object(
+                _.map(flags, (f) -> _.findWhere(relevantFactions, abbr: f).model), [])
+
+              queryFactions = queryArgs.fieldFilters.faction
+              _.each(queryFactions, (val, key) -> queryFactions[key] = key of modelFlags)
+            else
+              @$log.warn("No URL mapping available for #{ name }")
+
+
     else
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
 

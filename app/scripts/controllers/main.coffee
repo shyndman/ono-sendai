@@ -1,4 +1,3 @@
-
 angular.module('deckBuilder')
   .controller('MainCtrl', ($scope, urlStateService) ->
     $scope.filter = urlStateService.generatedQueryArgs
