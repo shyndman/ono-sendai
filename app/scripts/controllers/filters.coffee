@@ -2,10 +2,12 @@ angular.module('deckBuilder')
   .controller('FiltersCtrl', ($scope, filterUI) ->
     $scope.filterUI = filterUI
     generalGroup = _.findWhere(filterUI, name: 'general')
-    $scope.filter.activeGroup = generalGroup
     factions = $scope.filter.fieldFilters.faction
 
-    $scope.$watch 'filter.side', (newSide) ->
+    $scope.$watch 'filter.side', (newSide, oldSide) ->
+      # Ignore the first "change", which isn't really true, and screws with URL state
+      return if newSide is oldSide
+
       $scope.filter.activeGroup = generalGroup
       factions[key] = true for key, val of factions
 

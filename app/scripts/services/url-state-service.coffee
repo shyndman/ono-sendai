@@ -11,15 +11,17 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
-  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI) ->
+  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @filterDefaults) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
-    generalFieldFilters = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
+    generalFields = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
 
     # Used to provide pretty faction abbreviations to the URL
-    @factionUiMappingsBySide = _.find(generalFieldFilters, (field) -> field.name is 'faction').side
-    window.test = @test
+    @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
+
+    # Build the initial filter from the URL
+    @generatedFilter = @_filterFromUrl()
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs) ->
@@ -71,10 +73,39 @@ class UrlStateService
     if @$location.url() == @generatedUrl
       return
 
-    @$log.debug "URL changed to #{ @$location.url() }. Parsing into query arguments."
+    @$log.debug "URL changed to #{ @$location.url() }"
+    @generatedFilter = @_filterFromUrl()
+    @$rootScope.$broadcast('urlFilterChange', @generatedFilter)
+
+  _cardsUrlMatcher:
+    ///
+      ^
+      /cards
+      /(corp|runner)
+      (?:/([^/]+))?
+    ///
+
+  _filterFromUrl: ->
+    cardsMatch = @$location.path().match(@_cardsUrlMatcher)
+
+    # Copy defaults and assign general as the default active group
+    filter = angular.copy(@filterDefaults)
+    filter.activeGroup = _.findWhere(@filterUI, name: 'general')
+
+    if cardsMatch?
+      # Side
+      filter.side = _.capitalize(cardsMatch[1])
+
+      # Active group
+      if cardsMatch[2]
+        filter.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? filter.activeGroup
+    else
+      @$log.debug('No matching URL pattern. Assigning filter defaults')
+
+    filter
 
 
 angular
   .module('deckBuilder')
-  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI) ->
+  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, filterDefaults) ->
     new UrlStateService(arguments...))

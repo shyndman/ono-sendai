@@ -31,8 +31,7 @@ angular.module('deckBuilder')
       $scope.$apply -> urlStateService.updateUrl(filter)
     ), 500)
 
-    $scope.$watch('filter', ((filter)->
-      $log.debug 'Filter changed'
+    $scope.$watch('filter', ((filter, oldFilter)->
       updateUrl(filter)
       cardService.query(filter).then (queryResult) ->
         $log.debug 'Assigning new query result', queryResult
