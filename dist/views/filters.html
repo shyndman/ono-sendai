@@ -3,7 +3,7 @@ NOTES:
 * If deck building, in-faction-only option
 -->
 
-<form class="form form-horizontal" role="form" ng-controller="FilterCtrl">
+<form class="form form-horizontal" role="form" ng-controller="FiltersCtrl">
   <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
 
     <h5 ng-click="toggleGroup(group)">{{group.name}}</h5>
