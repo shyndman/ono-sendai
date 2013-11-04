@@ -10,7 +10,7 @@ $sidebar-width: 212px;
   border-right: 1px solid $navbar-default-border;
 
   .filter-group {
-    &.active:not(.general) h5 {
+    &.active h5 {
       background: #e9e9e9;
       color: #555;
       text-shadow: none;
