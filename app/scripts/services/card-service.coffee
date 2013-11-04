@@ -155,7 +155,10 @@ class CardService
 
   # Returns the set of filter descriptors that are currently relevant to the
   # specified set of arguments.
-  relevantFilters: (queryArgs) =>
+  #
+  # filterNotApplicables - if true, any field filters who do not have the necessary
+  #     query arguments to execute will be filtered out of the result.
+  relevantFilters: (queryArgs, filterNotApplicables = true) =>
     groups = ['general']
     excludeds = {} # Fields that will not be used to filter
 
@@ -171,7 +174,8 @@ class CardService
       .map((fields) =>
         _.filterObj(fields, (name, desc) =>
           fieldArg = queryArgs.fieldFilters[name]
-          !excludeds[name]? and @_isFilterApplicable(desc, fieldArg, queryArgs)))
+          return !excludeds[name]? and
+                (!filterNotApplicables or @_isFilterApplicable(desc, fieldArg, queryArgs))))
       .map(_.pairs)
       .flatten(true) # Flatten down 1 level, so we're left with an array of [name, value] pairs
       .object()      # Objectify
