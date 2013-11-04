@@ -21,7 +21,7 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
 
     # Build the initial filter from the URL
-    @generatedFilter = @_filterFromUrl()
+    @generatedQueryArgs = @_queryArgsFromUrl()
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs) ->
@@ -74,8 +74,8 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    @generatedFilter = @_filterFromUrl()
-    @$rootScope.$broadcast('urlFilterChange', @generatedFilter)
+    @generatedQueryArgs = @_queryArgsFromUrl()
+    @$rootScope.$broadcast('urlFilterChange', @generatedQueryArgs)
 
   _cardsUrlMatcher:
     ///
@@ -85,24 +85,26 @@ class UrlStateService
       (?:/([^/]+))?
     ///
 
-  _filterFromUrl: ->
+  _queryArgsFromUrl: ->
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
 
     # Copy defaults and assign general as the default active group
-    filter = angular.copy(@filterDefaults)
-    filter.activeGroup = _.findWhere(@filterUI, name: 'general')
+    queryArgs = angular.copy(@filterDefaults)
+    queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
 
     if cardsMatch?
       # Side
-      filter.side = _.capitalize(cardsMatch[1])
+      queryArgs.side = _.capitalize(cardsMatch[1])
 
       # Active group
       if cardsMatch[2]
-        filter.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? filter.activeGroup
-    else
-      @$log.debug('No matching URL pattern. Assigning filter defaults')
+        queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
 
-    filter
+      relevantFilters = @cardService.relevantFilters(queryArgs)
+    else
+      @$log.debug('No matching URL pattern. Assigning query arg defaults')
+
+    queryArgs
 
 
 angular
