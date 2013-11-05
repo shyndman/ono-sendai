@@ -362,6 +362,11 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json']
+      }
     }
   });
 
@@ -404,6 +409,7 @@ module.exports = function (grunt) {
     // 'svgmin', //currently breaks the logo
     'uglify',
     'rev',
+    'bump-only:minor',
     'usemin'
   ]);
 
