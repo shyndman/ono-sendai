@@ -20,6 +20,9 @@ $sidebar-width: 212px;
         display: block;
       }
     }
+    &.general h5 {
+      padding-bottom: 4px; // Tweaking to make some lines connect
+    }
 
     h5 {
       margin-top: 0;
