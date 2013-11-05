@@ -44,15 +44,6 @@ $sidebar-width: 212px;
       @include retina {
         letter-spacing: 0.3px;
       }
-
-      .icon-active-group {
-        display: none;
-        float: right;
-        color: #777;
-        font-size: 7px;
-        position: relative;
-        top: 3px;
-      }
     }
   }
 
