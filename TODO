@@ -14,6 +14,7 @@ TODOs
   * Jinteki/Haas-Bioroid special deck URLs
   * Why does enter switch to corp?
   * humans.txt -- add it!
+  * Excluded general controls should explain through a tooltip why they're disabled
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
