@@ -15,6 +15,7 @@ TODOs
   * Why does enter switch to corp?
   * humans.txt -- add it!
   * Excluded general controls should explain through a tooltip why they're disabled
+  * Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
