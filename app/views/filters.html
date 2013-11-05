@@ -13,6 +13,7 @@ NOTES:
 
     <div class="filter-group-field {{field.name}} form-group"
          ng-repeat="field in group.fieldFilters"
+         ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }"
          ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
       <label for="{{field.name}}-filter-operator" class="control-label">
@@ -41,7 +42,8 @@ NOTES:
             id="{{field.name}}-filter"
             filter-attr="filter.fieldFilters[field.name]"
             placeholder="{{field.placeholder}}"
-            max="{{field.max}}">
+            max="{{field.max}}"
+            ui-disabled="{{isFieldDisabled(field, group, filter.activeGroup, filter.side)}}">
           </numeric-filter>
         </div>
       </div>

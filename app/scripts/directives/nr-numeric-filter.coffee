@@ -6,6 +6,7 @@ angular.module('deckBuilder')
       placeholder: '@'
       id: '@'
       max: '@'
+      outerDisabled: '@uiDisabled'
 
     restrict: 'E'
     link: (scope, element, attrs) ->
@@ -25,4 +26,11 @@ angular.module('deckBuilder')
           firstChange = false
         else
           inputElement.focus()
+
+      scope.$watch 'outerDisabled', (newVal) ->
+        scope.uiDisabled =
+          if newVal is 'true'
+            true
+          else
+            false
   )

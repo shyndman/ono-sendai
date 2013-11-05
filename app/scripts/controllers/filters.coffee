@@ -30,12 +30,11 @@ angular.module('deckBuilder')
         true
 
     $scope.isFieldShown = (field, group, activeGroup, currentSide) ->
-      if activeGroup
-        (group.name is 'general' and !activeGroup.hiddenGeneralFields?[field.name]) or
-        (
-          activeGroup.name == group.name and
-          (field.side is undefined or field.side == currentSide)
-        )
-      else
-        false
+      group.name is 'general' or ( # General fields are always shown...
+        activeGroup.name == group.name and # ...so are the active group fields...
+        (field.side is undefined or field.side == currentSide) # ...but are sometimes filtered if they have a side
+      )
+
+    $scope.isFieldDisabled = (field, group, activeGroup, currentSide) ->
+      group.name is 'general' and activeGroup.hiddenGeneralFields?[field.name]
   )

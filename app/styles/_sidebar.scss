@@ -68,6 +68,12 @@ $sidebar-width: 212px;
         padding-right: 6px;
       }
     }
+
+    &.disabled {
+      > .control-label {
+        color: #bbb;
+      }
+    }
   }
 }
 
