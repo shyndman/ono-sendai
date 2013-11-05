@@ -16,6 +16,10 @@ label {
   &:focus {
     box-shadow: none;
   }
+
+  &[disabled] {
+    background-color: #f5f5f5;
+  }
 }
 
 .btn-default {
