@@ -1,11 +1,11 @@
 <div class="input-group input-group-sm">
   <div class="input-group-btn">
-    <button id="{{id}}-operator" type="button" class="btn btn-default dropdown-toggle">{{ filter.operator }} <span class="caret"></span></button>
+    <button id="{{id}}-operator" type="button" class="btn btn-default dropdown-toggle" ng-disabled="uiDisabled">{{ filter.operator }} <span class="caret"></span></button>
     <ul class="dropdown-menu open">
       <li ng-repeat="op in comparisonOperators">
         <a ng-click="filter.operator = op" tabindex="-1">{{op}}</a>
       </li>
     </ul>
   </div>
-  <input id="{{id}}-value" type="number" class="form-control" ng-model="filter.value" min="0" max="{{max}}" placeholder="{{placeholder}}">
+  <input id="{{id}}-value" type="number" class="form-control" ng-model="filter.value" min="0" max="{{max}}" placeholder="{{placeholder}}" ng-disabled="uiDisabled">
 </div>
