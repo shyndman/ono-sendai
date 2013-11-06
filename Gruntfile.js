@@ -396,6 +396,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'bump-only:minor',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
@@ -409,7 +410,6 @@ module.exports = function (grunt) {
     // 'svgmin', //currently breaks the logo
     'uglify',
     'rev',
-    'bump-only:minor',
     'usemin'
   ]);
 
