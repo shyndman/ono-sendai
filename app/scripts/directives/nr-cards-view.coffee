@@ -42,16 +42,15 @@ angular.module('deckBuilder')
           false
 
       invalidateGridContents = (queryResult) ->
-        elementId = (ele) ->
-          ele.attributes['grid-id'].value
+        getElementId = (ele) -> ele.attributes['grid-id'].value
 
         gridItems = container.find('.grid-item')
         gridHeaders = container.find('.grid-header')
 
         # Sort the grid items and headers. Push filtered items to the back of the list.
-        gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), elementId))
-        gridItems = $(queryResult.applyOrdering(gridItems, elementId))
-        gridHeaders = $(queryResult.applyOrdering(gridHeaders, elementId))
+        gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), getElementId))
+        gridItems = $(queryResult.applyOrdering(gridItems, getElementId))
+        gridHeaders = $(queryResult.applyOrdering(gridHeaders, getElementId))
 
       # NOTE Assumes uniform sizing for all grid items of a given type (which in our case is not a problem,
       # but we end up re-using this, consider it)
