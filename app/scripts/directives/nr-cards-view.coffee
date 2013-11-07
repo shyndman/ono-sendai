@@ -13,21 +13,25 @@ angular.module('deckBuilder')
       layoutMode = 'grid'
       container = element.find('.content-container')
       containerWidth = container.width()
+      inContinuousZoom = false
+
       minimumGutterWidth = 20
       vMargin = 10
-      hMargin = 6 # Margin at the edges
-      inContinuousZoom = false
-      gridItems = $([])
-      gridHeaders = $([])
-      gridItemsAndHeaders = null # Ordered grid items and headers
-      focusedElement = null # Element visible in the top left of the grid
-      focusedElementChop = null # Percentage of the focused element chopped off above
-      rowInfos = []
-      itemPositions = []
-      headerPositions = []
-      sizeCache = {}
+      hMargin = 6                # Margin at the edges
+
+      gridItemsById = null       # Map from grid identifiers to their associated DOM elements
+      gridItems = $([])          # Query result ordered items
+      gridHeaders = $([])        # Query result ordered headers
+      gridItemsAndHeaders = null # Query result ordered grid items and headers
+      focusedElement = null      # Element visible in the top left of the grid
+      focusedElementChop = null  # Percentage of the focused element chopped off above
+      rowInfos = []              # Contains row heights, y positions and the first DOM element in each
+      itemLayouts = []           # Contains the positioning, scale and opacity information for each item
+      headerLayouts = []         # Ditto, for headers
+      sizeCache = {}             # Caches (expensive to calculate) element sizes at various scales
+      queryResult = null         # The most recent query result
+
       transformProperty = cssUtils.getVendorPropertyName('transform')
-      queryResult = null
 
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary because we swap
       # in lower resolution images before doing most transformations.
@@ -49,6 +53,10 @@ angular.module('deckBuilder')
       invalidateGridContents = (queryResult) ->
         gridItems = container.find('.grid-item')
         gridHeaders = container.find('.grid-header')
+
+        if !gridItemsById?
+          gridItemsById =
+            _.object(_.map(gridItems, (ele) -> [ getItemId(ele), ele ]))
 
         # Sort the grid items and headers. Push filtered items to the back of the list.
         gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), getItemId))
@@ -107,8 +115,8 @@ angular.module('deckBuilder')
         gutterWidth  = (availableWidth - (numColumns * itemSize.width)) / numGutters
         colPositions = (i * (itemSize.width + gutterWidth) + hMargin for i in [0...numColumns])
         rowInfos = []
-        itemPositions = []
-        headerPositions = []
+        itemLayouts = []
+        headerLayouts = []
 
         groupItemIdx = 0
         baseRow = 0
@@ -133,7 +141,7 @@ angular.module('deckBuilder')
               lastVisibleRow = row if queryResult.isShown(getItemId(item))
               calculateNextRow(item)
 
-            item.idx = itemPositions.push(
+            item.idx = itemLayouts.push(
               x: colPositions[groupItemIdx % numColumns],
               y: rowInfos[row].position + vMargin
             ) - 1
@@ -142,7 +150,7 @@ angular.module('deckBuilder')
 
           else # if isGridHeader(item)
             rowInfo = calculateNextRow(item, true)
-            item.idx = headerPositions.push(
+            item.idx = headerLayouts.push(
               x: 0
               y: rowInfo.position + vMargin
             ) - 1
@@ -180,6 +188,27 @@ angular.module('deckBuilder')
         if !items.length
           return
 
+        selEle = gridItemsById[scope.selectedCard.id]
+
+        for item, i in gridItems
+          layout = itemLayouts[i]
+          if item == selEle
+            if i > 1 # current - 2
+
+            if i > 0 # current - 1 (previous)
+
+            layout =
+
+            if i + 1 < gridItems.length # current + 1 (next)
+
+            if i + 2 < gridItems.length # current + 2
+
+          else
+            layout.opacity = 0
+
+            # Determine item positions, scales and opacities for each all cards
+
+
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
       layoutNow = (scaleImages = false) ->
@@ -209,10 +238,17 @@ angular.module('deckBuilder')
       layout = _.debounce(layoutNow, 300)
 
       applyItemStyles = ->
-        if !_.isEmpty(itemPositions)
+        switch layoutMode
+          when 'grid'
+            applyGridItemStyles()
+          when 'detail'
+            applyDetailItemStyles()
+
+      applyGridItemStyles = ->
+        if !_.isEmpty(itemLayouts)
           items = gridItems
           len = items.length
-          for pos, i in itemPositions
+          for pos, i in itemLayouts
             break if i == gridItems.length
             item = gridItems[i]
 
@@ -230,16 +266,16 @@ angular.module('deckBuilder')
             else
               $(item).addClass('hidden')
 
-        if !_.isEmpty(headerPositions)
+        if !_.isEmpty(headerLayouts)
           items = gridHeaders
           len = items.length
-          for pos, i in headerPositions
+          for pos, i in headerLayouts
             break if i == gridHeaders.length
             item = gridHeaders[i]
 
             item.style.zIndex = len - i
             item.style[transformProperty] =
-              "translate3d(#{headerPositions[i].x}px, #{headerPositions[i].y}px, 0)"
+              "translate3d(#{headerLayouts[i].x}px, #{headerLayouts[i].y}px, 0)"
 
         return
 
