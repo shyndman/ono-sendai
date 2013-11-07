@@ -3,16 +3,7 @@ nr-cards-view {
   user-select: none;
 
   .content-container {
-    // XXX
-    // This is incredibly important, because if we don't have it, setting the container's height during a
-    // transition of the grid items will internally set it to the position of the bottom-most container item
-    // (which is in transition).
-    //
-    // With overflow hidden, the height set in the style property is respected, and any ancestors with
-    // overflow: scroll will work properly.
-    overflow: hidden;
     margin: 0 10px;
-    position: relative;
   }
 
   @mixin scale-card($scale) {
