@@ -1,7 +1,7 @@
 nr-cards-view {
   @mixin scale-card($scale) {
-    width: 300px * $scale;
-    height: 418px * $scale;
+    width: $card-width * $scale;
+    height: $card-height * $scale;
     border-radius: 16px * $scale;
     box-shadow: 0px 1px * $scale 6px * $scale rgba(0, 0, 0, 0.3);
   }
@@ -32,11 +32,7 @@ nr-cards-view {
     @include scale-card(1);
   }
 
-  &.transitioned {
-    .grid-item, .grid-header {
-      transition: 0.5s ease-in-out transform;
-    }
-  }
+  // ~-~-~- DOWNSCALING
 
   &.downscaled-1-2 .grid-item {
     @include scale-card(1 / 2);
@@ -48,5 +44,20 @@ nr-cards-view {
 
   &.downscaled-1-4 .grid-item {
     @include scale-card(1 / 4);
+  }
+
+  // ~-~-~- TRANSITIONED MODE
+
+  &.transitioned {
+    .grid-item, .grid-header {
+      transition: 0.5s ease-in-out transform,
+                  0.5s ease-in     opacity;
+    }
+  }
+
+  // ~-~-~- DETAILED CARD MODE
+
+  &.detailed {
+
   }
 }
