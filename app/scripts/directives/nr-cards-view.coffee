@@ -222,6 +222,7 @@ angular.module('deckBuilder')
                           scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
               new_zIndex = len - 1
 
+              # Don't set style properties if we don't have to. Their invalidation is a performance killer.
               if item.style.zIndex isnt new_zIndex
                 item.style.zIndex = new_zIndex
               if item.style[transformProperty] isnt newStyle
