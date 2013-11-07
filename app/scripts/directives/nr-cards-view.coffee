@@ -180,6 +180,8 @@ angular.module('deckBuilder')
 
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
+      #
+      # TODO This doesn't appear to do anything in Firefox
       layoutNow = (scaleImages = false) ->
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
         # zoom start/end)
