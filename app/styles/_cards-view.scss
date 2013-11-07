@@ -11,6 +11,7 @@ nr-cards-view {
 
   .content-container {
     margin: 0 10px;
+    position: relative; // Grid items are absolutely positioned, so we need this
   }
 
   .grid-header, .grid-item {
