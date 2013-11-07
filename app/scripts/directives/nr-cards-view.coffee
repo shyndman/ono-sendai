@@ -41,16 +41,19 @@ angular.module('deckBuilder')
         else
           false
 
-      invalidateGridContents = (queryResult) ->
-        getElementId = (ele) -> ele.attributes['grid-id'].value
+      # Returns the item identifier for the provided element
+      getItemId = (ele) ->
+        ele.attributes['grid-id'].value
 
+      # Recalculates the lists of DOM elements participating in the grid, ordered by the provided query result.
+      invalidateGridContents = (queryResult) ->
         gridItems = container.find('.grid-item')
         gridHeaders = container.find('.grid-header')
 
         # Sort the grid items and headers. Push filtered items to the back of the list.
-        gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), getElementId))
-        gridItems = $(queryResult.applyOrdering(gridItems, getElementId))
-        gridHeaders = $(queryResult.applyOrdering(gridHeaders, getElementId))
+        gridItemsAndHeaders = $(queryResult.applyOrdering(gridItems.add(gridHeaders), getItemId))
+        gridItems = $(queryResult.applyOrdering(gridItems, getItemId))
+        gridHeaders = $(queryResult.applyOrdering(gridHeaders, getItemId))
 
       # NOTE Assumes uniform sizing for all grid items of a given type (which in our case is not a problem,
       # but we end up re-using this, consider it)
@@ -127,7 +130,7 @@ angular.module('deckBuilder')
           if isGridItem(item)
             row = Math.floor(groupItemIdx / numColumns) + baseRow
             if row == rowInfos.length
-              lastVisibleRow = row if queryResult.isShown(item.attributes['grid-id'].value)
+              lastVisibleRow = row if queryResult.isShown(getItemId(item))
               calculateNextRow(item)
 
             item.idx = itemPositions.push(
@@ -215,7 +218,7 @@ angular.module('deckBuilder')
             break if i == gridItems.length
             item = gridItems[i]
 
-            if queryResult.isShown(item.attributes['grid-id'].value)
+            if queryResult.isShown(getItemId(item))
               $(item).removeClass('hidden')
               newStyle = "translate3d(#{ pos.x }px, #{ pos.y }px, 0)
                           scale(#{ Number(scope.zoom) * inverseDownscaleFactor })"
