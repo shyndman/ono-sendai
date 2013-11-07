@@ -1,15 +1,12 @@
 TODOs
   * Collapsed mode for card groups
   * Indicate which filter group is active
-  * Move corp/runner to subnav
   * Hotkeys
-  * Zoom
   * Focus last selected value on dropdowns (may require rewrite)
   * Add calculated max for filters
   * Make it clear that moving back to the general filter will remove filters
   * Screensaver with random flavor text
   * Fix grunt-angular-templates
-  * UI should not delay on filter changes
   * Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
   * Jinteki/Haas-Bioroid special deck URLs
   * Why does enter switch to corp?
