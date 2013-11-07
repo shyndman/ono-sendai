@@ -1,16 +1,16 @@
 nr-cards-view {
-  display: block;
-  user-select: none;
-
-  .content-container {
-    margin: 0 10px;
-  }
-
   @mixin scale-card($scale) {
     width: 300px * $scale;
     height: 418px * $scale;
     border-radius: 16px * $scale;
     box-shadow: 0px 1px * $scale 6px * $scale rgba(0, 0, 0, 0.3);
+  }
+
+  display: block; // Browsers don't (always?) assume block display on a custom tag
+  user-select: none; // Selection is mighty fucked up if we leave it on, because we re-order all the cards
+
+  .content-container {
+    margin: 0 10px;
   }
 
   .grid-header, .grid-item {
