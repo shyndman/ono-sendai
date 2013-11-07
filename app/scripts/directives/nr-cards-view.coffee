@@ -41,7 +41,7 @@ angular.module('deckBuilder')
         else
           false
 
-      # Returns the item identifier for the provided element
+      # Returns the item identifier for the provided element.
       getItemId = (ele) ->
         ele.attributes['grid-id'].value
 
@@ -87,7 +87,7 @@ angular.module('deckBuilder')
       # is no transition.
       performGridLayout = ->
         items = gridItemsAndHeaders
-        if !items.length
+        if !items? or !items.length
           return
 
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
@@ -182,8 +182,6 @@ angular.module('deckBuilder')
 
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
-      #
-      # TODO This doesn't appear to do anything in Firefox
       layoutNow = (scaleImages = false) ->
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
         # zoom start/end)
@@ -245,14 +243,6 @@ angular.module('deckBuilder')
 
         return
 
-      # Watch for resizes that may affect grid size, requiring a re-layout
-      windowResized = ->
-        if hasContainerChangedWidth()
-          $log.debug 'Laying out grid (grid width change)'
-          layoutNow(false)
-
-      $($window).resize(windowResized)
-
 
       # *~*~*~*~ SCROLLING
 
@@ -304,6 +294,8 @@ angular.module('deckBuilder')
       # Change the resolution of grid items so the GPU uses less texture memory during transforms. We
       # will record the scale factor so that we can use transform: scale CSS to have them appear at the same
       # correct size.
+      #
+      # TODO This doesn't appear to do anything in Firefox
       downscaleItems = ->
         scale = 3
         $log.debug "Downscaling grid items to 1/#{ scale }"
@@ -346,11 +338,12 @@ angular.module('deckBuilder')
       selectedCardChanged = (newVal, oldVal) ->
         layoutMode =
           if newVal
+            $log.debug 'Card selected. Displaying card in detail mode'
             'detail'
           else
             $log.debug 'No cards selected. Displaying cards in grid mode'
             'grid'
-        layout()
+        layoutNow(true)
       scope.$watch('selectedCard', selectedCardChanged)
 
       queryResultChanged = (newVal) ->
@@ -383,4 +376,49 @@ angular.module('deckBuilder')
           layout()
 
       scope.$watch('zoom', zoomChanged)
-  ) # end directive def
+
+
+      # *~*~*~*~ CARD SELECTION
+
+      setSelectedCard = (card) ->
+        scope.$apply ->
+          scope.selectedCard = card
+
+      deselectCard = ->
+        if !scope.selectedCard?
+          return
+
+        $log.debug 'Deselecting card'
+        setSelectedCard(null)
+
+      nextCard = ->
+        if layoutMode != 'detail'
+          return
+        $log.debug 'Navigating to next card'
+
+      previousCard = ->
+        if layoutMode != 'detail'
+          return
+        $log.debug 'Navigating to previous card'
+
+
+      # *~*~*~*~ KEYBOARD CONTROL
+
+      if !element.attr('tabindex')?
+        element.attr('tabindex', 0) # Required to receive keyboard events
+
+      element.bind('keydown', jwerty.event('esc', deselectCard))
+      element.bind('keydown', jwerty.event('left/up', previousCard))
+      element.bind('keydown', jwerty.event('right/down', nextCard))
+
+
+      # *~*~*~*~ WINDOW RESIZING
+
+      # Watch for resizes that may affect grid size, requiring a re-layout
+      windowResized = ->
+        if hasContainerChangedWidth()
+          $log.debug 'Laying out grid (grid width change)'
+          layoutNow(false)
+
+      $($window).resize(windowResized)
+  )
