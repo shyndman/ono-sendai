@@ -192,10 +192,17 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-        { top: baseY } = element.position()
+        { top: baseY } = container.position()
+        scrollParentH = scrollParent.height()
+        console.log scrollParentH
+
         baseY *= -1 # Invert
         scrollParent.css('overflow', 'hidden')
         selEle = gridItemsById[scope.selectedCard.id]
+
+        for item, i in gridHeaders
+          layout = headerLayouts[i] ?= {}
+          layout.opacity = 0
 
         skipCount = 0
         for item, i in gridItems
@@ -213,6 +220,7 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: -40
                 zIndex: gridItems.length
+                x: 0
                 y: baseY
 
             if i - 1 >= 0 # current - 1 (previous)
@@ -221,13 +229,16 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: -40
                 zIndex: gridItems.length + 1
+                x: 30
                 y: baseY
 
             _.extend layout,
               opacity: 1
               zoom: 1
               zIndex: gridItems.length + 2
+              x: (containerWidth - (300 + 200)) / 2
               y: baseY
+              rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
               _.extend itemLayouts[i + 1],
@@ -235,6 +246,7 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: 40
                 zIndex: gridItems.length + 1
+                x: containerWidth - 175 - 30
                 y: baseY
 
             if i + 2 < gridItems.length # current + 2
@@ -243,7 +255,9 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: 40
                 zIndex: gridItems.length
+                x: containerWidth - 175
                 y: baseY
+
 
             skipCount = 2
 
@@ -293,6 +307,9 @@ angular.module('deckBuilder')
               $(item).removeClass('hidden')
               newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
                           scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
+              if layout.rotationY
+                newStyle += " rotateY(#{ layout.rotationY }deg)"
+
               new_zIndex = layout.zIndex ? len - 1
 
               # Don't set style properties if we don't have to. Their invalidation is a performance killer.
@@ -313,6 +330,7 @@ angular.module('deckBuilder')
             item = gridHeaders[i]
 
             item.style.zIndex = len - i
+            item.style.opacity = layout.opacity
             item.style[transformProperty] =
               "translate3d(#{layout.x}px, #{layout.y}px, 0)"
 
