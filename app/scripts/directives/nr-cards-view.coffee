@@ -192,12 +192,16 @@ angular.module('deckBuilder')
         if !items.length
           return
 
+        if scrollParent.css('overflow') != 'hidden'
+          scrollParent.css('overflow', 'hidden')
+
         { top: baseY } = container.position()
         scrollParentH = scrollParent.height()
-        console.log scrollParentH
 
         baseY *= -1 # Invert
-        scrollParent.css('overflow', 'hidden')
+        baseY += 50
+        nextPrevY = baseY + 25
+
         selEle = gridItemsById[scope.selectedCard.id]
 
         for item, i in gridHeaders
@@ -221,7 +225,7 @@ angular.module('deckBuilder')
                 rotationY: -40
                 zIndex: gridItems.length
                 x: 0
-                y: baseY
+                y: nextPrevY
 
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
@@ -230,7 +234,7 @@ angular.module('deckBuilder')
                 rotationY: -40
                 zIndex: gridItems.length + 1
                 x: 30
-                y: baseY
+                y: nextPrevY
 
             _.extend layout,
               opacity: 1
@@ -246,8 +250,8 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: 40
                 zIndex: gridItems.length + 1
-                x: containerWidth - 175 - 30
-                y: baseY
+                x: containerWidth - 195 - 30
+                y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
               _.extend itemLayouts[i + 2],
@@ -255,8 +259,8 @@ angular.module('deckBuilder')
                 zoom: 0.85
                 rotationY: 40
                 zIndex: gridItems.length
-                x: containerWidth - 175
-                y: baseY
+                x: containerWidth - 195
+                y: nextPrevY
 
 
             skipCount = 2
