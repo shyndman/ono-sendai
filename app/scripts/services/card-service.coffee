@@ -1,23 +1,25 @@
 # Contains information about how cards should be sorted and which cards are visible.
 class QueryResult
   constructor: ->
-    @ordering = {}
+    @orderedCards = []
+    @orderingById = {}
     @groups = {}
     @length = 0
     @_ordinalOffset = 0
 
   # NOTE: cards must be inserted in order
   addCard: (card, group, ordinal) ->
+    @orderedCards.push(card)
     @length++
-    if !@ordering[group.id]?
-      @ordering[group.id] = ordinal + @_ordinalOffset
+    if !@orderingById[group.id]?
+      @orderingById[group.id] = ordinal + @_ordinalOffset
       @groups[group.id] = group
       @_ordinalOffset++
 
-    @ordering[card.id] = ordinal + @_ordinalOffset
+    @orderingById[card.id] = ordinal + @_ordinalOffset
 
   isShown: (id) ->
-    @ordering[id]?
+    @orderingById[id]?
 
   # Applies the query result's ordering to a collection of objects. idFn is applied
   # to each element in order to map the element to card identifiers.
@@ -25,7 +27,17 @@ class QueryResult
   # Elements that do not appear in the query results are placed at the end of the collection.
   applyOrdering: (collection, idFn) ->
     _.sortBy collection, (ele) =>
-      @ordering[idFn(ele)] ? Number.MAX_VALUE
+      @orderingById[idFn(ele)] ? Number.MAX_VALUE
+
+  _cardAtOffset = (offset) -> # Note the equals. This is not a method.
+    (card) ->
+      # NOTE, this could be optimized, but isn't likely a big deal
+      idx = @orderedCards.indexOf(card) + offset
+      @orderedCards[idx]
+
+  cardAfter: _cardAtOffset(1)
+  cardBefore: _cardAtOffset(-1)
+
 
 # A service for loading, filtering and grouping cards.
 class CardService

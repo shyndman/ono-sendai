@@ -2,11 +2,11 @@ angular.module('deckBuilder')
   .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService, urlStateService) ->
     $scope.selectedCard = null
 
-    # Assign cards to the scope once, but order them according to the default filter so the first images
+    # Assign cards to the scope once, but order them according to the initial query so the first images
     # to load are the ones on screen.
     $q.all([cardService.getCards(), cardService.query($scope.filter)])
       .then(([ cards, queryResult ]) ->
-        $log.debug 'Assigning cards with default ordering'
+        $log.debug 'Assigning cards with initial query ordering'
         $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id))
 
     $rootScope.broadcastZoomStart = ->
@@ -16,12 +16,29 @@ angular.module('deckBuilder')
       $scope.$broadcast 'zoomEnd'
 
     $scope.selectCard = (card) ->
+      if card is null
+        return
+
       $log.info "Selected card changing to #{ card.title }"
       $scope.selectedCard = card
 
     $scope.deselectCard = ->
       $log.info 'Card deselected'
       $scope.selectedCard = null
+
+    $scope.previousCard = ->
+      if $scope.selectedCard is null
+        return
+
+      $log.info 'Moving to previous card'
+      $scope.selectCard($scope.queryResult.cardBefore($scope.selectedCard))
+
+    $scope.nextCard = ->
+      if $scope.selectedCard is null
+        return
+
+      $log.info 'Moving to next card'
+      $scope.selectCard($scope.queryResult.cardAfter($scope.selectedCard))
 
     $scope.isCardShown = (card, cardFilter) ->
       cardFilter[card.id]?
