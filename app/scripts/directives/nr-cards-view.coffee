@@ -467,10 +467,7 @@ angular.module('deckBuilder')
         console.groupEnd?('Zoom')
 
       zoomChanged = (newVal) ->
-        if inContinuousZoom
-          layoutNow()
-        else
-          layout()
+        layoutNow()
 
       scope.$watch('zoom', zoomChanged)
 
