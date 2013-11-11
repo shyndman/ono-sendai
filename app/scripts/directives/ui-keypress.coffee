@@ -3,11 +3,11 @@ keypressHelper = (event, scope, element, attrs, $parse) ->
   params = scope.$eval(attrs['ui'+_.capitalize(event)])
 
   # Prepare combinations for simple checking
-  _.each params, (actionStr, keys) ->
-    action = $parse(actionStr)
+  _.each params, (action, keys) ->
+    actionFn = $parse(action)
     element.on event, jwerty.event(keys, (e) ->
       scope.$apply ->
-        action(scope, $event: e))
+        actionFn(scope, $event: e))
 
 # Returns the directive definition function for the provided event name
 keyDirective = (event) ->
