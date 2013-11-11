@@ -4,8 +4,9 @@ keypressHelper = (event, scope, element, attrs, $parse) ->
   # Prepare combinations for simple checking
   _.each params, (actionStr, keys) ->
     action = $parse(actionStr)
-    element.bind event, jwerty.event(keys, (e) ->
-      action(scope, $event: e))
+    element.on event, jwerty.event(keys, (e) ->
+      scope.$apply ->
+        action(scope, $event: e))
 
 # Returns the directive definition function for the provided event name
 keyDirective = (event) ->
