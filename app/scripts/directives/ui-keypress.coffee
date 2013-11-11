@@ -1,4 +1,4 @@
-keypressHelper = (event, scope, element, attrs) ->
+keypressHelper = (event, scope, element, attrs, $parse) ->
   params = scope.$eval(attrs['ui'+_.capitalize(event)])
 
   # Prepare combinations for simple checking
@@ -9,12 +9,12 @@ keypressHelper = (event, scope, element, attrs) ->
 
 # Returns the directive definition function for the provided event name
 keyDirective = (event) ->
-  ->
+  ($parse) ->
     restrict: 'A'
     link: (scope, element, attrs) ->
-      keypressHelper(event, scope, element, attrs)
+      keypressHelper(event, scope, element, attrs, $parse)
 
 angular.module('deckBuilder')
-  .directive('uiKeydown', keyDirective('keydown'))
-  .directive('uiKeyup', keyDirective('keyup'))
-  .directive('uiKeypress', keyDirective('keypress'))
+  .directive('uiKeydown',  ['$parse', keyDirective('keydown')])
+  .directive('uiKeyup',    ['$parse', keyDirective('keyup')])
+  .directive('uiKeypress', ['$parse', keyDirective('keypress')])
