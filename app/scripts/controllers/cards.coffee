@@ -16,6 +16,9 @@ angular.module('deckBuilder')
       $scope.$broadcast 'zoomEnd'
 
     $scope.selectCard = (card) ->
+      if card is null
+        return
+
       $log.info "Selected card changing to #{ card.title }"
       $scope.selectedCard = card
 
@@ -24,10 +27,18 @@ angular.module('deckBuilder')
       $scope.selectedCard = null
 
     $scope.previousCard = ->
+      if $scope.selectedCard is null
+        return
+
       $log.info 'Moving to previous card'
+      $scope.selectCard($scope.queryResult.cardBefore($scope.selectedCard))
 
     $scope.nextCard = ->
+      if $scope.selectedCard is null
+        return
+
       $log.info 'Moving to next card'
+      $scope.selectCard($scope.queryResult.cardAfter($scope.selectedCard))
 
     $scope.isCardShown = (card, cardFilter) ->
       cardFilter[card.id]?
