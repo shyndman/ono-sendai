@@ -1,3 +1,4 @@
+# Binds keyboard combinations to expressions, using Jwerty.
 keypressHelper = (event, scope, element, attrs, $parse) ->
   params = scope.$eval(attrs['ui'+_.capitalize(event)])
 
