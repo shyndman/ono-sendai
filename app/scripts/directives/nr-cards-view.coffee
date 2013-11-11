@@ -472,40 +472,6 @@ angular.module('deckBuilder')
       scope.$watch('zoom', zoomChanged)
 
 
-      # *~*~*~*~ CARD SELECTION
-
-      setSelectedCard = (card) ->
-        scope.$apply ->
-          scope.selectedCard = card
-
-      deselectCard = ->
-        if !scope.selectedCard?
-          return
-
-        $log.debug 'Deselecting card'
-        setSelectedCard(null)
-
-      nextCard = ->
-        if layoutMode != 'detail'
-          return
-        $log.debug 'Navigating to next card'
-
-      previousCard = ->
-        if layoutMode != 'detail'
-          return
-        $log.debug 'Navigating to previous card'
-
-
-      # *~*~*~*~ KEYBOARD CONTROL
-
-      if !element.attr('tabindex')?
-        element.attr('tabindex', 0) # Required to receive keyboard events
-
-      element.bind('keydown', jwerty.event('esc', deselectCard))
-      element.bind('keydown', jwerty.event('left/up', previousCard))
-      element.bind('keydown', jwerty.event('right/down', nextCard))
-
-
       # *~*~*~*~ WINDOW RESIZING
 
       # Watch for resizes that may affect grid size, requiring a re-layout

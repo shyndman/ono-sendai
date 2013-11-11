@@ -23,6 +23,12 @@ angular.module('deckBuilder')
       $log.info 'Card deselected'
       $scope.selectedCard = null
 
+    $scope.previousCard = ->
+      $log.info 'Moving to previous card'
+
+    $scope.nextCard = ->
+      $log.info 'Moving to next card'
+
     $scope.isCardShown = (card, cardFilter) ->
       cardFilter[card.id]?
 
