@@ -1,5 +1,9 @@
-<div ng-controller="CardsCtrl">
-  <nr-cards-view class="cards" query-result="queryResult" zoom="grid.zoom">
+<div ng-controller="CardsCtrl" tabindex="0" ui-keydown="{
+      'esc'  : 'deselectCard()',
+      'left' : 'previousCard()',
+      'right': 'nextCard()'
+    }" style="outline: none !important">
+  <nr-cards-view class="cards" query-result="queryResult" selected-card="selectedCard" zoom="grid.zoom">
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id" grid-id="{{group.id}}" class="{{group.id}} grid-header" title="{{group.id}}">
       <small class="card-count"><ng-pluralize count="group.cards.length" when="{
