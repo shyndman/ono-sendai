@@ -40,8 +40,6 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard($scope.queryResult.cardAfter($scope.selectedCard))
 
-    $scope.isCardShown = (card, cardFilter) ->
-      cardFilter[card.id]?
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce(((filter) ->
