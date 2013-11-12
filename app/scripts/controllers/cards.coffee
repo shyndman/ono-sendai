@@ -40,8 +40,13 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard($scope.queryResult.cardAfter($scope.selectedCard))
 
-    $scope.isCardShown = (card, cardFilter) ->
-      cardFilter[card.id]?
+    setQueryResult = (queryResult) ->
+      $log.debug 'Assigning new query result', queryResult
+      $scope.queryResult = queryResult
+
+      selCard = $scope.selectedCard
+      if selCard and !queryResult.isShown(selCard.id)
+        $scope.selectCard(queryResult.orderedCards[0])
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce(((filter) ->
@@ -51,6 +56,5 @@ angular.module('deckBuilder')
     $scope.$watch('filter', ((filter, oldFilter)->
       updateUrl(filter)
       cardService.query(filter).then (queryResult) ->
-        $log.debug 'Assigning new query result', queryResult
-        $scope.queryResult = queryResult
+        setQueryResult(queryResult)
     ), true)) # True to make sure field changes trigger this watch

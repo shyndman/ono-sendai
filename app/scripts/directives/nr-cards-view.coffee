@@ -199,8 +199,8 @@ angular.module('deckBuilder')
         scrollParentH = scrollParent.height()
 
         baseY *= -1 # Invert
-        baseY += 50
-        nextPrevY = baseY + 25
+        baseY += 70
+        nextPrevY = baseY + 35
 
         selEle = gridItemsById[scope.selectedCard.id]
 
@@ -221,7 +221,7 @@ angular.module('deckBuilder')
             if i - 2 >= 0 # current - 2
               _.extend itemLayouts[i - 2],
                 opacity: 0.3
-                zoom: 0.85
+                zoom: 0.75
                 rotationY: -40
                 zIndex: gridItems.length
                 x: 0
@@ -230,7 +230,7 @@ angular.module('deckBuilder')
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
                 opacity: 0.6
-                zoom: 0.85
+                zoom: 0.75
                 rotationY: -40
                 zIndex: gridItems.length + 1
                 x: 30
@@ -240,26 +240,26 @@ angular.module('deckBuilder')
               opacity: 1
               zoom: 1
               zIndex: gridItems.length + 2
-              x: (containerWidth - (300 + 200)) / 2
+              x: (containerWidth - (300 + 250)) / 2
               y: baseY
               rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
               _.extend itemLayouts[i + 1],
                 opacity: 0.6
-                zoom: 0.85
+                zoom: 0.75
                 rotationY: 40
                 zIndex: gridItems.length + 1
-                x: containerWidth - 195 - 30
+                x: containerWidth - 175 - 30
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
               _.extend itemLayouts[i + 2],
                 opacity: 0.3
-                zoom: 0.85
+                zoom: 0.75
                 rotationY: 40
                 zIndex: gridItems.length
-                x: containerWidth - 195
+                x: containerWidth - 175
                 y: nextPrevY
 
 
