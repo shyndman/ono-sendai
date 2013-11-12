@@ -229,7 +229,7 @@ angular.module('deckBuilder')
 
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
-                opacity: 0.6
+                opacity: 0.8
                 zoom: 0.75
                 rotationY: -40
                 zIndex: gridItems.length + 1
@@ -246,7 +246,7 @@ angular.module('deckBuilder')
 
             if i + 1 < gridItems.length # current + 1 (next)
               _.extend itemLayouts[i + 1],
-                opacity: 0.6
+                opacity: 0.8
                 zoom: 0.75
                 rotationY: 40
                 zIndex: gridItems.length + 1
