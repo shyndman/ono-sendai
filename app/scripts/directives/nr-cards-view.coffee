@@ -37,10 +37,19 @@ angular.module('deckBuilder')
       # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
 
+      # First scrollable element containing this one. We toggle its overflow state depending on whether
+      # we're in detail mode or grid mode.
+      scrollParent = element.parents('.scrollable').first()
+      scrollParentOverflow = scrollParent.css('overflow')
+      scrollParentH = scrollParent.height()
+      scrollTop = scrollParent.scrollTop()
+
+
       # Returns true if the container has changed width since last invocation
       hasContainerChangedWidth = ->
         if containerWidth != (newContainerWidth = container.width())
           containerWidth = newContainerWidth
+          scrollParentH = scrollParent.height()
           true
         else
           false
@@ -99,7 +108,7 @@ angular.module('deckBuilder')
           return
 
         # Remove the scroll lock-down, if we've been in detail mode previously
-        scrollParent.css('overflow', '')
+        setScrollerOverflow('')
 
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
@@ -144,7 +153,7 @@ angular.module('deckBuilder')
               lastVisibleRow = row if queryResult.isShown(getItemId(item))
               calculateNextRow(item)
 
-            item.idx = itemLayouts.push(
+            itemLayouts.push(
               x: colPositions[groupItemIdx % numColumns]
               y: rowInfos[row].position + vMargin
               opacity: 1
@@ -154,7 +163,7 @@ angular.module('deckBuilder')
 
           else # if isGridHeader(item)
             rowInfo = calculateNextRow(item, true)
-            item.idx = headerLayouts.push(
+            headerLayouts.push(
               x: 0
               y: rowInfo.position + vMargin
               opacity: 1
@@ -192,15 +201,13 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-        if scrollParent.css('overflow') != 'hidden'
-          scrollParent.css('overflow', 'hidden')
+        # Ensure that we aren't scrolling.
+        setScrollerOverflow('hidden')
 
-        { top: baseY } = container.position()
-        scrollParentH = scrollParent.height()
-
-        baseY *= -1 # Invert
-        baseY += 70
-        nextPrevY = baseY + 35
+        # Work out base Y coordinate
+        baseY = scrollTop
+        baseY += 80
+        nextPrevY = baseY #+ 35
 
         selEle = gridItemsById[scope.selectedCard.id]
 
@@ -343,7 +350,13 @@ angular.module('deckBuilder')
 
       # *~*~*~*~ SCROLLING
 
-      scrollParent = element.parents('.scrollable').first()
+      # Optimization to prevent unnecessary reflows by invoking jQuery.css. We store the scroll parent's overflow
+      # value around, and only set it if required. This assumes no one else is tinkering with the value.
+      setScrollerOverflow = (val) ->
+        if scrollParentOverflow != val
+          scrollParent.css('overflow', val)
+          scrollParentOverflow = val
+
 
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
@@ -352,8 +365,8 @@ angular.module('deckBuilder')
           scrollParent.scrollTop(0)
         else
           rowInfo = rowInfos[focusedElement.row]
-          newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
-          scrollParent.scrollTop(newScrollTop)
+          scrollTop = rowInfo.position + rowInfo.height * focusedElementChop
+          scrollParent.scrollTop(scrollTop)
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
