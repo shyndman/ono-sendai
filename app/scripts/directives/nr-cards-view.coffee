@@ -33,14 +33,34 @@ angular.module('deckBuilder')
 
       transformProperty = cssUtils.getVendorPropertyName('transform')
 
+      # Names of CSS classes mapped to whether or not they should be applied to a grid item. Individual
+      # item layouts can override any of these values.
+      defaultItemClasses =
+        'prev': false
+        'prev-2': false
+        'prev-1': false
+        'next': false
+        'next-2': false
+        'next-1': false
+        'current': false
+
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary because we swap
       # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
+
+      # First scrollable element containing this one. We toggle its overflow state depending on whether
+      # we're in detail mode or grid mode.
+      scrollParent = element.parents('.scrollable').first()
+      scrollParentOverflow = scrollParent.css('overflow')
+      scrollParentH = scrollParent.height()
+      scrollTop = scrollParent.scrollTop()
+
 
       # Returns true if the container has changed width since last invocation
       hasContainerChangedWidth = ->
         if containerWidth != (newContainerWidth = container.width())
           containerWidth = newContainerWidth
+          scrollParentH = scrollParent.height()
           true
         else
           false
@@ -99,7 +119,7 @@ angular.module('deckBuilder')
           return
 
         # Remove the scroll lock-down, if we've been in detail mode previously
-        scrollParent.css('overflow', '')
+        setScrollerOverflow('')
 
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
@@ -144,21 +164,19 @@ angular.module('deckBuilder')
               lastVisibleRow = row if queryResult.isShown(getItemId(item))
               calculateNextRow(item)
 
-            item.idx = itemLayouts.push(
+            itemLayouts.push(
               x: colPositions[groupItemIdx % numColumns]
               y: rowInfos[row].position + vMargin
-              opacity: 1
             ) - 1
             item.row = row
             groupItemIdx++
 
           else # if isGridHeader(item)
             rowInfo = calculateNextRow(item, true)
-            item.idx = headerLayouts.push(
+            headerLayouts.push(
               x: 0
               y: rowInfo.position + vMargin
-              opacity: 1
-            ) - 1
+            )
             item.row = rowInfos.length - 1
 
             # Update bookkeeping for row positioning
@@ -192,15 +210,13 @@ angular.module('deckBuilder')
         if !items.length
           return
 
-        if scrollParent.css('overflow') != 'hidden'
-          scrollParent.css('overflow', 'hidden')
+        # Ensure that we aren't scrolling.
+        setScrollerOverflow('hidden')
 
-        { top: baseY } = container.position()
-        scrollParentH = scrollParent.height()
-
-        baseY *= -1 # Invert
-        baseY += 70
-        nextPrevY = baseY + 35
+        # Work out base Y coordinate
+        baseY = scrollTop
+        baseY += 80
+        nextPrevY = baseY #+ 35
 
         selEle = gridItemsById[scope.selectedCard.id]
 
@@ -216,56 +232,110 @@ angular.module('deckBuilder')
 
           layout = itemLayouts[i] ?= {}
           layout.opacity = 0
+          layout.classes = hidden: true
 
           if item == selEle
             if i - 2 >= 0 # current - 2
               _.extend itemLayouts[i - 2],
-                opacity: 0.3
                 zoom: 0.75
-                rotationY: -40
+                classes:
+                  'prev': true
+                  'prev-2': true
                 zIndex: gridItems.length
                 x: 0
                 y: nextPrevY
 
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
-                opacity: 0.8
                 zoom: 0.75
-                rotationY: -40
+                classes:
+                  'prev': true
+                  'prev-1': true
                 zIndex: gridItems.length + 1
                 x: 30
                 y: nextPrevY
 
             _.extend layout,
-              opacity: 1
               zoom: 1
+              classes:
+                'current': true
               zIndex: gridItems.length + 2
-              x: (containerWidth - (300 + 250)) / 2
+              x: (containerWidth - (300 + 300)) / 2
               y: baseY
               rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
+              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy as fuck
               _.extend itemLayouts[i + 1],
-                opacity: 0.8
                 zoom: 0.75
-                rotationY: 40
+                classes:
+                  'next': true
+                  'next-1': true
                 zIndex: gridItems.length + 1
-                x: containerWidth - 175 - 30
+                x: containerWidth - 295 - 30
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
+              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy as fuck
               _.extend itemLayouts[i + 2],
-                opacity: 0.3
+                classes:
+                  'next': true
+                  'next-2': true
                 zoom: 0.75
-                rotationY: 40
                 zIndex: gridItems.length
-                x: containerWidth - 175
+                x: containerWidth - 295
                 y: nextPrevY
-
 
             skipCount = 2
 
         applyItemStyles()
+        return
+
+      applyItemStyles = ->
+        if !_.isEmpty(itemLayouts)
+          items = gridItems
+          len = items.length
+          defaultZoom = Number(scope.zoom)
+
+          for layout, i in itemLayouts
+            break if i == gridItems.length
+            item = gridItems[i]
+
+            if queryResult.isShown(getItemId(item))
+              $(item).removeClass('hidden')
+              newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
+                          scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
+              new_zIndex = layout.zIndex ? len - 1
+
+              # Don't set style properties if we don't have to. Their invalidation is a performance killer.
+              if item.style.zIndex isnt new_zIndex
+                item.style.zIndex = new_zIndex
+              if item.style[transformProperty] isnt newStyle
+                item.style[transformProperty] = newStyle
+
+              # Apply CSS classes
+              cssClasses = _.defaults(layout.classes ? {}, defaultItemClasses)
+              for cls, apply of cssClasses
+                # NOTE We don't use classList.toggle(cls, force) here, because IE11 doesn't
+                #      implement it properly.
+                if apply
+                  item.classList.add(cls)
+                else
+                  item.classList.remove(cls)
+            else
+              item.classList.add('hidden')
+
+        if !_.isEmpty(headerLayouts)
+          items = gridHeaders
+          len = items.length
+          for layout, i in headerLayouts
+            break if i == gridHeaders.length
+            item = gridHeaders[i]
+
+            item.style.zIndex = len - i
+            item.style[transformProperty] =
+              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
+
         return
 
 
@@ -297,53 +367,16 @@ angular.module('deckBuilder')
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
 
-      applyItemStyles = ->
-        if !_.isEmpty(itemLayouts)
-          items = gridItems
-          len = items.length
-          defaultZoom = Number(scope.zoom)
-
-          for layout, i in itemLayouts
-            break if i == gridItems.length
-            item = gridItems[i]
-
-            if queryResult.isShown(getItemId(item))
-              $(item).removeClass('hidden')
-              newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
-                          scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
-              if layout.rotationY
-                newStyle += " rotateY(#{ layout.rotationY }deg)"
-
-              new_zIndex = layout.zIndex ? len - 1
-
-              # Don't set style properties if we don't have to. Their invalidation is a performance killer.
-              if item.style.zIndex isnt new_zIndex
-                item.style.zIndex = new_zIndex
-              if item.style.opacity isnt layout.opacity
-                item.style.opacity = layout.opacity
-              if item.style[transformProperty] isnt newStyle
-                item.style[transformProperty] = newStyle
-            else
-              $(item).addClass('hidden')
-
-        if !_.isEmpty(headerLayouts)
-          items = gridHeaders
-          len = items.length
-          for layout, i in headerLayouts
-            break if i == gridHeaders.length
-            item = gridHeaders[i]
-
-            item.style.zIndex = len - i
-            item.style.opacity = layout.opacity
-            item.style[transformProperty] =
-              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
-
-        return
-
 
       # *~*~*~*~ SCROLLING
 
-      scrollParent = element.parents('.scrollable').first()
+      # Optimization to prevent unnecessary reflows by invoking jQuery.css. We store the scroll parent's overflow
+      # value around, and only set it if required. This assumes no one else is tinkering with the value.
+      setScrollerOverflow = (val) ->
+        if scrollParentOverflow != val
+          scrollParent.css('overflow', val)
+          scrollParentOverflow = val
+
 
       # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
       #      is too jumpy.
@@ -352,8 +385,8 @@ angular.module('deckBuilder')
           scrollParent.scrollTop(0)
         else
           rowInfo = rowInfos[focusedElement.row]
-          newScrollTop = rowInfo.position + rowInfo.height * focusedElementChop
-          scrollParent.scrollTop(newScrollTop)
+          scrollTop = rowInfo.position + rowInfo.height * focusedElementChop
+          scrollParent.scrollTop(scrollTop)
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
@@ -440,7 +473,7 @@ angular.module('deckBuilder')
           else
             $log.debug 'No cards selected. Displaying cards in grid mode'
             'grid'
-        layoutNow(true)
+        layoutNow()
       scope.$watch('selectedCard', selectedCardChanged)
 
       queryResultChanged = (newVal) ->

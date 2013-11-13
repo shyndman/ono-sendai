@@ -103,6 +103,13 @@ input[type=number]::-webkit-outer-spin-button {
     background: rgba(255, 255, 255, 0.97);
     border-bottom: 1px solid transparentize($neutral-color, (1 - $underline-opacity));
 
+    &.selected-card {
+      padding: 7px;
+      text-align: left;
+      margin-top: 10px;
+      font-size: 25px;
+    }
+
     &.haas-bioroid {
       color: $haas-color;
       border-bottom: 1px solid transparentize($haas-color, (1 - $underline-opacity));

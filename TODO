@@ -13,6 +13,10 @@ TODOs
   * humans.txt -- add it!
   * Excluded general controls should explain through a tooltip why they're disabled
   * Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
+  * Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then
+    modified as time goes on. No more clearing (as you see in performGridLayout).
+  * Hoist keyboard handling for the detail view to the body or something, and figure out what to do when dealing
+    with input controls.
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
