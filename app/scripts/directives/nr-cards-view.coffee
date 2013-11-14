@@ -215,8 +215,8 @@ angular.module('deckBuilder')
 
         # Work out base Y coordinate
         baseY = scrollTop
-        baseY += 80
-        nextPrevY = baseY #+ 35
+        baseY += 60
+        nextPrevY = baseY + 26
 
         selEle = gridItemsById[scope.selectedCard.id]
 
