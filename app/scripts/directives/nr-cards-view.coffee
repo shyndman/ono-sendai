@@ -254,7 +254,7 @@ angular.module('deckBuilder')
                 y: nextPrevY
 
             _.extend layout,
-              zoom: 0.9
+              zoom: 1
               classes:
                 'current': true
               x: (containerWidth - 680) / 2 + 26 # TODO Pull the literal from CSS
@@ -268,7 +268,7 @@ angular.module('deckBuilder')
                 classes:
                   'next': true
                   'next-1': true
-                x: containerWidth - 295 - 30
+                x: containerWidth - 292 - 30
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
@@ -278,7 +278,7 @@ angular.module('deckBuilder')
                   'next': true
                   'next-2': true
                 zoom: 0.7
-                x: containerWidth - 295
+                x: containerWidth - 292
                 y: nextPrevY
 
             skipCount = 2
