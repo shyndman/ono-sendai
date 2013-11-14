@@ -47,7 +47,7 @@ nr-cards-view {
     @include scaled-card(1);
     cursor: pointer;
     transform-origin: 0 0;
-    perspective: 1000px;
+    perspective: 2000px;
     transform-style: preserve-3d;
 
     img {
@@ -96,6 +96,7 @@ nr-cards-view {
   // ~-~-~- DETAILED CARD MODE
 
   .grid-item.current {
+    transform-origin: 0 150px;
     z-index: $card-current-z-index !important;
 
     img {
@@ -109,6 +110,8 @@ nr-cards-view {
   }
 
   .grid-item.prev {
+    transform-origin: 0 150px;
+
     img {
       transform: translateZ(1px) rotateY(40deg);
     }
@@ -119,7 +122,7 @@ nr-cards-view {
   }
 
   .grid-item.next {
-    transform-origin: 100% 0;
+    transform-origin: 100% 150px;
 
     img {
       transform-origin: 100% 0;
@@ -136,7 +139,7 @@ nr-cards-view {
     z-index: $card-offset-1-z-index !important;
 
     img {
-      opacity: 0.9;
+      opacity: 0.93;
     }
   }
 
@@ -153,13 +156,18 @@ nr-cards-view {
   margin-bottom: 20px;
 
   .selected-card {
-    $selected-card-width: 680px;
+    $selected-card-width: 660px;
+
     position: absolute;
     width: $selected-card-width;
     height: 100%;
-    background: rgba(248, 248, 248, 0.7);
-    z-index: $card-current-info-z-index;
     padding: 9px 18px;
+    z-index: $card-current-info-z-index;
+
+    background: rgba(252, 252, 252, 0.7);
+    border: 1px solid rgba(240, 240, 240, 0.9);
+    border-top: none;
+    border-bottom: none;
 
     // Center the div
     left: 50%;

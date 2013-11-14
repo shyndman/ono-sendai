@@ -216,7 +216,7 @@ angular.module('deckBuilder')
         # Work out base Y coordinate
         baseY = scrollTop
         baseY += 60
-        nextPrevY = baseY + 26
+        nextPrevY = baseY
 
         selEle = gridItemsById[scope.selection.id]
 
@@ -254,11 +254,11 @@ angular.module('deckBuilder')
                 y: nextPrevY
 
             _.extend layout,
-              zoom: 1
+              zoom: 0.92
               classes:
                 'current': true
-              x: (containerWidth - 680) / 2 + 26 # TODO Pull the literal from CSS
-              y: baseY
+              x: (containerWidth - 660) / 2 + 26 # TODO Pull the literal from CSS
+              y: baseY - 6
               rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
@@ -268,7 +268,7 @@ angular.module('deckBuilder')
                 classes:
                   'next': true
                   'next-1': true
-                x: containerWidth - 292 - 30
+                x: containerWidth - 300 - 30
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
@@ -278,7 +278,7 @@ angular.module('deckBuilder')
                   'next': true
                   'next-2': true
                 zoom: 0.7
-                x: containerWidth - 292
+                x: containerWidth - 300
                 y: nextPrevY
 
             skipCount = 2
