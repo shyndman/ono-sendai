@@ -12,11 +12,13 @@
       selected-card="selectedCard"
       zoom="grid.zoom">
 
-    <!-- SELECTED CARD HEADER -->
-    <h2 ng-if="selectedCard != null"
-        class="{{selectedCard.faction.toLowerCase()}} selected-card">
-      {{selectedCard.title}}
-    </h2>
+    <!-- SELECTED CARD -->
+    <div ng-if="selectedCard != null"
+         class="selected-card">
+      <h2 class="{{selectedCard.faction.toLowerCase()}}">
+        {{selectedCard.title}}
+      </h2>
+    </div>
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id"
