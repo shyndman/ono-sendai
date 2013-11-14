@@ -376,6 +376,7 @@ angular.module('deckBuilder')
         if scrollParentOverflow != val
           scrollParent.css('overflow', val)
           scrollParentOverflow = val
+          hasContainerChangedWidth()
 
       scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
