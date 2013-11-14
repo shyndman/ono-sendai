@@ -237,29 +237,26 @@ angular.module('deckBuilder')
           if item == selEle
             if i - 2 >= 0 # current - 2
               _.extend itemLayouts[i - 2],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'prev': true
                   'prev-2': true
-                zIndex: gridItems.length
                 x: 0
                 y: nextPrevY
 
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'prev': true
                   'prev-1': true
-                zIndex: gridItems.length + 1
                 x: 30
                 y: nextPrevY
 
             _.extend layout,
-              zoom: 1
+              zoom: 0.95
               classes:
                 'current': true
-              zIndex: gridItems.length + 2
               x: (containerWidth - (300 + 300)) / 2
               y: baseY
               rotationY: 0
@@ -267,11 +264,10 @@ angular.module('deckBuilder')
             if i + 1 < gridItems.length # current + 1 (next)
               itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy.
               _.extend itemLayouts[i + 1],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'next': true
                   'next-1': true
-                zIndex: gridItems.length + 1
                 x: containerWidth - 295 - 30
                 y: nextPrevY
 
@@ -281,8 +277,7 @@ angular.module('deckBuilder')
                 classes:
                   'next': true
                   'next-2': true
-                zoom: 0.75
-                zIndex: gridItems.length
+                zoom: 0.7
                 x: containerWidth - 295
                 y: nextPrevY
 
