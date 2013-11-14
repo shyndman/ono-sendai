@@ -7,7 +7,7 @@ angular.module('deckBuilder')
     scope: {
       queryResult: '='
       zoom: '='
-      selectedCard: '='
+      selection: '='
     }
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
@@ -218,7 +218,7 @@ angular.module('deckBuilder')
         baseY += 60
         nextPrevY = baseY + 26
 
-        selEle = gridItemsById[scope.selectedCard.id]
+        selEle = gridItemsById[scope.selection.id]
 
         for item, i in gridHeaders
           layout = headerLayouts[i] ?= {}
@@ -465,16 +465,16 @@ angular.module('deckBuilder')
 
       # *~*~*~*~ CARDS
 
-      selectedCardChanged = (newVal, oldVal) ->
+      selectionChanged = (newVal, oldVal) ->
         layoutMode =
           if newVal
-            $log.debug 'Card selected. Displaying card in detail mode'
+            $log.debug 'Item selected. Displaying in detail mode'
             'detail'
           else
-            $log.debug 'No cards selected. Displaying cards in grid mode'
+            $log.debug 'No selection. Displaying items in grid mode'
             'grid'
         layoutNow()
-      scope.$watch('selectedCard', selectedCardChanged)
+      scope.$watch('selection', selectionChanged)
 
       queryResultChanged = (newVal) ->
         $log.debug 'Laying out grid (query)'
