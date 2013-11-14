@@ -95,7 +95,7 @@ angular.module('deckBuilder')
         # NOTE: These are extremely expensive calculations. Do them once, only.
         cacheKey = "#{type}:#{inverseDownscaleFactor}"
         sizeCache[cacheKey] ?=
-          width: parseFloat(item.css('width'))
+          width:  parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
         baseSize = sizeCache[cacheKey]
@@ -265,7 +265,7 @@ angular.module('deckBuilder')
               rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
-              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy as fuck
+              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy.
               _.extend itemLayouts[i + 1],
                 zoom: 0.75
                 classes:
@@ -276,7 +276,7 @@ angular.module('deckBuilder')
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
-              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy as fuck
+              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy.
               _.extend itemLayouts[i + 2],
                 classes:
                   'next': true
