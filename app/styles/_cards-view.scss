@@ -155,42 +155,51 @@ nr-cards-view {
 .cards {
   margin-bottom: 20px;
 
-  .selected-card {
+  .selected-card-container {
     $selected-card-width: 660px;
 
     position: absolute;
     width: $selected-card-width;
     height: 100%;
-    padding: 9px 18px;
-    z-index: $card-current-info-z-index;
-
-    background: rgba(252, 252, 252, 0.7);
-    border: 1px solid rgba(240, 240, 240, 0.9);
-    border-top: none;
-    border-bottom: none;
 
     // Center the div
     left: 50%;
     margin-left: -($selected-card-width / 2);
 
-    h2 {
-      margin-bottom: 14px;
-    }
+    .selected-card {
+      position: fixed;
 
-    .info {
-      h3 {
-        margin: 4px 0 10px 0;
-        font-size: 18px;
+      width: $selected-card-width;
+      height: 100%;
+
+      padding: 9px 18px;
+      z-index: $card-current-info-z-index;
+
+      background: rgba(252, 252, 252, 0.7);
+      border: 1px solid rgba(240, 240, 240, 0.9);
+      border-top: none;
+      border-bottom: none;
+
+      h2 {
+        margin-bottom: 14px;
       }
 
-      li {
-        margin: 5px 0;
-      }
+      .info {
+        h3 {
+          margin: 4px 0 10px 0;
+          font-size: 18px;
+        }
 
-      width: 320px;
-      float: right;
+        li {
+          margin: 5px 0;
+        }
+
+        width: 320px;
+        float: right;
+      }
     }
   }
+
 
   h2 {
     $underline-opacity: 0.3;
