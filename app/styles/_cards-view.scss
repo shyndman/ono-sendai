@@ -1,3 +1,10 @@
+$card-current-z-index: 3;
+$card-current-info-z-index: 2;
+$card-offset-1-z-index: 1;
+$card-offset-2-z-index: 0;
+
+// Contains generalized styling for any kind of grid/detail grid. Not really card specific.
+// Application-specific styling is below.
 nr-cards-view {
   @mixin scaled-card($scale) {
     width: $card-width * $scale;
@@ -38,6 +45,7 @@ nr-cards-view {
 
   .grid-item {
     @include scaled-card(1);
+    cursor: pointer;
     transform-origin: 0 0;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -88,6 +96,8 @@ nr-cards-view {
   // ~-~-~- DETAILED CARD MODE
 
   .grid-item.current {
+    z-index: $card-current-z-index !important;
+
     img {
       opacity: 1;
       transform: translateZ(1px) rotateY(0deg);
@@ -123,14 +133,110 @@ nr-cards-view {
   }
 
   .grid-item.prev-1, .grid-item.next-1 {
+    z-index: $card-offset-1-z-index !important;
+
     img {
       opacity: 0.9;
     }
   }
 
-  .grid-item.prev-2, .grid-item.prev-2 {
+  .grid-item.prev-2, .grid-item.next-2 {
+    z-index: $card-offset-2-z-index !important;
+
     img {
       opacity: 0.7;
     }
   }
 }
+
+.cards {
+  margin-bottom: 20px;
+
+  .selected-card {
+    $selected-card-width: 680px;
+    position: absolute;
+    width: $selected-card-width;
+    height: 100%;
+    background: rgba(250, 250, 250, 0.7);
+    z-index: $card-current-info-z-index;
+    padding: 9px 18px;
+
+    // Center the div
+    left: 50%;
+    margin-left: -($selected-card-width / 2);
+
+    h2 {
+      margin-bottom: 14px;
+    }
+
+    .info {
+      width: 350px;
+      float: right;
+    }
+  }
+
+  h2 {
+    $underline-opacity: 0.3;
+
+    padding: 5px 7px;
+    margin: 0;
+
+    font-size: 23px;
+    font-weight: 200;
+    letter-spacing: 0.4px;
+
+    color: $neutral-color;
+    border-bottom: 1px solid transparentize($neutral-color, (1 - $underline-opacity));
+
+    &.haas-bioroid {
+      color: $haas-color;
+      border-bottom: 1px solid transparentize($haas-color, (1 - $underline-opacity));
+    }
+
+    &.jinteki {
+      color: $jinteki-color;
+      border-bottom: 1px solid transparentize($jinteki-color, (1 - $underline-opacity));
+    }
+
+    &.nbn {
+      color: $nbn-color;
+      border-bottom: 1px solid transparentize($nbn-color, (1 - $underline-opacity));
+    }
+
+    &.weyland {
+      color: $weyland-color;
+      border-bottom: 1px solid transparentize($weyland-color, (1 - $underline-opacity));
+    }
+
+    &.anarch {
+      color: $anarch-color;
+      border-bottom: 1px solid transparentize($anarch-color, (1 - $underline-opacity));
+    }
+
+    &.criminal {
+      color: $criminal-color;
+      border-bottom: 1px solid transparentize($criminal-color, (1 - $underline-opacity));
+    }
+
+    &.shaper {
+      color: $shaper-color;
+      border-bottom: 1px solid transparentize($shaper-color, (1 - $underline-opacity));
+    }
+
+    small {
+      font-weight: 200;
+    }
+
+    small.secondary-group {
+      margin-left: 10px;
+      font-size: 17px;
+    }
+
+    small.card-count {
+      float: right;
+      font-size: 13px;
+      margin: 11px 0 0 0;
+    }
+  }
+}
+

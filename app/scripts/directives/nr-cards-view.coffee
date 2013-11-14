@@ -7,7 +7,7 @@ angular.module('deckBuilder')
     scope: {
       queryResult: '='
       zoom: '='
-      selectedCard: '='
+      selection: '='
     }
     link: (scope, element, attrs) ->
       layoutMode = 'grid'
@@ -95,7 +95,7 @@ angular.module('deckBuilder')
         # NOTE: These are extremely expensive calculations. Do them once, only.
         cacheKey = "#{type}:#{inverseDownscaleFactor}"
         sizeCache[cacheKey] ?=
-          width: parseFloat(item.css('width'))
+          width:  parseFloat(item.css('width'))
           height: parseFloat(item.css('height'))
 
         baseSize = sizeCache[cacheKey]
@@ -215,10 +215,10 @@ angular.module('deckBuilder')
 
         # Work out base Y coordinate
         baseY = scrollTop
-        baseY += 80
-        nextPrevY = baseY #+ 35
+        baseY += 60
+        nextPrevY = baseY + 26
 
-        selEle = gridItemsById[scope.selectedCard.id]
+        selEle = gridItemsById[scope.selection.id]
 
         for item, i in gridHeaders
           layout = headerLayouts[i] ?= {}
@@ -237,52 +237,47 @@ angular.module('deckBuilder')
           if item == selEle
             if i - 2 >= 0 # current - 2
               _.extend itemLayouts[i - 2],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'prev': true
                   'prev-2': true
-                zIndex: gridItems.length
                 x: 0
                 y: nextPrevY
 
             if i - 1 >= 0 # current - 1 (previous)
               _.extend itemLayouts[i - 1],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'prev': true
                   'prev-1': true
-                zIndex: gridItems.length + 1
                 x: 30
                 y: nextPrevY
 
             _.extend layout,
-              zoom: 1
+              zoom: 0.9
               classes:
                 'current': true
-              zIndex: gridItems.length + 2
-              x: (containerWidth - (300 + 300)) / 2
+              x: (containerWidth - 680) / 2 + 26 # TODO Pull the literal from CSS
               y: baseY
               rotationY: 0
 
             if i + 1 < gridItems.length # current + 1 (next)
-              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy as fuck
+              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy.
               _.extend itemLayouts[i + 1],
-                zoom: 0.75
+                zoom: 0.7
                 classes:
                   'next': true
                   'next-1': true
-                zIndex: gridItems.length + 1
                 x: containerWidth - 295 - 30
                 y: nextPrevY
 
             if i + 2 < gridItems.length # current + 2
-              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy as fuck
+              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy.
               _.extend itemLayouts[i + 2],
                 classes:
                   'next': true
                   'next-2': true
-                zoom: 0.75
-                zIndex: gridItems.length
+                zoom: 0.7
                 x: containerWidth - 295
                 y: nextPrevY
 
@@ -298,7 +293,9 @@ angular.module('deckBuilder')
           defaultZoom = Number(scope.zoom)
 
           for layout, i in itemLayouts
-            break if i == gridItems.length
+            if i == gridItems.length
+              break
+
             item = gridItems[i]
 
             if queryResult.isShown(getItemId(item))
@@ -308,8 +305,6 @@ angular.module('deckBuilder')
               new_zIndex = layout.zIndex ? len - 1
 
               # Don't set style properties if we don't have to. Their invalidation is a performance killer.
-              if item.style.zIndex isnt new_zIndex
-                item.style.zIndex = new_zIndex
               if item.style[transformProperty] isnt newStyle
                 item.style[transformProperty] = newStyle
 
@@ -329,12 +324,17 @@ angular.module('deckBuilder')
           items = gridHeaders
           len = items.length
           for layout, i in headerLayouts
-            break if i == gridHeaders.length
+            if i == gridHeaders.length
+              break
+
             item = gridHeaders[i]
 
-            item.style.zIndex = len - i
-            item.style[transformProperty] =
-              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
+            if layoutMode == 'grid'
+              item.classList.remove('hidden')
+              item.style[transformProperty] =
+                "translate3d(#{layout.x}px, #{layout.y}px, 0)"
+            else
+              item.classList.add('hidden')
 
         return
 
@@ -377,9 +377,6 @@ angular.module('deckBuilder')
           scrollParent.css('overflow', val)
           scrollParentOverflow = val
 
-
-      # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
-      #      is too jumpy.
       scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
           scrollParent.scrollTop(0)
@@ -465,16 +462,16 @@ angular.module('deckBuilder')
 
       # *~*~*~*~ CARDS
 
-      selectedCardChanged = (newVal, oldVal) ->
+      selectionChanged = (newVal, oldVal) ->
         layoutMode =
           if newVal
-            $log.debug 'Card selected. Displaying card in detail mode'
+            $log.debug 'Item selected. Displaying in detail mode'
             'detail'
           else
-            $log.debug 'No cards selected. Displaying cards in grid mode'
+            $log.debug 'No selection. Displaying items in grid mode'
             'grid'
         layoutNow()
-      scope.$watch('selectedCard', selectedCardChanged)
+      scope.$watch('selection', selectionChanged)
 
       queryResultChanged = (newVal) ->
         $log.debug 'Laying out grid (query)'

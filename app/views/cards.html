@@ -9,14 +9,29 @@
   <nr-cards-view
       class="cards"
       query-result="queryResult"
-      selected-card="selectedCard"
+      selection="selectedCard"
       zoom="grid.zoom">
 
-    <!-- SELECTED CARD HEADER -->
-    <h2 ng-if="selectedCard != null"
-        class="{{selectedCard.faction.toLowerCase()}} selected-card">
-      {{selectedCard.title}}
-    </h2>
+    <!-- SELECTED CARD -->
+    <div ng-if="selectedCard != null"
+         class="selected-card">
+      <h2 class="{{selectedCard.faction.toLowerCase()}}">
+        {{selectedCard.title}}
+      </h2>
+      <div class="info">
+        <h3>Related Cards</h3>
+
+        <h3>Links</h3>
+        <ul class="list-unstyled">
+          <li>
+            <a href="{{selectedCard.cgdb_url}}" target="_blank"><i class="icon-link-ext"></i> View on CardGameDB</a>
+          </li>
+          <li>
+            <a href="{{selectedCard.nrdb_url}}" target="_blank"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id"
