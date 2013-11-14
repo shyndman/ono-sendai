@@ -377,9 +377,6 @@ angular.module('deckBuilder')
           scrollParent.css('overflow', val)
           scrollParentOverflow = val
 
-
-      # NOTE Currently does not animate, unless I figure out a better way to do it. Naive approach
-      #      is too jumpy.
       scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
           scrollParent.scrollTop(0)
