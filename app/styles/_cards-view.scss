@@ -45,6 +45,7 @@ nr-cards-view {
 
   .grid-item {
     @include scaled-card(1);
+    cursor: pointer;
     transform-origin: 0 0;
     perspective: 1000px;
     transform-style: preserve-3d;
