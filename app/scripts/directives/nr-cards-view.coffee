@@ -293,7 +293,9 @@ angular.module('deckBuilder')
           defaultZoom = Number(scope.zoom)
 
           for layout, i in itemLayouts
-            break if i == gridItems.length
+            if i == gridItems.length
+              break
+
             item = gridItems[i]
 
             if queryResult.isShown(getItemId(item))
@@ -303,8 +305,6 @@ angular.module('deckBuilder')
               new_zIndex = layout.zIndex ? len - 1
 
               # Don't set style properties if we don't have to. Their invalidation is a performance killer.
-              if item.style.zIndex isnt new_zIndex
-                item.style.zIndex = new_zIndex
               if item.style[transformProperty] isnt newStyle
                 item.style[transformProperty] = newStyle
 
@@ -324,12 +324,17 @@ angular.module('deckBuilder')
           items = gridHeaders
           len = items.length
           for layout, i in headerLayouts
-            break if i == gridHeaders.length
+            if i == gridHeaders.length
+              break
+
             item = gridHeaders[i]
 
-            item.style.zIndex = len - i
-            item.style[transformProperty] =
-              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
+            if layoutMode == 'grid'
+              item.classList.remove('hidden')
+              item.style[transformProperty] =
+                "translate3d(#{layout.x}px, #{layout.y}px, 0)"
+            else
+              item.classList.add('hidden')
 
         return
 
