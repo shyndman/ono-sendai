@@ -254,10 +254,10 @@ angular.module('deckBuilder')
                 y: nextPrevY
 
             _.extend layout,
-              zoom: 0.95
+              zoom: 0.9
               classes:
                 'current': true
-              x: (containerWidth - (300 + 300)) / 2
+              x: (containerWidth - 680) / 2 + 26 # TODO Pull the literal from CSS
               y: baseY
               rotationY: 0
 
