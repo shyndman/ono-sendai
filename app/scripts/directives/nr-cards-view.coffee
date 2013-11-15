@@ -411,10 +411,10 @@ angular.module('deckBuilder')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.35
+        scope.zoom > 0.35 or scope.selection != null
 
       upscaleTo = ->
-        if scope.zoom > 0.5
+        if scope.zoom > 0.5 or scope.selection != null
           1
         else if scope.zoom > 0.35
           2
@@ -471,7 +471,7 @@ angular.module('deckBuilder')
           else
             $log.debug 'No selection. Displaying items in grid mode'
             'grid'
-        layoutNow()
+        layoutNow(true)
       scope.$watch('selection', selectionChanged)
 
       queryResultChanged = (newVal) ->
