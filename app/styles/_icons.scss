@@ -30,7 +30,7 @@
 }
 
 .icon-credit:before { content: '\e80a'; }
-.icon-influence:before { content: '\e801'; }
+.icon-cotd:before { content: '\e816'; }
 .icon-memory-unit:before { content: '\e809'; }
 .icon-link-strength:before { content: '\e807'; }
 .icon-subroutine:before { content: '\e808'; }
@@ -38,16 +38,17 @@
 .icon-link-ext:before { content: '\e80c'; }
 .icon-trash-cost:before { content: '\e80f'; }
 .icon-unchecked:before { content: '\e800'; }
-.icon-click:before { content: '\e80b'; }
+.icon-agenda-point:before { content: '\e803'; }
 .icon-search:before { content: '\e812'; }
-.icon-faction:before { content: '\e80e'; }
+.icon-click:before { content: '\e80b'; }
 .icon-minimum-deck-size:before { content: '\e804'; }
 .icon-type:before { content: '\e805'; }
 .icon-side:before { content: '\e80d'; }
 .icon-strength:before { content: '\e806'; }
+.icon-right-dir:before { content: '\e813'; }
 .icon-previous:before { content: '\e810'; }
 .icon-next:before { content: '\e811'; }
-.icon-agenda-point:before { content: '\e803'; }
-
-// DO NOT OVERWRITE -- Not part of fontello font
-.icon-active-group:before { @extend .icon-unchecked:before; }
+.icon-favourite:before { content: '\e815'; }
+.icon-favourite-empty:before { content: '\e814'; }
+.icon-influence:before { content: '\e801'; }
+.icon-faction:before { content: '\e80e'; }

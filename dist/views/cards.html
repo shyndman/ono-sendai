@@ -6,22 +6,24 @@
   <nr-cards-view class="cards" query-result="queryResult" selection="selectedCard" zoom="grid.zoom">
 
     <!-- SELECTED CARD -->
-    <div ng-if="selectedCard != null" class="selected-card">
-      <h2 class="{{selectedCard.faction.toLowerCase()}}">
-        {{selectedCard.title}}
-      </h2>
-      <div class="info">
-        <h3>Related Cards</h3>
+    <div ng-if="selectedCard != null" class="selected-card-container">
+      <div class="selected-card">
+        <h2 class="{{selectedCard.faction.toLowerCase()}}">
+          {{selectedCard.title}}
+        </h2>
+        <div class="info">
+          <h3>Related Cards</h3>
 
-        <h3>Links</h3>
-        <ul class="list-unstyled">
-          <li>
-            <a href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb"><i class="icon-link-ext"></i> Comments on CardGameDB</a>
-          </li>
-          <li>
-            <a href="{{selectedCard.nrdb_url}}" target="nrdb"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
-          </li>
-        </ul>
+          <h3>Links</h3>
+          <ul class="list-unstyled">
+            <li>
+              <a href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb"><i class="icon-link-ext"></i> Comments on CardGameDB</a>
+            </li>
+            <li>
+              <a href="{{selectedCard.nrdb_url}}" target="nrdb"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
