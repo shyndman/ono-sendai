@@ -44,11 +44,15 @@ nr-subnav {
     }
   }
 
-  input[type=range] {
-    margin-right: 20px;
-    width: 140px;
-    position: relative;
-    top: 5px;
+  .zoom {
+    display: inline-block;
+
+    input[type=range] {
+      margin-right: 20px;
+      width: 140px;
+      position: relative;
+      top: 5px;
+    }
   }
 
   .control-label {
