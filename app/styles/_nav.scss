@@ -2,7 +2,8 @@ nr-subnav {
   $subnav-height: 30px;
 
   display: flexbox;
-  min-height: $subnav-height;
+  height: $subnav-height; // Required for Firefox
+  min-height: $subnav-height; // Everybody else (weird)
   border-bottom: 1px solid #e7e7e7;
   background: #fbfbfb;
   box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
