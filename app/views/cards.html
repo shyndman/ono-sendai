@@ -34,7 +34,7 @@
   <!-- HEADERS -->
   <h2 ng-repeat="(id, group) in queryResult.groups track by id"
       grid-id="{{group.id}}"
-      class="{{group.id}} grid-header"
+      class="{{group.id}} grid-header invisible"
       title="{{group.id}}">
     <small class="card-count"><ng-pluralize
         count="group.cards.length"

@@ -330,11 +330,11 @@ angular.module('deckBuilder')
             item = gridHeaders[i]
 
             if layoutMode == 'grid'
-              item.classList.remove('hidden')
+              item.classList.remove('invisible')
               item.style[transformProperty] =
                 "translate3d(#{layout.x}px, #{layout.y}px, 0)"
             else
-              item.classList.add('hidden')
+              item.classList.add('invisible')
 
         return
 
