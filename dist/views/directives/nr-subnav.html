@@ -5,8 +5,10 @@
   </ul>
 </nav>
 <div>
-  <label class="control-label">Zoom:</label>
-  <input type="range" step="0.00625" min="0.2" max="1.0" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
+  <div class="zoom" ng-if="selectedCard == null">
+    <label class="control-label">Zoom:</label>
+    <input type="range" step="0.00625" min="0.2" max="1.0" ng-model="grid.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
+ </div>
   <label class="control-label">Group:</label>
   <div class="btn-group">
     <button class="btn btn-default" ng-model="filter.groupings" btn-radio="['faction', 'type']">Faction</button>
