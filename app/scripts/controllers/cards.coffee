@@ -22,6 +22,7 @@ angular.module('deckBuilder')
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
+      updateUrl()
 
     $scope.deselectCard = ->
       $scope.selectCard(null)
@@ -57,12 +58,12 @@ angular.module('deckBuilder')
         $scope.selectCard(queryResult.orderedCards[0])
 
     # Limits URL updates. I find it distracting if it happens to ofter.
-    updateUrl = _.debounce(((filter) ->
-      $scope.$apply -> urlStateService.updateUrl(filter)
+    updateUrl = _.debounce((->
+      $scope.$apply -> urlStateService.updateUrl($scope.filter, $scope.selectedCard)
     ), 500)
 
-    $scope.$watch('filter', ((filter, oldFilter)->
-      updateUrl(filter)
+    $scope.$watch('filter', ((filter, oldFilter) ->
+      updateUrl()
       cardService.query(filter).then (queryResult) ->
         setQueryResult(queryResult)
     ), true)) # True to make sure field changes trigger this watch
