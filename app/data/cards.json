@@ -14,7 +14,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01001",
     "number": 1,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-23T16:10:53Z",
         "id": "1p236b",
@@ -257,7 +257,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01010",
     "number": 10,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-30T05:33:39Z",
         "id": "17jol6",
@@ -346,7 +346,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01013",
     "number": 13,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-02T14:46:21Z",
         "id": "1hhz6a",
@@ -462,7 +462,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01017",
     "number": 17,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-25T16:41:53Z",
         "id": "1p7b4x",
@@ -674,7 +674,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01025",
     "number": 25,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-03T17:35:38Z",
         "id": "1hkuuj",
@@ -709,7 +709,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01026",
     "number": 26,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-20T05:06:55Z",
         "id": "16wz5q",
@@ -797,7 +797,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01029",
     "number": 29,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-28T04:36:31Z",
         "id": "17et5s",
@@ -857,7 +857,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01031",
     "number": 31,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-12T04:56:16Z",
         "id": "16f8nl",
@@ -918,7 +918,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01033",
     "number": 33,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-21T16:38:32Z",
         "id": "1owswf",
@@ -1395,7 +1395,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01051",
     "number": 51,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-23T09:14:50Z",
         "id": "1744y2",
@@ -1483,7 +1483,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02001",
     "number": 1,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-29T18:25:33Z",
         "id": "1phazf",
@@ -1522,7 +1522,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02002",
     "number": 2,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-28T12:49:37Z",
         "id": "19e5x0",
@@ -1557,7 +1557,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02003",
     "number": 3,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-25T14:03:25Z",
         "id": "1796kr",
@@ -1646,7 +1646,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02006",
     "number": 6,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-03T17:35:38Z",
         "id": "1hkuuj",
@@ -1682,7 +1682,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02007",
     "number": 7,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-14T12:02:22Z",
         "id": "1aa2vh",
@@ -1717,7 +1717,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02008",
     "number": 8,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-14T16:56:40Z",
         "id": "16k46q",
@@ -1776,7 +1776,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02021",
     "number": 21,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-12T12:27:16Z",
         "id": "1a56j0",
@@ -1810,7 +1810,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02022",
     "number": 22,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-17T08:23:40Z",
         "id": "16qr79",
@@ -1868,7 +1868,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02024",
     "number": 24,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-18T17:04:03Z",
         "id": "1aj7d9",
@@ -1901,7 +1901,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02025",
     "number": 25,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-05T13:39:13Z",
         "id": "19pemk",
@@ -1935,7 +1935,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02026",
     "number": 26,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-31T06:04:42Z",
         "id": "17m5y0",
@@ -2022,7 +2022,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02041",
     "number": 41,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-11T13:31:04Z",
         "id": "18b2hp",
@@ -2056,7 +2056,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02042",
     "number": 42,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-19T14:13:37Z",
         "id": "18tgfj",
@@ -2090,7 +2090,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02043",
     "number": 43,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-15T06:22:28Z",
         "id": "18khng",
@@ -2151,7 +2151,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02045",
     "number": 45,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-23T07:18:25Z",
         "id": "192kba",
@@ -2185,7 +2185,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02046",
     "number": 46,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-01T16:09:23Z",
         "id": "1pp01o",
@@ -2224,7 +2224,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02047",
     "number": 47,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-02T14:18:15Z",
         "id": "19itds",
@@ -2256,7 +2256,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02048",
     "number": 48,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-13T13:05:16Z",
         "id": "18fxxa",
@@ -2289,7 +2289,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02049",
     "number": 49,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-21T13:21:13Z",
         "id": "18yaas",
@@ -2323,7 +2323,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02050",
     "number": 50,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-08T15:11:34Z",
         "id": "1hv8gg",
@@ -2363,7 +2363,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02061",
     "number": 61,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-28T16:39:03Z",
         "id": "1b6oil",
@@ -2397,7 +2397,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02062",
     "number": 62,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-09T17:04:05Z",
         "id": "1bzzzi",
@@ -2432,7 +2432,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02063",
     "number": 63,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-17T16:30:47Z",
         "id": "1cjhlq",
@@ -2466,7 +2466,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02064",
     "number": 64,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-03T16:20:31Z",
         "id": "1blfvq",
@@ -2501,7 +2501,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02065",
     "number": 65,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-05T14:59:35Z",
         "id": "1bqi9z",
@@ -2535,7 +2535,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02066",
     "number": 66,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-08T17:44:50Z",
         "id": "1bxhpt",
@@ -2570,7 +2570,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02067",
     "number": 67,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-01T16:43:05Z",
         "id": "1bfh46",
@@ -2603,7 +2603,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02068",
     "number": 68,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-12T16:33:31Z",
         "id": "1c7qaw",
@@ -2637,7 +2637,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02069",
     "number": 69,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-19T16:04:53Z",
         "id": "1cojgu",
@@ -2671,7 +2671,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02081",
     "number": 81,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-27T17:14:00Z",
         "id": "1f59je",
@@ -2704,7 +2704,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02082",
     "number": 82,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-02T19:49:18Z",
         "id": "1dkklk",
@@ -2739,7 +2739,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02083",
     "number": 83,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-05T18:11:02Z",
         "id": "1pyq5e",
@@ -2779,7 +2779,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02084",
     "number": 84,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-20T16:35:06Z",
         "id": "1epa4a",
@@ -2812,7 +2812,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02085",
     "number": 85,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-16T14:51:05Z",
         "id": "1egboo",
@@ -2845,7 +2845,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02086",
     "number": 86,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-21T15:34:08Z",
         "id": "1ero9e",
@@ -2879,7 +2879,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02087",
     "number": 87,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-22T15:33:48Z",
         "id": "1eu7m3",
@@ -2912,7 +2912,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02088",
     "number": 88,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-23T13:40:09Z",
         "id": "1ewhk9",
@@ -2946,7 +2946,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02089",
     "number": 89,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-06T18:22:19Z",
         "id": "1dt1ir",
@@ -2981,7 +2981,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02090",
     "number": 90,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-10T13:08:18Z",
         "id": "1e2e9z",
@@ -3014,7 +3014,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02091",
     "number": 91,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-17T15:43:41Z",
         "id": "1eitvo",
@@ -3047,7 +3047,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02101",
     "number": 101,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-21T14:20:45Z",
         "id": "1gsmq7",
@@ -3081,7 +3081,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02102",
     "number": 102,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-04T16:15:11Z",
         "id": "1fnq2u",
@@ -3116,7 +3116,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02103",
     "number": 103,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-10T16:27:10Z",
         "id": "1g1wma",
@@ -3151,7 +3151,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02104",
     "number": 104,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-12T19:17:44Z",
         "id": "1g7r5a",
@@ -3186,7 +3186,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02105",
     "number": 105,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-17T20:42:24Z",
         "id": "1gjffx",
@@ -3226,7 +3226,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02106",
     "number": 106,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-06T16:26:10Z",
         "id": "1fsrem",
@@ -3260,7 +3260,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02107",
     "number": 107,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-20T14:46:47Z",
         "id": "1gq9nb",
@@ -3293,7 +3293,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02108",
     "number": 108,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-11T19:41:22Z",
         "id": "1g55qt",
@@ -3327,7 +3327,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02109",
     "number": 109,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-18T22:25:50Z",
         "id": "1gm67z",
@@ -3362,7 +3362,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03028",
     "number": 28,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-24T16:19:22Z",
         "id": "1iyp79",
@@ -3397,7 +3397,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03029",
     "number": 29,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-25T16:51:36Z",
         "id": "1j1ckh",
@@ -3432,7 +3432,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03030",
     "number": 30,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-26T17:57:32Z",
         "id": "1j3zfk",
@@ -3465,7 +3465,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03031",
     "number": 31,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-06T17:22:10Z",
         "id": "1lv4d1",
@@ -3499,7 +3499,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03032",
     "number": 32,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-09T16:38:35Z",
         "id": "1m1ioq",
@@ -3533,7 +3533,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03033",
     "number": 33,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-10T17:15:21Z",
         "id": "1m46i4",
@@ -3592,7 +3592,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03035",
     "number": 35,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-12T19:10:52Z",
         "id": "1m9jjz",
@@ -3624,7 +3624,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03036",
     "number": 36,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-22T19:16:48Z",
         "id": "1kw5z8",
@@ -3658,7 +3658,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03037",
     "number": 37,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-21T17:35:46Z",
         "id": "1kteo3",
@@ -3692,7 +3692,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03038",
     "number": 38,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-20T16:29:51Z",
         "id": "1kqpmq",
@@ -3725,7 +3725,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03039",
     "number": 39,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-23T17:12:35Z",
         "id": "1kybaj",
@@ -3760,7 +3760,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03040",
     "number": 40,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-04T17:03:18Z",
         "id": "1jor1s",
@@ -3796,7 +3796,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03041",
     "number": 41,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-06T16:31:56Z",
         "id": "1jtitz",
@@ -3831,7 +3831,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03042",
     "number": 42,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-06T16:31:56Z",
         "id": "1jtitz",
@@ -3866,7 +3866,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03043",
     "number": 43,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-05T16:43:21Z",
         "id": "1jqynu",
@@ -3900,7 +3900,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03044",
     "number": 44,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-07T16:19:20Z",
         "id": "1jw3cw",
@@ -3936,7 +3936,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03045",
     "number": 45,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-09T18:15:23Z",
         "id": "1k1gkm",
@@ -3970,7 +3970,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03046",
     "number": 46,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-11T18:01:13Z",
         "id": "1k5kii",
@@ -4004,7 +4004,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03047",
     "number": 47,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-10T16:04:59Z",
         "id": "1k3dkz",
@@ -4038,7 +4038,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03048",
     "number": 48,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-08T19:27:07Z",
         "id": "1jz4u3",
@@ -4073,7 +4073,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03049",
     "number": 49,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-13T18:50:17Z",
         "id": "1mbxb5",
@@ -4107,7 +4107,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03050",
     "number": 50,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-03T16:36:35Z",
         "id": "1lnh37",
@@ -4141,7 +4141,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03051",
     "number": 51,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-11T18:32:51Z",
         "id": "1m6x5u",
@@ -4175,7 +4175,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03052",
     "number": 52,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-05T16:47:46Z",
         "id": "1lskke",
@@ -4209,7 +4209,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03053",
     "number": 53,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-04T18:31:43Z",
         "id": "1lqaql",
@@ -4242,7 +4242,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03054",
     "number": 54,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-14T17:38:34Z",
         "id": "1mdwcj",
@@ -4275,7 +4275,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03055",
     "number": 55,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-15T17:34:29Z",
         "id": "1mfxwn",
@@ -4309,7 +4309,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04001",
     "number": 1,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-24T18:14:26Z",
         "id": "1n1lrh",
@@ -4343,7 +4343,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04002",
     "number": 2,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-14T17:52:48Z",
         "id": "1oftub",
@@ -4377,7 +4377,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04003",
     "number": 3,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-16T16:17:50Z",
         "id": "1okwbp",
@@ -4410,7 +4410,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04004",
     "number": 4,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-01T18:17:46Z",
         "id": "1niypu",
@@ -4445,7 +4445,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04005",
     "number": 5,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-26T17:10:53Z",
         "id": "1n6rwo",
@@ -4479,7 +4479,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04006",
     "number": 6,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-08T17:24:40Z",
         "id": "1nzwlh",
@@ -4514,7 +4514,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04007",
     "number": 7,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-23T16:25:19Z",
         "id": "1myttt",
@@ -4547,7 +4547,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04008",
     "number": 8,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-09T17:51:11Z",
         "id": "1o2tz2",
@@ -4580,7 +4580,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04009",
     "number": 9,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-07T16:54:30Z",
         "id": "1nx3vx",
@@ -4614,7 +4614,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04021",
     "number": 21,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-07T17:57:47Z",
         "id": "1q45bj",
@@ -4649,7 +4649,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04022",
     "number": 22,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-11T18:44:48Z",
         "id": "1qe5ts",
@@ -4682,7 +4682,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04023",
     "number": 23,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-12T19:46:47Z",
         "id": "1qh75u",
@@ -4714,7 +4714,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04024",
     "number": 24,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-13T17:26:47Z",
         "id": "1qjq40",
@@ -4749,7 +4749,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04025",
     "number": 25,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-14T19:44:29Z",
         "id": "1qmwci",
@@ -4885,7 +4885,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01054",
     "number": 54,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-22T17:10:51Z",
         "id": "1ozkdj",
@@ -4969,7 +4969,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01057",
     "number": 57,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-05T18:46:58Z",
         "id": "1hpe0m",
@@ -5029,7 +5029,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01059",
     "number": 59,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-15T06:58:00Z",
         "id": "16lu4d",
@@ -5247,7 +5247,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01067",
     "number": 67,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-24T16:30:42Z",
         "id": "1p4qk8",
@@ -5409,7 +5409,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01073",
     "number": 73,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-26T17:12:21Z",
         "id": "1h4atg",
@@ -5496,7 +5496,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01076",
     "number": 76,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-29T12:32:51Z",
         "id": "17hqtp",
@@ -5611,7 +5611,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01080",
     "number": 80,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-28T16:54:50Z",
         "id": "1pe9vt",
@@ -5744,7 +5744,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01085",
     "number": 85,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-03T18:31:04Z",
         "id": "19l4ux",
@@ -5801,7 +5801,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01087",
     "number": 87,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-25T17:46:39Z",
         "id": "1h1tqt",
@@ -5835,7 +5835,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01088",
     "number": 88,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-19T06:33:52Z",
         "id": "16v5y5",
@@ -5975,7 +5975,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01093",
     "number": 93,
     "quantity": 1,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-18T16:36:10Z",
         "id": "1oq1vs",
@@ -6139,7 +6139,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01099",
     "number": 99,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-18T08:22:55Z",
         "id": "16t3ev",
@@ -6198,7 +6198,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01101",
     "number": 101,
     "quantity": 2,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-22T09:36:44Z",
         "id": "171qkg",
@@ -6554,7 +6554,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02010",
     "number": 10,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-30T19:47:39Z",
         "id": "1pk7ij",
@@ -6620,7 +6620,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02012",
     "number": 12,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-24T05:08:33Z",
         "id": "1769u0",
@@ -6655,7 +6655,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02013",
     "number": 13,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-01T12:22:04Z",
         "id": "19gjem",
@@ -6742,7 +6742,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02016",
     "number": 16,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-15T13:32:14Z",
         "id": "1ack7n",
@@ -6776,7 +6776,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02017",
     "number": 17,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-01T02:12:34Z",
         "id": "17o44k",
@@ -6836,7 +6836,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02019",
     "number": 19,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-26T04:59:47Z",
         "id": "17auzp",
@@ -6898,7 +6898,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02029",
     "number": 29,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-13T11:46:19Z",
         "id": "1a7kwe",
@@ -6931,7 +6931,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02030",
     "number": 30,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-20T11:36:39Z",
         "id": "18vqol",
@@ -6964,7 +6964,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02031",
     "number": 31,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-31T16:52:36Z",
         "id": "1pmiqf",
@@ -7003,7 +7003,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02032",
     "number": 32,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-11T11:32:56Z",
         "id": "1a2rx7",
@@ -7037,7 +7037,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02033",
     "number": 33,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-27T12:12:16Z",
         "id": "19bmy2",
@@ -7070,7 +7070,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02034",
     "number": 34,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-16T04:49:36Z",
         "id": "16o1bw",
@@ -7131,7 +7131,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02036",
     "number": 36,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-01-13T05:12:52Z",
         "id": "16h7kh",
@@ -7189,7 +7189,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02038",
     "number": 38,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-07T12:17:39Z",
         "id": "19uatz",
@@ -7224,7 +7224,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02039",
     "number": 39,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-08T12:39:41Z",
         "id": "19wpy9",
@@ -7257,7 +7257,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02040",
     "number": 40,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-01T16:39:14Z",
         "id": "1hfnb1",
@@ -7290,7 +7290,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02051",
     "number": 51,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-12T21:19:06Z",
         "id": "18ef3f",
@@ -7350,7 +7350,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02053",
     "number": 53,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-10T21:47:23Z",
         "id": "189n6b",
@@ -7385,7 +7385,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02054",
     "number": 54,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-18T11:39:46Z",
         "id": "18qvms",
@@ -7417,7 +7417,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02055",
     "number": 55,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-22T13:01:08Z",
         "id": "190oau",
@@ -7452,7 +7452,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02056",
     "number": 56,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-14T14:21:29Z",
         "id": "18ij4u",
@@ -7487,7 +7487,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02057",
     "number": 57,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-16T09:32:01Z",
         "id": "18mr55",
@@ -7522,7 +7522,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02058",
     "number": 58,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-25T13:05:30Z",
         "id": "196uis",
@@ -7582,7 +7582,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02060",
     "number": 60,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-02-17T20:35:13Z",
         "id": "18phjd",
@@ -7617,7 +7617,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02070",
     "number": 70,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-11T15:21:27Z",
         "id": "1c50au",
@@ -7651,7 +7651,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02071",
     "number": 71,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-29T17:18:08Z",
         "id": "1b92w0",
@@ -7686,7 +7686,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02072",
     "number": 72,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-27T15:43:26Z",
         "id": "1b45ay",
@@ -7720,7 +7720,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02073",
     "number": 73,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-04T15:58:34Z",
         "id": "1bo0z0",
@@ -7755,7 +7755,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02074",
     "number": 74,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-02T16:51:02Z",
         "id": "1biwbh",
@@ -7790,7 +7790,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02075",
     "number": 75,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-15T16:35:17Z",
         "id": "1ceb6z",
@@ -7823,7 +7823,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02076",
     "number": 76,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-04T16:49:45Z",
         "id": "1pvtgb",
@@ -7863,7 +7863,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02077",
     "number": 77,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-10T16:05:39Z",
         "id": "1c2ium",
@@ -7896,7 +7896,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02078",
     "number": 78,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-18T15:51:26Z",
         "id": "1cm112",
@@ -7930,7 +7930,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02079",
     "number": 79,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-04-16T16:08:54Z",
         "id": "1cguqd",
@@ -7965,7 +7965,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02080",
     "number": 80,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-03-26T17:49:40Z",
         "id": "1b1y3x",
@@ -7998,7 +7998,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02092",
     "number": 92,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-03T20:10:48Z",
         "id": "1dn13q",
@@ -8033,7 +8033,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02093",
     "number": 93,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-24T16:47:44Z",
         "id": "1ez9ys",
@@ -8066,7 +8066,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02094",
     "number": 94,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-01T15:10:52Z",
         "id": "1dhgbe",
@@ -8101,7 +8101,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02095",
     "number": 95,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-15T15:38:57Z",
         "id": "1edylt",
@@ -8136,7 +8136,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02096",
     "number": 96,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-07T17:08:08Z",
         "id": "1dvegs",
@@ -8171,7 +8171,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02097",
     "number": 97,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-13T14:46:39Z",
         "id": "1e8vlt",
@@ -8206,7 +8206,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02098",
     "number": 98,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-27T17:23:59Z",
         "id": "1f5a57",
@@ -8241,7 +8241,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02099",
     "number": 99,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-09T16:39:19Z",
         "id": "1e0cvn",
@@ -8276,7 +8276,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02100",
     "number": 100,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-14T18:58:36Z",
         "id": "1eby0q",
@@ -8309,7 +8309,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02110",
     "number": 110,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-05T16:53:16Z",
         "id": "1fqbjo",
@@ -8344,7 +8344,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02111",
     "number": 111,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-24T15:49:10Z",
         "id": "1gz2r5",
@@ -8379,7 +8379,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02112",
     "number": 112,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-03T15:15:28Z",
         "id": "1fl1vw",
@@ -8414,7 +8414,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02113",
     "number": 113,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-14T17:43:57Z",
         "id": "1gcn2p",
@@ -8448,7 +8448,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02114",
     "number": 114,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-11-06T19:12:35Z",
         "id": "1q1l8l",
@@ -8486,7 +8486,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02115",
     "number": 115,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-19T16:08:23Z",
         "id": "1gnurf",
@@ -8519,7 +8519,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02116",
     "number": 116,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-16T19:05:16Z",
         "id": "1ggv4t",
@@ -8552,7 +8552,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02117",
     "number": 117,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-13T19:12:07Z",
         "id": "1gac00",
@@ -8587,7 +8587,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02118",
     "number": 118,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-30T16:54:44Z",
         "id": "1fcgqt",
@@ -8622,7 +8622,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02119",
     "number": 119,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-06-07T17:07:07Z",
         "id": "1fvf4p",
@@ -8657,7 +8657,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02120",
     "number": 120,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-05-31T17:49:22Z",
         "id": "1fezwh",
@@ -8691,7 +8691,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03001",
     "number": 1,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-29T16:55:04Z",
         "id": "1jab48",
@@ -8725,7 +8725,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03002",
     "number": 2,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-27T16:35:09Z",
         "id": "1j5zyl",
@@ -8758,7 +8758,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03003",
     "number": 3,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-28T18:35:49Z",
         "id": "1j86vn",
@@ -8791,7 +8791,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03004",
     "number": 4,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-30T16:42:34Z",
         "id": "1jcvv1",
@@ -8824,7 +8824,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03005",
     "number": 5,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-07-31T16:19:11Z",
         "id": "1jfg9x",
@@ -8857,7 +8857,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03006",
     "number": 6,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-02T16:44:16Z",
         "id": "1jkmvn",
@@ -8891,7 +8891,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03007",
     "number": 7,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-03T18:25:49Z",
         "id": "1jmyfl",
@@ -8925,7 +8925,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03008",
     "number": 8,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-25T18:05:59Z",
         "id": "1l2ei1",
@@ -8959,7 +8959,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03009",
     "number": 9,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-27T15:40:28Z",
         "id": "1l6yg3",
@@ -8993,7 +8993,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03010",
     "number": 10,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-28T17:16:05Z",
         "id": "1l9r8h",
@@ -9027,7 +9027,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03011",
     "number": 11,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-29T17:44:45Z",
         "id": "1lce4w",
@@ -9061,7 +9061,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03012",
     "number": 12,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-01T16:27:24Z",
         "id": "1lithg",
@@ -9095,7 +9095,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03013",
     "number": 13,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-16T16:31:45Z",
         "id": "1mict0",
@@ -9129,7 +9129,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03014",
     "number": 14,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-17T17:19:59Z",
         "id": "1ml0vg",
@@ -9163,7 +9163,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03015",
     "number": 15,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-14T16:10:21Z",
         "id": "1kcso6",
@@ -9198,7 +9198,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03016",
     "number": 16,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-15T15:41:16Z",
         "id": "1kf9wo",
@@ -9233,7 +9233,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03017",
     "number": 17,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-16T17:16:06Z",
         "id": "1khym3",
@@ -9268,7 +9268,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03018",
     "number": 18,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-17T17:13:56Z",
         "id": "1kk35b",
@@ -9302,7 +9302,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03019",
     "number": 19,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-18T17:52:13Z",
         "id": "1km5jt",
@@ -9337,7 +9337,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03020",
     "number": 20,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-19T16:14:23Z",
         "id": "1ko919",
@@ -9371,7 +9371,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03021",
     "number": 21,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-26T16:32:54Z",
         "id": "1l4ilf",
@@ -9404,7 +9404,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03022",
     "number": 22,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-02T21:15:10Z",
         "id": "1llmvy",
@@ -9440,7 +9440,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03023",
     "number": 23,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-01T17:12:35Z",
         "id": "1ji7by",
@@ -9474,7 +9474,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03024",
     "number": 24,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-30T19:20:17Z",
         "id": "1lf24m",
@@ -9509,7 +9509,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03025",
     "number": 25,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-31T17:22:58Z",
         "id": "1lgxwe",
@@ -9543,7 +9543,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03026",
     "number": 26,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-12T20:03:02Z",
         "id": "1k882t",
@@ -9578,7 +9578,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03027",
     "number": 27,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-08-13T16:18:28Z",
         "id": "1kaa50",
@@ -9613,7 +9613,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04010",
     "number": 10,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-15T17:35:57Z",
         "id": "1oii88",
@@ -9647,7 +9647,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04011",
     "number": 11,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-10T17:05:31Z",
         "id": "1o5mt6",
@@ -9682,7 +9682,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04012",
     "number": 12,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-18T16:35:58Z",
         "id": "1mngam",
@@ -9716,7 +9716,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04013",
     "number": 13,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-30T20:15:38Z",
         "id": "1ngmmh",
@@ -9751,7 +9751,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04014",
     "number": 14,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-19T17:34:56Z",
         "id": "1mq1dd",
@@ -9785,7 +9785,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04015",
     "number": 15,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-03T17:49:15Z",
         "id": "1no1hc",
@@ -9819,7 +9819,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04016",
     "number": 16,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-02T17:09:17Z",
         "id": "1nle2y",
@@ -9853,7 +9853,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04017",
     "number": 17,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-25T19:24:32Z",
         "id": "1n4h3i",
@@ -9886,7 +9886,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04018",
     "number": 18,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-10-17T17:21:40Z",
         "id": "1onmjs",
@@ -9920,7 +9920,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04019",
     "number": 19,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-20T17:10:05Z",
         "id": "1msdbm",
@@ -9953,7 +9953,7 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04020",
     "number": 20,
     "quantity": 3,
-    "reddit_cotd": [
+    "reddit_cotds": [
       {
         "created": "2013-09-27T16:16:40Z",
         "id": "1n97x5",
