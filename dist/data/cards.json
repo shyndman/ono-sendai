@@ -14,6 +14,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01001",
     "number": 1,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-23T16:10:53Z",
+        "id": "1p236b",
+        "title": "[COTD] Noise: Hacker Extraordinaire (23 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1p236b/cotd_noise_hacker_extraordinaire_23_oct_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -249,6 +257,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01010",
     "number": 10,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-30T05:33:39Z",
+        "id": "17jol6",
+        "title": "[CotD] Medium (Jan. 29th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17jol6/cotd_medium_jan_29th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -330,6 +346,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01013",
     "number": 13,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-02T14:46:21Z",
+        "id": "1hhz6a",
+        "title": "[COTD] Wyrm (02 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hhz6a/cotd_wyrm_02_july_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -438,6 +462,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01017",
     "number": 17,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-25T16:41:53Z",
+        "id": "1p7b4x",
+        "title": "[COTD] Gabriel Santiago: Consummate Professional (25 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1p7b4x/cotd_gabriel_santiago_consummate_professional_25/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -642,6 +674,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01025",
     "number": 25,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-03T17:35:38Z",
+        "id": "1hkuuj",
+        "title": "[COTD] Aurora and Peacock (03 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hkuuj/cotd_aurora_and_peacock_03_july_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -669,6 +709,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01026",
     "number": 26,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-20T05:06:55Z",
+        "id": "16wz5q",
+        "title": "[CotD] Femme Fatale (Jan. 20th, 2013) ",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16wz5q/cotd_femme_fatale_jan_20th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -749,6 +797,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01029",
     "number": 29,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-28T04:36:31Z",
+        "id": "17et5s",
+        "title": "[CotD] Bank Job (Jan. 27th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17et5s/cotd_bank_job_jan_27th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -801,6 +857,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01031",
     "number": 31,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-12T04:56:16Z",
+        "id": "16f8nl",
+        "title": "[CotD] Data Dealer (Jan. 12th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16f8nl/cotd_data_dealer_jan_12th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -854,6 +918,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01033",
     "number": 33,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-21T16:38:32Z",
+        "id": "1owswf",
+        "title": "[COTD] Kate \"Mac\" McCaffrey: Digital Tinker (21 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1owswf/cotd_kate_mac_mccaffrey_digital_tinker_21_oct_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -1323,6 +1395,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01051",
     "number": 51,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-23T09:14:50Z",
+        "id": "1744y2",
+        "title": "[CotD] Crypsis (Jan. 23rd 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1744y2/cotd_crypsis_jan_23rd_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Runner",
@@ -1403,6 +1483,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02001",
     "number": 1,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-29T18:25:33Z",
+        "id": "1phazf",
+        "title": "[COTD] Whizzard: Master Gamer (29 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1phazf/cotd_whizzard_master_gamer_29_oct_2013/"
+      },
+      {
+        "created": "2013-06-28T16:30:26Z",
+        "id": "1h98hk",
+        "title": "[COTD] Whizzard: Master Gamer (28 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1h98hk/cotd_whizzard_master_gamer_28_june_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1428,6 +1522,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02002",
     "number": 2,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-28T12:49:37Z",
+        "id": "19e5x0",
+        "title": "[CotD] Spinal Modem (28 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19e5x0/cotd_spinal_modem_28_feb_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1455,6 +1557,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02003",
     "number": 3,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-25T14:03:25Z",
+        "id": "1796kr",
+        "title": "[CotD] Imp (Jan. 25th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1796kr/cotd_imp_jan_25th_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1536,6 +1646,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02006",
     "number": 6,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-03T17:35:38Z",
+        "id": "1hkuuj",
+        "title": "[COTD] Aurora and Peacock (03 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hkuuj/cotd_aurora_and_peacock_03_july_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1564,6 +1682,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02007",
     "number": 7,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-14T12:02:22Z",
+        "id": "1aa2vh",
+        "title": "[CotD] ZU.13 Key Master (14 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1aa2vh/cotd_zu13_key_master_14_mar_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1591,6 +1717,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02008",
     "number": 8,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-14T16:56:40Z",
+        "id": "16k46q",
+        "title": "[CotD] The Helpful AI (Jan. 14th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16k46q/cotd_the_helpful_ai_jan_14th_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Runner",
@@ -1642,6 +1776,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02021",
     "number": 21,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-12T12:27:16Z",
+        "id": "1a56j0",
+        "title": "[CotD] Vamp (12 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1a56j0/cotd_vamp_12_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Runner",
@@ -1668,6 +1810,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02022",
     "number": 22,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-17T08:23:40Z",
+        "id": "16qr79",
+        "title": "[CotD] Liberated Account (Jan. 17th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16qr79/cotd_liberated_account_jan_17th_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Runner",
@@ -1718,6 +1868,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02024",
     "number": 24,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-18T17:04:03Z",
+        "id": "1aj7d9",
+        "title": "[CotD] E3 Feedback Implants (18 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1aj7d9/cotd_e3_feedback_implants_18_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Runner",
@@ -1743,6 +1901,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02025",
     "number": 25,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-05T13:39:13Z",
+        "id": "19pemk",
+        "title": "[CotD] Compromised Employee (05 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19pemk/cotd_compromised_employee_05_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Runner",
@@ -1769,6 +1935,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02026",
     "number": 26,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-31T06:04:42Z",
+        "id": "17m5y0",
+        "title": "[CotD] Notoriety (Jan. 30th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17m5y0/cotd_notoriety_jan_30th_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Runner",
@@ -1848,6 +2022,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02041",
     "number": 41,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-11T13:31:04Z",
+        "id": "18b2hp",
+        "title": "[CotD] Anarch - Program: Virus - Nerve Agent (Feb 11, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18b2hp/cotd_anarch_program_virus_nerve_agent_feb_11_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -1874,6 +2056,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02042",
     "number": 42,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-19T14:13:37Z",
+        "id": "18tgfj",
+        "title": "[CotD] Joshua B. (19 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18tgfj/cotd_joshua_b_19_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -1900,6 +2090,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02043",
     "number": 43,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-15T06:22:28Z",
+        "id": "18khng",
+        "title": "[CotD] Criminal - Event: Sabotage - Emergency Shutdown (2/15/2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18khng/cotd_criminal_event_sabotage_emergency_shutdown/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -1953,6 +2151,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02045",
     "number": 45,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-23T07:18:25Z",
+        "id": "192kba",
+        "title": "[CotD] Snitch (23 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/192kba/cotd_snitch_23_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -1979,6 +2185,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02046",
     "number": 46,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-01T16:09:23Z",
+        "id": "1pp01o",
+        "title": "[COTD] Chaos Theory: Wunderkind (1 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pp01o/cotd_chaos_theory_wunderkind_1_nov_2013/"
+      },
+      {
+        "created": "2013-01-21T19:10:54Z",
+        "id": "1705i7",
+        "title": "[CotD] Chaos Theory: Wunderkind (Jan. 21st, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1705i7/cotd_chaos_theory_wunderkind_jan_21st_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -2004,6 +2224,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02047",
     "number": 47,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-02T14:18:15Z",
+        "id": "19itds",
+        "title": "[CotD] Test Run (02 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19itds/cotd_test_run_02_mar_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -2028,6 +2256,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02048",
     "number": 48,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-13T13:05:16Z",
+        "id": "18fxxa",
+        "title": "[CotD] Shaper - Hardware: Console - Dinosaurus",
+        "url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/cyber-exodus/dinosaurus-cyber-exodus"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -2053,6 +2289,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02049",
     "number": 49,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-21T13:21:13Z",
+        "id": "18yaas",
+        "title": "[CotD] Personal Workshop (21 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18yaas/cotd_personal_workshop_21_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -2079,6 +2323,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02050",
     "number": 50,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-08T15:11:34Z",
+        "id": "1hv8gg",
+        "title": "[COTD] Public Sympathy (08 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hv8gg/cotd_public_sympathy_08_july_2013/"
+      },
+      {
+        "created": "2013-02-26T12:39:40Z",
+        "id": "1998ck",
+        "title": "[CotD] Public Sympathy (26 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1998ck/cotd_public_sympathy_26_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Runner",
@@ -2105,6 +2363,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02061",
     "number": 61,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-28T16:39:03Z",
+        "id": "1b6oil",
+        "title": "[CotD] Disrupter (28 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1b6oil/cotd_disrupter_28_mar_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2131,6 +2397,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02062",
     "number": 62,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-09T17:04:05Z",
+        "id": "1bzzzi",
+        "title": "[CotD] Force of Nature (09 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1bzzzi/cotd_force_of_nature_09_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2158,6 +2432,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02063",
     "number": 63,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-17T16:30:47Z",
+        "id": "1cjhlq",
+        "title": "[CotD] Scrubber (17 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1cjhlq/cotd_scrubber_17_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2184,6 +2466,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02064",
     "number": 64,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-03T16:20:31Z",
+        "id": "1blfvq",
+        "title": "[CotD] Doppelganger (03 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1blfvq/cotd_doppelganger_03_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2211,6 +2501,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02065",
     "number": 65,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-05T14:59:35Z",
+        "id": "1bqi9z",
+        "title": "[CotD] Crescentus (05 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1bqi9z/cotd_crescentus_05_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2237,6 +2535,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02066",
     "number": 66,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-08T17:44:50Z",
+        "id": "1bxhpt",
+        "title": "[CotD] Deus X (08 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1bxhpt/cotd_deus_x_08_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2264,6 +2570,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02067",
     "number": 67,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-01T16:43:05Z",
+        "id": "1bfh46",
+        "title": "[CotD] All-nighter (01 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1bfh46/cotd_allnighter_01_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2289,6 +2603,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02068",
     "number": 68,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-12T16:33:31Z",
+        "id": "1c7qaw",
+        "title": "[CotD] Inside Man (12 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1c7qaw/cotd_inside_man_12_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2315,6 +2637,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02069",
     "number": 69,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-19T16:04:53Z",
+        "id": "1cojgu",
+        "title": "[CotD] Underworld Contact (19 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1cojgu/cotd_underworld_contact_19_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Runner",
@@ -2341,6 +2671,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02081",
     "number": 81,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-27T17:14:00Z",
+        "id": "1f59je",
+        "title": "[COTD] Surge (27 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1f59je/cotd_surge_27_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2366,6 +2704,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02082",
     "number": 82,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-02T19:49:18Z",
+        "id": "1dkklk",
+        "title": "[COTD] Xanadu (02 May 13)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dkklk/cotd_xanadu_02_may_13/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2393,6 +2739,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02083",
     "number": 83,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-05T18:11:02Z",
+        "id": "1pyq5e",
+        "title": "[COTD] Andromeda: Dispossessed Ristie (5 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pyq5e/cotd_andromeda_dispossessed_ristie_5_nov_2013/"
+      },
+      {
+        "created": "2013-05-08T19:19:41Z",
+        "id": "1dy7cd",
+        "title": "[COTD] Andromeda: Dispossessed Ristie (08 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dy7cd/cotd_andromeda_dispossessed_ristie_08_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2419,6 +2779,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02084",
     "number": 84,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-20T16:35:06Z",
+        "id": "1epa4a",
+        "title": "[COTD] Networking (20 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1epa4a/cotd_networking_20_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2444,6 +2812,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02085",
     "number": 85,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-16T14:51:05Z",
+        "id": "1egboo",
+        "title": "[COTD] HQ Interface (16 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1egboo/cotd_hq_interface_16_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2469,6 +2845,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02086",
     "number": 86,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-21T15:34:08Z",
+        "id": "1ero9e",
+        "title": "[COTD] Pheremones (21 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ero9e/cotd_pheremones_21_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2495,6 +2879,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02087",
     "number": 87,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-22T15:33:48Z",
+        "id": "1eu7m3",
+        "title": "[COTD] Quality Time (22 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1eu7m3/cotd_quality_time_22_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2520,6 +2912,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02088",
     "number": 88,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-23T13:40:09Z",
+        "id": "1ewhk9",
+        "title": "[COTD] Replicator (23 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ewhk9/cotd_replicator_23_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2546,6 +2946,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02089",
     "number": 89,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-06T18:22:19Z",
+        "id": "1dt1ir",
+        "title": "[COTD] Creeper (06 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dt1ir/cotd_creeper_06_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2573,6 +2981,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02090",
     "number": 90,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-10T13:08:18Z",
+        "id": "1e2e9z",
+        "title": "[COTD] Kraken (May 10 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1e2e9z/cotd_kraken_may_10_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2598,6 +3014,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02091",
     "number": 91,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-17T15:43:41Z",
+        "id": "1eitvo",
+        "title": "[COTD] Kati Jones (17 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1eitvo/cotd_kati_jones_17_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Runner",
@@ -2623,6 +3047,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02101",
     "number": 101,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-21T14:20:45Z",
+        "id": "1gsmq7",
+        "title": "[COTD] Retrieval Run (June 21 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gsmq7/cotd_retrieval_run_june_21_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2649,6 +3081,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02102",
     "number": 102,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-04T16:15:11Z",
+        "id": "1fnq2u",
+        "title": "[COTD] Darwin (04 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fnq2u/cotd_darwin_04_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2676,6 +3116,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02103",
     "number": 103,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-10T16:27:10Z",
+        "id": "1g1wma",
+        "title": "[COTD] Data Leak Reversal (10 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1g1wma/cotd_data_leak_reversal_10_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2703,6 +3151,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02104",
     "number": 104,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-12T19:17:44Z",
+        "id": "1g7r5a",
+        "title": "[COTD] Faerie (12 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1g7r5a/cotd_faerie_12_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2730,6 +3186,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02105",
     "number": 105,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-17T20:42:24Z",
+        "id": "1gjffx",
+        "title": "[COTD] Mr. Li (17 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gjffx/cotd_mr_li_17_june_2013/"
+      },
+      {
+        "created": "2013-05-29T15:40:56Z",
+        "id": "1f9utw",
+        "title": "[COTD] Mr. Li (29 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1f9utw/cotd_mr_li_29_may_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2756,6 +3226,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02106",
     "number": 106,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-06T16:26:10Z",
+        "id": "1fsrem",
+        "title": "[COTD] Indexing (06 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fsrem/cotd_indexing_06_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2782,6 +3260,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02107",
     "number": 107,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-20T14:46:47Z",
+        "id": "1gq9nb",
+        "title": "[COTD] R&amp;D Interface (20 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gq9nb/cotd_rd_interface_20_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2807,6 +3293,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02108",
     "number": 108,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-11T19:41:22Z",
+        "id": "1g55qt",
+        "title": "[COTD] Deep Thought (11 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1g55qt/cotd_deep_thought_11_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2833,6 +3327,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02109",
     "number": 109,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-18T22:25:50Z",
+        "id": "1gm67z",
+        "title": "[COTD] New Angeles City Hall (18 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gm67z/cotd_new_angeles_city_hall_18_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Runner",
@@ -2860,6 +3362,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03028",
     "number": 28,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-24T16:19:22Z",
+        "id": "1iyp79",
+        "title": "[COTD] Rielle \"Kit\" Peddler: Transhuman (22 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1iyp79/cotd_rielle_kit_peddler_transhuman_22_july_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -2887,6 +3397,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03029",
     "number": 29,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-25T16:51:36Z",
+        "id": "1j1ckh",
+        "title": "[COTD] The Professor: Keeper of Knowledge (23 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1j1ckh/cotd_the_professor_keeper_of_knowledge_23_july/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -2914,6 +3432,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03030",
     "number": 30,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-26T17:57:32Z",
+        "id": "1j3zfk",
+        "title": "[COTD] Exile: Streethawk (26 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1j3zfk/cotd_exile_streethawk_26_july_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -2939,6 +3465,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03031",
     "number": 31,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-06T17:22:10Z",
+        "id": "1lv4d1",
+        "title": "[COTD] Escher (6 Sept. 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lv4d1/cotd_escher_6_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -2965,6 +3499,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03032",
     "number": 32,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-09T16:38:35Z",
+        "id": "1m1ioq",
+        "title": "[COTD] Exploratory Romp (09 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1m1ioq/cotd_exploratory_romp_09_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -2991,6 +3533,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03033",
     "number": 33,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-10T17:15:21Z",
+        "id": "1m46i4",
+        "title": "[COTD] Freelance Coding Contract (10 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1m46i4/cotd_freelance_coding_contract_10_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3042,6 +3592,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03035",
     "number": 35,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-12T19:10:52Z",
+        "id": "1m9jjz",
+        "title": "[COTD] Levy AR Lab Access (12 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1m9jjz/cotd_levy_ar_lab_access_12_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3066,6 +3624,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03036",
     "number": 36,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-22T19:16:48Z",
+        "id": "1kw5z8",
+        "title": "[COTD] Monolith (22 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kw5z8/cotd_monolith_22_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3092,6 +3658,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03037",
     "number": 37,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-21T17:35:46Z",
+        "id": "1kteo3",
+        "title": "[COTD] Feedback Filter (21 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kteo3/cotd_feedback_filter_21_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3118,6 +3692,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03038",
     "number": 38,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-20T16:29:51Z",
+        "id": "1kqpmq",
+        "title": "[COTD] Clone Chip (20 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kqpmq/cotd_clone_chip_20_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3143,6 +3725,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03039",
     "number": 39,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-23T17:12:35Z",
+        "id": "1kybaj",
+        "title": "[COTD] Omni-drive (23 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kybaj/cotd_omnidrive_23_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3170,6 +3760,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03040",
     "number": 40,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-04T17:03:18Z",
+        "id": "1jor1s",
+        "title": "[COTD] Atman (04 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jor1s/cotd_atman_04_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3198,6 +3796,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03041",
     "number": 41,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-06T16:31:56Z",
+        "id": "1jtitz",
+        "title": "[COTD] Cloak and Dagger (06 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jtitz/cotd_cloak_and_dagger_06_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3225,6 +3831,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03042",
     "number": 42,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-06T16:31:56Z",
+        "id": "1jtitz",
+        "title": "[COTD] Cloak and Dagger (06 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jtitz/cotd_cloak_and_dagger_06_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3252,6 +3866,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03043",
     "number": 43,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-05T16:43:21Z",
+        "id": "1jqynu",
+        "title": "[COTD] Chakana (05 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jqynu/cotd_chakana_05_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3278,6 +3900,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03044",
     "number": 44,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-07T16:19:20Z",
+        "id": "1jw3cw",
+        "title": "[COTD] Cyber-Cypher (07 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jw3cw/cotd_cybercypher_07_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3306,6 +3936,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03045",
     "number": 45,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-09T18:15:23Z",
+        "id": "1k1gkm",
+        "title": "[COTD] Paricia (09 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1k1gkm/cotd_paricia_09_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3332,6 +3970,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03046",
     "number": 46,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-11T18:01:13Z",
+        "id": "1k5kii",
+        "title": "[COTD] Self-modifying Code (11 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1k5kii/cotd_selfmodifying_code_11_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3358,6 +4004,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03047",
     "number": 47,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-10T16:04:59Z",
+        "id": "1k3dkz",
+        "title": "[COTD] Sahasrara (10 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1k3dkz/cotd_sahasrara_10_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3384,6 +4038,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03048",
     "number": 48,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-08T19:27:07Z",
+        "id": "1jz4u3",
+        "title": "[COTD] Inti (08 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jz4u3/cotd_inti_08_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3411,6 +4073,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03049",
     "number": 49,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-13T18:50:17Z",
+        "id": "1mbxb5",
+        "title": "[COTD] Professional Contacts (13 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mbxb5/cotd_professional_contacts_13_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3437,6 +4107,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03050",
     "number": 50,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-03T16:36:35Z",
+        "id": "1lnh37",
+        "title": "[COTD] Borrowed Satellite (3 Sept. 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lnh37/cotd_borrowed_satellite_3_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3463,6 +4141,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03051",
     "number": 51,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-11T18:32:51Z",
+        "id": "1m6x5u",
+        "title": "[COTD] Ice Analyzer (11 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1m6x5u/cotd_ice_analyzer_11_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3489,6 +4175,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03052",
     "number": 52,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-05T16:47:46Z",
+        "id": "1lskke",
+        "title": "[COTD] Dirty Laundry (5 Sept. 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lskke/cotd_dirty_laundry_5_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3515,6 +4209,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03053",
     "number": 53,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-04T18:31:43Z",
+        "id": "1lqaql",
+        "title": "[COTD] Daily Casts (4 Sept. 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lqaql/cotd_daily_casts_4_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3540,6 +4242,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03054",
     "number": 54,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-14T17:38:34Z",
+        "id": "1mdwcj",
+        "title": "[COTD] Same Old Thing (14 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mdwcj/cotd_same_old_thing_14_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3565,6 +4275,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03055",
     "number": 55,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-15T17:34:29Z",
+        "id": "1mfxwn",
+        "title": "[COTD] The Source (15 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mfxwn/cotd_the_source_15_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Runner",
@@ -3591,6 +4309,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04001",
     "number": 1,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-24T18:14:26Z",
+        "id": "1n1lrh",
+        "title": "[COTD] Frame Job (24 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1n1lrh/cotd_frame_job_24_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3617,6 +4343,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04002",
     "number": 2,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-14T17:52:48Z",
+        "id": "1oftub",
+        "title": "[COTD] Pawn (14 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1oftub/cotd_pawn_14_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3643,6 +4377,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04003",
     "number": 3,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-16T16:17:50Z",
+        "id": "1okwbp",
+        "title": "[COTD] Rook (16 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1okwbp/cotd_rook_16_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3668,6 +4410,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04004",
     "number": 4,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-01T18:17:46Z",
+        "id": "1niypu",
+        "title": "[COTD] Hostage (1 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1niypu/cotd_hostage_1_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3695,6 +4445,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04005",
     "number": 5,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-26T17:10:53Z",
+        "id": "1n6rwo",
+        "title": "[COTD] Gorman Drip v1 (26 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1n6rwo/cotd_gorman_drip_v1_26_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3721,6 +4479,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04006",
     "number": 6,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-08T17:24:40Z",
+        "id": "1nzwlh",
+        "title": "[COTD] Lockpick (8 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1nzwlh/cotd_lockpick_8_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3748,6 +4514,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04007",
     "number": 7,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-23T16:25:19Z",
+        "id": "1myttt",
+        "title": "[COTD] False Echo (23 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1myttt/cotd_false_echo_23_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3773,6 +4547,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04008",
     "number": 8,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-09T17:51:11Z",
+        "id": "1o2tz2",
+        "title": "[COTD] Motivation (9 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1o2tz2/cotd_motivation_9_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3798,6 +4580,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04009",
     "number": 9,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-07T16:54:30Z",
+        "id": "1nx3vx",
+        "title": "[COTD] John Masanori (7 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1nx3vx/cotd_john_masanori_7_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Runner",
@@ -3824,6 +4614,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04021",
     "number": 21,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-07T17:57:47Z",
+        "id": "1q45bj",
+        "title": "[COTD] Bishop (7 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1q45bj/cotd_bishop_7_nov_2013/"
+      }
+    ],
     "set_code": "st",
     "setname": "Second Thoughts",
     "side": "Runner",
@@ -3851,6 +4649,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04022",
     "number": 22,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-11T18:44:48Z",
+        "id": "1qe5ts",
+        "title": "[COTD] Scheherazade (11 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1qe5ts/cotd_scheherazade_11_nov_2013/"
+      }
+    ],
     "set_code": "st",
     "setname": "Second Thoughts",
     "side": "Runner",
@@ -3876,6 +4682,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04023",
     "number": 23,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-12T19:46:47Z",
+        "id": "1qh75u",
+        "title": "[COTD] Hard at Work (12 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1qh75u/cotd_hard_at_work_12_nov_2013/"
+      }
+    ],
     "set_code": "st",
     "setname": "Second Thoughts",
     "side": "Runner",
@@ -3900,6 +4714,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04024",
     "number": 24,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-13T17:26:47Z",
+        "id": "1qjq40",
+        "title": "[COTD] Recon (13 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1qjq40/cotd_recon_13_nov_2013/"
+      }
+    ],
     "set_code": "st",
     "setname": "Second Thoughts",
     "side": "Runner",
@@ -3927,6 +4749,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04025",
     "number": 25,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-14T19:44:29Z",
+        "id": "1qmwci",
+        "title": "[COTD] Copycat (14 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1qmwci/cotd_copycat_14_nov_2013/"
+      }
+    ],
     "set_code": "st",
     "setname": "Second Thoughts",
     "side": "Runner",
@@ -4055,6 +4885,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01054",
     "number": 54,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-22T17:10:51Z",
+        "id": "1ozkdj",
+        "title": "[COTD] Haas-Bioroid: Engineering the Future (22 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ozkdj/cotd_haasbioroid_engineering_the_future_22_oct/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4131,6 +4969,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01057",
     "number": 57,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-05T18:46:58Z",
+        "id": "1hpe0m",
+        "title": "[COTD] Aggressive Secretary (05 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hpe0m/cotd_aggressive_secretary_05_july_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4183,6 +5029,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01059",
     "number": 59,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-15T06:58:00Z",
+        "id": "16lu4d",
+        "title": "[CotD] Biotic Labor (Jan. 15th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16lu4d/cotd_biotic_labor_jan_15th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4393,6 +5247,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01067",
     "number": 67,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-24T16:30:42Z",
+        "id": "1p4qk8",
+        "title": "[COTD] Jinteki: Personal Evolution (24 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1p4qk8/cotd_jinteki_personal_evolution_24_oct_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4547,6 +5409,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01073",
     "number": 73,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-26T17:12:21Z",
+        "id": "1h4atg",
+        "title": "[COTD] Precognition (26 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1h4atg/cotd_precognition_26_june_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4626,6 +5496,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01076",
     "number": 76,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-29T12:32:51Z",
+        "id": "17hqtp",
+        "title": "[CotD] Data Mine (Jan. 28th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17hqtp/cotd_data_mine_jan_28th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4733,6 +5611,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01080",
     "number": 80,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-28T16:54:50Z",
+        "id": "1pe9vt",
+        "title": "[COTD] NBN: Making News (28 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pe9vt/cotd_nbn_making_news_28_oct_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4858,6 +5744,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01085",
     "number": 85,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-03T18:31:04Z",
+        "id": "19l4ux",
+        "title": "[CotD] Psychographics (03 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19l4ux/cotd_psychographics_03_mar_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4907,6 +5801,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01087",
     "number": 87,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-25T17:46:39Z",
+        "id": "1h1tqt",
+        "title": "[COTD] Ghost Branch (June 25 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1h1tqt/cotd_ghost_branch_june_25_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -4933,6 +5835,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01088",
     "number": 88,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-19T06:33:52Z",
+        "id": "16v5y5",
+        "title": "[CotD] Data Raven (Jan. 19th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16v5y5/cotd_data_raven_jan_19th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -5065,6 +5975,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01093",
     "number": 93,
     "quantity": 1,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-18T16:36:10Z",
+        "id": "1oq1vs",
+        "title": "[COTD] Weyland Consortium: Building A Better World (18 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1oq1vs/cotd_weyland_consortium_building_a_better_world/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -5221,6 +6139,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01099",
     "number": 99,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-18T08:22:55Z",
+        "id": "16t3ev",
+        "title": "[CotD] Scorched Earth (Jan. 18th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16t3ev/cotd_scorched_earth_jan_18th_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -5272,6 +6198,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/01101",
     "number": 101,
     "quantity": 2,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-22T09:36:44Z",
+        "id": "171qkg",
+        "title": "[CotD] Archer (Jan. 22nd, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/171qkg/cotd_archer_jan_22nd_2013/"
+      }
+    ],
     "set_code": "core",
     "setname": "Core Set",
     "side": "Corp",
@@ -5620,6 +6554,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02010",
     "number": 10,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-30T19:47:39Z",
+        "id": "1pk7ij",
+        "title": "[COTD] Haas-Bioroid: Stronger Together (30 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pk7ij/cotd_haasbioroid_stronger_together_30_oct_2013/"
+      },
+      {
+        "created": "2013-06-27T15:39:09Z",
+        "id": "1h6mdu",
+        "title": "[COTD] Haas-Bioroid: Stronger Together (June 27 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1h6mdu/cotd_haasbioroid_stronger_together_june_27_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5672,6 +6620,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02012",
     "number": 12,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-24T05:08:33Z",
+        "id": "1769u0",
+        "title": "[CotD] Janus 1.0 (Jan. 24th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1769u0/cotd_janus_10_jan_24th_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5699,6 +6655,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02013",
     "number": 13,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-01T12:22:04Z",
+        "id": "19gjem",
+        "title": "[CotD] Ash 2X3ZB9CY (01 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19gjem/cotd_ash_2x3zb9cy_01_mar_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5778,6 +6742,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02016",
     "number": 16,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-15T13:32:14Z",
+        "id": "1ack7n",
+        "title": "[CotD] Restructured Datapool (15 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ack7n/cotd_restructured_datapool_15_mar_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5804,6 +6776,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02017",
     "number": 17,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-01T02:12:34Z",
+        "id": "17o44k",
+        "title": "[CotD] TMI (Jan. 31st 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17o44k/cotd_tmi_jan_31st_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5856,6 +6836,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02019",
     "number": 19,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-26T04:59:47Z",
+        "id": "17auzp",
+        "title": "[CotD] Caduceus (Jan. 26th 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/17auzp/cotd_caduceus_jan_26th_2013/"
+      }
+    ],
     "set_code": "wla",
     "setname": "What Lies Ahead",
     "side": "Corp",
@@ -5910,6 +6898,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02029",
     "number": 29,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-13T11:46:19Z",
+        "id": "1a7kwe",
+        "title": "[CotD] Encryption Protocol (13 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1a7kwe/cotd_encryption_protocol_13_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -5935,6 +6931,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02030",
     "number": 30,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-20T11:36:39Z",
+        "id": "18vqol",
+        "title": "[CotD] Sherlock 1.0 (20 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18vqol/cotd_sherlock_10_20_feb_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -5960,6 +6964,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02031",
     "number": 31,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-31T16:52:36Z",
+        "id": "1pmiqf",
+        "title": "[COTD] Jinteki: Replicating Perfection (31 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pmiqf/cotd_jinteki_replicating_perfection_31_oct_2013/"
+      },
+      {
+        "created": "2013-01-11T04:26:28Z",
+        "id": "16d09p",
+        "title": "[CotD] Jinteki: Replicating Perfection (Jan. 11th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16d09p/cotd_jinteki_replicating_perfection_jan_11th_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -5985,6 +7003,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02032",
     "number": 32,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-11T11:32:56Z",
+        "id": "1a2rx7",
+        "title": "[CotD] Fetal AI (11 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1a2rx7/cotd_fetal_ai_11_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6011,6 +7037,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02033",
     "number": 33,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-27T12:12:16Z",
+        "id": "19bmy2",
+        "title": "[CotD] Trick of Light (27 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19bmy2/cotd_trick_of_light_27_feb_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6036,6 +7070,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02034",
     "number": 34,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-16T04:49:36Z",
+        "id": "16o1bw",
+        "title": "[CotD] Sensei (Jan. 16th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16o1bw/cotd_sensei_jan_16th_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6089,6 +7131,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02036",
     "number": 36,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-01-13T05:12:52Z",
+        "id": "16h7kh",
+        "title": "[CotD] ChiLo City Grid (Jan. 13th, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/16h7kh/cotd_chilo_city_grid_jan_13th_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6139,6 +7189,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02038",
     "number": 38,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-07T12:17:39Z",
+        "id": "19uatz",
+        "title": "[CotD] Amazon Industrial Zone (07 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19uatz/cotd_amazon_industrial_zone_07_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6166,6 +7224,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02039",
     "number": 39,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-08T12:39:41Z",
+        "id": "19wpy9",
+        "title": "[CotD] Executive Retreat (08 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/19wpy9/cotd_executive_retreat_08_mar_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6191,6 +7257,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02040",
     "number": 40,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-01T16:39:14Z",
+        "id": "1hfnb1",
+        "title": "[COTD] Freelancer (01 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1hfnb1/cotd_freelancer_01_july_2013/"
+      }
+    ],
     "set_code": "ta",
     "setname": "Trace Amount",
     "side": "Corp",
@@ -6216,6 +7290,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02051",
     "number": 51,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-12T21:19:06Z",
+        "id": "18ef3f",
+        "title": "[CotD] Haas-Bioroid - Agenda: Research - Project Vitruvius (Feb 12, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18ef3f/cotd_haasbioroid_agenda_research_project/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6268,6 +7350,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02053",
     "number": 53,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-10T21:47:23Z",
+        "id": "189n6b",
+        "title": "[CotD] Jinteki - Asset:Ambush - Edge of the World (Feb 10, 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/189n6b/cotd_jinteki_assetambush_edge_of_the_world_feb_10/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6295,6 +7385,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02054",
     "number": 54,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-18T11:39:46Z",
+        "id": "18qvms",
+        "title": "[CotD] Sunset (18 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18qvms/cotd_sunset_18_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6319,6 +7417,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02055",
     "number": 55,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-22T13:01:08Z",
+        "id": "190oau",
+        "title": "[CotD] Marked Accounts (22 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/190oau/cotd_marked_accounts_22_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6346,6 +7452,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02056",
     "number": 56,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-14T14:21:29Z",
+        "id": "18ij4u",
+        "title": "[CotD] NBN - ICE: Code Gate - Advertisement - Pop-up Window (2/14/2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18ij4u/cotd_nbn_ice_code_gate_advertisement_popup_window/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6373,6 +7487,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02057",
     "number": 57,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-16T09:32:01Z",
+        "id": "18mr55",
+        "title": "[CotD] Woodcutter (16 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18mr55/cotd_woodcutter_16_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6400,6 +7522,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02058",
     "number": 58,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-25T13:05:30Z",
+        "id": "196uis",
+        "title": "[CotD] Commercialization (25 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/196uis/cotd_commercialization_25_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6452,6 +7582,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02060",
     "number": 60,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-02-17T20:35:13Z",
+        "id": "18phjd",
+        "title": "[CotD] Chimera (17 Feb 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/18phjd/cotd_chimera_17_feb_2013/"
+      }
+    ],
     "set_code": "ce",
     "setname": "Cyber Exodus",
     "side": "Corp",
@@ -6479,6 +7617,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02070",
     "number": 70,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-11T15:21:27Z",
+        "id": "1c50au",
+        "title": "[CotD] Green Level Clearance (11 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1c50au/cotd_green_level_clearance_11_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6505,6 +7651,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02071",
     "number": 71,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-29T17:18:08Z",
+        "id": "1b92w0",
+        "title": "[CotD] Hourglass (29 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1b92w0/cotd_hourglass_29_mar_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6532,6 +7686,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02072",
     "number": 72,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-27T15:43:26Z",
+        "id": "1b45ay",
+        "title": "[CotD] Dedicated Server (27 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1b45ay/cotd_dedicated_server_27_mar_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6558,6 +7720,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02073",
     "number": 73,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-04T15:58:34Z",
+        "id": "1bo0z0",
+        "title": "[CotD] Bullfrog (04 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1bo0z0/cotd_bullfrog_04_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6585,6 +7755,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02074",
     "number": 74,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-02T16:51:02Z",
+        "id": "1biwbh",
+        "title": "[CotD] Uroboros (02 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1biwbh/cotd_uroboros_02_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6612,6 +7790,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02075",
     "number": 75,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-15T16:35:17Z",
+        "id": "1ceb6z",
+        "title": "[CotD] Net Police (4/15/13)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ceb6z/cotd_net_police_41513/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6637,6 +7823,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02076",
     "number": 76,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-04T16:49:45Z",
+        "id": "1pvtgb",
+        "title": "[COTD] Weyland Consortium: Because We Built It (4 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1pvtgb/cotd_weyland_consortium_because_we_built_it_4_nov/"
+      },
+      {
+        "created": "2013-03-25T16:37:29Z",
+        "id": "1azbmg",
+        "title": "[CotD] Weyland Consortium: Because We Built It (25 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1azbmg/cotd_weyland_consortium_because_we_built_it_25/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6663,6 +7863,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02077",
     "number": 77,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-10T16:05:39Z",
+        "id": "1c2ium",
+        "title": "[CotD] Government Contracts (10 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1c2ium/cotd_government_contracts_10_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6688,6 +7896,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02078",
     "number": 78,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-18T15:51:26Z",
+        "id": "1cm112",
+        "title": "[CotD] Tyrant (18 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1cm112/cotd_tyrant_18_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6714,6 +7930,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02079",
     "number": 79,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-04-16T16:08:54Z",
+        "id": "1cguqd",
+        "title": "[CotD] Oversight AI (16 Apr 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1cguqd/cotd_oversight_ai_16_apr_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6741,6 +7965,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02080",
     "number": 80,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-03-26T17:49:40Z",
+        "id": "1b1y3x",
+        "title": "[CotD] False Lead (26 Mar 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1b1y3x/cotd_false_lead_26_mar_2013/"
+      }
+    ],
     "set_code": "asis",
     "setname": "A Study in Static",
     "side": "Corp",
@@ -6766,6 +7998,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02092",
     "number": 92,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-03T20:10:48Z",
+        "id": "1dn13q",
+        "title": "[COTD] Eve Campaign (03 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dn13q/cotd_eve_campaign_03_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6793,6 +8033,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02093",
     "number": 93,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-24T16:47:44Z",
+        "id": "1ez9ys",
+        "title": "[COTD] Rework (24 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ez9ys/cotd_rework_24_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6818,6 +8066,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02094",
     "number": 94,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-01T15:10:52Z",
+        "id": "1dhgbe",
+        "title": "[CotD] Whirlpool (May 1 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dhgbe/cotd_whirlpool_may_1_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6845,6 +8101,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02095",
     "number": 95,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-15T15:38:57Z",
+        "id": "1edylt",
+        "title": "[COTD] Hokusai Grid (May 15 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1edylt/cotd_hokusai_grid_may_15_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6872,6 +8136,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02096",
     "number": 96,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-07T17:08:08Z",
+        "id": "1dvegs",
+        "title": "[COTD] Data Hound (May 07 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1dvegs/cotd_data_hound_may_07_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6899,6 +8171,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02097",
     "number": 97,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-13T14:46:39Z",
+        "id": "1e8vlt",
+        "title": "[COTD] Bernice Mai (5/13/13)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1e8vlt/cotd_bernice_mai_51313/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6926,6 +8206,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02098",
     "number": 98,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-27T17:23:59Z",
+        "id": "1f5a57",
+        "title": "[BONUS COTD] Salvage (27 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1f5a57/bonus_cotd_salvage_27_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6953,6 +8241,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02099",
     "number": 99,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-09T16:39:19Z",
+        "id": "1e0cvn",
+        "title": "[COTD] Simone Diego (09 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1e0cvn/cotd_simone_diego_09_may_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -6980,6 +8276,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02100",
     "number": 100,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-14T18:58:36Z",
+        "id": "1eby0q",
+        "title": "[COTD] Foxfire (May 14 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1eby0q/cotd_foxfire_may_14_2013/"
+      }
+    ],
     "set_code": "hs",
     "setname": "Humanity's Shadow",
     "side": "Corp",
@@ -7005,6 +8309,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02110",
     "number": 110,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-05T16:53:16Z",
+        "id": "1fqbjo",
+        "title": "[COTD] Eli 1.0 (05 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fqbjo/cotd_eli_10_05_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7032,6 +8344,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02111",
     "number": 111,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-24T15:49:10Z",
+        "id": "1gz2r5",
+        "title": "[COTD] Ruhr Valley (24 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gz2r5/cotd_ruhr_valley_24_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7059,6 +8379,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02112",
     "number": 112,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-03T15:15:28Z",
+        "id": "1fl1vw",
+        "title": "[COTD] Ronin (03 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fl1vw/cotd_ronin_03_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7086,6 +8414,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02113",
     "number": 113,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-14T17:43:57Z",
+        "id": "1gcn2p",
+        "title": "[COTD] Midori (14 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gcn2p/cotd_midori_14_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7112,6 +8448,20 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02114",
     "number": 114,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-11-06T19:12:35Z",
+        "id": "1q1l8l",
+        "title": "[COTD] NBN: The World Is Yours* (6 Nov 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1q1l8l/cotd_nbn_the_world_is_yours_6_nov_2013/"
+      },
+      {
+        "created": "2013-05-28T15:27:50Z",
+        "id": "1f7br1",
+        "title": "[COTD] NBN: The World Is Yours* (28 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1f7br1/cotd_nbn_the_world_is_yours_28_may_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7136,6 +8486,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02115",
     "number": 115,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-19T16:08:23Z",
+        "id": "1gnurf",
+        "title": "[COTD] Project Beale (June 19 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gnurf/cotd_project_beale_june_19_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7161,6 +8519,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02116",
     "number": 116,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-16T19:05:16Z",
+        "id": "1ggv4t",
+        "title": "[COTD] Midseason Replacements (16 June n2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ggv4t/cotd_midseason_replacements_16_june_n2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7186,6 +8552,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02117",
     "number": 117,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-13T19:12:07Z",
+        "id": "1gac00",
+        "title": "[COTD] Flare (13 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1gac00/cotd_flare_13_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7213,6 +8587,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02118",
     "number": 118,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-30T16:54:44Z",
+        "id": "1fcgqt",
+        "title": "[COTD] Dedicated Response Team (30 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fcgqt/cotd_dedicated_response_team_30_may_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7240,6 +8622,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02119",
     "number": 119,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-06-07T17:07:07Z",
+        "id": "1fvf4p",
+        "title": "[COTD] Burke Bugs (07 June 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fvf4p/cotd_burke_bugs_07_june_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7267,6 +8657,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/02120",
     "number": 120,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-05-31T17:49:22Z",
+        "id": "1fezwh",
+        "title": "[COTD] Corporate War (31 May 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1fezwh/cotd_corporate_war_31_may_2013/"
+      }
+    ],
     "set_code": "fp",
     "setname": "Future Proof",
     "side": "Corp",
@@ -7293,6 +8691,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03001",
     "number": 1,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-29T16:55:04Z",
+        "id": "1jab48",
+        "title": "[COTD] Cerebral Imaging: Infinite Frontiers (29 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jab48/cotd_cerebral_imaging_infinite_frontiers_29_july/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7319,6 +8725,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03002",
     "number": 2,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-27T16:35:09Z",
+        "id": "1j5zyl",
+        "title": "[COTD] Custom Biotics: Engineering the Future (27 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1j5zyl/cotd_custom_biotics_engineering_the_future_27/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7344,6 +8758,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03003",
     "number": 3,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-28T18:35:49Z",
+        "id": "1j86vn",
+        "title": "[COTD] Next Design: Guarding the Net (28 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1j86vn/cotd_next_design_guarding_the_net_28_july_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7369,6 +8791,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03004",
     "number": 4,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-30T16:42:34Z",
+        "id": "1jcvv1",
+        "title": "[COTD] Director Haas' Pet Project (30 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jcvv1/cotd_director_haas_pet_project_30_july_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7394,6 +8824,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03005",
     "number": 5,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-07-31T16:19:11Z",
+        "id": "1jfg9x",
+        "title": "[COTD] Efficiency Committee (31 July 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jfg9x/cotd_efficiency_committee_31_july_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7419,6 +8857,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03006",
     "number": 6,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-02T16:44:16Z",
+        "id": "1jkmvn",
+        "title": "[COTD] Project Wotan (02 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jkmvn/cotd_project_wotan_02_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7445,6 +8891,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03007",
     "number": 7,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-03T18:25:49Z",
+        "id": "1jmyfl",
+        "title": "[COTD] Sentinel Defense Program (03 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1jmyfl/cotd_sentinel_defense_program_03_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7471,6 +8925,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03008",
     "number": 8,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-25T18:05:59Z",
+        "id": "1l2ei1",
+        "title": "[COTD] Alix T4LB07 (25 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1l2ei1/cotd_alix_t4lb07_25_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7497,6 +8959,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03009",
     "number": 9,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-27T15:40:28Z",
+        "id": "1l6yg3",
+        "title": "[COTD] Cerebral Overwriter (27 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1l6yg3/cotd_cerebral_overwriter_27_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7523,6 +8993,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03010",
     "number": 10,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-28T17:16:05Z",
+        "id": "1l9r8h",
+        "title": "[COTD] Director Haas (28 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1l9r8h/cotd_director_haas_28_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7549,6 +9027,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03011",
     "number": 11,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-29T17:44:45Z",
+        "id": "1lce4w",
+        "title": "[COTD] Haas Arcology AI (29 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lce4w/cotd_haas_arcology_ai_29_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7575,6 +9061,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03012",
     "number": 12,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-01T16:27:24Z",
+        "id": "1lithg",
+        "title": "[COTD] Thomas Haas (1 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lithg/cotd_thomas_haas_1_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7601,6 +9095,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03013",
     "number": 13,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-16T16:31:45Z",
+        "id": "1mict0",
+        "title": "[COTD] Bioroid Efficiency Research (16 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mict0/cotd_bioroid_efficiency_research_16_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7627,6 +9129,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03014",
     "number": 14,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-17T17:19:59Z",
+        "id": "1ml0vg",
+        "title": "[COTD] Successful Demonstration (17 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ml0vg/cotd_successful_demonstration_17_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7653,6 +9163,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03015",
     "number": 15,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-14T16:10:21Z",
+        "id": "1kcso6",
+        "title": "[COTD] Heimdall 2.0 (14 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kcso6/cotd_heimdall_20_14_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7680,6 +9198,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03016",
     "number": 16,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-15T15:41:16Z",
+        "id": "1kf9wo",
+        "title": "[COTD] Howler (15 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kf9wo/cotd_howler_15_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7707,6 +9233,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03017",
     "number": 17,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-16T17:16:06Z",
+        "id": "1khym3",
+        "title": "[COTD] Ichi 2.0 (16 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1khym3/cotd_ichi_20_16_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7734,6 +9268,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03018",
     "number": 18,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-17T17:13:56Z",
+        "id": "1kk35b",
+        "title": "[COTD] Minelayer (17 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kk35b/cotd_minelayer_17_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7760,6 +9302,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03019",
     "number": 19,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-18T17:52:13Z",
+        "id": "1km5jt",
+        "title": "[COTD] Viktor 2.0 (18 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1km5jt/cotd_viktor_20_18_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7787,6 +9337,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03020",
     "number": 20,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-19T16:14:23Z",
+        "id": "1ko919",
+        "title": "[COTD] Zed 1.0 (19 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ko919/cotd_zed_10_19_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7813,6 +9371,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03021",
     "number": 21,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-26T16:32:54Z",
+        "id": "1l4ilf",
+        "title": "[COTD] Awakening Center (26 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1l4ilf/cotd_awakening_center_26_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7838,6 +9404,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03022",
     "number": 22,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-02T21:15:10Z",
+        "id": "1llmvy",
+        "title": "[COTD] Tyr's Hand (2 Sept. 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1llmvy/cotd_tyrs_hand_2_sept_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7866,6 +9440,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03023",
     "number": 23,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-01T17:12:35Z",
+        "id": "1ji7by",
+        "title": "[COTD] Gila Hands Arcology (01 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ji7by/cotd_gila_hands_arcology_01_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7892,6 +9474,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03024",
     "number": 24,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-30T19:20:17Z",
+        "id": "1lf24m",
+        "title": "[COTD] Levy University (30 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lf24m/cotd_levy_university_30_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7919,6 +9509,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03025",
     "number": 25,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-31T17:22:58Z",
+        "id": "1lgxwe",
+        "title": "[COTD] Server Diagnostics (31 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1lgxwe/cotd_server_diagnostics_31_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7945,6 +9543,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03026",
     "number": 26,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-12T20:03:02Z",
+        "id": "1k882t",
+        "title": "[COTD] Bastion (12 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1k882t/cotd_bastion_12_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7972,6 +9578,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/03027",
     "number": 27,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-08-13T16:18:28Z",
+        "id": "1kaa50",
+        "title": "[COTD] Datapike (13 August 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1kaa50/cotd_datapike_13_august_2013/"
+      }
+    ],
     "set_code": "cac",
     "setname": "Creation and Control",
     "side": "Corp",
@@ -7999,6 +9613,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04010",
     "number": 10,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-15T17:35:57Z",
+        "id": "1oii88",
+        "title": "[COTD] Project Ares (15 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1oii88/cotd_project_ares_15_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8025,6 +9647,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04011",
     "number": 11,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-10T17:05:31Z",
+        "id": "1o5mt6",
+        "title": "[COTD] NEXT Bronze (10 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1o5mt6/cotd_next_bronze_10_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8052,6 +9682,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04012",
     "number": 12,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-18T16:35:58Z",
+        "id": "1mngam",
+        "title": "[COTD] Celebrity Gift (18 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mngam/cotd_celebrity_gift_18_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8078,6 +9716,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04013",
     "number": 13,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-30T20:15:38Z",
+        "id": "1ngmmh",
+        "title": "[COTD] Himitsu-Bako (30 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1ngmmh/cotd_himitsubako_30_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8105,6 +9751,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04014",
     "number": 14,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-19T17:34:56Z",
+        "id": "1mq1dd",
+        "title": "[COTD] Character Assassination (19 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1mq1dd/cotd_character_assassination_19_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8131,6 +9785,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04015",
     "number": 15,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-03T17:49:15Z",
+        "id": "1no1hc",
+        "title": "[COTD] Jackson \"Action Jackson\" Howard, Savior of Corporations (3 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1no1hc/cotd_jackson_action_jackson_howard_savior_of/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8157,6 +9819,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04016",
     "number": 16,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-02T17:09:17Z",
+        "id": "1nle2y",
+        "title": "[COTD] Invasion of Privacy (2 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1nle2y/cotd_invasion_of_privacy_2_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8183,6 +9853,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04017",
     "number": 17,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-25T19:24:32Z",
+        "id": "1n4h3i",
+        "title": "[COTD] Geothermal Fracking (25 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1n4h3i/cotd_geothermal_fracking_25_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8208,6 +9886,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04018",
     "number": 18,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-10-17T17:21:40Z",
+        "id": "1onmjs",
+        "title": "[COTD] Swarm (17 Oct 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1onmjs/cotd_swarm_17_oct_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8234,6 +9920,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04019",
     "number": 19,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-20T17:10:05Z",
+        "id": "1msdbm",
+        "title": "[COTD] Cyberdex Trial (20 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1msdbm/cotd_cyberdex_trial_20_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",
@@ -8259,6 +9953,14 @@
     "nr_db_url": "http://netrunnerdb.com/en/card/04020",
     "number": 20,
     "quantity": 3,
+    "reddit_cotds": [
+      {
+        "created": "2013-09-27T16:16:40Z",
+        "id": "1n97x5",
+        "title": "[COTD] Grim (27 Sept 2013)",
+        "url": "http://www.reddit.com/r/Netrunner/comments/1n97x5/cotd_grim_27_sept_2013/"
+      }
+    ],
     "set_code": "om",
     "setname": "Opening Moves",
     "side": "Corp",

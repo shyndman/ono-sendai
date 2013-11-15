@@ -16,11 +16,15 @@
 
           <h3>Links</h3>
           <ul class="list-unstyled">
-            <li>
-              <a href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb"><i class="icon-link-ext"></i> Comments on CardGameDB</a>
+            <!-- Reddit cards of the day -->
+            <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
+              <a ng-href="{{cotd.url}}" target="reddit"><i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})</a>
             </li>
             <li>
-              <a href="{{selectedCard.nrdb_url}}" target="nrdb"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
+              <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb"><i class="icon-link-ext"></i> Comments on CardGameDB</a>
+            </li>
+            <li>
+              <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
             </li>
           </ul>
         </div>
