@@ -16,29 +16,37 @@ angular.module('deckBuilder')
       $scope.$broadcast 'zoomEnd'
 
     $scope.selectCard = (card) ->
-      if card is null
-        return
+      if card?
+        $log.info "Selected card changing to #{ card.title }"
+      else
+        $log.info 'Card deselected'
 
-      $log.info "Selected card changing to #{ card.title }"
       $scope.selectedCard = card
 
     $scope.deselectCard = ->
-      $log.info 'Card deselected'
-      $scope.selectedCard = null
+      $scope.selectCard(null)
 
     $scope.previousCard = ->
       if $scope.selectedCard is null
         return
 
+      prevCard = $scope.queryResult.cardBefore($scope.selectedCard)
+      if !prevCard?
+        return
+
       $log.info 'Moving to previous card'
-      $scope.selectCard($scope.queryResult.cardBefore($scope.selectedCard))
+      $scope.selectCard(prevCard)
 
     $scope.nextCard = ->
       if $scope.selectedCard is null
         return
 
+      nextCard = $scope.queryResult.cardAfter($scope.selectedCard)
+      if !nextCard?
+        return
+
       $log.info 'Moving to next card'
-      $scope.selectCard($scope.queryResult.cardAfter($scope.selectedCard))
+      $scope.selectCard(nextCard)
 
     setQueryResult = (queryResult) ->
       $log.debug 'Assigning new query result', queryResult
