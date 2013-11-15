@@ -119,8 +119,6 @@ class CardService
   # Returns an filter result object, which describes which cards passed the filter, their positions, and group
   # membership.
   query: (queryArgs = {}) ->
-
-    # Each step in the card filtering pipeline can choose to be asynchronous if needed
     @_cardsPromise
       .then((cards) =>
         _.logGroup('Card query', _.timed('Query duration', =>
@@ -309,7 +307,7 @@ class CardService
           []
 
       # Does the trick for now
-      card.id = card.imagesrc
+      card.id = _.stripDiacritics(_.dasherize(card.title.toLowerCase().replace(/["|'|:]/g, '')))
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()

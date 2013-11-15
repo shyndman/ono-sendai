@@ -21,10 +21,10 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
 
     # Build the initial filter from the URL
-    @generatedQueryArgs = @_queryArgsFromUrl()
+    [ @generatedQueryArgs, @selectedCardId ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs) ->
+  updateUrl: (queryArgs, selectedCard) ->
     @$log.debug('Updating URL with latest query arguments')
 
     relevantFilters = @cardService.relevantFilters(queryArgs)
@@ -32,6 +32,9 @@ class UrlStateService
 
     if queryArgs.activeGroup.name != 'general'
       url += "/#{ queryArgs.activeGroup.name }"
+
+    if selectedCard?
+      url += "/card/#{ selectedCard.id }"
 
     search = {}
     for name, desc of relevantFilters
@@ -74,18 +77,25 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    @generatedQueryArgs = @_queryArgsFromUrl()
-    @$rootScope.$broadcast('urlFilterChange', @generatedQueryArgs)
+    [ @generatedQueryArgs, @selectedCardId ]  = @_stateFromUrl()
+    @$rootScope.$broadcast('urlStateChange', @generatedQueryArgs)
 
   _cardsUrlMatcher:
     ///
       ^
       /cards
       /(corp|runner)
-      (?:/([^/]+))?
+      (?: # Selected group
+        /
+        ([^/]+)
+      )?
+      (?: # Specific card
+        /card/
+        ([^/]+)
+      )
     ///
 
-  _queryArgsFromUrl: ->
+  _stateFromUrl: ->
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
 
     # Copy defaults and assign general as the default active group
@@ -100,6 +110,9 @@ class UrlStateService
       # Active group
       if cardsMatch[2]
         queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
+
+      if cardsMatch[3]
+        selectedCardId = cardsMatch[3]
 
       relevantFilters = @cardService.relevantFilters(queryArgs, false)
       search = @$location.search()
@@ -126,7 +139,6 @@ class UrlStateService
 
             if name == 'faction'
               flags = search[name].split(',')
-              debugger
               relevantFactions = @factionUiMappingsBySide[side]
               modelFlags = _.object(
                 _.map(flags, (f) -> _.findWhere(relevantFactions, abbr: f).model), [])
@@ -135,12 +147,10 @@ class UrlStateService
               _.each(queryFactions, (val, key) -> queryFactions[key] = key of modelFlags)
             else
               @$log.warn("No URL mapping available for #{ name }")
-
-
     else
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
 
-    queryArgs
+    [ queryArgs, selectedCardId ]
 
 
 angular
