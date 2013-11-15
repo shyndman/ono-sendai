@@ -165,7 +165,6 @@ module.exports = function (grunt) {
       options: {
         includePaths: [
           'app/bower_components/',
-          // 'app/styles/'
         ]
       },
       dist: {
