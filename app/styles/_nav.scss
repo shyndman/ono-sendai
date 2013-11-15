@@ -1,7 +1,8 @@
 nr-subnav {
+  $subnav-height: 30px;
+
   display: flexbox;
-  height: 30px;
-  min-height: 30px;
+  min-height: $subnav-height;
   border-bottom: 1px solid #e7e7e7;
   background: #fbfbfb;
   box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
@@ -16,6 +17,7 @@ nr-subnav {
         float: left;
         a {
           padding: 5px 23px;
+          line-height: $subnav-height;
           font-size: 13px;
           color: #777;
           border-bottom: 2px solid transparent;
@@ -26,6 +28,8 @@ nr-subnav {
           &:hover {
             color: #777;
             background: none;
+            text-decoration: none;
+
             &:not(.active) {
               border-bottom: 2px solid #ccc;
             }
@@ -40,11 +44,15 @@ nr-subnav {
     }
   }
 
-  input[type=range] {
-    margin-right: 20px;
-    width: 140px;
-    position: relative;
-    top: 5px;
+  .zoom {
+    display: inline-block;
+
+    input[type=range] {
+      margin-right: 20px;
+      width: 140px;
+      position: relative;
+      top: 5px;
+    }
   }
 
   .control-label {
@@ -57,7 +65,7 @@ nr-subnav {
 
   .btn {
     font-size: 12px;
-    height: 30px;
+    height: $subnav-height;
     background: none;
     border: none;
 
