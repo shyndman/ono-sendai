@@ -126,7 +126,6 @@ class UrlStateService
 
             if name == 'faction'
               flags = search[name].split(',')
-              debugger
               relevantFactions = @factionUiMappingsBySide[side]
               modelFlags = _.object(
                 _.map(flags, (f) -> _.findWhere(relevantFactions, abbr: f).model), [])
