@@ -1,6 +1,10 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $window, $log, $q, cardService, urlStateService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, urlStateService) ->
+    $scope.filter = urlStateService.generatedQueryArgs
+    $scope.grid = zoom: 0.5
     $scope.selectedCard = null
+    $http.get('/data/version.json').success((data) ->
+      $scope.version = data.version)
 
     # Assign cards to the scope once, but order them according to the initial query so the first images
     # to load are the ones on screen.
