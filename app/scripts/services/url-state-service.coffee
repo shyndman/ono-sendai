@@ -24,7 +24,7 @@ class UrlStateService
     @generatedQueryArgs = @_queryArgsFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs) ->
+  updateUrl: (queryArgs, selectedCard) ->
     @$log.debug('Updating URL with latest query arguments')
 
     relevantFilters = @cardService.relevantFilters(queryArgs)
@@ -32,6 +32,9 @@ class UrlStateService
 
     if queryArgs.activeGroup.name != 'general'
       url += "/#{ queryArgs.activeGroup.name }"
+
+    if selectedCard?
+      url += "/card/#{ selectedCard.id }"
 
     search = {}
     for name, desc of relevantFilters
