@@ -18,6 +18,7 @@ TODOs
   * Hoist keyboard handling for the detail view to the body or something, and figure out what to do when dealing
     with input controls.
   * Rename "filter" to "queryArgs" across the board
+  *
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
