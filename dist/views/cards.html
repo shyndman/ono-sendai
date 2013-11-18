@@ -5,21 +5,28 @@
     <div class="selected-card">
       <h2 class="{{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
+        <small class="secondary-group">{{selectedCard.setname}}</small>
       </h2>
       <div class="info">
-        <h3>Related Cards</h3>
+        <h3>Info</h3>
 
         <h3>Links</h3>
         <ul class="list-unstyled">
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
-            <a ng-href="{{cotd.url}}" target="reddit"><i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})</a>
+            <a ng-href="{{cotd.url}}" target="reddit">
+              <i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})
+            </a>
           </li>
           <li>
-            <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb"><i class="icon-link-ext"></i> Comments on CardGameDB</a>
+            <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb">
+              <i class="icon-link-ext"></i> Comments on CardGameDB
+            </a>
           </li>
           <li>
-            <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb"><i class="icon-link-strength"></i> View on NetrunnerDB</a>
+            <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb">
+              <i class="icon-link-strength"></i> View on NetrunnerDB
+            </a>
           </li>
         </ul>
       </div>
@@ -27,7 +34,7 @@
   </div>
 
   <!-- HEADERS -->
-  <h2 ng-repeat="(id, group) in queryResult.groups track by id" grid-id="{{group.id}}" class="{{group.id}} grid-header" title="{{group.id}}">
+  <h2 ng-repeat="(id, group) in queryResult.groups track by id" grid-id="{{group.id}}" class="{{group.id}} grid-header invisible" title="{{group.id}}">
     <small class="card-count"><ng-pluralize count="group.cards.length" when="{
           '1': '1 card',
           'other': '{} cards'
