@@ -171,17 +171,20 @@ nr-cards-view {
 
       width: $selected-card-width;
       height: 100%;
-
       padding: 9px 18px;
-      z-index: $card-current-info-z-index;
 
-      background: rgba(255, 255, 255, 0.9);
+      z-index: $card-current-info-z-index;
+      background: rgba(255, 255, 255, 0.8);
 
       h2 {
         margin-bottom: 14px;
       }
 
       .info {
+        width: 300px;
+        height: 418px;
+        float: right;
+
         h3 {
           margin: 4px 0 10px 0;
           font-size: 16px;
@@ -190,9 +193,13 @@ nr-cards-view {
         li {
           margin: 5px 0;
         }
+      }
 
-        width: 300px;
-        float: right;
+      .card-count {
+        padding-top: 20px;
+        clear: both;
+        text-align: center;
+        color: #777;
       }
     }
   }
