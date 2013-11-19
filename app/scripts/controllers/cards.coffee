@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, urlStateService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.generatedQueryArgs
     $scope.grid = zoom: 0.5
     $scope.selectedCard = null
@@ -52,6 +52,18 @@ angular.module('deckBuilder')
 
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
+
+    # Returns true if the user has less than 3 of this card
+    #
+    # TODO Take into consideration ownership of datapacks and # of core sets owned.
+    $scope.isShortCard = (card) ->
+      card.quantity < 3 and card.type != 'Identity'
+
+    # Toggles the favourite state of the provided card
+    $scope.toggleFavourite = userPreferences.toggleCardFavourite
+
+    # Returns true if the provided card is favourited
+    $scope.isFavourite = userPreferences.isCardFavourite
 
     setQueryResult = (queryResult) ->
       $log.debug 'Assigning new query result', queryResult

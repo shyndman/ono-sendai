@@ -171,17 +171,47 @@ nr-cards-view {
 
       width: $selected-card-width;
       height: 100%;
-
       padding: 9px 18px;
-      z-index: $card-current-info-z-index;
 
-      background: rgba(255, 255, 255, 0.9);
+      z-index: $card-current-info-z-index;
+      background: rgba(255, 255, 255, 0.8);
 
       h2 {
         margin-bottom: 14px;
+
+        .favourite {
+          position: relative;
+          top: -2px;
+          left: 4px;
+
+          color: #ccc;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:hover {
+            color: #999;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+          }
+
+          &.on {
+            color: #ffd76e;
+            -webkit-text-stroke: 1px #e9c15a;
+            &.hover {
+              color: #ffd76e;
+            }
+          }
+        }
       }
 
       .info {
+        width: 300px;
+        height: 418px;
+        float: right;
+
+        .possibly-short-cards {
+          color: #b94a48;
+        }
+
         h3 {
           margin: 4px 0 10px 0;
           font-size: 16px;
@@ -190,13 +220,16 @@ nr-cards-view {
         li {
           margin: 5px 0;
         }
+      }
 
-        width: 300px;
-        float: right;
+      .card-count {
+        padding-top: 74px;
+        clear: both;
+        text-align: center;
+        color: #777;
       }
     }
   }
-
 
   h2 {
     $underline-opacity: 0.3;

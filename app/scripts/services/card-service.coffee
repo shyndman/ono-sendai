@@ -29,7 +29,11 @@ class QueryResult
     _.sortBy collection, (ele) =>
       @orderingById[idFn(ele)] ? Number.MAX_VALUE
 
-  _cardAtOffset = (offset) -> # Note the equals. This is not a method.
+  cardOrdinal: (card) ->
+    @orderedCards.indexOf(card)
+
+  # NOTE the equals. This is not a method.
+  _cardAtOffset = (offset) ->
     (card) ->
       # NOTE, this could be optimized, but isn't likely a big deal
       idx = @orderedCards.indexOf(card) + offset

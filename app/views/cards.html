@@ -10,13 +10,25 @@
     <div class="selected-card">
       <h2 class="{{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
-        <small class="secondary-group">{{selectedCard.setname}}</small>
+        <small class="favourite"
+               ng-click="toggleFavourite(selectedCard)"
+               ng-class="{ 'on': isFavourite(selectedCard) }"
+               ng-switch="isFavourite(selectedCard)">
+          <span ng-switch-when="false">☆</span>
+          <span ng-switch-when="true">★</span>
+        </small>
       </h2>
       <div class="info">
-        <h3>Info</h3>
-
-        <h3>Links</h3>
         <ul class="list-unstyled">
+          <p>
+            <small>From:</small>
+            <a href="#">{{selectedCard.setname}}</a>
+            <small ng-class="{ 'possibly-short-cards': isShortCard(selectedCard) }">
+              <span ng-if="isShortCard(selectedCard)">only</span>
+              {{selectedCard.quantity}} in set
+            </small>
+          </p>
+
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
             <a ng-href="{{cotd.url}}" target="reddit">
@@ -34,6 +46,11 @@
             </a>
           </li>
         </ul>
+      </div>
+      <div class="card-count">
+        <span class="current">{{queryResult.cardOrdinal(selectedCard) + 1}}</span>
+        of
+        <span class="total">{{queryResult.length}}</span>
       </div>
     </div>
   </div>
