@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, urlStateService) ->
+  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.generatedQueryArgs
     $scope.grid = zoom: 0.5
     $scope.selectedCard = null
@@ -59,10 +59,11 @@ angular.module('deckBuilder')
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
 
-    $scope.toggleFavourite = (card) ->
+    # Toggles the favourite state of the provided card
+    $scope.toggleFavourite = userPreferences.toggleCardFavourite
 
-    $scope.isFavourite = (card) ->
-      false
+    # Returns true if the provided card is favourited
+    $scope.isFavourite = userPreferences.isCardFavourite
 
     setQueryResult = (queryResult) ->
       $log.debug 'Assigning new query result', queryResult
