@@ -53,6 +53,13 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
 
+    # Returns true if the user has less than 3 of this card
+    #
+    # TODO Take into consideration ownership.
+    $scope.isShortCard = (card) ->
+      card.quantity < 3 and card.type != 'Identity'
+
+
     setQueryResult = (queryResult) ->
       $log.debug 'Assigning new query result', queryResult
       $scope.queryResult = queryResult

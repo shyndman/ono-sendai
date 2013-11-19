@@ -10,10 +10,18 @@
     <div class="selected-card">
       <h2 class="{{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
-        <small class="secondary-group">{{selectedCard.setname}}</small>
       </h2>
       <div class="info">
         <ul class="list-unstyled">
+          <p>
+            <small>From:</small>
+            <a href="#">{{selectedCard.setname}}</a>
+            <small ng-class="{ 'possibly-short-cards': isShortCard(selectedCard) }">
+              <span ng-if="isShortCard(selectedCard)">only</span>
+              {{selectedCard.quantity}} in set
+            </small>
+          </p>
+
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
             <a ng-href="{{cotd.url}}" target="reddit">

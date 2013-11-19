@@ -185,6 +185,10 @@ nr-cards-view {
         height: 418px;
         float: right;
 
+        .possibly-short-cards {
+          color: #b94a48;
+        }
+
         h3 {
           margin: 4px 0 10px 0;
           font-size: 16px;
