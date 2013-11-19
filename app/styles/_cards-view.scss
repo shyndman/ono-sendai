@@ -178,6 +178,20 @@ nr-cards-view {
 
       h2 {
         margin-bottom: 14px;
+
+        .favourite {
+          position: relative;
+          top: -1px;
+          left: 4px;
+          color: #ccc;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:hover {
+            color: #999;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+          }
+        }
       }
 
       .info {

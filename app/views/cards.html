@@ -10,6 +10,7 @@
     <div class="selected-card">
       <h2 class="{{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
+        <small class="favourite" ng-click="toggleFavourite(selectedCard)">☆</small>
       </h2>
       <div class="info">
         <ul class="list-unstyled">
