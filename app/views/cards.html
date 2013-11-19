@@ -18,17 +18,25 @@
           <span ng-switch-when="true">★</span>
         </small>
       </h2>
-      <div class="info">
-        <ul class="list-unstyled">
-          <p>
-            <small>From:</small>
-            <a href="#">{{selectedCard.setname}}</a>
-            <small ng-class="{ 'possibly-short-cards': isShortCard(selectedCard) }">
-              <span ng-if="isShortCard(selectedCard)">only</span>
-              {{selectedCard.quantity}} in set
-            </small>
-          </p>
+      <!--ul class="types-and-tags" style="
+          margin-bottom: 3px;
+          margin-top: 5px;
+          margin-left: 9px;
+      ">
+        <li class="label label-default">Identity <span class="caret"></span></li>
+        <li class="label label-default">Megacorp <span class="caret"></span></li>
+      </ul-->
 
+      <div class="info">
+        <p>
+          <small>From:</small>
+          <a href="#">{{selectedCard.setname}}</a>
+          <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
+            <span ng-if="isShortCard(selectedCard)">only</span>
+            {{selectedCard.quantity}} in set
+          </small>
+        </p>
+        <ul class="links">
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
             <a ng-href="{{cotd.url}}" target="reddit">
