@@ -59,6 +59,10 @@ angular.module('deckBuilder')
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
 
+    $scope.toggleFavourite = (card) ->
+
+    $scope.isFavourite = (card) ->
+      false
 
     setQueryResult = (queryResult) ->
       $log.debug 'Assigning new query result', queryResult

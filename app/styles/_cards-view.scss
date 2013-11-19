@@ -181,8 +181,9 @@ nr-cards-view {
 
         .favourite {
           position: relative;
-          top: -1px;
+          top: -2px;
           left: 4px;
+
           color: #ccc;
           font-size: 16px;
           cursor: pointer;
@@ -190,6 +191,14 @@ nr-cards-view {
           &:hover {
             color: #999;
             text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+          }
+
+          &.on {
+            color: #ffd76e;
+            -webkit-text-stroke: 1px #e9c15a;
+            &.hover {
+              color: #ffd76e;
+            }
           }
         }
       }

@@ -10,7 +10,13 @@
     <div class="selected-card">
       <h2 class="{{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
-        <small class="favourite" ng-click="toggleFavourite(selectedCard)">☆</small>
+        <small class="favourite"
+               ng-click="toggleFavourite(selectedCard)"
+               ng-class="{ 'on': isFavourite(selectedCard) }"
+               ng-switch="isFavourite(selectedCard)">
+          <span ng-switch-when="false">☆</span>
+          <span ng-switch-when="true">★</span>
+        </small>
       </h2>
       <div class="info">
         <ul class="list-unstyled">
