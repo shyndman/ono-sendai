@@ -55,7 +55,7 @@ angular.module('deckBuilder')
 
     # Returns true if the user has less than 3 of this card
     #
-    # TODO Take into consideration ownership.
+    # TODO Take into consideration ownership of datapacks and # of core sets owned.
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
 
