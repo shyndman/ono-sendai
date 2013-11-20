@@ -226,11 +226,10 @@ nr-cards-view {
           margin: 5px 0;
 
           > label {
-            @extend small;
+            color: #777;
             width: 74px;
             margin: 0;
             float: left;
-            line-height: 22px;
           }
         }
 
