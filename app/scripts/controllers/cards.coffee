@@ -11,7 +11,9 @@ angular.module('deckBuilder')
     $q.all([cardService.getCards(), cardService.query($scope.filter)])
       .then(([ cards, queryResult ]) ->
         $log.debug 'Assigning cards with initial query ordering'
-        $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id))
+        $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
+        if urlStateService.selectedCardId?
+          $scope.selectCard(_.findWhere(cards, id: urlStateService.selectedCardId)))
 
     $rootScope.broadcastZoomStart = ->
       $scope.$broadcast 'zoomStart'
