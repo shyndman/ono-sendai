@@ -18,7 +18,7 @@ TODOs
   * Hoist keyboard handling for the detail view to the body or something, and figure out what to do when dealing
     with input controls.
   * Rename "filter" to "queryArgs" across the board
-  *
+  * Randomized deck generation (draft decks), along with a couple special identity print outs
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
