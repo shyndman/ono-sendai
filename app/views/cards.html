@@ -28,14 +28,24 @@
       </ul-->
 
       <div class="info">
-        <p>
-          <small>From:</small>
-          <a href="#">{{selectedCard.setname}}</a>
-          <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
-            <span ng-if="isShortCard(selectedCard)">only</span>
-            {{selectedCard.quantity}} in set
-          </small>
-        </p>
+        <div style="margin-bottom: 10px">
+          <div class="info-row">
+            <label>From:</label>
+            <a href="#">{{selectedCard.setname}}</a>
+            <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
+              <span ng-if="isShortCard(selectedCard)">only</span>
+              {{selectedCard.quantity}} in set
+            </small>
+          </div>
+          <div class="info-row">
+            <label>Type:</label>
+            <a href="#">{{selectedCard.type}}</a>
+          </div>
+          <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
+            <label>Subtypes:</label>
+            <a ng-repeat-start="subtype in selectedCard.subtypes" href="#">{{subtype}}</a><span ng-repeat-end ng-if="!$last">, </span>
+          </div>
+        </div>
         <ul class="links">
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">

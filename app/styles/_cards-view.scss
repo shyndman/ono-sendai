@@ -222,12 +222,26 @@ nr-cards-view {
           font-size: 16px;
         }
 
+        .info-row {
+          margin: 5px 0;
+
+          > label {
+            @extend small;
+            width: 74px;
+            margin: 0;
+            float: left;
+            line-height: 22px;
+          }
+        }
+
         .short-cards {
           color: #b94a48;
         }
 
         .links {
           @extend .list-unstyled;
+          margin-top: 20px;
+
           li {
             margin: 5px 0;
           }
