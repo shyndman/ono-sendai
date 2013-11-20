@@ -306,7 +306,7 @@ class CardService
     for card in cards
       card.subtypes =
         if card.subtype?
-          card.subtype.split(' - ')
+          card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
         else
           []
 
