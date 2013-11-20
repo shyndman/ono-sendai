@@ -92,7 +92,7 @@ class UrlStateService
       (?: # Specific card
         /card/
         ([^/]+)
-      )
+      )?
     ///
 
   _stateFromUrl: ->
