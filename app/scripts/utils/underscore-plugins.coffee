@@ -20,7 +20,7 @@ _.mixin
     unless _.some(args)
       return []
 
-    _.compact(_.zip.apply(null, args))
+    _.compact(_.flatten(_.zip(args...), true))
 
   # Concatenates the provided the array, and returns the result.
   concat: (arrs...) ->
