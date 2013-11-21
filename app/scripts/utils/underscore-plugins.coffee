@@ -24,10 +24,7 @@ _.mixin
 
   # Concatenates the provided the array, and returns the result.
   concat: (arrs...) ->
-    arr = []
-    for a in arrs when a?
-      arr = arr.concat(a)
-    arr
+    _.reduce(_.compact(arrs), ((a, b) -> a.concat(b)), [])
 
   # String.replace, but chainable.
   replace: (str, args...) ->
