@@ -1,7 +1,7 @@
 angular.module('deckBuilder')
   .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.generatedQueryArgs
-    $scope.grid = zoom: 0.5
+    $scope.grid = zoom: 0.35
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
