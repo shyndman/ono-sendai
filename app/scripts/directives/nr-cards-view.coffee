@@ -52,7 +52,7 @@ angular.module('deckBuilder')
       # we're in detail mode or grid mode.
       scrollParent = element.parents('.scrollable').first()
       scrollParentOverflow = scrollParent.css('overflow')
-      scrollParentH = scrollParent.height()
+      scrollParentHeight = scrollParent.height()
       scrollTop = scrollParent.scrollTop()
 
 
@@ -60,7 +60,7 @@ angular.module('deckBuilder')
       hasContainerChangedWidth = ->
         if containerWidth != (newContainerWidth = container.width())
           containerWidth = newContainerWidth
-          scrollParentH = scrollParent.height()
+          scrollParentHeight = scrollParent.height()
           true
         else
           false
@@ -383,7 +383,7 @@ angular.module('deckBuilder')
           scrollParent.scrollTop(0)
         else
           rowInfo = rowInfos[focusedElement.row]
-          scrollTop = rowInfo.position + rowInfo.height * focusedElementChop
+          scrollTop = rowInfo.position + rowInfo.height * focusedElementChop - scrollParentHeight / 2
           scrollParent.scrollTop(scrollTop)
 
       scrollToTop = ->
@@ -395,9 +395,10 @@ angular.module('deckBuilder')
           return
 
         scrollTop = scrollParent.scrollTop()
+        scrollCenter = scrollTop + scrollParentHeight / 2
 
         # Find the focused row
-        i = _.sortedIndex(rowInfos, position: scrollTop, (info) -> info.position) - 1
+        i = _.sortedIndex(rowInfos, position: scrollCenter, (info) -> info.position) - 1
         i = 0 if i < 0
         rowInfo = rowInfos[i]
 
@@ -406,9 +407,9 @@ angular.module('deckBuilder')
 
         # Grab the element
         focusedElement = rowInfo.firstElement
-        focusedElementChop = (scrollTop - rowInfo.position) / rowInfo.height
+        focusedElementChop = (scrollCenter - rowInfo.position) / rowInfo.height
 
-      scrollParent.scroll(_.debounce(scrollChanged, 100))
+      scrollParent.scroll(_.debounce(scrollChanged, 150))
 
 
       # *~*~*~*~ SCALING
