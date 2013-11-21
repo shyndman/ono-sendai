@@ -311,7 +311,7 @@ class CardService
           []
 
       # Does the trick for now
-      card.id = _.stripDiacritics(_.dasherize(card.title.toLowerCase().replace(/["|'|:|*]/g, '')))
+      card.id = _.idify(card.title)
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
