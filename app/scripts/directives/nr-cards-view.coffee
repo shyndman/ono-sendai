@@ -232,7 +232,7 @@ angular.module('deckBuilder')
 
           layout = itemLayouts[i] ?= {}
           layout.opacity = 0
-          layout.classes = hidden: true
+          layout.classes = hide: true
 
           if item == selEle
             if i - 2 >= 0 # current - 2
@@ -299,7 +299,7 @@ angular.module('deckBuilder')
             item = gridItems[i]
 
             if queryResult.isShown(getItemId(item))
-              $(item).removeClass('hidden')
+              $(item).removeClass('hide')
               newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
                           scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
               new_zIndex = layout.zIndex ? len - 1
@@ -318,7 +318,7 @@ angular.module('deckBuilder')
                 else
                   item.classList.remove(cls)
             else
-              item.classList.add('hidden')
+              item.classList.add('hide')
 
         if !_.isEmpty(headerLayouts)
           items = gridHeaders
