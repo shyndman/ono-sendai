@@ -17,7 +17,7 @@ _.mixin
 
   # Weaves two or more arrays together
   weave: (args...) ->
-    unless _.some(args)
+    unless _.any(args)
       return []
 
     _.compact(_.flatten(_.zip(args...), true))
