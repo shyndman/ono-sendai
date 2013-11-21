@@ -19,6 +19,7 @@ TODOs
     with input controls.
   * Rename "filter" to "queryArgs" across the board
   * Randomized deck generation (draft decks), along with a couple special identity print outs
+  * For ICE/breakers -- cost to break calculator
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
