@@ -206,6 +206,7 @@ angular.module('deckBuilder')
           type: 'inSet'
           cardField: 'faction'
           modelMappings:
+            # Note the leading side, in order to disambiguate the neutral cards
             'Corp: Haas-Bioroid': 'haasBioroid'
             'Corp: Jinteki': 'jinteki'
             'Corp: NBN': 'nbn'
