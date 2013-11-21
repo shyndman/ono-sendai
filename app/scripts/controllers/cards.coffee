@@ -9,12 +9,23 @@ angular.module('deckBuilder')
     # Assign cards to the scope once, but order them according to the initial query so the first images
     # to load are the ones on screen.
     $q.all([cardService.getCards(), cardService.query($scope.filter)])
-      .then(([ cards, queryResult ]) ->
+      .then(setInitialCards = ([ cards, queryResult ]) ->
         $log.debug 'Assigning cards with initial query ordering'
-        $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
+
+        orderedCards = queryResult.applyOrdering(cards, (card) -> card.id)
 
         if urlStateService.selectedCardId?
-          $scope.selectCard(_.findWhere(cards, id: urlStateService.selectedCardId)))
+          card = _.findWhere(orderedCards, id: urlStateService.selectedCardId)
+
+          # If we found a selected card, we're going to reorder the cards so they load in-order, pivoted
+          # around the selected card.
+          if card?
+            cardIdx = _.indexOf(orderedCards, card)
+            [before, after] = _.splitAt(orderedCards, cardIdx)
+            orderedCards = _.weave(before.reverse(), after)
+            $scope.selectCard(card)
+
+        $scope.cards = orderedCards)
 
     $rootScope.broadcastZoomStart = ->
       $scope.$broadcast 'zoomStart'
@@ -82,11 +93,11 @@ angular.module('deckBuilder')
       $scope.selectCard(_.findWhere($scope.cards, id: urlStateService.selectedCardId))
 
     # Limits URL updates. I find it distracting if it happens to ofter.
-    updateUrl = _.debounce((->
+    updateUrl = _.debounce((updateUrlNow = ->
       $scope.$apply -> urlStateService.updateUrl($scope.filter, $scope.selectedCard)
     ), 500)
 
-    $scope.$watch('filter', ((filter, oldFilter) ->
+    $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
       updateUrl()
       cardService.query(filter).then (queryResult) ->
         setQueryResult(queryResult)
