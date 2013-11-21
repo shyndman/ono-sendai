@@ -467,6 +467,7 @@ angular.module('deckBuilder')
       # *~*~*~*~ CARDS
 
       selectionChanged = (newVal, oldVal) ->
+        oldLayoutMode = layoutMode
         layoutMode =
           if newVal
             $log.debug 'Item selected. Displaying in detail mode'
@@ -474,7 +475,8 @@ angular.module('deckBuilder')
           else
             $log.debug 'No selection. Displaying items in grid mode'
             'grid'
-        layoutNow(true)
+
+        layoutNow(oldLayoutMode != layoutMode) # Only perform scaling if we've changed layout modes
       scope.$watch('selection', selectionChanged)
 
       queryResultChanged = (newVal) ->
