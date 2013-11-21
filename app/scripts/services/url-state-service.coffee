@@ -27,7 +27,6 @@ class UrlStateService
   updateUrl: (queryArgs, selectedCard) ->
     @$log.debug('Updating URL with latest query arguments')
 
-    relevantFilters = @cardService.relevantFilters(queryArgs)
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
 
     if queryArgs.activeGroup.name != 'general'
@@ -36,8 +35,9 @@ class UrlStateService
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
 
+    # Build up the query string parameters
     search = {}
-    for name, desc of relevantFilters
+    for name, desc of @cardService.relevantFilters(queryArgs)
       arg = queryArgs.fieldFilters[name]
       switch desc.type
         when 'numeric'
@@ -56,8 +56,17 @@ class UrlStateService
         when 'search'
           search.search = queryArgs.search
 
-    @$location.url(url).search(search).replace()
+    # Set the generated URL
+    @$location.url(url).search(search)
+
+    # Determine whether we should push the URL, or whether we should replace it.
+    pushUrl = !selectedCard? and  @selectedCardId? or
+               selectedCard? and !@selectedCardId?
+    @$location.replace() if !pushUrl
+
+    # Update local state
     @generatedUrl = @$location.url()
+    @selectedCardId = selectedCard?.id
 
   # Returns the search value for
   _factionSearchVal: (factions, arg) ->
