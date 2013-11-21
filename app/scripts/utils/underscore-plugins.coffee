@@ -40,7 +40,7 @@ _.mixin
     _.object([key, val] for key, val of obj when iterator(key, val))
 
   # Nada, nothing, beans, bupkis
-  noop: ->
+  noop: -> ;
 
 
 # ~*~*~* DEBUGGING UTILITIES
