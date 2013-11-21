@@ -15,7 +15,7 @@
         <div>
           <div class="info-row">
             <label>From:</label>
-            <a href="#">{{selectedCard.setname}}</a>
+            <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
             <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
               <span ng-if="isShortCard(selectedCard)">only</span>
               {{selectedCard.quantity}} in set
@@ -23,14 +23,14 @@
           </div>
           <div class="info-row">
             <label>Type:</label>
-            <a ng-href="/cards/{{selectedCard.side.toLowerCase()}}/{{selectedCard.type|pluralizeType}}">
+            <a ng-href="{{selectedCard | cardUrl:'type'}}">
               {{selectedCard.type}}
             </a>
           </div>
           <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
             <label>Subtypes:</label>
             <span ng-repeat="subtype in selectedCard.subtypes">
-              <a ng-href="">{{subtype}}</a><span ng-if="!$last"> - </span>
+              <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
             </span>
           </div>
         </div>
