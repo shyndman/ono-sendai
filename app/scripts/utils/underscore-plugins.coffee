@@ -10,6 +10,18 @@ _.mixin
           return order
       order
 
+  # Returns an array with two internal arrays built from taking an original array
+  # and spliting it at an index.
+  splitAt: (array, index) ->
+    return [ _.take(array, index), _.drop(array, index) ]
+
+  # Weaves two or more arrays together
+  weave: (args...) ->
+    unless _.some(args)
+      return []
+
+    _.compact(_.zip.apply(null, args))
+
   # Concatenates the provided the array, and returns the result.
   concat: (arrs...) ->
     arr = []
