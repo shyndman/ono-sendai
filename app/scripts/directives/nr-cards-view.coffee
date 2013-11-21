@@ -414,10 +414,10 @@ angular.module('deckBuilder')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.35 or scope.selection != null
+        scope.zoom > 0.35 or scope.selection?
 
       upscaleTo = ->
-        if scope.zoom > 0.5 or scope.selection != null
+        if scope.zoom > 0.5 or scope.selection?
           1
         else if scope.zoom > 0.35
           2
@@ -479,10 +479,11 @@ angular.module('deckBuilder')
 
       queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
+        firstLoad = !queryResult?
         queryResult = newVal
         $timeout ->
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow(element.hasClass('transitioned'))
+          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLoad)
 
           if layoutMode == 'grid'
             layoutPromise.then(scrollToTop)
