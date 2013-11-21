@@ -12,6 +12,7 @@ angular.module('deckBuilder')
       .then(([ cards, queryResult ]) ->
         $log.debug 'Assigning cards with initial query ordering'
         $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
+
         if urlStateService.selectedCardId?
           $scope.selectCard(_.findWhere(cards, id: urlStateService.selectedCardId)))
 
@@ -74,6 +75,11 @@ angular.module('deckBuilder')
       selCard = $scope.selectedCard
       if selCard and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedCards[0])
+
+    # Watches for URL changes, to change selectedCard/
+    $scope.$on 'urlStateChange', ->
+      $scope.filter = urlStateService.generatedQueryArgs
+      $scope.selectCard(_.findWhere($scope.cards, id: urlStateService.selectedCardId))
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((->

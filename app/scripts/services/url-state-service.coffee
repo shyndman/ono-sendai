@@ -78,7 +78,7 @@ class UrlStateService
 
     @$log.debug "URL changed to #{ @$location.url() }"
     [ @generatedQueryArgs, @selectedCardId ]  = @_stateFromUrl()
-    @$rootScope.$broadcast('urlStateChange', @generatedQueryArgs)
+    @$rootScope.$broadcast('urlStateChange')
 
   _cardsUrlMatcher:
     ///
@@ -87,7 +87,7 @@ class UrlStateService
       /(corp|runner)
       (?: # Selected group
         /
-        ([^/]+)
+        ([^c/]+) # the ^c is to prevent a match on /card/ -- a bit messy
       )?
       (?: # Specific card
         /card/
