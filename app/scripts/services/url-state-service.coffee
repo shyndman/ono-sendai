@@ -87,7 +87,7 @@ class UrlStateService
       /(corp|runner)
       (?: # Selected group
         /
-        ([^c/]+) # the ^c is to prevent a match on /card/ -- a bit messy
+        ([^c][^/]+) # the ^c is to prevent a match on /card/ -- a bit messy
       )?
       (?: # Specific card
         /card/
