@@ -386,6 +386,9 @@ angular.module('deckBuilder')
           scrollTop = rowInfo.position + rowInfo.height * focusedElementChop
           scrollParent.scrollTop(scrollTop)
 
+      scrollToTop = ->
+        scrollParent.scrollTop(0)
+
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
         if inContinuousZoom
@@ -475,11 +478,14 @@ angular.module('deckBuilder')
       scope.$watch('selection', selectionChanged)
 
       queryResultChanged = (newVal) ->
-        $log.debug 'Laying out grid (query)'
+        $log.debug 'Laying out (query)'
         queryResult = newVal
         $timeout ->
           invalidateGridContents(queryResult)
-          layoutNow(element.hasClass('transitioned'))
+          layoutPromise = layoutNow(element.hasClass('transitioned'))
+
+          if layoutMode == 'grid'
+            layoutPromise.then(scrollToTop)
         return
       scope.$watch('queryResult', queryResultChanged)
 
