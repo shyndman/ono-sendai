@@ -95,9 +95,10 @@
        bindonce
        class="grid-item"
        ng-click="selectCard(card)"
+       bo-title="card.title"
        bo-attr-grid-id="card.id"
        bo-attr>
-    <img bo-src="card.imagesrc" bo-title="card.title">
+    <img bo-src="card.imagesrc">
     <div class="background"></div>
   </div>
 </nr-cards-view>
