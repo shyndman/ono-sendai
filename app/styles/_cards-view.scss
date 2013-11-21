@@ -113,11 +113,11 @@ nr-cards-view {
     transform-origin: 0 150px;
 
     img {
-      transform: translateZ(1px) rotateY(40deg);
+      transform: translateZ(1px) rotateY(35deg);
     }
 
     .background {
-      transform: rotateY(40deg);
+      transform: rotateY(35deg);
     }
   }
 
@@ -126,12 +126,12 @@ nr-cards-view {
 
     img {
       transform-origin: 100% 0;
-      transform: translateZ(1px) rotateY(-40deg);
+      transform: translateZ(1px) rotateY(-35deg);
     }
 
     .background {
       transform-origin: 100% 0;
-      transform: rotateY(-40deg);
+      transform: rotateY(-35deg);
     }
   }
 
