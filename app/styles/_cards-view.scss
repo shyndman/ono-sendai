@@ -179,6 +179,16 @@ nr-cards-view {
       h2 {
         margin-bottom: 14px;
 
+        .close {
+          opacity: 0.3;
+          line-height: 28px;
+          font-weight: 200;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
         .favourite {
           position: relative;
           top: -2px;
