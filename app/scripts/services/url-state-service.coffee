@@ -46,13 +46,12 @@ class UrlStateService
           search[name] = "#{ urlOp }:#{ urlVal }"
         when 'inSet'
           search[name] =
-            switch name
-              when 'faction'
-                relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
-                @_factionSearchVal(relevantFactions, arg)
-              else
-                @$log.warn("No URL mapping available for #{ name }")
-                ''
+            if name is 'faction'
+              relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+              @_factionSearchVal(relevantFactions, arg)
+            else
+              @$log.warn("No URL mapping available for #{ name }")
+              ''
         when 'search'
           search.search = queryArgs.search
         else
@@ -129,23 +128,19 @@ class UrlStateService
       search = @$location.search()
 
       for name, desc of relevantFilters
-        continue unless search[name]?
+        if !search[name]?
+          continue
 
         switch desc.type
           when 'search'
             queryArgs.search = search.search
-
-          when 'cardSet'
-            queryArgs.fieldFilters[name] = search[name]
 
           when 'numeric'
             [ op, val ] = search[name].split(':')
             if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
               break
 
-            queryArgs.fieldFilters[name] =
-              operator: URL_TO_DATA_OPERATORS[op],
-              value: Number(val)
+            queryArgs.fieldFilters[name] = operator: URL_TO_DATA_OPERATORS[op], value: Number(val)
 
           when 'inSet'
             if search[name] == 'all'
@@ -161,6 +156,9 @@ class UrlStateService
               _.each(queryFactions, (val, key) -> queryFactions[key] = key of modelFlags)
             else
               @$log.warn("No URL mapping available for #{ name }")
+
+          else # switch
+            queryArgs.fieldFilters[name] = search[name]
 
     else
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
