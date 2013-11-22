@@ -223,6 +223,9 @@ angular.module('deckBuilder')
         factionCost:
           type: 'numeric'
           cardField: 'factioncost'
+        setname:
+          type: 'cardSet'
+          cardField: 'setname'
     }
     identities: {
       cardType: 'Identity'

@@ -22,7 +22,7 @@ angular.module('deckBuilder')
         when 'type'
           "/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'
-          "/cards/#{ side }?set=#{ _.idify(card.setname) }"
+          "/cards/#{ side }?setname=#{ _.idify(card.setname) }"
         when 'subtype'
           "/cards/#{ side }?subtype=#{ _.idify(arg) }"
         else

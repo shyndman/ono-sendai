@@ -83,10 +83,6 @@ class CardService
     '>': (a, b) -> a > b
     '≥': (a, b) -> a >= b
 
-  subTypes:
-    corp: {}
-    runner: {}
-
   comparisonOperators: ['=', '<', '≤', '>', '≥']
 
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
@@ -95,6 +91,7 @@ class CardService
     @_sets = []
     @_setsByTitle = {}
     @_setsById = {}
+    @subTypes = corp: {}, runner: {}
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -186,12 +183,14 @@ class CardService
       .object()      # Objectify
       .value()
 
-  _isFilterApplicable: (desc, fieldArgs, queryArgs) ->
+  _isFilterApplicable: (desc, fieldArg, queryArgs) ->
     switch desc.type
       when 'numeric'
-        fieldArgs.operator? and fieldArgs.value?
+        fieldArg.operator? and fieldArg.value?
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
+      when 'cardSet'
+        fieldArg?
       else
         true
 
@@ -213,12 +212,13 @@ class CardService
         @_buildNumericFilter(filterDesc, filterArg)
       when 'inSet'
         @_buildInSetFilter(filterDesc, filterArg)
+      when 'cardSet'
+        @_buildCardSetFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
         console.warn "Unknown filter type: #{ filterDesc.type }"
 
-  # TODO document
   _buildNumericFilter: (filterDesc, filterArg) ->
     (card) ->
       cardFields =
@@ -233,7 +233,6 @@ class CardService
 
       false
 
-  # TODO document
   _buildInSetFilter: (filterDesc, filterArg) ->
     (card) ->
       # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
@@ -247,6 +246,10 @@ class CardService
       # Now that we have the card value, we have to map it to the boolean "set" field in the filter
       # argument.
       filterArg[filterDesc.modelMappings[fieldVal]]
+
+  _buildCardSetFilter: (filterDesc, filterArg) =>
+    (card) =>
+      card.setname == @_setsById[filterArg].title
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =

@@ -55,6 +55,8 @@ class UrlStateService
                 ''
         when 'search'
           search.search = queryArgs.search
+        else
+          search[name] = arg
 
     # Set the generated URL
     @$location.url(url).search(search)
@@ -133,6 +135,9 @@ class UrlStateService
           when 'search'
             queryArgs.search = search.search
 
+          when 'cardSet'
+            queryArgs.fieldFilters[name] = search[name]
+
           when 'numeric'
             [ op, val ] = search[name].split(':')
             if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
@@ -156,6 +161,7 @@ class UrlStateService
               _.each(queryFactions, (val, key) -> queryFactions[key] = key of modelFlags)
             else
               @$log.warn("No URL mapping available for #{ name }")
+
     else
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
 
