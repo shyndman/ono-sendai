@@ -112,7 +112,7 @@ class CardService
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: @_cards, status, headers }) =>
+      .then(({ data: { sets: @_sets, cards: @_cards }, status, headers }) =>
         window.cards = @_cards # DEBUG
         @searchService.indexCards(@_cards)
         @_augmentCards(@_cards)
