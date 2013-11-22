@@ -6,6 +6,7 @@ keypressHelper = (event, scope, element, attrs, $parse) ->
   _.each params, (action, keys) ->
     actionFn = $parse(action)
     element.on event, jwerty.event(keys, (e) ->
+      # [todo] stopPropagation and preventDefault should be configurable
       scope.$apply ->
         actionFn(scope, $event: e))
 
