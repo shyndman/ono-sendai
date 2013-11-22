@@ -137,8 +137,8 @@ class CardService
 
   # Returns true if the provided card passes the filters.
   _matchesFilter: (card, queryArgs, { enabledTypes, filterFn }) =>
-    return (if queryArgs.side?  then card.side is queryArgs.side else true) and # TODO This should be extracted into filter functions
-           (if enabledTypes?    then enabledTypes[card.type]     else true) and # TODO So should this
+    return (if queryArgs.side?  then card.side is queryArgs.side else true) and # [todo] This should be extracted into filter functions
+           (if enabledTypes?    then enabledTypes[card.type]     else true) and # [todo] So should this
            (if filterFn?        then filterFn(card)              else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
@@ -274,7 +274,7 @@ class CardService
   _buildQueryResult: (queryArgs, groups) ->
     ordinal = 0
     queryResult = new QueryResult
-    _(groups).each((group) ->
+    _.each(groups, (group) ->
       _.each(group.cards, (c) ->
         queryResult.addCard(c, group, ordinal++)))
     queryResult

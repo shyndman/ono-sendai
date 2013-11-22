@@ -105,6 +105,7 @@ class UrlStateService
       )?
     ///
 
+  # [todo] This is getting a bit ugly. Consider a refactor
   _stateFromUrl: ->
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
 
@@ -159,7 +160,6 @@ class UrlStateService
 
           else # switch
             queryArgs.fieldFilters[name] = search[name]
-
     else
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
 
