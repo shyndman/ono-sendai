@@ -71,23 +71,6 @@ class CardService
     'Weyland Consortium': 6
     'Neutral':            7
 
-  # TODO It would be nice if this could be part of cards.json
-  SET_ORDINALS =
-    'Core Set':              0
-    'What Lies Ahead':       1 # Dec '12
-    'Trace Amount':          2 # Jan '13
-    'Cyber Exodus':          3 # Feb '13
-    'A Study in Static':     4 # Mar '13
-    "Humanity's Shadow":     5 # May '13
-    'Future Proof':          6 # Jun '13
-    'Creation and Control':  7 # Jul '13
-    'Opening Moves':         8 # Sep '13
-    'Second Thoughts':       9 # Nov '13
-    'Mala Tempora':         10 # Dec '13
-    'True Colors':          11 # Jan '14
-    'Fear and Loathing':    12 # Feb '14
-    'Double Time':          13 # ?
-
   OPERATORS =
     'and': (predicates, args...) ->
       for p in predicates
@@ -109,6 +92,9 @@ class CardService
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
     @searchService = searchService
     @_cards = []
+    @_sets = []
+    @_setsByTitle = {}
+    @_setsById = {}
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -116,9 +102,14 @@ class CardService
         window.cards = @_cards # DEBUG
         @searchService.indexCards(@_cards)
         @_augmentCards(@_cards)
+        @_augmentSets(@_sets)
         @_cards)
 
   getCards: -> @_cardsPromise
+
+  # Consumers should be aware that this will return undefined if the cards have not loaded
+  getSetByTitle: (title) ->
+    @_setsByTitle[title]
 
   # Returns an filter result object, which describes which cards passed the filter, their positions, and group
   # membership.
@@ -288,24 +279,25 @@ class CardService
   _sortFnFor: (fieldName) =>
     switch fieldName
       when 'type'
-        (a, b) -> CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+        (a, b) => CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
       when 'faction'
-        (a, b) -> FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
+        (a, b) => FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
       when 'cost', 'factioncost'
-        (a, b) ->
+        (a, b) =>
           if a[fieldName] is undefined or b[fieldName] is undefined
             0 # Allow the next sort to take precedence
           else
             a[fieldName] - b[fieldName]
       when 'setname'
-        (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
+        (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
       else
-        (a, b) -> a[fieldName].localeCompare(b[fieldName])
+        (a, b) => a[fieldName].localeCompare(b[fieldName])
 
   _augmentCards: (cards) =>
-    for card in cards
+    _.each cards, (card) =>
       card.subtypes =
         if card.subtype?
+          # [todo] Consider scrubbing cards.json instead of handling multiple dash styles
           card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
         else
           []
@@ -316,16 +308,25 @@ class CardService
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
-        if @subTypes[side][st]?
-          @subTypes[side][st]++
-        else
-          @subTypes[side][st] = 1
+        @subTypes[side][st] ?= 0
+        @subTypes[side][st]++
 
       switch card.type
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
         when 'Identity'
-          delete card.cost # It's unclear why the raw data has this field on identities -- it shouldn't
+          # It's unclear why the raw data has this field on identities -- it shouldn't. If it does
+          # it screws up grouping/sorting
+          # [todo] Consider whitelisting fields for specific types in cards.json
+          delete card.cost
+
+  _augmentSets: (sets) =>
+    _.each sets, (set, i) =>
+      set.id = _.idify(set.title)
+      set.ordinal = i
+      @_setsByTitle[set.title] = set
+      @_setsById[set.id] = set
+
 
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
