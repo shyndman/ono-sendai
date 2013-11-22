@@ -426,7 +426,7 @@ angular.module('deckBuilder')
       # will record the scale factor so that we can use transform: scale CSS to have them appear at the same
       # correct size.
       #
-      # TODO This doesn't appear to do anything in Firefox
+      # [fix] This doesn't appear to do anything in Firefox
       downscaleItems = ->
         scale = 3
         $log.debug "Downscaling grid items to 1/#{ scale }"
