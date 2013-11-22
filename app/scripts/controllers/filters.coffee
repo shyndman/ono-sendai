@@ -11,6 +11,13 @@ angular.module('deckBuilder')
       $scope.filter.activeGroup = generalGroup
       factions[key] = true for key, val of factions
 
+    $scope.labelledFieldId = (field) ->
+      switch field.type
+        when 'numeric'
+          "#{field.name}-filter-operator"
+        when 'search'
+          "#{field.name}-filter"
+
     $scope.toggleGroup = (group) ->
       if $scope.filter.activeGroup isnt group
         $scope.filter.activeGroup = group

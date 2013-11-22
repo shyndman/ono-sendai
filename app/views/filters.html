@@ -16,13 +16,13 @@ NOTES:
          ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }"
          ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
-      <label for="{{field.name}}-filter-operator" class="control-label">
+      <label for="{{labelledFieldId(field)}}" class="control-label">
         <i class="icon-{{field.icon}}"></i>
       </label>
 
       <div ng-switch on="field.type">
         <div ng-switch-when="search">
-          <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
+          <input type="search" id="{{field.name}}-filter" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
         <div ng-switch-when="faction">
           <div class="btn-group">
