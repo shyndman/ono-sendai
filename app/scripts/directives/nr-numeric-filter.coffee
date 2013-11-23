@@ -15,7 +15,8 @@ angular.module('deckBuilder')
       inputElement = element.find('input')
 
       # Erase the value if the user presses escape with the numeric input focused
-      inputElement.keydown(jwerty.event('esc', ->
+      inputElement.keydown(jwerty.event('esc', (e) ->
+        e.stopPropagation()
         scope.$apply ->
           scope.filter.value = undefined))
 
