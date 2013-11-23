@@ -247,9 +247,11 @@ class CardService
       # argument.
       filterArg[filterDesc.modelMappings[fieldVal]]
 
+  # [todo] Support multiple card sets
   _buildCardSetFilter: (filterDesc, filterArg) =>
-    (card) =>
-      card.setname == @_setsById[filterArg].title
+    set = @_setsById[filterArg]
+    (card) ->
+      card.setname == set.title
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
