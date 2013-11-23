@@ -84,7 +84,14 @@ class CardService
     '>': (a, b) -> a > b
     '≥': (a, b) -> a >= b
 
-  comparisonOperators: ['=', '<', '≤', '>', '≥']
+  comparisonOperators: [
+    { display: '=', typed: '==' },
+    { display: '≠', typed: '!=' },
+    { display: '<', typed: '<' },
+    { display: '≤', typed: '<=' },
+    { display: '>', typed: '>' },
+    { display: '≥', typed: '>=' }
+  ]
 
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
     @searchService = searchService
