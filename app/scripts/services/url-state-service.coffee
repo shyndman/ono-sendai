@@ -4,6 +4,7 @@ class UrlStateService
   # Mapping of how URLs appear in the data vs how they appear in the URL
   DATA_TO_URL_OPERATORS =
     '=': 'eq'
+    '≠': 'neq'
     '<': 'lt'
     '≤': 'lte'
     '>': 'gt'

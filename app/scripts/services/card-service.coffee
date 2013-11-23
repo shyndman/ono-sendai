@@ -77,7 +77,8 @@ class CardService
         if not p(args...)
           return false
       true
-    '=': (a, b) -> a is b
+    '=': (a, b) -> a == b
+    '≠': (a, b) -> a != b
     '<': (a, b) -> a < b
     '≤': (a, b) -> a <= b
     '>': (a, b) -> a > b
