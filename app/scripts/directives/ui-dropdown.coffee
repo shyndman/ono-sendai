@@ -2,7 +2,7 @@
 angular.module('deckBuilder')
   .directive('dropdownToggle', ($document, $location) ->
     openElement = null
-    closeMenu   = -> # noop
+    closeMenu   = -> # noop, until replaced
 
     {
       restrict: 'CA'
