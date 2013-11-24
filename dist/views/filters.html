@@ -3,20 +3,24 @@ NOTES:
 * If deck building, in-faction-only option
 -->
 
-<form class="form form-horizontal" role="form" ng-controller="FiltersCtrl">
+<div ng-controller="FiltersCtrl" ui-keydown="{
+       'esc/left/right': { stopPropagation: true },
+       'enter': 'clearFocus()'
+     }" class="form form-horizontal">
+
   <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
 
     <h5 ng-click="toggleGroup(group)">{{group.name}}</h5>
 
     <div class="filter-group-field {{field.name}} form-group" ng-repeat="field in group.fieldFilters" ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }" ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
-      <label for="{{field.name}}-filter-operator" class="control-label">
+      <label for="{{labelledFieldId(field)}}" class="control-label">
         <i class="icon-{{field.icon}}"></i>
       </label>
 
       <div ng-switch="" on="field.type">
         <div ng-switch-when="search">
-          <input type="search" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
+          <input type="search" id="{{field.name}}-filter" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
         <div ng-switch-when="faction">
           <div class="btn-group">
@@ -32,4 +36,4 @@ NOTES:
       </div>
     </div>
   </div>
-</form>
+</div>
