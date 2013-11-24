@@ -24,11 +24,11 @@ angular.module('deckBuilder')
       inputElement = element.find('input')
       lastVal = scope.filter.value
 
-      # Erase the value if the user presses escape with the numeric input focused
-      inputElement.keydown(jwerty.event('esc', (e) ->
-        e.stopPropagation()
-        scope.$apply ->
-          scope.filter.value = undefined))
+      inputElement.keydown (e) ->
+        e.stopPropagation() # We always want to stop the bubble
+        # Erase the value if the user presses escape with the numeric input focused
+        if jwerty.is('esc', e)
+          scope.$apply -> scope.filter.value = undefined
 
       # All the user to type operators into the input field to change the operator dropdown value
       _.each cardService.comparisonOperators, (op) ->
