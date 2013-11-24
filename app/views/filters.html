@@ -3,7 +3,13 @@ NOTES:
 * If deck building, in-faction-only option
 -->
 
-<form class="form form-horizontal" role="form" ng-controller="FiltersCtrl">
+<div ng-controller="FiltersCtrl"
+     ui-keydown="{
+       'esc/left/right': { stopPropagation: true },
+       'enter': 'clearFocus()'
+     }"
+     class="form form-horizontal">
+
   <div class="filter-group {{group.name}}"
        ng-repeat="group in filterUI"
        ng-class="{ active: isActiveGroup(group, filter.activeGroup) }"
@@ -49,4 +55,4 @@ NOTES:
       </div>
     </div>
   </div>
-</form>
+</div>
