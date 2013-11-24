@@ -19,7 +19,7 @@
       ng-controller="CardsCtrl"
       tabindex="0"
       ui-keydown="{
-        'esc'  : 'deselectCard()',
+        'esc'  : { action: 'deselectCard()', preventDefault: true },
         'left' : 'previousCard()',
         'right': 'nextCard()'
       }"

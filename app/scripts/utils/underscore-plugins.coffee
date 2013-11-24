@@ -92,7 +92,7 @@ _.mixin
   logGrouped: wrap('logGroup')
 
 
-  # ~*~*~* DIACRITICS
+# ~*~*~* DIACRITICS
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"

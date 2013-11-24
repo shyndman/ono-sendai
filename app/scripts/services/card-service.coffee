@@ -71,54 +71,50 @@ class CardService
     'Weyland Consortium': 6
     'Neutral':            7
 
-  # TODO It would be nice if this could be part of cards.json
-  SET_ORDINALS =
-    'Core Set':              0
-    'What Lies Ahead':       1 # Dec '12
-    'Trace Amount':          2 # Jan '13
-    'Cyber Exodus':          3 # Feb '13
-    'A Study in Static':     4 # Mar '13
-    "Humanity's Shadow":     5 # May '13
-    'Future Proof':          6 # Jun '13
-    'Creation and Control':  7 # Jul '13
-    'Opening Moves':         8 # Sep '13
-    'Second Thoughts':       9 # Nov '13
-    'Mala Tempora':         10 # Dec '13
-    'True Colors':          11 # Jan '14
-    'Fear and Loathing':    12 # Feb '14
-    'Double Time':          13 # ?
-
   OPERATORS =
     'and': (predicates, args...) ->
       for p in predicates
         if not p(args...)
           return false
       true
-    '=': (a, b) -> a is b
+    '=': (a, b) -> a == b
+    '≠': (a, b) -> a != b
     '<': (a, b) -> a < b
     '≤': (a, b) -> a <= b
     '>': (a, b) -> a > b
     '≥': (a, b) -> a >= b
 
-  subTypes:
-    corp: {}
-    runner: {}
-
-  comparisonOperators: ['=', '<', '≤', '>', '≥']
+  comparisonOperators: [
+    { display: '=', typed: '==' },
+    { display: '≠', typed: '!=' },
+    { display: '<', typed: '<' },
+    { display: '≤', typed: '<=' },
+    { display: '>', typed: '>' },
+    { display: '≥', typed: '>=' }
+  ]
 
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
     @searchService = searchService
     @_cards = []
+    @_sets = []
+    @_setsByTitle = {}
+    @_setsById = {}
+    @subTypes = corp: {}, runner: {}
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: @_cards, status, headers }) =>
+      .then(({ data: { sets: @_sets, cards: @_cards }, status, headers }) =>
         window.cards = @_cards # DEBUG
         @searchService.indexCards(@_cards)
         @_augmentCards(@_cards)
+        @_augmentSets(@_sets)
         @_cards)
 
   getCards: -> @_cardsPromise
+
+  # Consumers should be aware that this will return undefined if the cards have not loaded
+  getSetByTitle: (title) ->
+    @_setsByTitle[title]
 
   # Returns an filter result object, which describes which cards passed the filter, their positions, and group
   # membership.
@@ -149,8 +145,8 @@ class CardService
 
   # Returns true if the provided card passes the filters.
   _matchesFilter: (card, queryArgs, { enabledTypes, filterFn }) =>
-    return (if queryArgs.side?  then card.side is queryArgs.side else true) and # TODO This should be extracted into filter functions
-           (if enabledTypes?    then enabledTypes[card.type]     else true) and # TODO So should this
+    return (if queryArgs.side?  then card.side is queryArgs.side else true) and # [todo] This should be extracted into filter functions
+           (if enabledTypes?    then enabledTypes[card.type]     else true) and # [todo] So should this
            (if filterFn?        then filterFn(card)              else true)
 
   # Returns a map of card type names (as they appear in cards.json) to boolean values, indicating whether
@@ -195,12 +191,14 @@ class CardService
       .object()      # Objectify
       .value()
 
-  _isFilterApplicable: (desc, fieldArgs, queryArgs) ->
+  _isFilterApplicable: (desc, fieldArg, queryArgs) ->
     switch desc.type
       when 'numeric'
-        fieldArgs.operator? and fieldArgs.value?
+        fieldArg.operator? and fieldArg.value?
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
+      when 'cardSet'
+        fieldArg?
       else
         true
 
@@ -222,12 +220,13 @@ class CardService
         @_buildNumericFilter(filterDesc, filterArg)
       when 'inSet'
         @_buildInSetFilter(filterDesc, filterArg)
+      when 'cardSet'
+        @_buildCardSetFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
         console.warn "Unknown filter type: #{ filterDesc.type }"
 
-  # TODO document
   _buildNumericFilter: (filterDesc, filterArg) ->
     (card) ->
       cardFields =
@@ -242,7 +241,6 @@ class CardService
 
       false
 
-  # TODO document
   _buildInSetFilter: (filterDesc, filterArg) ->
     (card) ->
       # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
@@ -256,6 +254,12 @@ class CardService
       # Now that we have the card value, we have to map it to the boolean "set" field in the filter
       # argument.
       filterArg[filterDesc.modelMappings[fieldVal]]
+
+  # [todo] Support multiple card sets
+  _buildCardSetFilter: (filterDesc, filterArg) =>
+    set = @_setsById[filterArg]
+    (card) ->
+      card.setname == set.title
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
@@ -280,7 +284,7 @@ class CardService
   _buildQueryResult: (queryArgs, groups) ->
     ordinal = 0
     queryResult = new QueryResult
-    _(groups).each((group) ->
+    _.each(groups, (group) ->
       _.each(group.cards, (c) ->
         queryResult.addCard(c, group, ordinal++)))
     queryResult
@@ -288,24 +292,25 @@ class CardService
   _sortFnFor: (fieldName) =>
     switch fieldName
       when 'type'
-        (a, b) -> CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+        (a, b) => CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
       when 'faction'
-        (a, b) -> FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
+        (a, b) => FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
       when 'cost', 'factioncost'
-        (a, b) ->
+        (a, b) =>
           if a[fieldName] is undefined or b[fieldName] is undefined
             0 # Allow the next sort to take precedence
           else
             a[fieldName] - b[fieldName]
       when 'setname'
-        (a, b) -> SET_ORDINALS[a.setname] - SET_ORDINALS[b.setname]
+        (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
       else
-        (a, b) -> a[fieldName].localeCompare(b[fieldName])
+        (a, b) => a[fieldName].localeCompare(b[fieldName])
 
   _augmentCards: (cards) =>
-    for card in cards
+    _.each cards, (card) =>
       card.subtypes =
         if card.subtype?
+          # [todo] Consider scrubbing cards.json instead of handling multiple dash styles
           card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
         else
           []
@@ -316,16 +321,25 @@ class CardService
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
-        if @subTypes[side][st]?
-          @subTypes[side][st]++
-        else
-          @subTypes[side][st] = 1
+        @subTypes[side][st] ?= 0
+        @subTypes[side][st]++
 
       switch card.type
         when 'ICE'
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
         when 'Identity'
-          delete card.cost # It's unclear why the raw data has this field on identities -- it shouldn't
+          # It's unclear why the raw data has this field on identities -- it shouldn't. If it does
+          # it screws up grouping/sorting
+          # [todo] Consider whitelisting fields for specific types in cards.json
+          delete card.cost
+
+  _augmentSets: (sets) =>
+    _.each sets, (set, i) =>
+      set.id = _.idify(set.title)
+      set.ordinal = i
+      @_setsByTitle[set.title] = set
+      @_setsById[set.id] = set
+
 
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from

@@ -4,6 +4,7 @@ class UrlStateService
   # Mapping of how URLs appear in the data vs how they appear in the URL
   DATA_TO_URL_OPERATORS =
     '=': 'eq'
+    '≠': 'neq'
     '<': 'lt'
     '≤': 'lte'
     '>': 'gt'
@@ -46,15 +47,16 @@ class UrlStateService
           search[name] = "#{ urlOp }:#{ urlVal }"
         when 'inSet'
           search[name] =
-            switch name
-              when 'faction'
-                relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
-                @_factionSearchVal(relevantFactions, arg)
-              else
-                @$log.warn("No URL mapping available for #{ name }")
-                ''
+            if name is 'faction'
+              relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+              @_factionSearchVal(relevantFactions, arg)
+            else
+              @$log.warn("No URL mapping available for #{ name }")
+              ''
         when 'search'
           search.search = queryArgs.search
+        else
+          search[name] = arg
 
     # Set the generated URL
     @$location.url(url).search(search)
@@ -104,6 +106,7 @@ class UrlStateService
       )?
     ///
 
+  # [todo] This is getting a bit ugly. Consider a refactor
   _stateFromUrl: ->
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
 
@@ -111,53 +114,62 @@ class UrlStateService
     queryArgs = angular.copy(@filterDefaults)
     queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
 
-    if cardsMatch?
-      # Side
-      side =  cardsMatch[1]
-      queryArgs.side = _.capitalize(side)
-
-      # Active group
-      if cardsMatch[2]
-        queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
-
-      if cardsMatch[3]
-        selectedCardId = cardsMatch[3]
-
-      relevantFilters = @cardService.relevantFilters(queryArgs, false)
-      search = @$location.search()
-
-      for name, desc of relevantFilters
-        continue unless search[name]?
-
-        switch desc.type
-          when 'search'
-            queryArgs.search = search.search
-
-          when 'numeric'
-            [ op, val ] = search[name].split(':')
-            if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
-              break
-
-            queryArgs.fieldFilters[name] =
-              operator: URL_TO_DATA_OPERATORS[op],
-              value: Number(val)
-
-          when 'inSet'
-            if search[name] == 'all'
-              break
-
-            if name == 'faction'
-              flags = search[name].split(',')
-              relevantFactions = @factionUiMappingsBySide[side]
-              modelFlags = _.object(
-                _.map(flags, (f) -> _.findWhere(relevantFactions, abbr: f).model), [])
-
-              queryFactions = queryArgs.fieldFilters.faction
-              _.each(queryFactions, (val, key) -> queryFactions[key] = key of modelFlags)
-            else
-              @$log.warn("No URL mapping available for #{ name }")
-    else
+    # No URL match. Return default query arguments.
+    if !cardsMatch?
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
+      return [ queryArgs, undefined ]
+
+    # Side
+    side =  cardsMatch[1]
+    queryArgs.side = _.capitalize(side)
+
+    # Active group
+    if cardsMatch[2]
+      queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
+
+    if cardsMatch[3]
+      selectedCardId = cardsMatch[3]
+
+    relevantFilters = @cardService.relevantFilters(queryArgs, false)
+    search = @$location.search()
+
+    for name, desc of relevantFilters
+      if !search[name]?
+        continue
+
+      switch desc.type
+        when 'search'
+          queryArgs.search = search.search
+
+        when 'numeric'
+          [ op, val ] = search[name].split(':')
+          if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
+            break
+
+          queryArgs.fieldFilters[name] =
+            operator: URL_TO_DATA_OPERATORS[op]
+            value: Number(val)
+
+        when 'inSet'
+          if search[name] == 'all'
+            break
+
+          if name == 'faction'
+            flags = search[name].split(',')
+            relevantFactions = @factionUiMappingsBySide[side]
+            modelFlags = _.object(
+              _.map(flags, (f) ->
+                _.findWhere(relevantFactions, abbr: f).model), [])
+
+            queryFactions = queryArgs.fieldFilters.faction
+            _.each queryFactions, (val, key) ->
+              queryFactions[key] = key of modelFlags
+          else
+            @$log.warn("No URL mapping available for #{ name }")
+
+        else # switch
+          queryArgs.fieldFilters[name] = search[name]
+
 
     [ queryArgs, selectedCardId ]
 
