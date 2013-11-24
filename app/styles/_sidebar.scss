@@ -11,10 +11,10 @@ $dirty-color: #E59409; // TODO Integrate
 
   .filter-group {
     &.active h5 {
-      background: #e9e9e9;
-      color: #555;
+      background: $active-color;
+      color: white;
       text-shadow: none;
-      border-color: #d0d0d0;
+      border-color: $active-border-color;
 
       .icon-active-group {
         display: block;
