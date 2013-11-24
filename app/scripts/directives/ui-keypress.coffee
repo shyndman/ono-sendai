@@ -3,9 +3,18 @@ keypressHelper = (event, scope, element, attrs, $parse) ->
   params = scope.$eval(attrs['ui'+_.capitalize(event)])
 
   # Prepare combinations for simple checking
-  _.each params, (action, keys) ->
+  _.each params, (actionOrOptions, keys) ->
+    [ action, preventDefault, stopPropagation ] =
+      if _.isObject(actionOrOptions)
+        [ actionOrOptions.action, actionOrOptions.preventDefault, actionOrOptions.stopPropagation ]
+      else
+        [ actionOrOptions, false, false ]
+
     actionFn = $parse(action)
     element.on event, jwerty.event(keys, (e) ->
+      e.preventDefault() if preventDefault
+      e.stopPropagation() if stopPropagation
+
       # [todo] stopPropagation and preventDefault should be configurable
       scope.$apply ->
         actionFn(scope, $event: e))
