@@ -14,7 +14,7 @@ $dirty-color: #E59409; // TODO Integrate
       background: $active-color;
       color: white;
       text-shadow: none;
-      border-color: $active-border-color;
+      border-color: transparent;
 
       .icon-active-group {
         display: block;
