@@ -33,6 +33,9 @@ angular.module('deckBuilder')
 
       # UI -> Model
       inputElement.on('change', (e) ->
+        if scope.$$phase or scope.$root.$$phase
+          return
+
         scope.$apply ->
           ngModelCtrl.$setViewValue(inputElement.val()))
 
