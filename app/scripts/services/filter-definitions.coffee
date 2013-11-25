@@ -74,6 +74,8 @@ angular.module('deckBuilder')
           }
           {
             name: 'subtype'
+            type: 'inSet'
+            placeholder: 'Subtype'
             icon: 'subtype'
           }
           {
@@ -91,6 +93,8 @@ angular.module('deckBuilder')
           }
           {
             name: 'set'
+            type: 'inSet'
+            placeholder: 'Set'
             icon: 'set'
           }
         ]
