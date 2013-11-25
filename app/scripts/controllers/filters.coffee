@@ -10,6 +10,7 @@ angular.module('deckBuilder')
 
       $scope.filter.activeGroup = generalGroup
       factions[key] = true for key, val of factions
+      delete $scope.filter.fieldFilters.subtype
 
     $scope.labelledFieldId = (field) ->
       switch field.type
