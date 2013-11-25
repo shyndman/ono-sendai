@@ -249,9 +249,11 @@ class CardService
         else
           card[filterDesc.cardField]
 
-      # Now that we have the card value, we have to map it to the boolean "set" field in the filter
-      # argument.
-      filterArg[fieldVal]
+      switch filterDesc.subtype
+        when 'boolSet'
+          filterArg[fieldVal]?
+        else
+          filterArg of fieldVal
 
   # [todo] Support multiple card sets
   _buildCardSetFilter: (filterDesc, filterArg) =>

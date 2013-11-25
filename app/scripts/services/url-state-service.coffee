@@ -51,8 +51,7 @@ class UrlStateService
               relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
               @_factionSearchVal(relevantFactions, arg)
             else
-              @$log.warn("No URL mapping available for #{ name }")
-              ''
+              arg.join(',')
         when 'search'
           search.search = queryArgs.search
         else
@@ -167,7 +166,7 @@ class UrlStateService
             _.each queryFactions, (val, key) ->
               queryFactions[key] = key of modelFlags
           else
-            @$log.warn("No URL mapping available for #{ name }")
+            queryArgs.fieldFilters[name] = search[name].split(',')
 
         else # switch
           queryArgs.fieldFilters[name] = search[name]

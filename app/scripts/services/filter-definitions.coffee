@@ -204,6 +204,7 @@ angular.module('deckBuilder')
       fieldFilters:
         faction:
           type: 'inSet'
+          subtype: 'boolSet'
           cardField: 'faction'
         search:
           type: 'search'
@@ -216,6 +217,9 @@ angular.module('deckBuilder')
         setname:
           type: 'cardSet'
           cardField: 'setname'
+        subtype:
+          type: 'inSet'
+          cardField: 'subtypesSet'
     }
     identities: {
       cardType: 'Identity'
