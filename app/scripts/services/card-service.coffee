@@ -99,7 +99,8 @@ class CardService
     @_sets = []
     @_setsByTitle = {}
     @_setsById = {}
-    @subTypes = corp: {}, runner: {}
+    @subtypeCounts = corp: {}, runner: {}
+    @subtypes = corp: [], runner: []
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -334,8 +335,8 @@ class CardService
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
-        @subTypes[side][st] ?= 0
-        @subTypes[side][st]++
+        @subtypeCounts[side][st] ?= 0
+        @subtypeCounts[side][st]++
 
       switch card.type
         when 'ICE'
@@ -354,6 +355,19 @@ class CardService
       @_setsByTitle[set.title] = set
       @_setsById[set.id] = set
 
+  _initSubtypes: =>
+    @subtypes = _.object(
+      _.map(@subtypeCounts, (counts, side) ->
+        subtypes =
+          _(counts)
+            .chain()
+            .keys()
+            .sort()
+            .map((st) ->
+              id: _.idify(st)
+              title: st)
+            .value()
+        [side, subtypes]))
 
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
