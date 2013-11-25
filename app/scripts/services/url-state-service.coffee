@@ -155,13 +155,15 @@ class UrlStateService
             break
 
           if name == 'faction'
-            flags = search[name].split(',')
-            relevantFactions = @factionUiMappingsBySide[side]
-            modelFlags = _.object(
-              _.map(flags, (f) ->
-                _.findWhere(relevantFactions, abbr: f).model), [])
-
             queryFactions = queryArgs.fieldFilters.faction
+            factions = @factionUiMappingsBySide[side]
+
+            modelFlags = _.object(
+              _.map(
+                search[name].split(','),
+                (f) -> _.findWhere(factions, abbr: f).model)
+            , [])
+
             _.each queryFactions, (val, key) ->
               queryFactions[key] = key of modelFlags
           else
@@ -169,7 +171,6 @@ class UrlStateService
 
         else # switch
           queryArgs.fieldFilters[name] = search[name]
-
 
     [ queryArgs, selectedCardId ]
 
