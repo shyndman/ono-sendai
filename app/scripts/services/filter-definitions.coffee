@@ -73,6 +73,10 @@ angular.module('deckBuilder')
             icon: 'search'
           }
           {
+            name: 'subtype'
+            icon: 'subtype'
+          }
+          {
             name: 'cost'
             type: 'numeric'
             placeholder: 'Cost'
@@ -84,6 +88,10 @@ angular.module('deckBuilder')
             placeholder: 'Influence'
             icon: 'influence'
             max: 5
+          }
+          {
+            name: 'set'
+            icon: 'set'
           }
         ]
       },
