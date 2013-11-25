@@ -9,6 +9,7 @@ angular.module('deckBuilder')
       # Attach an ID for the label
       inputElement.attr('id', attrs.id)
 
+      # Initializes select2 with the provided data
       initSelect = (data) ->
         inputElement.select2(
           placeholder: attrs.placeholder
@@ -20,13 +21,14 @@ angular.module('deckBuilder')
       # Select2-ify the input element
       initSelect(data)
 
+      # Watch for data source changes
       scope.$watch(attrs.insetFilterSource, dataChanged = (newVal, oldVal) ->
         if newVal == oldVal
           return
-        initSelect(data).select2('val', '').val(''))
+        initSelect(data).select2('val', '').val('').change())
 
       inputElement.on('change', (e) ->
-        console.error(e)
+
       )
 
       # Clear the select's value on escape press
