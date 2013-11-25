@@ -1,13 +1,11 @@
 [todo] Collapsed mode for card groups
 [todo] Hotkeys
-[todo] Focus last selected value on dropdowns (may require rewrite)
 [todo] Add calculated max for filters
 [todo] Make it clear that moving back to the general filter will remove filters
 [todo] Screensaver with random flavor text
 [todo] Fix grunt-angular-templates
 [todo] Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
 [todo] Jinteki/Haas-Bioroid special deck URLs
-[fix] Enter key should not switch to corp
 [todo] humans.txt -- add it!
 [todo] Excluded general controls should explain through a tooltip why they're disabled
 [todo] Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
