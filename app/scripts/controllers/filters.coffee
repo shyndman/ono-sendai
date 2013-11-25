@@ -6,8 +6,16 @@ angular.module('deckBuilder')
 
     # Supply the sets
     cardService.getSets().then (sets) ->
+      # Filter out sets that aren't out yet
+      now = new Date().getTime()
+      setsToDate = _.filter sets, (set) ->
+        if set.released?
+          new Date(set.released).getTime() < now
+        else
+          false
+
       # Transform the sets for select2 consumption
-      $scope.sets = _.map sets, (set) ->
+      $scope.sets = _.map setsToDate, (set) ->
         id: set.id
         text: set.title
 
