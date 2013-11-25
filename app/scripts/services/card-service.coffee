@@ -99,7 +99,8 @@ class CardService
     @_sets = []
     @_setsByTitle = {}
     @_setsById = {}
-    @subTypes = corp: {}, runner: {}
+    @subtypeCounts = corp: {}, runner: {}
+    @subtypes = corp: [], runner: []
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -108,9 +109,20 @@ class CardService
         @searchService.indexCards(@_cards)
         @_augmentCards(@_cards)
         @_augmentSets(@_sets)
+        @_initSubtypes()
         @_cards)
 
-  getCards: -> @_cardsPromise
+  # Returns a promise that resolves when the card service is ready
+  ready: ->
+    @_cardsPromise
+
+  # Returns a promise that resolves to the cards after they've loaded
+  getCards: ->
+    @_cardsPromise
+
+  # Returns a promise that resolves to the sets after they've loaded
+  getSets: ->
+    @_cardsPromise.then => @_sets
 
   # Consumers should be aware that this will return undefined if the cards have not loaded
   getSetByTitle: (title) ->
@@ -241,9 +253,9 @@ class CardService
 
   _buildInSetFilter: (filterDesc, filterArg) ->
     (card) ->
-      # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
-      #     This could probably be accomplished differently, but quick and dirty for now.
       fieldVal =
+        # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
+        #     This could probably be accomplished differently, but quick and dirty for now.
         if filterDesc.cardField is 'faction'
           "#{ card.side }: #{ card.faction }"
         else
@@ -251,7 +263,7 @@ class CardService
 
       switch filterDesc.subtype
         when 'boolSet'
-          filterArg[fieldVal]?
+          filterArg[fieldVal]
         else
           filterArg of fieldVal
 
@@ -323,8 +335,8 @@ class CardService
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
-        @subTypes[side][st] ?= 0
-        @subTypes[side][st]++
+        @subtypeCounts[side][st] ?= 0
+        @subtypeCounts[side][st]++
 
       switch card.type
         when 'ICE'
@@ -343,6 +355,19 @@ class CardService
       @_setsByTitle[set.title] = set
       @_setsById[set.id] = set
 
+  _initSubtypes: =>
+    @subtypes = _.object(
+      _.map(@subtypeCounts, (counts, side) ->
+        subtypes =
+          _(counts)
+            .chain()
+            .keys()
+            .sort()
+            .map((st) ->
+              id: _.idify(st)
+              title: st)
+            .value()
+        [side, subtypes]))
 
 angular.module('deckBuilder')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from

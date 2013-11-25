@@ -64,6 +64,12 @@ $dirty-color: #E59409; // TODO Integrate
       width: calc(100% - 45px);
     }
 
+    inset-filter {
+      .input {
+        width: calc(100% - 45px);
+      }
+    }
+
     // Hack to make weirdo font appear correctly
     .icon-memory-unit {
       position: relative;
