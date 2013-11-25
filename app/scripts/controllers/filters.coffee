@@ -16,7 +16,7 @@ angular.module('deckBuilder')
       switch field.type
         when 'numeric'
           "#{field.name}-filter-operator"
-        when 'search'
+        when 'search', 'inSet'
           "#{field.name}-filter"
 
     $scope.toggleGroup = (group) ->
