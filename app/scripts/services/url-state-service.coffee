@@ -22,7 +22,7 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
 
     # Build the initial filter from the URL
-    [ @generatedQueryArgs, @selectedCardId ] = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs, selectedCard) ->
@@ -61,12 +61,14 @@ class UrlStateService
     @$location.url(url).search(search)
 
     # Determine whether we should push the URL, or whether we should replace it.
-    pushUrl = !selectedCard? and  @selectedCardId? or
-               selectedCard? and !@selectedCardId?
+    pushUrl = (!selectedCard? and  @selectedCardId?) or
+              ( selectedCard? and !@selectedCardId?) or
+              (@queryArgs.side != queryArgs.side)
     @$location.replace() if !pushUrl
 
     # Update local state
     @generatedUrl = @$location.url()
+    @queryArgs = angular.copy(queryArgs)
     @selectedCardId = selectedCard?.id
 
   # Returns the search value for
@@ -87,7 +89,7 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    [ @generatedQueryArgs, @selectedCardId ]  = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId ]  = @_stateFromUrl()
     @$rootScope.$broadcast('urlStateChange')
 
   _cardsUrlMatcher:

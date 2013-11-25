@@ -1,6 +1,6 @@
 angular.module('deckBuilder')
   .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
-    $scope.filter = urlStateService.generatedQueryArgs
+    $scope.filter = urlStateService.queryArgs
     $scope.grid = zoom: 0.35
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
@@ -89,7 +89,7 @@ angular.module('deckBuilder')
 
     # Watches for URL changes, to change selectedCard/
     $scope.$on 'urlStateChange', ->
-      $scope.filter = urlStateService.generatedQueryArgs
+      $scope.filter = urlStateService.queryArgs
       $scope.selectCard(_.findWhere($scope.cards, id: urlStateService.selectedCardId))
 
     # Limits URL updates. I find it distracting if it happens to ofter.
