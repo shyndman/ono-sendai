@@ -108,9 +108,20 @@ class CardService
         @searchService.indexCards(@_cards)
         @_augmentCards(@_cards)
         @_augmentSets(@_sets)
+        @_initSubtypes()
         @_cards)
 
-  getCards: -> @_cardsPromise
+  # Returns a promise that resolves when the card service is ready
+  ready: ->
+    @_cardsPromise
+
+  # Returns a promise that resolves to the cards after they've loaded
+  getCards: ->
+    @_cardsPromise
+
+  # Returns a promise that resolves to the sets after they've loaded
+  getSets: ->
+    @_cardsPromise.then => @_sets
 
   # Consumers should be aware that this will return undefined if the cards have not loaded
   getSetByTitle: (title) ->
