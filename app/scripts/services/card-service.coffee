@@ -197,10 +197,8 @@ class CardService
         fieldArg.operator? and fieldArg.value?
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
-      when 'cardSet'
-        fieldArg?
       else
-        true
+        fieldArg?
 
   _buildFilterFunction: (queryArgs) =>
     relevantFilters = @relevantFilters(queryArgs)
