@@ -9,7 +9,12 @@ pluralizeType = (type) ->
       "#{ type }s"
 
 angular.module('deckBuilder')
-  .filter 'cardUrl', ($log) ->
+  .filter 'cardUrl', ($log, $location) ->
+    urlPrefix =
+      if $location.$$html5
+        ''
+      else
+        '#!'
 
     # arg - optional argument for some urlTypes
     (card, urlType, arg) ->
@@ -20,11 +25,11 @@ angular.module('deckBuilder')
 
       switch urlType
         when 'type'
-          "/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
+          "#{ urlPrefix }/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'
-          "/cards/#{ side }?setname=#{ _.idify(card.setname) }"
+          "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }"
         when 'subtype'
-          "/cards/#{ side }?subtype=#{ _.idify(arg) }"
+          "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         else
           $log.warn("cardUrl: Unknown urlType #{ urlType }")
           ''
