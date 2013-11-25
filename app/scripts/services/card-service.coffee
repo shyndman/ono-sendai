@@ -263,7 +263,7 @@ class CardService
 
       switch filterDesc.subtype
         when 'boolSet'
-          filterArg[fieldVal]?
+          filterArg[fieldVal]
         else
           filterArg of fieldVal
 
