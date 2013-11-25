@@ -30,6 +30,7 @@ NOTES:
         <div ng-switch-when="search">
           <input type="search" id="{{field.name}}-filter" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
         </div>
+
         <div ng-switch-when="faction">
           <div class="btn-group">
             <button
@@ -43,6 +44,7 @@ NOTES:
             </button>
           </div>
         </div>
+
         <div ng-switch-when="numeric">
           <numeric-filter
             id="{{field.name}}-filter"
@@ -51,6 +53,12 @@ NOTES:
             max="{{field.max}}"
             ui-disabled="{{isFieldDisabled(field, group, filter.activeGroup, filter.side)}}">
           </numeric-filter>
+        </div>
+
+        <div ng-switch-when="inSet">
+          <inset-filter
+            placeholder="{{field.placeholder}}">
+          </inset-filter>
         </div>
       </div>
     </div>
