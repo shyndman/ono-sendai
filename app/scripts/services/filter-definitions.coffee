@@ -16,10 +16,12 @@ angular.module('deckBuilder')
         'Runner: Criminal': true
         'Runner: Shaper': true
         'Runner: Neutral': true
+      subtype: null
       cost:
         operator: '='
       factionCost:
         operator: '='
+      setname: null
       influenceLimit:
         operator: '='
       minimumDeckSize:
@@ -77,6 +79,7 @@ angular.module('deckBuilder')
             type: 'inSet'
             placeholder: 'Subtype'
             icon: 'subtype'
+            source: 'subtypes'
           }
           {
             name: 'cost'
@@ -92,10 +95,11 @@ angular.module('deckBuilder')
             max: 5
           }
           {
-            name: 'set'
+            name: 'setname'
             type: 'inSet'
             placeholder: 'Set'
             icon: 'set'
+            source: 'sets'
           }
         ]
       },
