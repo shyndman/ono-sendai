@@ -25,7 +25,7 @@ angular.module('deckBuilder')
       scope.$watch(attrs.insetFilterSource, dataChanged = (newVal, oldVal) ->
         if newVal == oldVal
           return
-        initSelect(data).select2('val', '').val('').change())
+        initSelect(newVal).select2('val', '').val('').change())
 
       # Model -> UI
       ngModelCtrl.$render = ->
