@@ -210,7 +210,7 @@ class CardService
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
       else
-        fieldArg?
+        fieldArg? and (!_.isString(fieldArg) or !!fieldArg.length)
 
   _buildFilterFunction: (queryArgs) =>
     relevantFilters = @relevantFilters(queryArgs)

@@ -3,7 +3,7 @@ angular.module('deckBuilder')
     template: '<div class="input"></div>'
     restrict: 'E'
     require: 'ngModel'
-    link: (scope, element, attrs, modelCtrl) ->
+    link: (scope, element, attrs, ngModelCtrl) ->
       inputElement = element.find('.input')
 
       # Attach an ID for the label
@@ -27,12 +27,17 @@ angular.module('deckBuilder')
           return
         initSelect(data).select2('val', '').val('').change())
 
-      inputElement.on('change', (e) ->
+      # Model -> UI
+      ngModelCtrl.$render = ->
+        inputElement.select2('val', ngModelCtrl.$modelValue)
 
-      )
+      # UI -> Model
+      inputElement.on('change', (e) ->
+        scope.$apply ->
+          ngModelCtrl.$setViewValue(inputElement.val()))
 
       # Clear the select's value on escape press
       element.keydown(jwerty.event('esc', (e) ->
-        inputElement.select2('val', ''))
+        inputElement.select2('val', '').change())
       )
   )
