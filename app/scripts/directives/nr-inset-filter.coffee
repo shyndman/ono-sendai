@@ -1,28 +1,36 @@
 angular.module('deckBuilder')
-  .directive('insetFilter', () ->
+  .directive('insetFilter', ($parse) ->
     template: '<div class="input"></div>'
     restrict: 'E'
-    scope: {
-      queryArg: '=queryArg'
-      placeholder: '@'
-      id: '@'
-    }
-    link: (scope, element, attrs) ->
-      element.removeAttr('id')
-
-      # This is a function because select2 replaces its target with its own content, and always want
-      # to point to the current .input element.
+    require: 'ngModel'
+    link: (scope, element, attrs, modelCtrl) ->
       inputElement = element.find('.input')
 
       # Attach an ID for the label
-      inputElement.attr('id', scope.id)
+      inputElement.attr('id', attrs.id)
+
+      initSelect = (data) ->
+        inputElement.select2(
+          placeholder: attrs.placeholder
+          data: data)
+
+      # Grab the data
+      data = $parse(attrs.insetFilterSource)(scope) ? []
 
       # Select2-ify the input element
-      inputElement.select2(
-        placeholder: scope.placeholder
-        # Hides the search field
-        # minimumResultsForSearch: -1
-        data: [ id: 1, text: '123' ])
+      initSelect(data)
 
+      scope.$watch(attrs.insetFilterSource, dataChanged = (newVal, oldVal) ->
+        if newVal == oldVal
+          return
+        initSelect(data).select2('val', '').val(''))
 
+      inputElement.on('change', (e) ->
+        console.error(e)
+      )
+
+      # Clear the select's value on escape press
+      element.keydown(jwerty.event('esc', (e) ->
+        inputElement.select2('val', ''))
+      )
   )
