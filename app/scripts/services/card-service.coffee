@@ -253,9 +253,9 @@ class CardService
 
   _buildInSetFilter: (filterDesc, filterArg) ->
     (card) ->
-      # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
-      #     This could probably be accomplished differently, but quick and dirty for now.
       fieldVal =
+        # XXX Special case, to avoid ambiguity between the two Neutral factions (Runner/Corp).
+        #     This could probably be accomplished differently, but quick and dirty for now.
         if filterDesc.cardField is 'faction'
           "#{ card.side }: #{ card.faction }"
         else
