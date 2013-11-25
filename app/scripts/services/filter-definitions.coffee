@@ -7,15 +7,15 @@ angular.module('deckBuilder')
     groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:
-        haasBioroid: true
-        jinteki: true
-        nbn: true
-        weyland: true
-        corpNeutral: true
-        anarch: true
-        criminal: true
-        shaper: true
-        runnerNeutral: true
+        'Corp: Haas-Bioroid': true
+        'Corp: Jinteki': true
+        'Corp: NBN': true
+        'Corp: Weyland Consortium': true
+        'Corp: Neutral': true
+        'Runner: Anarch': true
+        'Runner: Criminal': true
+        'Runner: Shaper': true
+        'Runner: Neutral': true
       cost:
         operator: '='
       factionCost:
@@ -53,17 +53,17 @@ angular.module('deckBuilder')
             icon: 'faction'
             side:
               corp: [
-                { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'haasBioroid' }
-                { name: 'Jinteki',            abbr: 'J',   model: 'jinteki' }
-                { name: 'NBN',                abbr: 'NBN', model: 'nbn' }
-                { name: 'Weyland Consortium', abbr: 'W',   model: 'weyland' }
-                { name: 'Neutral',            abbr: 'N',   model: 'corpNeutral' }
+                { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'Corp: Haas-Bioroid' }
+                { name: 'Jinteki',            abbr: 'J',   model: 'Corp: Jinteki' }
+                { name: 'NBN',                abbr: 'NBN', model: 'Corp: NBN' }
+                { name: 'Weyland Consortium', abbr: 'W',   model: 'Corp: Weyland Consortium' }
+                { name: 'Neutral',            abbr: 'N',   model: 'Corp: Neutral' }
               ]
               runner: [
-                { name: 'Anarch',             abbr: 'A',   model: 'anarch' }
-                { name: 'Criminal',           abbr: 'C',   model: 'criminal' }
-                { name: 'Shaper',             abbr: 'S',   model: 'shaper' }
-                { name: 'Neutral',            abbr: 'N',   model: 'runnerNeutral' }
+                { name: 'Anarch',             abbr: 'A',   model: 'Runner: Anarch' }
+                { name: 'Criminal',           abbr: 'C',   model: 'Runner: Criminal' }
+                { name: 'Shaper',             abbr: 'S',   model: 'Runner: Shaper' }
+                { name: 'Neutral',            abbr: 'N',   model: 'Runner: Neutral' }
               ]
           }
           {
@@ -205,17 +205,6 @@ angular.module('deckBuilder')
         faction:
           type: 'inSet'
           cardField: 'faction'
-          modelMappings:
-            # Note the leading side, in order to disambiguate the neutral cards
-            'Corp: Haas-Bioroid': 'haasBioroid'
-            'Corp: Jinteki': 'jinteki'
-            'Corp: NBN': 'nbn'
-            'Corp: Weyland Consortium': 'weyland'
-            'Corp: Neutral': 'corpNeutral'
-            'Runner: Anarch': 'anarch'
-            'Runner: Criminal': 'criminal'
-            'Runner: Shaper': 'shaper'
-            'Runner: Neutral': 'runnerNeutral'
         search:
           type: 'search'
         cost:

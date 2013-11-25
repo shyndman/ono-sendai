@@ -253,7 +253,7 @@ class CardService
 
       # Now that we have the card value, we have to map it to the boolean "set" field in the filter
       # argument.
-      filterArg[filterDesc.modelMappings[fieldVal]]
+      filterArg[fieldVal]
 
   # [todo] Support multiple card sets
   _buildCardSetFilter: (filterDesc, filterArg) =>
@@ -308,15 +308,17 @@ class CardService
 
   _augmentCards: (cards) =>
     _.each cards, (card) =>
+      # Does the trick for now
+      card.id = _.idify(card.title)
+
+      # Parse out subtypes
       card.subtypes =
         if card.subtype?
           # [todo] Consider scrubbing cards.json instead of handling multiple dash styles
           card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
         else
           []
-
-      # Does the trick for now
-      card.id = _.idify(card.title)
+      card.subtypesSet = _.object(_.map(card.subtypes, _.idify), [])
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
@@ -326,6 +328,7 @@ class CardService
 
       switch card.type
         when 'ICE'
+          # [todo] This isn't perfect, because it doesn't consider advanceables.
           card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
         when 'Identity'
           # It's unclear why the raw data has this field on identities -- it shouldn't. If it does
