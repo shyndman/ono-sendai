@@ -20,32 +20,44 @@
         <span class="close" ng-click="deselectCard()">&times;</span>
       </h2>
       <div class="info">
-        <div>
-          <div class="info-row">
-            <label>From:</label>
-            <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
-            <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
-              <span ng-if="isShortCard(selectedCard)">only</span>
-              {{selectedCard.quantity}} in set
-            </small>
-          </div>
-          <div class="info-row">
-            <label>Type:</label>
-            <a ng-href="{{selectedCard | cardUrl:'type'}}">
-              {{selectedCard.type}}
-            </a>
-          </div>
-          <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
-            <label>Subtypes:</label>
-            <span ng-repeat="subtype in selectedCard.subtypes">
-              <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
-            </span>
-          </div>
-          <!--div class="info-row">
-            <label>Notes:</label>
-            <div>This is a test. This is a test. This is a test. This is a test. This is a test.</div>
-          </div-->
+
+        <div class="info-nav btn-group">
+          <button type="button" class="btn btn-sm btn-default active"><i class="icon-info"></i></button>
+          <button type="button" class="btn btn-sm btn-default"><i class="icon-calculator"></i></button>
         </div>
+
+        <div class="info-row">
+          <label>Type:</label>
+          <a ng-href="{{selectedCard | cardUrl:'type'}}">
+            {{selectedCard.type}}
+          </a>
+        </div>
+        <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
+          <label>Subtypes:</label>
+          <span ng-repeat="subtype in selectedCard.subtypes">
+            <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
+          </span>
+        </div>
+        <div class="info-row">
+          <label>From:</label>
+          <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
+          <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
+            <span ng-if="isShortCard(selectedCard)">only</span>
+            {{selectedCard.quantity}} in set
+          </small>
+        </div>
+
+        <!--div class="info-row cost-to-break"
+             ng-if="isCostToBreakVisible(selectedCard)">
+          <label><i class="icon-credit"></i> to Break:</label>
+          <a href="">Show</a>
+        </div-->
+
+        <!--div class="info-row">
+          <label>Notes:</label>
+          <div>This is a test. This is a test. This is a test. This is a test. This is a test.</div>
+        </div-->
+
         <ul class="links">
           <!-- Reddit cards of the day -->
           <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">

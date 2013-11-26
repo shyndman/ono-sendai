@@ -173,7 +173,7 @@ nr-cards-view {
       background: rgba(255, 255, 255, 0.8);
 
       h2 {
-        margin-bottom: 17px;
+        margin-bottom: 22px;
 
         .close {
           opacity: 0.3;
@@ -214,6 +214,12 @@ nr-cards-view {
         height: 418px;
         float: right;
 
+        .info-nav {
+          position: absolute;
+          top: 51px;
+          right: 27px;
+        }
+
         h3 {
           margin: 4px 0 10px 0;
           font-size: 16px;
@@ -231,6 +237,10 @@ nr-cards-view {
             width: 74px;
             float: left;
           }
+        }
+
+        small {
+          margin-left: 3px;
         }
 
         .short-cards {
