@@ -13,6 +13,7 @@
 [todo] Rename "filter" to "queryArgs" across the board
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] For ICE/breakers -- cost to break calculator
+[todo] Scrolling on the card view
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
