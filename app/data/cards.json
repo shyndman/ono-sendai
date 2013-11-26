@@ -151,7 +151,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Chip",
-      "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>icebreakers</strong> or for installing <strong>virus</strong> programs.",
+      "text": "1[Recurring Credits]\nUse this credit to pay for using <strong>icebreakers</strong> or for installing <strong>virus</strong> programs.",
       "title": "Cyberfeeder",
       "type": "Hardware"
     },
@@ -169,7 +169,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+2[Memory Unit]\r\nWhenever you install a <strong>virus</strong> program, place 1 virus counter on that program.\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[Memory Unit]\nWhenever you install a <strong>virus</strong> program, place 1 virus counter on that program.\nLimit 1 <strong>console</strong> per player.",
       "title": "Grimoire",
       "type": "Hardware"
     },
@@ -189,7 +189,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Fracter",
-      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\r\n1[Credits]: +1 strength.",
+      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "Corroder",
       "type": "Program"
     },
@@ -207,7 +207,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\r\n<strong>Hosted virus counter</strong>: Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
+      "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n<strong>Hosted virus counter</strong>: Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
       "title": "Datasucker",
       "type": "Program"
     },
@@ -225,7 +225,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Daemon",
-      "text": "Djinn can host up to 3[Memory Unit] of non-<strong>icebreaker</strong> programs.\r\nThe memory costs of hosted programs do not count against your memory limit.\r\n[Click], 1[Credits]: Search your stack for a <strong>virus</strong> program, reveal it, and add it to your grip. Shuffle your stack.",
+      "text": "Djinn can host up to 3[Memory Unit] of non-<strong>icebreaker</strong> programs.\nThe memory costs of hosted programs do not count against your memory limit.\n[Click], 1[Credits]: Search your stack for a <strong>virus</strong> program, reveal it, and add it to your grip. Shuffle your stack.",
       "title": "Djinn",
       "type": "Program"
     },
@@ -252,7 +252,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Medium.\r\nEach virus counter after the first on Medium allows you to access 1 additional card from R&D whenever you access cards from R&D.",
+      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Medium.\nEach virus counter after the first on Medium allows you to access 1 additional card from R&D whenever you access cards from R&D.",
       "title": "Medium",
       "type": "Program"
     },
@@ -290,7 +290,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Install Parasite only on a rezzed piece of ice.\r\nHost ice has -1 strength for each virus counter on Parasite and is trashed if its strength is 0 or less.\r\nWhen your turn begins, place 1 virus counter on Parasite.",
+      "text": "Install Parasite only on a rezzed piece of ice.\nHost ice has -1 strength for each virus counter on Parasite and is trashed if its strength is 0 or less.\nWhen your turn begins, place 1 virus counter on Parasite.",
       "title": "Parasite",
       "type": "Program"
     },
@@ -318,7 +318,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - AI",
-      "text": "3[Credits]: Break ice subroutine on a piece of ice with 0 or less strength.\r\n1[Credits]: Ice has -1 strength.\r\n1[Credits]: +1 strength.",
+      "text": "3[Credits]: Break ice subroutine on a piece of ice with 0 or less strength.\n1[Credits]: Ice has -1 strength.\n1[Credits]: +1 strength.",
       "title": "Wyrm",
       "type": "Program"
     },
@@ -523,7 +523,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+1[Memory Unit]\r\n\r\nGain 1[Credits] whenever you make a successful run.\r\n\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[Memory Unit]\n\nGain 1[Credits] whenever you make a successful run.\n\nLimit 1 <strong>console</strong> per player.",
       "title": "Desperado",
       "type": "Hardware"
     },
@@ -550,7 +550,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Fracter",
-      "text": "2[Credits]: Break <strong>barrier</strong> subroutine.\r\n2[Credits]: +3 strength.",
+      "text": "2[Credits]: Break <strong>barrier</strong> subroutine.\n2[Credits]: +3 strength.",
       "title": "Aurora",
       "type": "Program"
     },
@@ -577,7 +577,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Killer",
-      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +1 strength.\r\nWhen you install Femme Fatale, choose an installed piece of ice. When you encounter that ice, you may spend 1[Credits] per subroutine on that ice to bypass it.",
+      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n2[Credits]: +1 strength.\nWhen you install Femme Fatale, choose an installed piece of ice. When you encounter that ice, you may spend 1[Credits] per subroutine on that ice to bypass it.",
       "title": "Femme Fatale",
       "type": "Program"
     },
@@ -597,7 +597,7 @@
       "side": "Runner",
       "strength": 0,
       "subtype": "Icebreaker - Killer",
-      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n3[Credits]: +5 strength.",
+      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n3[Credits]: +5 strength.",
       "title": "Ninja",
       "type": "Program"
     },
@@ -640,7 +640,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Job",
-      "text": "Place 8[Credits] from the bank on Bank Job when it is installed. When there are no credits left on Bank Job, trash it.\r\nWhenever you make a successful run on a remote server, instead of accessing cards you may take any number of credits from Bank Job.",
+      "text": "Place 8[Credits] from the bank on Bank Job when it is installed. When there are no credits left on Bank Job, trash it.\nWhenever you make a successful run on a remote server, instead of accessing cards you may take any number of credits from Bank Job.",
       "title": "Bank Job",
       "type": "Resource"
     },
@@ -649,7 +649,7 @@
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
-      "flavor": "\"My roomie, he had a cousin with a college girlfriend whose brother's best friend was an addict, and the addict's mother used to live here. So yeah, there's a connection.\"\r\n-Lez \"Rockfist\" S.",
+      "flavor": "\"My roomie, he had a cousin with a college girlfriend whose brother's best friend was an addict, and the addict's mother used to live here. So yeah, there's a connection.\"\n-Lez \"Rockfist\" S.",
       "illustrator": "Tim Durning",
       "imagesrc": "/images/cards/crash-space.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01030",
@@ -658,7 +658,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Location",
-      "text": "2[Recurring Credits]\r\nUse these credits to pay for removing tags.\r\n[Trash]: Prevent up to 3 meat damage.",
+      "text": "2[Recurring Credits]\nUse these credits to pay for removing tags.\n[Trash]: Prevent up to 3 meat damage.",
       "title": "Crash Space",
       "type": "Resource"
     },
@@ -693,7 +693,7 @@
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
-      "flavor": "\"I get the feeling that this is the wrong place, Frank.\"\r\n\"What makes you say that D?\"\r\n\"The curlers.\"",
+      "flavor": "\"I get the feeling that this is the wrong place, Frank.\"\n\"What makes you say that D?\"\n\"The curlers.\"",
       "illustrator": "Mauricio Herrera",
       "imagesrc": "/images/cards/decoy.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01032",
@@ -836,7 +836,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Link",
-      "text": "+1[Link]\r\nWhen Rabbit Hole is installed, you may search your stack for another copy of Rabbit Hole and install it by paying its install cost. Shuffle your stack.",
+      "text": "+1[Link]\nWhen Rabbit Hole is installed, you may search your stack for another copy of Rabbit Hole and install it by paying its install cost. Shuffle your stack.",
       "title": "Rabbit Hole",
       "type": "Hardware"
     },
@@ -854,7 +854,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Mod",
-      "text": "Install The Personal Touch only on an <strong>icebreaker.</strong>\r\nHost <strong>icebreaker</strong> has +1 strength.",
+      "text": "Install The Personal Touch only on an <strong>icebreaker.</strong>\nHost <strong>icebreaker</strong> has +1 strength.",
       "title": "The Personal Touch",
       "type": "Hardware"
     },
@@ -871,7 +871,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+2[Memory Unit] +2[Link]\r\n2[Recurring Credits]\r\nUse the credits to pay for using <strong>icebreakers.</strong>\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+2[Memory Unit] +2[Link]\n2[Recurring Credits]\nUse the credits to pay for using <strong>icebreakers.</strong>\nLimit 1 <strong>console</strong> per player.",
       "title": "The Toolbox",
       "type": "Hardware"
     },
@@ -891,7 +891,7 @@
       "side": "Runner",
       "strength": 3,
       "subtype": "Icebreaker - Fracter",
-      "text": "2[Credits]: Break up to 2 <strong>barrier</strong> subroutines.\r\n1[Credits]: +1 strength for the remainder of this run.",
+      "text": "2[Credits]: Break up to 2 <strong>barrier</strong> subroutines.\n1[Credits]: +1 strength for the remainder of this run.",
       "title": "Battering Ram",
       "type": "Program"
     },
@@ -911,7 +911,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Decoder",
-      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength for the remainder of this run.",
+      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength for the remainder of this run.",
       "title": "Gordian Blade",
       "type": "Program"
     },
@@ -966,7 +966,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Killer",
-      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +1 strength for the remainder of this run.",
+      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n2[Credits]: +1 strength for the remainder of this run.",
       "title": "Pipeline",
       "type": "Program"
     },
@@ -1063,7 +1063,7 @@
       "side": "Runner",
       "strength": 0,
       "subtype": "Icebreaker - AI - Virus",
-      "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\n[Click]: Place 1 virus counter on Crypsis.\r\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
+      "text": "1[Credits]: Break ice subroutine.\n1[Credits]: +1 strength.\n[Click]: Place 1 virus counter on Crypsis.\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
       "title": "Crypsis",
       "type": "Program"
     },
@@ -1099,7 +1099,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "subtype": "Job",
-      "text": "Place 12[Credits] from the bank on Armitage Codebusting when it is installed. When there are no credits left on Armitage Codebusting, trash it.\r\n\r\n[Click]: Take 2[Credits] from Armitage Codebusting.",
+      "text": "Place 12[Credits] from the bank on Armitage Codebusting when it is installed. When there are no credits left on Armitage Codebusting, trash it.\n\n[Click]: Take 2[Credits] from Armitage Codebusting.",
       "title": "Armitage Codebusting",
       "type": "Resource"
     },
@@ -1132,7 +1132,7 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "subtype": "Natural",
-      "text": "3[Recurring Credits]\r\nUse these credits to trash cards.",
+      "text": "3[Recurring Credits]\nUse these credits to trash cards.",
       "title": "Whizzard: Master Gamer",
       "type": "Identity"
     },
@@ -1157,7 +1157,7 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+1[Memory Unit], 2[Recurring Credits]\r\nUse these credits to pay for using <strong>icebreakers</strong>.\r\nWhenever there is a successful trace during a run, suffer 1 brain damage.\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[Memory Unit], 2[Recurring Credits]\nUse these credits to pay for using <strong>icebreakers</strong>.\nWhenever there is a successful trace during a run, suffer 1 brain damage.\nLimit 1 <strong>console</strong> per player.",
       "title": "Spinal Modem",
       "type": "Hardware"
     },
@@ -1184,7 +1184,7 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Place 2 virus counters on Imp when it is installed.\r\nOnce per turn, you may remove 1 hosted virus counter to trash a card you access at no cost (even if it cannot normally be trashed).",
+      "text": "Place 2 virus counters on Imp when it is installed.\nOnce per turn, you may remove 1 hosted virus counter to trash a card you access at no cost (even if it cannot normally be trashed).",
       "title": "Imp",
       "type": "Program"
     },
@@ -1250,7 +1250,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Decoder",
-      "text": "2[Credits]: Break <strong>code gate</strong> subroutine.\r\n2[Credits]: +3 strength.",
+      "text": "2[Credits]: Break <strong>code gate</strong> subroutine.\n2[Credits]: +3 strength.",
       "title": "Peacock",
       "type": "Program"
     },
@@ -1278,7 +1278,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Decoder - Cloud",
-      "text": "If you have at least 2[Link], the memory cost of ZU.13 Key Master is 0, even if it is not installed.\r\n1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength.",
+      "text": "If you have at least 2[Link], the memory cost of ZU.13 Key Master is 0, even if it is not installed.\n1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "ZU.13 Key Master",
       "type": "Program"
     },
@@ -1304,7 +1304,7 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "subtype": "Connection - Link - Virtual",
-      "text": "+1[Link]\r\n[Trash]: Choose an <strong>icebreaker</strong>. That <strong>icebreaker</strong> has +2 strength until the end of the turn.",
+      "text": "+1[Link]\n[Trash]: Choose an <strong>icebreaker</strong>. That <strong>icebreaker</strong> has +2 strength until the end of the turn.",
       "title": "The Helpful AI",
       "type": "Resource"
     },
@@ -1321,7 +1321,7 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "subtype": "Gear",
-      "text": "Place 4 power counters on Plascrete Carapace when it is installed. When there are no power counters left on Plascrete Carapace, trash it.\r\n<strong>Hosted power counter:</strong> Prevent 1 meat damage.",
+      "text": "Place 4 power counters on Plascrete Carapace when it is installed. When there are no power counters left on Plascrete Carapace, trash it.\n<strong>Hosted power counter:</strong> Prevent 1 meat damage.",
       "title": "Plascrete Carapace",
       "type": "Hardware"
     },
@@ -1372,7 +1372,7 @@
       ],
       "setname": "Trace Amount",
       "side": "Runner",
-      "text": "Place 16[Credits] from the bank on Liberated Account when it is installed. When there are no credits left on Liberated Account, trash it.\r\n[Click]: Take 4[Credits] from Liberated Account.",
+      "text": "Place 16[Credits] from the bank on Liberated Account when it is installed. When there are no credits left on Liberated Account, trash it.\n[Click]: Take 4[Credits] from Liberated Account.",
       "title": "Liberated Account",
       "type": "Resource"
     },
@@ -1440,7 +1440,7 @@
       "setname": "Trace Amount",
       "side": "Runner",
       "subtype": "Connection - Link",
-      "text": "1[Recurring Credits]\r\nUse this credit during traces.\r\nGain 1[Credits] whenever the Corp rezzes a piece of ice.",
+      "text": "1[Recurring Credits]\nUse this credit during traces.\nGain 1[Credits] whenever the Corp rezzes a piece of ice.",
       "title": "Compromised Employee",
       "type": "Resource"
     },
@@ -1465,7 +1465,7 @@
       ],
       "setname": "Trace Amount",
       "side": "Runner",
-      "text": "Play only if you made a successful run on R&D, HQ, and Archives this turn.\r\nAdd Notoriety to your score area as an agenda worth 1 agenda point.",
+      "text": "Play only if you made a successful run on R&D, HQ, and Archives this turn.\nAdd Notoriety to your score area as an agenda worth 1 agenda point.",
       "title": "Notoriety",
       "type": "Event"
     },
@@ -1485,7 +1485,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Fracter",
-      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\r\n1[Credits]: +1 strength.\r\nWhenever you use Snowball to break a subroutine, it has +1 strength for the remainder of the run.",
+      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n1[Credits]: +1 strength.\nWhenever you use Snowball to break a subroutine, it has +1 strength for the remainder of the run.",
       "title": "Snowball",
       "type": "Program"
     },
@@ -1529,7 +1529,7 @@
       "setname": "Cyber Exodus",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever you make a successful run on HQ, place 1 virus counter on Nerve Agent.\r\nEach virus counter after the first on Nerve Agent allows you to access 1 additional card from HQ whenever you access cards from HQ.",
+      "text": "Whenever you make a successful run on HQ, place 1 virus counter on Nerve Agent.\nEach virus counter after the first on Nerve Agent allows you to access 1 additional card from HQ whenever you access cards from HQ.",
       "title": "Nerve Agent",
       "type": "Program"
     },
@@ -1581,7 +1581,7 @@
       "setname": "Cyber Exodus",
       "side": "Runner",
       "subtype": "Sabotage",
-      "text": "Play only if you made a successful run on HQ this turn.\r\nDerez a piece of ice.",
+      "text": "Play only if you made a successful run on HQ this turn.\nDerez a piece of ice.",
       "title": "Emergency Shutdown",
       "type": "Event"
     },
@@ -1707,7 +1707,7 @@
       "setname": "Cyber Exodus",
       "side": "Runner",
       "subtype": "Console",
-      "text": "Dinosaurus can host a single non-<strong>AI icebreaker</strong>. The memory cost of the hosted <strong>icebreaker</strong> does not count against your memory limit.\r\nHosted <strong>icebreaker</strong> has +2 strength.\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "Dinosaurus can host a single non-<strong>AI icebreaker</strong>. The memory cost of the hosted <strong>icebreaker</strong> does not count against your memory limit.\nHosted <strong>icebreaker</strong> has +2 strength.\nLimit 1 <strong>console</strong> per player.",
       "title": "Dinosaurus",
       "type": "Hardware"
     },
@@ -1732,7 +1732,7 @@
       "setname": "Cyber Exodus",
       "side": "Runner",
       "subtype": "Location",
-      "text": "[Click]: Host a program or piece of hardware from your grip on Personal Workshop and place power counters on it equal to its install cost.\r\n1[Credits]: Remove 1 power counter from a hosted card.\r\nWhen your turn begins, remove 1 power counter from a hosted card.\r\nWhen there are no power counters left on a hosted card, install it, ignoring all costs.",
+      "text": "[Click]: Host a program or piece of hardware from your grip on Personal Workshop and place power counters on it equal to its install cost.\n1[Credits]: Remove 1 power counter from a hosted card.\nWhen your turn begins, remove 1 power counter from a hosted card.\nWhen there are no power counters left on a hosted card, install it, ignoring all costs.",
       "title": "Personal Workshop",
       "type": "Resource"
     },
@@ -1817,7 +1817,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Decoder",
-      "text": "2[Credits]: Break up to 2 <strong>code gate</strong> subroutines.\r\n1[Credits]: +1 strength.",
+      "text": "2[Credits]: Break up to 2 <strong>code gate</strong> subroutines.\n1[Credits]: +1 strength.",
       "title": "Force of Nature",
       "type": "Program"
     },
@@ -1843,7 +1843,7 @@
       "setname": "A Study in Static",
       "side": "Runner",
       "subtype": "Connection - Seedy",
-      "text": "2[Recurring Credits]\r\nUse these credits to trash cards.",
+      "text": "2[Recurring Credits]\nUse these credits to trash cards.",
       "title": "Scrubber",
       "type": "Resource"
     },
@@ -1869,7 +1869,7 @@
       "setname": "A Study in Static",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+1[Memory Unit]\r\nOnce per turn, you may immediately make another run when a successful run ends.\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+1[Memory Unit]\nOnce per turn, you may immediately make another run when a successful run ends.\nLimit 1 <strong>console</strong> per player.",
       "title": "Doppelg\u00e4nger",
       "type": "Hardware"
     },
@@ -1923,7 +1923,7 @@
       "side": "Runner",
       "strength": 10,
       "subtype": "Icebreaker",
-      "text": "[Trash]: Break any number of <strong>AP</strong> subroutines.\r\n[Trash]: Prevent any amount of net damage.",
+      "text": "[Trash]: Break any number of <strong>AP</strong> subroutines.\n[Trash]: Prevent any amount of net damage.",
       "title": "Deus X",
       "type": "Program"
     },
@@ -1974,7 +1974,7 @@
       "setname": "A Study in Static",
       "side": "Runner",
       "subtype": "Connection",
-      "text": "2[Recurring Credits]\r\nUse these credits to install hardware.",
+      "text": "2[Recurring Credits]\nUse these credits to install hardware.",
       "title": "Inside Man",
       "type": "Resource"
     },
@@ -2025,7 +2025,7 @@
       ],
       "setname": "Humanity's Shadow",
       "side": "Runner",
-      "text": "Play only if you placed at least 1 virus counter on a program this turn.\r\nPlace 2 virus counters on that program.",
+      "text": "Play only if you placed at least 1 virus counter on a program this turn.\nPlace 2 virus counters on that program.",
       "title": "Surge",
       "type": "Event"
     },
@@ -2034,7 +2034,7 @@
       "cost": 3,
       "faction": "Anarch",
       "factioncost": 2,
-      "flavor": "And all should cry, Beware! Beware!\r\nHis flashing eyes, his floating hair!\r\nWeave a circle round him thrice,\r\nAnd close your eyes with holy dread,\r\nFor he on honey-dew hath fed,\r\nAnd drunk the milk of Paradise.\r\n-Samuel Taylor Coleridge\r\n",
+      "flavor": "And all should cry, Beware! Beware!\nHis flashing eyes, his floating hair!\nWeave a circle round him thrice,\nAnd close your eyes with holy dread,\nFor he on honey-dew hath fed,\nAnd drunk the milk of Paradise.\n-Samuel Taylor Coleridge\n",
       "illustrator": "Andrew Mar",
       "imagesrc": "/images/cards/xanadu.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02082",
@@ -2160,7 +2160,7 @@
       "setname": "Humanity's Shadow",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "X[Recurring Credits]\r\nUse these credits during runs on HQ. X is the number of virus counters on Pheromones.\r\nWhenever you make a successful run on HQ, place 1 virus counter on Pheromones.",
+      "text": "X[Recurring Credits]\nUse these credits during runs on HQ. X is the number of virus counters on Pheromones.\nWhenever you make a successful run on HQ, place 1 virus counter on Pheromones.",
       "title": "Pheromones",
       "type": "Program"
     },
@@ -2219,7 +2219,7 @@
       "cost": 5,
       "faction": "Shaper",
       "factioncost": 1,
-      "flavor": "\"The itsy bitsy spider went up the data spout\u2026\"\r\n-Chaos Theory",
+      "flavor": "\"The itsy bitsy spider went up the data spout\u2026\"\n-Chaos Theory",
       "illustrator": "JuanManuel Tumburus",
       "imagesrc": "/images/cards/creeper.png",
       "memoryunits": 1,
@@ -2238,7 +2238,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Killer - Cloud",
-      "text": "If you have at least 2[Link], the memory cost of Creeper is 0, even if it is not installed.\r\n2[Credits]: Break <strong>sentry</strong> subroutine.\r\n1[Credits]: +1 strength.",
+      "text": "If you have at least 2[Link], the memory cost of Creeper is 0, even if it is not installed.\n2[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "Creeper",
       "type": "Program"
     },
@@ -2263,7 +2263,7 @@
       ],
       "setname": "Humanity's Shadow",
       "side": "Runner",
-      "text": "Play only if you stole an agenda this turn.\r\nChoose a server. The Corp trashes 1 piece of ice protecting that server.",
+      "text": "Play only if you stole an agenda this turn.\nChoose a server. The Corp trashes 1 piece of ice protecting that server.",
       "title": "Kraken",
       "type": "Event"
     },
@@ -2289,7 +2289,7 @@
       "setname": "Humanity's Shadow",
       "side": "Runner",
       "subtype": "Connection",
-      "text": "You cannot use Kati Jones more than once per turn.\r\n[Click]: Place 3[Credits] from the bank on Kati Jones.\r\n[Click]: Take all credits from Kati Jones.",
+      "text": "You cannot use Kati Jones more than once per turn.\n[Click]: Place 3[Credits] from the bank on Kati Jones.\n[Click]: Take all credits from Kati Jones.",
       "title": "Kati Jones",
       "type": "Resource"
     },
@@ -2341,7 +2341,7 @@
       "side": "Runner",
       "strength": 0,
       "subtype": "Icebreaker - AI - Virus",
-      "text": "2[Credits]: Break ice subroutine.\r\nX is the number of virus counters on Darwin.\r\nWhen your turn begins, you may pay 1[Credits] to place 1 virus counter on Darwin.",
+      "text": "2[Credits]: Break ice subroutine.\nX is the number of virus counters on Darwin.\nWhen your turn begins, you may pay 1[Credits] to place 1 virus counter on Darwin.",
       "title": "Darwin",
       "type": "Program"
     },
@@ -2367,7 +2367,7 @@
       "setname": "Future Proof",
       "side": "Runner",
       "subtype": "Virtual - Sabotage",
-      "text": "Install only if you made a successful run on a central server this turn.\r\nIf you are tagged, Data Leak Reversal gains \"[Click]: The Corp trashes the top card of R&D.\"",
+      "text": "Install only if you made a successful run on a central server this turn.\nIf you are tagged, Data Leak Reversal gains \"[Click]: The Corp trashes the top card of R&D.\"",
       "title": "Data Leak Reversal",
       "type": "Resource"
     },
@@ -2395,7 +2395,7 @@
       "side": "Runner",
       "strength": 2,
       "subtype": "Icebreaker - Killer",
-      "text": "0[Credits]: Break <strong>sentry</strong> subroutine.\r\n1[Credits]: +1 strength.\r\nWhen an encounter with a piece of ice in which you used Faerie to break a subroutine ends, trash Faerie.",
+      "text": "0[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +1 strength.\nWhen an encounter with a piece of ice in which you used Faerie to break a subroutine ends, trash Faerie.",
       "title": "Faerie",
       "type": "Program"
     },
@@ -2504,7 +2504,7 @@
       "setname": "Future Proof",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Deep Thought.\r\nIf there are at least 3 virus counters on Deep Thought, it gains \"When your turn begins, you may look at the top card of R&D.\"",
+      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Deep Thought.\nIf there are at least 3 virus counters on Deep Thought, it gains \"When your turn begins, you may look at the top card of R&D.\"",
       "title": "Deep Thought",
       "type": "Program"
     },
@@ -2530,7 +2530,7 @@
       "setname": "Future Proof",
       "side": "Runner",
       "subtype": "Location - Government",
-      "text": "2[Credits]: Avoid 1 tag.\r\nTrash New Angeles City Hall when you steal an agenda.",
+      "text": "2[Credits]: Avoid 1 tag.\nTrash New Angeles City Hall when you steal an agenda.",
       "title": "New Angeles City Hall",
       "type": "Resource"
     },
@@ -2705,7 +2705,7 @@
       "quantity": 3,
       "setname": "Creation and Control",
       "side": "Runner",
-      "text": "As an additional cost to play this card, trash an installed program.\r\nInstall a program from your grip or heap, lowering the install cost of that program by the cost of the program trashed.",
+      "text": "As an additional cost to play this card, trash an installed program.\nInstall a program from your grip or heap, lowering the install cost of that program by the cost of the program trashed.",
       "title": "Scavenge",
       "type": "Event"
     },
@@ -2755,7 +2755,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+3[Memory Unit]\r\nWhen you install Monolith, install up to 3 programs from your grip, lowering the install cost of each by 4[Credits].\r\n<strong>Trash a program from your grip</strong>: Prevent 1 brain or net damage.\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+3[Memory Unit]\nWhen you install Monolith, install up to 3 programs from your grip, lowering the install cost of each by 4[Credits].\n<strong>Trash a program from your grip</strong>: Prevent 1 brain or net damage.\nLimit 1 <strong>console</strong> per player.",
       "title": "Monolith",
       "type": "Hardware"
     },
@@ -2781,7 +2781,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Gear",
-      "text": "3[Credits]: Prevent 1 net damage.\r\n[Trash]: Prevent up to 2 brain damage.",
+      "text": "3[Credits]: Prevent 1 net damage.\n[Trash]: Prevent up to 2 brain damage.",
       "title": "Feedback Filter",
       "type": "Hardware"
     },
@@ -2832,7 +2832,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Gear",
-      "text": "Omni-Drive can host a single program of 1[Memory Unit] or less. The memory cost of the hosted program does not count against your memory limit.\r\n1[Recurring Credits]\r\nUse this credit to pay for using the hosted program.",
+      "text": "Omni-Drive can host a single program of 1[Memory Unit] or less. The memory cost of the hosted program does not count against your memory limit.\n1[Recurring Credits]\nUse this credit to pay for using the hosted program.",
       "title": "Omni-Drive",
       "type": "Hardware"
     },
@@ -2860,7 +2860,7 @@
       "side": "Runner",
       "strength": 0,
       "subtype": "Icebreaker - AI",
-      "text": "When you install Atman, you may pay X[Credits] to put X power counters on Atman.\r\nAtman has +1 strength for each power counter on it.\r\n1[Credits]: Break ice subroutine on a piece of ice that has strength equal to Atman's strength.",
+      "text": "When you install Atman, you may pay X[Credits] to put X power counters on Atman.\nAtman has +1 strength for each power counter on it.\n1[Credits]: Break ice subroutine on a piece of ice that has strength equal to Atman's strength.",
       "title": "Atman",
       "type": "Program"
     },
@@ -2887,7 +2887,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Stealth",
-      "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>icebreakers</strong>.",
+      "text": "1[Recurring Credits]\nUse this credit to pay for using <strong>icebreakers</strong>.",
       "title": "Cloak",
       "type": "Program"
     },
@@ -2915,7 +2915,7 @@
       "side": "Runner",
       "strength": 0,
       "subtype": "Icebreaker - Killer",
-      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n1[Credits]: +5 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
+      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +5 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
       "title": "Dagger",
       "type": "Program"
     },
@@ -2941,7 +2941,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Chakana.\r\nIf there are at least 3 virus counters on Chakana, the advancement requirement of all agendas is increased by 1.",
+      "text": "Whenever you make a successful run on R&D, place 1 virus counter on Chakana.\nIf there are at least 3 virus counters on Chakana, the advancement requirement of all agendas is increased by 1.",
       "title": "Chakana",
       "type": "Program"
     },
@@ -2968,7 +2968,7 @@
       "side": "Runner",
       "strength": 4,
       "subtype": "Icebreaker - Decoder",
-      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength.\r\nWhen you install Cyber-Cypher, choose a server. Cyber-Cypher can only be used during a run on the chosen server.",
+      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength.\nWhen you install Cyber-Cypher, choose a server. Cyber-Cypher can only be used during a run on the chosen server.",
       "title": "Cyber-Cypher",
       "type": "Program"
     },
@@ -2994,7 +2994,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Runner",
-      "text": "2[Recurring Credits]\r\nUse these credits to trash assets.",
+      "text": "2[Recurring Credits]\nUse these credits to trash assets.",
       "title": "Paricia",
       "type": "Program"
     },
@@ -3046,7 +3046,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Runner",
-      "text": "2[Recurring Credits]\r\nUse these credits to install programs (you cannot use Sahasrara to install a program that trashes Sahasrara).",
+      "text": "2[Recurring Credits]\nUse these credits to install programs (you cannot use Sahasrara to install a program that trashes Sahasrara).",
       "title": "Sahasrara",
       "type": "Program"
     },
@@ -3074,7 +3074,7 @@
       "side": "Runner",
       "strength": 1,
       "subtype": "Icebreaker - Fracter",
-      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\r\n2[Credits]: +1 strength for the remainder of this run.",
+      "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n2[Credits]: +1 strength for the remainder of this run.",
       "title": "Inti",
       "type": "Program"
     },
@@ -3126,7 +3126,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Link",
-      "text": "+1[Link]\r\nYour maximum hand size is increased by 1.",
+      "text": "+1[Link]\nYour maximum hand size is increased by 1.",
       "title": "Borrowed Satellite",
       "type": "Resource"
     },
@@ -3152,7 +3152,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Virtual",
-      "text": "Whenever the Corp rezzes a piece of ice, place 1[Credits] on Ice Analyzer.\r\nYou may use credits on Ice Analyzer to install programs.",
+      "text": "Whenever the Corp rezzes a piece of ice, place 1[Credits] on Ice Analyzer.\nYou may use credits on Ice Analyzer to install programs.",
       "title": "Ice Analyzer",
       "type": "Resource"
     },
@@ -3203,7 +3203,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Runner",
-      "text": "Place 8[Credits] from the bank on Daily Casts when it is installed. When there are no credits left on Daily Casts, trash it.\r\nTake 2[Credits] from Daily Casts when your turn begins.",
+      "text": "Place 8[Credits] from the bank on Daily Casts when it is installed. When there are no credits left on Daily Casts, trash it.\nTake 2[Credits] from Daily Casts when your turn begins.",
       "title": "Daily Casts",
       "type": "Resource"
     },
@@ -3254,7 +3254,7 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "subtype": "Connection",
-      "text": "The advancement requirement of all agendas is increased by 1.\r\nAs an additional cost to steal an agenda, you must pay 3[Credits].\r\nTrash The Source when an agenda is scored or stolen.",
+      "text": "The advancement requirement of all agendas is increased by 1.\nAs an additional cost to steal an agenda, you must pay 3[Credits].\nTrash The Source when an agenda is scored or stolen.",
       "title": "The Source",
       "type": "Resource"
     },
@@ -3280,7 +3280,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Double",
-      "text": "As an additional cost to play this event, spend [Click].\r\nForfeit an agenda. If you do, give the Corp 1 bad publicity.",
+      "text": "As an additional cost to play this event, spend [Click].\nForfeit an agenda. If you do, give the Corp 1 bad publicity.",
       "title": "Frame Job",
       "type": "Event"
     },
@@ -3306,7 +3306,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\r\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>Ca\u00efssa</strong> program from your grip or heap, ignoring all costs.",
+      "text": "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>Ca\u00efssa</strong> program from your grip or heap, ignoring all costs.",
       "title": "Pawn",
       "type": "Program"
     },
@@ -3332,7 +3332,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Rook on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\r\nThe rez cost of each piece of ice protecting this server is increased by 2.",
+      "text": "[Click]: Host Rook on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
       "title": "Rook",
       "type": "Program"
     },
@@ -3357,7 +3357,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Double",
-      "text": "As an additional cost to play this event, spend [Click].\r\nSearch your stack for a <strong>connection</strong>, reveal it, and add it to your grip. You may install that <strong>connection</strong> (paying its install cost). Shuffle your stack.",
+      "text": "As an additional cost to play this event, spend [Click].\nSearch your stack for a <strong>connection</strong>, reveal it, and add it to your grip. You may install that <strong>connection</strong> (paying its install cost). Shuffle your stack.",
       "title": "Hostage",
       "type": "Event"
     },
@@ -3384,7 +3384,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Virus",
-      "text": "Whenever the corp spends a [Click] to draw 1 card or gain 1[Credits] (not through a card ability), place 1 virus counter on Gorman Drip v1.\r\n[Click], [Trash]: Gain 1[Credits] for each virus counter on Gorman Drip v1.",
+      "text": "Whenever the corp spends a [Click] to draw 1 card or gain 1[Credits] (not through a card ability), place 1 virus counter on Gorman Drip v1.\n[Click], [Trash]: Gain 1[Credits] for each virus counter on Gorman Drip v1.",
       "title": "Gorman Drip v1",
       "type": "Program"
     },
@@ -3410,7 +3410,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Chip - Stealth",
-      "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>decoders</strong>.",
+      "text": "1[Recurring Credits]\nUse this credit to pay for using <strong>decoders</strong>.",
       "title": "Lockpick",
       "type": "Hardware"
     },
@@ -3487,7 +3487,7 @@
       "setname": "Opening Moves",
       "side": "Runner",
       "subtype": "Connection",
-      "text": "The first time you make a successful run each turn, draw 1 card.\r\nThe first time you make an unsuccessful run each turn, take 1 tag.",
+      "text": "The first time you make a successful run each turn, draw 1 card.\nThe first time you make an unsuccessful run each turn, take 1 tag.",
       "title": "John Masanori",
       "type": "Resource"
     },
@@ -3513,7 +3513,7 @@
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Bishop on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\r\nHost ice has -2 strength.",
+      "text": "[Click]: Host Bishop on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\nHost ice has -2 strength.",
       "title": "Bishop",
       "type": "Program"
     },
@@ -3540,7 +3540,7 @@
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Daemon",
-      "text": "Scheherazade can host any number of programs.\r\nWhenever you install a program on Scheherazade, gain 1[Credits].",
+      "text": "Scheherazade can host any number of programs.\nWhenever you install a program on Scheherazade, gain 1[Credits].",
       "title": "Scheherazade",
       "type": "Program"
     },
@@ -3635,7 +3635,7 @@
       "side": "Runner",
       "strength": 3,
       "subtype": "Icebreaker - Decoder",
-      "text": "3[Credits]: Break up to 3 <strong>code gate</strong> subroutines.\r\n3[Credits]: +5 strength.",
+      "text": "3[Credits]: Break up to 3 <strong>code gate</strong> subroutines.\n3[Credits]: +5 strength.",
       "title": "Leviathan",
       "type": "Program"
     },
@@ -3653,7 +3653,7 @@
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Double",
-      "text": "As an additional cost to play this event, spend [Click].\r\nReveal the top card of your stack. You may install that card, lowering the install cost by 10[Credits], if able; otherwise, trash it.",
+      "text": "As an additional cost to play this event, spend [Click].\nReveal the top card of your stack. You may install that card, lowering the install cost by 10[Credits], if able; otherwise, trash it.",
       "title": "Eureka!",
       "type": "Event"
     },
@@ -3687,7 +3687,7 @@
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Gear",
-      "text": "1[Recurring Credits]\r\nUse this credit to play events.",
+      "text": "1[Recurring Credits]\nUse this credit to play events.",
       "title": "Prepaid VoicePAD",
       "type": "Hardware"
     },
@@ -3746,7 +3746,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Advertisement",
-      "text": "Put 12[Credits] from the bank on Adonis Campaign when rezzed. When there are no credits left on this card, trash it.\r\nTake 3[Credits] from Adonis Campaign when your turn begins.",
+      "text": "Put 12[Credits] from the bank on Adonis Campaign when rezzed. When there are no credits left on this card, trash it.\nTake 3[Credits] from Adonis Campaign when your turn begins.",
       "title": "Adonis Campaign",
       "trash": 3,
       "type": "Asset"
@@ -3772,7 +3772,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Ambush",
-      "text": "Aggressive Secretary can be advanced.\r\nIf you pay 2[Credits] when the Runner accesses Aggressive Secretary, trash 1 program for each advancement token on Aggressive Secretary.",
+      "text": "Aggressive Secretary can be advanced.\nIf you pay 2[Credits] when the Runner accesses Aggressive Secretary, trash 1 program for each advancement token on Aggressive Secretary.",
       "title": "Aggressive Secretary",
       "trash": 0,
       "type": "Asset"
@@ -3851,7 +3851,7 @@
       "side": "Corp",
       "strength": 6,
       "subtype": "Barrier - Bioroid - AP",
-      "text": "The Runner can spend [Click] to break any subroutine on Heimdall 1.0.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
+      "text": "The Runner can spend [Click] to break any subroutine on Heimdall 1.0.\n[Subroutine] Do 1 brain damage.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Heimdall 1.0",
       "type": "ICE"
     },
@@ -3870,7 +3870,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Sentry - Bioroid - Tracer - Destroyer",
-      "text": "The Runner can spend [Click] to break any subroutine on Ichi 1.0.\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, give the Runner 1 tag and do 1 brain damage.",
+      "text": "The Runner can spend [Click] to break any subroutine on Ichi 1.0.\n[Subroutine] Trash 1 program.\n[Subroutine] Trash 1 program.\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, give the Runner 1 tag and do 1 brain damage.",
       "title": "Ichi 1.0",
       "type": "ICE"
     },
@@ -3889,7 +3889,7 @@
       "side": "Corp",
       "strength": 3,
       "subtype": "Code Gate - Bioroid - AP",
-      "text": "The Runner can spend [Click] to break any subroutine on Viktor 1.0.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] End the run.",
+      "text": "The Runner can spend [Click] to break any subroutine on Viktor 1.0.\n[Subroutine] Do 1 brain damage.\n[Subroutine] End the run.",
       "title": "Viktor 1.0",
       "type": "ICE"
     },
@@ -3908,7 +3908,7 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Sentry - Destroyer",
-      "text": "[Subroutine] Trash 1 program.\r\n[Subroutine] End the run.",
+      "text": "[Subroutine] Trash 1 program.\n[Subroutine] End the run.",
       "title": "Rototurret",
       "type": "ICE"
     },
@@ -3987,7 +3987,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Initiative",
-      "text": "Place 1 agenda counter on Nisei MK II when you score it.\r\n<strong>Hosted agenda counter:</strong> End the run.",
+      "text": "Place 1 agenda counter on Nisei MK II when you score it.\n<strong>Hosted agenda counter:</strong> End the run.",
       "title": "Nisei MK II",
       "type": "Agenda"
     },
@@ -4004,7 +4004,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Ambush - Research",
-      "text": "Project Junebug can be advanced.\r\nIf you pay 1[Credits] when the Runner accesses Project Junebug, do 2 net damage for each advancement token on Project Junebug.",
+      "text": "Project Junebug can be advanced.\nIf you pay 1[Credits] when the Runner accesses Project Junebug, do 2 net damage for each advancement token on Project Junebug.",
       "title": "Project Junebug",
       "trash": 0,
       "type": "Asset"
@@ -4022,7 +4022,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Ambush",
-      "text": "If Snare! is accessed from R&D, the Runner must reveal it.\r\n\r\nIf you pay 4[Credits] when the Runner accesses Snare!, do 3 net damage and give the Runner 1 tag. Ignore this effect if the Runner accesses Snare! from Archives.",
+      "text": "If Snare! is accessed from R&D, the Runner must reveal it.\n\nIf you pay 4[Credits] when the Runner accesses Snare!, do 3 net damage and give the Runner 1 tag. Ignore this effect if the Runner accesses Snare! from Archives.",
       "title": "Snare!",
       "trash": 0,
       "type": "Asset"
@@ -4039,7 +4039,7 @@
       "quantity": 1,
       "setname": "Core Set",
       "side": "Corp",
-      "text": "If the Runner is about to expose a card, you may rez Zaibatsu Loyalty.\r\n1[Credits] or [Trash]: Prevent 1 card from being exposed.",
+      "text": "If the Runner is about to expose a card, you may rez Zaibatsu Loyalty.\n1[Credits] or [Trash]: Prevent 1 card from being exposed.",
       "title": "Zaibatsu Loyalty",
       "trash": 4,
       "type": "Asset"
@@ -4058,7 +4058,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Gray Ops",
-      "text": "Play only if the Runner made a run during his or her last turn.\r\nDo 1 net damage.",
+      "text": "Play only if the Runner made a run during his or her last turn.\nDo 1 net damage.",
       "title": "Neural EMP",
       "type": "Operation"
     },
@@ -4157,7 +4157,7 @@
       "cost": 4,
       "faction": "Jinteki",
       "factioncost": 2,
-      "flavor": "Forged by Ak.wa on 23.11.79-23. Filed 23.11.79-23.2 with #34k-lw3-21HH-4i.\r\n//Samurai included.",
+      "flavor": "Forged by Ak.wa on 23.11.79-23. Filed 23.11.79-23.2 with #34k-lw3-21HH-4i.\n//Samurai included.",
       "illustrator": "Isuardi Thenianio",
       "imagesrc": "/images/cards/neural-katana.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01077",
@@ -4186,7 +4186,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Barrier - AP",
-      "text": "[Subroutine] Do 2 net damage.\r\n[Subroutine] End the run.",
+      "text": "[Subroutine] Do 2 net damage.\n[Subroutine] End the run.",
       "title": "Wall of Thorns",
       "type": "ICE"
     },
@@ -4230,7 +4230,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Megacorp",
-      "text": "2[Recurring Credits]\r\nUse these credits during trace attempts.",
+      "text": "2[Recurring Credits]\nUse these credits during trace attempts.",
       "title": "NBN: Making News",
       "type": "Identity"
     },
@@ -4247,7 +4247,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Initiative",
-      "text": "Place 1 agenda counter on AstroScript Pilot Program when you score it.\r\n\r\n<strong>Hosted agenda counter:</strong> Place 1 advancement token on a card that can be advanced.",
+      "text": "Place 1 agenda counter on AstroScript Pilot Program when you score it.\n\n<strong>Hosted agenda counter:</strong> Place 1 advancement token on a card that can be advanced.",
       "title": "AstroScript Pilot Program",
       "type": "Agenda"
     },
@@ -4263,7 +4263,7 @@
       "quantity": 2,
       "setname": "Core Set",
       "side": "Corp",
-      "text": "When you score Breaking News, give the Runner 2 tags.\r\n\r\nWhen the turn on which you scored Breaking News ends, the Runner loses 2 tags.",
+      "text": "When you score Breaking News, give the Runner 2 tags.\n\nWhen the turn on which you scored Breaking News ends, the Runner loses 2 tags.",
       "title": "Breaking News",
       "type": "Agenda"
     },
@@ -4297,7 +4297,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Gray Ops",
-      "text": "Play only if the Runner is tagged.\r\nThe Runner loses all credits in his or her credit pool.",
+      "text": "Play only if the Runner is tagged.\nThe Runner loses all credits in his or her credit pool.",
       "title": "Closed Accounts",
       "type": "Operation"
     },
@@ -4322,7 +4322,7 @@
       ],
       "setname": "Core Set",
       "side": "Corp",
-      "text": "X is equal to or less than the number of tags the Runner has.\r\nPlace X advancement tokens on a card that can be advanced.",
+      "text": "X is equal to or less than the number of tags the Runner has.\nPlace X advancement tokens on a card that can be advanced.",
       "title": "Psychographics",
       "type": "Operation"
     },
@@ -4339,7 +4339,7 @@
       "quantity": 2,
       "setname": "Core Set",
       "side": "Corp",
-      "text": "Play only if the Runner made a successful run during his or her last turn.\r\n<strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.",
+      "text": "Play only if the Runner made a successful run during his or her last turn.\n<strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.",
       "title": "SEA Source",
       "type": "Operation"
     },
@@ -4364,7 +4364,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Ambush - Facility",
-      "text": "Ghost Branch can be advanced.\r\nWhen the Runner accesses Ghost Branch, you may give the Runner 1 tag for each advancement token on Ghost Branch.",
+      "text": "Ghost Branch can be advanced.\nWhen the Runner accesses Ghost Branch, you may give the Runner 1 tag for each advancement token on Ghost Branch.",
       "title": "Ghost Branch",
       "trash": 0,
       "type": "Asset"
@@ -4391,7 +4391,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Sentry - Tracer - Observer",
-      "text": "When the Runner encounters Data Raven, he or she must either take 1 tag or end the run.\r\n<strong>Hosted power counter:</strong> Give the Runner 1 tag.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, place 1 power counter on Data Raven.",
+      "text": "When the Runner encounters Data Raven, he or she must either take 1 tag or end the run.\n<strong>Hosted power counter:</strong> Give the Runner 1 tag.\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, place 1 power counter on Data Raven.",
       "title": "Data Raven",
       "type": "ICE"
     },
@@ -4410,7 +4410,7 @@
       "side": "Corp",
       "strength": 3,
       "subtype": "Sentry - Tracer - Observer",
-      "text": "When the Runner encounters Matrix Analyzer, you may pay 1[Credits] to place 1 advancement token on a card that can be advanced.\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.",
+      "text": "When the Runner encounters Matrix Analyzer, you may pay 1[Credits] to place 1 advancement token on a card that can be advanced.\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.",
       "title": "Matrix Analyzer",
       "type": "ICE"
     },
@@ -4419,7 +4419,7 @@
       "cost": 8,
       "faction": "NBN",
       "factioncost": 2,
-      "flavor": "\"Ever heard of a catch-22?\"\r\n\"Remind me to forget it.\"",
+      "flavor": "\"Ever heard of a catch-22?\"\n\"Remind me to forget it.\"",
       "illustrator": "Outland Entertainment LLC",
       "imagesrc": "/images/cards/tollbooth.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01090",
@@ -4429,7 +4429,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Code Gate",
-      "text": "When the Runner encounters Tollbooth, he or she must pay 3[Credits], if able. If the Runner cannot pay 3[Credits], end the run.\r\n[Subroutine] End the run.",
+      "text": "When the Runner encounters Tollbooth, he or she must pay 3[Credits], if able. If the Runner cannot pay 3[Credits], end the run.\n[Subroutine] End the run.",
       "title": "Tollbooth",
       "type": "ICE"
     },
@@ -4455,7 +4455,7 @@
       "cost": 6,
       "faction": "NBN",
       "factioncost": 3,
-      "flavor": "\"I hear the coast is nice this time of year.\"\r\n\"If you're in the right business, it's nice all the year.\"",
+      "flavor": "\"I hear the coast is nice this time of year.\"\n\"If you're in the right business, it's nice all the year.\"",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/sansan-city-grid.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01092",
@@ -4464,7 +4464,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Region",
-      "text": "The advancement requirement of agendas installed in this server is lowered by 1.\r\nLimit 1 <strong>region</strong> per server.",
+      "text": "The advancement requirement of agendas installed in this server is lowered by 1.\nLimit 1 <strong>region</strong> per server.",
       "title": "SanSan City Grid",
       "trash": 5,
       "type": "Upgrade"
@@ -4562,7 +4562,7 @@
       "quantity": 2,
       "setname": "Core Set",
       "side": "Corp",
-      "text": "Play only if you scored an agenda this turn.\r\nSearch R&D for 1 card and add it to HQ. Shuffle R&D.",
+      "text": "Play only if you scored an agenda this turn.\nSearch R&D for 1 card and add it to HQ. Shuffle R&D.",
       "title": "Aggressive Negotiation",
       "type": "Operation"
     },
@@ -4606,7 +4606,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Black Ops",
-      "text": "Play only if the runner is tagged.\r\nDo 4 meat damage.",
+      "text": "Play only if the runner is tagged.\nDo 4 meat damage.",
       "title": "Scorched Earth",
       "type": "Operation"
     },
@@ -4615,7 +4615,7 @@
       "cost": 0,
       "faction": "Weyland Consortium",
       "factioncost": 1,
-      "flavor": "\"And then there's these two crates. No eID.\"\r\n\"Just leave those with me and forget you ever saw them.\"",
+      "flavor": "\"And then there's these two crates. No eID.\"\n\"Just leave those with me and forget you ever saw them.\"",
       "illustrator": "Andrew Mar",
       "imagesrc": "/images/cards/shipment-from-kaguya.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01100",
@@ -4650,7 +4650,7 @@
       "side": "Corp",
       "strength": 6,
       "subtype": "Sentry - Destroyer",
-      "text": "As an additional cost to rez Archer, the Corp must forfeit an agenda.\r\n[Subroutine] The Corp gains 2[Credits].\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] End the run.",
+      "text": "As an additional cost to rez Archer, the Corp must forfeit an agenda.\n[Subroutine] The Corp gains 2[Credits].\n[Subroutine] Trash 1 program.\n[Subroutine] Trash 1 program.\n[Subroutine] End the run.",
       "title": "Archer",
       "type": "ICE"
     },
@@ -4669,7 +4669,7 @@
       "side": "Corp",
       "strength": 7,
       "subtype": "Barrier",
-      "text": "Hadrian's Wall can be advanced and has +1 strength for each advancement token on it.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
+      "text": "Hadrian's Wall can be advanced and has +1 strength for each advancement token on it.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Hadrian's Wall",
       "type": "ICE"
     },
@@ -4688,7 +4688,7 @@
       "side": "Corp",
       "strength": 1,
       "subtype": "Barrier",
-      "text": "Ice Wall can be advanced and has +1 strength for each advancement token on it.\r\n[Subroutine] End the run.",
+      "text": "Ice Wall can be advanced and has +1 strength for each advancement token on it.\n[Subroutine] End the run.",
       "title": "Ice Wall",
       "type": "ICE"
     },
@@ -4697,7 +4697,7 @@
       "cost": 3,
       "faction": "Weyland Consortium",
       "factioncost": 1,
-      "flavor": "Who knows what evil lurks in the memory diamonds of men? Weyland knows.\r\n-unsigned cyber-graffiti",
+      "flavor": "Who knows what evil lurks in the memory diamonds of men? Weyland knows.\n-unsigned cyber-graffiti",
       "illustrator": "Adam S. Doyle",
       "imagesrc": "/images/cards/shadow.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01104",
@@ -4707,7 +4707,7 @@
       "side": "Corp",
       "strength": 1,
       "subtype": "Sentry - Tracer",
-      "text": "Shadow can be advanced and has +1 strength for each advancement token on it.\r\n[Subroutine] The Corp gains 2[Credits].\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.",
+      "text": "Shadow can be advanced and has +1 strength for each advancement token on it.\n[Subroutine] The Corp gains 2[Credits].\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.",
       "title": "Shadow",
       "type": "ICE"
     },
@@ -4725,7 +4725,7 @@
       "setname": "Core Set",
       "side": "Corp",
       "subtype": "Facility",
-      "text": "Install only in the root of HQ.\r\nYour maximum hand size is +2.",
+      "text": "Install only in the root of HQ.\nYour maximum hand size is +2.",
       "title": "Research Station",
       "trash": 3,
       "type": "Upgrade"
@@ -4810,7 +4810,7 @@
       "cost": 5,
       "faction": "Neutral",
       "factioncost": 0,
-      "flavor": "Hedge Fund. Noun. An ingenious device by which the rich get richer even while every other poor SOB is losing his shirt.\r\n- The Anarch's Dictionary, Volume Who's Counting?",
+      "flavor": "Hedge Fund. Noun. An ingenious device by which the rich get richer even while every other poor SOB is losing his shirt.\n- The Anarch's Dictionary, Volume Who's Counting?",
       "illustrator": "Gong Studios",
       "imagesrc": "/images/cards/hedge-fund.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01110",
@@ -4828,7 +4828,7 @@
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 0,
-      "flavor": "\"Hey, hey! Wake up man. You were under a long time. What'd you see?\"\r\n\"I... don't remember.\"",
+      "flavor": "\"Hey, hey! Wake up man. You were under a long time. What'd you see?\"\n\"I... don't remember.\"",
       "illustrator": "Liiga Smilshkalne",
       "imagesrc": "/images/cards/enigma.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01111",
@@ -4838,7 +4838,7 @@
       "side": "Corp",
       "strength": 2,
       "subtype": "Code Gate",
-      "text": "[Subroutine] The Runner loses [Click], if able.\r\n[Subroutine] End the run.",
+      "text": "[Subroutine] The Runner loses [Click], if able.\n[Subroutine] End the run.",
       "title": "Enigma",
       "type": "ICE"
     },
@@ -4847,7 +4847,7 @@
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
-      "flavor": ".//run/hunter-tr/return=true\r\nclient/sec256IPv7-&gt;confirm? /y\r\n3926:0HB7:1001:2NB1:1601:7784:ERROR",
+      "flavor": ".//run/hunter-tr/return=true\nclient/sec256IPv7-&gt;confirm? /y\n3926:0HB7:1001:2NB1:1601:7784:ERROR",
       "illustrator": "Christina Davis",
       "imagesrc": "/images/cards/hunter.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01112",
@@ -4952,7 +4952,7 @@
       "side": "Corp",
       "strength": 8,
       "subtype": "Sentry - Bioroid - AP",
-      "text": "The runner may spend [Click] to break any subroutine on Janus 1.0.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] Do 1 brain damage.",
+      "text": "The runner may spend [Click] to break any subroutine on Janus 1.0.\n[Subroutine] Do 1 brain damage.\n[Subroutine] Do 1 brain damage.\n[Subroutine] Do 1 brain damage.\n[Subroutine] Do 1 brain damage.",
       "title": "Janus 1.0",
       "type": "ICE"
     },
@@ -4996,7 +4996,7 @@
       "setname": "What Lies Ahead",
       "side": "Corp",
       "subtype": "Research",
-      "text": "When you score Braintrust, place 1 agenda counter on it for every 2 advancement tokens on it over 3.\r\nThe rez cost of all ice is lowered by 1 for each agenda counter on Braintrust.",
+      "text": "When you score Braintrust, place 1 agenda counter on it for every 2 advancement tokens on it over 3.\nThe rez cost of all ice is lowered by 1 for each agenda counter on Braintrust.",
       "title": "Braintrust",
       "type": "Agenda"
     },
@@ -5067,7 +5067,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Barrier",
-      "text": "When you rez TMI, <strong>trace<sup>2</sup></strong>&ndash; if unsuccessful, derez TMI.\r\n[Subroutine] End the run.",
+      "text": "When you rez TMI, <strong>trace<sup>2</sup></strong>&ndash; if unsuccessful, derez TMI.\n[Subroutine] End the run.",
       "title": "TMI",
       "type": "ICE"
     },
@@ -5084,7 +5084,7 @@
       "setname": "What Lies Ahead",
       "side": "Corp",
       "subtype": "Research",
-      "text": "When you score Project Atlas, place 1 agenda counter on it for each advancement token on it over 3.\r\n<strong>Hosted agenda counter</strong>: Search R&amp;D for 1 card, reveal it, and add it to HQ. Shuffle R&amp;D.",
+      "text": "When you score Project Atlas, place 1 agenda counter on it for each advancement token on it over 3.\n<strong>Hosted agenda counter</strong>: Search R&amp;D for 1 card, reveal it, and add it to HQ. Shuffle R&amp;D.",
       "title": "Project Atlas",
       "type": "Agenda"
     },
@@ -5111,7 +5111,7 @@
       "side": "Corp",
       "strength": 3,
       "subtype": "Sentry - Tracer",
-      "text": "[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, the Corp gains 3[Credits].\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, end the run.",
+      "text": "[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, the Corp gains 3[Credits].\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, end the run.",
       "title": "Caduceus",
       "type": "ICE"
     },
@@ -5130,7 +5130,7 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Sentry - Tracer",
-      "text": "When you rez Drac\u014d, you may pay X[Credits] to place X power counters on it.\r\nDrac\u014d has +1 strength for each power counter on it.\r\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
+      "text": "When you rez Drac\u014d, you may pay X[Credits] to place X power counters on it.\nDrac\u014d has +1 strength for each power counter on it.\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
       "title": "Drac\u014d",
       "type": "ICE"
     },
@@ -5182,7 +5182,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Sentry - Bioroid - Tracer",
-      "text": "The Runner may spend [Click] to break any subroutine on Sherlock 1.0.\r\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, add 1 installed program to the top of the Runner's stack.\r\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, add 1 installed program to the top of the Runner's stack.",
+      "text": "The Runner may spend [Click] to break any subroutine on Sherlock 1.0.\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, add 1 installed program to the top of the Runner's stack.\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, add 1 installed program to the top of the Runner's stack.",
       "title": "Sherlock 1.0",
       "type": "ICE"
     },
@@ -5237,7 +5237,7 @@
       "setname": "Trace Amount",
       "side": "Corp",
       "subtype": "Ambush",
-      "text": "If Fetal AI is accessed from R&D, the Runner must reveal it.\r\nWhen the Runner accesses Fetal AI, do 2 net damage. Ignore this ability if the Runner accesses Fetal AI from Archives.\r\nAs an additional cost to steal Fetal AI, the Runner must pay 2[Credits].",
+      "text": "If Fetal AI is accessed from R&D, the Runner must reveal it.\nWhen the Runner accesses Fetal AI, do 2 net damage. Ignore this ability if the Runner accesses Fetal AI from Archives.\nAs an additional cost to steal Fetal AI, the Runner must pay 2[Credits].",
       "title": "Fetal AI",
       "type": "Agenda"
     },
@@ -5307,7 +5307,7 @@
       "setname": "Trace Amount",
       "side": "Corp",
       "subtype": "Gray Ops",
-      "text": "Play only if the Runner is tagged.\r\nGive the Runner 2 tags.",
+      "text": "Play only if the Runner is tagged.\nGive the Runner 2 tags.",
       "title": "Big Brother",
       "type": "Operation"
     },
@@ -5333,7 +5333,7 @@
       "setname": "Trace Amount",
       "side": "Corp",
       "subtype": "Region",
-      "text": "Whenever there is a successful trace during a run on this server, give the Runner 1 tag.\r\nLimit 1 <strong>region</strong> per server.",
+      "text": "Whenever there is a successful trace during a run on this server, give the Runner 1 tag.\nLimit 1 <strong>region</strong> per server.",
       "title": "ChiLo City Grid",
       "trash": 6,
       "type": "Upgrade"
@@ -5350,7 +5350,7 @@
       "quantity": 3,
       "setname": "Trace Amount",
       "side": "Corp",
-      "text": "Play only if the Runner made a successful run during his or her last turn.\r\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, trash 1 piece of hardware with an install cost equal to or less than the amount by which your trace strength exceeded the Runner's link strength.",
+      "text": "Play only if the Runner made a successful run during his or her last turn.\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, trash 1 piece of hardware with an install cost equal to or less than the amount by which your trace strength exceeded the Runner's link strength.",
       "title": "Power Grid Overload",
       "type": "Operation"
     },
@@ -5375,7 +5375,7 @@
       "setname": "Trace Amount",
       "side": "Corp",
       "subtype": "Region",
-      "text": "Whenever you install a piece of ice protecting this server, you may immediately rez it, lowering its rez cost by 3.\r\nLimit 1 <strong>region</strong> per server.",
+      "text": "Whenever you install a piece of ice protecting this server, you may immediately rez it, lowering its rez cost by 3.\nLimit 1 <strong>region</strong> per server.",
       "title": "Amazon Industrial Zone",
       "trash": 2,
       "type": "Upgrade"
@@ -5401,7 +5401,7 @@
       ],
       "setname": "Trace Amount",
       "side": "Corp",
-      "text": "When you score Executive Retreat, place 1 agenda counter on it and shuffle HQ into R&D.\r\n[Click], <strong>hosted agenda counter:</strong> Draw 5 cards.",
+      "text": "When you score Executive Retreat, place 1 agenda counter on it and shuffle HQ into R&D.\n[Click], <strong>hosted agenda counter:</strong> Draw 5 cards.",
       "title": "Executive Retreat",
       "type": "Agenda"
     },
@@ -5427,7 +5427,7 @@
       "setname": "Trace Amount",
       "side": "Corp",
       "subtype": "Gray Ops",
-      "text": "Play only if the Runner is tagged.\r\nTrash up to 2 resources.",
+      "text": "Play only if the Runner is tagged.\nTrash up to 2 resources.",
       "title": "Freelancer",
       "type": "Operation"
     },
@@ -5452,7 +5452,7 @@
       "setname": "Cyber Exodus",
       "side": "Corp",
       "subtype": "Research",
-      "text": "When you score Project Vitruvius, place 1 agenda counter on it for each advancement token on it over 3.\r\n<strong>Hosted agenda counter:</strong> Add 1 card from Archives to HQ.",
+      "text": "When you score Project Vitruvius, place 1 agenda counter on it for each advancement token on it over 3.\n<strong>Hosted agenda counter:</strong> Add 1 card from Archives to HQ.",
       "title": "Project Vitruvius",
       "type": "Agenda"
     },
@@ -5471,7 +5471,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Code Gate - Tracer",
-      "text": "<strong>[Subroutine] Trace<sup>3</sup></strong>&ndash; If successful, the Runner loses [Click], if able.\r\n<strong>[Subroutine] Trace<sup>3</sup></strong>&ndash; If successful, end the run.",
+      "text": "<strong>[Subroutine] Trace<sup>3</sup></strong>&ndash; If successful, the Runner loses [Click], if able.\n<strong>[Subroutine] Trace<sup>3</sup></strong>&ndash; If successful, end the run.",
       "title": "Viper",
       "type": "ICE"
     },
@@ -5547,7 +5547,7 @@
       "setname": "Cyber Exodus",
       "side": "Corp",
       "subtype": "Transaction",
-      "text": "When your turn begins, take 1[Credits] from Marked Accounts, if able.\r\n[Click]: Place 3[Credits] from the bank on Marked Accounts.",
+      "text": "When your turn begins, take 1[Credits] from Marked Accounts, if able.\n[Click]: Place 3[Credits] from the bank on Marked Accounts.",
       "title": "Marked Accounts",
       "trash": 5,
       "type": "Asset"
@@ -5575,7 +5575,7 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Code Gate - Advertisement",
-      "text": "When the Runner encounters Pop-up Window, you gain 1[Credits].\r\n[Subroutine] End the run unless the Runner pays 1[Credits].",
+      "text": "When the Runner encounters Pop-up Window, you gain 1[Credits].\n[Subroutine] End the run unless the Runner pays 1[Credits].",
       "title": "Pop-up Window",
       "type": "ICE"
     },
@@ -5645,7 +5645,7 @@
       "setname": "Cyber Exodus",
       "side": "Corp",
       "subtype": "Transaction",
-      "text": "Place 14[Credits] from the bank on Private Contracts when it is rezzed. When there are no credits left on Private Contracts, trash it.\r\n[Click]: Take 2[Credits] from Private Contracts.",
+      "text": "Place 14[Credits] from the bank on Private Contracts when it is rezzed. When there are no credits left on Private Contracts, trash it.\n[Click]: Take 2[Credits] from Private Contracts.",
       "title": "Private Contracts",
       "trash": 5,
       "type": "Asset"
@@ -5673,7 +5673,7 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Mythic",
-      "text": "When you rez Chimera, choose <strong>sentry</strong>, <strong>code gate</strong>, or <strong>barrier</strong>. Chimera gains that subtype until derezzed.\r\nWhen a turn ends, derez Chimera.\r\n[Subroutine] End the run.",
+      "text": "When you rez Chimera, choose <strong>sentry</strong>, <strong>code gate</strong>, or <strong>barrier</strong>. Chimera gains that subtype until derezzed.\nWhen a turn ends, derez Chimera.\n[Subroutine] End the run.",
       "title": "Chimera",
       "type": "ICE"
     },
@@ -5726,7 +5726,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Code Gate",
-      "text": "[Subroutine] The Runner loses [Click], if able.\r\n[Subroutine] The Runner loses [Click], if able.\r\n[Subroutine] The Runner loses [Click], if able.",
+      "text": "[Subroutine] The Runner loses [Click], if able.\n[Subroutine] The Runner loses [Click], if able.\n[Subroutine] The Runner loses [Click], if able.",
       "title": "Hourglass",
       "type": "ICE"
     },
@@ -5735,7 +5735,7 @@
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 2,
-      "flavor": "so very still, even\r\ncherry blossoms are not stirred\r\nby the temple bell\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Fuhaku",
+      "flavor": "so very still, even\ncherry blossoms are not stirred\nby the temple bell\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Fuhaku",
       "illustrator": "Emilio Rodriguez",
       "imagesrc": "/images/cards/dedicated-server.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02072",
@@ -5752,7 +5752,7 @@
       "setname": "A Study in Static",
       "side": "Corp",
       "subtype": "Facility",
-      "text": "2[Recurring Credits]\r\nUse these credits to rez ice.",
+      "text": "2[Recurring Credits]\nUse these credits to rez ice.",
       "title": "Dedicated Server",
       "trash": 3,
       "type": "Asset"
@@ -5806,7 +5806,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Sentry - Tracer",
-      "text": "[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, the Runner cannot make another run this turn.\r\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, end the run.",
+      "text": "[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, the Runner cannot make another run this turn.\n[Subroutine] <strong>Trace<sup>4</sup></strong>&ndash; If successful, end the run.",
       "title": "Uroboros",
       "type": "ICE"
     },
@@ -5831,7 +5831,7 @@
       ],
       "setname": "A Study in Static",
       "side": "Corp",
-      "text": "X[Recurring Credits]\r\nUse these credits during traces. X is the number of links the Runner has.",
+      "text": "X[Recurring Credits]\nUse these credits during traces. X is the number of links the Runner has.",
       "title": "Net Police",
       "trash": 1,
       "type": "Asset"
@@ -5863,7 +5863,7 @@
       "setname": "A Study in Static",
       "side": "Corp",
       "subtype": "Megacorp",
-      "text": "1[Recurring Credits]\r\nUse this credit to advance ice.",
+      "text": "1[Recurring Credits]\nUse this credit to advance ice.",
       "title": "Weyland Consortium: Because We Built It",
       "type": "Identity"
     },
@@ -5992,7 +5992,7 @@
       "setname": "Humanity's Shadow",
       "side": "Corp",
       "subtype": "Advertisement",
-      "text": "Place 16[Credits] from the bank on Eve Campaign when it is rezzed. When there are no credits left on Eve Campaign, trash it.\r\nWhen your turn begins, take 2[Credits] from Eve Campaign.",
+      "text": "Place 16[Credits] from the bank on Eve Campaign when it is rezzed. When there are no credits left on Eve Campaign, trash it.\nWhen your turn begins, take 2[Credits] from Eve Campaign.",
       "title": "Eve Campaign",
       "trash": 5,
       "type": "Asset"
@@ -6179,7 +6179,7 @@
       "setname": "Humanity's Shadow",
       "side": "Corp",
       "subtype": "Sysop",
-      "text": "2[Recurring Credits]\r\nUse these credits to advance cards in or protecting this server.",
+      "text": "2[Recurring Credits]\nUse these credits to advance cards in or protecting this server.",
       "title": "Simone Diego",
       "trash": 3,
       "type": "Upgrade"
@@ -6232,7 +6232,7 @@
       "side": "Corp",
       "strength": 4,
       "subtype": "Barrier - Bioroid",
-      "text": "The Runner may spend [Click] to break any subroutine on Eli 1.0.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
+      "text": "The Runner may spend [Click] to break any subroutine on Eli 1.0.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Eli 1.0",
       "type": "ICE"
     },
@@ -6258,7 +6258,7 @@
       "setname": "Future Proof",
       "side": "Corp",
       "subtype": "Region",
-      "text": "As an additional cost to make a run on this server, the Runner must spend [Click].\r\nLimit 1 <strong>region</strong> per server.",
+      "text": "As an additional cost to make a run on this server, the Runner must spend [Click].\nLimit 1 <strong>region</strong> per server.",
       "title": "Ruhr Valley",
       "trash": 4,
       "type": "Upgrade"
@@ -6285,7 +6285,7 @@
       "setname": "Future Proof",
       "side": "Corp",
       "subtype": "Hostile",
-      "text": "Ronin can be advanced.\r\nIf there are at least 4 advancement tokens on Ronin, it gains \"[Click], [Trash]: Do 3 net damage.\"",
+      "text": "Ronin can be advanced.\nIf there are at least 4 advancement tokens on Ronin, it gains \"[Click], [Trash]: Do 3 net damage.\"",
       "title": "Ronin",
       "trash": 2,
       "type": "Asset"
@@ -6368,7 +6368,7 @@
       "setname": "Future Proof",
       "side": "Corp",
       "subtype": "Research",
-      "text": "When you score Project Beale, place 1 agenda counter on it for every 2 advancement tokens on it over 3.\r\nProject Beale is worth 1 additional agenda point for each agenda counter on it.",
+      "text": "When you score Project Beale, place 1 agenda counter on it for every 2 advancement tokens on it over 3.\nProject Beale is worth 1 additional agenda point for each agenda counter on it.",
       "title": "Project Beale",
       "type": "Agenda"
     },
@@ -6392,7 +6392,7 @@
       ],
       "setname": "Future Proof",
       "side": "Corp",
-      "text": "Play only if the Runner stole an agenda during his or her last turn.\r\n<strong>Trace<sup>6</sup></strong>&ndash; If successful, give the Runner tags equal to the amount by which your trace strength exceeded his or her link strength.",
+      "text": "Play only if the Runner stole an agenda during his or her last turn.\n<strong>Trace<sup>6</sup></strong>&ndash; If successful, give the Runner tags equal to the amount by which your trace strength exceeded his or her link strength.",
       "title": "Midseason Replacements",
       "type": "Operation"
     },
@@ -6601,7 +6601,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Initiative",
-      "text": "When you score Director Haas' Pet Project, you may create a new remote server by installing up to 3 cards from HQ and/or Archives in that server and/or protecting that server (one at a time), ignoring all install costs.\r\nLimit 1 Director Haas' Pet Project per deck.",
+      "text": "When you score Director Haas' Pet Project, you may create a new remote server by installing up to 3 cards from HQ and/or Archives in that server and/or protecting that server (one at a time), ignoring all install costs.\nLimit 1 Director Haas' Pet Project per deck.",
       "title": "Director Haas' Pet Project",
       "type": "Agenda"
     },
@@ -6626,7 +6626,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Initiative",
-      "text": "Place 3 agenda counters on Efficiency Committee when you score it.\r\n[Click], <strong>hosted agenda counter</strong>: Gain [Click][Click]. You cannot advance cards for the remainder of this turn.",
+      "text": "Place 3 agenda counters on Efficiency Committee when you score it.\n[Click], <strong>hosted agenda counter</strong>: Gain [Click][Click]. You cannot advance cards for the remainder of this turn.",
       "title": "Efficiency Committee",
       "type": "Agenda"
     },
@@ -6651,7 +6651,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Research",
-      "text": "Place 3 agenda counters on Project Wotan when you score it.\r\n<strong>Hosted agenda counter</strong>: Choose a rezzed piece of <strong>bioroid</strong> ice currently being approached. For the remainder of this run, that ice gains \"[Subroutine]: End the run.\" after all its other subroutines.",
+      "text": "Place 3 agenda counters on Project Wotan when you score it.\n<strong>Hosted agenda counter</strong>: Choose a rezzed piece of <strong>bioroid</strong> ice currently being approached. For the remainder of this run, that ice gains \"[Subroutine]: End the run.\" after all its other subroutines.",
       "title": "Project Wotan",
       "type": "Agenda"
     },
@@ -6703,7 +6703,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Bioroid",
-      "text": "Place 1 power counter on Alix T4LBO7 whenever you install a card.\r\n[Click],[Trash]: Gain 2[Credits] for each power counter on Alix T4LBO7.",
+      "text": "Place 1 power counter on Alix T4LBO7 whenever you install a card.\n[Click],[Trash]: Gain 2[Credits] for each power counter on Alix T4LBO7.",
       "title": "Alix T4LBO7",
       "trash": 2,
       "type": "Asset"
@@ -6729,7 +6729,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Ambush",
-      "text": "Cerebral Overwriter can be advanced.\r\nIf you pay 3[Credits] when the Runner accesses Cerebral Overwriter, do 1 brain damage for each advancement token on Cerebral Overwriter.",
+      "text": "Cerebral Overwriter can be advanced.\nIf you pay 3[Credits] when the Runner accesses Cerebral Overwriter, do 1 brain damage for each advancement token on Cerebral Overwriter.",
       "title": "Cerebral Overwriter",
       "trash": 0,
       "type": "Asset"
@@ -6755,7 +6755,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Executive",
-      "text": "You have 1 additional [Click] to spend each turn.\r\nIf Director Haas is trashed while being accessed, add her to the Runner's score area as an agenda worth 2 agenda points.",
+      "text": "You have 1 additional [Click] to spend each turn.\nIf Director Haas is trashed while being accessed, add her to the Runner's score area as an agenda worth 2 agenda points.",
       "title": "Director Haas",
       "trash": 5,
       "type": "Asset"
@@ -6780,7 +6780,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Corp",
-      "text": "Haas Arcology AI can be advanced only while unrezzed.\r\n[Click], <strong>hosted advancement token</strong>: Gain [Click][Click]. Use this ability only once per turn.",
+      "text": "Haas Arcology AI can be advanced only while unrezzed.\n[Click], <strong>hosted advancement token</strong>: Gain [Click][Click]. Use this ability only once per turn.",
       "title": "Haas Arcology AI",
       "trash": 1,
       "type": "Asset"
@@ -6807,7 +6807,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Executive",
-      "text": "Thomas Haas can be advanced.\r\n[Trash]: Gain 2[Credits] for each advancement token on Thomas Haas.",
+      "text": "Thomas Haas can be advanced.\n[Trash]: Gain 2[Credits] for each advancement token on Thomas Haas.",
       "title": "Thomas Haas",
       "trash": 1,
       "type": "Asset"
@@ -6859,7 +6859,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Transaction",
-      "text": "Play only if the Runner made an unsuccessful run during his or her last turn.\r\nGain 7[Credits].",
+      "text": "Play only if the Runner made an unsuccessful run during his or her last turn.\nGain 7[Credits].",
       "title": "Successful Demonstration",
       "type": "Operation"
     },
@@ -6886,7 +6886,7 @@
       "side": "Corp",
       "strength": 7,
       "subtype": "Barrier - Bioroid - AP",
-      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Heimdall 2.0.\r\n[Subroutine] Do 1 brain damage.\r\n[Subroutine] Do 1 brain damage and end the run.\r\n[Subroutine] End the run.",
+      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Heimdall 2.0.\n[Subroutine] Do 1 brain damage.\n[Subroutine] Do 1 brain damage and end the run.\n[Subroutine] End the run.",
       "title": "Heimdall 2.0",
       "type": "ICE"
     },
@@ -6940,7 +6940,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Sentry - Bioroid - Destroyer - Tracer",
-      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Ichi 2.0.\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] Trash 1 program.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag and do 1 brain damage.",
+      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Ichi 2.0.\n[Subroutine] Trash 1 program.\n[Subroutine] Trash 1 program.\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag and do 1 brain damage.",
       "title": "Ichi 2.0",
       "type": "ICE"
     },
@@ -6993,7 +6993,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Code Gate - Bioroid - Tracer - AP",
-      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Viktor 2.0.\r\n<strong>Hosted power counter</strong>: Do 1 brain damage.\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, place 1 power counter on Viktor 2.0.\r\n[Subroutine] End the run.",
+      "text": "The Runner can spend [Click][Click] to break up to 2 subroutines on Viktor 2.0.\n<strong>Hosted power counter</strong>: Do 1 brain damage.\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, place 1 power counter on Viktor 2.0.\n[Subroutine] End the run.",
       "title": "Viktor 2.0",
       "type": "ICE"
     },
@@ -7020,7 +7020,7 @@
       "side": "Corp",
       "strength": 1,
       "subtype": "Sentry - Bioroid - AP",
-      "text": "The Runner can spend [Click] to break any subroutine on Zed 1.0.\r\n[Subroutine] If the Runner has spent at least 1 [Click] to break a subroutine during this run, do 1 brain damage.\r\n[Subroutine] If the Runner has spent at least 1 [Click] to break a subroutine during this run, do 1 brain damage.",
+      "text": "The Runner can spend [Click] to break any subroutine on Zed 1.0.\n[Subroutine] If the Runner has spent at least 1 [Click] to break a subroutine during this run, do 1 brain damage.\n[Subroutine] If the Runner has spent at least 1 [Click] to break a subroutine during this run, do 1 brain damage.",
       "title": "Zed 1.0",
       "type": "ICE"
     },
@@ -7044,7 +7044,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Corp",
-      "text": "Awakening Center can host <strong>bioroid</strong> ice (each piece is installed facedown, ignoring all install costs).\r\nWhenever the Runner passes all of the ice protecting this server, you may rez a piece of ice on Awakening Center, lowering the rez cost by 7[Credits], to force the Runner to encounter it. Trash that ice after the run is completed.",
+      "text": "Awakening Center can host <strong>bioroid</strong> ice (each piece is installed facedown, ignoring all install costs).\nWhenever the Runner passes all of the ice protecting this server, you may rez a piece of ice on Awakening Center, lowering the rez cost by 7[Credits], to force the Runner to encounter it. Trash that ice after the run is completed.",
       "title": "Awakening Center",
       "trash": 3,
       "type": "Upgrade"
@@ -7070,7 +7070,7 @@
       "setname": "Creation and Control",
       "side": "Corp",
       "subtype": "Hostile",
-      "text": "If the Runner is about to break a subroutine on a piece of <strong>bioroid</strong> ice protecting this server, you may rez Tyr's Hand.\r\n[Trash]: Prevent a subroutine from being broken on a piece of <strong>bioroid</strong> ice protecting this server.",
+      "text": "If the Runner is about to break a subroutine on a piece of <strong>bioroid</strong> ice protecting this server, you may rez Tyr's Hand.\n[Trash]: Prevent a subroutine from being broken on a piece of <strong>bioroid</strong> ice protecting this server.",
       "title": "Tyr's Hand",
       "trash": 1,
       "type": "Upgrade"
@@ -7150,7 +7150,7 @@
       ],
       "setname": "Creation and Control",
       "side": "Corp",
-      "text": "Gain 2[Credits] when your turn begins.\r\nTrash Server Diagnostics when you install a piece of ice.",
+      "text": "Gain 2[Credits] when your turn begins.\nTrash Server Diagnostics when you install a piece of ice.",
       "title": "Server Diagnostics",
       "trash": 2,
       "type": "Asset"
@@ -7205,7 +7205,7 @@
       "side": "Corp",
       "strength": 2,
       "subtype": "Code Gate",
-      "text": "[Subroutine] The Runner must pay 2[Credits], if able. If the Runner cannot pay 2[Credits], end the run.\r\n[Subroutine] End the run.",
+      "text": "[Subroutine] The Runner must pay 2[Credits], if able. If the Runner cannot pay 2[Credits], end the run.\n[Subroutine] End the run.",
       "title": "Datapike",
       "type": "ICE"
     },
@@ -7258,7 +7258,7 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Code Gate - NEXT",
-      "text": "NEXT Bronze has +1 strength for each rezzed piece of <strong>NEXT</strong> ice.\r\n[Subroutine] End the run.",
+      "text": "NEXT Bronze has +1 strength for each rezzed piece of <strong>NEXT</strong> ice.\n[Subroutine] End the run.",
       "title": "NEXT Bronze",
       "type": "ICE"
     },
@@ -7284,7 +7284,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "subtype": "Double",
-      "text": "As an additional cost to play this operation, spend [Click].\r\nReveal up to 5 cards in HQ to the Runner. Gain 2[Credits] for each card revealed.",
+      "text": "As an additional cost to play this operation, spend [Click].\nReveal up to 5 cards in HQ to the Runner. Gain 2[Credits] for each card revealed.",
       "title": "Celebrity Gift",
       "type": "Operation"
     },
@@ -7311,7 +7311,7 @@
       "side": "Corp",
       "strength": 2,
       "subtype": "Barrier",
-      "text": "1[Credits]: Add Himitsu-Bako to HQ.\r\n[Subroutine] End the run.",
+      "text": "1[Credits]: Add Himitsu-Bako to HQ.\n[Subroutine] End the run.",
       "title": "Himitsu-Bako",
       "type": "ICE"
     },
@@ -7363,7 +7363,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "subtype": "Executive",
-      "text": "[Click]: Draw 2 cards.\r\n<strong>Remove Jackson Howard from the game</strong>: Shuffle up to 3 cards from Archives to R&D.",
+      "text": "[Click]: Draw 2 cards.\n<strong>Remove Jackson Howard from the game</strong>: Shuffle up to 3 cards from Archives to R&D.",
       "title": "Jackson Howard",
       "trash": 3,
       "type": "Asset"
@@ -7389,7 +7389,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "subtype": "Double - Gray Ops",
-      "text": "As additional cost to play this operation, spend [Click].\r\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, reveal the Runner's grip and trash a number of resources and/or events from it up to the amount by which your trace strength exceeded the Runner's link strength. If unsuccessful, take 1 bad publicity.",
+      "text": "As additional cost to play this operation, spend [Click].\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, reveal the Runner's grip and trash a number of resources and/or events from it up to the amount by which your trace strength exceeded the Runner's link strength. If unsuccessful, take 1 bad publicity.",
       "title": "Invasion of Privacy",
       "type": "Operation"
     },
@@ -7415,7 +7415,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "subtype": "Expansion",
-      "text": "Place 2 agenda counters on Geothermal Fracking when you score it.\r\n[Click], <strong>hosted agenda counter</strong>: Gain 7[Credits] and take 1 bad publicity.",
+      "text": "Place 2 agenda counters on Geothermal Fracking when you score it.\n[Click], <strong>hosted agenda counter</strong>: Gain 7[Credits] and take 1 bad publicity.",
       "title": "Geothermal Fracking",
       "type": "Agenda"
     },
@@ -7441,7 +7441,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Sentry - Destroyer - Illicit",
-      "text": "When you rez Swarm, take 1 bad publicity.\r\nSwarm can be advanced and gains \"[Subroutine] Trash 1 program unless the Runner pays 3[Credits].\" for each advancement token on it.",
+      "text": "When you rez Swarm, take 1 bad publicity.\nSwarm can be advanced and gains \"[Subroutine] Trash 1 program unless the Runner pays 3[Credits].\" for each advancement token on it.",
       "title": "Swarm",
       "type": "ICE"
     },
@@ -7492,7 +7492,7 @@
       "side": "Corp",
       "strength": 5,
       "subtype": "Sentry - Destroyer - Illicit",
-      "text": "When you rez Grim, take 1 bad publicity.\r\n[Subroutine] Trash 1 program.",
+      "text": "When you rez Grim, take 1 bad publicity.\n[Subroutine] Trash 1 program.",
       "title": "Grim",
       "type": "ICE"
     },
@@ -7510,7 +7510,7 @@
       "side": "Corp",
       "strength": 10,
       "subtype": "Barrier \u2013 Bioroid",
-      "text": "[Subroutine] End the run unless the Runner spends [Click][Click].\r\n[Subroutine] End the run unless the Runner pays 3[Credits].\r\n[Subroutine] End the run unless the Runner trashes 1 installed program.\r\n[Subroutine] End the run unless the Runner takes 1 brain damage.",
+      "text": "[Subroutine] End the run unless the Runner spends [Click][Click].\n[Subroutine] End the run unless the Runner pays 3[Credits].\n[Subroutine] End the run unless the Runner trashes 1 installed program.\n[Subroutine] End the run unless the Runner takes 1 brain damage.",
       "title": "Wotan",
       "type": "ICE"
     },
@@ -7527,7 +7527,7 @@
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Black Ops",
-      "text": "Play only if the Runner installed a resource on his or her last turn.\r\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, add 1 installed resource to the top of the Runner's stack. If unsuccessful, take 1 bad publicity.",
+      "text": "Play only if the Runner installed a resource on his or her last turn.\n<strong>Trace<sup>2</sup></strong>&ndash; If successful, add 1 installed resource to the top of the Runner's stack. If unsuccessful, take 1 bad publicity.",
       "title": "Hellion Alpha Test",
       "type": "Operation"
     },
@@ -7545,7 +7545,7 @@
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Initiative",
-      "text": "When you score Clone Retirement, you may remove 1 bad publicity.\r\nWhen the Runner steals Clone Retirement, the Corp takes 1 bad publicity.",
+      "text": "When you score Clone Retirement, you may remove 1 bad publicity.\nWhen the Runner steals Clone Retirement, the Corp takes 1 bad publicity.",
       "title": "Clone Retirement",
       "type": "Agenda"
     },
@@ -7564,7 +7564,7 @@
       "side": "Corp",
       "strength": 2,
       "subtype": "Sentry - Destroyer - AP",
-      "text": "The Runner cannot use <strong>AI</strong> programs to break subroutines on Swordsman.\r\n[Subroutine] Trash 1 <strong>AI</strong> program.\r\n[Subroutine] Do 1 net damage.",
+      "text": "The Runner cannot use <strong>AI</strong> programs to break subroutines on Swordsman.\n[Subroutine] Trash 1 <strong>AI</strong> program.\n[Subroutine] Do 1 net damage.",
       "title": "Swordsman",
       "type": "ICE"
     },
@@ -7582,7 +7582,7 @@
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Double",
-      "text": "As an additional cost to play this operation, spend [Click].\r\nPlace up to 2 advancement tokens on a card that can be advanced.",
+      "text": "As an additional cost to play this operation, spend [Click].\nPlace up to 2 advancement tokens on a card that can be advanced.",
       "title": "Shipment from SanSan",
       "type": "Operation"
     },
@@ -7600,7 +7600,7 @@
       "side": "Corp",
       "strength": 3,
       "subtype": "Sentry - Tracer - Illicit",
-      "text": "When you rez Muckraker, take 1 bad publicity.\r\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, give the Runner 1 tag.\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.\r\n[Subroutine] End the run if the Runner is tagged.",
+      "text": "When you rez Muckraker, take 1 bad publicity.\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, give the Runner 1 tag.\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.\n[Subroutine] End the run if the Runner is tagged.",
       "title": "Muckraker",
       "type": "ICE"
     },
@@ -7636,7 +7636,7 @@
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Executive",
-      "text": "When you rez Elizabeth Mills, remove 1 bad publicity.\r\n[Click], [Trash]: Trash 1 <strong>location</strong>. Take 1 bad publicity.",
+      "text": "When you rez Elizabeth Mills, remove 1 bad publicity.\n[Click], [Trash]: Trash 1 <strong>location</strong>. Take 1 bad publicity.",
       "title": "Elizabeth Mills",
       "trash": 1,
       "type": "Asset"
@@ -7653,7 +7653,7 @@
       "quantity": 3,
       "setname": "Second Thoughts",
       "side": "Corp",
-      "text": "Install only in a remote server.\r\nThe Runner cannot initiate a run on this server. \r\nWhenever the Runner makes a successful run on HQ, trash Off the Grid.",
+      "text": "Install only in a remote server.\nThe Runner cannot initiate a run on this server. \nWhenever the Runner makes a successful run on HQ, trash Off the Grid.",
       "title": "Off the Grid",
       "trash": 0,
       "type": "Upgrade"
