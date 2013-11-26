@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd dist && rsync -az --force --delete --progress -e "ssh -p22" ./ deploy@onosendaicorp.com:/var/www/
