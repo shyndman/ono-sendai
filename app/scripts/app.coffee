@@ -8,11 +8,7 @@ angular.module('deckBuilder', [
     # Very important :)
     printWelcomeMessage()
 
-    # HTML5 mode (won't work on GH pages)
-    if (window? and /localhost/.test(window.location.host))
-      $locationProvider.html5Mode(true)
-    else
-      $locationProvider.html5Mode(false).hashPrefix('!')
+    $locationProvider.html5Mode(true)
 
     # Sidesteps the 300ms click event on mobile devices
     FastClick.attach(document.body))
