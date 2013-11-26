@@ -32,7 +32,7 @@ angular.module('deckBuilder')
         inputElement.select2('val', ngModelCtrl.$modelValue)
 
       # UI -> Model
-      inputElement.on('change', (e) ->
+      inputElement.on('change', selectChanged = (e) ->
         if scope.$$phase or scope.$root.$$phase
           return
 
