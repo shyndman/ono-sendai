@@ -181,11 +181,12 @@ module.exports = function (grunt) {
         }
       }
     },
-    // not used since Uglify task does concat,
-    // but still available if needed
-    /*concat: {
-      dist: {}
-    },*/
+    concat: {
+      dist: {
+        src: [ '.tmp/scripts/app.js', '.tmp/scripts/templateCache.js' ],
+        dest: '.tmp/scripts/app.js'
+      }
+    },
     rev: {
       dist: {
         files: {
@@ -201,11 +202,12 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          base: '<%= yeoman.app %>',
-          concat: '<%= yeoman.dist %>/scripts/app.js',
+          prefix: '/',
+          concat: 'dist',
           module: 'deckBuilder'
         },
-        src: '<%= yeoman.app %>/views/**.html',
+        cwd: 'app',
+        src: 'views/**/*.html',
         dest: '.tmp/scripts/templateCache.js'
       }
     },
@@ -406,8 +408,8 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    // 'ngtemplates:dist', // failing -- look into it later
     'autoprefixer',
+    'ngtemplates:dist',
     'concat',
     'copy:dist',
     'cdnify',
