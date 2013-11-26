@@ -362,6 +362,13 @@ module.exports = function (grunt) {
         }
       }
     },
+    minjson: {
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/data/cards.json': '<%= yeoman.dist %>/data/cards.json',
+        }
+      }
+    },
     bump: {
       options: {
         files: ['package.json', 'bower.json', 'app/data/version.json']
@@ -406,7 +413,8 @@ module.exports = function (grunt) {
     'cdnify',
     'ngmin',
     'cssmin',
-    // 'svgmin', //currently breaks the logo
+    'svgmin',
+    'minjson',
     'uglify',
     'rev',
     'usemin'
