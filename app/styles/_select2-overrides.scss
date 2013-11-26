@@ -10,6 +10,7 @@
     border-color: #ccc;
     background: none;
     padding-left: 10px;
+    transition: border-color ease-in-out 0.3s;
 
     .select2-arrow {
       background: none;
