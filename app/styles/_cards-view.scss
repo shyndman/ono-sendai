@@ -219,13 +219,16 @@ nr-cards-view {
           font-size: 16px;
         }
 
+        label {
+          color: #777;
+          margin: 0;
+        }
+
         .info-row {
           margin: 5px 0;
 
           > label {
-            color: #777;
             width: 74px;
-            margin: 0;
             float: left;
           }
         }
@@ -236,6 +239,7 @@ nr-cards-view {
 
         .links {
           @extend .list-unstyled;
+          clear: both;
           margin-top: 20px;
 
           li {
