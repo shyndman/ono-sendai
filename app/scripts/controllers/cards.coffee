@@ -61,9 +61,12 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
 
+    $scope.isCostToBreakVisible = (card) ->
+      card.type == 'ICE' or 'icebreaker' of card.subtypesSet
+
     # Returns true if the user has less than 3 of this card
     #
-    # TODO Take into consideration ownership of datapacks and # of core sets owned.
+    # [todo] Take into consideration ownership of datapacks and # of core sets owned.
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
 
