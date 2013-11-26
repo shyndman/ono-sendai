@@ -479,13 +479,17 @@ angular.module('deckBuilder')
         layoutNow(oldLayoutMode != layoutMode) # Only perform scaling if we've changed layout modes
       scope.$watch('selection', selectionChanged)
 
+      firstLayout = true
       queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
-        firstLoad = !queryResult?
         queryResult = newVal
         $timeout ->
+          if !queryResult?
+            return
+
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLoad)
+          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
+          firstLayout = false
 
           if layoutMode == 'grid'
             layoutPromise.then(scrollToTop)
