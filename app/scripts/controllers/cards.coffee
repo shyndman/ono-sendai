@@ -27,12 +27,6 @@ angular.module('deckBuilder')
 
         $scope.cards = orderedCards)
 
-    $rootScope.broadcastZoomStart = ->
-      $scope.$broadcast 'zoomStart'
-
-    $rootScope.broadcastZoomEnd = ->
-      $scope.$broadcast 'zoomEnd'
-
     $scope.selectCard = (card) ->
       if card?
         $log.info "Selected card changing to #{ card.title }"
