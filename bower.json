@@ -1,6 +1,6 @@
 {
   "name": "deckBuilder",
-  "version": "0.31.0",
+  "version": "0.32.0",
   "dependencies": {
     "angular": "~1.2.0",
     "json3": "~3.2.4",
