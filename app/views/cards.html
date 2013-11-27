@@ -21,9 +21,11 @@
       </h2>
       <div class="info">
 
-        <div class="info-nav btn-group">
-          <button type="button" class="btn btn-sm btn-default active"><i class="icon-info"></i></button>
-          <button type="button" class="btn btn-sm btn-default"><i class="icon-calculator"></i></button>
+        <div class="info-nav btn-group"
+             ng-if="isCostToBreakVisible(selectedCard)">
+          <button type="button" class="btn btn-sm btn-default"
+                  ng-model="cards.costToBreakVisible"
+                  btn-checkbox><i class="icon-calculator"></i></button>
         </div>
 
         <div class="info-row">
