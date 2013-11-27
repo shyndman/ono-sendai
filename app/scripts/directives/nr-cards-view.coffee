@@ -1,6 +1,6 @@
 # This component is responsible for dealing with cards, including user input and layout.
 angular.module('deckBuilder')
-  .directive('nrCardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+  .directive('cardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     templateUrl: '/views/directives/nr-cards-view.html'

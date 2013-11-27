@@ -5,7 +5,7 @@ $card-offset-2-z-index: 0;
 
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
-nr-cards-view {
+cards-view {
   @mixin scaled-card($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;
