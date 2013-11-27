@@ -1,5 +1,5 @@
 # Based on the work by the angular-ui team (angular-bootstrap)
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('dropdownToggle', ($document, $location) ->
     openElement = null
     closeMenu   = -> # noop, until replaced

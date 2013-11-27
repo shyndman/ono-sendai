@@ -369,7 +369,7 @@ class CardService
             .value()
         [side, subtypes]))
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
   # properly rewriting the code to be minify-friendly.
   .service('cardService', ($http, $log, searchService, filterDescriptors) ->

@@ -1,6 +1,6 @@
 _.mixin(_.str.exports()); # Make underscore.string functions available under the _ namespace
 
-angular.module('deckBuilder', [
+angular.module('onoSendai', [
     'ui.bootstrap.buttons',
     'ui.bootstrap.tooltip',
     'pasvaz.bindonce'])

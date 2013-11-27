@@ -180,6 +180,6 @@ class UrlStateService
 
 
 angular
-  .module('deckBuilder')
+  .module('onoSendai')
   .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, filterDefaults) ->
     new UrlStateService(arguments...))

@@ -1,5 +1,5 @@
 # This component is responsible for dealing with cards, including user input and layout.
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('cardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true

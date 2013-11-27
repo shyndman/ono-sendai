@@ -3,7 +3,7 @@
 describe 'Controller: FiltersCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   FiltersCtrl = {}
   scope = {}

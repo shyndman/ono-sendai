@@ -3,7 +3,7 @@
 describe 'Service: NrCostToBreakCalculator', () ->
 
   # load the service's module
-  beforeEach module 'DeckbuilderApp'
+  beforeEach module 'onoSendaiApp'
 
   # instantiate service
   NrCostToBreakCalculator = {}

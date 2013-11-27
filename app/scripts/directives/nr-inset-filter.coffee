@@ -1,4 +1,4 @@
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('insetFilter', ($parse) ->
     template: '<div class="input"></div>'
     restrict: 'E'

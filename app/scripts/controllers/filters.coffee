@@ -1,4 +1,4 @@
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .controller('FiltersCtrl', ($scope, filterUI, cardService) ->
     $scope.filterUI = filterUI
     generalGroup = _.findWhere(filterUI, name: 'general')

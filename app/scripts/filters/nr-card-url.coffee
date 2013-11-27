@@ -8,7 +8,7 @@ pluralizeType = (type) ->
     else
       "#{ type }s"
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .filter 'cardUrl', ($log, $location) ->
     urlPrefix =
       if $location.$$html5

@@ -58,6 +58,6 @@ class SearchService
         .value()
 
 # Register the service
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .service 'searchService', ($q) ->
     new SearchService($q)

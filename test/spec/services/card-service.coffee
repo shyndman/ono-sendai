@@ -2,7 +2,7 @@
 
 describe 'Service: cardService', () ->
 
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   # instantiate service
   cardService = {}

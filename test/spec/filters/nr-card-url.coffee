@@ -1,7 +1,7 @@
 describe 'Filter: nrCardUrl', () ->
 
   # load the filter's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   # initialize a new instance of the filter before each test
   nrCardUrl = {}

@@ -63,6 +63,6 @@ class CssUtils
     else
       item
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .service 'cssUtils', ($window, $q, $log) -> new CssUtils($window, $q, $log)
 

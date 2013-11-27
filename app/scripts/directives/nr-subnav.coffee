@@ -1,5 +1,5 @@
 # Sub-navigation
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('nrSubnav', ->
     templateUrl: '/views/directives/nr-subnav.html'
     replace: false

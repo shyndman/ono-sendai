@@ -204,7 +204,7 @@ module.exports = function (grunt) {
         options: {
           prefix: '/',
           concat: 'dist',
-          module: 'deckBuilder'
+          module: 'onoSendai'
         },
         cwd: 'app',
         src: 'views/**/*.html',

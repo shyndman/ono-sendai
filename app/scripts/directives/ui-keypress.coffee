@@ -26,7 +26,7 @@ keyDirective = (event) ->
     link: (scope, element, attrs) ->
       keypressHelper(event, scope, element, attrs, $parse)
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('uiKeydown',  ['$parse', keyDirective('keydown')])
   .directive('uiKeyup',    ['$parse', keyDirective('keyup')])
   .directive('uiKeypress', ['$parse', keyDirective('keypress')])

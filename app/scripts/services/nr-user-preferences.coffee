@@ -17,6 +17,6 @@ class UserPreferences
   _persistFavourites: =>
     localStorage.setItem("favourites", JSON.stringify(@_favs))
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .service 'userPreferences', () ->
     new UserPreferences(arguments...)

@@ -1,5 +1,5 @@
 {
-  "name": "deckBuilder",
+  "name": "onoSendai",
   "version": "0.38.0",
   "dependencies": {
     "angular": "~1.2.0",

@@ -25,7 +25,7 @@ groupTitle = (groupName, grouping) ->
     else
       groupName
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .filter('primaryGroupTitle', ->
     (groupTitles, groupings) ->
       if groupings.length > 1

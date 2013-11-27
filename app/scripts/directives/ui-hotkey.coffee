@@ -1,4 +1,4 @@
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('uiHotkey', ($log) ->
     # TODO Add display elements for showing available hotkeys on screen
     jwerty.key('tab', ->)

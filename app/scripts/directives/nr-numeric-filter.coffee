@@ -9,7 +9,7 @@ keyToJwertyCombo = (key) ->
     else
       key
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('numericFilter', ($timeout, cardService) ->
     templateUrl: '/views/directives/nr-numeric-filter.html'
     scope:
