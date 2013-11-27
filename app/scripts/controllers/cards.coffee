@@ -1,7 +1,9 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.queryArgs
-    $scope.grid = zoom: 0.35
+    $scope.cardUI =
+      zoom: 0.35
+      costToBreakToggled: false
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
@@ -61,9 +63,12 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
 
+    $scope.isCostToBreakEnabled = (card) ->
+      card.type == 'ICE' or 'icebreaker' of card.subtypesSet
+
     # Returns true if the user has less than 3 of this card
     #
-    # TODO Take into consideration ownership of datapacks and # of core sets owned.
+    # [todo] Take into consideration ownership of datapacks and # of core sets owned.
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
 
@@ -95,4 +100,11 @@ angular.module('deckBuilder')
       updateUrl()
       cardService.query(filter).then (queryResult) ->
         setQueryResult(queryResult)
-    ), true)) # True to make sure field changes trigger this watch
+    ), true) # True to make sure field changes trigger this watch
+
+    $scope.broadcastZoomStart = ->
+      $scope.$broadcast 'zoomStart'
+
+    $scope.broadcastZoomEnd = ->
+      $scope.$broadcast 'zoomEnd'
+  )
