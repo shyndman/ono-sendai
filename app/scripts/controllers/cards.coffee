@@ -3,7 +3,7 @@ angular.module('deckBuilder')
     $scope.filter = urlStateService.queryArgs
     $scope.cardUI =
       zoom: 0.35
-      costToBreakOn: false
+      costToBreakToggled: false
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
@@ -63,7 +63,7 @@ angular.module('deckBuilder')
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
 
-    $scope.isCostToBreakVisible = (card) ->
+    $scope.isCostToBreakEnabled = (card) ->
       card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
     # Returns true if the user has less than 3 of this card

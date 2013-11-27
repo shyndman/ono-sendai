@@ -213,6 +213,7 @@ nr-cards-view {
         width: 295px;
         height: 418px;
         float: right;
+        user-select: all;
 
         .info-nav {
           position: absolute;
@@ -231,11 +232,15 @@ nr-cards-view {
         }
 
         .info-row {
-          margin: 5px 0;
+          margin: 7px 0;
 
           > label {
-            width: 74px;
+            width: 80px;
             float: left;
+          }
+
+          &:first-child {
+            margin-top: 0;
           }
         }
 
