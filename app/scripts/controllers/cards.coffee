@@ -1,5 +1,5 @@
 angular.module('deckBuilder')
-  .controller('CardsCtrl', ($rootScope, $scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.queryArgs
     $scope.grid = zoom: 0.35
     $scope.selectedCard = null
@@ -98,4 +98,11 @@ angular.module('deckBuilder')
       updateUrl()
       cardService.query(filter).then (queryResult) ->
         setQueryResult(queryResult)
-    ), true)) # True to make sure field changes trigger this watch
+    ), true) # True to make sure field changes trigger this watch
+
+    $scope.broadcastZoomStart = ->
+      $scope.$broadcast 'zoomStart'
+
+    $scope.broadcastZoomEnd = ->
+      $scope.$broadcast 'zoomEnd'
+  )
