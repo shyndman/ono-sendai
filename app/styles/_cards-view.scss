@@ -261,7 +261,7 @@ cards-view {
       .card-count {
         position: fixed;
         bottom: 10px;
-        // TODO This will have to change when we have optional sidebars
+        // [todo] This will have to change when we have optional sidebars
         left: $sidebar-width;
         right: 0;
         text-align: center;
@@ -336,9 +336,7 @@ cards-view {
 }
 
 .cost-to-break {
-  h3 {
-    color: #777;
-    font-size: 14px;
+  .controls {
     padding: 3px 5px 8px 0;
     margin: 0;
     border-bottom: 1px solid #ddd;

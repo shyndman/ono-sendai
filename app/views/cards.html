@@ -74,7 +74,12 @@
           </div>
           <div class="cost-to-break" ng-switch-when="true"
                style="padding-right: 9px;">
-            <h3>{{costToBreakInfo.opponentType}}</h3>
+            <div class="controls">
+              <input type="search" class="input-sm form-control"
+                     placeholder="{{costToBreakInfo.opponentType}} Filter"
+                     style="width: 150px"
+                     autofocus>
+            </div>
             <ul class="opponents list-unstyled">
               <li ng-repeat="opponent in costToBreakInfo.opponents"
                   class="opponent"
@@ -86,9 +91,10 @@
                   <span ng-if="opponent.interaction.breakerCondition"
                         class="text-muted">
                     <span ng-if="costToBreakInfo.opponentType == 'ICE'">
-                      {{ selectedCard.title }} @
+                      {{ selectedCard.title }}
                     </span>
-                    {{ opponent.interaction.breakerCondition }} <i class="icon-strength" title="Strength"></i>
+                    <i class="icon-strength" title="Strength"></i>
+                    {{ opponent.interaction.breakerCondition }}
                   </span>
                 </div>
                 <div class="cost">
