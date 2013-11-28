@@ -21,6 +21,10 @@ numeric-filter {
       outline: none;
     }
   }
+
+  input {
+    position: relative; // Required to get borders to show up. Don't ask me why
+  }
 }
 
 inset-filter {
