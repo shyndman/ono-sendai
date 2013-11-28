@@ -38,16 +38,19 @@ angular.module('onoSendai')
     $scope.selectCard = (card) ->
       if card?
         $log.info "Selected card changing to #{ card.title }"
+        $scope.previousCard = $scope.queryResult.cardBefore(card)
+        $scope.nextCard = $scope.queryResult.cardAfter(card)
       else
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
+
       updateUrl()
 
     $scope.deselectCard = ->
       $scope.selectCard(null)
 
-    $scope.previousCard = ->
+    $scope.selectPreviousCard = ->
       if $scope.selectedCard is null
         return
 
@@ -58,7 +61,7 @@ angular.module('onoSendai')
       $log.info 'Moving to previous card'
       $scope.selectCard(prevCard)
 
-    $scope.nextCard = ->
+    $scope.selectNextCard = ->
       if $scope.selectedCard is null
         return
 
