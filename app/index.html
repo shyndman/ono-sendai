@@ -4,13 +4,12 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ono-Sendai</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <link rel="icon" type="image/png" size="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" size="16x16" href="/images/favicon-16.png" />
+  <link rel="icon" type="image/png" size="32x32" href="/images/favicon-32.png" />
   <!-- [todo] Figure out why this can't be merged with main.css -->
   <link rel="stylesheet" href="/bower_components/select2/select2.css">
   <!-- build:css(.tmp) /styles/main.css -->
@@ -22,8 +21,8 @@
       tabindex="0"
       ui-keydown="{
         'esc'  : { action: 'deselectCard()', preventDefault: true },
-        'left' : 'previousCard()',
-        'right': 'nextCard()'
+        'left' : 'selectPreviousCard()',
+        'right': 'selectNextCard()'
       }"
       style="outline: none !important;">
   <!--[if lt IE 9]>
