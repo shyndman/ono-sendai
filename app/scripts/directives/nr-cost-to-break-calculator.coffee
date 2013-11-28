@@ -6,6 +6,7 @@ angular.module('onoSendai')
       card: '='
     }
     link: (scope, element, attrs) ->
+      lastCard = null
       scope.$watch 'card', cardChanged = (card) ->
         return if !card?
 
@@ -13,4 +14,8 @@ angular.module('onoSendai')
         if costToBreakCalculator.isCardApplicable(card)
           scope.costToBreakInfo = costToBreakCalculator.calculate(card)
 
+        if lastCard?.side != card.side
+          scope.opponentFilter = ''
+
+        lastCard = card
   )

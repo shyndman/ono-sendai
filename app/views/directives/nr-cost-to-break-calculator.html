@@ -1,11 +1,12 @@
 <div class="controls">
-  <input type="search" class="input-sm form-control"
+  <input ng-model="opponentFilter"
+         type="search" class="input-sm form-control"
          placeholder="{{costToBreakInfo.opponentType}} Filter"
          style="width: 150px"
          autofocus>
 </div>
 <ul class="opponents list-unstyled">
-  <li ng-repeat="opponent in costToBreakInfo.opponents"
+  <li ng-repeat="opponent in costToBreakInfo.opponents | filter:opponentFilter"
       class="opponent"
       ng-class="{
         'not-broken': !opponent.interaction.broken
