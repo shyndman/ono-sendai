@@ -1,27 +1,5 @@
-numeric-filter {
-  display: block;
-
-  .btn {
-    border-right: none;
-
-    // Overriding specificity of some insane Bootstrap selector
-    padding-right: 6px !important;
-    padding-left: 9px !important;
-
-    .caret {
-      margin-left: 2px;
-    }
-  }
-
-  .dropdown-menu {
-    min-width: inherit;
-    left: -3px;
-
-    a {
-      outline: none;
-    }
-  }
-}
+@import 'directives/cost-to-break-calculator';
+@import 'directives/numeric-filter';
 
 inset-filter {
   display: block;
