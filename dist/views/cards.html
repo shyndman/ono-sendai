@@ -1,4 +1,4 @@
-<nr-cards-view class="cards" query-result="queryResult" selection="selectedCard" zoom="grid.zoom">
+<cards-view class="cards" query-result="queryResult" selection="selectedCard" zoom="cardUI.zoom">
 
   <!-- SELECTED CARD -->
   <div ng-if="selectedCard != null" class="selected-card-container">
@@ -12,50 +12,76 @@
         <span class="close" ng-click="deselectCard()">&times;</span>
       </h2>
       <div class="info">
-        <div>
-          <div class="info-row">
-            <label>From:</label>
-            <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
-            <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
-              <span ng-if="isShortCard(selectedCard)">only</span>
-              {{selectedCard.quantity}} in set
-            </small>
-          </div>
-          <div class="info-row">
-            <label>Type:</label>
-            <a ng-href="{{selectedCard | cardUrl:'type'}}">
-              {{selectedCard.type}}
-            </a>
-          </div>
-          <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
-            <label>Subtypes:</label>
-            <span ng-repeat="subtype in selectedCard.subtypes">
-              <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
-            </span>
-          </div>
-          <!--div class="info-row">
-            <label>Notes:</label>
-            <div>This is a test. This is a test. This is a test. This is a test. This is a test.</div>
-          </div-->
+        <!-- Nav -->
+        <div class="info-nav btn-group" ng-if="isCostToBreakEnabled(selectedCard)">
+          <button type="button" class="btn btn-sm btn-default" ng-model="cardUI.costToBreakVisible" btn-checkbox="">
+            <i class="icon-calculator"></i>
+          </button>
         </div>
-        <ul class="links">
-          <!-- Reddit cards of the day -->
-          <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
-            <a ng-href="{{cotd.url}}" target="reddit">
-              <i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})
-            </a>
-          </li>
-          <li>
-            <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb">
-              <i class="icon-link-ext"></i> Comments on CardGameDB
-            </a>
-          </li>
-          <li>
-            <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb">
-              <i class="icon-link-strength"></i> View on NetrunnerDB
-            </a>
-          </li>
-        </ul>
+
+        <div ng-switch="cardUI.costToBreakVisible && isCostToBreakEnabled(selectedCard)">
+          <div class="general" ng-switch-when="false">
+            <div class="info-row">
+              <label>Type:</label>
+              <a ng-href="{{selectedCard | cardUrl:'type'}}">
+                {{selectedCard.type}}
+              </a>
+            </div>
+            <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
+              <label>Subtypes:</label>
+              <span ng-repeat="subtype in selectedCard.subtypes">
+                <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
+              </span>
+            </div>
+            <div class="info-row">
+              <label>From:</label>
+              <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
+              <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
+                <span ng-if="isShortCard(selectedCard)">only</span>
+                {{selectedCard.quantity}} in set
+              </small>
+            </div>
+
+            <ul class="links">
+              <!-- Reddit cards of the day -->
+              <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
+                <a ng-href="{{cotd.url}}" target="reddit">
+                  <i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})
+                </a>
+              </li>
+              <li>
+                <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb">
+                  <i class="icon-link-ext"></i> Comments on CardGameDB
+                </a>
+              </li>
+              <li>
+                <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb">
+                  <i class="icon-link-strength"></i> View on NetrunnerDB
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="cost-to-break" ng-switch-when="true" style="padding-right: 9px">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>{{costToBreakInfo.opponentType}}</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="opponents">
+                <tr ng-repeat="opponent in costToBreakInfo.opponents" ng-class="{
+                      'not-broken': !opponent.interaction.broken
+                    }">
+                  <td><a ng-href="{{opponent.card | cardUrl:'card'}}">{{opponent.card.title}}</a></td>
+                  <td class="cost">
+                      {{ opponent.interaction.creditsSpent ? opponent.interaction.creditsSpent : '⃠' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <div class="card-count">
         <span class="current">{{queryResult.cardOrdinal(selectedCard) + 1}}</span>
@@ -87,4 +113,4 @@
     <img bo-src="card.imagesrc" width="300" height="418">
     <div class="background"></div>
   </div>
-</nr-cards-view>
+</cards-view>
