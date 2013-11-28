@@ -22,10 +22,10 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
 
     # Build the initial filter from the URL
-    [ @queryArgs, @selectedCardId ] = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId, @costToBreakVisible ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs, selectedCard) ->
+  updateUrl: (queryArgs, selectedCard, costToBreakVisible) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
@@ -35,6 +35,9 @@ class UrlStateService
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
+
+    if costToBreakVisible
+      url += "/$"
 
     # Build up the query string parameters
     search = {}
@@ -46,7 +49,7 @@ class UrlStateService
           urlOp = DATA_TO_URL_OPERATORS[arg.operator]
           search[name] = "#{ urlOp }:#{ urlVal }"
         when 'inSet'
-          search[name] =
+          searchVal =
             if name is 'faction'
               relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
               @_factionSearchVal(relevantFactions, arg)
@@ -55,6 +58,7 @@ class UrlStateService
                 arg.join(',')
               else
                 arg
+          search[name] = searchVal if searchVal
         when 'search'
           search.search = queryArgs.search
         else
@@ -76,9 +80,7 @@ class UrlStateService
 
   # Returns the search value for
   _factionSearchVal: (factions, arg) ->
-    if _.every(factions, (f) -> arg[f.model])
-      'all'
-    else
+    if !_.every(factions, (f) -> arg[f.model])
       _(factions)
         .chain()
         .filter((f) -> arg[f.model])
@@ -92,31 +94,37 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    [ @queryArgs, @selectedCardId ]  = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId, @costToBreakVisible ]  = @_stateFromUrl()
     @$rootScope.$broadcast('urlStateChange')
 
   _cardsUrlMatcher:
     ///
       ^
       /cards
-      /(corp|runner)
-      (?: # Selected group
+      /(corp|runner) # 1 - side
+      (?:
         /
-        ([^c][^/]+) # the ^c is to prevent a match on /card/ -- a bit messy
+        # [note] the ^c is to prevent a match on /card/ -- a bit messy
+        ([^c][^/]+)  # 2 - card type
       )?
-      (?: # Specific card
+      (?:
         /card/
-        ([^/]+)
+        ([^/]+)     # 3 - card
+        (/\$)?       # 4 - cost to break
       )?
     ///
 
   # [todo] This is getting a bit ugly. Consider a refactor
   _stateFromUrl: ->
-    cardsMatch = @$location.path().match(@_cardsUrlMatcher)
+    selectedCardId = null
+    costToBreakVisible = false
 
     # Copy defaults and assign general as the default active group
     queryArgs = angular.copy(@filterDefaults)
     queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
+
+    # Match the URL
+    cardsMatch = @$location.path().match(@_cardsUrlMatcher)
 
     # No URL match. Return default query arguments.
     if !cardsMatch?
@@ -133,6 +141,9 @@ class UrlStateService
 
     if cardsMatch[3]
       selectedCardId = cardsMatch[3]
+
+    if cardsMatch[4]
+      costToBreakVisible = true
 
     relevantFilters = @cardService.relevantFilters(queryArgs, false)
     search = @$location.search()
@@ -155,9 +166,6 @@ class UrlStateService
             value: Number(val)
 
         when 'inSet'
-          if search[name] == 'all'
-            break
-
           if name == 'faction'
             queryFactions = queryArgs.fieldFilters.faction
             factions = @factionUiMappingsBySide[side]
@@ -176,7 +184,7 @@ class UrlStateService
         else # switch
           queryArgs.fieldFilters[name] = search[name]
 
-    [ queryArgs, selectedCardId ]
+    [ queryArgs, selectedCardId, costToBreakVisible ]
 
 
 angular

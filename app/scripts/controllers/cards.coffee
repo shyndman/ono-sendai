@@ -6,7 +6,7 @@ angular.module('onoSendai')
     $scope.filter = urlStateService.queryArgs
     $scope.cardUI =
       zoom: 0.35
-      costToBreakVisible: false
+      costToBreakVisible: urlStateService.costToBreakVisible
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
@@ -91,7 +91,12 @@ angular.module('onoSendai')
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
     $scope.isCostToBreakVisible = (card) ->
-      $scope.isCostToBreakEnabled(card) and $scope.cardUI.costToBreakVisible
+      if !card?
+        false
+      else
+        $scope.isCostToBreakEnabled(card) and $scope.cardUI.costToBreakVisible
+
+    $scope.$watch('cardUI.costToBreakVisible', -> updateUrl())
 
 
     # ~-~-~- FAVOURITES
@@ -130,7 +135,8 @@ angular.module('onoSendai')
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, $scope.selectedCard)
+      selCard = $scope.selectedCard
+      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, $scope.isCostToBreakVisible(selCard))
     ), 500)
 
 
