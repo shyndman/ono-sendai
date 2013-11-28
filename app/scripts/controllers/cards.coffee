@@ -90,6 +90,9 @@ angular.module('onoSendai')
 
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
+    $scope.isCostToBreakVisible = (card) ->
+      $scope.isCostToBreakEnabled(card) and $scope.cardUI.costToBreakVisible
+
 
     # ~-~-~- FAVOURITES
 
