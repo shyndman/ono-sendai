@@ -5,7 +5,7 @@ angular.module('onoSendai')
     factions = $scope.filter.fieldFilters.faction
 
     # Supply the sets
-    cardService.getSets().then (sets) ->
+    cardService.getSets().then assignSets = (sets) ->
       # Filter out sets that aren't out yet
       now = new Date().getTime()
       setsToDate = _.filter sets, (set) ->
