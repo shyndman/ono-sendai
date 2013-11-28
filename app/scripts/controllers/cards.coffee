@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, costToBreakCalculator, userPreferences, urlStateService) ->
     $scope.filter = urlStateService.queryArgs
     $scope.cardUI =
       zoom: 0.35
@@ -63,14 +63,13 @@ angular.module('onoSendai')
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
 
-    $scope.isCostToBreakEnabled = (card) ->
-      card.type == 'ICE' or 'icebreaker' of card.subtypesSet
-
     # Returns true if the user has less than 3 of this card
     #
     # [todo] Take into consideration ownership of datapacks and # of core sets owned.
     $scope.isShortCard = (card) ->
       card.quantity < 3 and card.type != 'Identity'
+
+    $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
     # Toggles the favourite state of the provided card
     $scope.toggleFavourite = userPreferences.toggleCardFavourite

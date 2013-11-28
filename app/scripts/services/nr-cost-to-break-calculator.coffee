@@ -19,7 +19,7 @@ class CostToBreakCalculator
         'ai':        @_ais
       }) => @$log.debug('Cost to Break queries complete'))
 
-  canCalculate: (card) =>
+  isCardApplicable: (card) =>
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
   calculate: (card) ->
