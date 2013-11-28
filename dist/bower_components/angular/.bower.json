@@ -11,6 +11,6 @@
     "commit": "b112b099971f4cf016023bdeb00b267e9bf6dfb5"
   },
   "_source": "git://github.com/angular/bower-angular.git",
-  "_target": "~1.2.3",
+  "_target": "1.2.3",
   "_originalSource": "angular"
 }
