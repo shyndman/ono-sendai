@@ -1,5 +1,5 @@
 class CostToBreakCalculator
-  constructor: (@$log, $q, @cardService) ->
+  constructor: (@$log, $q, @cardService, @breakScripts) ->
     $q.all(
         'sentry':    @_performQuery('Corp', 'ice', 'sentry')
         'barrier':   @_performQuery('Corp', 'ice', 'barrier')
@@ -69,6 +69,11 @@ class CostToBreakCalculator
     if breaker.subtypesSet['ai']
       ice = ice.concat @_allIce.orderedCards
 
+    if breaker.breakcardsscript?
+      ice = ice.concat @breakScripts[breaker.breakcardsscript](breaker, @_allIce.orderedCards)
+
+    # if breaker.subtypes
+
     {
       opponentType: 'ICE'
       opponents: _.map _.sortBy(ice, 'title'), (i) =>
@@ -77,6 +82,7 @@ class CostToBreakCalculator
     }
 
   _calculateInteraction: (ice, breaker) ->
+    interaction = credits: 0, broken: false, steps: []
     strengthCost =
       if _.isNumber(breaker.strengthcost)
         { credits: breaker.strengthcost, strength: 1 }
@@ -84,13 +90,25 @@ class CostToBreakCalculator
         breaker.strengthcost
     breakCost = breaker.breakcost
 
+    # If we have a custom break script, invoke it
+    if breaker.breakscript?
+
+      # Make copies of the cards, so that the break script can mutate their attributes
+      ice = angular.copy(ice)
+      breaker = angular.copy(breaker)
+
+      # Check to see whether the custom script can handle the entire break...
+      if @breakScripts[breaker.breakscript](interaction, breaker, strengthCost, breakCost, ice) == true
+        return interaction
+      # ...otherwise continue with the break (with the interaction potentially modified)
+
     # Simulate the ICE breaking
-    creditsSpent = 0
+    creditsSpent = interaction.credits
     strengthLeft = ice.strength
     strengthLeft -= breaker.strength
 
     if strengthLeft > 0 and !strengthCost?
-      return broken: false, reason: 'Fixed breaker, strength too low'
+      return _.extend(interaction, reason: 'Fixed breaker, strength too low')
 
     while strengthLeft > 0
       creditsSpent += strengthCost.credits
@@ -101,11 +119,9 @@ class CostToBreakCalculator
     else
       creditsSpent += Math.ceil(ice.subroutinecount / breakCost.subroutines) * breakCost.credits
 
-    {
+    _.extend(interaction,
       broken: true
-      creditsSpent: creditsSpent
-      steps: []
-    }
+      creditsSpent: creditsSpent)
 
   _performQuery: (side, type, subtype) ->
     @cardService.query(
@@ -116,8 +132,46 @@ class CostToBreakCalculator
         subtype: subtype
     )
 
+# Card-specific break scripts.
+class BreakScripts
+
+  atman: (interaction, breaker, strengthCost, breakCost, ice) ->
+    if @_handleAntiAI(interaction, ice)
+      return true # break complete
+
+    interaction.breakerCondition = "= #{ ice.strength }"
+    breaker.strength = ice.strength
+
+  crypsis: (interaction, breaker, strengthCost, breakCost, ice) ->
+    if @_handleAntiAI(interaction, ice)
+      return true # break complete
+
+  darwin: (interaction, breaker, strengthCost, breakCost, ice) ->
+    if @_handleAntiAI(interaction, ice)
+      return true # break complete
+
+    interaction.breakerCondition = "≥ #{ ice.strength }"
+    breaker.strength = ice.strength
+
+  deusxCards: (breaker, allIce) ->
+    _.filter(allIce, (i) -> i.subtypesSet.ap)
+
+  wyrm: (interaction, breaker, strengthCost, breakCost, ice) ->
+    if @_handleAntiAI(interaction, ice)
+      return true # break complete
+
+    interaction.credits += ice.strength
+    false # continue break
+
+  _handleAntiAI: (interaction, ice) ->
+    if ice.id == 'swordsman'
+      interaction.reason = 'AI icebreakers cannot be used against this ICE'
+      true
+    else
+      false
+
 
 angular.module('onoSendai')
-  .service 'costToBreakCalculator', ($log, $q, cardService) ->
-    new CostToBreakCalculator(arguments...)
-
+  .service('costToBreakCalculator', ($log, $q, cardService, breakScripts) ->
+    new CostToBreakCalculator(arguments...))
+  .value('breakScripts', new BreakScripts())
