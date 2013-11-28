@@ -49,7 +49,7 @@ class UrlStateService
           urlOp = DATA_TO_URL_OPERATORS[arg.operator]
           search[name] = "#{ urlOp }:#{ urlVal }"
         when 'inSet'
-          search[name] =
+          searchVal =
             if name is 'faction'
               relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
               @_factionSearchVal(relevantFactions, arg)
@@ -58,6 +58,7 @@ class UrlStateService
                 arg.join(',')
               else
                 arg
+          search[name] = searchVal if searchVal
         when 'search'
           search.search = queryArgs.search
         else
@@ -79,9 +80,7 @@ class UrlStateService
 
   # Returns the search value for
   _factionSearchVal: (factions, arg) ->
-    if _.every(factions, (f) -> arg[f.model])
-      'all'
-    else
+    if !_.every(factions, (f) -> arg[f.model])
       _(factions)
         .chain()
         .filter((f) -> arg[f.model])
@@ -167,9 +166,6 @@ class UrlStateService
             value: Number(val)
 
         when 'inSet'
-          if search[name] == 'all'
-            break
-
           if name == 'faction'
             queryFactions = queryArgs.fieldFilters.faction
             factions = @factionUiMappingsBySide[side]
