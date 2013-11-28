@@ -206,7 +206,7 @@ class CardService
   _isFilterApplicable: (desc, fieldArg, queryArgs) ->
     switch desc.type
       when 'numeric'
-        fieldArg.operator? and fieldArg.value?
+        fieldArg? and fieldArg.operator? and fieldArg.value?
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
       else
@@ -265,7 +265,7 @@ class CardService
         when 'boolSet'
           filterArg[fieldVal]
         else
-          filterArg of fieldVal
+          fieldVal[filterArg]
 
   # [todo] Support multiple card sets
   _buildCardSetFilter: (filterDesc, filterArg) =>
@@ -330,7 +330,8 @@ class CardService
           card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
         else
           []
-      card.subtypesSet = _.object(_.map(card.subtypes, _.idify), [])
+      subtypeIds = _.map(card.subtypes, _.idify)
+      card.subtypesSet = _.object(subtypeIds, _.times(subtypeIds.length, -> true))
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
