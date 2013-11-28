@@ -215,8 +215,8 @@ angular.module('onoSendai')
 
         # Work out base Y coordinate
         baseY = scrollTop
-        baseY += 63
-        nextPrevY = baseY
+        baseY += 55
+        nextPrevY = baseY + 8
         nextPrevW = 160
 
         selEle = gridItemsById[scope.selection.id]
@@ -241,7 +241,7 @@ angular.module('onoSendai')
             selRight = selLeft + 500
 
             _.extend layout,
-              zoom: 1
+              zoom: 0.95
               classes:
                 'current': true
               x: selLeft # TODO Pull the literal from CSS
