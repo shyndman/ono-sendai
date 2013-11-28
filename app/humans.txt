@@ -1,0 +1,13 @@
+/* TEAM */
+
+  Chef: Scott Hyndman
+  Contact: scotty.hyndman@gmail.com
+  From: Toronto, Canada
+
+
+/* SITE */
+
+  Language: English
+  Doctype: HTML5
+  IDE: Sublime Text
+  Used Tech: Angular.js, Lunr.js, SASS, CoffeeScript
