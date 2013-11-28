@@ -1,0 +1,22 @@
+<div class="controls">
+  <input ng-model="opponentFilter" type="search" class="input-sm form-control" placeholder="{{costToBreakInfo.opponentType}} Filter" style="width: 150px" autofocus="">
+</div>
+<ul class="opponents list-unstyled">
+  <li ng-repeat="opponent in costToBreakInfo.opponents | filter:opponentFilter" class="opponent" ng-class="{
+        'not-broken': !opponent.interaction.broken
+      }">
+    <div class="card">
+      <a ng-href="{{opponent.card | cardUrl:'card'}}">{{opponent.card.title}}</a>
+      <span ng-if="opponent.interaction.breakerCondition" class="text-muted">
+        <span ng-if="costToBreakInfo.opponentType == 'ICE'">
+          {{ selectedCard.title }}
+        </span>
+        <i class="icon-strength" title="Strength"></i>
+        {{ opponent.interaction.breakerCondition }}
+      </span>
+    </div>
+    <div class="cost">
+      {{ opponent.interaction.broken ? opponent.interaction.creditsSpent : '⃠' }}
+    </div>
+  </li>
+</ul>
