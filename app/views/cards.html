@@ -31,7 +31,12 @@
         </div>
 
         <div ng-switch="isCostToBreakVisible(selectedCard)">
-          <div class="general" ng-switch-when="false">
+          <cost-to-break-calculator
+              ng-switch-when="true"
+              card="selectedCard">
+          </cost-to-break-calculator>
+
+          <div class="general" ng-switch-default>
             <div class="info-row">
               <label>Type:</label>
               <a ng-href="{{selectedCard | cardUrl:'type'}}">
@@ -72,10 +77,6 @@
               </li>
             </ul>
           </div>
-          <cost-to-break-calculator
-              ng-switch-when="true"
-              card="selectedCard">
-          </cost-to-break-calculator>
         </div>
       </div>
       <div class="card-count">
