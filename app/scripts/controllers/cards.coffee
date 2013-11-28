@@ -38,14 +38,14 @@ angular.module('onoSendai')
     $scope.selectCard = (card) ->
       if card?
         $log.info "Selected card changing to #{ card.title }"
+
+        # Calculate cost to break on ICE or breakers
+        if costToBreakCalculator.isCardApplicable(card)
+          $scope.costToBreakInfo = costToBreakCalculator.calculate(card)
       else
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
-
-      if costToBreakCalculator.isCardApplicable(card)
-        $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.selectedCard)
-
       updateUrl()
 
     $scope.deselectCard = ->
