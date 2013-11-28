@@ -48,6 +48,7 @@ angular.module('onoSendai')
     [
       {
         name: 'general'
+        display: 'general'
         fieldFilters: [
           {
             name: 'faction'
@@ -104,7 +105,8 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'identities'
+        name: 'identity'
+        display: 'identities'
         hiddenGeneralFields:
           cost: true
           factionCost: true
@@ -131,7 +133,8 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'agendas'
+        name: 'agenda'
+        display: 'agendas'
         side: 'Corp'
         fieldFilters: [
           {
@@ -143,7 +146,8 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'assets'
+        name: 'asset'
+        display: 'assets'
         side: 'Corp'
         fieldFilters: [
           {
@@ -155,11 +159,13 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'operations'
+        name: 'operation'
+        display: 'operations'
         side: 'Corp'
       },
       {
         name: 'ice'
+        display: 'ice'
         side: 'Corp'
         fieldFilters: [
           {
@@ -177,7 +183,8 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'upgrades'
+        name: 'upgrade'
+        display: 'upgrades'
         side: 'Corp'
         fieldFilters: [
           {
@@ -189,15 +196,18 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'events'
+        name: 'event'
+        display: 'events'
         side: 'Runner'
       },
       {
         name: 'hardware'
+        display: 'hardware'
         side: 'Runner'
       },
       {
-        name: 'programs'
+        name: 'program'
+        display: 'programs'
         side: 'Runner'
         fieldFilters: [
           {
@@ -209,7 +219,8 @@ angular.module('onoSendai')
         ]
       },
       {
-        name: 'resources'
+        name: 'resource'
+        display: 'resources'
         side: 'Runner'
       }
     ]
@@ -237,7 +248,7 @@ angular.module('onoSendai')
           type: 'inSet'
           cardField: 'subtypesSet'
     }
-    identities: {
+    identity: {
       cardType: 'Identity'
       excludedGeneralFields:
         cost: true
@@ -264,43 +275,43 @@ angular.module('onoSendai')
           type: 'numeric'
           cardField: 'strength'
     }
-    agendas: {
+    agenda: {
       cardType: 'Agenda'
       fieldFilters:
         points:
           type: 'numeric'
           cardField: 'agendapoints'
     }
-    assets: {
+    asset: {
       cardType: 'Asset'
       fieldFilters:
         assetTrashCost:
           type: 'numeric'
           cardField: 'trash'
     }
-    operations: {
+    operation: {
       cardType: 'Operation'
     },
-    upgrades: {
+    upgrade: {
       cardType: 'Upgrade'
       fieldFilters:
         upgradeTrashCost:
           type: 'numeric'
           cardField: 'trash'
     }
-    events: {
+    event: {
       cardType: 'Event'
     }
     hardware: {
       cardType: 'Hardware'
     }
-    programs: {
+    program: {
       cardType: 'Program'
       fieldFilters:
         memoryUnits:
           type: 'numeric'
           cardField: 'memoryunits'
     }
-    resources: {
+    resource: {
       cardType: 'Resource'
     })
