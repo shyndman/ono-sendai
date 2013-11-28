@@ -1,4 +1,4 @@
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('subtypeFilter', () ->
     template: '<div></div>'
     restrict: 'E'

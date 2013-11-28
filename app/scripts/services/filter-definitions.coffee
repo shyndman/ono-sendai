@@ -1,25 +1,27 @@
 
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
   .value('filterDefaults',
     side: 'Corp'
     groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:
-        haasBioroid: true
-        jinteki: true
-        nbn: true
-        weyland: true
-        corpNeutral: true
-        anarch: true
-        criminal: true
-        shaper: true
-        runnerNeutral: true
+        'Corp: Haas-Bioroid': true
+        'Corp: Jinteki': true
+        'Corp: NBN': true
+        'Corp: Weyland Consortium': true
+        'Corp: Neutral': true
+        'Runner: Anarch': true
+        'Runner: Criminal': true
+        'Runner: Shaper': true
+        'Runner: Neutral': true
+      subtype: null
       cost:
         operator: '='
       factionCost:
         operator: '='
+      setname: null
       influenceLimit:
         operator: '='
       minimumDeckSize:
@@ -46,6 +48,7 @@ angular.module('deckBuilder')
     [
       {
         name: 'general'
+        display: 'general'
         fieldFilters: [
           {
             name: 'faction'
@@ -53,17 +56,17 @@ angular.module('deckBuilder')
             icon: 'faction'
             side:
               corp: [
-                { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'haasBioroid' }
-                { name: 'Jinteki',            abbr: 'J',   model: 'jinteki' }
-                { name: 'NBN',                abbr: 'NBN', model: 'nbn' }
-                { name: 'Weyland Consortium', abbr: 'W',   model: 'weyland' }
-                { name: 'Neutral',            abbr: 'N',   model: 'corpNeutral' }
+                { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'Corp: Haas-Bioroid' }
+                { name: 'Jinteki',            abbr: 'J',   model: 'Corp: Jinteki' }
+                { name: 'NBN',                abbr: 'NBN', model: 'Corp: NBN' }
+                { name: 'Weyland Consortium', abbr: 'W',   model: 'Corp: Weyland Consortium' }
+                { name: 'Neutral',            abbr: 'N',   model: 'Corp: Neutral' }
               ]
               runner: [
-                { name: 'Anarch',             abbr: 'A',   model: 'anarch' }
-                { name: 'Criminal',           abbr: 'C',   model: 'criminal' }
-                { name: 'Shaper',             abbr: 'S',   model: 'shaper' }
-                { name: 'Neutral',            abbr: 'N',   model: 'runnerNeutral' }
+                { name: 'Anarch',             abbr: 'A',   model: 'Runner: Anarch' }
+                { name: 'Criminal',           abbr: 'C',   model: 'Runner: Criminal' }
+                { name: 'Shaper',             abbr: 'S',   model: 'Runner: Shaper' }
+                { name: 'Neutral',            abbr: 'N',   model: 'Runner: Neutral' }
               ]
           }
           {
@@ -71,6 +74,13 @@ angular.module('deckBuilder')
             type: 'search'
             placeholder: 'Keyword Search'
             icon: 'search'
+          }
+          {
+            name: 'subtype'
+            type: 'inSet'
+            placeholder: 'Subtype'
+            icon: 'subtype'
+            source: 'subtypes'
           }
           {
             name: 'cost'
@@ -85,10 +95,18 @@ angular.module('deckBuilder')
             icon: 'influence'
             max: 5
           }
+          {
+            name: 'setname'
+            type: 'inSet'
+            placeholder: 'Set'
+            icon: 'set'
+            source: 'sets'
+          }
         ]
       },
       {
-        name: 'identities'
+        name: 'identity'
+        display: 'identities'
         hiddenGeneralFields:
           cost: true
           factionCost: true
@@ -115,7 +133,8 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'agendas'
+        name: 'agenda'
+        display: 'agendas'
         side: 'Corp'
         fieldFilters: [
           {
@@ -127,7 +146,8 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'assets'
+        name: 'asset'
+        display: 'assets'
         side: 'Corp'
         fieldFilters: [
           {
@@ -139,11 +159,13 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'operations'
+        name: 'operation'
+        display: 'operations'
         side: 'Corp'
       },
       {
         name: 'ice'
+        display: 'ice'
         side: 'Corp'
         fieldFilters: [
           {
@@ -161,7 +183,8 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'upgrades'
+        name: 'upgrade'
+        display: 'upgrades'
         side: 'Corp'
         fieldFilters: [
           {
@@ -173,15 +196,18 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'events'
+        name: 'event'
+        display: 'events'
         side: 'Runner'
       },
       {
         name: 'hardware'
+        display: 'hardware'
         side: 'Runner'
       },
       {
-        name: 'programs'
+        name: 'program'
+        display: 'programs'
         side: 'Runner'
         fieldFilters: [
           {
@@ -193,7 +219,8 @@ angular.module('deckBuilder')
         ]
       },
       {
-        name: 'resources'
+        name: 'resource'
+        display: 'resources'
         side: 'Runner'
       }
     ]
@@ -204,17 +231,8 @@ angular.module('deckBuilder')
       fieldFilters:
         faction:
           type: 'inSet'
+          subtype: 'boolSet'
           cardField: 'faction'
-          modelMappings:
-            'Corp: Haas-Bioroid': 'haasBioroid'
-            'Corp: Jinteki': 'jinteki'
-            'Corp: NBN': 'nbn'
-            'Corp: Weyland Consortium': 'weyland'
-            'Corp: Neutral': 'corpNeutral'
-            'Runner: Anarch': 'anarch'
-            'Runner: Criminal': 'criminal'
-            'Runner: Shaper': 'shaper'
-            'Runner: Neutral': 'runnerNeutral'
         search:
           type: 'search'
         cost:
@@ -223,8 +241,14 @@ angular.module('deckBuilder')
         factionCost:
           type: 'numeric'
           cardField: 'factioncost'
+        setname:
+          type: 'cardSet'
+          cardField: 'setname'
+        subtype:
+          type: 'inSet'
+          cardField: 'subtypesSet'
     }
-    identities: {
+    identity: {
       cardType: 'Identity'
       excludedGeneralFields:
         cost: true
@@ -251,43 +275,43 @@ angular.module('deckBuilder')
           type: 'numeric'
           cardField: 'strength'
     }
-    agendas: {
+    agenda: {
       cardType: 'Agenda'
       fieldFilters:
         points:
           type: 'numeric'
           cardField: 'agendapoints'
     }
-    assets: {
+    asset: {
       cardType: 'Asset'
       fieldFilters:
         assetTrashCost:
           type: 'numeric'
           cardField: 'trash'
     }
-    operations: {
+    operation: {
       cardType: 'Operation'
     },
-    upgrades: {
+    upgrade: {
       cardType: 'Upgrade'
       fieldFilters:
         upgradeTrashCost:
           type: 'numeric'
           cardField: 'trash'
     }
-    events: {
+    event: {
       cardType: 'Event'
     }
     hardware: {
       cardType: 'Hardware'
     }
-    programs: {
+    program: {
       cardType: 'Program'
       fieldFilters:
         memoryUnits:
           type: 'numeric'
           cardField: 'memoryunits'
     }
-    resources: {
+    resource: {
       cardType: 'Resource'
     })

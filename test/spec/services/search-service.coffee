@@ -3,7 +3,7 @@
 describe 'Service: searchService', () ->
 
   # load the service's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   # instantiate service
   searchService = {}

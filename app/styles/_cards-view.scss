@@ -5,7 +5,7 @@ $card-offset-2-z-index: 0;
 
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
-nr-cards-view {
+cards-view {
   @mixin scaled-card($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;
@@ -33,10 +33,6 @@ nr-cards-view {
     position: absolute;
     top: 0;
     left: 0;
-  }
-
-  .hidden {
-    display: none;
   }
 
   .grid-header {
@@ -113,11 +109,11 @@ nr-cards-view {
     transform-origin: 0 150px;
 
     img {
-      transform: translateZ(1px) rotateY(40deg);
+      transform: translateZ(1px) rotateY(35deg);
     }
 
     .background {
-      transform: rotateY(40deg);
+      transform: rotateY(35deg);
     }
   }
 
@@ -126,12 +122,12 @@ nr-cards-view {
 
     img {
       transform-origin: 100% 0;
-      transform: translateZ(1px) rotateY(-40deg);
+      transform: translateZ(1px) rotateY(-35deg);
     }
 
     .background {
       transform-origin: 100% 0;
-      transform: rotateY(-40deg);
+      transform: rotateY(-35deg);
     }
   }
 
@@ -174,10 +170,20 @@ nr-cards-view {
       padding: 9px 18px;
 
       z-index: $card-current-info-z-index;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+      background: rgba(255, 255, 255, 0.8);
 
       h2 {
-        margin-bottom: 14px;
+        margin-bottom: 22px;
+
+        .close {
+          opacity: 0.3;
+          line-height: 28px;
+          font-weight: 200;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
 
         .favourite {
           position: relative;
@@ -203,34 +209,43 @@ nr-cards-view {
         }
       }
 
-      .types-and-tags {
-        @extend .list-unstyled;
-        > li {
-          display: inline-block;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
-
       .info {
-        width: 300px;
+        width: 295px;
         height: 418px;
         float: right;
+        user-select: all;
+
+        .info-nav {
+          position: absolute;
+          top: 51px;
+          right: 27px;
+        }
 
         h3 {
           margin: 4px 0 10px 0;
           font-size: 16px;
         }
 
+        label {
+          color: #777;
+          margin: 0;
+        }
+
         .info-row {
-          margin: 5px 0;
+          margin: 7px 0;
 
           > label {
-            color: #777;
-            width: 74px;
-            margin: 0;
+            width: 80px;
             float: left;
           }
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        small {
+          margin-left: 3px;
         }
 
         .short-cards {
@@ -239,6 +254,7 @@ nr-cards-view {
 
         .links {
           @extend .list-unstyled;
+          clear: both;
           margin-top: 20px;
 
           li {
@@ -248,8 +264,11 @@ nr-cards-view {
       }
 
       .card-count {
-        padding-top: 74px;
-        clear: both;
+        position: fixed;
+        bottom: 10px;
+        // TODO This will have to change when we have optional sidebars
+        left: $sidebar-width;
+        right: 0;
         text-align: center;
         color: #777;
       }

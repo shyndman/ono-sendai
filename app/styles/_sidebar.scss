@@ -1,6 +1,4 @@
-$sidebar-width: 212px;
 $dirty-color: #E59409; // TODO Integrate
-
 
 .sidebar {
   user-select: none;
@@ -13,10 +11,10 @@ $dirty-color: #E59409; // TODO Integrate
 
   .filter-group {
     &.active h5 {
-      background: #e9e9e9;
-      color: #555;
+      background: $active-color;
+      color: white;
       text-shadow: none;
-      border-color: #d0d0d0;
+      border-color: transparent;
 
       .icon-active-group {
         display: block;
@@ -64,6 +62,20 @@ $dirty-color: #E59409; // TODO Integrate
 
     input[type=search] {
       width: calc(100% - 45px);
+    }
+
+    inset-filter {
+      .input {
+        width: calc(100% - 45px);
+      }
+    }
+
+    // Hack to make weirdo font appear correctly
+    .icon-memory-unit {
+      position: relative;
+      top: -1px;
+      left: -1px;
+      font-size: 11px;
     }
 
     &.faction {

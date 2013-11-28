@@ -3,7 +3,7 @@
 describe 'Controller: MainCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   MainCtrl = {}
   scope = {}

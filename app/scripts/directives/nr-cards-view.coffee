@@ -1,6 +1,6 @@
 # This component is responsible for dealing with cards, including user input and layout.
-angular.module('deckBuilder')
-  .directive('nrCardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+angular.module('onoSendai')
+  .directive('cardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     templateUrl: '/views/directives/nr-cards-view.html'
@@ -217,6 +217,7 @@ angular.module('deckBuilder')
         baseY = scrollTop
         baseY += 63
         nextPrevY = baseY
+        nextPrevW = 160
 
         selEle = gridItemsById[scope.selection.id]
 
@@ -232,54 +233,41 @@ angular.module('deckBuilder')
 
           layout = itemLayouts[i] ?= {}
           layout.opacity = 0
-          layout.classes = hidden: true
+          layout.classes = hide: true
 
           if item == selEle
-            if i - 2 >= 0 # current - 2
-              _.extend itemLayouts[i - 2],
-                zoom: 0.7
-                classes:
-                  'prev': true
-                  'prev-2': true
-                x: 0
-                y: nextPrevY
-
-            if i - 1 >= 0 # current - 1 (previous)
-              _.extend itemLayouts[i - 1],
-                zoom: 0.7
-                classes:
-                  'prev': true
-                  'prev-1': true
-                x: 30
-                y: nextPrevY
+            numNextPrev = 2
+            selLeft = (containerWidth - 660) / 2 + 26
+            selRight = selLeft + 500
 
             _.extend layout,
               zoom: 1
               classes:
                 'current': true
-              x: (containerWidth - 660) / 2 + 26 # TODO Pull the literal from CSS
+              x: selLeft # TODO Pull the literal from CSS
               y: baseY
               rotationY: 0
 
-            if i + 1 < gridItems.length # current + 1 (next)
-              itemLayouts[i + 1] ?= {} # XXX Barf. Sloppy.
-              _.extend itemLayouts[i + 1],
-                zoom: 0.7
-                classes:
-                  'next': true
-                  'next-1': true
-                x: containerWidth - 300 - 30
-                y: nextPrevY
+            for j in [1..numNextPrev]
+              if i - j >= 0
+                _.extend itemLayouts[i - j],
+                  zoom: 0.7
+                  classes:
+                    'prev': true
+                  x: selLeft - (j * 30) - nextPrevW
+                  y: nextPrevY
+                itemLayouts[i - j].classes["prev-#{j}"] = true
 
-            if i + 2 < gridItems.length # current + 2
-              itemLayouts[i + 2] ?= {} # XXX Barf. Sloppy.
-              _.extend itemLayouts[i + 2],
-                classes:
-                  'next': true
-                  'next-2': true
-                zoom: 0.7
-                x: containerWidth - 300
-                y: nextPrevY
+            for j in [1..numNextPrev]
+              itemLayouts[i + j] ?= {} # XXX Barf. Sloppy.
+              if i + j < gridItems.length
+                _.extend itemLayouts[i + j],
+                  zoom: 0.7
+                  classes:
+                    'next': true
+                  x: selRight + ((j - 1) * 30)
+                  y: nextPrevY
+                itemLayouts[i + j].classes["next-#{j}"] = true
 
             skipCount = 2
 
@@ -299,7 +287,7 @@ angular.module('deckBuilder')
             item = gridItems[i]
 
             if queryResult.isShown(getItemId(item))
-              $(item).removeClass('hidden')
+              $(item).removeClass('hide')
               newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
                           scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
               new_zIndex = layout.zIndex ? len - 1
@@ -318,7 +306,7 @@ angular.module('deckBuilder')
                 else
                   item.classList.remove(cls)
             else
-              item.classList.add('hidden')
+              item.classList.add('hide')
 
         if !_.isEmpty(headerLayouts)
           items = gridHeaders
@@ -415,10 +403,10 @@ angular.module('deckBuilder')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.35 or scope.selection != null
+        scope.zoom > 0.35 or scope.selection?
 
       upscaleTo = ->
-        if scope.zoom > 0.5 or scope.selection != null
+        if scope.zoom > 0.5 or scope.selection?
           1
         else if scope.zoom > 0.35
           2
@@ -427,7 +415,7 @@ angular.module('deckBuilder')
       # will record the scale factor so that we can use transform: scale CSS to have them appear at the same
       # correct size.
       #
-      # TODO This doesn't appear to do anything in Firefox
+      # [fix] This doesn't appear to do anything in Firefox
       downscaleItems = ->
         scale = 3
         $log.debug "Downscaling grid items to 1/#{ scale }"
@@ -468,6 +456,7 @@ angular.module('deckBuilder')
       # *~*~*~*~ CARDS
 
       selectionChanged = (newVal, oldVal) ->
+        oldLayoutMode = layoutMode
         layoutMode =
           if newVal
             $log.debug 'Item selected. Displaying in detail mode'
@@ -475,15 +464,21 @@ angular.module('deckBuilder')
           else
             $log.debug 'No selection. Displaying items in grid mode'
             'grid'
-        layoutNow(true)
+
+        layoutNow(oldLayoutMode != layoutMode) # Only perform scaling if we've changed layout modes
       scope.$watch('selection', selectionChanged)
 
+      firstLayout = true
       queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
         queryResult = newVal
         $timeout ->
+          if !queryResult?
+            return
+
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow(element.hasClass('transitioned'))
+          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
+          firstLayout = false
 
           if layoutMode == 'grid'
             layoutPromise.then(scrollToTop)

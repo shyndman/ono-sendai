@@ -1,8 +1,8 @@
 # Based on the work by the angular-ui team (angular-bootstrap)
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .directive('dropdownToggle', ($document, $location) ->
     openElement = null
-    closeMenu   = -> # noop
+    closeMenu   = -> # noop, until replaced
 
     {
       restrict: 'CA'
@@ -21,8 +21,16 @@ angular.module('deckBuilder')
             dropdown = element.parent()
             dropdown.addClass('open')
 
-            # Focus the first option
-            dropdown.find('.dropdown-menu a:first').focus()
+            # Focus the appropriate element
+            value = element.text().trim()
+            focusLink = null
+            for link in dropdown.find('.dropdown-menu a')
+              if $(link).text().trim() == value
+                focusLink = $(link)
+                break
+
+            focusLink ?= dropdown.find('.dropdown-menu a:first')
+            focusLink.focus()
 
             openElement = element
             closeMenu = (event) ->

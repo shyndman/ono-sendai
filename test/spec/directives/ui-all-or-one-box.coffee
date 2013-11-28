@@ -3,7 +3,7 @@
 describe 'Directive: uiLinkedCheckbox', () ->
 
   # load the directive's module
-  beforeEach module 'deckBuilderApp'
+  beforeEach module 'onoSendaiApp'
 
   scope = {}
 

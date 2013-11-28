@@ -1,29 +1,24 @@
-TODOs
-  * Collapsed mode for card groups
-  * Indicate which filter group is active
-  * Hotkeys
-  * Focus last selected value on dropdowns (may require rewrite)
-  * Add calculated max for filters
-  * Make it clear that moving back to the general filter will remove filters
-  * Screensaver with random flavor text
-  * Fix grunt-angular-templates
-  * Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
-  * Jinteki/Haas-Bioroid special deck URLs
-  * Why does enter switch to corp?
-  * humans.txt -- add it!
-  * Excluded general controls should explain through a tooltip why they're disabled
-  * Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
-  * Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then
-    modified as time goes on. No more clearing (as you see in performGridLayout).
-  * Hoist keyboard handling for the detail view to the body or something, and figure out what to do when dealing
-    with input controls.
-  * Rename "filter" to "queryArgs" across the board
-  * Randomized deck generation (draft decks), along with a couple special identity print outs
+[todo] Collapsed mode for card groups
+[todo] Hotkeys
+[todo] Add calculated max for filters
+[todo] Make it clear that moving back to the general filter will remove filters
+[todo] Screensaver with random flavor text
+[todo] Fix grunt-angular-templates
+[todo] Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
+[todo] Jinteki/Haas-Bioroid special deck URLs
+[todo] humans.txt -- add it!
+[todo] Excluded general controls should explain through a tooltip why they're disabled
+[todo] Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
+[todo] Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then modified as time goes on. No more clearing (as you see in performGridLayout).
+[todo] Rename "filter" to "queryArgs" across the board
+[todo] Randomized deck generation (draft decks), along with a couple special identity print outs
+[todo] For ICE/breakers -- cost to break calculator
+[todo] Scrolling on the card view
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
   monitoring the live application.
 
-  Characteristics to test for
+  Characteristics to test for:
   * Scrolling
   * Image scale

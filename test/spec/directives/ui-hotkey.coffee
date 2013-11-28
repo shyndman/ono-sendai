@@ -1,7 +1,7 @@
 describe 'Directive: uiHotkey', () ->
 
   # load the directive's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   scope = {}
 

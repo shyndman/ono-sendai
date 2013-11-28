@@ -1,7 +1,7 @@
 describe 'Service: userPreferences', () ->
 
   # load the service's module
-  beforeEach module 'deckBuilder'
+  beforeEach module 'onoSendai'
 
   # instantiate service
   NrUserPreferences = {}

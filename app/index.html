@@ -4,24 +4,25 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ono-Sendai</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <link rel="icon" type="image/png" size="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" size="16x16" href="/images/favicon-16.png" />
-  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="icon" type="image/png" size="32x32" href="/images/favicon-32.png" />
+  <!-- [todo] Figure out why this can't be merged with main.css -->
+  <link rel="stylesheet" href="/bower_components/select2/select2.css">
+  <!-- build:css(.tmp) /styles/main.css -->
   <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="deckBuilder"
+<body ng-app="onoSendai"
       ng-controller="CardsCtrl"
       tabindex="0"
       ui-keydown="{
-        'esc'  : 'deselectCard()',
-        'left' : 'previousCard()',
-        'right': 'nextCard()'
+        'esc'  : { action: 'deselectCard()', preventDefault: true },
+        'left' : 'selectPreviousCard()',
+        'right': 'selectNextCard()'
       }"
       style="outline: none !important;">
   <!--[if lt IE 9]>
@@ -40,10 +41,11 @@
     v{{version}}
   </div>
 
-  <!-- build:js scripts/lib.js -->
+  <!-- build:js /scripts/lib.js -->
   <script src="/bower_components/underscore/underscore.js"></script>
   <script src="/bower_components/underscore.string/lib/underscore.string.js"></script>
   <script src="/bower_components/jquery/jquery.js"></script>
+  <script src="/bower_components/select2/select2.js"></script>
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-bindonce/bindonce.js"></script>
   <script src="/bower_components/angular-bootstrap/src/bindHtml/bindHtml.js"></script>
@@ -55,18 +57,20 @@
   <script src="/bower_components/fastclick/lib/fastclick.js"></script>
   <!-- endbuild -->
 
-  <!-- build:js({.tmp,app}) scripts/app.js -->
+  <!-- build:js({.tmp,app}) /scripts/app.js -->
   <script src="/scripts/utils/underscore-plugins.js"></script>
   <script src="/scripts/app.js"></script>
   <script src="/scripts/controllers/cards.js"></script>
   <script src="/scripts/controllers/filters.js"></script>
   <script src="/scripts/services/card-service.js"></script>
   <script src="/scripts/services/filter-definitions.js"></script>
+  <script src="/scripts/services/nr-cost-to-break-calculator.js"></script>
   <script src="/scripts/services/nr-user-preferences.js"></script>
   <script src="/scripts/services/search-service.js"></script>
   <script src="/scripts/services/ui-css-utils.js"></script>
   <script src="/scripts/services/url-state-service.js"></script>
   <script src="/scripts/directives/nr-cards-view.js"></script>
+  <script src="/scripts/directives/nr-inset-filter.js"></script>
   <script src="/scripts/directives/nr-nav.js"></script>
   <script src="/scripts/directives/nr-numeric-filter.js"></script>
   <script src="/scripts/directives/nr-subnav.js"></script>
@@ -75,8 +79,8 @@
   <script src="/scripts/directives/ui-dropdown.js"></script>
   <script src="/scripts/directives/ui-hotkey.js"></script>
   <script src="/scripts/directives/ui-keypress.js"></script>
+  <script src="/scripts/filters/nr-card-url.js"></script>
   <script src="/scripts/filters/nr-group-title.js"></script>
-  <script src="/scripts/filters/nr-pluralize-type.js"></script>
   <!-- endbuild -->
 
   <script>

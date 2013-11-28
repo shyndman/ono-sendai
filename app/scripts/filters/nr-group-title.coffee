@@ -18,14 +18,14 @@ groupTitle = (groupName, grouping) ->
       else
         "Cost N/A"
     when 'factioncost'
-      if groupName isnt ''
+      if groupName != ''
         "#{ groupName } Influence"
       else
         "Influence N/A"
     else
       groupName
 
-angular.module('deckBuilder')
+angular.module('onoSendai')
   .filter('primaryGroupTitle', ->
     (groupTitles, groupings) ->
       if groupings.length > 1
@@ -33,10 +33,17 @@ angular.module('deckBuilder')
       else
         groupTitle(groupTitles[0], groupings[0])
     )
-  .filter('secondaryGroupTitle', ->
+  .filter('secondaryGroupTitle', (cardService, dateFilter) ->
     (groupTitles, groupings) ->
       if groupings.length > 1
         groupTitle(groupTitles[0], groupings[0])
       else
-        ''
+        if groupings[0] == 'setname'
+          releaseDate = cardService.getSetByTitle(groupTitles[0])?.released
+          if releaseDate?
+            dateFilter(releaseDate,'MMM. y')
+          else
+            ''
+        else
+          ''
     )

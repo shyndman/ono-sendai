@@ -10,16 +10,29 @@ _.mixin
           return order
       order
 
+  # Returns an array with two internal arrays built from taking an original array
+  # and spliting it at an index.
+  splitAt: (array, index) ->
+    return [ _.take(array, index), _.drop(array, index) ]
+
+  # Weaves two or more arrays together
+  weave: (args...) ->
+    unless _.any(args)
+      return []
+
+    _.compact(_.flatten(_.zip(args...), true))
+
   # Concatenates the provided the array, and returns the result.
   concat: (arrs...) ->
-    arr = []
-    for a in arrs when a?
-      arr = arr.concat(a)
-    arr
+    _.reduce(_.compact(arrs), ((a, b) -> a.concat(b)), [])
 
   # String.replace, but chainable.
   replace: (str, args...) ->
     str.replace(args...)
+
+  # Generates a URL friendly ID string from the provided string
+  idify: (str) ->
+    _.stripDiacritics(_.dasherize(str.toLowerCase().replace(/["|'|:|*]/g, '')))
 
   # Returns an object containing only properties that pass a truth test. The
   # iterator is called with key and value arguments.
@@ -27,7 +40,7 @@ _.mixin
     _.object([key, val] for key, val of obj when iterator(key, val))
 
   # Nada, nothing, beans, bupkis
-  noop: ->
+  noop: -> ;
 
 
 # ~*~*~* DEBUGGING UTILITIES
@@ -79,7 +92,7 @@ _.mixin
   logGrouped: wrap('logGroup')
 
 
-  # ~*~*~* DIACRITICS
+# ~*~*~* DIACRITICS
 
 accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
 accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
