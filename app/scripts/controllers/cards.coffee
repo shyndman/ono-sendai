@@ -40,10 +40,6 @@ angular.module('onoSendai')
         $log.info "Selected card changing to #{ card.title }"
         $scope.previousCard = $scope.queryResult.cardBefore(card)
         $scope.nextCard = $scope.queryResult.cardAfter(card)
-
-        # Calculate cost to break on ICE or breakers
-        if costToBreakCalculator.isCardApplicable(card)
-          $scope.costToBreakInfo = costToBreakCalculator.calculate(card)
       else
         $log.info 'Card deselected'
 
