@@ -81,13 +81,14 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="opponent in costToBreakInfo.opponents">
+              <tbody class="opponents">
+                <tr ng-repeat="opponent in costToBreakInfo.opponents"
+                    ng-class="{
+                      'not-broken': !opponent.interaction.broken
+                    }">
                   <td><a ng-href="{{opponent.card | cardUrl:'card'}}">{{opponent.card.title}}</a></td>
-                  <td style="text-align: right">
-                    <span>
+                  <td class="cost">
                       {{ opponent.interaction.creditsSpent ? opponent.interaction.creditsSpent : '⃠' }}
-                    </span>
                   </td>
                 </tr>
               </tbody>

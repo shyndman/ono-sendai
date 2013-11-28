@@ -340,3 +340,21 @@ cards-view {
   }
 }
 
+.cost-to-break {
+  .opponents {
+    font-size: 0.9em;
+  }
+
+  .cost {
+    text-align: right;
+  }
+
+  .not-broken {
+    .cost {
+      position: relative;
+      left: 3px;
+      color: $state-danger-text;
+    }
+  }
+}
+
