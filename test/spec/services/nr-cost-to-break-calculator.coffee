@@ -1,5 +1,3 @@
-'use strict'
-
 describe 'Service: NrCostToBreakCalculator', () ->
 
   # load the service's module
