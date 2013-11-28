@@ -221,11 +221,6 @@ cards-view {
           right: 27px;
         }
 
-        h3 {
-          margin: 4px 0 10px 0;
-          font-size: 16px;
-        }
-
         label {
           color: #777;
           margin: 0;
@@ -341,8 +336,26 @@ cards-view {
 }
 
 .cost-to-break {
+  h3 {
+    font-size: 14px;
+    padding: 8px 5px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+  }
+
   .opponents {
     font-size: 0.9em;
+    height: 348px;
+    overflow-y: auto;
+  }
+
+  .opponent {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px 5px 5px;
+
+    .card {
+      float: left;
+    }
   }
 
   .cost {
