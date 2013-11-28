@@ -337,15 +337,16 @@ cards-view {
 
 .cost-to-break {
   h3 {
+    color: #777;
     font-size: 14px;
-    padding: 8px 5px;
+    padding: 3px 5px 8px 0;
     margin: 0;
     border-bottom: 1px solid #ddd;
   }
 
   .opponents {
     font-size: 0.9em;
-    height: 348px;
+    height: 347px;
     overflow-y: auto;
   }
 
@@ -359,6 +360,7 @@ cards-view {
 
     .cost {
       text-align: right;
+      margin-left: 140px;
     }
 
     &.not-broken {
