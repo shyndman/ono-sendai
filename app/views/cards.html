@@ -47,10 +47,10 @@
             <div class="info-row">
               <label>From:</label>
               <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
-              <small ng-class="{ 'short-cards': isShortCard(selectedCard) }">
-                <span ng-if="isShortCard(selectedCard)">only</span>
-                {{selectedCard.quantity}} in set
-              </small>
+            </div>
+            <div ng-if="isShortCard(selectedCard)" class="info-row">
+              <label>Quantity:</label>
+              <span class='short-cards'>{{selectedCard.quantity}} in set</span>
             </div>
 
             <ul class="links">
