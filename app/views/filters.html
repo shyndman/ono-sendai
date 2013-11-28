@@ -5,7 +5,6 @@ NOTES:
 
 <div ng-controller="FiltersCtrl"
      ui-keydown="{
-       'esc/left/right': { stopPropagation: true },
        'enter': 'clearFocus()'
      }"
      class="form form-horizontal">
@@ -28,7 +27,12 @@ NOTES:
 
       <div ng-switch on="field.type">
         <div ng-switch-when="search">
-          <input type="search" id="{{field.name}}-filter" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search">
+          <input type="search"
+                 id="{{field.name}}-filter"
+                 class="form-control input-sm"
+                 placeholder="{{field.placeholder}}"
+                 ng-model="filter.search"
+                 ui-keydown="{ 'esc/left/right': { stopPropagation: true }}">
         </div>
 
         <div ng-switch-when="faction">
@@ -51,7 +55,8 @@ NOTES:
             filter-attr="filter.fieldFilters[field.name]"
             placeholder="{{field.placeholder}}"
             max="{{field.max}}"
-            ui-disabled="{{isFieldDisabled(field, group, filter.activeGroup, filter.side)}}">
+            ui-disabled="{{isFieldDisabled(field, group, filter.activeGroup, filter.side)}}"
+            ui-keydown="{ 'esc/left/right': { stopPropagation: true }}">
           </numeric-filter>
         </div>
 
@@ -60,7 +65,8 @@ NOTES:
             id="{{field.name}}-filter"
             placeholder="{{field.placeholder}}"
             ng-model="filter.fieldFilters[field.name]"
-            inset-filter-source="this[field.source]">
+            inset-filter-source="this[field.source]"
+            ui-keydown="{ 'esc/left/right': { stopPropagation: true }}">
           </inset-filter>
         </div>
       </div>
