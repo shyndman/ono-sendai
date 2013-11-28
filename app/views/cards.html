@@ -77,42 +77,18 @@
             <table class="table table-condensed">
               <thead>
                 <tr>
-                  <th>ICE</th>
+                  <th>{{costToBreakInfo.opponentType}}</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><a href="#">Eli 1.0</a></td>
-                  <td style="text-align: right">2</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Heimdall 1.0</a></td>
-                  <td style="text-align: right">⃠</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Heimdall 2.0</a></td>
-                  <td style="text-align: right">⃠</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Wotan</a></td>
-                  <td style="text-align: right">⃠</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Himitsu-Bako</a></td>
-                  <td style="text-align: right">1</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Snowflake</a></td>
-                  <td style="text-align: right">1</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Wall of Thorns</a></td>
-                  <td style="text-align: right">2</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Wall of Static</a></td>
-                  <td style="text-align: right">1</td>
+                <tr ng-repeat="opponent in costToBreakInfo.opponents">
+                  <td><a ng-href="{{opponent.card | cardUrl:'card'}}">{{opponent.card.title}}</a></td>
+                  <td style="text-align: right">
+                    <span>
+                      {{ opponent.interaction.creditsSpent ? opponent.interaction.creditsSpent : '⃠' }}
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>

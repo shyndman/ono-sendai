@@ -23,7 +23,7 @@ class CostToBreakCalculator
   isCardApplicable: (card) =>
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
-  calculate: (card) ->
+  calculate: (card) =>
     if !@isCardApplicable(card)
       @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
@@ -47,7 +47,12 @@ class CostToBreakCalculator
 
     breakers = breakers.concat @_ais.orderedCards
 
-    _.map _.sortBy(breakers, 'title'), (b) => @_calculateInteraction(ice, b)
+    {
+      opponentType: 'Icebreakers'
+      opponents: _.map _.sortBy(breakers, 'title'), (b) =>
+        card: b
+        interaction: @_calculateInteraction(ice, b)
+    }
 
   _calculateForIcebreaker: (breaker) ->
     ice = []
@@ -64,7 +69,12 @@ class CostToBreakCalculator
     if breaker.subtypesSet['ai']
       ice = ice.concat @_allIce.orderedCards
 
-    _.map _.sortBy(ice, 'title'), (i) => @_calculateInteraction(i, breaker)
+    {
+      opponentType: 'ICE'
+      opponents: _.map _.sortBy(ice, 'title'), (i) =>
+        card: i
+        interaction: @_calculateInteraction(i, breaker)
+    }
 
   _calculateInteraction: (ice, breaker) ->
     strengthCost =
@@ -80,8 +90,7 @@ class CostToBreakCalculator
     strengthLeft -= breaker.strength
 
     if strengthLeft > 0 and !strengthCost?
-      console.error breaker.title
-      return null
+      return broken: false, reason: 'Fixed breaker, strength too low'
 
     while strengthLeft > 0
       creditsSpent += strengthCost.credits
@@ -92,7 +101,11 @@ class CostToBreakCalculator
     else
       creditsSpent += Math.ceil(ice.subroutinecount / breakCost.subroutines) * breakCost.credits
 
-    console.warn ice.title, breaker.title, creditsSpent
+    {
+      broken: true
+      creditsSpent: creditsSpent
+      steps: []
+    }
 
   _performQuery: (side, type, subtype) ->
     @cardService.query(

@@ -24,6 +24,8 @@ angular.module('onoSendai')
       side = card.side.toLowerCase()
 
       switch urlType
+        when 'card'
+          "#{ urlPrefix }/cards/#{ side }/card/#{ card.id }"
         when 'type'
           "#{ urlPrefix }/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'

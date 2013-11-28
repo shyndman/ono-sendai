@@ -42,6 +42,10 @@ angular.module('onoSendai')
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
+
+      if costToBreakCalculator.isCardApplicable(card)
+        $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.selectedCard)
+
       updateUrl()
 
     $scope.deselectCard = ->
@@ -82,10 +86,6 @@ angular.module('onoSendai')
     # ~-~-~- COST TO BREAK CALCULATOR
 
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
-
-    $scope.$watch('cardUI.costToBreakVisible', calculateCostToBreak = (flag) ->
-      if flag
-        $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.selectedCard))
 
 
     # ~-~-~- FAVOURITES
