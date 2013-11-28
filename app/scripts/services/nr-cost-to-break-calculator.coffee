@@ -15,6 +15,7 @@ class CostToBreakCalculator
         'code-gate': @_codeGates
         'allIce':    @_allIce
         'killer':    @_killers
+        'fracter':   @_fracters
         'decoder':   @_decoders
         'ai':        @_ais
       }) => @$log.debug('Cost to Break queries complete'))
@@ -23,7 +24,7 @@ class CostToBreakCalculator
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
   calculate: (card) ->
-    if !@canCalculate(card)
+    if !@isCardApplicable(card)
       @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
 
@@ -66,7 +67,32 @@ class CostToBreakCalculator
     _.map _.sortBy(ice, 'title'), (i) => @_calculateInteraction(i, breaker)
 
   _calculateInteraction: (ice, breaker) ->
-    console.warn ice.subtypes, breaker.subtypes
+    strengthCost =
+      if _.isNumber(breaker.strengthcost)
+        { credits: breaker.strengthcost, strength: 1 }
+      else
+        breaker.strengthcost
+    breakCost = breaker.breakcost
+
+    # Simulate the ICE breaking
+    creditsSpent = 0
+    strengthLeft = ice.strength
+    strengthLeft -= breaker.strength
+
+    if strengthLeft > 0 and !strengthCost?
+      console.error breaker.title
+      return null
+
+    while strengthLeft > 0
+      creditsSpent += strengthCost.credits
+      strengthLeft -= strengthCost.strength
+
+    if breakCost.subroutines == 'all'
+      creditsSpent += breakCost.credits
+    else
+      creditsSpent += Math.ceil(ice.subroutinecount / breakCost.subroutines) * breakCost.credits
+
+    console.warn ice.title, breaker.title, creditsSpent
 
   _performQuery: (side, type, subtype) ->
     @cardService.query(
