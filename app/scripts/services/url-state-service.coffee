@@ -173,11 +173,16 @@ class UrlStateService
             modelFlags = _.object(
               _.map(
                 search[name].split(','),
-                (f) -> _.findWhere(factions, abbr: f).model)
+                (f) -> _.findWhere(factions, abbr: f)?.model)
             , [])
 
-            _.each queryFactions, (val, key) ->
-              queryFactions[key] = key of modelFlags
+            # Remove unrecognized model flags
+            delete modelFlags['undefined']
+
+            # If we have any recognized model flags, set them
+            if _.keys(modelFlags).length != 0
+              _.each queryFactions, (val, key) ->
+                queryFactions[key] = key of modelFlags
           else
             queryArgs.fieldFilters[name] = search[name]
 
