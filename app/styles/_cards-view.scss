@@ -356,17 +356,21 @@ cards-view {
     .card {
       float: left;
     }
-  }
 
-  .cost {
-    text-align: right;
-  }
-
-  .not-broken {
     .cost {
-      position: relative;
-      left: 3px;
-      color: $state-danger-text;
+      text-align: right;
+    }
+
+    &.not-broken {
+      .cost {
+        position: relative;
+        left: 3px;
+        color: $state-danger-text;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 }
