@@ -6,7 +6,7 @@
          autofocus>
 </div>
 <ul class="opponents list-unstyled">
-  <li ng-repeat="opponent in costToBreakInfo.opponents | filter:opponentFilter"
+  <li ng-repeat="opponent in opponents"
       class="opponent"
       ng-class="{
         'not-broken': !opponent.interaction.broken
