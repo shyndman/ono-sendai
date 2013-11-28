@@ -83,7 +83,7 @@ angular.module('onoSendai')
 
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
-    $scope.$watch('cardUI.costToBreakToggled', calculateCostToBreak = (flag) ->
+    $scope.$watch('cardUI.costToBreakVisible', calculateCostToBreak = (flag) ->
       if flag
         $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.selectedCard))
 
