@@ -61,7 +61,7 @@ _.mixin
     else
       sorted = arr.slice().sort((a, b) -> a - b)
       if sorted.length % 2 == 0
-        sorted[arr.length / 2 - 1] + sorted[arr.length / 2 + 1]
+        (sorted[arr.length / 2 - 1] + sorted[arr.length / 2]) / 2
       else
         sorted[Math.floor(arr.length / 2)]
 
