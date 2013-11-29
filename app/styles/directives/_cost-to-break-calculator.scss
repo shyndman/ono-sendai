@@ -6,6 +6,18 @@ cost-to-break-calculator {
     padding: 3px 5px 5px 0;
     margin: 0;
     border-bottom: 1px solid #ddd;
+
+    input {
+      display: inline-block;
+    }
+
+    .opponent-filter {
+      width: 150px;
+    }
+
+    .ice-adjust {
+      width: 80px;
+    }
   }
 
   .stats-row {
