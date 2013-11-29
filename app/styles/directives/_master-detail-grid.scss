@@ -1,11 +1,6 @@
-$card-current-z-index: 3;
-$card-current-info-z-index: 2;
-$card-offset-1-z-index: 1;
-$card-offset-2-z-index: 0;
-
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
-cards-view {
+master-detail-grid {
   @mixin scaled-item($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;

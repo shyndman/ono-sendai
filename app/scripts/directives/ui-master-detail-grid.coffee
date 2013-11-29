@@ -1,9 +1,9 @@
 # This component is responsible for dealing with cards, including user input and layout.
 angular.module('onoSendai')
-  .directive('cardsView', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+  .directive('masterDetailGrid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
-    templateUrl: '/views/directives/nr-cards-view.html'
+    template: '<div class="content-container" ng-transclude></div>'
     scope: {
       queryResult: '='
       zoom: '='
