@@ -131,9 +131,14 @@
       $border-color: transparentize($color, (1 - $nav-border-opacity));
 
       .nav-tabs > li.active {
-        a, a:hover, a:focus {
+        a, a:focus {
           border-color: $border-color;
           border-bottom-color: transparent;
+        }
+
+        a:hover {
+          border-color: $border-color;
+          border-bottom: 1px solid white;
         }
       }
     }
