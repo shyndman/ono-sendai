@@ -373,6 +373,7 @@ module.exports = function (grunt) {
     },
     bump: {
       options: {
+        push: false,
         files: ['package.json', 'bower.json', 'app/data/version.json']
       }
     }
@@ -404,7 +405,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'bump-only:minor',
+    'bump:minor',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
