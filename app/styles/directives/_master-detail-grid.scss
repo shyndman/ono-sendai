@@ -6,7 +6,7 @@ $card-offset-2-z-index: 0;
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
 cards-view {
-  @mixin scaled-card($scale) {
+  @mixin scaled-item($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;
 
@@ -40,7 +40,7 @@ cards-view {
   }
 
   .grid-item {
-    @include scaled-card(1);
+    @include scaled-item(1);
     cursor: pointer;
     transform-origin: 0 0;
     perspective: 2000px;
@@ -69,15 +69,15 @@ cards-view {
   // ~-~-~- DOWNSCALING
 
   &.downscaled-1-2 .grid-item {
-    @include scaled-card(1 / 2);
+    @include scaled-item(1 / 2);
   }
 
   &.downscaled-1-3 .grid-item {
-    @include scaled-card(1 / 3);
+    @include scaled-item(1 / 3);
   }
 
   &.downscaled-1-4 .grid-item {
-    @include scaled-card(1 / 3);
+    @include scaled-item(1 / 3);
   }
 
   // ~-~-~- TRANSITIONED MODE
