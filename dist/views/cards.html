@@ -1,29 +1,39 @@
-<cards-view class="cards" query-result="queryResult" selection="selectedCard" zoom="cardUI.zoom">
+<master-detail-grid class="cards" query-result="queryResult" selection="selectedCard" zoom="cardUI.zoom">
 
   <!-- SELECTED CARD -->
   <div ng-if="selectedCard != null" class="selected-card-container">
     <div class="selected-card">
-      <h2 class="{{selectedCard.faction.toLowerCase()}}">
+      <h2 class="card-name {{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
         <small class="favourite" ng-click="toggleFavourite(selectedCard)" ng-class="{ 'on': isFavourite(selectedCard) }" ng-switch="isFavourite(selectedCard)">
           <span ng-switch-when="false">☆</span>
           <span ng-switch-when="true">★</span>
         </small>
+
         <span class="close" ng-click="deselectCard()">&times;</span>
+
+        <ul class="nav nav-tabs">
+          <li ng-class="{ active: cardUI.cardPage == 'info' }">
+            <a ng-model="cardUI.cardPage" btn-radio="'info'">
+              <i class="icon-info"></i>
+            </a>
+          </li>
+          <li ng-class="{
+                active: cardUI.cardPage == 'cost-to-break',
+                disabled: !isCostToBreakEnabled(selectedCard)
+              }">
+            <a ng-model="cardUI.cardPage" btn-radio="'cost-to-break'">
+              <i class="icon-calculator"></i>
+            </a>
+          </li>
+        </ul>
       </h2>
       <div class="info">
-        <!-- Nav -->
-        <div class="info-nav btn-group" ng-if="isCostToBreakEnabled(selectedCard)">
-          <button type="button" class="btn btn-sm btn-default" ng-model="cardUI.costToBreakVisible" btn-checkbox="">
-            <i class="icon-calculator"></i>
-          </button>
-        </div>
-
-        <div ng-switch="isCostToBreakVisible(selectedCard)">
-          <cost-to-break-calculator ng-switch-when="true" card="selectedCard">
-          </cost-to-break-calculator>
-
-          <div class="general" ng-switch-default="">
+        <div ng-switch="cardUI.cardPage">
+          <div ng-switch-when="cost-to-break">
+            <cost-to-break-calculator card="selectedCard"></cost-to-break-calculator>
+          </div>
+          <div class="general" ng-switch-when="info">
             <div class="info-row">
               <label>Type:</label>
               <a ng-href="{{selectedCard | cardUrl:'type'}}">
@@ -90,10 +100,10 @@
 
     Note:
     For performance reasons, this template is bound once, with all the cards, then never touched
-    again. All sorting and show/hide logic for cards exists in the nr-cards-view directive.
+    again. All sorting and show/hide logic for cards exists in the ui-master-detail-grid directive.
   -->
   <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
     <img bo-src="card.imagesrc" width="300" height="418">
     <div class="background"></div>
   </div>
-</cards-view>
+</master-detail-grid>
