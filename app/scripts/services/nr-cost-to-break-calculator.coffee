@@ -28,10 +28,12 @@ class CostToBreakCalculator
       @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
 
-    if card.type == 'ICE'
-      @_calculateForIce(card)
-    else if card.type == 'Program'
-      @_calculateForIcebreaker(card)
+    _.logGroup "Cost to break for #{ card.title }",
+      _.timed "Calculation time", =>
+        if card.type == 'ICE'
+          @_calculateForIce(card)
+        else if card.type == 'Program'
+          @_calculateForIcebreaker(card)
 
   _calculateForIce: (ice) ->
     breakers = []
