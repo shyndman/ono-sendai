@@ -17,19 +17,19 @@
           <span ng-switch-when="false">☆</span>
           <span ng-switch-when="true">★</span>
         </small>
+
         <span class="close" ng-click="deselectCard()">&times;</span>
+
+        <ul class="nav nav-tabs">
+          <li ng-if="isCostToBreakEnabled(selectedCard)">
+            <a href="#"><i class="icon-calculator"></i></a>
+          </li>
+          <li class="active">
+            <a href="#"><i class="icon-info"></i></a>
+          </li>
+        </ul>
       </h2>
       <div class="info">
-        <!-- Nav -->
-        <div class="info-nav btn-group"
-             ng-if="isCostToBreakEnabled(selectedCard)">
-          <button type="button" class="btn btn-sm btn-default"
-                  ng-model="cardUI.costToBreakVisible"
-                  btn-checkbox>
-            <i class="icon-calculator"></i>
-          </button>
-        </div>
-
         <div ng-switch="isCostToBreakVisible(selectedCard)">
           <cost-to-break-calculator
               ng-switch-when="true"
