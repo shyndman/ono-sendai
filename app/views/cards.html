@@ -35,11 +35,9 @@
       </h2>
       <div class="info">
         <div ng-switch="cardUI.cardPage">
-          <cost-to-break-calculator
-              ng-switch-when="cost-to-break"
-              card="selectedCard">
-          </cost-to-break-calculator>
-
+          <div ng-switch-when="cost-to-break">
+            <cost-to-break-calculator card="selectedCard"></cost-to-break-calculator>
+          </div>
           <div class="general"
                ng-switch-when="info">
             <div class="info-row">

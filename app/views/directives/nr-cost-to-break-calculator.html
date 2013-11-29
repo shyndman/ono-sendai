@@ -8,7 +8,13 @@
   <input ng-model="iceAdjust"
          type="number"
          class="ice-adjust input-sm form-control"
-         placeholder="ICE Adjust">
+         placeholder="ICE ⁺⁄₋">
+
+  <input ng-if="card.variablestrength"
+         ng-model="breakerStrength"
+         type="number"
+         class="breaker-strength input-sm form-control"
+         placeholder="Breaker ⁺⁄₋">
 
   <div class="stats-row">
     <span class="stat-label">average:</span>
@@ -21,6 +27,7 @@
     <span class="unbroken-stat stat">{{ unbrokenCount }}</span>
   </div>
 </div>
+
 <ul class="opponents list-unstyled">
   <li ng-repeat="opponent in opponents"
       class="opponent"
@@ -28,11 +35,11 @@
         'not-broken': !opponent.interaction.broken
       }">
     <div class="card">
-      <a ng-href="{{opponent.card | cardUrl:'card'}}">{{opponent.card.title}}</a>
+      <a ng-href="{{ opponent.card | cardUrl:'card' }}">{{ opponent.card.title }}</a>
       <span ng-if="opponent.interaction.breakerCondition"
             class="text-muted">
         <span ng-if="costToBreakInfo.opponentType == 'ICE'">
-          {{ selectedCard.title }}
+          {{ card.title }}
         </span>
         <i class="icon-strength" title="Strength"></i>
         {{ opponent.interaction.breakerCondition }}
