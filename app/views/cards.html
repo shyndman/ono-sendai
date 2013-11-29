@@ -8,7 +8,7 @@
   <div ng-if="selectedCard != null"
        class="selected-card-container">
     <div class="selected-card">
-      <h2 class="{{selectedCard.faction.toLowerCase()}}">
+      <h2 class="card-name {{selectedCard.faction.toLowerCase()}}">
         {{selectedCard.title}}
         <small class="favourite"
                ng-click="toggleFavourite(selectedCard)"
