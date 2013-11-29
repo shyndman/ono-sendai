@@ -109,7 +109,9 @@ class UrlStateService
       (?:
         /card/
         ([^/]+)     # 3 - card
-        (/[^/])?    # 4 - card page
+        (?:
+          /([^/])   # 4 - card page
+        )?
       )?
     ///
 
@@ -142,7 +144,7 @@ class UrlStateService
       selectedCardId = cardsMatch[3]
 
     if cardsMatch[4]
-      switch cardsMatch[4]
+      switch cardsMatch[4].trim()
         when '$'
           cardPage = 'cost-to-break'
 
