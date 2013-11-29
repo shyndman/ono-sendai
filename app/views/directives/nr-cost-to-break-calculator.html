@@ -10,8 +10,8 @@
          class="ice-adjust input-sm form-control"
          placeholder="ICE ⁺⁄₋">
 
-  <input ng-if="card.variablestrength"
-         ng-model="breakerStrength"
+  <input ng-model="breakerStrength"
+         ng-show="card.variablestrength"
          type="number"
          class="breaker-strength input-sm form-control"
          placeholder="Breaker ⁺⁄₋">

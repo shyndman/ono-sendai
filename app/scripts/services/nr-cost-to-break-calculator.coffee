@@ -23,7 +23,7 @@ class CostToBreakCalculator
   isCardApplicable: (card) =>
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
-  calculate: (card, iceAdjust) =>
+  calculate: (card, iceAdjust, options) =>
     if !@isCardApplicable(card)
       @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
@@ -31,11 +31,11 @@ class CostToBreakCalculator
     _.logGroup "Cost to break for #{ card.title }",
       _.timed "Calculation time", =>
         if card.type == 'ICE'
-          @_calculateForIce(card, iceAdjust)
+          @_calculateForIce(card, iceAdjust, options)
         else if card.type == 'Program'
-          @_calculateForIcebreaker(card, iceAdjust)
+          @_calculateForIcebreaker(card, iceAdjust, options)
 
-  _calculateForIce: (ice, iceAdjust) ->
+  _calculateForIce: (ice, iceAdjust, options) ->
     breakers = []
 
     # If the user has specified an ICE strength adjustment, apply it to a copy of the card
@@ -60,10 +60,10 @@ class CostToBreakCalculator
       opponentType: 'Icebreakers'
       opponents: _.map _.sortBy(breakers, 'title'), (b) =>
         card: b
-        interaction: @_calculateInteraction(ice, b)
+        interaction: @_calculateInteraction(ice, b, options)
     }
 
-  _calculateForIcebreaker: (breaker, iceAdjust) ->
+  _calculateForIcebreaker: (breaker, iceAdjust, options) ->
     ice = []
 
     if breaker.subtypesSet['killer']
@@ -90,13 +90,10 @@ class CostToBreakCalculator
       opponentType: 'ICE'
       opponents: _.map _.sortBy(ice, 'title'), (i) =>
         card: i
-        interaction: @_calculateInteraction(i, breaker)
+        interaction: @_calculateInteraction(i, breaker, options)
     }
 
-  _validIceAdjust: (val) ->
-    _.isNumber(val) and val != 0
-
-  _calculateInteraction: (ice, breaker) ->
+  _calculateInteraction: (ice, breaker, options) ->
     interaction = credits: 0, broken: false, steps: []
     strengthCost =
       if _.isNumber(breaker.strengthcost)
@@ -113,7 +110,8 @@ class CostToBreakCalculator
       breaker = angular.copy(breaker)
 
       # Check to see whether the custom script can handle the entire break...
-      if @breakScripts[breaker.breakscript](interaction, breaker, strengthCost, breakCost, ice) == true
+      breakScript = @breakScripts[breaker.breakscript]
+      if breakScript(interaction, breaker, strengthCost, breakCost, ice, options) == true
         return interaction
       # ...otherwise continue with the break (with the interaction potentially modified)
 
@@ -138,6 +136,9 @@ class CostToBreakCalculator
       broken: true
       creditsSpent: creditsSpent)
 
+  _validIceAdjust: (val) ->
+    _.isNumber(val) and val != 0
+
   _performQuery: (side, type, subtype) ->
     @cardService.query(
       side: side,
@@ -147,38 +148,56 @@ class CostToBreakCalculator
         subtype: subtype
     )
 
+
 # Card-specific break scripts.
 class BreakScripts
 
-  atman: (interaction, breaker, strengthCost, breakCost, ice) ->
+  # If breakerStrength is specified, Atman will only break ICE of the same strength
+  atman: (interaction, breaker, strengthCost, breakCost, ice, { breakerStrength } = {}) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete
+
+    if ice.strength < 0
+      interaction.reason = 'ICE strength too low'
+      return true # Atman cannot be set to < 0
+
+    if breakerStrength?
+      if ice.strength != breakerStrength
+        interaction.reason = 'Strengths are not equal'
+        return true
+      else
+        breaker.strength = breakerStrength
+        return false
 
     interaction.breakerCondition = "= #{ ice.strength }"
     breaker.strength = ice.strength
 
-  crypsis: (interaction, breaker, strengthCost, breakCost, ice) ->
+  crypsis: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete
 
-  darwin: (interaction, breaker, strengthCost, breakCost, ice) ->
+  # If breakerStrength is specified, Darwin
+  darwin: (interaction, breaker, strengthCost, breakCost, ice, { breakerStrength } = {}) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete
 
-    interaction.breakerCondition = "≥ #{ ice.strength }"
-    breaker.strength = ice.strength
+    if breakerStrength?
+      breaker.strength = breakerStrength
+    else
+      breaker.strength = Math.max(ice.strength, 0)
+      interaction.breakerCondition = "≥ #{ breaker.strength }"
 
-  deusxCards: (breaker, allIce) ->
+  deusxCards: (breaker, allIce) =>
     _.filter(allIce, (i) -> i.subtypesSet.ap)
 
-  wyrm: (interaction, breaker, strengthCost, breakCost, ice) ->
+  wyrm: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete
 
     interaction.credits += ice.strength
     false # continue break
 
-  _handleAntiAI: (interaction, ice) ->
+  _handleAntiAI: (interaction, ice) =>
     if ice.id == 'swordsman'
       interaction.reason = 'AI icebreakers cannot be used against this ICE'
       true

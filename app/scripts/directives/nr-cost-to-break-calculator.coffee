@@ -40,7 +40,16 @@ angular.module('onoSendai')
         if iceAdjust == oldIceAdjust
           return
 
-        $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.card, iceAdjust)
+        $scope.costToBreakInfo =
+          costToBreakCalculator.calculate($scope.card, $scope.iceAdjust, breakerStrength: $scope.breakerStrength)
+        invalidate()
+
+      $scope.$watch 'breakerStrength', breakerStrengthChanged = (breakerStrength, oldBreakerStrength) ->
+        if breakerStrength == oldBreakerStrength
+          return
+
+        $scope.costToBreakInfo =
+          costToBreakCalculator.calculate($scope.card, $scope.iceAdjust, breakerStrength: breakerStrength)
         invalidate()
 
       $scope.$watch 'card', cardChanged = (card) ->
@@ -52,12 +61,12 @@ angular.module('onoSendai')
           $scope.opponentFilter = null
           $scope.iceAdjust = null
 
-        if card.variablestrength
-          $scope.breakerStrength = 0
+        $scope.breakerStrength = null
 
         # Calculate cost to break on ICE or breakers
         if costToBreakCalculator.isCardApplicable(card)
-          $scope.costToBreakInfo = costToBreakCalculator.calculate(card, $scope.iceAdjust)
+          $scope.costToBreakInfo =
+            costToBreakCalculator.calculate(card, $scope.iceAdjust, breakerStrength: $scope.breakerStrength)
           invalidate()
 
         lastCard = card
