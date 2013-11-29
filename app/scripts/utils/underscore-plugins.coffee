@@ -43,6 +43,25 @@ _.mixin
   noop: -> ;
 
 
+# ~*~*~* STATISTICS
+
+_.mixin
+  sum: (arr) ->
+    _.reduce(arr, ((sum, i) -> sum + i), 0)
+
+  average: (arr) ->
+    if _.isEmpty(arr)
+      null
+    else
+      _.sum(arr) / arr.length
+
+  median: (arr) ->
+    if _.isEmpty(arr)
+      null
+    else
+      arr.slice().sort((a, b) -> a - b)[Math.floor(arr.length / 2)]
+
+
 # ~*~*~* DEBUGGING UTILITIES
 
 wrap = (methodName) ->
