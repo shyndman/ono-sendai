@@ -61,4 +61,11 @@ angular.module('onoSendai')
           invalidate()
 
         lastCard = card
+
+    link: (scope, element, attrs) ->
+      opponentsList = element.find('.opponents')
+
+      # Scroll to the top of the list when the card changes
+      scope.$watch 'card', ->
+        $timeout -> opponentsList[0].scrollTop = 0
   )
