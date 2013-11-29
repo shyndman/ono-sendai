@@ -23,7 +23,7 @@ class CostToBreakCalculator
   isCardApplicable: (card) =>
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet
 
-  calculate: (card) =>
+  calculate: (card, iceAdjust) =>
     if !@isCardApplicable(card)
       @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
@@ -31,13 +31,18 @@ class CostToBreakCalculator
     _.logGroup "Cost to break for #{ card.title }",
       _.timed "Calculation time", =>
         if card.type == 'ICE'
-          @_calculateForIce(card)
+          @_calculateForIce(card, iceAdjust)
         else if card.type == 'Program'
-          @_calculateForIcebreaker(card)
+          @_calculateForIcebreaker(card, iceAdjust)
 
-  _calculateForIce: (ice) ->
+  _calculateForIce: (ice, iceAdjust) ->
     breakers = []
 
+    # If the user has specified an ICE strength adjustment, apply it to a copy of the card
+    if @_validIceAdjust(iceAdjust)
+      ice = _.extend angular.copy(ice), strength: ice.strength + iceAdjust
+
+    # Collect all potential opponent cards
     if ice.subtypesSet['sentry']
       breakers = breakers.concat @_killers.orderedCards
 
@@ -46,6 +51,8 @@ class CostToBreakCalculator
 
     if ice.subtypesSet['code-gate']
       breakers = breakers.concat @_decoders.orderedCards
+
+    # [todo] How does Deus X fit in here
 
     breakers = breakers.concat @_ais.orderedCards
 
@@ -56,7 +63,7 @@ class CostToBreakCalculator
         interaction: @_calculateInteraction(ice, b)
     }
 
-  _calculateForIcebreaker: (breaker) ->
+  _calculateForIcebreaker: (breaker, iceAdjust) ->
     ice = []
 
     if breaker.subtypesSet['killer']
@@ -74,7 +81,10 @@ class CostToBreakCalculator
     if breaker.breakcardsscript?
       ice = ice.concat @breakScripts[breaker.breakcardsscript](breaker, @_allIce.orderedCards)
 
-    # if breaker.subtypes
+    # If the user has specified an ICE strength adjustment, apply it to copies of the cards
+    if @_validIceAdjust(iceAdjust)
+      ice = _.map ice, (i) ->
+        _.extend angular.copy(i), strength: i.strength + iceAdjust
 
     {
       opponentType: 'ICE'
@@ -82,6 +92,9 @@ class CostToBreakCalculator
         card: i
         interaction: @_calculateInteraction(i, breaker)
     }
+
+  _validIceAdjust: (val) ->
+    _.isNumber(val) and val != 0
 
   _calculateInteraction: (ice, breaker) ->
     interaction = credits: 0, broken: false, steps: []
