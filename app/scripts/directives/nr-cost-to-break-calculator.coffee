@@ -11,7 +11,7 @@ angular.module('onoSendai')
       # Sets and filters the opponents and calculates stats
       invalidate = ->
         costToBreakInfo = $scope.costToBreakInfo
-        filter = $scope.opponentFilter
+        filter = ($scope.opponentFilter?.trim().toLowerCase() ? '')
         iceAdjust = $scope.iceAdjust
 
         if !costToBreakInfo?
@@ -33,7 +33,6 @@ angular.module('onoSendai')
         if filter == oldFilter
           return
 
-        $scope.opponentFilter = (filter ? '').trim().toLowerCase()
         invalidate()
 
       $scope.$watch 'iceAdjust', iceAdjustChanged = (iceAdjust, oldIceAdjust) ->
