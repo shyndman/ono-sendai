@@ -21,12 +21,15 @@
         <span class="close" ng-click="deselectCard()">&times;</span>
 
         <ul class="nav nav-tabs">
-          <li class="active">
+          <li ng-class="{ active: cardUI.cardPage == 'info' }">
             <a ng-model="cardUI.cardPage" btn-radio="'info'">
               <i class="icon-info"></i>
             </a>
           </li>
-          <li ng-class="{ disabled: !isCostToBreakEnabled(selectedCard) }">
+          <li ng-class="{
+                active: cardUI.cardPage == 'cost-to-break',
+                disabled: !isCostToBreakEnabled(selectedCard)
+              }">
             <a ng-model="cardUI.cardPage" btn-radio="'cost-to-break'">
               <i class="icon-calculator"></i>
             </a>
