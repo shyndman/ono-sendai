@@ -1,45 +1,64 @@
 angular.module('onoSendai')
-  .directive('costToBreakCalculator', (costToBreakCalculator) ->
+  .directive('costToBreakCalculator', ($timeout, costToBreakCalculator) ->
     templateUrl: '/views/directives/nr-cost-to-break-calculator.html'
     restrict: 'E'
     scope: {
       card: '='
     }
-    link: (scope, element, attrs) ->
+    controller: ($scope, $attrs) ->
       lastCard = null
 
       # Sets and filters the opponents and calculates stats
-      invalidate = (costToBreakInfo = scope.costToBreakInfo, filter = scope.opponentFilter) ->
+      invalidate = ->
+        costToBreakInfo = $scope.costToBreakInfo
+        filter = $scope.opponentFilter
+        iceAdjust = $scope.iceAdjust
+
         if !costToBreakInfo?
           return
 
-        scope.costToBreakInfo = costToBreakInfo
-
         # Apply filter
-        scope.opponents = _.filter costToBreakInfo.opponents, (opponent) ->
+        $scope.opponents = _.filter costToBreakInfo.opponents, (opponent) ->
           _.str.include(opponent.card.title.toLowerCase(), filter) or
           _.str.include(opponent.card.faction.toLowerCase(), filter)
 
         # Stats!
-        credits = _.filter(_.map(scope.opponents, (opponent) -> opponent.interaction.creditsSpent), (credits) -> credits?)
-        scope.averageCredits = _.average(credits)
-        scope.medianCredits = _.median(credits)
-        scope.brokenCount = _.filter(scope.opponents, (opponent) -> opponent.interaction.broken).length
-        scope.unbrokenCount = scope.opponents.length - scope.brokenCount
+        credits = _.filter(_.map($scope.opponents, (opponent) -> opponent.interaction.creditsSpent), (credits) -> credits?)
+        $scope.averageCredits = _.average(credits)
+        $scope.medianCredits = _.median(credits)
+        $scope.brokenCount = _.filter($scope.opponents, (opponent) -> opponent.interaction.broken).length
+        $scope.unbrokenCount = $scope.opponents.length - $scope.brokenCount
 
-      scope.$watch 'opponentFilter', filterChanged = (filter) ->
-        invalidate(null, (filter ? '').trim().toLowerCase())
+      $scope.$watch 'opponentFilter', filterChanged = (filter, oldFilter) ->
+        if filter == oldFilter
+          return
 
-      scope.$watch 'card', cardChanged = (card) ->
-        return if !card?
+        $scope.opponentFilter = (filter ? '').trim().toLowerCase()
+        invalidate()
+
+      $scope.$watch 'iceAdjust', iceAdjustChanged = (iceAdjust, oldIceAdjust) ->
+        if iceAdjust == oldIceAdjust
+          return
+
+        $scope.costToBreakInfo = costToBreakCalculator.calculate($scope.card, iceAdjust)
+        invalidate()
+
+      $scope.$watch 'card', cardChanged = (card) ->
+        if !card?
+          return
 
         # Clear the filter if we're switch sides, because it wouldn't make sense in the other context
         if lastCard?.side != card.side
-          scope.opponentFilter = ''
+          $scope.opponentFilter = null
+          $scope.iceAdjust = null
+
+        if card.variablestrength
+          $scope.breakerStrength = 0
 
         # Calculate cost to break on ICE or breakers
         if costToBreakCalculator.isCardApplicable(card)
-          invalidate(costToBreakCalculator.calculate(card), null)
+          $scope.costToBreakInfo = costToBreakCalculator.calculate(card, $scope.iceAdjust)
+          invalidate()
 
         lastCard = card
   )
