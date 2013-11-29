@@ -21,11 +21,11 @@
         <span class="close" ng-click="deselectCard()">&times;</span>
 
         <ul class="nav nav-tabs">
-          <li ng-if="isCostToBreakEnabled(selectedCard)">
-            <a href="#"><i class="icon-calculator"></i></a>
-          </li>
           <li class="active">
             <a href="#"><i class="icon-info"></i></a>
+          </li>
+          <li ng-class="{ disabled: !isCostToBreakEnabled(selectedCard) }">
+            <a href="#"><i class="icon-calculator"></i></a>
           </li>
         </ul>
       </h2>

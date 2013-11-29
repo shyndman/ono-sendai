@@ -210,6 +210,14 @@
           border-bottom: none;
         }
       }
+
+      > li.disabled > a {
+        color: $disabled-label-color;
+
+        a:hover {
+          border-bottom: none;
+        }
+      }
     }
   }
 }

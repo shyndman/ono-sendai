@@ -87,7 +87,7 @@ $dirty-color: #E59409; // TODO Integrate
 
     &.disabled {
       > .control-label {
-        color: #bbb;
+        color: $disabled-label-color;
       }
     }
   }
