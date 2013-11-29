@@ -22,21 +22,26 @@
 
         <ul class="nav nav-tabs">
           <li class="active">
-            <a href="#"><i class="icon-info"></i></a>
+            <a ng-model="cardUI.cardPage" btn-radio="'info'">
+              <i class="icon-info"></i>
+            </a>
           </li>
           <li ng-class="{ disabled: !isCostToBreakEnabled(selectedCard) }">
-            <a href="#"><i class="icon-calculator"></i></a>
+            <a ng-model="cardUI.cardPage" btn-radio="'cost-to-break'">
+              <i class="icon-calculator"></i>
+            </a>
           </li>
         </ul>
       </h2>
       <div class="info">
-        <div ng-switch="isCostToBreakVisible(selectedCard)">
+        <div ng-switch="cardUI.cardPage">
           <cost-to-break-calculator
-              ng-switch-when="true"
+              ng-switch-when="cost-to-break"
               card="selectedCard">
           </cost-to-break-calculator>
 
-          <div class="general" ng-switch-default>
+          <div class="general"
+               ng-switch-when="info">
             <div class="info-row">
               <label>Type:</label>
               <a ng-href="{{selectedCard | cardUrl:'type'}}">

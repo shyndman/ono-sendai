@@ -22,10 +22,10 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
 
     # Build the initial filter from the URL
-    [ @queryArgs, @selectedCardId, @costToBreakVisible ] = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs, selectedCard, costToBreakVisible) ->
+  updateUrl: (queryArgs, selectedCard, cardPage) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
@@ -36,7 +36,7 @@ class UrlStateService
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
 
-    if costToBreakVisible
+    if cardPage and cardPage == 'cost-to-break'
       url += "/$"
 
     # Build up the query string parameters
@@ -94,7 +94,7 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    [ @queryArgs, @selectedCardId, @costToBreakVisible ]  = @_stateFromUrl()
+    [ @queryArgs, @selectedCardId, @cardPage ]  = @_stateFromUrl()
     @$rootScope.$broadcast('urlStateChange')
 
   _cardsUrlMatcher:
@@ -104,20 +104,19 @@ class UrlStateService
       /(corp|runner) # 1 - side
       (?:
         /
-        # [note] the ^c is to prevent a match on /card/ -- a bit messy
-        ([^c][^/]+)  # 2 - card type
+        ([^c][^/]+)  # 2 - card type -- [note] the ^c is to prevent a match on /card/ (kind of gross)
       )?
       (?:
         /card/
         ([^/]+)     # 3 - card
-        (/\$)?       # 4 - cost to break
+        (/[^/])?    # 4 - card page
       )?
     ///
 
   # [todo] This is getting a bit ugly. Consider a refactor
   _stateFromUrl: ->
     selectedCardId = null
-    costToBreakVisible = false
+    cardPage = null
 
     # Copy defaults and assign general as the default active group
     queryArgs = angular.copy(@filterDefaults)
@@ -143,7 +142,9 @@ class UrlStateService
       selectedCardId = cardsMatch[3]
 
     if cardsMatch[4]
-      costToBreakVisible = true
+      switch cardsMatch[4]
+        when '$'
+          cardPage = 'cost-to-break'
 
     relevantFilters = @cardService.relevantFilters(queryArgs, false)
     search = @$location.search()
@@ -189,7 +190,7 @@ class UrlStateService
         else # switch
           queryArgs.fieldFilters[name] = search[name]
 
-    [ queryArgs, selectedCardId, costToBreakVisible ]
+    [ queryArgs, selectedCardId, cardPage ]
 
 
 angular

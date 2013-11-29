@@ -6,7 +6,8 @@ angular.module('onoSendai')
     $scope.filter = urlStateService.queryArgs
     $scope.cardUI =
       zoom: 0.35
-      costToBreakVisible: urlStateService.costToBreakVisible
+      # [todo] Push this down
+      cardPage: urlStateService.cardPage ? 'info'
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
@@ -73,7 +74,7 @@ angular.module('onoSendai')
       $scope.selectCard(nextCard)
 
 
-    # ~-~-~- CARD COUNTS
+    # ~-~-~- CARD SHORTAGES
 
     # Returns true if the user has less than 3 of this card
     #
@@ -90,9 +91,9 @@ angular.module('onoSendai')
       if !card?
         false
       else
-        $scope.isCostToBreakEnabled(card) and $scope.cardUI.costToBreakVisible
+        $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
 
-    $scope.$watch('cardUI.costToBreakVisible', -> updateUrl())
+    $scope.$watch('cardUI.cardPage', -> updateUrl())
 
 
     # ~-~-~- FAVOURITES
@@ -132,9 +133,12 @@ angular.module('onoSendai')
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.selectedCard
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, $scope.isCostToBreakVisible(selCard))
+      cardPage = $scope.cardUI.cardPage
+      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, cardPage)
     ), 500)
 
+
+    # ~-~-~- COMMUNICATION BETWEEN DIRECTIVES / CONTROLLERS
 
     $scope.broadcastZoomStart = ->
       $scope.$broadcast 'zoomStart'
