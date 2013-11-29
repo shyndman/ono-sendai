@@ -14,6 +14,8 @@
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
 [todo] Cost to break calculator filter should have a tooltip to tell you that you can filter in various ways
+[fix]  Work out a better way of counting subs -- Check out sensei as an example
+
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
