@@ -1,9 +1,15 @@
 <div class="controls">
   <input ng-model="opponentFilter"
-         type="search" class="input-sm form-control"
+         type="search"
+         class="opponent-filter input-sm form-control"
          placeholder="{{costToBreakInfo.opponentType}} Filter"
-         style="width: 150px"
          ui-keydown="{ 'esc/left/right': { stopPropagation: true }}">
+
+  <input ng-model="iceAdjust"
+         type="number"
+         class="ice-adjust input-sm form-control"
+         placeholder="ICE Adjust">
+
   <div class="stats-row">
     <span class="stat-label">average:</span>
     <span class="average-stat stat">{{ averageCredits | number:1 }}</span>
