@@ -59,7 +59,7 @@ _.mixin
     if _.isEmpty(arr)
       null
     else
-      arr[Math.floor(arr.length / 2)]
+      arr.slice().sort((a, b) -> a - b)[Math.floor(arr.length / 2)]
 
 
 # ~*~*~* DEBUGGING UTILITIES
