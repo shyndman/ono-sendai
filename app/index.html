@@ -21,7 +21,7 @@
       ng-controller="CardsCtrl"
       tabindex="0"
       ui-keydown="{
-        'esc'                        : { action: 'deselectCard()', preventDefault: true },
+        'esc/alt+esc/ctrl+esc'       : { action: 'deselectCard()', preventDefault: true },
         'left/alt+left/ctrl+left'    : 'selectPreviousCard()',
         'right/alt+right/ctrl+right' : 'selectNextCard()'
       }"
