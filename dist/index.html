@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="/styles/120bfdf4.main.css"/>
 </head>
 <body ng-app="onoSendai" ng-controller="CardsCtrl" tabindex="0" ui-keydown="{
-        'esc'  : { action: 'deselectCard()', preventDefault: true },
-        'left' : 'selectPreviousCard()',
-        'right': 'selectNextCard()'
+        'esc/alt+esc/ctrl+esc'       : { action: 'deselectCard()', preventDefault: true },
+        'left/alt+left/ctrl+left'    : 'selectPreviousCard()',
+        'right/alt+right/ctrl+right' : 'selectNextCard()'
       }" style="outline: none !important">
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -38,7 +38,7 @@
 
   <script src="/scripts/861e4f7d.lib.js"></script>
 
-  <script src="/scripts/75f4aec5.app.js"></script>
+  <script src="/scripts/dc823e23.app.js"></script>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
