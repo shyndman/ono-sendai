@@ -25,7 +25,6 @@ angular.module('onoSendai')
       lastVal = scope.filter.value
 
       inputElement.keydown (e) ->
-        e.stopPropagation() # We always want to stop the bubble
         # Erase the value if the user presses escape with the numeric input focused
         if jwerty.is('esc', e)
           scope.$apply -> scope.filter.value = undefined
