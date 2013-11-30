@@ -1,9 +1,9 @@
-'use strict'
 
-angular.module('onoSendaiApp')
-  .directive('nrFilterInput', () ->
-    template: '<div></div>'
-    restrict: 'E'
+angular.module('onoSendai')
+  # Captures and stops the propagation of key presses that also have top-level actions
+  # (card forward/back).
+  .directive('filterInput', ->
+    restrict: 'A'
     link: (scope, element, attrs) ->
-      element.text 'this is the nrFilterInput directive'
+      element.keydown jwerty.event('esc/left/right', (e) -> e.stopPropagation())
   )
