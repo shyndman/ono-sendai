@@ -18,4 +18,7 @@ angular.module('onoSendai')
 
       element.keydown jwerty.event("esc/left/right/#{ stopPropagationChord }", (e) ->
         e.stopPropagation())
+
+      element.keydown jwerty.event('enter', (e) ->
+        $(':focus').blur())
   )
