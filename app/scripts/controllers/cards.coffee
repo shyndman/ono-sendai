@@ -96,7 +96,11 @@ angular.module('onoSendai')
       else
         $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
 
-    $scope.$watch('cardUI.cardPage', -> updateUrl())
+    $scope.$watch('cardUI.cardPage', (page) ->
+      if page == 'cost-to-break' and !$scope.isCostToBreakEnabled($scope.selectedCard)
+        $scope.cardUI.cardPage = 'info'
+      else
+        updateUrl())
 
 
     # ~-~-~- FAVOURITES
