@@ -8,9 +8,10 @@ angular.module('onoSendai')
       queryResult: '='
       zoom: '='
       selection: '='
+      layoutMode: '='
     }
     link: (scope, element, attrs) ->
-      layoutMode = 'grid'
+      layoutMode = scope.layoutMode
       container = element.find('.content-container')
       containerWidth = container.width()
       inContinuousZoom = false
@@ -219,7 +220,11 @@ angular.module('onoSendai')
         nextPrevY = baseY + 8
         nextPrevW = 160
 
-        selEle = gridItemsById[scope.selection.id]
+        selEle =
+          if !scope.selection
+            null
+          else
+            gridItemsById[scope.selection.id]
 
         for item, i in gridHeaders
           layout = headerLayouts[i] ?= {}
@@ -317,7 +322,7 @@ angular.module('onoSendai')
 
             item = gridHeaders[i]
 
-            if layoutMode == 'grid'
+            if scope.layoutMode == 'grid'
               item.classList.remove('invisible')
               item.style[transformProperty] =
                 "translate3d(#{layout.x}px, #{layout.y}px, 0)"
@@ -340,7 +345,7 @@ angular.module('onoSendai')
 
         # Determines the layout function based on the mode we're in
         layoutFn =
-          if layoutMode is 'grid'
+          if scope.layoutMode is 'grid'
             performGridLayout
           else
             performDetailLayout
@@ -452,23 +457,24 @@ angular.module('onoSendai')
             $q.when() # Empty promise :)
 
 
-      # *~*~*~*~ CARDS
+      # *~*~*~*~ SELECTION AND QUERY MODE
 
-      selectionChanged = (newVal, oldVal) ->
-        oldLayoutMode = layoutMode
-        layoutMode =
-          if newVal
-            $log.debug 'Item selected. Displaying in detail mode'
-            'detail'
-          else
-            $log.debug 'No selection. Displaying items in grid mode'
-            'grid'
+      scope.$watch('layoutMode', layoutModeChanged = (newVal, oldVal) ->
+        if newVal == oldVal
+          return
+        layoutNow(true))
 
-        layoutNow(oldLayoutMode != layoutMode) # Only perform scaling if we've changed layout modes
-      scope.$watch('selection', selectionChanged)
+      scope.$watch('selection', selectionChanged = (newVal, oldVal) ->
+        if newVal
+          $log.debug 'Item selected.'
+        else
+          $log.debug 'No selection.'
+
+        # Only perform scaling if we've changed layout modes
+        layoutNow(false))
 
       firstLayout = true
-      queryResultChanged = (newVal) ->
+      scope.$watch('queryResult', queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
         queryResult = newVal
         $timeout ->
@@ -479,10 +485,9 @@ angular.module('onoSendai')
           layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
           firstLayout = false
 
-          if layoutMode == 'grid'
+          if scope.layoutMode == 'grid'
             layoutPromise.then(scrollToTop)
-        return
-      scope.$watch('queryResult', queryResultChanged)
+        return)
 
 
       # *~*~*~*~ ZOOMING
@@ -498,19 +503,15 @@ angular.module('onoSendai')
         inContinuousZoom = false
         console.groupEnd?('Zoom')
 
-      zoomChanged = (newVal) ->
-        layoutNow()
-
-      scope.$watch('zoom', zoomChanged)
+      scope.$watch('zoom', zoomChanged = (newVal) ->
+        layoutNow())
 
 
       # *~*~*~*~ WINDOW RESIZING
 
       # Watch for resizes that may affect grid size, requiring a re-layout
-      windowResized = ->
+      $($window).resize(windowResized = ->
         if hasContainerChangedWidth()
           $log.debug 'Laying out grid (grid width change)'
-          layoutNow(false)
-
-      $($window).resize(windowResized)
+          layoutNow(false))
   )

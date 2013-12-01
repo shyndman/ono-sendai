@@ -6,8 +6,10 @@ angular.module('onoSendai')
     $scope.filter = urlStateService.queryArgs
     $scope.cardUI =
       zoom: 0.35
-      # [todo] Push this down
+      # [todo] This should maybe be pushed down
       cardPage: urlStateService.cardPage ? 'info'
+      layoutMode: if urlStateService.selectedCardId then 'detail' else 'grid'
+
     $scope.selectedCard = null
     $http.get('/data/version.json').success((data) ->
       $scope.version = data.version)
@@ -39,6 +41,11 @@ angular.module('onoSendai')
     $scope.selectCard = (card) ->
       if card?
         $log.info "Selected card changing to #{ card.title }"
+
+        # Note that we change layout mode to 'detail' when a card is supplied, but do not change it to 'grid'
+        # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
+        # there are no results.
+        $scope.cardUI.layoutMode = 'detail'
         $scope.previousCard = $scope.queryResult.cardBefore(card)
         $scope.nextCard = $scope.queryResult.cardAfter(card)
 
@@ -52,6 +59,7 @@ angular.module('onoSendai')
       updateUrl()
 
     $scope.deselectCard = ->
+      $scope.cardUI.layoutMode = 'grid'
       $scope.selectCard(null)
 
     $scope.selectPreviousCard = ->
@@ -96,8 +104,8 @@ angular.module('onoSendai')
       else
         $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
 
-    $scope.$watch('cardUI.cardPage', (page) ->
-      if page == 'cost-to-break' and !$scope.isCostToBreakEnabled($scope.selectedCard)
+    $scope.$watch('cardUI.cardPage', pageChanged = (page) ->
+      if page == 'cost-to-break' and $scope.selectedCard? and !$scope.isCostToBreakEnabled($scope.selectedCard)
         $scope.cardUI.cardPage = 'info'
       else
         updateUrl())
@@ -118,8 +126,10 @@ angular.module('onoSendai')
       $log.debug 'Assigning new query result', queryResult
       $scope.queryResult = queryResult
 
-      selCard = $scope.selectedCard
-      if selCard and !queryResult.isShown(selCard.id)
+      selCard = $scope.selectedCard ? {}
+      # If we're in detail mode, and the selected card isn't visible (or doesn't exist), select the first
+      # query result.
+      if $scope.cardUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedCards[0])
 
     $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
