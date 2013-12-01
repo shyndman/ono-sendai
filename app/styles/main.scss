@@ -90,7 +90,12 @@ input[type=number]::-webkit-outer-spin-button {
 #version {
   position: absolute;
   font-size: 11px;
-  color: #777;
   left: 3px;
   bottom: 0;
+  padding: 2px 5px;
+  background: rgba(255, 255, 255, 0.9);
+
+  a, a:hover, a:visited {
+    color: #777;
+  }
 }
