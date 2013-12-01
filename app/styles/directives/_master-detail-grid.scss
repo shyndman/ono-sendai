@@ -89,6 +89,7 @@ master-detail-grid {
   .grid-item.current {
     transform-origin: 0 150px;
     z-index: $card-current-z-index !important;
+    cursor: default !important;
 
     img {
       opacity: 1;
