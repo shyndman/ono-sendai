@@ -118,7 +118,7 @@
   -->
   <div ng-repeat="card in cards track by card.id"
        bindonce
-       class="grid-item"
+       class="grid-item hide"
        ng-click="selectCard(card)"
        bo-title="card.title"
        bo-attr-grid-id="card.id"
