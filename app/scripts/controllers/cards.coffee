@@ -151,7 +151,7 @@ angular.module('onoSendai')
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.selectedCard
       cardPage = $scope.cardUI.cardPage
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, cardPage)
+      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
 
 
