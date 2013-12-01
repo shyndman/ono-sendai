@@ -41,6 +41,9 @@ angular.module('onoSendai')
         $log.info "Selected card changing to #{ card.title }"
         $scope.previousCard = $scope.queryResult.cardBefore(card)
         $scope.nextCard = $scope.queryResult.cardAfter(card)
+
+        if $scope.cardUI.cardPage == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
+          $scope.cardUI.cardPage = 'info'
       else
         $log.info 'Card deselected'
 
