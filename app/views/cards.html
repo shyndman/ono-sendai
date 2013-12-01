@@ -8,8 +8,8 @@
   <div ng-if="selectedCard != null"
        class="selected-card-container">
     <div class="selected-card">
-      <h2 class="card-name {{selectedCard.faction.toLowerCase()}}">
-        {{selectedCard.title}}
+      <h2 class="card-name {{ selectedCard.faction.toLowerCase() }}">
+        {{ selectedCard.title }}
         <small class="favourite"
                ng-click="toggleFavourite(selectedCard)"
                ng-class="{ 'on': isFavourite(selectedCard) }"
@@ -45,39 +45,39 @@
                ng-switch-when="info">
             <div class="info-row">
               <label>Type:</label>
-              <a ng-href="{{selectedCard | cardUrl:'type'}}">
-                {{selectedCard.type}}
+              <a ng-href="{{ selectedCard | cardUrl:'type' }}">
+                {{ selectedCard.type }}
               </a>
             </div>
             <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
               <label>Subtypes:</label>
               <span ng-repeat="subtype in selectedCard.subtypes">
-                <a ng-href="{{selectedCard | cardUrl:'subtype':subtype}}">{{subtype}}</a><span ng-if="!$last"> - </span>
+                <a ng-href="{{ selectedCard | cardUrl:'subtype':subtype }}">{{ subtype }}</a><span ng-if="!$last"> - </span>
               </span>
             </div>
             <div class="info-row">
               <label>From:</label>
-              <a ng-href="{{selectedCard | cardUrl:'set'}}">{{selectedCard.setname}}</a>
+              <a ng-href="{{ selectedCard | cardUrl:'set' }}">{{ selectedCard.setname }}</a>
             </div>
             <div ng-if="isShortCard(selectedCard)" class="info-row">
               <label>Quantity:</label>
-              <span class='short-cards'>{{selectedCard.quantity}} in set</span>
+              <span class='short-cards'>{{ selectedCard.quantity }} in set</span>
             </div>
 
             <ul class="links">
               <!-- Reddit cards of the day -->
               <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
-                <a ng-href="{{cotd.url}}" target="reddit">
-                  <i class="icon-cotd"></i> Card of the Day ({{cotd.created|date}})
+                <a ng-href="{{ cotd.url }}" target="reddit">
+                  <i class="icon-cotd"></i> Card of the Day ({{ cotd.created|date }})
                 </a>
               </li>
               <li>
-                <a ng-href="{{selectedCard.cgdb_url}}#commentsStart" target="cgdb">
+                <a ng-href="{{ selectedCard.cgdb_url }}#commentsStart" target="cgdb">
                   <i class="icon-link-ext"></i> Comments on CardGameDB
                 </a>
               </li>
               <li>
-                <a ng-href="{{selectedCard.nrdb_url}}" target="nrdb">
+                <a ng-href="{{ selectedCard.nrdb_url }}" target="nrdb">
                   <i class="icon-link-strength"></i> View on NetrunnerDB
                 </a>
               </li>
@@ -86,18 +86,18 @@
         </div>
       </div>
       <div class="card-count">
-        <span class="current">{{queryResult.cardOrdinal(selectedCard) + 1}}</span>
+        <span class="current">{{ queryResult.cardOrdinal(selectedCard) + 1 }}</span>
         of
-        <span class="total">{{queryResult.length}}</span>
+        <span class="total">{{ queryResult.length }}</span>
       </div>
     </div>
   </div>
 
   <!-- HEADERS -->
   <h2 ng-repeat="(id, group) in queryResult.groups track by id"
-      grid-id="{{group.id}}"
-      class="{{group.id}} grid-header invisible"
-      title="{{group.id}}">
+      grid-id="{{ group.id }}"
+      class="{{ group.id }} grid-header invisible"
+      title="{{ group.id }}">
     <small class="card-count"><ng-pluralize
         count="group.cards.length"
         when="{
@@ -105,8 +105,8 @@
           'other': '{} cards'
         }"></ng-pluralize>
     </small>
-    {{group.title|primaryGroupTitle:filter.groupings}}
-    <small class="secondary-group">{{group.title|secondaryGroupTitle:filter.groupings}}</small>
+    {{ group.title|primaryGroupTitle:filter.groupings }}
+    <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
   </h2>
 
   <!--
