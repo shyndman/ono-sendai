@@ -13,7 +13,8 @@ angular.module('onoSendai')
       initSelect = (data) ->
         inputElement.select2(
           placeholder: attrs.placeholder
-          data: data)
+          data: data
+          openOnEnter: false)
 
       # Grab the data
       data = $parse(attrs.insetFilterSource)(scope) ? []
