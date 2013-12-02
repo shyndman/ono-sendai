@@ -1,6 +1,6 @@
 {
   "name": "onoSendai",
-  "version": "0.52.0",
+  "version": "0.53.0",
   "dependencies": {
     "angular": "~1.2.3",
     "json3": "~3.2.4",
