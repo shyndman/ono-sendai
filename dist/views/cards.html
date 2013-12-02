@@ -102,8 +102,16 @@
     For performance reasons, this template is bound once, with all the cards, then never touched
     again. All sorting and show/hide logic for cards exists in the ui-master-detail-grid directive.
   -->
-  <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item hide" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
+  <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item hidden" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
     <img bo-src="card.imagesrc" width="300" height="418">
     <div class="background"></div>
+  </div>
+
+  <!-- No results -->
+  <div ng-show="queryResult.length == 0" class="no-results">
+    <h2>
+      <small class="card-count">0 cards</small>
+      No Results Found
+    </h2>
   </div>
 </master-detail-grid>

@@ -7,36 +7,36 @@ NOTES:
        'enter': 'clearFocus()'
      }" class="form form-horizontal">
 
-  <div class="filter-group {{group.name}}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
+  <div class="filter-group {{ group.name }}" ng-repeat="group in filterUI" ng-class="{ active: isActiveGroup(group, filter.activeGroup) }" ng-show="isGroupShown(group, filter.side)">
 
-    <h5 ng-click="toggleGroup(group)">{{group.display}}</h5>
+    <h5 ng-click="toggleGroup(group)">{{ group.display }}</h5>
 
-    <div class="filter-group-field {{field.name}} form-group" ng-repeat="field in group.fieldFilters" ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }" ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
+    <div class="filter-group-field {{ field.name }} form-group" ng-repeat="field in group.fieldFilters" ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }" ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
 
-      <label for="{{labelledFieldId(field)}}" class="control-label">
-        <i class="icon-{{field.icon}}"></i>
+      <label for="{{ labelledFieldId(field) }}" class="control-label">
+        <i class="icon-{{ field.icon }}"></i>
       </label>
 
       <div ng-switch="" on="field.type">
         <div ng-switch-when="search">
-          <input type="search" id="{{field.name}}-filter" class="form-control input-sm" placeholder="{{field.placeholder}}" ng-model="filter.search" filter-input="">
+          <input type="search" id="{{ field.name }}-filter" class="form-control input-sm" placeholder="{{ field.placeholder }}" ng-model="filter.search" filter-input="">
         </div>
 
         <div ng-switch-when="faction">
           <div class="btn-group">
-            <button class="btn btn-default btn-sm" ng-repeat="faction in field.side[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" ui-all-or-one-box="filter.fieldFilters.faction" ui-all-or-one-box-field="{{faction.model}}" title="{{faction.name}}">
-              {{faction.abbr}}
+            <button class="btn btn-default btn-sm" ng-repeat="faction in field.side[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" ui-all-or-one-box="filter.fieldFilters.faction" ui-all-or-one-box-field="{{ faction.model }}" title="{{ faction.name }}">
+              {{ faction.abbr }}
             </button>
           </div>
         </div>
 
         <div ng-switch-when="numeric">
-          <numeric-filter id="{{field.name}}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{field.placeholder}}" max="{{field.max}}" ui-disabled="{{isFieldDisabled(field, group, filter.activeGroup, filter.side)}}" filter-input="">
+          <numeric-filter id="{{ field.name }}-filter" filter-attr="filter.fieldFilters[field.name]" placeholder="{{ field.placeholder }}" max="{{ field.max }}" ui-disabled="{{ isFieldDisabled(field, group, filter.activeGroup, filter.side) }}" filter-input="">
           </numeric-filter>
         </div>
 
         <div ng-switch-when="inSet">
-          <inset-filter id="{{field.name}}-filter" placeholder="{{field.placeholder}}" ng-model="filter.fieldFilters[field.name]" inset-filter-source="this[field.source]" filter-input="">
+          <inset-filter id="{{ field.name }}-filter" placeholder="{{ field.placeholder }}" ng-model="filter.fieldFilters[field.name]" inset-filter-source="this[field.source]" filter-input="">
           </inset-filter>
         </div>
       </div>
