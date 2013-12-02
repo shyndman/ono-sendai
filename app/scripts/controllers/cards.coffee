@@ -4,36 +4,44 @@ angular.module('onoSendai')
     # ~-~-~- INITIALIZATION
 
     $scope.filter = urlStateService.queryArgs
-    $scope.cardUI =
-      zoom: 0.35
-      # [todo] This should maybe be pushed down
-      cardPage: urlStateService.cardPage ? 'info'
-      layoutMode: if urlStateService.selectedCardId then 'detail' else 'grid'
 
-    $scope.selectedCard = null
-    $http.get('/data/version.json').success((data) ->
-      $scope.version = data.version)
+    initialize = ([cards, queryResult]) ->
+      $scope.cardUI =
+        zoom: 0.35
+        layoutMode: 'grid' # Will be modified by selectCard() if called
+        cardPage: urlStateService.cardPage ? 'info'
 
-    # Assign cards to the scope once, but order them according to the initial query so the first images
-    # to load are the ones on screen.
-    $q.all([cardService.getCards(), cardService.query($scope.filter)])
-      .then(setInitialCards = ([ cards, queryResult ]) ->
-        $log.debug 'Assigning cards with initial query ordering'
+      $log.debug 'Assigning cards with initial query ordering'
+      selCard = _.findWhere(cards, id: urlStateService.selectedCardId)
+      orderedCards = queryResult.applyOrdering(cards, (card) -> card.id)
 
-        orderedCards = queryResult.applyOrdering(cards, (card) -> card.id)
-
-        if urlStateService.selectedCardId?
-          card = _.findWhere(orderedCards, id: urlStateService.selectedCardId)
-
+      # Assign cards to the scope once, but order them according to the initial query so the first images
+      # to load are the ones on screen.
+      $scope.cards =
+        if selCard?
           # If we found a selected card, we're going to reorder the cards so they load in-order, pivoted
           # around the selected card.
-          if card?
-            cardIdx = _.indexOf(orderedCards, card)
-            [before, after] = _.splitAt(orderedCards, cardIdx)
-            orderedCards = _.weave(before.reverse(), after)
-            $scope.selectCard(card)
+          cardIdx = _.indexOf(orderedCards, selCard)
+          [ before, after ] = _.splitAt(orderedCards, cardIdx)
+          _.weave(before.reverse(), after)
+        else
+          orderedCards
 
-        $scope.cards = orderedCards)
+      setQueryResult(queryResult)
+
+      if selCard?
+        $scope.selectCard(selCard)
+
+      initializeFilterWatch()
+      initializeUrlSync()
+      loadVersion()
+
+    loadVersion = ->
+      $http.get('/data/version.json').success((data) ->
+        $scope.version = data.version)
+
+    # Kick it all off
+    $q.all([cardService.getCards(), cardService.query(urlStateService.queryArgs)]).then(initialize)
 
 
     # ~-~-~- CARD SELECTION
@@ -132,20 +140,32 @@ angular.module('onoSendai')
       if $scope.cardUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedCards[0])
 
-    $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
-      updateUrl()
-      cardService.query(filter).then (queryResult) ->
-        setQueryResult(queryResult)
-    ), true) # True to make sure field changes trigger this watch
+    initializeFilterWatch = ->
+      $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
+        updateUrl()
+        cardService.query(filter).then (queryResult) ->
+          setQueryResult(queryResult)
+      ), true) # True to make sure field changes trigger this watch
 
 
     # ~-~-~- URL SYNC
 
-    # Watches for URL changes, to change selectedCard/
-    $scope.$on('urlStateChange', urlChanged = ->
-      $scope.filter = urlStateService.queryArgs
-      card = _.findWhere($scope.cards, id: urlStateService.selectedCardId)
-      $scope.selectCard(card))
+    initializeUrlSync = ->
+      # Watches for URL changes, to change application state
+      $scope.$on('urlStateChange', urlChanged = ->
+        $scope.filter = urlStateService.queryArgs
+
+        selCard =
+          if urlStateService.selectedCardId?
+            card = _.findWhere($scope.cards, id: urlStateService.selectedCardId)
+          else
+            null
+
+        if selCard?
+          $scope.selectCard(selCard)
+        else
+          $scope.deselectCard()
+          $scope.cardUI.layoutMode = 'grid')
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
