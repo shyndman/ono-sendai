@@ -9,7 +9,7 @@ angular.module('onoSendai')
 
     restrict: 'A'
     link: (scope, element, attrs) ->
-      [preventDefaultChord, stopPropagationChord] =
+      [ preventDefaultChord, stopPropagationChord ] =
         if isMac
           [ 'ctrl+left/ctrl+right/ctrl+esc', 'alt+left/alt+right/alt+esc' ]
         else
@@ -18,7 +18,7 @@ angular.module('onoSendai')
       element.keydown jwerty.event(preventDefaultChord, (e) ->
         e.preventDefault())
 
-      element.keydown jwerty.event("esc/left/right/#{ stopPropagationChord }", (e) ->
+      element.keydown jwerty.event("esc/left/right/up/down/page-up/page-down/#{ stopPropagationChord }", (e) ->
         e.stopPropagation())
 
       # Special case!
