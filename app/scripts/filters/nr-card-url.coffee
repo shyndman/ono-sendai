@@ -29,7 +29,7 @@ angular.module('onoSendai')
         when 'type'
           "#{ urlPrefix }/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'
-          "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }"
+          "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }&group=setname"
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         else
