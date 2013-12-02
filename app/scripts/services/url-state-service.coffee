@@ -64,6 +64,10 @@ class UrlStateService
         else
           search[name] = arg
 
+    # Grouping
+    if !angular.equals(queryArgs.groupings, [ 'faction', 'type' ])
+      search.group = queryArgs.groupings.join(',')
+
     # Set the generated URL
     @$location.url(url).search(search)
 
@@ -191,6 +195,10 @@ class UrlStateService
 
         else # switch
           queryArgs.fieldFilters[name] = search[name]
+
+    # Groupings
+    if search.group
+      queryArgs.groupings = search.group.split(',')
 
     [ queryArgs, selectedCardId, cardPage ]
 
