@@ -2,8 +2,10 @@
 angular.module('onoSendai')
   # Captures and stops the propagation of key presses that also have top-level actions
   # (card forward/back).
-  .directive('filterInput', ($window) ->
+  .directive('filterInput', ($window, $log, $parse) ->
     isMac = !!($window.navigator?.userAgent.toLowerCase().indexOf('mac') != -1)
+    select2FocusSelector = '.select2-focusser'
+
 
     restrict: 'A'
     link: (scope, element, attrs) ->
@@ -19,6 +21,9 @@ angular.module('onoSendai')
       element.keydown jwerty.event("esc/left/right/#{ stopPropagationChord }", (e) ->
         e.stopPropagation())
 
-      element.keydown jwerty.event('enter', (e) ->
+      # Special case!
+      #   Watch for the enter press on the select2 focusser element, if any. Otherwise the enter press will
+      #   be swallowed up deeper down.
+      element.add(select2FocusSelector).keydown jwerty.event('enter', (e) ->
         $(':focus').blur())
   )
