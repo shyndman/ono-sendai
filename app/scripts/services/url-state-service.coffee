@@ -31,7 +31,7 @@ class UrlStateService
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
 
     if queryArgs.activeGroup.name != 'general'
-      url += "/#{ queryArgs.activeGroup.name }"
+      url += "/#{ queryArgs.activeGroup.display }"
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
@@ -138,7 +138,7 @@ class UrlStateService
 
     # Active group
     if cardsMatch[2]
-      queryArgs.activeGroup = _.findWhere(@filterUI, name: cardsMatch[2]) ? queryArgs.activeGroup
+      queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2]) ? queryArgs.activeGroup
 
     if cardsMatch[3]
       selectedCardId = cardsMatch[3]
