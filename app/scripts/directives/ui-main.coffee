@@ -1,9 +1,9 @@
-'use strict'
+angular.module('onoSendai')
+  .directive('main', ->
+    lineScrollDelta = 40
 
-angular.module('onoSendaiApp')
-  .directive('uiMain', () ->
-    template: '<div></div>'
     restrict: 'E'
     link: (scope, element, attrs) ->
-      element.text 'this is the uiMain directive'
+      jwerty.key 'up', -> element.scrollTop(element.scrollTop() - lineScrollDelta)
+      jwerty.key 'down', -> element.scrollTop(element.scrollTop() + lineScrollDelta)
   )
