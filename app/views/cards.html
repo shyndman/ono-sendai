@@ -127,4 +127,13 @@
     <img bo-src="card.imagesrc" width="300" height="418">
     <div class="background"></div>
   </div>
+
+  <!-- No results -->
+  <div ng-show="queryResult.length == 0"
+       class="no-results">
+    <h2>
+      <small class="card-count">0 cards</small>
+      No Results Found
+    </h2>
+  </div>
 </master-detail-grid>
