@@ -238,7 +238,7 @@ angular.module('onoSendai')
 
           layout = itemLayouts[i] ?= {}
           layout.opacity = 0
-          layout.classes = hide: true
+          layout.classes = hidden: true
 
           if item == selEle
             numNextPrev = 2
@@ -292,7 +292,7 @@ angular.module('onoSendai')
             item = gridItems[i]
 
             if queryResult.isShown(getItemId(item))
-              $(item).removeClass('hide')
+              $(item).removeClass('hidden')
               newStyle = "translate3d(#{ layout.x }px, #{ layout.y }px, 0)
                           scale(#{ (layout.zoom ? defaultZoom) * inverseDownscaleFactor })"
               new_zIndex = layout.zIndex ? len - 1
@@ -311,7 +311,7 @@ angular.module('onoSendai')
                 else
                   item.classList.remove(cls)
             else
-              item.classList.add('hide')
+              item.classList.add('hidden')
 
         if !_.isEmpty(headerLayouts)
           items = gridHeaders
