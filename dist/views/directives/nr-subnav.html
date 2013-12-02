@@ -5,7 +5,7 @@
   </ul>
 </nav>
 <div>
-  <div class="zoom" ng-if="selectedCard == null">
+  <div class="zoom" ng-if="cardUI.layoutMode == 'grid'">
     <label class="control-label">Zoom:</label>
     <input type="range" step="0.003125" min="0.2" max="1.0" ng-model="cardUI.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
  </div>
