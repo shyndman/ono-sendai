@@ -46,13 +46,36 @@ nr-subnav {
   }
 
   .zoom {
-    display: inline-block;
+    @include hide-at(580px);
+
+    margin-right: 20px;
+
+    .control-label {
+      margin-right: 0;
+    }
+
+    .dropdown-menu {
+      padding: 3px 8px 0 8px;
+    }
 
     input[type=range] {
-      margin-right: 20px;
-      width: 140px;
-      position: relative;
-      top: 5px;
+      width: 100%;
+    }
+  }
+
+  .groupings {
+    @include abridged(500px, inline-block);
+
+    .dropdown-menu {
+      left: initial;
+      right: 0;
+      min-width: inherit;
+    }
+
+    @media (max-width: 500px) {
+      .control-label {
+        margin-right: 0;
+      }
     }
   }
 

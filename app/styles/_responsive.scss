@@ -1,0 +1,27 @@
+$filter-bar-collapse-width: 860px;
+
+@mixin abridged($max-width, $visible-display: block) {
+  .unabridged {
+    display: $visible-display;
+  }
+
+  .abbreviated {
+    display: none;
+  }
+
+  @media (max-width: $max-width) {
+    .unabridged {
+      display: none;
+    }
+
+    .abbreviated {
+      display: $visible-display;
+    }
+  }
+}
+
+@mixin hide-at($width) {
+  @media (max-width: $width) {
+    display: none;
+  }
+}

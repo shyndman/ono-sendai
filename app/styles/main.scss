@@ -7,8 +7,8 @@
 // Application imports
 @import "common";
 @import "mixins";
+@import "responsive";
 @import "cards-view";
-@import "nav";
 @import "bootstrap-overrides";
 @import "select2-overrides";
 @import "fonts";
@@ -59,9 +59,14 @@ input[type=number]::-webkit-outer-spin-button {
     @include retina {
       @include logo('/images/logo@2x.png');
     }
+
+    @media (max-width: $filter-bar-collapse-width) {
+      width: 48px;
+    }
   }
 
   .navbar-nav > li > a {
+    @include abridged(550px);
     font-weight: 200;
   }
 }
@@ -82,6 +87,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .page {
+  @extend .scrollable;
+  @extend .always-scrollable;
+
   flex-grow: 1;
   overflow-x: hidden;
   position: relative;

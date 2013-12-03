@@ -314,4 +314,25 @@ angular.module('onoSendai')
     }
     resource: {
       cardType: 'Resource'
-    })
+    }
+  )
+  .constant('groupingUI',
+    [
+      {
+        display: 'Faction'
+        groupings: [ 'faction', 'type' ]
+      },
+      {
+        display: 'Cost'
+        groupings: [ 'cost' ]
+      },
+      {
+        display: 'Influence'
+        groupings: [ 'factioncost' ]
+      },
+      {
+        display: 'Set'
+        groupings: [ 'setname' ]
+      },
+    ]
+  )

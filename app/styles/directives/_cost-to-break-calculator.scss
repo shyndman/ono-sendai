@@ -26,12 +26,13 @@ cost-to-break-calculator {
 
   .stats-row {
     padding-top: 5px;
-    padding-left: 5px;
+    padding-left: 2px;
     font-size: 0.85em;
     white-space: nowrap;
 
     .stat-label {
       @extend .text-muted;
+      font-size: 0.9em;
     }
 
     .stat {

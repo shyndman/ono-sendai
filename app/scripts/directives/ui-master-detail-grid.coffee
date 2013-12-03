@@ -242,8 +242,8 @@ angular.module('onoSendai')
 
           if item == selEle
             numNextPrev = 2
-            selLeft = (containerWidth - 660) / 2 + 26
-            selRight = selLeft + 500
+            selLeft = (containerWidth - 600) / 2 + 10
+            selRight = selLeft + 470
 
             _.extend layout,
               zoom: 0.95
