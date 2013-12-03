@@ -1,8 +1,8 @@
 $filter-bar-collapse-width: 860px;
 
-@mixin abridged($max-width) {
+@mixin abridged($max-width, $visible-display: block) {
   .unabridged {
-    display: block;
+    display: $visible-display;
   }
 
   .abbreviated {
@@ -15,7 +15,7 @@ $filter-bar-collapse-width: 860px;
     }
 
     .abbreviated {
-      display: block;
+      display: $visible-display;
     }
   }
 }
