@@ -59,6 +59,10 @@ input[type=number]::-webkit-outer-spin-button {
     @include retina {
       @include logo('/images/logo@2x.png');
     }
+
+    @media (max-width: 500px) {
+      width: 48px;
+    }
   }
 
   .navbar-nav > li > a {
@@ -72,7 +76,7 @@ input[type=number]::-webkit-outer-spin-button {
       display: none;
     }
 
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: 500px) {
       .unabridged {
         display: none;
       }
