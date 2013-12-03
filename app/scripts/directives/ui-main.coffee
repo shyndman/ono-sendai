@@ -4,7 +4,7 @@ angular.module('onoSendai')
 
     restrict: 'E'
     link: (scope, element, attrs) ->
-      scrollBy = (amount) ->
+      scrollByFn = (amount) ->
         ->
           if element.css('overflow') == 'hidden'
             return
@@ -13,10 +13,10 @@ angular.module('onoSendai')
           element.scrollTop(element.scrollTop() + delta)
 
       # Line scroll
-      jwerty.key 'up',   scrollBy(-lineScrollDelta)
-      jwerty.key 'down', scrollBy( lineScrollDelta)
+      jwerty.key 'up',   scrollByFn(-lineScrollDelta)
+      jwerty.key 'down', scrollByFn( lineScrollDelta)
 
       # Page scroll
-      jwerty.key 'page-up',   scrollBy(-> -element.height())
-      jwerty.key 'page-down', scrollBy(->  element.height())
+      jwerty.key 'page-up',   scrollByFn(-> -element.height())
+      jwerty.key 'page-down', scrollByFn(->  element.height())
   )
