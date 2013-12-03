@@ -46,13 +46,18 @@ nr-subnav {
   }
 
   .zoom {
-    display: inline-block;
+    margin-right: 20px;
+
+    .control-label {
+      margin-right: 0;
+    }
+
+    .dropdown-menu {
+      padding: 3px 8px 0 8px;
+    }
 
     input[type=range] {
-      margin-right: 20px;
-      width: 140px;
-      position: relative;
-      top: 5px;
+      width: 100%;
     }
   }
 
@@ -79,3 +84,4 @@ nr-subnav {
     border: none;
   }
 }
+
