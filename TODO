@@ -23,3 +23,9 @@ SIDE PROJECT
   Characteristics to test for:
   * Scrolling
   * Image scale
+
+IDEA FOR RESPONSIVE DESIGNS
+  It seems like determining responsive breakpoints is often about determining when wrapping occurs, and replacing a
+  control with a smaller representation.
+
+  Seems like annotating HTML and generating the breakpoint variables would be an interesting project.
