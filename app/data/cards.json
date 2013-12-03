@@ -1,62 +1,4 @@
 {
-  "sets": [
-    {
-      "title": "Core Set",
-      "released": "2012-09-01T00:00:00"
-    },
-    {
-      "title": "What Lies Ahead",
-      "released": "2012-12-01T00:00:00"
-    },
-    {
-      "title": "Trace Amount",
-      "released": "2013-01-01T00:00:00"
-    },
-    {
-      "title": "Cyber Exodus",
-      "released": "2013-02-01T00:00:00"
-    },
-    {
-      "title": "A Study in Static",
-      "released": "2013-03-01T00:00:00"
-    },
-    {
-      "title": "Humanity's Shadow",
-      "released": "2013-05-01T00:00:00"
-    },
-    {
-      "title": "Future Proof",
-      "released": "2013-06-01T00:00:00"
-    },
-    {
-      "title": "Creation and Control",
-      "released": "2013-07-01T00:00:00"
-    },
-    {
-      "title": "Opening Moves",
-      "released": "2013-09-01T00:00:00"
-    },
-    {
-      "title": "Second Thoughts",
-      "released": "2013-11-01T00:00:00"
-    },
-    {
-      "title": "Mala Tempora",
-      "released": "2013-12-01T00:00:00"
-    },
-    {
-      "title": "True Colors",
-      "released": "2014-01-01T00:00:00"
-    },
-    {
-      "title": "Fear and Loathing",
-      "released": "2014-02-01T00:00:00"
-    },
-    {
-      "title": "Double Time",
-      "released": null
-    }
-  ],
   "cards": [
     {
       "baselink": 0,
@@ -174,6 +116,10 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corroder-core",
       "cost": 2,
       "faction": "Anarch",
@@ -189,7 +135,6 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 1,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Fracter",
       "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "Corroder",
@@ -259,6 +204,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/mimic-core",
       "cost": 3,
       "faction": "Anarch",
@@ -273,7 +222,6 @@
       "setname": "Core Set",
       "side": "Runner",
       "strength": 3,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.",
       "title": "Mimic",
@@ -298,6 +246,11 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 3,
+        "subroutines": 1
+      },
+      "breakscript": "wyrm",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/wyrm-core",
       "cost": 1,
       "faction": "Anarch",
@@ -321,14 +274,16 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakscript": "wyrm",
-      "breakcost": { "credits": 3, "subroutines": 1 },
       "subtype": "Icebreaker - AI",
       "text": "3[Credits]: Break ice subroutine on a piece of ice with 0 or less strength.\n1[Credits]: Ice has -1 strength.\n1[Credits]: +1 strength.",
       "title": "Wyrm",
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 0,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/yog-0-core",
       "cost": 5,
       "faction": "Anarch",
@@ -343,7 +298,6 @@
       "setname": "Core Set",
       "side": "Runner",
       "strength": 3,
-      "breakcost": { "credits": 0, "subroutines": 1 },
       "subtype": "Icebreaker - Decoder",
       "text": "0[Credits]: Break <strong>code gate</strong> subroutine.",
       "title": "Yog.0",
@@ -535,6 +489,10 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aurora-core",
       "cost": 3,
       "faction": "Criminal",
@@ -556,14 +514,20 @@
       "setname": "Core Set",
       "side": "Runner",
       "strength": 1,
-      "strengthcost": { "credits": 2, "strength": 3 },
-      "breakcost": { "credits": 2, "subroutines": 1 },
+      "strengthcost": {
+        "credits": 2,
+        "strength": 3
+      },
       "subtype": "Icebreaker - Fracter",
       "text": "2[Credits]: Break <strong>barrier</strong> subroutine.\n2[Credits]: +3 strength.",
       "title": "Aurora",
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/femme-fatale-core",
       "cost": 9,
       "faction": "Criminal",
@@ -586,13 +550,16 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 2,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n2[Credits]: +1 strength.\nWhen you install Femme Fatale, choose an installed piece of ice. When you encounter that ice, you may spend 1[Credits] per subroutine on that ice to bypass it.",
       "title": "Femme Fatale",
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ninja-core",
       "cost": 4,
       "faction": "Criminal",
@@ -607,8 +574,10 @@
       "setname": "Core Set",
       "side": "Runner",
       "strength": 0,
-      "strengthcost": { "credits": 3, "strength": 5 },
-      "breakcost": { "credits": 1, "subroutines": 1 },
+      "strengthcost": {
+        "credits": 3,
+        "strength": 5
+      },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n3[Credits]: +5 strength.",
       "title": "Ninja",
@@ -889,6 +858,10 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 2
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/battering-ram-core",
       "cost": 5,
       "faction": "Shaper",
@@ -904,13 +877,16 @@
       "side": "Runner",
       "strength": 3,
       "strengthcost": 1,
-      "breakcost": { "credits": 2, "subroutines": 2 },
       "subtype": "Icebreaker - Fracter",
       "text": "2[Credits]: Break up to 2 <strong>barrier</strong> subroutines.\n1[Credits]: +1 strength for the remainder of this run.",
       "title": "Battering Ram",
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/gordian-blade-core",
       "cost": 4,
       "faction": "Shaper",
@@ -926,7 +902,6 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 1,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength for the remainder of this run.",
       "title": "Gordian Blade",
@@ -969,6 +944,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/pipeline-core",
       "cost": 3,
       "faction": "Shaper",
@@ -983,7 +962,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 2,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n2[Credits]: +1 strength for the remainder of this run.",
       "title": "Pipeline",
@@ -1060,6 +1038,11 @@
       "type": "Event"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "crypsis",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/crypsis-core",
       "cost": 5,
       "faction": "Neutral",
@@ -1082,8 +1065,6 @@
       "side": "Runner",
       "strength": 0,
       "strengthcost": 1,
-      "breakscript": "crypsis",
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - AI - Virus",
       "text": "1[Credits]: Break ice subroutine.\n1[Credits]: +1 strength.\n[Click]: Place 1 virus counter on Crypsis.\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
       "title": "Crypsis",
@@ -1211,6 +1192,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": "all"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/morning-star-what-lies-ahead",
       "cost": 8,
       "faction": "Anarch",
@@ -1225,7 +1210,6 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "strength": 5,
-      "breakcost": { "credits": 1, "subroutines": "all" },
       "subtype": "Icebreaker - Fracter",
       "text": "1[Credits]: Break any number of <strong>barrier</strong> subroutines.",
       "title": "Morning Star",
@@ -1250,6 +1234,10 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/peacock-what-lies-ahead",
       "cost": 3,
       "faction": "Criminal",
@@ -1272,14 +1260,20 @@
       "setname": "What Lies Ahead",
       "side": "Runner",
       "strength": 2,
-      "strengthcost": { "credits": 2, "strength": 3 },
-      "breakcost": { "credits": 2, "subroutines": 1 },
+      "strengthcost": {
+        "credits": 2,
+        "strength": 3
+      },
       "subtype": "Icebreaker - Decoder",
       "text": "2[Credits]: Break <strong>code gate</strong> subroutine.\n2[Credits]: +3 strength.",
       "title": "Peacock",
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/zu-13-key-master-what-lies-ahead",
       "cost": 1,
       "faction": "Shaper",
@@ -1303,7 +1297,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Decoder - Cloud",
       "text": "If you have at least 2[Link], the memory cost of ZU.13 Key Master is 0, even if it is not installed.\n1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "ZU.13 Key Master",
@@ -1497,6 +1490,10 @@
       "type": "Event"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/snowball-trace-amount",
       "cost": 4,
       "faction": "Shaper",
@@ -1512,7 +1509,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Fracter",
       "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n1[Credits]: +1 strength.\nWhenever you use Snowball to break a subroutine, it has +1 strength for the remainder of the run.",
       "title": "Snowball",
@@ -1823,6 +1819,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 2
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/force-of-nature-a-study-in-static",
       "cost": 5,
       "faction": "Anarch",
@@ -1846,7 +1846,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakcost": { "credits": 2, "subroutines": 2 },
       "subtype": "Icebreaker - Decoder",
       "text": "2[Credits]: Break up to 2 <strong>code gate</strong> subroutines.\n1[Credits]: +1 strength.",
       "title": "Force of Nature",
@@ -1931,6 +1930,11 @@
       "type": "Program"
     },
     {
+      "breakcardsscript": "deusxCards",
+      "breakcost": {
+        "credits": 0,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/deus-x-a-study-in-static",
       "cost": 3,
       "faction": "Shaper",
@@ -1953,8 +1957,6 @@
       "setname": "A Study in Static",
       "side": "Runner",
       "strength": 10,
-      "breakcardsscript": "deusxCards",
-      "breakcost": { "credits": 0, "subroutines": 1 },
       "subtype": "Icebreaker",
       "text": "[Trash]: Break any number of <strong>AP</strong> subroutines.\n[Trash]: Prevent any amount of net damage.",
       "title": "Deus X",
@@ -2248,6 +2250,10 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/creeper-humanitys-shadow",
       "cost": 5,
       "faction": "Shaper",
@@ -2271,7 +2277,6 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 1,
-      "breakcost": { "credits": 2, "subroutines": 1 },
       "subtype": "Icebreaker - Killer - Cloud",
       "text": "If you have at least 2[Link], the memory cost of Creeper is 0, even if it is not installed.\n2[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +1 strength.",
       "title": "Creeper",
@@ -2354,6 +2359,11 @@
       "type": "Event"
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
+      "breakscript": "darwin",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/darwin-future-proof",
       "cost": 3,
       "faction": "Anarch",
@@ -2375,13 +2385,11 @@
       "setname": "Future Proof",
       "side": "Runner",
       "strength": 0,
-      "variablestrength": true,
-      "breakscript": "darwin",
-      "breakcost": { "credits": 2, "subroutines": 1 },
       "subtype": "Icebreaker - AI - Virus",
       "text": "2[Credits]: Break ice subroutine.\nX is the number of virus counters on Darwin.\nWhen your turn begins, you may pay 1[Credits] to place 1 virus counter on Darwin.",
       "title": "Darwin",
-      "type": "Program"
+      "type": "Program",
+      "variablestrength": true
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/data-leak-reversal-future-proof",
@@ -2410,6 +2418,10 @@
       "type": "Resource"
     },
     {
+      "breakcost": {
+        "credits": 0,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/faerie-future-proof",
       "cost": 0,
       "faction": "Criminal",
@@ -2433,7 +2445,6 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 1,
-      "breakcost": { "credits": 0, "subroutines": 1 },
       "subtype": "Icebreaker - Killer",
       "text": "0[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +1 strength.\nWhen an encounter with a piece of ice in which you used Faerie to break a subroutine ends, trash Faerie.",
       "title": "Faerie",
@@ -2877,6 +2888,11 @@
       "type": "Hardware"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "atman",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/atman-creation-and-control",
       "cost": 3,
       "faction": "Shaper",
@@ -2899,13 +2915,11 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "strength": 0,
-      "variablestrength": true,
-      "breakscript": "atman",
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - AI",
       "text": "When you install Atman, you may pay X[Credits] to put X power counters on Atman.\nAtman has +1 strength for each power counter on it.\n1[Credits]: Break ice subroutine on a piece of ice that has strength equal to Atman's strength.",
       "title": "Atman",
-      "type": "Program"
+      "type": "Program",
+      "variablestrength": true
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/cloak-creation-and-control",
@@ -2936,6 +2950,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/dagger-creation-and-control",
       "cost": 3,
       "faction": "Shaper",
@@ -2958,8 +2976,10 @@
       "setname": "Creation and Control",
       "side": "Runner",
       "strength": 0,
-      "strengthcost": { "credits": 1, "strength": 5 },
-      "breakcost": { "credits": 1, "subroutines": 1 },
+      "strengthcost": {
+        "credits": 1,
+        "strength": 5
+      },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\n1[Credits]: +5 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
       "title": "Dagger",
@@ -2992,6 +3012,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/cyber-cypher-creation-and-control",
       "cost": 2,
       "faction": "Shaper",
@@ -3014,7 +3038,6 @@
       "side": "Runner",
       "strength": 4,
       "strengthcost": 1,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +1 strength.\nWhen you install Cyber-Cypher, choose a server. Cyber-Cypher can only be used during a run on the chosen server.",
       "title": "Cyber-Cypher",
@@ -3099,6 +3122,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/inti-creation-and-control",
       "cost": 0,
       "faction": "Shaper",
@@ -3122,7 +3149,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 2,
-      "breakcost": { "credits": 1, "subroutines": 1 },
       "subtype": "Icebreaker - Fracter",
       "text": "1[Credits]: Break <strong>barrier</strong> subroutine.\n2[Credits]: +1 strength for the remainder of this run.",
       "title": "Inti",
@@ -3670,6 +3696,10 @@
       "type": "Program"
     },
     {
+      "breakcost": {
+        "credits": 3,
+        "subroutines": 3
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/leviathan-second-thoughts",
       "cost": 6,
       "faction": "Criminal",
@@ -3681,11 +3711,21 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04026",
       "number": 26,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-15T17:40:08Z",
+          "id": "1qpc7p",
+          "title": "[COTD] Leviathan (15 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1qpc7p/cotd_leviathan_15_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Runner",
       "strength": 3,
-      "strengthcost": { "credits": 3, "strength": 5 },
-      "breakcost": { "credits": 3, "subroutines": 3 },
+      "strengthcost": {
+        "credits": 3,
+        "strength": 5
+      },
       "subtype": "Icebreaker - Decoder",
       "text": "3[Credits]: Break up to 3 <strong>code gate</strong> subroutines.\n3[Credits]: +5 strength.",
       "title": "Leviathan",
@@ -3702,6 +3742,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04027",
       "number": 27,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-18T18:06:48Z",
+          "id": "1qws09",
+          "title": "[COTD] Eureka! (18 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1qws09/cotd_eureka_18_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Double",
@@ -3720,6 +3768,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04028",
       "number": 28,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-19T19:12:28Z",
+          "id": "1qzwqi",
+          "title": "[COTD] Record Reconstructor (19 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1qzwqi/cotd_record_reconstructor_19_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Runner",
       "text": "Whenever you make a successful run on Archives, instead of accessing cards you may choose 1 faceup card from Archives and add it to the top of R&D.",
@@ -3736,6 +3792,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04029",
       "number": 29,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-20T22:49:50Z",
+          "id": "1r3ez6",
+          "title": "[COTD] Prepaid VoicePAD (20 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1r3ez6/cotd_prepaid_voicepad_20_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Runner",
       "subtype": "Gear",
@@ -7558,6 +7622,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04030",
       "number": 30,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-21T18:38:56Z",
+          "id": "1r5mx6",
+          "title": "[COTD] Wotan (21 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1r5mx6/cotd_wotan_21_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "strength": 10,
@@ -7576,6 +7648,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04031",
       "number": 31,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-22T19:48:13Z",
+          "id": "1r8kxq",
+          "title": "[COTD] Hellion Alpha Test (22 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1r8kxq/cotd_hellion_alpha_test_22_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Black Ops",
@@ -7594,6 +7674,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04032",
       "number": 32,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-25T17:49:22Z",
+          "id": "1rfhzd",
+          "title": "[COTD] Clone Retirement (25 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1rfhzd/cotd_clone_retirement_25_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Initiative",
@@ -7612,6 +7700,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04033",
       "number": 33,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-26T19:11:14Z",
+          "id": "1riifd",
+          "title": "[COTD] Swordsman (26 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1riifd/cotd_swordsman_26_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "strength": 2,
@@ -7631,6 +7727,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04034",
       "number": 34,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-27T18:55:51Z",
+          "id": "1rl8m6",
+          "title": "[COTD] Shipment From SanSan (27 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1rl8m6/cotd_shipment_from_sansan_27_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Double",
@@ -7648,6 +7752,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04035",
       "number": 35,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-28T18:54:07Z",
+          "id": "1rnt4u",
+          "title": "[COTD] Muckraker (28 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1rnt4u/cotd_muckraker_28_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "strength": 3,
@@ -7667,6 +7779,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04036",
       "number": 36,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-11-29T20:07:47Z",
+          "id": "1rq8bw",
+          "title": "[COTD] The Cleaners (29 Nov 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1rq8bw/cotd_the_cleaners_29_nov_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Security",
@@ -7685,6 +7805,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04037",
       "number": 37,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-02T19:24:55Z",
+          "id": "1rxifq",
+          "title": "[COTD] Elizabeth Mills (12/2/13)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1rxifq/cotd_elizabeth_mills_12213/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Executive",
@@ -7745,6 +7873,64 @@
       "text": "Gain 15[Credits].",
       "title": "Restructure",
       "type": "Operation"
+    }
+  ],
+  "sets": [
+    {
+      "released": "2012-09-01T00:00:00",
+      "title": "Core Set"
+    },
+    {
+      "released": "2012-12-01T00:00:00",
+      "title": "What Lies Ahead"
+    },
+    {
+      "released": "2013-01-01T00:00:00",
+      "title": "Trace Amount"
+    },
+    {
+      "released": "2013-02-01T00:00:00",
+      "title": "Cyber Exodus"
+    },
+    {
+      "released": "2013-03-01T00:00:00",
+      "title": "A Study in Static"
+    },
+    {
+      "released": "2013-05-01T00:00:00",
+      "title": "Humanity's Shadow"
+    },
+    {
+      "released": "2013-06-01T00:00:00",
+      "title": "Future Proof"
+    },
+    {
+      "released": "2013-07-01T00:00:00",
+      "title": "Creation and Control"
+    },
+    {
+      "released": "2013-09-01T00:00:00",
+      "title": "Opening Moves"
+    },
+    {
+      "released": "2013-11-01T00:00:00",
+      "title": "Second Thoughts"
+    },
+    {
+      "released": "2013-12-01T00:00:00",
+      "title": "Mala Tempora"
+    },
+    {
+      "released": "2014-01-01T00:00:00",
+      "title": "True Colors"
+    },
+    {
+      "released": "2014-02-01T00:00:00",
+      "title": "Fear and Loathing"
+    },
+    {
+      "released": null,
+      "title": "Double Time"
     }
   ]
 }
