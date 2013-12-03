@@ -19,7 +19,7 @@ angular.module('onoSendai')
 
         # Apply filter
         $scope.opponents = _.filter costToBreakInfo.opponents, (opponent) ->
-          _.str.include(opponent.card.title.toLowerCase(), filter) or
+          _.str.include(_.stripDiacritics(opponent.card.title.toLowerCase()), filter) or
           _.str.include(opponent.card.faction.toLowerCase(), filter)
 
         # Stats!
