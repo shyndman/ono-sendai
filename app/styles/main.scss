@@ -60,7 +60,7 @@ input[type=number]::-webkit-outer-spin-button {
       @include logo('/images/logo@2x.png');
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $filter-bar-collapse-width) {
       width: 48px;
     }
   }
