@@ -61,6 +61,16 @@ nr-subnav {
     }
   }
 
+  .groupings {
+    @include abridged(500px, inline-block);
+
+    .dropdown-menu {
+      left: initial;
+      right: 0;
+      min-width: inherit;
+    }
+  }
+
   .control-label {
     position: relative;
     top: 1px;
@@ -84,4 +94,3 @@ nr-subnav {
     border: none;
   }
 }
-
