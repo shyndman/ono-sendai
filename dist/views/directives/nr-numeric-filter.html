@@ -1,7 +1,7 @@
 <div class="input-group input-group-sm">
   <div class="input-group-btn">
     <button id="{{id}}-operator" type="button" class="btn btn-default dropdown-toggle" ng-disabled="uiDisabled" tabindex="-1">{{ filter.operator }} <span class="caret"></span></button>
-    <ul class="dropdown-menu open">
+    <ul class="dropdown-menu">
       <li ng-repeat="op in comparisonOperators">
         <a ng-click="filter.operator = op" tabindex="-1">{{op}}</a>
       </li>

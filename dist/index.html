@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ono-Sendai</title>
@@ -13,23 +10,24 @@
   <link rel="icon" type="image/png" size="32x32" href="/images/2bddae59.favicon-32.png">
   <!-- [todo] Figure out why this can't be merged with main.css -->
   <link rel="stylesheet" href="/bower_components/select2/select2.css">
-  <link rel="stylesheet" href="/styles/027a6a4c.main.css"/>
+  <link rel="stylesheet" href="/styles/5759fe50.main.css"/>
 </head>
 <body ng-app="onoSendai" ng-controller="CardsCtrl" tabindex="0" ui-keydown="{
-        'esc/alt+esc/ctrl+esc'       : { action: 'deselectCard()', preventDefault: true },
-        'left/alt+left/ctrl+left'    : 'selectPreviousCard()',
-        'right/alt+right/ctrl+right' : 'selectNextCard()'
+        'esc   / alt+esc   / ctrl+esc'   : { action: 'deselectCard()', preventDefault: true },
+        'left  / alt+left  / ctrl+left'  : 'selectPreviousCard()',
+        'right / alt+right / ctrl+right' : 'selectNextCard()'
       }">
+
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <nr-nav></nr-nav>
   <div class="app-outer-layout">
-    <div id="filter-bar" class="sidebar scrollable" ng-include="'/views/filters.html'"></div>
+    <div id="filter-bar" class="sidebar" ng-include="'/views/filters.html'"></div>
     <div class="app-inner-layout">
       <nr-subnav></nr-subnav>
-      <main class="page scrollable always-scrollable" ng-include="'/views/cards.html'"></main>
+      <main class="page scrollable" ng-include="'/views/cards.html'"></main>
     </div>
   </div>
   <div id="version">
@@ -38,7 +36,7 @@
 
   <script src="/scripts/861e4f7d.lib.js"></script>
 
-  <script src="/scripts/fb59c1bd.app.js"></script>
+  <script src="/scripts/a859dd46.app.js"></script>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

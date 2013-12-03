@@ -4,16 +4,29 @@
     <li><a ng-model="filter.side" btn-radio="'Runner'">Runner</a></li>
   </ul>
 </nav>
-<div>
-  <div class="zoom" ng-if="cardUI.layoutMode == 'grid'">
-    <label class="control-label">Zoom:</label>
+<div class="zoom dropdown" ng-if="cardUI.layoutMode == 'grid'">
+  <span class="control-label">Zoom:</span>
+  <button class="btn btn-default dropdown-toggle">
+    {{ (cardUI.zoom * 100).toFixed() }}% <span class="caret"></span>
+  </button>
+  <div class="dropdown-menu">
     <input type="range" step="0.003125" min="0.2" max="1.0" ng-model="cardUI.zoom" ng-mousedown="broadcastZoomStart()" ng-mouseup="broadcastZoomEnd()">
- </div>
-  <label class="control-label">Group:</label>
-  <div class="btn-group">
-    <button class="btn btn-default" ng-model="filter.groupings" btn-radio="[ 'faction', 'type' ]">Faction</button>
-    <button class="btn btn-default" ng-model="filter.groupings" btn-radio="[ 'cost' ]">Cost</button>
-    <button class="btn btn-default" ng-model="filter.groupings" btn-radio="[ 'factioncost' ]">Influence</button>
-    <button class="btn btn-default" ng-model="filter.groupings" btn-radio="[ 'setname' ]">Set</button>
+  </div>
+</div>
+<div class="groupings">
+  <span class="control-label">Group:</span>
+  <div class="unabridged">
+    <div class="btn-group">
+      <button ng-repeat="grouping in groupingUI" ng-model="filter.groupings" btn-radio="grouping.groupings" class="btn btn-default">{{ grouping.display }}</button>
+    </div>
+  </div>
+
+  <div class="abbreviated dropdown">
+    <button class="btn btn-default dropdown-toggle">Faction <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="grouping in groupingUI">
+        <a href="#">{{ grouping.display }}</a>
+      </li>
+    </ul>
   </div>
 </div>
