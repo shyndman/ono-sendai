@@ -46,6 +46,8 @@ nr-subnav {
   }
 
   .zoom {
+    @include hide-at(580px);
+
     margin-right: 20px;
 
     .control-label {
@@ -68,6 +70,12 @@ nr-subnav {
       left: initial;
       right: 0;
       min-width: inherit;
+    }
+
+    @media (max-width: 500px) {
+      .control-label {
+        margin-right: 0;
+      }
     }
   }
 
