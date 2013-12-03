@@ -22,16 +22,17 @@
         'left/alt+left/ctrl+left'    : 'selectPreviousCard()',
         'right/alt+right/ctrl+right' : 'selectNextCard()'
       }">
+
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <nr-nav></nr-nav>
   <div class="app-outer-layout">
-    <div id="filter-bar" class="sidebar scrollable hidden-xs hidden-sm" ng-include="'/views/filters.html'"></div>
+    <div id="filter-bar" class="sidebar" ng-include="'/views/filters.html'"></div>
     <div class="app-inner-layout">
       <nr-subnav></nr-subnav>
-      <main class="page scrollable always-scrollable" ng-include="'/views/cards.html'"></main>
+      <main class="page" ng-include="'/views/cards.html'"></main>
     </div>
   </div>
   <div id="version">
@@ -81,7 +82,6 @@
   <script src="/scripts/directives/ui-master-detail-grid.js"></script>
   <script src="/scripts/filters/nr-card-url.js"></script>
   <script src="/scripts/filters/nr-group-title.js"></script>
-
   <!-- endbuild -->
 
   <script>
