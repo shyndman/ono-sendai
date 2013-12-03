@@ -4,19 +4,19 @@
     <li><a ng-model="filter.side" btn-radio="'Runner'">Runner</a></li>
   </ul>
 </nav>
-<div>
-  <div class="zoom dropdown" ng-if="cardUI.layoutMode == 'grid'">
-    <span class="control-label">Zoom:</span>
-    <button class="btn btn-default dropdown-toggle">
-      {{ (cardUI.zoom * 100).toFixed() }}% <span class="caret"></span>
-    </button>
-    <div class="dropdown-menu">
-      <input type="range" step="0.003125" min="0.2" max="1.0"
-             ng-model="cardUI.zoom"
-             ng-mousedown="broadcastZoomStart()"
-             ng-mouseup="broadcastZoomEnd()">
-    </div>
- </div>
+<div class="zoom dropdown" ng-if="cardUI.layoutMode == 'grid'">
+  <span class="control-label">Zoom:</span>
+  <button class="btn btn-default dropdown-toggle">
+    {{ (cardUI.zoom * 100).toFixed() }}% <span class="caret"></span>
+  </button>
+  <div class="dropdown-menu">
+    <input type="range" step="0.003125" min="0.2" max="1.0"
+           ng-model="cardUI.zoom"
+           ng-mousedown="broadcastZoomStart()"
+           ng-mouseup="broadcastZoomEnd()">
+  </div>
+</div>
+<div class="group">
   <span class="control-label">Group:</span>
   <div class="btn-group">
     <button class="btn btn-default" ng-model="filter.groupings" btn-radio="[ 'faction', 'type' ]">Faction</button>
