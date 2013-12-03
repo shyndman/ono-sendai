@@ -6,9 +6,12 @@ $dirty-color: #E59409; // TODO Integrate
 }
 
 #filter-bar {
+  @include hide-at($filter-bar-collapse-width);
+
   width: $sidebar-width;
   min-width: $sidebar-width;
   border-right: 1px solid $navbar-default-border;
+
 
   .filter-group {
     &.active h5 {
