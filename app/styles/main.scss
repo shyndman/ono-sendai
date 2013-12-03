@@ -63,6 +63,24 @@ input[type=number]::-webkit-outer-spin-button {
 
   .navbar-nav > li > a {
     font-weight: 200;
+
+    .unabridged {
+      display: block;
+    }
+
+    .abbreviated {
+      display: none;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      .unabridged {
+        display: none;
+      }
+
+      .abbreviated {
+        display: block;
+      }
+    }
   }
 }
 
