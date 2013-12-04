@@ -45,24 +45,32 @@
           <div class="general"
                ng-switch-when="info">
             <div class="info-row">
-              <label>Type:</label>
-              <a ng-href="{{ selectedCard | cardUrl:'type' }}">
-                {{ selectedCard.type }}
-              </a>
+              <span class="data-label">Type:</span>
+              <div class="data">
+                <a ng-href="{{ selectedCard | cardUrl:'type' }}">
+                  {{ selectedCard.type }}
+                </a>
+              </div>
             </div>
             <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
-              <label>Subtypes:</label>
-              <span ng-repeat="subtype in selectedCard.subtypes">
-                <a ng-href="{{ selectedCard | cardUrl:'subtype':subtype }}">{{ subtype }}</a><span ng-if="!$last"> - </span>
-              </span>
+              <span class="data-label">Subtypes:</span>
+              <div class="data">
+                <span ng-repeat="subtype in selectedCard.subtypes">
+                  <a ng-href="{{ selectedCard | cardUrl:'subtype':subtype }}">{{ subtype }}</a><span ng-if="!$last"> - </span>
+                </span>
+              </div>
             </div>
             <div class="info-row">
-              <label>From:</label>
-              <a ng-href="{{ selectedCard | cardUrl:'set' }}">{{ selectedCard.setname }}</a>
+              <span class="data-label">From:</span>
+              <div class="data">
+                <a ng-href="{{ selectedCard | cardUrl:'set' }}">{{ selectedCard.setname }}</a>
+              </div>
             </div>
             <div ng-if="isShortCard(selectedCard)" class="info-row">
-              <label>Quantity:</label>
-              <span class='short-cards'>{{ selectedCard.quantity }} in set</span>
+              <span class="data-label">Quantity:</span>
+              <div class="data">
+                <span class='short-cards'>{{ selectedCard.quantity }} in set</span>
+              </div>
             </div>
 
             <ul class="links">
