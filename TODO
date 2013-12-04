@@ -15,6 +15,10 @@
 [todo] Cost to break calculator filter should have a tooltip to tell you that you can filter in various ways
 [fix]  Work out a better way of counting subs -- Check out sensei as an example
 
+RESPONSIVE NOTES
+  iPhone  - zoom: 0.24
+  Nexus 4 - zoom: 0.
+
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
@@ -29,3 +33,4 @@ IDEA FOR RESPONSIVE DESIGNS
   control with a smaller representation.
 
   Seems like annotating HTML and generating the breakpoint variables would be an interesting project.
+
