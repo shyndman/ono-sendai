@@ -40,7 +40,7 @@ class CostToBreakCalculator
 
     # If the user has specified an ICE strength adjustment, apply it to a copy of the card
     if @_validIceAdjust(iceAdjust)
-      ice = _.extend angular.copy(ice), strength: ice.strength + iceAdjust
+      ice = _.extend angular.copy(ice), originalstrength: ice.strength, strength: ice.strength + iceAdjust
 
     # Collect all potential opponent cards
     if ice.subtypesSet['sentry']
@@ -84,7 +84,7 @@ class CostToBreakCalculator
     # If the user has specified an ICE strength adjustment, apply it to copies of the cards
     if @_validIceAdjust(iceAdjust)
       ice = _.map ice, (i) ->
-        _.extend angular.copy(i), strength: i.strength + iceAdjust
+        _.extend angular.copy(i), originalstrength: i.strength, strength: i.strength + iceAdjust
 
     {
       opponentType: 'ICE'
