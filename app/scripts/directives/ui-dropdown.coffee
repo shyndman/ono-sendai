@@ -40,7 +40,7 @@ angular.module('onoSendai')
 
               $document.unbind('click', closeMenu)
               element.parent().removeClass('open')
-              closeMenu = angular.noop
+              closeMenu = _.noop
               openElement = null
 
             $document.bind('click', closeMenu))
