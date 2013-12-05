@@ -71,28 +71,6 @@
           right: 27px;
         }
 
-        .data-label {
-          color: #777;
-          margin: 0;
-        }
-
-        .info-row {
-          margin: 5px 0;
-
-          > .data-label {
-            width: 90px;
-            float: left;
-          }
-
-          .data {
-            margin-left: 90px;
-          }
-
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-
         small {
           margin-left: 3px;
         }

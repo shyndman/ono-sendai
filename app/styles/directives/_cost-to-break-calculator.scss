@@ -2,17 +2,25 @@ cost-to-break-calculator {
   display: block;
   padding-right: 9px;
 
-  .controls {
+  > .controls {
     padding: 3px 0 5px 0;
     margin: 0;
     border-bottom: 1px solid #ddd;
 
-    input {
-      display: inline-block;
-    }
 
-    .opponent-filter {
-      width: 126px;
+    // ~-~-~- INFO ROW TWEAKS
+
+    .info-row {
+      > .info-label {
+        line-height: 30px;
+        width: 60px;
+      }
+
+      > .info-value {
+        margin-left: 60px;
+
+
+      }
     }
 
     .ice-adjust {
