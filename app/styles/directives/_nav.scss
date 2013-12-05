@@ -92,6 +92,7 @@ nr-nav {
 
     .card-search {
       @include abridged(350px, inline-block);
+      position: relative; // For dropdown positioning
 
       .abbreviated {
         padding-top: 2px;
@@ -104,6 +105,12 @@ nr-nav {
         @media (max-width: 400px) {
           width: 150px;
         }
+      }
+
+      .dropdown-menu {
+        left: initial;
+        right: 0;
+        min-width: 100%;
       }
     }
   }
