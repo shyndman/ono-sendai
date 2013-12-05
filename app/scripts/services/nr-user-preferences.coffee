@@ -14,8 +14,14 @@ class UserPreferences
     @_favs[card.id] = !@isCardFavourite(card)
     @_persistFavourites()
 
+  zoom: (zoom) =>
+    if zoom?
+      localStorage.setItem('zoom', zoom)
+    else
+      localStorage.getItem('zoom')
+
   _persistFavourites: =>
-    localStorage.setItem("favourites", JSON.stringify(@_favs))
+    localStorage.setItem('favourites', JSON.stringify(@_favs))
 
 angular.module('onoSendai')
   .service 'userPreferences', () ->

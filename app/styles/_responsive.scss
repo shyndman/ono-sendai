@@ -1,5 +1,3 @@
-$filter-bar-collapse-width: 860px;
-
 @mixin abridged($max-width, $visible-display: block) {
   .unabridged {
     display: $visible-display;

@@ -7,7 +7,7 @@ angular.module('onoSendai')
 
     initialize = ([cards, queryResult]) ->
       $scope.cardUI =
-        zoom: 0.50
+        zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid' # Will be modified by selectCard() if called
         cardPage: urlStateService.cardPage ? 'info'
 
@@ -182,4 +182,5 @@ angular.module('onoSendai')
 
     $scope.broadcastZoomEnd = ->
       $scope.$broadcast 'zoomEnd'
+      userPreferences.zoom($scope.cardUI.zoom)
   )
