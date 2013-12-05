@@ -132,11 +132,11 @@ angular.module('onoSendai')
         headerSize = getItemSize('header', firstHeader, true)
 
         availableWidth = containerWidth - hMargin * 2
-        numColumns = Math.floor((availableWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
-        numGutters = numColumns - 1
-        numRows = Math.ceil(items.length / numColumns)
 
-        gutterWidth  = (availableWidth - (numColumns * itemSize.width)) / numGutters
+        numColumns = Math.floor((availableWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
+        numGutters = numColumns - 1 or 1
+        numRows = Math.ceil(items.length / numColumns)
+        gutterWidth = (availableWidth - (numColumns * itemSize.width)) / numGutters
         colPositions = (i * (itemSize.width + gutterWidth) + hMargin for i in [0...numColumns])
         rowInfos = []
         itemLayouts = []
