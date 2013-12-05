@@ -23,12 +23,22 @@ cost-to-break-calculator {
       }
     }
 
-    .ice-adjust {
-      width: 82px;
+
+    // ~-~-~- INPUT SIZING
+
+    input {
+      display: inline-block;
+      width: 93px;
     }
 
-    .breaker-strength {
-      width: 82px;
+    &.opponent-type-icebreakers {
+      .opponent-filter {
+        width: 140px;
+      }
+
+      .ice-adjust {
+        width: 75px;
+      }
     }
   }
 
@@ -50,7 +60,7 @@ cost-to-break-calculator {
 
   .opponents {
     font-size: 0.9em;
-    height: 318px;
+    height: 288px;
     overflow-y: auto;
   }
 
