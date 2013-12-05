@@ -14,8 +14,10 @@ nr-subnav {
 
     ul {
       @extend .nav;
+
       li {
         float: left;
+
         a {
           padding: 5px 23px;
           line-height: $subnav-height;
@@ -46,11 +48,10 @@ nr-subnav {
   }
 
   .zoom {
-    @include hide-at(600px);
+    @include hide-at(550px);
     @include abridged($filter-bar-collapse-width + 50px, inline-block);
 
     margin-right: 20px;
-    line-height: $subnav-height;
 
     .control-label {
       margin-right: 0;
@@ -62,7 +63,7 @@ nr-subnav {
       input[type=range] {
         width: 120px;
         position: relative;
-        top: 4px;
+        top: 3px;
       }
     }
 
@@ -76,7 +77,8 @@ nr-subnav {
   }
 
   .groupings {
-    @include abridged($filter-bar-collapse-width + 50px, inline-block);
+    $abridged-width: $filter-bar-collapse-width + 50px;
+    @include abridged($abridged-width, inline-block);
 
     .dropdown-menu {
       left: initial;
@@ -84,7 +86,7 @@ nr-subnav {
       min-width: inherit;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $abridged-width) {
       .control-label {
         margin-right: 0;
       }
@@ -92,11 +94,10 @@ nr-subnav {
   }
 
   .control-label {
-    position: relative;
-    top: 1px;
     margin-right: 12px;
     font-size: 12px;
     color: #9b9b9b;
+    line-height: $subnav-height;
   }
 
   .btn {
@@ -104,6 +105,7 @@ nr-subnav {
     height: $subnav-height;
     background: none;
     border: none;
+    padding-top: 4px;
 
     &.btn-default:hover, &.btn-default:focus, &.btn-default.active {
       background: #f4f4f4;
