@@ -8,10 +8,8 @@ angular.module('onoSendai')
       queryResult: '='
       zoom: '='
       selection: '='
-      layoutMode: '='
     }
     link: (scope, element, attrs) ->
-      layoutMode = scope.layoutMode
       container = element.find('.content-container')
       containerWidth = container.width()
       inContinuousZoom = false
@@ -206,79 +204,6 @@ angular.module('onoSendai')
         else
           resizeGrid()
 
-      performDetailLayout = ->
-        items = gridItems
-        if !items.length
-          return
-
-        # Ensure that we aren't scrolling.
-        setScrollerOverflow('hidden')
-
-        # Work out base Y coordinate
-        baseY = scrollTop
-        baseY += 55
-        nextPrevY = baseY + 8
-        nextPrevW = 160
-
-        selEle =
-          if !scope.selection
-            null
-          else
-            gridItemsById[scope.selection.id]
-
-        for item, i in gridHeaders
-          layout = headerLayouts[i] ?= {}
-          layout.opacity = 0
-
-        skipCount = 0
-        for item, i in gridItems
-          if skipCount > 0
-            skipCount--
-            continue
-
-          layout = itemLayouts[i] ?= {}
-          layout.opacity = 0
-          layout.classes = hidden: true
-
-          if item == selEle
-            numNextPrev = 2
-            selLeft = (containerWidth - 600) / 2 + 10
-            selRight = selLeft + 470
-
-            _.extend layout,
-              zoom: 0.95
-              classes:
-                'current': true
-              x: selLeft # TODO Pull the literal from CSS
-              y: baseY
-              rotationY: 0
-
-            for j in [1..numNextPrev]
-              if i - j >= 0
-                _.extend itemLayouts[i - j],
-                  zoom: 0.7
-                  classes:
-                    'prev': true
-                  x: selLeft - (j * 30) - nextPrevW
-                  y: nextPrevY
-                itemLayouts[i - j].classes["prev-#{j}"] = true
-
-            for j in [1..numNextPrev]
-              itemLayouts[i + j] ?= {} # XXX Barf. Sloppy.
-              if i + j < gridItems.length
-                _.extend itemLayouts[i + j],
-                  zoom: 0.7
-                  classes:
-                    'next': true
-                  x: selRight + ((j - 1) * 30)
-                  y: nextPrevY
-                itemLayouts[i + j].classes["next-#{j}"] = true
-
-            skipCount = 2
-
-        applyItemStyles()
-        return
-
       applyItemStyles = ->
         if !_.isEmpty(itemLayouts)
           items = gridItems
@@ -321,13 +246,9 @@ angular.module('onoSendai')
               break
 
             item = gridHeaders[i]
-
-            if scope.layoutMode == 'grid'
-              item.classList.remove('invisible')
-              item.style[transformProperty] =
-                "translate3d(#{layout.x}px, #{layout.y}px, 0)"
-            else
-              item.classList.add('invisible')
+            item.classList.remove('invisible')
+            item.style[transformProperty] =
+              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
 
         return
 
@@ -343,16 +264,9 @@ angular.module('onoSendai')
           else
             $q.when()
 
-        # Determines the layout function based on the mode we're in
-        layoutFn =
-          if scope.layoutMode is 'grid'
-            performGridLayout
-          else
-            performDetailLayout
-
         # Chain it all together
         scalePromise
-          .then(layoutFn)
+          .then(performGridLayout)
           .then(->
             if scaleImages
               upscaleItems())
@@ -459,20 +373,6 @@ angular.module('onoSendai')
 
       # *~*~*~*~ SELECTION AND QUERY MODE
 
-      scope.$watch('layoutMode', layoutModeChanged = (newVal, oldVal) ->
-        if newVal == oldVal
-          return
-        layoutNow(true))
-
-      scope.$watch('selection', selectionChanged = (newVal, oldVal) ->
-        if newVal
-          $log.debug 'Item selected.'
-        else
-          $log.debug 'No selection.'
-
-        # Only perform scaling if we've changed layout modes
-        layoutNow(false))
-
       firstLayout = true
       scope.$watch('queryResult', queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
@@ -484,9 +384,7 @@ angular.module('onoSendai')
           invalidateGridContents(queryResult)
           layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
           firstLayout = false
-
-          if scope.layoutMode == 'grid'
-            layoutPromise.then(scrollToTop)
+          layoutPromise.then(scrollToTop)
         return)
 
 
