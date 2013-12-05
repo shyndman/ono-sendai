@@ -24,7 +24,14 @@
       <input class="form-control"
              type="search"
              placeholder="Card Search"
-             ui-hotkey="cmd+F/ctrl+F">
+             ng-model="cardSearch"
+             ui-hotkey="cmd+F/ctrl+F"
+             filter-input>
     </div>
+    <ul class="dropdown-menu">
+      <li ng-repeat="card in cardSearchResults">
+        <a href="{{ card | cardUrl:'card' }}">{{ card.title }}</a>
+      </li>
+    </ul>
   </div>
 </div>
