@@ -5,6 +5,17 @@ nr-nav {
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;
 
+  a {
+    color: $navbar-default-link-color;
+
+    &:hover,
+    &:focus {
+      color: $navbar-default-link-hover-color;
+      background-color: $navbar-default-link-hover-bg;
+      text-decoration: none;
+    }
+  }
+
 
   // ~-~-~- BRANDING
 
@@ -46,21 +57,12 @@ nr-nav {
         float: left;
 
         > a {
-
           @include abridged(550px);
           display: block;
           padding: 15px 15px;
 
           font-weight: 200;
           line-height: $line-height-computed;
-          color: $navbar-default-link-color;
-
-          &:hover,
-          &:focus {
-            color: $navbar-default-link-hover-color;
-            background-color: $navbar-default-link-hover-bg;
-            text-decoration: none;
-          }
         }
 
         &.active > a {
@@ -89,7 +91,20 @@ nr-nav {
     padding: 8px;
 
     .card-search {
-      width: 160px;
+      @include abridged(350px, inline-block);
+
+      .abbreviated {
+        padding-top: 2px;
+        font-size: 22px;
+      }
+
+      .unabridged {
+        width: 190px;
+
+        @media (max-width: 400px) {
+          width: 150px;
+        }
+      }
     }
   }
 }
