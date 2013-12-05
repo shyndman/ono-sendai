@@ -1,6 +1,6 @@
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
-master-detail-grid {
+matrix {
   @mixin scaled-item($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;

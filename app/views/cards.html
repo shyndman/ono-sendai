@@ -1,4 +1,4 @@
-<master-detail-grid
+<matrix
     class="cards"
     query-result="queryResult"
     selection="selectedCard"
@@ -123,7 +123,7 @@
 
     Note:
     For performance reasons, this template is bound once, with all the cards, then never touched
-    again. All sorting and show/hide logic for cards exists in the ui-master-detail-grid directive.
+    again. All sorting and show/hide logic for cards exists in the ui-matrix directive.
   -->
   <div ng-repeat="card in cards track by card.id"
        bindonce
@@ -144,4 +144,4 @@
       No Results Found
     </h2>
   </div>
-</master-detail-grid>
+</matrix>

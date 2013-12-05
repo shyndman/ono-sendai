@@ -1,6 +1,6 @@
-# This component is responsible for dealing with cards, including user input and layout.
+# This component is responsible for layout out items in a matrix, with headers.
 angular.module('onoSendai')
-  .directive('masterDetailGrid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+  .directive('matrix', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     template: '<div class="content-container" ng-transclude></div>'
