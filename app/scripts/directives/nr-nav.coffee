@@ -1,4 +1,4 @@
-# Top navigation. Handles the quick card search
+# Top navigation. Handles the quick card search.
 angular.module('onoSendai')
   .directive('nrNav', (cardService) ->
     maxResults = 10
