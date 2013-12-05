@@ -29,6 +29,10 @@ body {
   font-weight: 200;
 }
 
+a:focus {
+  outline: 0 !important;
+}
+
 // The spinners look like crap
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
