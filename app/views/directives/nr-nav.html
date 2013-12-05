@@ -20,18 +20,18 @@
     <div class="abbreviated">
       <a href="#"><i class="icon-search"></i></a>
     </div>
-    <div class="unabridged">
-      <input class="form-control"
+    <div class="dropdown-parent unabridged" filter-input>
+      <input class="form-control dropdown-toggle"
              type="search"
              placeholder="Card Search"
              ng-model="cardSearch"
              ui-hotkey="cmd+F/ctrl+F"
              filter-input>
+      <ul class="dropdown-menu">
+        <li ng-repeat="card in cardSearchResults">
+          <a href="{{ card | cardUrl:'card' }}">{{ card.title }}</a>
+        </li>
+      </ul>
     </div>
-    <ul class="dropdown-menu">
-      <li ng-repeat="card in cardSearchResults">
-        <a href="{{ card | cardUrl:'card' }}">{{ card.title }}</a>
-      </li>
-    </ul>
   </div>
 </div>

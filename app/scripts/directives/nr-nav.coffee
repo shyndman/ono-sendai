@@ -1,6 +1,6 @@
 # Top navigation. Handles the quick card search.
 angular.module('onoSendai')
-  .directive('nrNav', (cardService) ->
+  .directive('nrNav', ($document, cardService) ->
     maxResults = 10
 
     templateUrl: '/views/directives/nr-nav.html'
@@ -16,10 +16,10 @@ angular.module('onoSendai')
               $scope.cardSearchResults = cards.orderedCards.slice(0, maxResults)
 
     link: (scope, element) ->
-      cardSearch = element.find('.card-search')
+      cardSearch = element.find('.card-search .dropdown-parent')
+
       scope.$watch 'cardSearchResults', cardSearchResultsChanged = (newVal) ->
-        cardSearch.toggleClass('open', !!newVal.length)
-
-
+        menuOpen = !!newVal.length
+        cardSearch.toggleClass('open', menuOpen)
 
   )
