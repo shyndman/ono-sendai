@@ -47,8 +47,7 @@ nr-subnav {
 
   .zoom {
     @include hide-at(600px);
-    @include hide-at(590px);
-    @include abridged($filter-bar-collapse-width + 30px, inline-block);
+    @include abridged($filter-bar-collapse-width + 50px, inline-block);
 
     margin-right: 20px;
     line-height: $subnav-height;
@@ -77,7 +76,7 @@ nr-subnav {
   }
 
   .groupings {
-    @include abridged(500px, inline-block);
+    @include abridged($filter-bar-collapse-width + 50px, inline-block);
 
     .dropdown-menu {
       left: initial;
