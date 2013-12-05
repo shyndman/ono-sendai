@@ -131,6 +131,8 @@ class CardService
   # Returns an filter result object, which describes which cards passed the filter, their positions, and group
   # membership.
   query: (queryArgs = {}) ->
+    queryArgs.fieldFilters ?= {}
+
     @_cardsPromise
       .then((cards) =>
         _.logGroup('Card query', _.timed('Query duration', =>
