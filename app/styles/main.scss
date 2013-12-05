@@ -36,41 +36,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-  min-height: 52px; // For whatever reason, the bootstrap default of 50px is too little
-
-  .navbar-brand, .navbar-brand:hover {
-    @mixin logo($path) {
-      $logo-background-size: 165px 22px;
-      background: url(#{$path}) 14px 13px / #{$logo-background-size} no-repeat,
-                  white;
-    }
-
-    @extend .text-hide;
-    @include logo('/images/logo.png');
-
-    width: 211px;
-    height: 51px;
-    margin: 0;
-    padding-top: 18px;
-
-    @include retina {
-      @include logo('/images/logo@2x.png');
-    }
-
-    @media (max-width: $filter-bar-collapse-width) {
-      width: 48px;
-    }
-  }
-
-  .navbar-nav > li > a {
-    @include abridged(550px);
-    font-weight: 200;
-  }
-}
-
 .app-outer-layout {
   width: 100%;
   height: 100%;

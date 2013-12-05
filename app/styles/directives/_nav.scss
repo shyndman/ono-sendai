@@ -1,0 +1,95 @@
+nr-nav {
+  display: flex;
+  min-height: 50px;
+
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+
+
+  // ~-~-~- BRANDING
+
+  .brand {
+    @mixin logo($path) {
+      $logo-background-size: 165px 22px;
+      background: url(#{$path}) 14px 13px / #{$logo-background-size} no-repeat,
+                  white;
+    }
+
+    @extend .text-hide;
+    @include logo('/images/logo.png');
+
+    width: 211px;
+    height: 51px;
+    margin: 0;
+    padding-top: 18px;
+
+    @include retina {
+      @include logo('/images/logo@2x.png');
+    }
+
+    @media (max-width: $filter-bar-collapse-width) {
+      width: 48px;
+    }
+  }
+
+
+  // ~-~-~- NAVIGATION
+
+  nav {
+    flex-grow: 1;
+
+    > ul {
+      list-style: none;
+      padding: 0;
+
+      > li {
+        float: left;
+
+        > a {
+
+          @include abridged(550px);
+          display: block;
+          padding: 15px 15px;
+
+          font-weight: 200;
+          line-height: $line-height-computed;
+          color: $navbar-default-link-color;
+
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-hover-color;
+            background-color: $navbar-default-link-hover-bg;
+            text-decoration: none;
+          }
+        }
+
+        &.active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-active-color;
+            background-color: $navbar-default-link-active-bg;
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          }
+        }
+
+        &.disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-default-link-disabled-color;
+            background-color: $navbar-default-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    padding: 8px;
+
+    .card-search {
+      width: 160px;
+    }
+  }
+}

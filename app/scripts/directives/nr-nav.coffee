@@ -2,6 +2,6 @@
 angular.module('onoSendai')
   .directive('nrNav', ->
     templateUrl: '/views/directives/nr-nav.html'
-    replace: true
+    replace: false
     restrict: 'E'
   )
