@@ -59,11 +59,14 @@ label {
 }
 
 .input-group {
-  > .input-group-btn > button {
-    &:focus {
+  > .input-group-btn {
+    > button:focus  {
       border-color: $input-border-focus;
     }
-    border-right-width: 1px;
+
+    &.open > button {
+      z-index: 2;
+    }
   }
 }
 
