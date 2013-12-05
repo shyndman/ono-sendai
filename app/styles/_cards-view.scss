@@ -71,7 +71,7 @@
           right: 27px;
         }
 
-        label {
+        .data-label {
           color: #777;
           margin: 0;
         }
@@ -79,9 +79,13 @@
         .info-row {
           margin: 5px 0;
 
-          > label {
+          > .data-label {
             width: 90px;
             float: left;
+          }
+
+          .data {
+            margin-left: 90px;
           }
 
           &:first-child {
