@@ -70,6 +70,10 @@ label {
   }
 }
 
+.dropdown-menu > li > a {
+  cursor: pointer;
+}
+
 .table thead > tr > th {
   border-bottom: 1px solid #dddddd;
   font-weight: 200;
