@@ -1,0 +1,153 @@
+card-view {
+  $selected-card-width: 600px;
+  display: flex;
+  width: $selected-card-width;
+  height: 100%;
+
+  .selected-card {
+    position: fixed;
+
+    width: $selected-card-width;
+    height: 100%;
+    padding: 9px 0;
+
+    z-index: $card-current-info-z-index;
+    background: rgba(255, 255, 255, 0.8);
+
+    h2.card-name {
+      margin-bottom: 22px;
+
+      .close {
+        opacity: 0.3;
+        line-height: 28px;
+        font-weight: 200;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .favourite {
+        position: relative;
+        top: -2px;
+        left: 4px;
+
+        color: #ccc;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          color: #999;
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        &.on {
+          color: #ffd76e;
+          -webkit-text-stroke: 1px #e9c15a;
+          &.hover {
+            color: #ffd76e;
+          }
+        }
+      }
+    }
+
+    .info {
+      width: 280px;
+      height: 418px;
+      float: right;
+      user-select: all;
+
+      .info-nav {
+        position: absolute;
+        top: 51px;
+        right: 27px;
+      }
+
+      small {
+        margin-left: 3px;
+      }
+
+      .short-cards {
+        color: #b94a48;
+      }
+
+      .links {
+        @extend .list-unstyled;
+
+        font-size: 0.9em;
+        clear: both;
+        margin-top: 20px;
+
+        li {
+          margin: 5px 0;
+        }
+
+        i {
+          margin-right: 6px;
+        }
+      }
+
+      cost-to-break-calculator {
+        margin-top: -6px;
+      }
+    }
+
+    .card-count {
+      position: fixed;
+      bottom: 10px;
+      left: $sidebar-width;
+      right: 0;
+      text-align: center;
+      color: #777;
+
+      @media (max-width: $filter-bar-collapse-width) {
+        left: 0;
+      }
+    }
+  }
+
+
+  // ~-~-~- NEXT / PREVIOUS CARDS
+
+  .grid-item.prev {
+    transform-origin: 0 150px;
+
+    img {
+      transform: translateZ(1px) rotateY(35deg);
+    }
+
+    .background {
+      transform: rotateY(35deg);
+    }
+  }
+
+  .grid-item.next {
+    transform-origin: 100% 150px;
+
+    img {
+      transform-origin: 100% 0;
+      transform: translateZ(1px) rotateY(-35deg);
+    }
+
+    .background {
+      transform-origin: 100% 0;
+      transform: rotateY(-35deg);
+    }
+  }
+
+  .grid-item.prev-1, .grid-item.next-1 {
+    z-index: $card-offset-1-z-index !important;
+
+    img {
+      opacity: 0.93;
+    }
+  }
+
+  .grid-item.prev-2, .grid-item.next-2 {
+    z-index: $card-offset-2-z-index !important;
+
+    img {
+      opacity: 0.7;
+    }
+  }
+}
