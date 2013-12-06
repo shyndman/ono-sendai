@@ -1,11 +1,5 @@
 angular.module('onoSendai')
-  .directive('costToBreakCalculator', ($timeout, costToBreakCalculator) ->
-    templateUrl: '/views/directives/nr-cost-to-break-calculator.html'
-    restrict: 'E'
-    scope: {
-      card: '='
-    }
-    controller: ($scope, $attrs) ->
+  .controller('CostToBreakCtrl', ($scope, $attrs, costToBreakCalculator) ->
       lastCard = null
 
       # Sets and filters the opponents and calculates stats
@@ -75,7 +69,14 @@ angular.module('onoSendai')
           invalidate()
 
         lastCard = card
-
+  )
+  .directive('costToBreakCalculator', ($timeout, costToBreakCalculator) ->
+    templateUrl: '/views/directives/nr-cost-to-break-calculator.html'
+    restrict: 'E'
+    scope: {
+      card: '='
+    }
+    controller: 'CostToBreakCtrl'
     link: (scope, element, attrs) ->
       opponentsList = element.find('.opponents')
 
