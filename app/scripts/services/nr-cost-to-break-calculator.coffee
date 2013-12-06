@@ -25,7 +25,7 @@ class CostToBreakCalculator
 
   calculate: (card, iceAdjust, options) =>
     if !@isCardApplicable(card)
-      @$log.error("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
+      @$log.warn("#{ card.title } does not have a cost to break calculation, because it isn't ICE or a breaker")
       return
 
     _.logGroup "Cost to break for #{ card.title }",

@@ -137,12 +137,13 @@ card-view {
       bottom: 10px;
       left: 0;
       right: 0;
+      user-select: none;
 
       > .card-pager-inner {
         width: $selected-card-width - 50px;
         margin: 0 auto;
         position: relative;
-        left: -20px;
+        left: -10px;
 
         > .card-count {
           text-align: center;

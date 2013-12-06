@@ -6,7 +6,7 @@ angular.module('onoSendai')
     $scope.filter = urlStateService.queryArgs
 
     initialize = ([cards, queryResult]) ->
-      $scope.cardUI =
+      $scope.cardsUI =
         zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid' # Will be modified by selectCard() if called
         cardPage: urlStateService.cardPage ? 'info'
@@ -41,7 +41,7 @@ angular.module('onoSendai')
         # Note that we change layout mode to 'detail' when a card is supplied, but do not change it to 'grid'
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
-        $scope.cardUI.layoutMode = 'detail'
+        $scope.cardsUI.layoutMode = 'detail'
       else
         $log.info 'Card deselected'
 
@@ -50,7 +50,7 @@ angular.module('onoSendai')
       updateUrl()
 
     $scope.deselectCard = ->
-      $scope.cardUI.layoutMode = 'grid'
+      $scope.cardsUI.layoutMode = 'grid'
       $scope.selectCard(null)
 
     $scope.selectPreviousCard = ->
@@ -85,7 +85,7 @@ angular.module('onoSendai')
       selCard = $scope.selectedCard ? {}
       # If we're in detail mode, and the selected card isn't visible (or doesn't exist), select the first
       # query result.
-      if $scope.cardUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
+      if $scope.cardsUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedCards[0])
 
     initializeFilterWatch = ->
@@ -113,12 +113,12 @@ angular.module('onoSendai')
           $scope.selectCard(selCard)
         else
           $scope.deselectCard()
-          $scope.cardUI.layoutMode = 'grid')
+          $scope.cardsUI.layoutMode = 'grid')
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.selectedCard
-      cardPage = $scope.cardUI.cardPage
+      cardPage = $scope.cardsUI.cardPage
       $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
 
@@ -130,5 +130,5 @@ angular.module('onoSendai')
 
     $scope.broadcastZoomEnd = ->
       $scope.$broadcast 'zoomEnd'
-      userPreferences.zoom($scope.cardUI.zoom)
+      userPreferences.zoom($scope.cardsUI.zoom)
   )

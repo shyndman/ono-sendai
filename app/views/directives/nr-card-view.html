@@ -1,8 +1,8 @@
 <div class="wing">
   <div ng-repeat="card in cardsBefore"
-       class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}">
-    <img ng-src="{{ card.imagesrc }}" width="300" height="418"
-         ng-click="selectCard(card)">
+       class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}"
+       ng-click="selectCard(card)">
+    <img ng-src="{{ card.imagesrc }}" width="300" height="418">
     <div class="background"></div>
   </div>
 </div>
@@ -21,16 +21,16 @@
     <span class="close" ng-click="deselectCard()">&times;</span>
 
     <ul class="nav nav-tabs">
-      <li ng-class="{ active: page == 'info' }">
-        <a ng-model="page" btn-radio="'info'">
+      <li ng-class="{ active: cardUI.page == 'info' }">
+        <a ng-model="cardUI.page" btn-radio="'info'">
           <i class="icon-info"></i>
         </a>
       </li>
       <li ng-class="{
-            active: page == 'cost-to-break',
+            active: cardUI.page == 'cost-to-break',
             disabled: !isCostToBreakEnabled(card)
           }">
-        <a ng-model="page" btn-radio="'cost-to-break'">
+        <a ng-model="cardUI.page" btn-radio="'cost-to-break'">
           <i class="icon-calculator"></i>
         </a>
       </li>
@@ -43,7 +43,7 @@
   </div>
 
   <div class="info">
-    <div ng-switch="page">
+    <div ng-switch="cardUI.page">
       <div ng-switch-when="cost-to-break">
         <cost-to-break-calculator card="card"></cost-to-break-calculator>
       </div>

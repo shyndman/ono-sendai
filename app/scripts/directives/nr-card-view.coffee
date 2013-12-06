@@ -2,7 +2,8 @@ angular.module('onoSendai')
   .controller('CardViewCtrl', ($scope, costToBreakCalculator, userPreferences, urlStateService) ->
     # ~-~-~- INITIALIZATION
 
-    $scope.page = 'info'
+    $scope.cardUI =
+      page: urlStateService.cardPage ? 'info'
     $scope.wingCardCount = 5
 
 
@@ -14,15 +15,16 @@ angular.module('onoSendai')
       if card?
         [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
 
+        # WEIRDORIFICA
         # Store the card an its immediate neighbours in the scope, so we can render all three of their images
         # and do a fast DOM switch on card switches
         cards = []
-        cards.push({ class: 'prev-0', card: _.last(before) }) if before.length
+        cards.push({ class: 'prev-0',  card: _.last(before) }) if before.length
         cards.push({ class: 'current', card: card })
-        cards.push({ class: 'next-0', card: _.first(after) }) if after.length
+        cards.push({ class: 'next-0',  card: _.first(after) }) if after.length
         $scope.cardAndNeighbours = cards
 
-        # WEIRDORIFICA
+        # WEIRDORIFICA - More of the same...
         # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
         # card operations won't cause flashes.
         before.splice(before.length, 0, card)
@@ -32,8 +34,8 @@ angular.module('onoSendai')
         $scope.cardsAfter = after
 
         # Page stuff
-        if $scope.page == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
-          $scope.page = 'info'
+        if $scope.cardUI.page == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
+          $scope.cardUI.page = 'info'
       else
         $scope.cardsBefore = $scope.cardsAfter = []
 
@@ -52,11 +54,11 @@ angular.module('onoSendai')
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
     $scope.isCostToBreakVisible = (card) ->
-      $scope.isCostToBreakEnabled(card) and $scope.page == 'cost-to-break'
+      $scope.isCostToBreakEnabled(card) and $scope.cardUI.page == 'cost-to-break'
 
-    $scope.$watch 'page', pageChanged = (page) ->
-      if page == 'cost-to-break' and $scope.selectedCard? and !$scope.isCostToBreakEnabled($scope.selectedCard)
-        $scope.page = 'info'
+    $scope.$watch 'cardUI.page', pageChanged = (page) ->
+      if page == 'cost-to-break' and $scope.card? and !$scope.isCostToBreakEnabled($scope.card)
+        $scope.cardUI.page = 'info'
       else
         updateUrl()
 
@@ -75,7 +77,7 @@ angular.module('onoSendai')
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.card
-      cardPage = $scope.page
+      cardPage = $scope.cardUI.page
       $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
   )
