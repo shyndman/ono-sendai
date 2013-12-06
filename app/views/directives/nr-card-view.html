@@ -99,10 +99,20 @@
       </div>
     </div>
   </div>
-  <div class="card-count">
-    <span class="current">{{ queryResult.cardOrdinal(card) + 1 }}</span>
-    of
-    <span class="total">{{ queryResult.length }}</span>
+  <div class="card-pager">
+    <div class="card-pager-inner">
+      <span class="prev-card">
+        <a ng-click="selectPreviousCard()">Previous</a>
+      </span>
+      <span class="next-card">
+        <a ng-click="selectNextCard()">Next</a>
+      </span>
+      <div class="card-count">
+        <span class="current">{{ queryResult.cardOrdinal(card) + 1 }}</span>
+        of
+        <span class="total">{{ queryResult.length }}</span>
+      </div>
+    </div>
   </div>
 </div>
 <div class="wing">

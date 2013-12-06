@@ -132,16 +132,30 @@ card-view {
       }
     }
 
-    .card-count {
-      position: fixed;
+    .card-pager {
+      position: absolute;
       bottom: 10px;
-      left: $sidebar-width;
+      left: 0;
       right: 0;
-      text-align: center;
-      color: #777;
 
-      @media (max-width: $filter-bar-collapse-width) {
-        left: 0;
+      > .card-pager-inner {
+        width: $selected-card-width - 50px;
+        margin: 0 auto;
+        position: relative;
+        left: -20px;
+
+        > .card-count {
+          text-align: center;
+          color: #777;
+        }
+
+        > .prev-card {
+          float: left;
+        }
+
+        > .next-card {
+          float: right;
+        }
       }
     }
   }
