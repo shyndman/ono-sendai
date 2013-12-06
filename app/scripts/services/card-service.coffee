@@ -42,6 +42,17 @@ class QueryResult
   cardAfter: _cardAtOffset(1)
   cardBefore: _cardAtOffset(-1)
 
+  # Returns an array of count cards before the specified card, and an array of count
+  # afterwards. If there are not enough cards in the result, as many are returned as possible.
+  beforeAndAfter: (card, count) ->
+    idx = @orderedCards.indexOf(card)
+    if idx == -1
+      return [ [], [] ]
+
+    before = @orderedCards.slice(Math.max(0, idx - count), idx)
+    after =  @orderedCards.slice(start = idx + 1, start + count)
+    [ before, after ]
+
 
 # A service for loading, filtering and grouping cards.
 class CardService
