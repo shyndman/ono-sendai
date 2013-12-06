@@ -357,7 +357,7 @@ angular.module('onoSendai')
             return
 
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow()
+          layoutPromise = layoutNow(firstLayout)
           scrollToTop()
           firstLayout = false
         return)
