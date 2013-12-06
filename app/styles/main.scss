@@ -57,7 +57,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .page {
   @extend .scrollable;
-  @extend .always-scrollable;
+  @extend .scrollable.always-scrollable;
 
   flex-grow: 1;
   overflow-x: hidden;
