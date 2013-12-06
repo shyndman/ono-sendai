@@ -18,8 +18,6 @@ cost-to-break-calculator {
 
       > .info-value {
         margin-left: 60px;
-
-
       }
     }
 
@@ -28,16 +26,27 @@ cost-to-break-calculator {
 
     input {
       display: inline-block;
-      width: 93px;
+
+      &.opponent-filter {
+        width: 107px;
+      }
+
+      &.ice-adjust {
+        width: 59px;
+      }
+
+      &.breaker-strength {
+        width: 80px;
+      }
+
+      &.max-ice-strength {
+        width: 87px;
+      }
     }
 
     &.opponent-type-icebreakers {
       .opponent-filter {
-        width: 140px;
-      }
-
-      .ice-adjust {
-        width: 75px;
+        width: 150px;
       }
     }
   }
@@ -60,7 +69,7 @@ cost-to-break-calculator {
 
   .opponents {
     font-size: 0.9em;
-    height: 288px;
+    height: 289px;
     overflow-y: auto;
   }
 
