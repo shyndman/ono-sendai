@@ -249,6 +249,10 @@ angular.module('onoSendai')
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
 
+      # Reacts to messages sent from above triggering layouts
+      scope.$on 'layout', ->
+        $timeout -> layoutNow(true)
+
 
       # *~*~*~*~ SCROLLING
 

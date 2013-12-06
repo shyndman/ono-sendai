@@ -76,6 +76,12 @@ angular.module('onoSendai')
       $scope.selectCard(nextCard)
 
 
+    #~-~-~- LAYOUT
+
+    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = ->
+      $scope.$broadcast 'layout'
+
+
     #~-~-~- QUERYING
 
     setQueryResult = (queryResult) ->
