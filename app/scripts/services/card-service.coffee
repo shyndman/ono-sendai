@@ -105,7 +105,6 @@ class CardService
   ]
 
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
-    @searchService = searchService
     @_cards = []
     @_sets = []
     @_setsByTitle = {}
@@ -139,7 +138,7 @@ class CardService
   getSetByTitle: (title) ->
     @_setsByTitle[title]
 
-  # Returns an filter result object, which describes which cards passed the filter, their positions, and group
+  # Returns an query result object, which describes which cards passed the filter, their positions, and group
   # membership.
   query: (queryArgs = {}) ->
     queryArgs.fieldFilters ?= {}
@@ -297,11 +296,13 @@ class CardService
     _(cards)
       .chain()
       .multiSort(sortFns...)
+      # Groups by an array, which is stringified into a comma-separated list of group values for the group key
+      # i.e "Jinteki,Identity"
       .groupBy((card) -> _.map(groupings, (g) -> card[g]))
       .pairs()
       .map((pair) =>
+        # Splits on the group values (i.e. "Jinteki,Identity")
         id: pair[0].replace(/,/g, ' ').toLowerCase()
-        type: 'group'
         title: pair[0].split(',')
         cards: pair[1])
       .value()
@@ -333,7 +334,6 @@ class CardService
 
   _augmentCards: (cards) =>
     _.each cards, (card) =>
-      # Does the trick for now
       card.id = _.idify(card.title)
 
       # Parse out subtypes
