@@ -1,3 +1,10 @@
+a {
+  &,
+  &:hover {
+    cursor: pointer !important;
+  }
+}
+
 .scrollable {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; // Momentum scrolling on iOS
