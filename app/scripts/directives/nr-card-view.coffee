@@ -57,6 +57,8 @@ angular.module('onoSendai')
     scope: {
       card: '='
       queryResult: '='
+      cardsBefore: '='
+      cardsAfter: '='
     }
     link: (scope, element, attrs) ->
 

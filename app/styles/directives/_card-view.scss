@@ -5,10 +5,35 @@ card-view {
   flex-direction: row;
   height: 100%;
 
-  // A wing is where previous and next cards are shown
-  .wing {
-    flex-grow: 1;
+
+  // Common card image component
+  .card-image {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 418px;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+    }
+
+    .background {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      border-radius: 16px;
+      background: white;
+    }
   }
+
 
   .selected-card {
     width: $selected-card-width;
@@ -18,9 +43,8 @@ card-view {
     z-index: $card-current-info-z-index;
     background: rgba(255, 255, 255, 0.8);
 
-    img.card-image {
+    .card-image {
       width: 290px;
-      height: auto;
       margin-left: 8px;
     }
 
@@ -84,7 +108,6 @@ card-view {
       .links {
         @extend .list-unstyled;
 
-        font-size: 0.9em;
         clear: both;
         margin-top: 20px;
 
@@ -98,7 +121,7 @@ card-view {
       }
 
       cost-to-break-calculator {
-        margin-top: -6px;
+        margin-top: -8px;
       }
     }
 
@@ -119,45 +142,78 @@ card-view {
 
   // ~-~-~- NEXT / PREVIOUS CARDS
 
-  .grid-item.prev {
-    transform-origin: 0 150px;
+  // A wing is where previous and next cards are shown
+  .wing {
+    flex-grow: 1;
+    position: relative;
+  }
 
-    img {
-      transform: translateZ(1px) rotateY(35deg);
-    }
+  .card-image.in-wing {
+    position: absolute;
+    top: 50px;
+
+    width: 300px;
+    height: 418px;
+    overflow: visible;
+
+    perspective: 2000px;
+    transform: scale(0.7);
+    transform-style: preserve-3d;
 
     .background {
-      transform: rotateY(35deg);
-    }
-  }
-
-  .grid-item.next {
-    transform-origin: 100% 150px;
-
-    img {
-      transform-origin: 100% 0;
-      transform: translateZ(1px) rotateY(-35deg);
+      transform-origin: 0 0;
     }
 
-    .background {
-      transform-origin: 100% 0;
-      transform: rotateY(-35deg);
+    &.prev {
+      img {
+        transform: translateZ(1px) translateX(1px) rotateY(40deg);
+        transform-origin: 0 150px;
+      }
+
+      .background {
+        transform: rotateY(40deg);
+      }
     }
-  }
 
-  .grid-item.prev-1, .grid-item.next-1 {
-    z-index: $card-offset-1-z-index !important;
+    &.next {
+      img {
+        transform-origin: 100% 0;
+        transform: translateZ(1px) translateX(-1px) rotateY(-40deg);
+      }
 
-    img {
-      opacity: 0.93;
+      .background {
+        transform-origin: 100% 0;
+        transform: rotateY(-40deg);
+      }
     }
-  }
 
-  .grid-item.prev-2, .grid-item.next-2 {
-    z-index: $card-offset-2-z-index !important;
+    $base-z: 10;
+    $before-after-count: 5;
+    $before-after-offset: 40px;
+    $opacity-factor: 0.93;
+    $opacities: 0.93 0.7 0.6 0.5 0.4;
 
-    img {
-      opacity: 0.7;
+    // NOTE
+    // These two contain the current card, to get around the browser behaviour of "flashing" a new DOM Image.
+    // By keeping the current image in the list, but not visible, the card will not flash when switching cards.
+    &.next-0, &.prev-0 {
+      display: none;
+    }
+
+    @for $i from 1 through $before-after-count {
+      &.next-#{ $i } {
+        left: -75px + ($i - 1) * $before-after-offset;
+        z-index: #{ $base-z - $i } !important;
+        opacity: nth($opacities, $i);
+      }
+    }
+
+    @for $i from 1 through $before-after-count {
+      &.prev-#{ $i } {
+        right: -75px + ($i - 1) * $before-after-offset;
+        z-index: #{ $base-z - $i } !important;
+        opacity: nth($opacities, $i);
+      }
     }
   }
 }
