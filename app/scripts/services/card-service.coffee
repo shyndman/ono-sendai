@@ -296,13 +296,20 @@ class CardService
     _(cards)
       .chain()
       .multiSort(sortFns...)
-      # Groups by an array, which is stringified into a comma-separated list of group values for the group key
-      # i.e "Jinteki,Identity"
+      # Groups by an array of card values, which is stringified into a comma-separated list to produce the group key.
+      #
+      # Output example:
+      # {
+      #   "Jinteki,Identity": [ list of Jinteki identity cards ],
+      #   "Jinteki,Asset":    [ list of Jinteki asset cards ],
+      #   ...
+      # }
       .groupBy((card) -> _.map(groupings, (g) -> card[g]))
       .pairs()
       .map((pair) =>
-        # Splits on the group values (i.e. "Jinteki,Identity")
+        # Example above becomes 'jinteki identity'
         id: pair[0].replace(/,/g, ' ').toLowerCase()
+        # Example above becomes ['Jinteki', 'Identity']
         title: pair[0].split(',')
         cards: pair[1])
       .value()
