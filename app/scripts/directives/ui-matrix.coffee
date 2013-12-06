@@ -32,17 +32,6 @@ angular.module('onoSendai')
 
       transformProperty = cssUtils.getVendorPropertyName('transform')
 
-      # Names of CSS classes mapped to whether or not they should be applied to a grid item. Individual
-      # item layouts can override any of these values.
-      defaultItemClasses =
-        'prev': false
-        'prev-2': false
-        'prev-1': false
-        'next': false
-        'next-2': false
-        'next-1': false
-        'current': false
-
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary because we swap
       # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
@@ -225,16 +214,6 @@ angular.module('onoSendai')
               # Don't set style properties if we don't have to. Their invalidation is a performance killer.
               if item.style[transformProperty] isnt newStyle
                 item.style[transformProperty] = newStyle
-
-              # Apply CSS classes
-              cssClasses = _.defaults(layout.classes ? {}, defaultItemClasses)
-              for cls, apply of cssClasses
-                # NOTE We don't use classList.toggle(cls, force) here, because IE11 doesn't
-                #      implement it properly.
-                if apply
-                  item.classList.add(cls)
-                else
-                  item.classList.remove(cls)
             else
               item.classList.add('hidden')
 
@@ -256,20 +235,16 @@ angular.module('onoSendai')
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
       layoutNow = (scaleImages = false) ->
+        # No point in doing any work if nobody sees it
+        if element.is(':hidden')
+          return
+
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
         # zoom start/end)
-        scalePromise =
-          if scaleImages
-            downscaleItems()
-          else
-            $q.when()
-
-        # Chain it all together
-        scalePromise
-          .then(performGridLayout)
-          .then(->
-            if scaleImages
-              upscaleItems())
+        if scaleImages
+          downscaleItems().then(performGridLayout).then(upscaleItems)
+        else
+          performGridLayout()
 
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
@@ -321,10 +296,10 @@ angular.module('onoSendai')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.35 or scope.selection?
+        scope.zoom > 0.35
 
       upscaleTo = ->
-        if scope.zoom > 0.5 or scope.selection?
+        if scope.zoom > 0.6
           1
         else if scope.zoom > 0.35
           2
@@ -382,9 +357,9 @@ angular.module('onoSendai')
             return
 
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
+          layoutPromise = layoutNow()
+          scrollToTop()
           firstLayout = false
-          layoutPromise.then(scrollToTop)
         return)
 
 
