@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, costToBreakCalculator, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
 
     # ~-~-~- INITIALIZATION
 
@@ -16,6 +16,7 @@ angular.module('onoSendai')
 
       setQueryResult(queryResult)
 
+      selCard = _.findWhere(cards, id: urlStateService.selectedCardId)
       if selCard?
         $scope.selectCard(selCard)
 
@@ -41,8 +42,16 @@ angular.module('onoSendai')
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
         $scope.cardUI.layoutMode = 'detail'
-        $scope.previousCard = $scope.queryResult.cardBefore(card)
-        $scope.nextCard = $scope.queryResult.cardAfter(card)
+        [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
+
+        # WEIRDORIFICA
+        # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
+        # card operations won't cause flashes.
+        before.splice(before.length, 0, card)
+        after.splice(0, 0, card)
+
+        $scope.cardsBefore = before
+        $scope.cardsAfter = after
 
         if $scope.cardUI.cardPage == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
           $scope.cardUI.cardPage = 'info'
@@ -78,41 +87,6 @@ angular.module('onoSendai')
 
       $log.info 'Moving to next card'
       $scope.selectCard(nextCard)
-
-
-    # ~-~-~- CARD SHORTAGES
-
-    # Returns true if the user has less than 3 of this card
-    #
-    # [todo] Take into consideration ownership of datapacks and # of core sets owned.
-    $scope.isShortCard = (card) ->
-      card.quantity < 3 and card.type != 'Identity'
-
-
-    # ~-~-~- COST TO BREAK CALCULATOR
-
-    $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
-
-    $scope.isCostToBreakVisible = (card) ->
-      if !card?
-        false
-      else
-        $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
-
-    $scope.$watch('cardUI.cardPage', pageChanged = (page) ->
-      if page == 'cost-to-break' and $scope.selectedCard? and !$scope.isCostToBreakEnabled($scope.selectedCard)
-        $scope.cardUI.cardPage = 'info'
-      else
-        updateUrl())
-
-
-    # ~-~-~- FAVOURITES
-
-    # Toggles the favourite state of the provided card
-    $scope.toggleFavourite = userPreferences.toggleCardFavourite
-
-    # Returns true if the provided card is favourited
-    $scope.isFavourite = userPreferences.isCardFavourite
 
 
     #~-~-~- QUERYING
