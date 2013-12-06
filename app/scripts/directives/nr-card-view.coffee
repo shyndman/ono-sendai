@@ -1,7 +1,11 @@
 angular.module('onoSendai')
-  .directive('cardView', () ->
+  .controller('CardViewCtrl', ->
+
+  )
+  .directive('cardView', ->
     templateUrl: '/views/directives/nr-card-view.html'
     restrict: 'E'
+    controller: 'CardViewCtrl'
     scope: {
       card: '='
       queryResult: '='
