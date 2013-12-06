@@ -2,11 +2,11 @@
   <card-view
       card="selectedCard"
       query-result="queryResult"
-      ng-if="selectedCard != null">
+      ng-if="cardUI.layoutMode == 'detail'">
   </card-view>
 
   <matrix
-      ng-show="selectedCard == null"
+      ng-show="cardUI.layoutMode == 'grid'"
       query-result="queryResult"
       selection="selectedCard"
       zoom="cardUI.zoom"

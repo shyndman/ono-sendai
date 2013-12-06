@@ -1,18 +1,28 @@
 card-view {
   $selected-card-width: 600px;
+
   display: flex;
-  width: $selected-card-width;
+  flex-direction: row;
   height: 100%;
 
-  .selected-card {
-    position: fixed;
+  // A wing is where previous and next cards are shown
+  .wing {
+    flex-grow: 1;
+  }
 
+  .selected-card {
     width: $selected-card-width;
     height: 100%;
     padding: 9px 0;
 
     z-index: $card-current-info-z-index;
     background: rgba(255, 255, 255, 0.8);
+
+    img.card-image {
+      width: 290px;
+      height: auto;
+      margin-left: 8px;
+    }
 
     h2.card-name {
       margin-bottom: 22px;
