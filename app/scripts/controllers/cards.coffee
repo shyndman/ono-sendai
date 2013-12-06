@@ -12,20 +12,7 @@ angular.module('onoSendai')
         cardPage: urlStateService.cardPage ? 'info'
 
       $log.debug 'Assigning cards with initial query ordering'
-      selCard = _.findWhere(cards, id: urlStateService.selectedCardId)
-      orderedCards = queryResult.applyOrdering(cards, (card) -> card.id)
-
-      # Assign cards to the scope once, but order them according to the initial query so the first images
-      # to load are the ones on screen.
-      $scope.cards =
-        if selCard?
-          # If we found a selected card, we're going to reorder the cards so they load in-order, pivoted
-          # around the selected card.
-          cardIdx = _.indexOf(orderedCards, selCard)
-          [ before, after ] = _.splitAt(orderedCards, cardIdx)
-          _.weave(before.reverse(), after)
-        else
-          orderedCards
+      $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
 
       setQueryResult(queryResult)
 
