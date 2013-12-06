@@ -387,8 +387,8 @@ angular.module('onoSendai')
       # *~*~*~*~ WINDOW RESIZING
 
       # Watch for resizes that may affect grid size, requiring a re-layout
-      $($window).resize(windowResized = ->
+      $($window).resize windowResized = ->
         if hasContainerChangedWidth()
           $log.debug 'Laying out grid (grid width change)'
-          layoutNow(false))
+          layoutNow(false)
   )
