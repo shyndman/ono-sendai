@@ -5,7 +5,7 @@
     <div class="background"></div>
   </div>
 </div>
-<div class="selected-card">
+<div class="selected-card" ng-if="card != null">
   <!-- Fancy header -->
   <h2 class="card-name {{ card.faction.toLowerCase() }}">
     {{ card.title }}

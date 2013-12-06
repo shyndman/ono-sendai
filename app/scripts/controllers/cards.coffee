@@ -42,19 +42,6 @@ angular.module('onoSendai')
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
         $scope.cardUI.layoutMode = 'detail'
-        [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
-
-        # WEIRDORIFICA
-        # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
-        # card operations won't cause flashes.
-        before.splice(before.length, 0, card)
-        after.splice(0, 0, card)
-
-        $scope.cardsBefore = before
-        $scope.cardsAfter = after
-
-        if $scope.cardUI.cardPage == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
-          $scope.cardUI.cardPage = 'info'
       else
         $log.info 'Card deselected'
 

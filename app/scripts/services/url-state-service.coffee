@@ -25,7 +25,7 @@ class UrlStateService
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs, selectedCard, cardPage) ->
+  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"

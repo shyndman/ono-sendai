@@ -8,6 +8,30 @@ angular.module('onoSendai')
 
     # ~-~-~- CARD SHORTAGES
 
+    $scope.$watch 'selectedCard', selectedCardChanged = (card, oldCard) ->
+      $scope.card = card
+
+      if card?
+        [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
+
+        # WEIRDORIFICA
+        # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
+        # card operations won't cause flashes.
+        before.splice(before.length, 0, card)
+        after.splice(0, 0, card)
+
+        $scope.cardsBefore = before
+        $scope.cardsAfter = after
+
+        # Page stuff
+        if $scope.page == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
+          $scope.page = 'info'
+      else
+        $scope.cardsBefore = $scope.cardsAfter = []
+
+
+    # ~-~-~- CARD SHORTAGES
+
     # Returns true if the user has less than 3 of this card
     #
     # [todo] Take into consideration ownership of datapacks and # of core sets owned.
@@ -20,16 +44,13 @@ angular.module('onoSendai')
     $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
 
     $scope.isCostToBreakVisible = (card) ->
-      if !card?
-        false
-      else
-        $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
+      $scope.isCostToBreakEnabled(card) and $scope.page == 'cost-to-break'
 
-    $scope.$watch('page', pageChanged = (page) ->
+    $scope.$watch 'page', pageChanged = (page) ->
       if page == 'cost-to-break' and $scope.selectedCard? and !$scope.isCostToBreakEnabled($scope.selectedCard)
         $scope.page = 'info'
       else
-        updateUrl())
+        updateUrl()
 
 
     # ~-~-~- FAVOURITES
@@ -54,12 +75,6 @@ angular.module('onoSendai')
     templateUrl: '/views/directives/nr-card-view.html'
     restrict: 'E'
     controller: 'CardViewCtrl'
-    scope: {
-      card: '='
-      queryResult: '='
-      cardsBefore: '='
-      cardsAfter: '='
-    }
     link: (scope, element, attrs) ->
 
   )

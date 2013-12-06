@@ -1,11 +1,5 @@
 <div class="cards">
-  <card-view
-      card="selectedCard"
-      cards-before="cardsBefore"
-      cards-after="cardsAfter"
-      query-result="queryResult"
-      ng-if="cardUI.layoutMode == 'detail'">
-  </card-view>
+  <card-view ng-show="cardUI.layoutMode == 'detail'"></card-view>
 
   <matrix
       ng-show="cardUI.layoutMode == 'grid'"
