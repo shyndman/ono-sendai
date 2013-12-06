@@ -13,7 +13,7 @@ angular.module('onoSendai')
       $scope.card = card
 
       if card?
-        [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
+        [ before, after ] = $scope.queryResult.beforeAndAfter(card, 7)
 
         # WEIRDORIFICA
         # Store the card an its immediate neighbours in the scope, so we can render all three of their images

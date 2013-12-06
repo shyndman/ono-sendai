@@ -210,11 +210,11 @@ card-view {
       }
     }
 
+    $before-after-count: 8;
     $base-z: 10;
-    $before-after-count: 5;
     $before-after-offset: 40px;
     $opacity-factor: 0.93;
-    $opacities: 0.93 0.7 0.6 0.5 0.4;
+    $opacities: 0.93 0.7 0.6 0.5 0.4 0.3 0.2 0;
 
     @for $i from 1 through $before-after-count {
       &.next-#{ $i } {
