@@ -231,7 +231,6 @@ angular.module('onoSendai')
 
         return
 
-
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
       layoutNow = (scaleImages = false) ->
