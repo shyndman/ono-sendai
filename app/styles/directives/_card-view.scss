@@ -32,8 +32,15 @@ card-view {
       border-radius: 16px;
       background: white;
     }
-  }
 
+    // NOTE
+    // These two contain the next card to be shown in a list, to get around the browser behaviour of "flashing" a
+    // new DOM Image. By keeping the next image in the list, but not visible, the card will not flash when
+    // switching cards.
+    &.next-0, &.prev-0 {
+      display: none;
+    }
+  }
 
   .selected-card {
     width: $selected-card-width;
@@ -192,13 +199,6 @@ card-view {
     $before-after-offset: 40px;
     $opacity-factor: 0.93;
     $opacities: 0.93 0.7 0.6 0.5 0.4;
-
-    // NOTE
-    // These two contain the current card, to get around the browser behaviour of "flashing" a new DOM Image.
-    // By keeping the current image in the list, but not visible, the card will not flash when switching cards.
-    &.next-0, &.prev-0 {
-      display: none;
-    }
 
     @for $i from 1 through $before-after-count {
       &.next-#{ $i } {

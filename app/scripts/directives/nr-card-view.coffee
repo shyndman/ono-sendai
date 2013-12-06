@@ -14,6 +14,14 @@ angular.module('onoSendai')
       if card?
         [ before, after ] = $scope.queryResult.beforeAndAfter(card, 5)
 
+        # Store the card an its immediate neighbours in the scope, so we can render all three of their images
+        # and do a fast DOM switch on card switches
+        cards = []
+        cards.push({ class: 'prev-0', card: _.last(before) }) if before.length
+        cards.push({ class: 'current', card: card })
+        cards.push({ class: 'next-0', card: _.first(after) }) if after.length
+        $scope.cardAndNeighbours = cards
+
         # WEIRDORIFICA
         # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
         # card operations won't cause flashes.

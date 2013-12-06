@@ -36,8 +36,9 @@
     </ul>
   </h2>
 
-  <div class="card-image">
-    <img ng-src="{{ card.imagesrc }}" width="300" height="418">
+  <div ng-repeat="cardImage in cardAndNeighbours track by cardImage.card.id"
+       class="card-image {{ cardImage.class }}">
+    <img ng-src="{{ cardImage.card.imagesrc }}" width="300" height="418">
   </div>
 
   <div class="info">
