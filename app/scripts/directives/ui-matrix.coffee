@@ -250,8 +250,9 @@ angular.module('onoSendai')
 
       # Reacts to messages sent from above triggering layouts
       scope.$on 'layout', ->
-        hasContainerChangedWidth()
-        $timeout -> layoutNow(true)
+        $timeout ->
+          hasContainerChangedWidth()
+          layoutNow(true)
 
 
       # *~*~*~*~ SCROLLING
