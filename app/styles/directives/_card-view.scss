@@ -140,7 +140,7 @@ card-view {
       user-select: none;
 
       > .card-pager-inner {
-        width: $selected-card-width - 50px;
+        width: $selected-card-width - 120px;
         margin: 0 auto;
         position: relative;
         left: -10px;
