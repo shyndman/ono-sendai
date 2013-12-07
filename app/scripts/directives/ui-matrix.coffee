@@ -172,26 +172,15 @@ angular.module('onoSendai')
             groupItemIdx = 0
 
         applyItemStyles()
-        scrollToFocusedElement()
 
-        # Resizes the grid, possibly after transition completion
+        # Resizes the grid
         lastRow = rowInfos[lastVisibleRow]
         newContainerHeight = lastRow.position + lastRow.height
-        resizeGrid = -> container.height(newContainerHeight)
+        container.height(newContainerHeight)
 
-        # If we're in transition mode, return a promise that will resolve after
-        # the transition has completed.
-        if element.hasClass('transitioned')
-          transitionPromise = cssUtils.getTransitionEndPromise(secondItem)
+        # Scroll baby!
+        scrollToFocusedElement()
 
-          # Resize the grid immediately if its going to be growing
-          if newContainerHeight > container.height()
-            resizeGrid()
-            transitionPromise
-          else
-            transitionPromise.then(resizeGrid)
-        else
-          resizeGrid()
 
       applyItemStyles = ->
         if !_.isEmpty(itemLayouts)
