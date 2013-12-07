@@ -42,6 +42,17 @@ class QueryResult
   cardAfter: _cardAtOffset(1)
   cardBefore: _cardAtOffset(-1)
 
+  # Returns an array of count cards before the specified card, and an array of count
+  # afterwards. If there are not enough cards in the result, as many are returned as possible.
+  beforeAndAfter: (card, count) ->
+    idx = @orderedCards.indexOf(card)
+    if idx == -1
+      return [ [], [] ]
+
+    before = @orderedCards.slice(Math.max(0, idx - count), idx)
+    after =  @orderedCards.slice(start = idx + 1, start + count)
+    [ before, after ]
+
 
 # A service for loading, filtering and grouping cards.
 class CardService
@@ -94,7 +105,6 @@ class CardService
   ]
 
   constructor: ($http, @$log, @searchService, @filterDescriptors) ->
-    @searchService = searchService
     @_cards = []
     @_sets = []
     @_setsByTitle = {}
@@ -128,7 +138,7 @@ class CardService
   getSetByTitle: (title) ->
     @_setsByTitle[title]
 
-  # Returns an filter result object, which describes which cards passed the filter, their positions, and group
+  # Returns an query result object, which describes which cards passed the filter, their positions, and group
   # membership.
   query: (queryArgs = {}) ->
     queryArgs.fieldFilters ?= {}
@@ -286,11 +296,20 @@ class CardService
     _(cards)
       .chain()
       .multiSort(sortFns...)
+      # Groups by an array of card values, which is stringified into a comma-separated list to produce the group key.
+      #
+      # Output example:
+      # {
+      #   "Jinteki,Identity": [ list of Jinteki identity cards ],
+      #   "Jinteki,Asset":    [ list of Jinteki asset cards ],
+      #   ...
+      # }
       .groupBy((card) -> _.map(groupings, (g) -> card[g]))
       .pairs()
       .map((pair) =>
+        # Example above becomes 'jinteki identity'
         id: pair[0].replace(/,/g, ' ').toLowerCase()
-        type: 'group'
+        # Example above becomes ['Jinteki', 'Identity']
         title: pair[0].split(',')
         cards: pair[1])
       .value()
@@ -322,7 +341,6 @@ class CardService
 
   _augmentCards: (cards) =>
     _.each cards, (card) =>
-      # Does the trick for now
       card.id = _.idify(card.title)
 
       # Parse out subtypes

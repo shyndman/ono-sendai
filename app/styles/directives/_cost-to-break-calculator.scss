@@ -2,25 +2,52 @@ cost-to-break-calculator {
   display: block;
   padding-right: 9px;
 
-  .controls {
+  > .controls {
     padding: 3px 0 5px 0;
     margin: 0;
     border-bottom: 1px solid #ddd;
 
+
+    // ~-~-~- INFO ROW TWEAKS
+
+    .info-row {
+      > .info-label {
+        line-height: 30px;
+        width: 60px;
+      }
+
+      > .info-value {
+        margin-left: 60px;
+      }
+    }
+
+
+    // ~-~-~- INPUT SIZING
+
     input {
       display: inline-block;
+
+      &.opponent-filter {
+        width: 107px;
+      }
+
+      &.ice-adjust {
+        width: 59px;
+      }
+
+      &.breaker-strength {
+        width: 80px;
+      }
+
+      &.max-ice-strength {
+        width: 87px;
+      }
     }
 
-    .opponent-filter {
-      width: 126px;
-    }
-
-    .ice-adjust {
-      width: 82px;
-    }
-
-    .breaker-strength {
-      width: 82px;
+    &.opponent-type-icebreakers {
+      .opponent-filter {
+        width: 150px;
+      }
     }
   }
 
@@ -42,7 +69,7 @@ cost-to-break-calculator {
 
   .opponents {
     font-size: 0.9em;
-    height: 318px;
+    height: 289px;
     overflow-y: auto;
   }
 

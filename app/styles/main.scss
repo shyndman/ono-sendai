@@ -8,7 +8,7 @@
 @import "common";
 @import "mixins";
 @import "responsive";
-@import "cards-view";
+@import "cards-common";
 @import "bootstrap-overrides";
 @import "select2-overrides";
 @import "fonts";
@@ -57,7 +57,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .page {
   @extend .scrollable;
-  @extend .always-scrollable;
+  @extend .scrollable.always-scrollable;
 
   flex-grow: 1;
   overflow-x: hidden;

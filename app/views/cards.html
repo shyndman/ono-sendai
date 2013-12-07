@@ -1,147 +1,54 @@
-<master-detail-grid
-    class="cards"
-    query-result="queryResult"
-    selection="selectedCard"
-    zoom="cardUI.zoom"
-    layout-mode="cardUI.layoutMode">
+<div class="cards">
+  <card-view ng-show="cardsUI.layoutMode == 'detail'"></card-view>
 
-  <!-- SELECTED CARD -->
-  <div ng-if="selectedCard != null"
-       class="selected-card-container">
-    <div class="selected-card">
-      <h2 class="card-name {{ selectedCard.faction.toLowerCase() }}">
-        {{ selectedCard.title }}
-        <small class="favourite"
-               ng-click="toggleFavourite(selectedCard)"
-               ng-class="{ 'on': isFavourite(selectedCard) }"
-               ng-switch="isFavourite(selectedCard)">
-          <span ng-switch-when="false">☆</span>
-          <span ng-switch-when="true">★</span>
-        </small>
+  <matrix
+      ng-show="cardsUI.layoutMode == 'grid'"
+      query-result="queryResult"
+      selection="selectedCard"
+      zoom="cardsUI.zoom"
+      layout-mode="cardsUI.layoutMode">
 
-        <span class="close" ng-click="deselectCard()">&times;</span>
-
-        <ul class="nav nav-tabs">
-          <li ng-class="{ active: cardUI.cardPage == 'info' }">
-            <a ng-model="cardUI.cardPage" btn-radio="'info'">
-              <i class="icon-info"></i>
-            </a>
-          </li>
-          <li ng-class="{
-                active: cardUI.cardPage == 'cost-to-break',
-                disabled: !isCostToBreakEnabled(selectedCard)
-              }">
-            <a ng-model="cardUI.cardPage" btn-radio="'cost-to-break'">
-              <i class="icon-calculator"></i>
-            </a>
-          </li>
-        </ul>
-      </h2>
-      <div class="info">
-        <div ng-switch="cardUI.cardPage">
-          <div ng-switch-when="cost-to-break">
-            <cost-to-break-calculator card="selectedCard"></cost-to-break-calculator>
-          </div>
-          <div class="general"
-               ng-switch-when="info">
-            <div class="info-row">
-              <span class="data-label">Type:</span>
-              <div class="data">
-                <a ng-href="{{ selectedCard | cardUrl:'type' }}">
-                  {{ selectedCard.type }}
-                </a>
-              </div>
-            </div>
-            <div ng-if="selectedCard.subtypes.length > 0" class="info-row">
-              <span class="data-label">Subtypes:</span>
-              <div class="data">
-                <span ng-repeat="subtype in selectedCard.subtypes">
-                  <a ng-href="{{ selectedCard | cardUrl:'subtype':subtype }}">{{ subtype }}</a><span ng-if="!$last"> - </span>
-                </span>
-              </div>
-            </div>
-            <div class="info-row">
-              <span class="data-label">From:</span>
-              <div class="data">
-                <a ng-href="{{ selectedCard | cardUrl:'set' }}">{{ selectedCard.setname }}</a>
-              </div>
-            </div>
-            <div ng-if="isShortCard(selectedCard)" class="info-row">
-              <span class="data-label">Quantity:</span>
-              <div class="data">
-                <span class='short-cards'>{{ selectedCard.quantity }} in set</span>
-              </div>
-            </div>
-
-            <ul class="links">
-              <!-- Reddit cards of the day -->
-              <li ng-repeat="cotd in selectedCard.reddit_cotds track by cotd.id">
-                <a ng-href="{{ cotd.url }}" target="reddit">
-                  <i class="icon-cotd"></i> Card of the Day ({{ cotd.created|date }})
-                </a>
-              </li>
-              <li>
-                <a ng-href="{{ selectedCard.cgdb_url }}#commentsStart" target="cgdb">
-                  <i class="icon-link-ext"></i> Comments on CardGameDB
-                </a>
-              </li>
-              <li>
-                <a ng-href="{{ selectedCard.nrdb_url }}" target="nrdb">
-                  <i class="icon-link-strength"></i> View on NetrunnerDB
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="card-count">
-        <span class="current">{{ queryResult.cardOrdinal(selectedCard) + 1 }}</span>
-        of
-        <span class="total">{{ queryResult.length }}</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- HEADERS -->
-  <h2 ng-repeat="(id, group) in queryResult.groups track by id"
-      grid-id="{{ group.id }}"
-      class="{{ group.id }} grid-header invisible"
-      title="{{ group.id }}">
-    <small class="card-count"><ng-pluralize
-        count="group.cards.length"
-        when="{
-          '1': '1 card',
-          'other': '{} cards'
-        }"></ng-pluralize>
-    </small>
-    {{ group.title|primaryGroupTitle:filter.groupings }}
-    <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
-  </h2>
-
-  <!--
-    CARDS
-
-    Note:
-    For performance reasons, this template is bound once, with all the cards, then never touched
-    again. All sorting and show/hide logic for cards exists in the ui-master-detail-grid directive.
-  -->
-  <div ng-repeat="card in cards track by card.id"
-       bindonce
-       class="grid-item hidden"
-       ng-click="selectCard(card)"
-       bo-title="card.title"
-       bo-attr-grid-id="card.id"
-       bo-attr>
-    <img bo-src="card.imagesrc" width="300" height="418">
-    <div class="background"></div>
-  </div>
-
-  <!-- No results -->
-  <div ng-show="queryResult.length == 0"
-       class="no-results">
-    <h2>
-      <small class="card-count">0 cards</small>
-      No Results Found
+    <!-- HEADERS -->
+    <h2 ng-repeat="(id, group) in queryResult.groups track by id"
+        grid-id="{{ group.id }}"
+        class="{{ group.id }} grid-header invisible"
+        title="{{ group.id }}">
+      <small class="card-count"><ng-pluralize
+          count="group.cards.length"
+          when="{
+            '1': '1 card',
+            'other': '{} cards'
+          }"></ng-pluralize>
+      </small>
+      {{ group.title|primaryGroupTitle:filter.groupings }}
+      <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
     </h2>
-  </div>
-</master-detail-grid>
+
+    <!--
+      CARDS
+
+      Note:
+      For performance reasons, this template is bound once, with all the cards, then never touched
+      again. All sorting and show/hide logic for cards exists in the ui-matrix directive.
+    -->
+    <div ng-repeat="card in cards track by card.id"
+         bindonce
+         class="grid-item hidden"
+         ng-click="selectCard(card)"
+         bo-title="card.title"
+         bo-attr-grid-id="card.id"
+         bo-attr>
+      <img bo-src="card.imagesrc" width="300" height="418">
+      <div class="background"></div>
+    </div>
+
+    <!-- No results -->
+    <div ng-show="queryResult.length == 0"
+         class="no-results">
+      <h2>
+        <small class="card-count">0 cards</small>
+        No Results Found
+      </h2>
+    </div>
+  </matrix>
+</div>

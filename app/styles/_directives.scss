@@ -1,8 +1,9 @@
 @import 'directives/cost-to-break-calculator';
 @import 'directives/numeric-filter';
-@import 'directives/master-detail-grid';
+@import 'directives/matrix';
 @import 'directives/subnav';
 @import 'directives/nav';
+@import 'directives/card-view';
 
 inset-filter {
   display: block;

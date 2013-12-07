@@ -1,0 +1,125 @@
+<div class="wing">
+  <div ng-repeat="card in cardsBefore"
+       class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}"
+       ng-click="selectCard(card)">
+    <img ng-src="{{ card.imagesrc }}" width="300" height="418">
+    <div class="background"></div>
+  </div>
+</div>
+<div class="selected-card" ng-if="card != null">
+  <!-- Fancy header -->
+  <h2 class="card-name {{ card.faction.toLowerCase() }}">
+    {{ card.title }}
+    <small class="favourite"
+           ng-click="toggleFavourite(card)"
+           ng-class="{ 'on': isFavourite(card) }"
+           ng-switch="isFavourite(card)">
+      <span ng-switch-when="false">☆</span>
+      <span ng-switch-when="true">★</span>
+    </small>
+
+    <span class="close" ng-click="deselectCard()">&times;</span>
+
+    <ul class="nav nav-tabs">
+      <li ng-class="{ active: cardUI.page == 'info' }">
+        <a ng-model="cardUI.page" btn-radio="'info'">
+          <i class="icon-info"></i>
+        </a>
+      </li>
+      <li ng-class="{
+            active: cardUI.page == 'cost-to-break',
+            disabled: !isCostToBreakEnabled(card)
+          }">
+        <a ng-model="cardUI.page" btn-radio="'cost-to-break'">
+          <i class="icon-calculator"></i>
+        </a>
+      </li>
+    </ul>
+  </h2>
+
+  <div ng-repeat="cardImage in cardAndNeighbours track by cardImage.card.id"
+       class="card-image {{ cardImage.class }}">
+    <img ng-src="{{ cardImage.card.imagesrc }}" width="300" height="418">
+  </div>
+
+  <div class="info">
+    <div ng-switch="cardUI.page">
+      <div ng-switch-when="cost-to-break">
+        <cost-to-break-calculator card="card"></cost-to-break-calculator>
+      </div>
+      <div class="general"
+           ng-switch-when="info">
+        <div class="info-row">
+          <span class="info-label">Type:</span>
+          <div class="info-value">
+            <a ng-href="{{ card | cardUrl:'type' }}">
+              {{ card.type }}
+            </a>
+          </div>
+        </div>
+        <div ng-if="card.subtypes.length > 0" class="info-row">
+          <span class="info-label">Subtypes:</span>
+          <div class="info-value">
+            <span ng-repeat="subtype in card.subtypes">
+              <a ng-href="{{ card | cardUrl:'subtype':subtype }}">{{ subtype }}</a><span ng-if="!$last"> - </span>
+            </span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-label">From:</span>
+          <div class="info-value">
+            <a ng-href="{{ card | cardUrl:'set' }}">{{ card.setname }}</a>
+          </div>
+        </div>
+        <div ng-if="isShortCard(card)" class="info-row">
+          <span class="info-label">Quantity:</span>
+          <div class="info-value">
+            <span class='short-cards'>{{ card.quantity }} in set</span>
+          </div>
+        </div>
+
+        <ul class="links">
+          <!-- Reddit cards of the day -->
+          <li ng-repeat="cotd in card.reddit_cotds track by cotd.id">
+            <a ng-href="{{ cotd.url }}" target="reddit">
+              <i class="icon-cotd"></i> Card of the Day ({{ cotd.created|date }})
+            </a>
+          </li>
+          <li>
+            <a ng-href="{{ card.cgdb_url }}#commentsStart" target="cgdb">
+              <i class="icon-link-ext"></i> Comments on CardGameDB
+            </a>
+          </li>
+          <li>
+            <a ng-href="{{ card.nrdb_url }}" target="nrdb">
+              <i class="icon-link-strength"></i> View on NetrunnerDB
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card-pager">
+    <div class="card-pager-inner">
+      <span class="prev-card">
+        <a ng-click="selectPreviousCard()">Previous</a>
+      </span>
+      <span class="next-card">
+        <a ng-click="selectNextCard()">Next</a>
+      </span>
+      <div class="card-count">
+        <span class="current">{{ queryResult.cardOrdinal(card) + 1 }}</span>
+        of
+        <span class="total">{{ queryResult.length }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wing">
+  <div ng-repeat="card in cardsAfter"
+       class="card-image in-wing next next-{{ $index }}">
+    <img ng-src="{{ card.imagesrc }}" width="300" height="418"
+         ng-click="selectCard(card)">
+    <div class="background"></div>
+  </div>
+</div>

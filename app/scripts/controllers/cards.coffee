@@ -1,34 +1,22 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, costToBreakCalculator, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
 
     # ~-~-~- INITIALIZATION
 
     $scope.filter = urlStateService.queryArgs
 
     initialize = ([cards, queryResult]) ->
-      $scope.cardUI =
+      $scope.cardsUI =
         zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid' # Will be modified by selectCard() if called
         cardPage: urlStateService.cardPage ? 'info'
 
       $log.debug 'Assigning cards with initial query ordering'
-      selCard = _.findWhere(cards, id: urlStateService.selectedCardId)
-      orderedCards = queryResult.applyOrdering(cards, (card) -> card.id)
-
-      # Assign cards to the scope once, but order them according to the initial query so the first images
-      # to load are the ones on screen.
-      $scope.cards =
-        if selCard?
-          # If we found a selected card, we're going to reorder the cards so they load in-order, pivoted
-          # around the selected card.
-          cardIdx = _.indexOf(orderedCards, selCard)
-          [ before, after ] = _.splitAt(orderedCards, cardIdx)
-          _.weave(before.reverse(), after)
-        else
-          orderedCards
+      $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
 
       setQueryResult(queryResult)
 
+      selCard = _.findWhere(cards, id: urlStateService.selectedCardId)
       if selCard?
         $scope.selectCard(selCard)
 
@@ -53,12 +41,7 @@ angular.module('onoSendai')
         # Note that we change layout mode to 'detail' when a card is supplied, but do not change it to 'grid'
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
-        $scope.cardUI.layoutMode = 'detail'
-        $scope.previousCard = $scope.queryResult.cardBefore(card)
-        $scope.nextCard = $scope.queryResult.cardAfter(card)
-
-        if $scope.cardUI.cardPage == 'cost-to-break' and !$scope.isCostToBreakEnabled(card)
-          $scope.cardUI.cardPage = 'info'
+        $scope.cardsUI.layoutMode = 'detail'
       else
         $log.info 'Card deselected'
 
@@ -67,7 +50,7 @@ angular.module('onoSendai')
       updateUrl()
 
     $scope.deselectCard = ->
-      $scope.cardUI.layoutMode = 'grid'
+      $scope.cardsUI.layoutMode = 'grid'
       $scope.selectCard(null)
 
     $scope.selectPreviousCard = ->
@@ -93,39 +76,10 @@ angular.module('onoSendai')
       $scope.selectCard(nextCard)
 
 
-    # ~-~-~- CARD SHORTAGES
+    #~-~-~- LAYOUT
 
-    # Returns true if the user has less than 3 of this card
-    #
-    # [todo] Take into consideration ownership of datapacks and # of core sets owned.
-    $scope.isShortCard = (card) ->
-      card.quantity < 3 and card.type != 'Identity'
-
-
-    # ~-~-~- COST TO BREAK CALCULATOR
-
-    $scope.isCostToBreakEnabled = costToBreakCalculator.isCardApplicable
-
-    $scope.isCostToBreakVisible = (card) ->
-      if !card?
-        false
-      else
-        $scope.isCostToBreakEnabled(card) and $scope.cardUI.cardPage == 'cost-to-break'
-
-    $scope.$watch('cardUI.cardPage', pageChanged = (page) ->
-      if page == 'cost-to-break' and $scope.selectedCard? and !$scope.isCostToBreakEnabled($scope.selectedCard)
-        $scope.cardUI.cardPage = 'info'
-      else
-        updateUrl())
-
-
-    # ~-~-~- FAVOURITES
-
-    # Toggles the favourite state of the provided card
-    $scope.toggleFavourite = userPreferences.toggleCardFavourite
-
-    # Returns true if the provided card is favourited
-    $scope.isFavourite = userPreferences.isCardFavourite
+    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = ->
+      $scope.$broadcast 'layout'
 
 
     #~-~-~- QUERYING
@@ -137,7 +91,7 @@ angular.module('onoSendai')
       selCard = $scope.selectedCard ? {}
       # If we're in detail mode, and the selected card isn't visible (or doesn't exist), select the first
       # query result.
-      if $scope.cardUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
+      if $scope.cardsUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedCards[0])
 
     initializeFilterWatch = ->
@@ -165,12 +119,12 @@ angular.module('onoSendai')
           $scope.selectCard(selCard)
         else
           $scope.deselectCard()
-          $scope.cardUI.layoutMode = 'grid')
+          $scope.cardsUI.layoutMode = 'grid')
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.selectedCard
-      cardPage = $scope.cardUI.cardPage
+      cardPage = $scope.cardsUI.cardPage
       $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
 
@@ -182,5 +136,5 @@ angular.module('onoSendai')
 
     $scope.broadcastZoomEnd = ->
       $scope.$broadcast 'zoomEnd'
-      userPreferences.zoom($scope.cardUI.zoom)
+      userPreferences.zoom($scope.cardsUI.zoom)
   )

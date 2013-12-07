@@ -1,6 +1,6 @@
 // Contains generalized styling for any kind of grid/detail grid. Not really card specific.
 // Application-specific styling is below.
-master-detail-grid {
+matrix {
   @mixin scaled-item($scale) {
     width: $card-width * $scale;
     height: $card-height * $scale;
@@ -61,6 +61,7 @@ master-detail-grid {
     }
   }
 
+
   // ~-~-~- DOWNSCALING
 
   &.downscaled-1-2 .grid-item {
@@ -75,71 +76,13 @@ master-detail-grid {
     @include scaled-item(1 / 3);
   }
 
+
   // ~-~-~- TRANSITIONED MODE
 
   &.transitioned {
     .grid-item, .grid-header, .grid-item img, .grid-item .background {
       transition: 0.2s ease-in-out transform,
                   0.2s ease-in-out opacity;
-    }
-  }
-
-  // ~-~-~- DETAILED CARD MODE
-
-  .grid-item.current {
-    transform-origin: 0 150px;
-    z-index: $card-current-z-index !important;
-    cursor: default !important;
-
-    img {
-      opacity: 1;
-      transform: translateZ(1px) rotateY(0deg);
-    }
-
-    .background {
-      transform: rotateY(0deg);
-    }
-  }
-
-  .grid-item.prev {
-    transform-origin: 0 150px;
-
-    img {
-      transform: translateZ(1px) rotateY(35deg);
-    }
-
-    .background {
-      transform: rotateY(35deg);
-    }
-  }
-
-  .grid-item.next {
-    transform-origin: 100% 150px;
-
-    img {
-      transform-origin: 100% 0;
-      transform: translateZ(1px) rotateY(-35deg);
-    }
-
-    .background {
-      transform-origin: 100% 0;
-      transform: rotateY(-35deg);
-    }
-  }
-
-  .grid-item.prev-1, .grid-item.next-1 {
-    z-index: $card-offset-1-z-index !important;
-
-    img {
-      opacity: 0.93;
-    }
-  }
-
-  .grid-item.prev-2, .grid-item.next-2 {
-    z-index: $card-offset-2-z-index !important;
-
-    img {
-      opacity: 0.7;
     }
   }
 }

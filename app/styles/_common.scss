@@ -1,3 +1,10 @@
+a {
+  &,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .scrollable {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; // Momentum scrolling on iOS
@@ -5,4 +12,18 @@
 
 .scrollable.always-scrollable {
   overflow-y: scroll;
+}
+
+.info-row {
+  margin-bottom: 5px;
+
+  > .info-label {
+    width: 90px;
+    color: #777;
+    float: left;
+  }
+
+  .info-value {
+    margin-left: 90px;
+  }
 }

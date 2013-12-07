@@ -1,9 +1,20 @@
-<div class="controls">
-  <input ng-model="opponentFilter" type="search" class="opponent-filter input-sm form-control" placeholder="{{costToBreakInfo.opponentType}} Filter" filter-input="">
+<div class="controls opponent-type-{{ costToBreakInfo.opponentType | lowercase }}">
+  <div class="filters info-row">
+    <label class="info-label" for="opponent-filter">Filters:</label>
+    <div class="info-value">
+      <input ng-model="opponentFilter" id="opponent-filter" type="search" class="opponent-filter input-sm form-control" placeholder="Title / Faction" filter-input="">
+      <input ng-model="maxIceStrength" ng-show="costToBreakInfo.opponentType == 'ICE'" type="number" min="0" class="max-ice-strength input-sm form-control" placeholder="Max ICE Str." filter-input="">
+    </div>
+  </div>
 
-  <input ng-model="iceAdjust" type="number" class="ice-adjust input-sm form-control" placeholder="ICE ⁺⁄₋" filter-input="">
+  <div class="adjustments info-row">
+    <label class="info-label" for="ice-adjust">Adjust:</label>
+    <div class="info-value">
+      <input ng-model="iceAdjust" id="ice-adjust" type="number" class="ice-adjust input-sm form-control" placeholder="ICE ⁺⁄₋" filter-input="">
 
-  <input ng-model="breakerStrength" ng-show="card.variablestrength" type="number" min="0" class="breaker-strength input-sm form-control" placeholder="Breaker ⁺⁄₋" filter-input="">
+      <input ng-model="breakerStrength" ng-show="card.variablestrength" type="number" min="0" class="breaker-strength input-sm form-control" placeholder="Breaker ⁺⁄₋" filter-input="">
+    </div>
+  </div>
 
   <div class="stats-row">
     <span class="stat-label">average:</span>

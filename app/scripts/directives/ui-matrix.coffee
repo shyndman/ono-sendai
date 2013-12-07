@@ -1,6 +1,6 @@
-# This component is responsible for dealing with cards, including user input and layout.
+# This component is responsible for layout out items in a matrix, with headers.
 angular.module('onoSendai')
-  .directive('masterDetailGrid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+  .directive('matrix', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     template: '<div class="content-container" ng-transclude></div>'
@@ -8,10 +8,8 @@ angular.module('onoSendai')
       queryResult: '='
       zoom: '='
       selection: '='
-      layoutMode: '='
     }
     link: (scope, element, attrs) ->
-      layoutMode = scope.layoutMode
       container = element.find('.content-container')
       containerWidth = container.width()
       inContinuousZoom = false
@@ -33,17 +31,6 @@ angular.module('onoSendai')
       queryResult = null         # The most recent query result
 
       transformProperty = cssUtils.getVendorPropertyName('transform')
-
-      # Names of CSS classes mapped to whether or not they should be applied to a grid item. Individual
-      # item layouts can override any of these values.
-      defaultItemClasses =
-        'prev': false
-        'prev-2': false
-        'prev-1': false
-        'next': false
-        'next-2': false
-        'next-1': false
-        'current': false
 
       # This is multiplied by scope.zoom to produce the transform:scale value. It is necessary because we swap
       # in lower resolution images before doing most transformations.
@@ -185,99 +172,15 @@ angular.module('onoSendai')
             groupItemIdx = 0
 
         applyItemStyles()
-        scrollToFocusedElement()
 
-        # Resizes the grid, possibly after transition completion
+        # Resizes the grid
         lastRow = rowInfos[lastVisibleRow]
         newContainerHeight = lastRow.position + lastRow.height
-        resizeGrid = -> container.height(newContainerHeight)
+        container.height(newContainerHeight)
 
-        # If we're in transition mode, return a promise that will resolve after
-        # the transition has completed.
-        if element.hasClass('transitioned')
-          transitionPromise = cssUtils.getTransitionEndPromise(secondItem)
+        # Scroll baby!
+        scrollToFocusedElement()
 
-          # Resize the grid immediately if its going to be growing
-          if newContainerHeight > container.height()
-            resizeGrid()
-            transitionPromise
-          else
-            transitionPromise.then(resizeGrid)
-        else
-          resizeGrid()
-
-      performDetailLayout = ->
-        items = gridItems
-        if !items.length
-          return
-
-        # Ensure that we aren't scrolling.
-        setScrollerOverflow('hidden')
-
-        # Work out base Y coordinate
-        baseY = scrollTop
-        baseY += 55
-        nextPrevY = baseY + 8
-        nextPrevW = 160
-
-        selEle =
-          if !scope.selection
-            null
-          else
-            gridItemsById[scope.selection.id]
-
-        for item, i in gridHeaders
-          layout = headerLayouts[i] ?= {}
-          layout.opacity = 0
-
-        skipCount = 0
-        for item, i in gridItems
-          if skipCount > 0
-            skipCount--
-            continue
-
-          layout = itemLayouts[i] ?= {}
-          layout.opacity = 0
-          layout.classes = hidden: true
-
-          if item == selEle
-            numNextPrev = 2
-            selLeft = (containerWidth - 600) / 2 + 10
-            selRight = selLeft + 470
-
-            _.extend layout,
-              zoom: 0.95
-              classes:
-                'current': true
-              x: selLeft # TODO Pull the literal from CSS
-              y: baseY
-              rotationY: 0
-
-            for j in [1..numNextPrev]
-              if i - j >= 0
-                _.extend itemLayouts[i - j],
-                  zoom: 0.7
-                  classes:
-                    'prev': true
-                  x: selLeft - (j * 30) - nextPrevW
-                  y: nextPrevY
-                itemLayouts[i - j].classes["prev-#{j}"] = true
-
-            for j in [1..numNextPrev]
-              itemLayouts[i + j] ?= {} # XXX Barf. Sloppy.
-              if i + j < gridItems.length
-                _.extend itemLayouts[i + j],
-                  zoom: 0.7
-                  classes:
-                    'next': true
-                  x: selRight + ((j - 1) * 30)
-                  y: nextPrevY
-                itemLayouts[i + j].classes["next-#{j}"] = true
-
-            skipCount = 2
-
-        applyItemStyles()
-        return
 
       applyItemStyles = ->
         if !_.isEmpty(itemLayouts)
@@ -300,16 +203,6 @@ angular.module('onoSendai')
               # Don't set style properties if we don't have to. Their invalidation is a performance killer.
               if item.style[transformProperty] isnt newStyle
                 item.style[transformProperty] = newStyle
-
-              # Apply CSS classes
-              cssClasses = _.defaults(layout.classes ? {}, defaultItemClasses)
-              for cls, apply of cssClasses
-                # NOTE We don't use classList.toggle(cls, force) here, because IE11 doesn't
-                #      implement it properly.
-                if apply
-                  item.classList.add(cls)
-                else
-                  item.classList.remove(cls)
             else
               item.classList.add('hidden')
 
@@ -321,44 +214,34 @@ angular.module('onoSendai')
               break
 
             item = gridHeaders[i]
-
-            if scope.layoutMode == 'grid'
-              item.classList.remove('invisible')
-              item.style[transformProperty] =
-                "translate3d(#{layout.x}px, #{layout.y}px, 0)"
-            else
-              item.classList.add('invisible')
+            item.classList.remove('invisible')
+            item.style[transformProperty] =
+              "translate3d(#{layout.x}px, #{layout.y}px, 0)"
 
         return
-
 
       # Downscales the images if required, runs the current layout algorithm, then upscales the
       # images back to their original sizing.
       layoutNow = (scaleImages = false) ->
+        # No point in doing any work if nobody sees it
+        if element.is(':hidden')
+          return
+
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
         # zoom start/end)
-        scalePromise =
-          if scaleImages
-            downscaleItems()
-          else
-            $q.when()
-
-        # Determines the layout function based on the mode we're in
-        layoutFn =
-          if scope.layoutMode is 'grid'
-            performGridLayout
-          else
-            performDetailLayout
-
-        # Chain it all together
-        scalePromise
-          .then(layoutFn)
-          .then(->
-            if scaleImages
-              upscaleItems())
+        if scaleImages
+          downscaleItems().then(performGridLayout).then(upscaleItems)
+        else
+          performGridLayout()
 
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
+
+      # Reacts to messages sent from above triggering layouts
+      scope.$on 'layout', ->
+        $timeout ->
+          hasContainerChangedWidth()
+          layoutNow(true)
 
 
       # *~*~*~*~ SCROLLING
@@ -407,10 +290,10 @@ angular.module('onoSendai')
       # *~*~*~*~ SCALING
 
       isUpscaleRequired = ->
-        scope.zoom > 0.35 or scope.selection?
+        scope.zoom > 0.35
 
       upscaleTo = ->
-        if scope.zoom > 0.5 or scope.selection?
+        if scope.zoom > 0.6
           1
         else if scope.zoom > 0.35
           2
@@ -459,20 +342,6 @@ angular.module('onoSendai')
 
       # *~*~*~*~ SELECTION AND QUERY MODE
 
-      scope.$watch('layoutMode', layoutModeChanged = (newVal, oldVal) ->
-        if newVal == oldVal
-          return
-        layoutNow(true))
-
-      scope.$watch('selection', selectionChanged = (newVal, oldVal) ->
-        if newVal
-          $log.debug 'Item selected.'
-        else
-          $log.debug 'No selection.'
-
-        # Only perform scaling if we've changed layout modes
-        layoutNow(false))
-
       firstLayout = true
       scope.$watch('queryResult', queryResultChanged = (newVal) ->
         $log.debug 'Laying out (query)'
@@ -482,11 +351,9 @@ angular.module('onoSendai')
             return
 
           invalidateGridContents(queryResult)
-          layoutPromise = layoutNow(element.hasClass('transitioned') or firstLayout)
+          layoutPromise = layoutNow(firstLayout)
+          scrollToTop()
           firstLayout = false
-
-          if scope.layoutMode == 'grid'
-            layoutPromise.then(scrollToTop)
         return)
 
 
@@ -510,8 +377,8 @@ angular.module('onoSendai')
       # *~*~*~*~ WINDOW RESIZING
 
       # Watch for resizes that may affect grid size, requiring a re-layout
-      $($window).resize(windowResized = ->
+      $($window).resize windowResized = ->
         if hasContainerChangedWidth()
           $log.debug 'Laying out grid (grid width change)'
-          layoutNow(false))
+          layoutNow(false)
   )

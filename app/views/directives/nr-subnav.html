@@ -4,22 +4,22 @@
     <li><a ng-model="filter.side" btn-radio="'Runner'">Runner</a></li>
   </ul>
 </nav>
-<div class="zoom dropdown" ng-if="cardUI.layoutMode == 'grid'">
+<div class="zoom dropdown" ng-if="cardsUI.layoutMode == 'grid'">
   <span class="control-label">Zoom:</span>
 
   <div class="unabridged">
     <input type="range" step="0.003125" min="0.2" max="1.0"
-           ng-model="cardUI.zoom"
+           ng-model="cardsUI.zoom"
            ng-mousedown="broadcastZoomStart()"
            ng-mouseup="broadcastZoomEnd()">
   </div>
   <div class="abbreviated">
     <button class="btn btn-default dropdown-toggle">
-      {{ (cardUI.zoom * 100).toFixed() }}% <span class="caret"></span>
+      {{ (cardsUI.zoom * 100).toFixed() }}% <span class="caret"></span>
     </button>
     <div class="dropdown-menu">
       <input type="range" step="0.003125" min="0.2" max="1.0"
-             ng-model="cardUI.zoom"
+             ng-model="cardsUI.zoom"
              ng-mousedown="broadcastZoomStart()"
              ng-mouseup="broadcastZoomEnd()">
     </div>

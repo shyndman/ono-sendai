@@ -1,0 +1,235 @@
+card-view {
+  $selected-card-width: 600px;
+
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+
+  // Common card image component
+  .card-image {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 418px;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+    }
+
+    .background {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      border-radius: 16px;
+      background: white;
+    }
+
+    // NOTE
+    // These two contain the next card to be shown in a list, to get around the browser behaviour of "flashing" a
+    // new DOM Image. By keeping the next image in the list, but not visible, the card will not flash when
+    // switching cards.
+    &.next-0, &.prev-0 {
+      display: none;
+    }
+  }
+
+  .selected-card {
+    width: $selected-card-width;
+    height: 100%;
+    padding: 9px 0;
+
+    z-index: $card-current-info-z-index;
+    background: rgba(255, 255, 255, 0.8);
+
+    .card-image {
+      width: 290px;
+      margin-left: 8px;
+    }
+
+    h2.card-name {
+      margin-bottom: 22px;
+
+      .close {
+        opacity: 0.3;
+        line-height: 28px;
+        font-weight: 200;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .favourite {
+        position: relative;
+        top: -2px;
+        left: 4px;
+
+        color: #ccc;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          color: #999;
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        &.on {
+          color: #ffd76e;
+          -webkit-text-stroke: 1px #e9c15a;
+          &.hover {
+            color: #ffd76e;
+          }
+        }
+      }
+    }
+
+    .info {
+      width: 280px;
+      height: 418px;
+      float: right;
+      user-select: all;
+
+      .info-nav {
+        position: absolute;
+        top: 51px;
+        right: 27px;
+      }
+
+      small {
+        margin-left: 3px;
+      }
+
+      .short-cards {
+        color: #b94a48;
+      }
+
+      .links {
+        @extend .list-unstyled;
+
+        clear: both;
+        margin-top: 20px;
+
+        li {
+          margin: 5px 0;
+        }
+
+        i {
+          margin-right: 6px;
+        }
+      }
+
+      cost-to-break-calculator {
+        margin-top: -8px;
+      }
+    }
+
+    .card-pager {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      user-select: none;
+
+      > .card-pager-inner {
+        width: $selected-card-width - 50px;
+        margin: 0 auto;
+        position: relative;
+        left: -10px;
+
+        > .card-count {
+          text-align: center;
+          color: #777;
+        }
+
+        > .prev-card {
+          float: left;
+        }
+
+        > .next-card {
+          float: right;
+        }
+      }
+    }
+  }
+
+
+  // ~-~-~- NEXT / PREVIOUS CARDS
+
+  // A wing is where previous and next cards are shown
+  .wing {
+    flex-grow: 1;
+    position: relative;
+  }
+
+  .card-image.in-wing {
+    position: absolute;
+    top: 50px;
+
+    width: 300px;
+    height: 418px;
+    overflow: visible;
+    cursor: pointer;
+
+    perspective: 2000px;
+    transform: scale(0.7);
+    transform-style: preserve-3d;
+
+    .background {
+      transform-origin: 0 0;
+    }
+
+    &.prev {
+      img {
+        transform: translateZ(1px) translateX(1px) rotateY(40deg);
+        transform-origin: 0 150px;
+      }
+
+      .background {
+        transform: rotateY(40deg);
+      }
+    }
+
+    &.next {
+      img {
+        transform-origin: 100% 0;
+        transform: translateZ(1px) translateX(-1px) rotateY(-40deg);
+      }
+
+      .background {
+        transform-origin: 100% 0;
+        transform: rotateY(-40deg);
+      }
+    }
+
+    $before-after-count: 8;
+    $base-z: 10;
+    $before-after-offset: 40px;
+    $opacity-factor: 0.93;
+    $opacities: 0.93 0.7 0.6 0.5 0.4 0.3 0.2 0;
+
+    @for $i from 1 through $before-after-count {
+      &.next-#{ $i } {
+        left: -75px + ($i - 1) * $before-after-offset;
+        z-index: #{ $base-z - $i } !important;
+        opacity: nth($opacities, $i);
+      }
+    }
+
+    @for $i from 1 through $before-after-count {
+      &.prev-#{ $i } {
+        right: -75px + ($i - 1) * $before-after-offset;
+        z-index: #{ $base-z - $i } !important;
+        opacity: nth($opacities, $i);
+      }
+    }
+  }
+}
