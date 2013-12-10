@@ -7,31 +7,35 @@ class SearchService
       lunr.Pipeline.registerFunction fn, lbl
 
     lunr.tokenizer = @_tokenize
-    @_index = lunr ->
+    @_fullIndex = lunr ->
       @pipeline.before (->), fn for { fn } in filters
       @ref 'title'
       @field 'title', boost: 10
       @field 'type'
       @field 'subtype'
       @field 'text'
-      # TODO Figure out whether this should stay, because it can often lead to search results that don't make sense
-      # @field 'setname'
+      @field 'setname'
 
-    # DEBUG
-    window.searchIndex = @_index
-    window.search = @_index.search.bind(@_index)
+    @_titleIndex = lunr ->
+      @pipeline.before (->), fn for { fn } in filters
+      @ref 'title'
+      @field 'title'
 
   indexCards: (@cards) =>
     # Store a map of cards by their title, for later mapping
     @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title'), cards))
-    @_index.add(card) for card in @cards
 
-    # Remove the stop word filter, so that we can do prefix matching properly
-    @_index.pipeline.remove(lunr.stopWordFilter)
+    for index in [ @_titleIndex, @_fullIndex ]
+      for card in @cards
+        index.add(card)
+
+      # Remove the stop word filter, so that we can do prefix matching properly
+      index.pipeline.remove(lunr.stopWordFilter)
 
   # Retuns a promise that will resolve to an array of cards matching the provided query.
-  search: (query) =>
-    @_mapResultsToCards(@_index.search(query))
+  search: (query, byTitle = false) =>
+    index = if byTitle then @_titleIndex else @_fullIndex
+    @_mapResultsToCards(index.search(query))
 
   _mapResultsToCards: (results) =>
     if !results?
