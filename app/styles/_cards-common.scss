@@ -41,6 +41,9 @@
     font-weight: 200;
     letter-spacing: 0.4px;
 
+    transition: border-bottom 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+
     @include faction-header($neutral-color);
 
 
@@ -91,6 +94,7 @@
       > li > a {
         padding: 5px 5px 4px 5px;
         color: #555;
+        transition: border-color 0.2s ease-in-out;
 
         &:hover {
           background-color: #f9f9f9;
