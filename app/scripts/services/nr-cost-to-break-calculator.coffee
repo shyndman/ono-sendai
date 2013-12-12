@@ -172,9 +172,9 @@ class BreakScripts
     interaction.breakerCondition = "= #{ ice.strength }"
     breaker.strength = ice.strength
 
-  crypsis: (interaction, breaker, strengthCost, breakCost, ice) =>
+  genericAI: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
-      return true # break complete
+          return true # break complete
 
   # If breakerStrength is specified, Darwin
   darwin: (interaction, breaker, strengthCost, breakCost, ice, { breakerStrength } = {}) =>

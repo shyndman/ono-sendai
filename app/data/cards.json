@@ -1042,7 +1042,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "breakscript": "crypsis",
+      "breakscript": "genericAI",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/crypsis-core",
       "cost": 5,
       "faction": "Neutral",
@@ -7969,6 +7969,7 @@
         "credits": 2,
         "subroutines": 1
       },
+      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI - Ca\u00efssa",
       "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
       "title": "Knight",
