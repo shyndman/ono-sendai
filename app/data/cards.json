@@ -7965,6 +7965,10 @@
       "setname": "Mala Tempora",
       "side": "Runner",
       "strength": 7,
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
       "subtype": "Icebreaker - AI - Ca\u00efssa",
       "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
       "title": "Knight",
@@ -8050,6 +8054,11 @@
       "setname": "Mala Tempora",
       "side": "Runner",
       "strength": 4,
+      "strengthcost": 1,
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Torch",
