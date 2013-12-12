@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('onoSendaiApp')
   .directive('uiAutocomplete', () ->
     template: '<div></div>'
