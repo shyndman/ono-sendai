@@ -23,11 +23,13 @@ angular.module('onoSendai')
           )
 
         # Stats!
+
         credits = _.filter(_.map($scope.opponents, (opponent) -> opponent.interaction.creditsSpent), (credits) -> credits?)
+
         $scope.averageCredits = _.average(credits)
-        $scope.medianCredits = _.median(credits)
-        $scope.brokenCount = _.filter($scope.opponents, (opponent) -> opponent.interaction.broken).length
-        $scope.unbrokenCount = $scope.opponents.length - $scope.brokenCount
+        $scope.medianCredits  = _.median(credits)
+        $scope.brokenCount    = _.filter($scope.opponents, (opponent) -> opponent.interaction.broken).length
+        $scope.unbrokenCount  = $scope.opponents.length - $scope.brokenCount
 
       recalcCostToBreak = ->
         $scope.costToBreakInfo =
