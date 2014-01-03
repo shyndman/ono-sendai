@@ -99,8 +99,6 @@ angular.module('onoSendai')
       isGridHeader = (item) ->
         item.classList.contains('grid-header')
 
-      # Returns a promise that is resolved when any transitions complete, or undefined if there
-      # is no transition.
       performGridLayout = ->
         items = gridItemsAndHeaders
         if !items? or !items.length
