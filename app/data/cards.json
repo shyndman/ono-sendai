@@ -7900,7 +7900,7 @@
     },
     {
       "baselink": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/reina-roja-freedom-fighter-mala-tempora",
       "code": "04041",
       "faction": "Anarch",
       "flavor": "\"Analyzing the board won't help. Your mistake was thinking we're playing the same game.\"",
@@ -7909,7 +7909,7 @@
       "influencelimit": 15,
       "last-modified": "2013-11-03T16:34:41-05:00",
       "minimumdecksize": 45,
-      "nr_db_url": "http://netrunnerdb.com/en/card/04041",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04041",
       "number": 41,
       "quantity": 3,
       "reddit_cotds": [
@@ -7929,7 +7929,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/deep-red-mala-tempora",
       "code": "04042",
       "cost": 2,
       "faction": "Anarch",
@@ -7937,7 +7937,7 @@
       "illustrator": "Christina Davis",
       "imagesrc": "/images/cards/deep-red.png",
       "last-modified": "2013-11-03T16:34:41-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04042",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04042",
       "number": 42,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -7949,7 +7949,7 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/knight-mala-tempora",
       "code": "04043",
       "cost": 2,
       "faction": "Anarch",
@@ -7959,7 +7959,7 @@
       "imagesrc": "/images/cards/knight.png",
       "last-modified": "2013-11-03T16:34:41-05:00",
       "memoryunits": 1,
-      "nr_db_url": "http://netrunnerdb.com/en/card/04043",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04043",
       "number": 43,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -7977,7 +7977,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/running-interference-mala-tempora",
       "code": "04044",
       "cost": 4,
       "faction": "Criminal",
@@ -7985,7 +7985,7 @@
       "illustrator": "Liiga Smilshkalne",
       "imagesrc": "/images/cards/running-interference.png",
       "last-modified": "2013-12-09T06:48:53-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04044",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04044",
       "number": 44,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -7997,7 +7997,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/expert-schedule-analyzer-mala-tempora",
       "code": "04045",
       "cost": 1,
       "faction": "Criminal",
@@ -8007,7 +8007,7 @@
       "imagesrc": "/images/cards/expert-schedule-analyzer.png",
       "last-modified": "2013-12-09T03:53:26-05:00",
       "memoryunits": 1,
-      "nr_db_url": "http://netrunnerdb.com/en/card/04045",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04045",
       "number": 45,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8018,7 +8018,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/grifter-mala-tempora",
       "code": "04046",
       "cost": 2,
       "faction": "Criminal",
@@ -8027,7 +8027,7 @@
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/grifter.png",
       "last-modified": "2013-12-09T03:58:01-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04046",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04046",
       "number": 46,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8039,7 +8039,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/torch-mala-tempora",
       "code": "04047",
       "cost": 9,
       "faction": "Shaper",
@@ -8049,7 +8049,7 @@
       "imagesrc": "/images/cards/torch.png",
       "last-modified": "2013-12-12T12:13:33-05:00",
       "memoryunits": 1,
-      "nr_db_url": "http://netrunnerdb.com/en/card/04047",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04047",
       "number": 47,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8067,7 +8067,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/woman-in-the-red-dress-mala-tempora",
       "code": "04048",
       "cost": 3,
       "faction": "Shaper",
@@ -8076,7 +8076,7 @@
       "illustrator": "Bruno Balixa",
       "imagesrc": "/images/cards/woman-in-the-red-dress.png",
       "last-modified": "2013-12-12T12:06:43-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04048",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04048",
       "number": 48,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8088,7 +8088,7 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/raymond-flint-mala-tempora",
       "code": "04049",
       "cost": 2,
       "faction": "Neutral",
@@ -8097,7 +8097,7 @@
       "illustrator": "Matt Zeilinger",
       "imagesrc": "/images/cards/raymond-flint.png",
       "last-modified": "2013-12-09T04:16:26-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04049",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04049",
       "number": 49,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8109,15 +8109,16 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/isabel-mcguire-mala-tempora",
       "code": "04050",
       "cost": 0,
       "faction": "Haas-Bioroid",
       "factioncost": 1,
+      "flavor": "Even with a virtual ball, it is considered rude not to yell \"Fore!\"",
       "illustrator": "Matt Zeilinger",
       "imagesrc": "/images/cards/isabel-mcguire.png",
-      "last-modified": "2013-12-09T04:20:05-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04050",
+      "last-modified": "2013-12-16T04:20:51-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04050",
       "number": 50,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8130,7 +8131,7 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/hudson-1-0-mala-tempora",
       "code": "04051",
       "cost": 3,
       "faction": "Haas-Bioroid",
@@ -8138,7 +8139,7 @@
       "flavor": "I'm not here to play games. The game is over.",
       "imagesrc": "/images/cards/hudson-10.png",
       "last-modified": "2013-12-09T04:23:01-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04051",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04051",
       "number": 51,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8151,7 +8152,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/accelerated-diagnostics-mala-tempora",
       "code": "04052",
       "cost": 1,
       "faction": "Haas-Bioroid",
@@ -8160,7 +8161,7 @@
       "illustrator": "Gong Studios",
       "imagesrc": "/images/cards/accelerated-diagnostics.png",
       "last-modified": "2013-12-09T04:26:04-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04052",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04052",
       "number": 52,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8173,12 +8174,12 @@
     {
       "advancementcost": 3,
       "agendapoints": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/unorthodox-predictions-mala-tempora",
       "code": "04053",
       "faction": "Jinteki",
       "imagesrc": "/images/cards/unorthodox-predictions.png",
       "last-modified": "2013-12-09T04:29:00-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04053",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04053",
       "number": 53,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8190,7 +8191,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/sundew-mala-tempora",
       "code": "04054",
       "cost": 2,
       "faction": "Jinteki",
@@ -8199,7 +8200,7 @@
       "illustrator": "Anna Ignatieva",
       "imagesrc": "/images/cards/sundew.png",
       "last-modified": "2013-11-03T16:34:41-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04054",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04054",
       "number": 54,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8211,7 +8212,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/city-surveillance-mala-tempora",
       "code": "04055",
       "cost": 5,
       "faction": "NBN",
@@ -8219,7 +8220,7 @@
       "flavor": "Who watches the watcher? Probably another camera.",
       "imagesrc": "/images/cards/city-surveillance.png",
       "last-modified": "2013-11-03T16:34:41-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04055",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04055",
       "number": 55,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8231,14 +8232,14 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/snoop-mala-tempora",
       "code": "04056",
       "cost": 6,
       "faction": "NBN",
       "factioncost": 2,
       "imagesrc": "/images/cards/snoop.png",
       "last-modified": "2013-12-09T04:34:33-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04056",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04056",
       "number": 56,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8251,7 +8252,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ireress-mala-tempora",
       "code": "04057",
       "cost": 0,
       "faction": "Weyland Consortium",
@@ -8259,7 +8260,7 @@
       "flavor": "Say it really fast.",
       "imagesrc": "/images/cards/ireress.png",
       "last-modified": "2013-12-09T04:47:25-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04057",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04057",
       "number": 57,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8272,7 +8273,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/power-shutdown-mala-tempora",
       "code": "04058",
       "cost": 1,
       "faction": "Weyland Consortium",
@@ -8280,7 +8281,7 @@
       "illustrator": "Gong Studios",
       "imagesrc": "/images/cards/power-shutdown.png",
       "last-modified": "2013-11-03T16:34:41-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04058",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04058",
       "number": 58,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8292,7 +8293,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/paper-wall-mala-tempora",
       "code": "04059",
       "cost": 0,
       "faction": "Neutral",
@@ -8301,7 +8302,7 @@
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/paper-wall.png",
       "last-modified": "2013-12-09T04:49:34-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04059",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04059",
       "number": 59,
       "quantity": 3,
       "setname": "Mala Tempora",
@@ -8314,7 +8315,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/interns-mala-tempora",
       "code": "04060",
       "cost": 0,
       "faction": "Neutral",
@@ -8322,7 +8323,7 @@
       "flavor": "\"They're the only labor cheaper than clones.\"",
       "imagesrc": "/images/cards/interns.png",
       "last-modified": "2013-12-09T11:12:23-05:00",
-      "nr_db_url": "http://netrunnerdb.com/en/card/04060",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04060",
       "number": 60,
       "quantity": 3,
       "setname": "Mala Tempora",
