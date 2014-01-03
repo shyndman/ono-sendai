@@ -7940,6 +7940,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04042",
       "number": 42,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-13T18:29:02Z",
+          "id": "1st7wn",
+          "title": "[COTD] Deep Red (13 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1st7wn/cotd_deep_red_13_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Console",
@@ -7949,6 +7957,11 @@
       "uniqueness": true
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/knight-mala-tempora",
       "code": "04043",
       "cost": 2,
@@ -7962,14 +7975,17 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04043",
       "number": 43,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-16T17:57:49Z",
+          "id": "1t0rfs",
+          "title": "[COTD] Knight (16 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t0rfs/cotd_knight_16_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "strength": 7,
-      "breakcost": {
-        "credits": 2,
-        "subroutines": 1
-      },
-      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI - Ca\u00efssa",
       "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
       "title": "Knight",
@@ -7988,6 +8004,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04044",
       "number": 44,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-17T18:47:37Z",
+          "id": "1t3u25",
+          "title": "[COTD] Running Interference (17 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t3u25/cotd_running_interference_17_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Double - Run",
@@ -8010,6 +8034,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04045",
       "number": 45,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-18T19:12:00Z",
+          "id": "1t6qv1",
+          "title": "[COTD] Expert Schedule Analyzer (18 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t6qv1/cotd_expert_schedule_analyzer_18_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "text": "[Click]: Make a run on HQ. If successful, instead of accessing cards, you may reveal all cards in HQ.",
@@ -8030,6 +8062,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04046",
       "number": 46,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-19T17:32:13Z",
+          "id": "1t9bkg",
+          "title": "[COTD] Grifter (19 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t9bkg/cotd_grifter_19_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Virtual",
@@ -8039,6 +8079,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/torch-mala-tempora",
       "code": "04047",
       "cost": 9,
@@ -8052,14 +8096,18 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04047",
       "number": 47,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-20T19:00:49Z",
+          "id": "1tccf6",
+          "title": "[COTD] Torch (20 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tccf6/cotd_torch_20_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "strength": 4,
       "strengthcost": 1,
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Torch",
@@ -8079,6 +8127,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04048",
       "number": 48,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-23T18:25:02Z",
+          "id": "1tjmni",
+          "title": "[COTD] Woman in the Red Dress (23 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tjmni/cotd_woman_in_the_red_dress_23_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Connection - Virtual",
@@ -8100,6 +8156,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04049",
       "number": 49,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-24T17:57:34Z",
+          "id": "1tmaak",
+          "title": "[COTD] Raymond Flint (24 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tmaak/cotd_raymond_flint_24_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Connection",
@@ -8121,6 +8185,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04050",
       "number": 50,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-26T21:33:28Z",
+          "id": "1trfgk",
+          "title": "[COTD] Isabel McGuire (26 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1trfgk/cotd_isabel_mcguire_26_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "subtype": "Executive",
@@ -8142,6 +8214,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04051",
       "number": 51,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-27T21:38:22Z",
+          "id": "1ttzxw",
+          "title": "[COTD] Hudson 1.0 (27 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ttzxw/cotd_hudson_10_27_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "strength": 5,
@@ -8164,6 +8244,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04052",
       "number": 52,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-30T18:56:19Z",
+          "id": "1u16s4",
+          "title": "[COTD] Accelerated Diagnostics (30 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u16s4/cotd_accelerated_diagnostics_30_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "text": "Look at the top 3 cards of R&D. If any of those are operations, you may play them (paying their play cost), ignoring any additional costs. Trash the rest of the unplayed cards you looked at.",
@@ -8182,6 +8270,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04053",
       "number": 53,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-31T19:07:05Z",
+          "id": "1u3xd6",
+          "title": "[COTD] Unorthodox Predictions (31 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u3xd6/cotd_unorthodox_predictions_31_dec_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "subtype": "Security",
@@ -8203,6 +8299,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04054",
       "number": 54,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-02T00:27:27Z",
+          "id": "1u6xg8",
+          "title": "[COTD] Sundew (1 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u6xg8/cotd_sundew_1_jan_2014/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "text": "The first time the Runner spends at least 1 [Click] on his or her turn, gain 2[Credits] unless the Runner just initiated a run on this server.",
@@ -8223,6 +8327,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04055",
       "number": 55,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-02T18:37:42Z",
+          "id": "1u8vlg",
+          "title": "[COTD] City Surveillance (2 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u8vlg/cotd_city_surveillance_2_jan_2014/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "text": "When the Runner's turn begins, give the Runner 1 tag unless he or she pays 1[Credits].",
