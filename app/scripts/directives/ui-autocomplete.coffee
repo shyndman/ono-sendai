@@ -1,4 +1,4 @@
-angular.module('onoSendaiApp')
+angular.module('onoSendai')
   .directive('uiAutocomplete', () ->
     template: '<div></div>'
     restrict: 'E'
