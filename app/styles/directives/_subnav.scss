@@ -117,7 +117,7 @@ nr-subnav {
 }
 
 // Hacks for Firefox. I repent to the god of CSS.
-@-moz-document url-prefix() {
+@include firefox-only {
   nr-subnav {
     .groupings {
       position: relative;
