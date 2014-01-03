@@ -115,3 +115,25 @@ nr-subnav {
     border: none;
   }
 }
+
+// Hacks for Firefox. I repent to the god of CSS.
+@-moz-document url-prefix() {
+  nr-subnav {
+    .groupings {
+      position: relative;
+      top: -1px;
+    }
+
+    .zoom {
+      .control-label {
+        position: relative;
+        top: -3px;
+      }
+
+      .unabridged input[type=range] {
+        top: 6px !important;
+      }
+    }
+  }
+}
+
