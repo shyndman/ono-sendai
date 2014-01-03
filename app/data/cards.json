@@ -1042,7 +1042,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "breakscript": "crypsis",
+      "breakscript": "genericAI",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/crypsis-core",
       "cost": 5,
       "faction": "Neutral",
@@ -7831,6 +7831,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04038",
       "number": 38,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-03T18:40:30Z",
+          "id": "1s0ebt",
+          "title": "[COTD] Off The Grid (3 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1s0ebt/cotd_off_the_grid_3_dec_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "text": "Install only in a remote server.\nThe Runner cannot initiate a run on this server. \nWhenever the Runner makes a successful run on HQ, trash Off the Grid.",
@@ -7850,6 +7858,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04039",
       "number": 39,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-04T18:10:35Z",
+          "id": "1s3dmu",
+          "title": "[COTD] Profiteering (4 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1s3dmu/cotd_profiteering_4_dec_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "text": "When you score Profiteering, take up to 3 bad publicity. Gain 5[Credits] for each bad publicity taken.",
@@ -7867,12 +7883,568 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04040",
       "number": 40,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-05T18:56:08Z",
+          "id": "1s6g6y",
+          "title": "[COTD] Restructure (5 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1s6g6y/cotd_restructure_5_dec_2013/"
+        }
+      ],
       "setname": "Second Thoughts",
       "side": "Corp",
       "subtype": "Transaction",
       "text": "Gain 15[Credits].",
       "title": "Restructure",
       "type": "Operation"
+    },
+    {
+      "baselink": 1,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/reina-roja-freedom-fighter-mala-tempora",
+      "code": "04041",
+      "faction": "Anarch",
+      "flavor": "\"Analyzing the board won't help. Your mistake was thinking we're playing the same game.\"",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/reina-roja-freedom-fighter.png",
+      "influencelimit": 15,
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04041",
+      "number": 41,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-12T18:13:49Z",
+          "id": "1sqd9q",
+          "title": "[COTD] Reina Roja: Freedom Fighter (12 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1sqd9q/cotd_reina_roja_freedom_fighter_12_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Cyborg - G-mod",
+      "text": "The rez cost of the first piece of ice rezzed each turn is increased by 1.",
+      "title": "Reina Roja: Freedom Fighter",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/deep-red-mala-tempora",
+      "code": "04042",
+      "cost": 2,
+      "faction": "Anarch",
+      "factioncost": 1,
+      "illustrator": "Christina Davis",
+      "imagesrc": "/images/cards/deep-red.png",
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04042",
+      "number": 42,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-13T18:29:02Z",
+          "id": "1st7wn",
+          "title": "[COTD] Deep Red (13 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1st7wn/cotd_deep_red_13_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Console",
+      "text": "+3[Memory Unit]\r\nUse the MU on Deep Red only for <strong>Ca\u00efssa</strong> programs.\r\nWhenever you install a <strong>Ca\u00efssa</strong> program, you may trigger its [Click] ability without spending [Click].\r\nLimit 1 <strong>console</strong> per player.",
+      "title": "Deep Red",
+      "type": "Hardware",
+      "uniqueness": true
+    },
+    {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/knight-mala-tempora",
+      "code": "04043",
+      "cost": 2,
+      "faction": "Anarch",
+      "factioncost": 2,
+      "flavor": "'Maneuver warfare' is a doctrine that advocates keeping an enemy off-balance. It works just as well in cyberspace as in reality.",
+      "illustrator": "Christina Davis",
+      "imagesrc": "/images/cards/knight.png",
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04043",
+      "number": 43,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-16T17:57:49Z",
+          "id": "1t0rfs",
+          "title": "[COTD] Knight (16 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t0rfs/cotd_knight_16_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "strength": 7,
+      "subtype": "Icebreaker - AI - Ca\u00efssa",
+      "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
+      "title": "Knight",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/running-interference-mala-tempora",
+      "code": "04044",
+      "cost": 4,
+      "faction": "Criminal",
+      "factioncost": 4,
+      "illustrator": "Liiga Smilshkalne",
+      "imagesrc": "/images/cards/running-interference.png",
+      "last-modified": "2013-12-09T06:48:53-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04044",
+      "number": 44,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-17T18:47:37Z",
+          "id": "1t3u25",
+          "title": "[COTD] Running Interference (17 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t3u25/cotd_running_interference_17_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Double - Run",
+      "text": "As an additional cost to play this event, spend [Click].\r\nMake a run. During this run, the Corp must pay X[Credits] as an additional cost to rez each piece of ice, where X is the rez cost of that ice.",
+      "title": "Running Interference",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/expert-schedule-analyzer-mala-tempora",
+      "code": "04045",
+      "cost": 1,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "Knowing is half the battle. The easy half, anyway.",
+      "illustrator": "Anna Ignatieva",
+      "imagesrc": "/images/cards/expert-schedule-analyzer.png",
+      "last-modified": "2013-12-09T03:53:26-05:00",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04045",
+      "number": 45,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-18T19:12:00Z",
+          "id": "1t6qv1",
+          "title": "[COTD] Expert Schedule Analyzer (18 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t6qv1/cotd_expert_schedule_analyzer_18_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "text": "[Click]: Make a run on HQ. If successful, instead of accessing cards, you may reveal all cards in HQ.",
+      "title": "Expert Schedule Analyzer",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/grifter-mala-tempora",
+      "code": "04046",
+      "cost": 2,
+      "faction": "Criminal",
+      "factioncost": 1,
+      "flavor": "With modern secretaries, incoming data can be filtered, sorted, tagged, and even sold without the intervention of a human user. In fact, given the tetrabytes of data that might flood into a rig on a successful run, a human user could be considered useless ornamentation.",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/grifter.png",
+      "last-modified": "2013-12-09T03:58:01-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04046",
+      "number": 46,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-19T17:32:13Z",
+          "id": "1t9bkg",
+          "title": "[COTD] Grifter (19 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1t9bkg/cotd_grifter_19_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Virtual",
+      "text": "When you turn ends, gain 1[Credits] if you made a successful run this turn; otherwise, trash Grifter.",
+      "title": "Grifter",
+      "type": "Resource",
+      "uniqueness": false
+    },
+    {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/torch-mala-tempora",
+      "code": "04047",
+      "cost": 9,
+      "faction": "Shaper",
+      "factioncost": 4,
+      "flavor": "The core of the grid. A blinding sphere of light, teeming with energy, crackling with flame. Beyond were only twinkling bits of data in a field of darkness. No hacker dared approach the core, except one. He came back with a flare of code, a torch that burned with the fire of the core itself. The dark places of cyberspace were dark no more, and the legend of g00ru was born.",
+      "illustrator": "Mike Nesbitt",
+      "imagesrc": "/images/cards/torch.png",
+      "last-modified": "2013-12-12T12:13:33-05:00",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04047",
+      "number": 47,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-20T19:00:49Z",
+          "id": "1tccf6",
+          "title": "[COTD] Torch (20 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tccf6/cotd_torch_20_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "strength": 4,
+      "strengthcost": 1,
+      "subtype": "Icebreaker - Decoder",
+      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n1[Credits]: +1 strength.",
+      "title": "Torch",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/woman-in-the-red-dress-mala-tempora",
+      "code": "04048",
+      "cost": 3,
+      "faction": "Shaper",
+      "factioncost": 4,
+      "flavor": "Looks can be deceiving.",
+      "illustrator": "Bruno Balixa",
+      "imagesrc": "/images/cards/woman-in-the-red-dress.png",
+      "last-modified": "2013-12-12T12:06:43-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04048",
+      "number": 48,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-23T18:25:02Z",
+          "id": "1tjmni",
+          "title": "[COTD] Woman in the Red Dress (23 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tjmni/cotd_woman_in_the_red_dress_23_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Connection - Virtual",
+      "text": "When your turn begins, reveal the top card of R&D. The Corp may draw that card.",
+      "title": "Woman in the Red Dress",
+      "type": "Resource",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/raymond-flint-mala-tempora",
+      "code": "04049",
+      "cost": 2,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "flavor": "\"Flint? He's a burnout. A useless, alcoholic waste of Department time and money.\" -Louis Blaine, NAPD Detective.\r\n\"One of the best detectives on my PI list.\" -Richard Harrison, NAPD Captain.",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/raymond-flint.png",
+      "last-modified": "2013-12-09T04:16:26-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04049",
+      "number": 49,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-24T17:57:34Z",
+          "id": "1tmaak",
+          "title": "[COTD] Raymond Flint (24 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1tmaak/cotd_raymond_flint_24_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Runner",
+      "subtype": "Connection",
+      "text": "Whenever the Corp takes at least 1 bad publicity, access 1 card from HQ.\r\n[Trash]: Expose 1 card.",
+      "title": "Raymond Flint",
+      "type": "Resource",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/isabel-mcguire-mala-tempora",
+      "code": "04050",
+      "cost": 0,
+      "faction": "Haas-Bioroid",
+      "factioncost": 1,
+      "flavor": "Even with a virtual ball, it is considered rude not to yell \"Fore!\"",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/isabel-mcguire.png",
+      "last-modified": "2013-12-16T04:20:51-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04050",
+      "number": 50,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-26T21:33:28Z",
+          "id": "1trfgk",
+          "title": "[COTD] Isabel McGuire (26 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1trfgk/cotd_isabel_mcguire_26_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "subtype": "Executive",
+      "text": "[Click]: Add 1 of your installed cards to HQ.",
+      "title": "Isabel McGuire",
+      "trash": 3,
+      "type": "Asset",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/hudson-1-0-mala-tempora",
+      "code": "04051",
+      "cost": 3,
+      "faction": "Haas-Bioroid",
+      "factioncost": 1,
+      "flavor": "I'm not here to play games. The game is over.",
+      "imagesrc": "/images/cards/hudson-10.png",
+      "last-modified": "2013-12-09T04:23:01-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04051",
+      "number": 51,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-27T21:38:22Z",
+          "id": "1ttzxw",
+          "title": "[COTD] Hudson 1.0 (27 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ttzxw/cotd_hudson_10_27_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "strength": 5,
+      "subtype": "Code Gate - Bioroid",
+      "text": "The Runner may spend [Click] to break any subroutine on Hudson 1.0.\r\n[Subroutine] The Runner cannot access more than 1 card during this run.\r\n[Subroutine] The Runner cannot access more than 1 card during this run.",
+      "title": "Hudson 1.0",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/accelerated-diagnostics-mala-tempora",
+      "code": "04052",
+      "cost": 1,
+      "faction": "Haas-Bioroid",
+      "factioncost": 1,
+      "flavor": "\"I'm getting a reading that is... off the charts. No, it crashed the charts. That counts as off, right?\"",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/accelerated-diagnostics.png",
+      "last-modified": "2013-12-09T04:26:04-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04052",
+      "number": 52,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-30T18:56:19Z",
+          "id": "1u16s4",
+          "title": "[COTD] Accelerated Diagnostics (30 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u16s4/cotd_accelerated_diagnostics_30_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "text": "Look at the top 3 cards of R&D. If any of those are operations, you may play them (paying their play cost), ignoring any additional costs. Trash the rest of the unplayed cards you looked at.",
+      "title": "Accelerated Diagnostics",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 3,
+      "agendapoints": 1,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/unorthodox-predictions-mala-tempora",
+      "code": "04053",
+      "faction": "Jinteki",
+      "imagesrc": "/images/cards/unorthodox-predictions.png",
+      "last-modified": "2013-12-09T04:29:00-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04053",
+      "number": 53,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2013-12-31T19:07:05Z",
+          "id": "1u3xd6",
+          "title": "[COTD] Unorthodox Predictions (31 Dec 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u3xd6/cotd_unorthodox_predictions_31_dec_2013/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "subtype": "Security",
+      "text": "When you score Unorthodox Predictions, choose <strong>sentry</strong>, <strong>code gate</strong> or <strong>barrier</strong>. Subroutines on ice of the chosen type cannot be broken until the beginning of your next turn.",
+      "title": "Unorthodox Predictions",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/sundew-mala-tempora",
+      "code": "04054",
+      "cost": 2,
+      "faction": "Jinteki",
+      "factioncost": 3,
+      "flavor": "As beautiful as it is dangerous. And it's plenty dangerous.",
+      "illustrator": "Anna Ignatieva",
+      "imagesrc": "/images/cards/sundew.png",
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04054",
+      "number": 54,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-02T00:27:27Z",
+          "id": "1u6xg8",
+          "title": "[COTD] Sundew (1 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u6xg8/cotd_sundew_1_jan_2014/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "text": "The first time the Runner spends at least 1 [Click] on his or her turn, gain 2[Credits] unless the Runner just initiated a run on this server.",
+      "title": "Sundew",
+      "trash": 2,
+      "type": "Asset",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/city-surveillance-mala-tempora",
+      "code": "04055",
+      "cost": 5,
+      "faction": "NBN",
+      "factioncost": 4,
+      "flavor": "Who watches the watcher? Probably another camera.",
+      "imagesrc": "/images/cards/city-surveillance.png",
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04055",
+      "number": 55,
+      "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-02T18:37:42Z",
+          "id": "1u8vlg",
+          "title": "[COTD] City Surveillance (2 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1u8vlg/cotd_city_surveillance_2_jan_2014/"
+        }
+      ],
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "text": "When the Runner's turn begins, give the Runner 1 tag unless he or she pays 1[Credits].",
+      "title": "City Surveillance",
+      "trash": 3,
+      "type": "Asset",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/snoop-mala-tempora",
+      "code": "04056",
+      "cost": 6,
+      "faction": "NBN",
+      "factioncost": 2,
+      "imagesrc": "/images/cards/snoop.png",
+      "last-modified": "2013-12-09T04:34:33-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04056",
+      "number": 56,
+      "quantity": 3,
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "strength": 6,
+      "subtype": "Sentry - Tracer",
+      "text": "When the Runner encounters Snoop, reveal all cards in the Runner's grip.\r\n<strong>Hosted power counter:</strong> Reveal all cards in the Runner's grip. Trash 1 of those cards.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, place 1 power counter on Snoop.",
+      "title": "Snoop",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ireress-mala-tempora",
+      "code": "04057",
+      "cost": 0,
+      "faction": "Weyland Consortium",
+      "factioncost": 1,
+      "flavor": "Say it really fast.",
+      "imagesrc": "/images/cards/ireress.png",
+      "last-modified": "2013-12-09T04:47:25-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04057",
+      "number": 57,
+      "quantity": 3,
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "strength": 2,
+      "subtype": "Code Gate",
+      "text": "Ireress gains \"[Subroutine] The Runner loses 1[Credits]\" for each bad publicity you have.",
+      "title": "Ireress",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/power-shutdown-mala-tempora",
+      "code": "04058",
+      "cost": 1,
+      "faction": "Weyland Consortium",
+      "factioncost": 2,
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/power-shutdown.png",
+      "last-modified": "2013-11-03T16:34:41-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04058",
+      "number": 58,
+      "quantity": 3,
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "subtype": "Gray Ops",
+      "text": "Play only if the Runner made a run during his or her last turn.\r\nTrash X cards from the top of R&D. The Runner trashes 1 installed program or piece of hardware with an install cost of X or less.",
+      "title": "Power Shutdown",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/paper-wall-mala-tempora",
+      "code": "04059",
+      "cost": 0,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "flavor": "It folds under pressure.",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/paper-wall.png",
+      "last-modified": "2013-12-09T04:49:34-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04059",
+      "number": 59,
+      "quantity": 3,
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "strength": 1,
+      "subtype": "Barrier",
+      "text": "If all subroutines on Paper Wall are broken during a single encounter, trash Paper Wall.\r\n[Subroutine] End the run.",
+      "title": "Paper Wall",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/interns-mala-tempora",
+      "code": "04060",
+      "cost": 0,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "flavor": "\"They're the only labor cheaper than clones.\"",
+      "imagesrc": "/images/cards/interns.png",
+      "last-modified": "2013-12-09T11:12:23-05:00",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04060",
+      "number": 60,
+      "quantity": 3,
+      "setname": "Mala Tempora",
+      "side": "Corp",
+      "subtype": "Double",
+      "text": "As an additional cost to play this operation, spend [Click].\r\nInstall a card from Archives or HQ, ignoring the install cost.",
+      "title": "Interns",
+      "type": "Operation",
+      "uniqueness": false
     }
   ],
   "sets": [

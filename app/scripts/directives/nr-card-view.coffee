@@ -10,6 +10,9 @@ angular.module('onoSendai')
     # ~-~-~- CARD CAROUSEL
 
     invalidateBeforeAfter = ->
+      if !$scope.queryResult
+        return
+
       card = $scope.card
       [ before, after ] = $scope.queryResult.beforeAndAfter(card, 7)
 
