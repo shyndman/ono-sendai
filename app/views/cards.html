@@ -5,8 +5,7 @@
       ng-show="cardsUI.layoutMode == 'grid'"
       query-result="queryResult"
       selection="selectedCard"
-      zoom="cardsUI.zoom"
-      layout-mode="cardsUI.layoutMode">
+      zoom="cardsUI.zoom">
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id"

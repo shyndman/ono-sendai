@@ -1,5 +1,3 @@
-
-
 angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
   .value('filterDefaults',
