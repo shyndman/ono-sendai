@@ -9,11 +9,11 @@ angular.module('onoSendai')
       link: (scope, element, attrs) ->
         scope.$watch('$location.path', -> closeMenu())
         element.parent().bind('click', -> closeMenu())
-        element.bind('click', (event) ->
+        element.bind('click', (e) ->
           elementWasOpen = element == openElement
 
-          event.preventDefault();
-          event.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
 
           closeMenu() if openElement
 
@@ -33,10 +33,10 @@ angular.module('onoSendai')
             focusLink.focus()
 
             openElement = element
-            closeMenu = (event) ->
-              if event
-                event.preventDefault()
-                event.stopPropagation()
+            closeMenu = (e) ->
+              if e
+                e.preventDefault()
+                e.stopPropagation()
 
               $document.unbind('click', closeMenu)
               element.parent().removeClass('open')
