@@ -2,7 +2,7 @@
 #
 # [todo] It's kind of messy to handle the card search in here. The autocomplete should be componentized.
 angular.module('onoSendai')
-  .directive('nrNav', ($document, cardService) ->
+  .directive('nrNav', ($document, cardService, $timeout) ->
     maxResults = 10
 
     templateUrl: '/views/directives/nr-nav.html'
@@ -17,11 +17,13 @@ angular.module('onoSendai')
         if $scope.cardSearchResults?.selectedIndex + 1 < $scope.cardSearchResults.length
           $scope.cardSearchResults.selectedIndex++
 
-      $scope.selectResult = ->
+      # Clears the search field if there is a currently selected result. The page navigation is handled
+      # in the link function below.
+      $scope.clearSearch = ->
         card = $scope.cardSearchResults[$scope.cardSearchResults.selectedIndex]
         if card?
-          $scope.selectCard(card)
-          $scope.cardSearch = ''
+          # Allow other handlers to run
+          $timeout -> $scope.cardSearch = ''
 
       $scope.$watch 'cardSearch', cardSearchChanged = (newVal) ->
         if _.isEmpty(newVal)
@@ -37,10 +39,12 @@ angular.module('onoSendai')
       cardSearch = element.find('.card-search .dropdown-parent')
       searchInput = element.find('.card-search input')
 
+      # Special handling so that we can trigger a link click
+      searchInput.keydown jwerty.event('enter', (e) ->
+        cardSearch.find('.dropdown-menu li.active a').click()
+        e.preventDefault())
+
       scope.$watch 'cardSearchResults', cardSearchResultsChanged = (newVal) ->
         menuOpen = !!newVal.length
         cardSearch.toggleClass('open', menuOpen)
-
-
-
   )
