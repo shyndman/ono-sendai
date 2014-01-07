@@ -1,5 +1,6 @@
 angular.module('onoSendai')
   .controller('CardViewCtrl', ($scope, costToBreakCalculator, userPreferences, urlStateService) ->
+
     # ~-~-~- INITIALIZATION
 
     $scope.cardUI =

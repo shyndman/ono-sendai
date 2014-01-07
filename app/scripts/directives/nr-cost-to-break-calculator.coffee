@@ -25,7 +25,11 @@ angular.module('onoSendai')
 
         # Stats!
 
-        credits = _.filter(_.map($scope.opponents, (opponent) -> opponent.interaction.creditsSpent), (credits) -> credits?)
+        credits = _.filter(
+          _.map($scope.opponents, (opponent) ->
+            opponent.interaction.creditsSpent),
+          (credits) ->
+            credits?)
 
         $scope.averageCredits = _.average(credits)
         $scope.medianCredits  = _.median(credits)

@@ -7,7 +7,7 @@ nr-subnav {
   border-bottom: 1px solid #e7e7e7;
   background: #fbfbfb;
   box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
-  z-index: 1000000;
+  z-index: $zindex-dropdown - 1;
 
   nav {
     flex-grow: 1;

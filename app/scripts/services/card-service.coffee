@@ -156,9 +156,9 @@ class CardService
           resultSet
         )))
 
-  _searchCards: ({ search }) =>
+  _searchCards: ({ search, byTitle }) =>
     if _.trim(search).length > 0
-      @searchService.search(search)
+      @searchService.search(search, byTitle)
     else
       @_cards
 
