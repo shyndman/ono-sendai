@@ -1,5 +1,5 @@
 <div class="wing">
-  <div ng-repeat="card in cardsBefore" class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}" ng-click="selectCard(card)">
+  <div ng-repeat="card in cardsBefore track by card.id" class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}" ng-click="selectCard(card)">
     <img ng-src="{{ card.imagesrc }}" width="300" height="418">
     <div class="background"></div>
   </div>
@@ -109,7 +109,7 @@
   </div>
 </div>
 <div class="wing">
-  <div ng-repeat="card in cardsAfter" class="card-image in-wing next next-{{ $index }}">
+  <div ng-repeat="card in cardsAfter track by card.id" class="card-image in-wing next next-{{ $index }}">
     <img ng-src="{{ card.imagesrc }}" width="300" height="418" ng-click="selectCard(card)">
     <div class="background"></div>
   </div>
