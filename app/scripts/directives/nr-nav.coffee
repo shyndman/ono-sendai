@@ -1,6 +1,7 @@
 # Top navigation. Handles the quick card search.
 #
-# [todo] It's kind of messy to handle the card search in here. The autocomplete should be componentized.
+# [todo] It's kind of messy to handle the card search in here. The autocomplete should be componentized, or possibly
+#        merged with ui-dropdown (they're very similar).
 angular.module('onoSendai')
   .directive('nrNav', ($document, cardService, $timeout) ->
     maxResults = 10
@@ -37,12 +38,25 @@ angular.module('onoSendai')
 
     link: (scope, element) ->
       cardSearch = element.find('.card-search .dropdown-parent')
+      searchResults = cardSearch.find('.dropdown-menu')
       searchInput = element.find('.card-search input')
 
       # Special handling so that we can trigger a link click
       searchInput.keydown jwerty.event('enter', (e) ->
         cardSearch.find('.dropdown-menu li.active a').click()
         e.preventDefault())
+
+      searchInput.focus (e) ->
+        cardSearchResultsChanged(scope.cardSearchResults)
+
+      searchInput.click (e) ->
+        e.stopPropagation()
+
+      searchResults.click (e) ->
+        scope.clearSearch()
+
+      $document.click (e) ->
+        cardSearch.removeClass('open')
 
       scope.$watch 'cardSearchResults', cardSearchResultsChanged = (newVal) ->
         menuOpen = !!newVal.length
