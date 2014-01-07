@@ -20,12 +20,12 @@
     <div class="abbreviated">
       <a href="#"><i class="icon-search"></i></a>
     </div>
-    <div class="dropdown-parent unabridged" filter-input="">
+    <div class="dropdown-parent unabridged">
       <input class="form-control" type="search" placeholder="Card Search" ng-model="cardSearch" ui-hotkey="cmd+F/ctrl+F" ui-keydown="{
                'up'    : { action: 'previousResult()', preventDefault: true },
                'down'  : { action: 'nextResult()', preventDefault: true },
                'enter' : { action: 'clearSearch()', preventDefault: true }
-             }" filter-input="">
+             }" autofocus="" filter-input="">
       <ul class="dropdown-menu">
         <li ng-repeat="card in cardSearchResults" ng-class="{
               active: $index == cardSearchResults.selectedIndex
