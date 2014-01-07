@@ -5,7 +5,7 @@ angular.module('onoSendai')
     closeMenu   = -> # noop, until replaced
 
     {
-      restrict: 'CA'
+      restrict: 'A'
       link: (scope, element, attrs) ->
         scope.$watch('$location.path', -> closeMenu())
         element.parent().bind('click', -> closeMenu())
@@ -48,7 +48,7 @@ angular.module('onoSendai')
 
   # Handles keyboard input for the dropdown menu
   .directive('dropdownMenu', ($document) ->
-    restrict: 'CA'
+    restrict: 'A'
     link: (scope, element, attrs) ->
       parent = element.parent()
       toggle = parent.find('.dropdown-toggle')
