@@ -1,8 +1,10 @@
-$dirty-color: #E59409; // TODO Integrate
-
 .sidebar {
   @extend .scrollable;
   user-select: none;
+}
+
+input.has-input, .has-input input, .has-input .select2-container {
+  background: #C2E4FF;
 }
 
 #filter-bar {
