@@ -8354,6 +8354,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04056",
       "number": 56,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-03T18:45:27Z",
+          "id": "1ubu1u",
+          "title": "[COTD] Snoop (Jan 3 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ubu1u/cotd_snoop_jan_3_2014/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "strength": 6,
@@ -8375,6 +8383,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04057",
       "number": 57,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-06T17:40:41Z",
+          "id": "1ujujf",
+          "title": "[COTD] Ireress (Jan 6 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ujujf/cotd_ireress_jan_6_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "strength": 2,
