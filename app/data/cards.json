@@ -8412,6 +8412,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04058",
       "number": 58,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-07T20:01:39Z",
+          "id": "1unbxg",
+          "title": "[COTD] Power Shutdown (7 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1unbxg/cotd_power_shutdown_7_jan_2014/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "subtype": "Gray Ops",
