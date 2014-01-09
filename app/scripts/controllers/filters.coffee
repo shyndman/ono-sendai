@@ -35,6 +35,10 @@ angular.module('onoSendai')
       delete $scope.filter.fieldFilters.subtype
       updateSubtypes()
 
+    $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
+      $scope.factionSelected = _.any factions, (flag) -> !flag
+    ), true)
+
     $scope.clearFactions = ->
       for key, val of factions
         factions[key] = true
