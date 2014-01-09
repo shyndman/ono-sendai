@@ -31,9 +31,17 @@ angular.module('onoSendai')
       return if newSide is oldSide
 
       $scope.filter.activeGroup = generalGroup
-      factions[key] = true for key, val of factions
+      $scope.clearFactions()
       delete $scope.filter.fieldFilters.subtype
       updateSubtypes()
+
+    $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
+      $scope.factionSelected = _.any factions, (flag) -> !flag
+    ), true)
+
+    $scope.clearFactions = ->
+      for key, val of factions
+        factions[key] = true
 
     $scope.labelledFieldId = (field) ->
       switch field.type

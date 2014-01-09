@@ -46,7 +46,6 @@ angular.module('onoSendai')
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
-
       updateUrl()
 
     $scope.deselectCard = ->
