@@ -22,16 +22,18 @@ NOTES:
           <input type="search" id="{{ field.name }}-filter" class="form-control input-sm" ng-class="{
                    'has-input': !!filter.search
                  }" placeholder="{{ field.placeholder }}" ng-model="filter.search" filter-input="">
+          <a class="clear-filter" ng-click="filter.search = ''">&times;</a>
         </div>
 
         <div ng-switch-when="faction">
-          <div class="btn-group" ng-class="{
+          <div class="faction-filter btn-group" ng-class="{
                  'has-input': factionSelected
                }">
             <button class="btn btn-default btn-sm" ng-repeat="faction in field.side[filter.side.toLowerCase()]" ng-model="filter.fieldFilters.faction[faction.model]" ui-all-or-one-box="filter.fieldFilters.faction" ui-all-or-one-box-field="{{ faction.model }}" title="{{ faction.name }}">
               {{ faction.abbr }}
             </button>
           </div>
+          <a class="clear-filter" ng-click="clearFactions()">&times;</a>
         </div>
 
         <div ng-switch-when="numeric">
@@ -39,6 +41,7 @@ NOTES:
               'has-input': !!filter.fieldFilters[field.name].value
             }" filter-attr="filter.fieldFilters[field.name]" placeholder="{{ field.placeholder }}" max="{{ field.max }}" ui-disabled="{{ isFieldDisabled(field, group, filter.activeGroup, filter.side) }}" filter-input="">
           </numeric-filter>
+          <a class="clear-filter" ng-click="filter.fieldFilters[field.name].value = null">&times;</a>
         </div>
 
         <div ng-switch-when="inSet">
@@ -46,6 +49,7 @@ NOTES:
               'has-input': !!filter.fieldFilters[field.name]
             }" placeholder="{{ field.placeholder }}" ng-model="filter.fieldFilters[field.name]" inset-filter-source="this[field.source]" filter-input="">
           </inset-filter>
+          <a class="clear-filter" ng-click="filter.fieldFilters[field.name] = null">&times;</a>
         </div>
       </div>
     </div>
