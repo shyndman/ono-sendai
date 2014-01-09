@@ -8441,6 +8441,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04059",
       "number": 59,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-08T18:48:29Z",
+          "id": "1uq9at",
+          "title": "[COTD] Paper Wall (8 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1uq9at/cotd_paper_wall_8_jan_2014/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "strength": 1,
@@ -8462,6 +8470,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04060",
       "number": 60,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-09T18:09:37Z",
+          "id": "1ut930",
+          "title": "[COTD] Interns (9 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ut930/cotd_interns_9_jan_2013/"
+        }
+      ],
       "setname": "Mala Tempora",
       "side": "Corp",
       "subtype": "Double",
