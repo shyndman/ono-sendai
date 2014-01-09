@@ -36,10 +36,12 @@ NOTES:
                  placeholder="{{ field.placeholder }}"
                  ng-model="filter.search"
                  filter-input>
+          <a class="clear-filter"
+             ng-click="filter.search = ''">&times;</a>
         </div>
 
         <div ng-switch-when="faction">
-          <div class="btn-group"
+          <div class="faction-filter btn-group"
                ng-class="{
                  'has-input': factionSelected
                }">
@@ -53,6 +55,8 @@ NOTES:
               {{ faction.abbr }}
             </button>
           </div>
+          <a class="clear-filter"
+             ng-click="clearFactions()">&times;</a>
         </div>
 
         <div ng-switch-when="numeric">
@@ -67,6 +71,8 @@ NOTES:
             ui-disabled="{{ isFieldDisabled(field, group, filter.activeGroup, filter.side) }}"
             filter-input>
           </numeric-filter>
+          <a class="clear-filter"
+             ng-click="filter.fieldFilters[field.name].value = null">&times;</a>
         </div>
 
         <div ng-switch-when="inSet">
@@ -80,6 +86,8 @@ NOTES:
             inset-filter-source="this[field.source]"
             filter-input>
           </inset-filter>
+          <a class="clear-filter"
+             ng-click="filter.fieldFilters[field.name] = null">&times;</a>
         </div>
       </div>
     </div>
