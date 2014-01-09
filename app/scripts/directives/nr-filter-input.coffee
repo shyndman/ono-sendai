@@ -1,7 +1,7 @@
 
 angular.module('onoSendai')
   # Captures and stops the propagation of key presses that also have top-level actions
-  # (card forward/back).
+  # (card forward/back, page up/down, etc.)
   .directive('filterInput', ($window, $log, $parse) ->
     isMac = !!($window.navigator?.userAgent.toLowerCase().indexOf('mac') != -1)
     select2FocusSelector = '.select2-focusser'
