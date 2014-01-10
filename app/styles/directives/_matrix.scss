@@ -43,21 +43,10 @@ matrix {
 
     img {
       position: absolute;
-      z-index: 2;
+      z-index: 1;
       width: 100%;
       height: auto;
       transform-origin: 0 0;
-    }
-
-    .background {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform-origin: 0 0;
-      background: white;
     }
   }
 
