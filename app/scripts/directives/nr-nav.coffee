@@ -50,15 +50,19 @@ angular.module('onoSendai')
         cardSearch.find('.dropdown-menu li.active a').click()
         e.preventDefault())
 
+      # Show the results if they'd been hidden by a document click if the search input regains focuss
       searchInput.focus (e) ->
         cardSearchResultsChanged(scope.cardSearchResults)
 
+      # Don't let clicks propagate to the document
       searchInput.click (e) ->
         e.stopPropagation()
 
+      # Clear the search input if a search result is selected
       searchResults.click (e) ->
         scope.clearSearch()
 
+      # Close the search results flyout if the document is clicked
       $document.click (e) ->
         cardSearch.removeClass('open')
 
