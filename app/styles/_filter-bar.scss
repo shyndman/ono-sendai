@@ -78,8 +78,8 @@
     }
 
     input.has-input, .has-input input, .has-input .select2-choice {
-      background: #C2E4FF;
-      border-color: #aaa;
+      background: $has-input-color;
+      border-color: $has-input-border-color;
     }
 
     .has-input + .clear-filter {
@@ -95,6 +95,12 @@
     }
 
     .faction-filter {
+      > .active {
+        background: $has-input-color;
+        border-color: $has-input-border-color;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.06);
+      }
+
       & + .clear-filter {
         margin-left: 5px;
       }
