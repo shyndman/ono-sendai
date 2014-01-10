@@ -11,7 +11,7 @@ angular.module('onoSendai')
     }
     link: (scope, element, attrs) ->
       container = element.find('.content-container')
-      containerWidth = container.width()
+      containerWidth = null # container.width()
       inContinuousZoom = false
 
       minimumGutterWidth = 20
@@ -236,10 +236,14 @@ angular.module('onoSendai')
       layout = _.debounce(layoutNow, 300)
 
       # Reacts to messages sent from above triggering layouts
-      scope.$on 'layout', ->
+      scope.$on 'layout', (e, mode) ->
+        if mode != 'grid'
+          return
+
         $timeout ->
-          hasContainerChangedWidth()
-          layoutNow(true)
+          if hasContainerChangedWidth()
+            layoutNow(false)
+          scrollToFocusedElement()
 
 
       # *~*~*~*~ SCROLLING
@@ -265,7 +269,7 @@ angular.module('onoSendai')
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
-        if inContinuousZoom
+        if inContinuousZoom or !container.is(':visible')
           return
 
         scrollTop = scrollParent.scrollTop()
@@ -338,7 +342,39 @@ angular.module('onoSendai')
             $q.when() # Empty promise :)
 
 
-      # *~*~*~*~ SELECTION AND QUERY MODE
+      # *~*~*~*~ SELECTION CHANGES
+
+      # When the selection changes, change the focused element
+      scope.$watch 'selection', (newSelection) ->
+        if !newSelection?
+          return
+
+        changeFocusToSelection = ->
+          selectionElement = element.find("[grid-id='#{ newSelection.id }']")
+          if !selectionElement.length
+            console.warn "No element found with grid-id #{ newSelection.id }"
+            return
+
+          $log.debug 'New focus element determined "%s"', selectionElement.attr('title')
+
+          focusedElement = selectionElement.get(0)
+          focusedElementChop = 0
+
+        if firstLayout
+          # We timeout here for the case where the user lands on the card page, and we have to wait for the
+          # DOM to contain all the cards
+          $timeout changeFocusToSelection
+        else
+          changeFocusToSelection()
+
+
+      scope.$watch 'layoutMode', (layoutMode) ->
+        if layoutMode == 'grid'
+          scrollToFocusedElement()
+
+
+
+      # *~*~*~*~ QUERY CHANGES
 
       firstLayout = true
       scope.$watch('queryResult', queryResultChanged = (newVal) ->

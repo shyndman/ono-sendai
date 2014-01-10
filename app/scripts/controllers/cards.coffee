@@ -77,8 +77,8 @@ angular.module('onoSendai')
 
     #~-~-~- LAYOUT
 
-    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = ->
-      $scope.$broadcast 'layout'
+    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = (layoutMode) ->
+      $scope.$broadcast 'layout', layoutMode
 
 
     #~-~-~- QUERYING
