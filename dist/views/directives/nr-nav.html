@@ -30,7 +30,7 @@
         <li ng-repeat="card in cardSearchResults" ng-class="{
               active: $index == cardSearchResults.selectedIndex
             }">
-          <a href="{{ card | cardUrl:'card' }}">{{ card.title }}</a>
+          <a href="{{ card | cardUrl:'card' }}" ng-bind-html="resultTitle(card, cardSearch)"></a>
         </li>
       </ul>
     </div>
