@@ -3,7 +3,7 @@
 # [todo] It's kind of messy to handle the card search in here. The autocomplete should be componentized, or possibly
 #        merged with ui-dropdown (they're very similar).
 angular.module('onoSendai')
-  .directive('nrNav', ($document, cardService, $timeout) ->
+  .directive('nrNav', ($document, cardService, $timeout, $sce) ->
     maxResults = 10
 
     templateUrl: '/views/directives/nr-nav.html'
@@ -25,6 +25,10 @@ angular.module('onoSendai')
         if card?
           # Allow other handlers to run
           $timeout -> $scope.cardSearch = ''
+
+      $scope.resultTitle = (card, searchTerm) ->
+        title = card.title.replace(///#{searchTerm}///i, (match) -> "<span class='underlined'>#{match}</span>")
+        $sce.trustAsHtml(title)
 
       $scope.$watch 'cardSearch', cardSearchChanged = (newVal) ->
         if _.isEmpty(newVal)
