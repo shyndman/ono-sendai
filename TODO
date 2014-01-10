@@ -3,13 +3,11 @@
 [todo] Add calculated max for filters
 [todo] Make it clear that moving back to the general filter will remove filters (or not -- color change made this better)
 [todo] Screensaver with random flavor text
-[todo] Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
 [todo] Jinteki/Haas-Bioroid special deck URLs
-[todo] humans.txt -- add it!
 [todo] Excluded general controls should explain through a tooltip why they're disabled
-[todo] Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
 [todo] Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then modified as time goes on. No more clearing (as you see in performGridLayout).
 [todo] Rename "filter" to "queryArgs" across the board
+[todo] Rename "grid" to "matrix" across the board
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
 [todo] Cost to break calculator filter should have a tooltip to tell you that you can filter in various ways
@@ -36,4 +34,3 @@ IDEA FOR RESPONSIVE DESIGNS
   control with a smaller representation.
 
   Seems like annotating HTML and generating the breakpoint variables would be an interesting project.
-
