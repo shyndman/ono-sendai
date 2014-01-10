@@ -358,7 +358,7 @@ angular.module('onoSendai')
           $log.debug 'New focus element determined "%s"', selectionElement.attr('title')
 
           focusedElement = selectionElement.get(0)
-          focusedElementChop = 0
+          focusedElementChop = -0.15 # Negative chop to make the scroll position feel a bit more natural
 
         if firstLayout
           # We timeout here for the case where the user lands on the card page, and we have to wait for the
