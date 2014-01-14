@@ -190,6 +190,9 @@ class BreakScripts
   deusxCards: (breaker, allIce) =>
     _.filter(allIce, (i) -> i.subtypesSet.ap)
 
+  sharpshooterCards: (breaker, allIce) =>
+    _.filter(allIce, (i) -> i.subtypesSet.destroyer)
+
   wyrm: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete
