@@ -13,6 +13,7 @@ angular.module('onoSendai')
       container = element.find('.content-container')
       containerWidth = null # container.width()
       inContinuousZoom = false
+      needsLayout = false
 
       minimumGutterWidth = 20
       vMargin = 10
@@ -223,6 +224,7 @@ angular.module('onoSendai')
       layoutNow = (scaleImages = false) ->
         # No point in doing any work if nobody sees it
         if element.is(':hidden')
+          needsLayout = true
           return
 
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
@@ -231,6 +233,8 @@ angular.module('onoSendai')
           downscaleItems().then(performGridLayout).then(upscaleItems)
         else
           performGridLayout()
+
+        needsLayout = false
 
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
@@ -241,7 +245,7 @@ angular.module('onoSendai')
           return
 
         $timeout ->
-          if hasContainerChangedWidth()
+          if hasContainerChangedWidth() or needsLayout
             layoutNow(false)
           scrollToFocusedElement()
 
