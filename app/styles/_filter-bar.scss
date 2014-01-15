@@ -143,5 +143,8 @@
         color: $disabled-label-color;
       }
     }
+
+    // Hide all the clear buttons in IE
+    input::-ms-clear { display: none; }
   }
 }
