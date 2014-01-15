@@ -137,3 +137,17 @@ nr-subnav {
   }
 }
 
+@include ie-only {
+  nr-subnav {
+    .zoom {
+      .control-label {
+        position: relative;
+        top: -8px;
+      }
+
+      .unabridged input[type=range] {
+        top: -7px !important;
+      }
+    }
+  }
+}
