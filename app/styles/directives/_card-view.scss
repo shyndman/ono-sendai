@@ -51,10 +51,6 @@ card-view {
     z-index: $card-current-info-z-index;
     background: rgba(255, 255, 255, 0.8);
 
-    .card-image {
-      width: 300px;
-    }
-
     h2.card-name {
       margin-bottom: 22px;
 
@@ -79,7 +75,7 @@ card-view {
 
         &:hover {
           color: #999;
-          text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
         }
 
         &.on {
@@ -92,10 +88,18 @@ card-view {
       }
     }
 
+    .card-content {
+      display: flex;
+    }
+
+    .card-image {
+      width: 300px;
+    }
+
     .info {
       width: 280px;
       height: 418px;
-      float: right;
+      margin-left: 20px;
       user-select: all;
 
       .info-nav {
