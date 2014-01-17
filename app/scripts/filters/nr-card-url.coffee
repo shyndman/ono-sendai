@@ -10,6 +10,9 @@ pluralizeType = (type) ->
 
 angular.module('onoSendai')
   .filter 'cardUrl', ($log, $location) ->
+    # [todo] Extract the patterns to an angular constant
+    serveLocalImages = $location.host().match(/localhost/)? or $location.host().match(/stage\.onosendaicorp\.com/)
+
     urlPrefix =
       if $location.$$html5
         ''
@@ -32,6 +35,12 @@ angular.module('onoSendai')
           "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }&group=setname"
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
+        when 'image'
+          if serveLocalImages
+            card.imagesrc
+          else
+            # [todo] Extract this URL to an angular constant?
+            "http://d3t3ih6ri0e76u.cloudfront.net/#{ card.imagesrc }"
         else
           $log.warn("cardUrl: Unknown urlType #{ urlType }")
           ''
