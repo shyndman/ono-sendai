@@ -114,9 +114,9 @@ class CardService
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: { sets: @_sets, cards: @_cards }, status, headers }) =>
+      .then(({ data: { sets: @_sets, cards: @_cards, "last-modified": lastMod }, status, headers }) =>
         window.cards = @_cards # DEBUG
-        @searchService.indexCards(@_cards)
+        @searchService.indexCards(@_cards, lastMod)
         @_augmentCards(@_cards)
         @_augmentSets(@_sets)
         @_initSubtypes()
