@@ -35,9 +35,15 @@
       <main class="page scrollable" ng-include="'/views/cards.html'"></main>
     </div>
   </div>
-  <div id="version">
-    <a href="https://github.com/shyndman/ono-sendai/commits/v{{version}}" target="_blank">v{{version}}</a>
-  </div>
+  <footer>
+    <span class="version">
+      <a href="https://github.com/shyndman/ono-sendai/commits/v{{version}}" target="_blank">Credits</a>
+    </span>
+    &nbsp;
+    <span class="version">
+      <a href="https://github.com/shyndman/ono-sendai/commits/v{{version}}" target="_blank">v{{version}}</a>
+    </span>
+  </footer>
 
   <!-- build:js /scripts/lib.js -->
   <script src="/bower_components/underscore/underscore.js"></script>
