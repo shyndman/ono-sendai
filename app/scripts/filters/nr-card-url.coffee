@@ -36,11 +36,16 @@ angular.module('onoSendai')
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         when 'image'
-          if serveLocalImages
-            card.imagesrc
-          else
-            # [todo] Extract this URL to an angular constant?
-            "http://d3t3ih6ri0e76u.cloudfront.net#{ card.imagesrc }"
+          card.imagesrc
+
+          # Commented out until I can figure out a better CDN solution. Cloudfront doesn't seem to offer any
+          # noticeable gains.
+          #
+          # if serveLocalImages
+          #   card.imagesrc
+          # else
+          #   # [todo] Extract this URL to an angular constant?
+          #   "http://d3t3ih6ri0e76u.cloudfront.net#{ card.imagesrc }"
         else
           $log.warn("cardUrl: Unknown urlType #{ urlType }")
           ''
