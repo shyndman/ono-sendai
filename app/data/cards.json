@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-01-17T16:33:08Z",
+  "last-modified": "2014-01-17T21:38:53Z",
   "cards": [
     {
       "baselink": 0,
@@ -8488,8 +8488,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04061",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/keyhole-true-colors",
       "cost": 4,
       "faction": "Anarch",
       "factioncost": 3,
@@ -8516,8 +8515,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04062",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/activist-support-true-colors",
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 2,
@@ -8543,8 +8541,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04063",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/lawyer-up-true-colors",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -8563,8 +8560,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04064",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/leverage-true-colors",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -8586,8 +8582,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
-      "code": "04065",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/garrote-true-colors",
       "cost": 7,
       "faction": "Criminal",
       "factioncost": 3,
@@ -8609,8 +8604,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04066",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/llds-processor-true-colors",
       "cost": 1,
       "faction": "Shaper",
       "factioncost": 1,
@@ -8634,8 +8628,7 @@
         "credits": 0,
         "subroutines": 1
       },
-      "cgdb_url": null,
-      "code": "04067",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/sharpshooter-true-colors",
       "cost": 1,
       "faction": "Shaper",
       "factioncost": 1,
@@ -8660,8 +8653,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04068",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/capstone-true-colors",
       "cost": 2,
       "faction": "Shaper",
       "factioncost": 3,
@@ -8679,8 +8671,7 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
-      "code": "04069",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/starlight-crusade-funding-true-colors",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -8698,8 +8689,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04070",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/rex-campaign-true-colors",
       "cost": 1,
       "faction": "Haas-Bioroid",
       "factioncost": 2,
@@ -8718,8 +8708,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04071",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/fenris-true-colors",
       "cost": 4,
       "faction": "Haas-Bioroid",
       "factioncost": 2,
@@ -8739,8 +8728,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04072",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/panic-button-true-colors",
       "cost": 1,
       "faction": "Haas-Bioroid",
       "factioncost": 1,
@@ -8759,8 +8747,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04073",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shock-true-colors",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -8779,8 +8766,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04074",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/tsurugi-true-colors",
       "cost": 6,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -8802,8 +8788,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 1,
-      "cgdb_url": null,
-      "code": "04075",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/tgtbt-true-colors",
       "faction": "NBN",
       "flavor": "\"The damn raven just kind of cawed at me as I went past. I should have known it was too good to be true.\"",
       "illustrator": "Adam S. Doyle",
@@ -8820,8 +8805,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04076",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/sweeps-week-true-colors",
       "cost": 1,
       "faction": "NBN",
       "factioncost": 2,
@@ -8839,8 +8823,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04077",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/rsvp-true-colors",
       "cost": 3,
       "faction": "NBN",
       "factioncost": 2,
@@ -8860,8 +8843,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04078",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/curtain-wall-true-colors",
       "cost": 14,
       "faction": "Weyland Consortium",
       "factioncost": 2,
@@ -8881,8 +8863,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
-      "code": "04079",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/punitive-counterstrike-true-colors",
       "cost": 3,
       "faction": "Weyland Consortium",
       "factioncost": 2,
@@ -8902,8 +8883,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 1,
-      "cgdb_url": null,
-      "code": "04080",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/veterans-program-true-colors",
       "faction": "Neutral",
       "factioncost": 0,
       "flavor": "It's easy to replace limbs. It's more difficult to replace memories.",
