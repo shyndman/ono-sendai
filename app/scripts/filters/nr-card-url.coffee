@@ -11,7 +11,7 @@ pluralizeType = (type) ->
 angular.module('onoSendai')
   .filter 'cardUrl', ($log, $location) ->
     # [todo] Extract the patterns to an angular constant
-    serveLocalImages = $location.host().match(/localhost/)? or $location.host().match(/stage\.onosendaicorp\.com/)
+    serveLocalImages = $location.host().match(/localhost/)? # or $location.host().match(/stage\.onosendaicorp\.com/)
 
     urlPrefix =
       if $location.$$html5
