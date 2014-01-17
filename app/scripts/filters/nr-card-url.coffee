@@ -40,7 +40,7 @@ angular.module('onoSendai')
             card.imagesrc
           else
             # [todo] Extract this URL to an angular constant?
-            "http://d3t3ih6ri0e76u.cloudfront.net/#{ card.imagesrc }"
+            "http://d3t3ih6ri0e76u.cloudfront.net#{ card.imagesrc }"
         else
           $log.warn("cardUrl: Unknown urlType #{ urlType }")
           ''
