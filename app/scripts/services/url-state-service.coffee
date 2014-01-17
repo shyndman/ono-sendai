@@ -207,3 +207,7 @@ angular
   .module('onoSendai')
   .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, filterDefaults) ->
     new UrlStateService(arguments...))
+  # Google Analytics
+  .run(($rootScope, $location) ->
+    $rootScope.$on('$routeChangeSuccess', ->
+      ga('send', 'pageview', page: $location.path())))
