@@ -53,7 +53,7 @@ class SearchService
     # Otherwise index the cards
     indexFn()
 
-    # Write the indexes to local storage
+    # And write the indexes to local storage
     jsonIndexes = {}
     jsonIndexes[lastMod] = _titleIndex: @_titleIndex.toJSON(), _fullIndex: @_fullIndex.toJSON()
     localStorage.setItem('searchIndexes', JSON.stringify(jsonIndexes))
