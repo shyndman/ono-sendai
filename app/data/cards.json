@@ -8500,6 +8500,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04061",
       "number": 61,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-16T18:14:54Z",
+          "id": "1vdmdw",
+          "title": "[COTD] Keyhole (16 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vdmdw/cotd_keyhole_16_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "[Click]: Make a run on R&D. If successful, instead of accessing cards, look at the top 3 cards of R&D. Trash 1 of those cards at no cost (even if it cannot normally be trashed) and the Corp shuffles R&D.",
@@ -8519,6 +8527,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04062",
       "number": 62,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-17T20:02:46Z",
+          "id": "1vgyco",
+          "title": "[COTD] Activist Support (17 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vgyco/cotd_activist_support_17_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "When the Corp turn begins, take 1 tag if you have no tags.\r\nWhen your turn begins, give the Corp 1 bad publicity if he or she has no bad publicity.",
@@ -8566,6 +8582,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "code": "04065",
       "cost": 7,
@@ -8582,10 +8602,6 @@
       "side": "Runner",
       "strength": 2,
       "strengthcost": 2,
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Garrote",
@@ -8613,6 +8629,11 @@
       "uniqueness": false
     },
     {
+      "breakcardsscript": "sharpshooterCards",
+      "breakcost": {
+        "credits": 0,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "code": "04067",
       "cost": 1,
@@ -8632,11 +8653,6 @@
         "credits": 1,
         "strength": 2
       },
-      "breakcost": {
-        "credits": 0,
-        "subroutines": 1
-      },
-      "breakcardsscript": "sharpshooterCards",
       "subtype": "Icebreaker",
       "text": "[Trash]: Break any number of <strong>destroyer</strong> subroutines.\r\n1[Credits]: +2 strength.",
       "title": "Sharpshooter",
