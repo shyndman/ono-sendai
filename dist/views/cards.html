@@ -22,7 +22,7 @@
       again. All sorting and show/hide logic for cards exists in the ui-matrix directive.
     -->
     <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item hidden" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
-      <img bo-src="card.imagesrc" width="300" height="418">
+      <img bo-src="card | cardUrl:'image'" width="300" height="418">
     </div>
 
     <!-- No results -->
