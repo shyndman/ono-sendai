@@ -408,7 +408,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'bump:minor',
+    // 'bump:patch',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
