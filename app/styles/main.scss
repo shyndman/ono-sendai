@@ -88,10 +88,12 @@ footer {
     &:focus {
       .tooltip {
         opacity: 1;
+        display: block;
       }
     }
 
     .tooltip {
+      display: none;
       top: -76px;
       width: 130px;
 
