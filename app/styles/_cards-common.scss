@@ -90,13 +90,17 @@
       margin-right: 8px;
       border-bottom-color: transparent;
 
-      > li > a {
-        padding: 5px 5px 4px 5px;
-        color: #555;
+      > li {
+        top: 1px;
 
-        &:hover {
-          background-color: #f9f9f9;
-          border-bottom: none;
+        > a {
+          padding: 5px 5px 4px 5px;
+          color: #555;
+
+          &:hover {
+            background-color: #f9f9f9;
+            border-bottom: none;
+          }
         }
       }
 
