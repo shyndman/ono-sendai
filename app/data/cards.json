@@ -8551,6 +8551,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04063",
       "number": 63,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-20T18:06:38Z",
+          "id": "1vorfv",
+          "title": "[COTD] Lawyer Up (20 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vorfv/cotd_lawyer_up_20_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "subtype": "Double",
