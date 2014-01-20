@@ -72,7 +72,37 @@ footer {
   padding: 2px 5px;
   background: rgba(255, 255, 255, 0.9);
 
-  a, a:hover, a:visited {
+  > a {
+    &, &:hover, &:visited {
+      color: #777;
+      text-decoration: none;
+    }
+  }
+
+  .about {
+    display: inline;
+    outline: 0;
+    cursor: pointer;
     color: #777;
+
+    &:focus {
+      .tooltip {
+        opacity: 1;
+      }
+    }
+
+    .tooltip {
+      top: -76px;
+      width: 130px;
+
+      .tooltip-inner {
+        max-width: initial;
+        text-align: left;
+      }
+
+      .tooltip-arrow {
+        left: 11%;
+      }
+    }
   }
 }
