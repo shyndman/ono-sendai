@@ -43,16 +43,16 @@ class CostToBreakCalculator
       ice = _.extend angular.copy(ice), originalstrength: ice.strength, strength: ice.strength + iceAdjust
 
     # Collect all potential opponent cards
-    if ice.subtypesSet['sentry']
+    if ice.subtypesSet['sentry'] or options.tinkering
       breakers = breakers.concat @_killers.orderedCards
 
-    if ice.subtypesSet['barrier']
+    if ice.subtypesSet['barrier'] or options.tinkering
       breakers = breakers.concat @_fracters.orderedCards
 
-    if ice.subtypesSet['code-gate']
+    if ice.subtypesSet['code-gate'] or options.tinkering
       breakers = breakers.concat @_decoders.orderedCards
 
-    # [todo] How does Deus X fit in here
+    # [todo] How do Deus X / Sharpshooter fit in here
 
     breakers = breakers.concat @_ais.orderedCards
 
@@ -75,7 +75,7 @@ class CostToBreakCalculator
     if breaker.subtypesSet['decoder']
       ice = ice.concat @_codeGates.orderedCards
 
-    if breaker.subtypesSet['ai']
+    if breaker.subtypesSet['ai'] or options.tinkering
       ice = ice.concat @_allIce.orderedCards
 
     if breaker.breakcardsscript?
