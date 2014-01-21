@@ -321,6 +321,10 @@ angular.module('onoSendai')
         groupings: [ 'faction', 'type' ]
       },
       {
+        display: 'Type'
+        groupings: [ 'type' ]
+      },
+      {
         display: 'Cost'
         groupings: [ 'cost' ]
       },
