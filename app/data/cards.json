@@ -8578,6 +8578,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04064",
       "number": 64,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-21T17:21:38Z",
+          "id": "1vrvxh",
+          "title": "[COTD] Leverage (21 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vrvxh/cotd_leverage_21_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "Play only if you made a successful run on HQ this turn.\r\nPrevent all damage until the beginning of your next turn unless the Corp takes 2 bad publicity.",
