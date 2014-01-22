@@ -210,4 +210,4 @@ angular
   # Google Analytics
   .run(($rootScope, $location) ->
     $rootScope.$on('$locationChangeSuccess', ->
-      ga('send', 'pageview', page: $location.path())))
+      ga('send', 'pageview', page: $location.url())))
