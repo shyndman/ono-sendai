@@ -2,6 +2,7 @@ angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
   .value('queryArgDefaults',
     side: 'Corp'
+    search: ''
     groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:

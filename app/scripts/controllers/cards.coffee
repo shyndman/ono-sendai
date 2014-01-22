@@ -103,6 +103,7 @@ angular.module('onoSendai')
     # Resets query args, and deselects the selected card, if any
     $scope.resetState = ->
       $scope.deselectCard()
+      $scope.filter.search = ''
       $scope.filter.fieldFilters = angular.copy(queryArgDefaults.fieldFilters)
       updateUrlNow(true)
 
