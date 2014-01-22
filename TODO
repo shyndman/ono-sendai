@@ -22,6 +22,16 @@
 [todo] Consider adding all applicable attributes to groupings, depending on active group
 [todo] Off the Grid, in card search
 [todo] Sort by card number
+[todo] Markdown export for Cost to Break
+
+  | Left align | Right align | Center align |
+  |:-----------|------------:|:------------:|
+  | This       |        This |     This
+  | column     |      column |    column
+  | will       |        will |     will
+  | be         |          be |      be
+  | left       |       right |    center
+  | aligned    |     aligned |   aligned
 
 RESPONSIVE NOTES
   iPhone  - zoom: 0.24
