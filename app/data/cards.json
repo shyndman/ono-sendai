@@ -8612,7 +8612,7 @@
       "setname": "True Colors",
       "side": "Runner",
       "strength": 2,
-      "strengthcost": 2,
+      "strengthcost": 1,
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Garrote",
