@@ -142,8 +142,7 @@ class CostToBreakCalculator
   _performQuery: (side, type, subtype) ->
     @cardService.query(
       side: side,
-      activeGroup:
-        name: type
+      activeGroup: type
       fieldFilters:
         subtype: subtype
     )
