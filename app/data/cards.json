@@ -8609,6 +8609,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04065",
       "number": 65,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-22T19:00:34Z",
+          "id": "1vvecd",
+          "title": "[COTD] Garrote (22 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vvecd/cotd_garrote_22_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "strength": 2,
