@@ -88,6 +88,7 @@ angular.module('onoSendai')
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.card
       cardPage = $scope.cardUI.page
+      # selCard && cardPage resolves to cardPage if selCard is truthy
       $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
   )

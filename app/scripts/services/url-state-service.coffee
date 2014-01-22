@@ -1,5 +1,3 @@
-'use strict';
-
 class UrlStateService
   # Mapping of how URLs appear in the data vs how they appear in the URL
   DATA_TO_URL_OPERATORS =
@@ -12,7 +10,7 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
-  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @filterDefaults) ->
+  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @queryArgDefaults) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
@@ -25,13 +23,14 @@ class UrlStateService
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage) ->
+  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
 
-    if queryArgs.activeGroup.name != 'general'
-      url += "/#{ queryArgs.activeGroup.display }"
+    if queryArgs.activeGroup != 'general'
+      group = _.findWhere(@filterUI, name: queryArgs.activeGroup)
+      url += "/#{ group.display }"
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
@@ -75,7 +74,8 @@ class UrlStateService
     pushUrl = (!selectedCard? and  @selectedCardId?) or
               ( selectedCard? and !@selectedCardId?) or
               (@queryArgs.side != queryArgs.side)
-    @$location.replace() if !pushUrl
+
+    @$location.replace() if !pushUrl and !forcePushState
 
     # Update local state
     @generatedUrl = @$location.url()
@@ -125,8 +125,8 @@ class UrlStateService
     cardPage = null
 
     # Copy defaults and assign general as the default active group
-    queryArgs = angular.copy(@filterDefaults)
-    queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
+    queryArgs = angular.copy(@queryArgDefaults)
+    queryArgs.activeGroup = 'general'
 
     # Match the URL
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
@@ -142,7 +142,7 @@ class UrlStateService
 
     # Active group
     if cardsMatch[2]
-      queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2]) ? queryArgs.activeGroup
+      queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2])?.name ? queryArgs.activeGroup
 
     if cardsMatch[3]
       selectedCardId = cardsMatch[3]
@@ -205,9 +205,9 @@ class UrlStateService
 
 angular
   .module('onoSendai')
-  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, filterDefaults) ->
+  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, queryArgDefaults) ->
     new UrlStateService(arguments...))
   # Google Analytics
   .run(($rootScope, $location) ->
-    $rootScope.$on('$routeChangeSuccess', ->
+    $rootScope.$on('$locationChangeSuccess', ->
       ga('send', 'pageview', page: $location.path())))

@@ -47,7 +47,7 @@ card-view {
     width: $selected-card-width;
     height: 100%;
     padding: 9px 0;
-
+    z-index: 2000;
     background: rgba(255, 255, 255, 0.8);
 
     h2.card-name {
@@ -99,7 +99,6 @@ card-view {
       width: 280px;
       height: 418px;
       margin-left: 20px;
-      user-select: all;
 
       .info-nav {
         position: absolute;
@@ -171,6 +170,14 @@ card-view {
   .wing {
     flex-grow: 1;
     position: relative;
+
+    .wing-click-region {
+      height: 300px;
+      position: relative;
+      top: 120px;
+      z-index: 1000;
+      cursor: pointer;
+    }
   }
 
   .card-image.in-wing {
@@ -180,7 +187,6 @@ card-view {
     width: 300px;
     height: 418px;
     overflow: visible;
-    cursor: pointer;
 
     perspective: 2000px;
     transform: scale(0.7);
