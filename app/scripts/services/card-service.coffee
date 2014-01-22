@@ -178,7 +178,7 @@ class CardService
   #
   # If null is returned, all cards should be shown.
   _enabledTypes: (queryArgs) =>
-    activeName = queryArgs.activeGroup?.name
+    activeName = queryArgs.activeGroup
     if !activeName? or activeName is 'general'
       null
     else
@@ -196,9 +196,9 @@ class CardService
     groups = ['general']
     excludeds = {} # Fields that will not be used to filter
 
-    if queryArgs.activeGroup? and queryArgs.activeGroup.name isnt 'general'
-      groups.push(queryArgs.activeGroup.name)
-      excludeds = @filterDescriptors[queryArgs.activeGroup.name].excludedGeneralFields || {}
+    if queryArgs.activeGroup? and queryArgs.activeGroup isnt 'general'
+      groups.push(queryArgs.activeGroup)
+      excludeds = @filterDescriptors[queryArgs.activeGroup].excludedGeneralFields || {}
 
     _(groups)
       .chain()

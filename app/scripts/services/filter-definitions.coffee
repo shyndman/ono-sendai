@@ -3,6 +3,7 @@ angular.module('onoSendai')
   .value('queryArgDefaults',
     side: 'Corp'
     search: ''
+    activeGroup: 'general'
     groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:

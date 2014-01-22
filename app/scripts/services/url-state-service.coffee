@@ -28,8 +28,9 @@ class UrlStateService
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
 
-    if queryArgs.activeGroup.name != 'general'
-      url += "/#{ queryArgs.activeGroup.display }"
+    if queryArgs.activeGroup != 'general'
+      group = _.findWhere(@filterUI, name: queryArgs.activeGroup)
+      url += "/#{ group.display }"
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
@@ -125,7 +126,7 @@ class UrlStateService
 
     # Copy defaults and assign general as the default active group
     queryArgs = angular.copy(@queryArgDefaults)
-    queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
+    queryArgs.activeGroup = 'general'
 
     # Match the URL
     cardsMatch = @$location.path().match(@_cardsUrlMatcher)
@@ -141,7 +142,7 @@ class UrlStateService
 
     # Active group
     if cardsMatch[2]
-      queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2]) ? queryArgs.activeGroup
+      queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2])?.name ? queryArgs.activeGroup
 
     if cardsMatch[3]
       selectedCardId = cardsMatch[3]
