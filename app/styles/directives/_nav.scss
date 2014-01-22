@@ -33,6 +33,7 @@ nr-nav {
     height: 51px;
     margin: 0;
     padding-top: 18px;
+    cursor: pointer;
 
     @include retina {
       @include logo('/images/logo@2x.png');

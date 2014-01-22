@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService, queryArgDefaults) ->
 
     # ~-~-~- INITIALIZATION
 
@@ -100,6 +100,12 @@ angular.module('onoSendai')
           setQueryResult(queryResult)
       ), true) # True to make sure field changes trigger this watch
 
+    # Resets query args, and deselects the selected card, if any
+    $scope.resetState = ->
+      $scope.deselectCard()
+      $scope.filter.fieldFilters = angular.copy(queryArgDefaults.fieldFilters)
+      updateUrlNow(true)
+
 
     # ~-~-~- URL SYNC
 
@@ -120,12 +126,14 @@ angular.module('onoSendai')
           $scope.deselectCard()
           $scope.cardsUI.layoutMode = 'grid')
 
-    # Limits URL updates. I find it distracting if it happens to ofter.
-    updateUrl = _.debounce((updateUrlNow = ->
+    updateUrlNow = (pushState = false) ->
       selCard = $scope.selectedCard
       cardPage = $scope.cardsUI.cardPage
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
-    ), 500)
+      $scope.$safeApply ->
+        urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage, pushState)
+
+    # Limits URL updates. I find it distracting if it happens to ofter.
+    updateUrl = _.debounce(updateUrlNow, 500)
 
 
     # ~-~-~- COMMUNICATION BETWEEN DIRECTIVES / CONTROLLERS

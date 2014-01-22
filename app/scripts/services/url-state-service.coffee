@@ -23,7 +23,7 @@ class UrlStateService
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage) ->
+  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = "/cards/#{ queryArgs.side.toLowerCase() }"
@@ -73,7 +73,8 @@ class UrlStateService
     pushUrl = (!selectedCard? and  @selectedCardId?) or
               ( selectedCard? and !@selectedCardId?) or
               (@queryArgs.side != queryArgs.side)
-    @$location.replace() if !pushUrl
+
+    @$location.replace() if !pushUrl and !forcePushState
 
     # Update local state
     @generatedUrl = @$location.url()
