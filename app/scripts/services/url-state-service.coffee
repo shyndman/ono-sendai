@@ -12,7 +12,7 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
-  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @filterDefaults) ->
+  constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @queryArgDefaults) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
@@ -125,7 +125,7 @@ class UrlStateService
     cardPage = null
 
     # Copy defaults and assign general as the default active group
-    queryArgs = angular.copy(@filterDefaults)
+    queryArgs = angular.copy(@queryArgDefaults)
     queryArgs.activeGroup = _.findWhere(@filterUI, name: 'general')
 
     # Match the URL
@@ -205,7 +205,7 @@ class UrlStateService
 
 angular
   .module('onoSendai')
-  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, filterDefaults) ->
+  .service('urlStateService', ($rootScope, $location, $log, cardService, filterUI, queryArgDefaults) ->
     new UrlStateService(arguments...))
   # Google Analytics
   .run(($rootScope, $location) ->
