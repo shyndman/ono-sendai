@@ -1,5 +1,6 @@
 class CostToBreakCalculator
   constructor: (@$log, $q, @cardService, @breakScripts) ->
+    @$log.debug 'Performing cost-to-break startup queries'
     $q.all(
         'sentry':    @_performQuery('Corp', 'ice', 'sentry')
         'barrier':   @_performQuery('Corp', 'ice', 'barrier')
