@@ -209,5 +209,5 @@ angular
     new UrlStateService(arguments...))
   # Google Analytics
   .run(($rootScope, $location) ->
-    $rootScope.$on('$routeChangeSuccess', ->
+    $rootScope.$on('$locationChangeSuccess', ->
       ga('send', 'pageview', page: $location.path())))
