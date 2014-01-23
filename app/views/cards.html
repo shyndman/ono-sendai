@@ -19,8 +19,8 @@
             'other': '{} cards'
           }"></ng-pluralize>
       </small>
-      {{ group.title|primaryGroupTitle:filter.groupings }}
-      <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
+      {{ group.title | primaryGroupTitle:filter.groupings }}
+      <small class="secondary-group" ng-bind-html="group.title | secondaryGroupTitle:filter.groupings"></small>
     </h2>
 
     <!--
