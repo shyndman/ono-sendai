@@ -332,22 +332,26 @@ angular.module('onoSendai')
       {
         display: 'Faction'
         groupings: [ 'faction', 'type' ]
-      },
+      }
       {
         display: 'Type'
         groupings: [ 'type' ]
-      },
+      }
       {
         display: 'Cost'
         groupings: [ 'cost' ]
-      },
+      }
       {
         display: 'Influence'
         groupings: [ 'factioncost' ]
-      },
+      }
       {
         display: 'Set'
         groupings: [ 'setname' ]
-      },
+      }
+      {
+        display: 'Illus.'
+        groupings: [ 'illustrator' ]
+      }
     ]
   )
