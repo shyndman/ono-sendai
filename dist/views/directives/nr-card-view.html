@@ -66,6 +66,12 @@
               <a ng-href="{{ card | cardUrl:'set' }}">{{ card.setname }}</a>
             </div>
           </div>
+          <div ng-if="card.illustrator != null" class="info-row">
+            <span class="info-label">Illus.:</span>
+            <div class="info-value">
+              <a ng-href="{{ card | cardUrl:'illustrator' }}">{{ card.illustrator }}</a>
+            </div>
+          </div>
           <div ng-if="isShortCard(card)" class="info-row">
             <span class="info-label">Quantity:</span>
             <div class="info-value">
