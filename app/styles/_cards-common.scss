@@ -41,6 +41,8 @@
     font-weight: 200;
     letter-spacing: 0.4px;
 
+    user-select: all;
+
     transition: color 0.3s ease-in-out;
 
     @include faction-header($neutral-color);
