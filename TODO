@@ -33,10 +33,18 @@
   | aligned    |     aligned |   aligned
 
 [todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
-[todo] Search/group by Illustrator
 [todo] Make clearing searches more obvious
 [todo] Genesis/Spin Cycle colours in the set view
+[todo] Cycle icons
 [todo] Card groups
+[todo] Interesting comment:
+
+  On the deck side - one thing that I'm dying for is a collection organizer...
+  i want to be able to tell the site what sets I have - and then be able to figure
+  out which decks I can build concurrently - ie flag decks as "currently constructed" -
+  and then be able to filter / sort your other decks based on how much swapping would
+  be necessary to build them.
+
 
 COST TO BREAK NOTES
 * Deus X and Sharpshooter have to work in both directions
