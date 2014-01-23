@@ -22,6 +22,7 @@ angular.module('onoSendai')
       factionCost:
         operator: '='
       setname: null
+      illustrator: null
       influenceLimit:
         operator: '='
       minimumDeckSize:
@@ -101,6 +102,13 @@ angular.module('onoSendai')
             placeholder: 'Set'
             icon: 'set'
             source: 'sets'
+          }
+          {
+            name: 'illustrator'
+            type: 'inSet'
+            placeholder: 'Illustrator'
+            icon: 'illustrator'
+            source: 'illustrators'
           }
         ]
       },
@@ -247,6 +255,9 @@ angular.module('onoSendai')
         subtype:
           type: 'inSet'
           cardField: 'subtypesSet'
+        illustrator:
+          type: 'match'
+          cardField: 'illustratorId'
     }
     identity: {
       cardType: 'Identity'

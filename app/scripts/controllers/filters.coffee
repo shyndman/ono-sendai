@@ -25,6 +25,12 @@ angular.module('onoSendai')
         id: st.id
         text: st.title
 
+    cardService.ready().then updateIllustrators = ->
+      illustrators = cardService.illustrators[$scope.filter.side.toLowerCase()]
+      $scope.illustrators = _.map illustrators, (i) ->
+        id: i.id
+        text: i.title
+
     $scope.$watch 'filter.side', sideChanged = (newSide, oldSide) ->
       # Ignore the first "change", because it screws with URL state
       return if newSide is oldSide
@@ -33,6 +39,8 @@ angular.module('onoSendai')
       $scope.clearFactions()
       delete $scope.filter.fieldFilters.subtype
       updateSubtypes()
+      delete $scope.filter.fieldFilters.illustrator
+      updateIllustrators()
 
     $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
       $scope.factionSelected = _.any factions, (flag) -> !flag
