@@ -346,7 +346,18 @@ class CardService
       when 'setname'
         (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
       else
-        (a, b) => a[fieldName].localeCompare(b[fieldName])
+        (a, b) =>
+          aVal = a[fieldName]
+          bVal = b[fieldName]
+
+          if aVal? and !bVal?
+            -1
+          else if !aVal? and bVal?
+            1
+          else if !aVal? and !bVal?
+            0
+          else
+            aVal.localeCompare(bVal)
 
   _augmentCards: (cards) =>
     _.each cards, (card) =>
