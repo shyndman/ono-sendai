@@ -8640,6 +8640,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04066",
       "number": 66,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-23T17:57:46Z",
+          "id": "1vyhnm",
+          "title": "[COTD] LLDS Processor (23 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vyhnm/cotd_llds_processor_23_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "subtype": "Chip",
