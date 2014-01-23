@@ -33,6 +33,8 @@ angular.module('onoSendai')
           "#{ urlPrefix }/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'
           "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }&group=setname"
+        when 'illustrator'
+          "#{ urlPrefix }/cards/#{ side }?illustrator=#{ card.illustratorId }&group=illustrator"
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         when 'image'

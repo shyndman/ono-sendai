@@ -22,6 +22,11 @@ groupTitle = (groupName, grouping) ->
         "#{ groupName } Influence"
       else
         "Influence N/A"
+    when 'illustrator'
+      if groupName != ''
+        groupName
+      else
+        'None'
     else
       groupName
 
