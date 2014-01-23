@@ -1,9 +1,9 @@
-
-
 angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
-  .value('filterDefaults',
+  .value('queryArgDefaults',
     side: 'Corp'
+    search: ''
+    activeGroup: 'general'
     groupings: [ 'faction', 'type' ]
     fieldFilters:
       faction:
@@ -22,6 +22,7 @@ angular.module('onoSendai')
       factionCost:
         operator: '='
       setname: null
+      illustrator: null
       influenceLimit:
         operator: '='
       minimumDeckSize:
@@ -101,6 +102,13 @@ angular.module('onoSendai')
             placeholder: 'Set'
             icon: 'set'
             source: 'sets'
+          }
+          {
+            name: 'illustrator'
+            type: 'inSet'
+            placeholder: 'Illustrator'
+            icon: 'illustrator'
+            source: 'illustrators'
           }
         ]
       },
@@ -247,6 +255,9 @@ angular.module('onoSendai')
         subtype:
           type: 'inSet'
           cardField: 'subtypesSet'
+        illustrator:
+          type: 'match'
+          cardField: 'illustratorId'
     }
     identity: {
       cardType: 'Identity'
@@ -321,18 +332,26 @@ angular.module('onoSendai')
       {
         display: 'Faction'
         groupings: [ 'faction', 'type' ]
-      },
+      }
+      {
+        display: 'Type'
+        groupings: [ 'type' ]
+      }
       {
         display: 'Cost'
         groupings: [ 'cost' ]
-      },
+      }
       {
         display: 'Influence'
         groupings: [ 'factioncost' ]
-      },
+      }
       {
         display: 'Set'
         groupings: [ 'setname' ]
-      },
+      }
+      {
+        display: 'Illus.'
+        groupings: [ 'illustrator' ]
+      }
     ]
   )

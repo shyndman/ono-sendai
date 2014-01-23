@@ -1,5 +1,6 @@
 angular.module('onoSendai')
   .controller('CardViewCtrl', ($scope, costToBreakCalculator, userPreferences, urlStateService) ->
+
     # ~-~-~- INITIALIZATION
 
     $scope.cardUI =
@@ -10,6 +11,9 @@ angular.module('onoSendai')
     # ~-~-~- CARD CAROUSEL
 
     invalidateBeforeAfter = ->
+      if !$scope.queryResult
+        return
+
       card = $scope.card
       [ before, after ] = $scope.queryResult.beforeAndAfter(card, 7)
 
@@ -84,6 +88,7 @@ angular.module('onoSendai')
     updateUrl = _.debounce((updateUrlNow = ->
       selCard = $scope.card
       cardPage = $scope.cardUI.page
+      # selCard && cardPage resolves to cardPage if selCard is truthy
       $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
     ), 500)
   )

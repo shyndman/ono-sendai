@@ -1,13 +1,13 @@
 nr-subnav {
   $subnav-height: 30px;
 
-  display: flexbox;
+  display: flex;
   height: $subnav-height; // Required for Firefox
   min-height: $subnav-height; // Everybody else (weird)
   border-bottom: 1px solid #e7e7e7;
   background: #fbfbfb;
   box-shadow: 1px 4px 13px rgba(255, 255, 255, 0.6);
-  z-index: 1000000;
+  z-index: $zindex-dropdown - 1;
 
   nav {
     flex-grow: 1;
@@ -95,7 +95,7 @@ nr-subnav {
   .control-label {
     margin-right: 12px;
     font-size: 12px;
-    color: #9b9b9b;
+    color: #777;
     line-height: $subnav-height;
   }
 
@@ -113,5 +113,41 @@ nr-subnav {
 
   .btn-group .btn:focus + .btn {
     border: none;
+  }
+}
+
+// Hacks for Firefox. I repent to the god of CSS.
+@include firefox-only {
+  nr-subnav {
+    .groupings {
+      position: relative;
+      top: -1px;
+    }
+
+    .zoom {
+      .control-label {
+        position: relative;
+        top: -3px;
+      }
+
+      .unabridged input[type=range] {
+        top: 6px !important;
+      }
+    }
+  }
+}
+
+@include ie-only {
+  nr-subnav {
+    .zoom {
+      .control-label {
+        position: relative;
+        top: -8px;
+      }
+
+      .unabridged input[type=range] {
+        top: -7px !important;
+      }
+    }
   }
 }

@@ -3,14 +3,15 @@ $card-height: 418px;
 $sidebar-width: 212px;
 
 $active-color: #66afe9;
-$active-border-color: #5398CE;
-
+$active-border-color: #5398ce;
 $disabled-label-color: #bbb;
+$has-input-color: #c2e4ff;
+$has-input-border-color: #aaa;
 
 
 // ~-~-~- RESPONSIVE
 
-$filter-bar-collapse-width: 824px;
+$filter-bar-collapse-width: 916px;
 $super-small-collapse-width: 400px;
 
 
@@ -26,12 +27,16 @@ $shaper-color:       #6da346;
 $neutral-color:      #756661;
 
 
-// ~-~-~- Z INDEXES
+// ~-~-~- CYCLE COLORS
 
-$card-current-z-index: 3;
-$card-current-info-z-index: 2;
-$card-offset-1-z-index: 1;
-$card-offset-2-z-index: 0;
+$genesis-cycle-color: #7b7868;
+$spin-cycle-color: #7b7868;
+
+
+// ~-~-~- COST TO BREAK ROW COLORS
+
+// green * 3 > yellow * 3 > red * 3
+// #dff0d8 #e6f2da #edf4dd #f4f6e0 #fcf8e3 #f9f1e1 #f7ebe0 #f4e4df #f2dede
 
 
 // ~-~-~- BOOTSTRAP OVERRIDES
@@ -45,4 +50,4 @@ $grid-float-breakpoint: 0px;
 $text-color: #555;
 $dropdown-link-hover-bg: #428bca;
 $dropdown-link-hover-color: white;
-
+$zindex-dropdown: 10000;

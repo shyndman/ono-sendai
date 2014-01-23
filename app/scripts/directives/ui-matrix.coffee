@@ -11,8 +11,9 @@ angular.module('onoSendai')
     }
     link: (scope, element, attrs) ->
       container = element.find('.content-container')
-      containerWidth = container.width()
+      containerWidth = null # container.width()
       inContinuousZoom = false
+      needsLayout = false
 
       minimumGutterWidth = 20
       vMargin = 10
@@ -99,8 +100,6 @@ angular.module('onoSendai')
       isGridHeader = (item) ->
         item.classList.contains('grid-header')
 
-      # Returns a promise that is resolved when any transitions complete, or undefined if there
-      # is no transition.
       performGridLayout = ->
         items = gridItemsAndHeaders
         if !items? or !items.length
@@ -225,6 +224,7 @@ angular.module('onoSendai')
       layoutNow = (scaleImages = false) ->
         # No point in doing any work if nobody sees it
         if element.is(':hidden')
+          needsLayout = true
           return
 
         # First, we *might* downscale the images. It may be done earlier in the process (for example, in
@@ -234,14 +234,20 @@ angular.module('onoSendai')
         else
           performGridLayout()
 
+        needsLayout = false
+
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
 
       # Reacts to messages sent from above triggering layouts
-      scope.$on 'layout', ->
+      scope.$on 'layout', (e, mode) ->
+        if mode != 'grid'
+          return
+
         $timeout ->
-          hasContainerChangedWidth()
-          layoutNow(true)
+          if hasContainerChangedWidth() or needsLayout
+            layoutNow(false)
+          scrollToFocusedElement()
 
 
       # *~*~*~*~ SCROLLING
@@ -267,7 +273,7 @@ angular.module('onoSendai')
 
       # Determine which grid item or header is in the top left, so that we can keep it focused through zooming
       scrollChanged = ->
-        if inContinuousZoom
+        if inContinuousZoom or !container.is(':visible')
           return
 
         scrollTop = scrollParent.scrollTop()
@@ -340,7 +346,39 @@ angular.module('onoSendai')
             $q.when() # Empty promise :)
 
 
-      # *~*~*~*~ SELECTION AND QUERY MODE
+      # *~*~*~*~ SELECTION CHANGES
+
+      # When the selection changes, change the focused element
+      scope.$watch 'selection', (newSelection) ->
+        if !newSelection?
+          return
+
+        changeFocusToSelection = ->
+          selectionElement = element.find("[grid-id='#{ newSelection.id }']")
+          if !selectionElement.length
+            console.warn "No element found with grid-id #{ newSelection.id }"
+            return
+
+          $log.debug 'New focus element determined "%s"', selectionElement.attr('title')
+
+          focusedElement = selectionElement.get(0)
+          focusedElementChop = -0.02 # Negative chop to make the scroll position feel a bit more natural
+
+        if firstLayout
+          # We timeout here for the case where the user lands on the card page, and we have to wait for the
+          # DOM to contain all the cards
+          $timeout changeFocusToSelection
+        else
+          changeFocusToSelection()
+
+
+      scope.$watch 'layoutMode', (layoutMode) ->
+        if layoutMode == 'grid'
+          scrollToFocusedElement()
+
+
+
+      # *~*~*~*~ QUERY CHANGES
 
       firstLayout = true
       scope.$watch('queryResult', queryResultChanged = (newVal) ->

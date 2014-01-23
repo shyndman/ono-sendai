@@ -1,7 +1,6 @@
 angular.module('onoSendai')
   .controller('FiltersCtrl', ($scope, filterUI, cardService) ->
     $scope.filterUI = filterUI
-    generalGroup = _.findWhere(filterUI, name: 'general')
     factions = $scope.filter.fieldFilters.faction
 
     # Supply the sets
@@ -26,14 +25,33 @@ angular.module('onoSendai')
         id: st.id
         text: st.title
 
+    cardService.ready().then updateIllustrators = ->
+      illustrators = cardService.illustrators[$scope.filter.side.toLowerCase()]
+      $scope.illustrators = _.map illustrators, (i) ->
+        id: i.id
+        text: i.title
+
     $scope.$watch 'filter.side', sideChanged = (newSide, oldSide) ->
       # Ignore the first "change", because it screws with URL state
       return if newSide is oldSide
 
-      $scope.filter.activeGroup = generalGroup
-      factions[key] = true for key, val of factions
+      $scope.filter.activeGroup = 'general'
+      $scope.clearFactions()
       delete $scope.filter.fieldFilters.subtype
       updateSubtypes()
+      delete $scope.filter.fieldFilters.illustrator
+      updateIllustrators()
+
+    $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
+      $scope.factionSelected = _.any factions, (flag) -> !flag
+    ), true)
+
+    findGroup = (groupName) ->
+      _.findWhere(filterUI, name: groupName)
+
+    $scope.clearFactions = ->
+      for key, val of factions
+        factions[key] = true
 
     $scope.labelledFieldId = (field) ->
       switch field.type
@@ -46,11 +64,11 @@ angular.module('onoSendai')
       if $scope.filter.activeGroup isnt group
         $scope.filter.activeGroup = group
       else
-        $scope.filter.activeGroup = generalGroup
+        $scope.filter.activeGroup = 'general'
 
     $scope.isActiveGroup = (group, activeGroup) ->
       if activeGroup
-        group.name is activeGroup.name
+        group.name is activeGroup
       else
         false
 
@@ -62,10 +80,10 @@ angular.module('onoSendai')
 
     $scope.isFieldShown = (field, group, activeGroup, currentSide) ->
       group.name is 'general' or ( # General fields are always shown...
-        activeGroup.name == group.name and # ...so are the active group fields...
+        activeGroup == group.name and # ...so are the active group fields...
         (field.side is undefined or field.side == currentSide) # ...but are sometimes filtered if they have a side
       )
 
     $scope.isFieldDisabled = (field, group, activeGroup, currentSide) ->
-      group.name is 'general' and activeGroup.hiddenGeneralFields?[field.name]
+      group.name is 'general' and findGroup(activeGroup).hiddenGeneralFields?[field.name]
   )

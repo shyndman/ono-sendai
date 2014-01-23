@@ -12,6 +12,18 @@
   }
 }
 
+@mixin firefox-only {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin ie-only {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
 @function pow($x,$p) {
   $u: unit($x);
   $x: $x / 1#{$u};

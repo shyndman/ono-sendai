@@ -16,6 +16,7 @@ card-view {
     img {
       width: 100%;
       height: auto;
+      z-index: 1;
 
       box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
       border-radius: 16px;
@@ -23,7 +24,7 @@ card-view {
 
     .background {
       position: absolute;
-      z-index: 1;
+      z-index: 0;
       top: 0;
       right: 0;
       bottom: 0;
@@ -46,14 +47,8 @@ card-view {
     width: $selected-card-width;
     height: 100%;
     padding: 9px 0;
-
-    z-index: $card-current-info-z-index;
+    z-index: 2000;
     background: rgba(255, 255, 255, 0.8);
-
-    .card-image {
-      width: 290px;
-      margin-left: 8px;
-    }
 
     h2.card-name {
       margin-bottom: 22px;
@@ -79,7 +74,7 @@ card-view {
 
         &:hover {
           color: #999;
-          text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
         }
 
         &.on {
@@ -92,11 +87,18 @@ card-view {
       }
     }
 
+    .card-content {
+      display: flex;
+    }
+
+    .card-image {
+      width: 300px;
+    }
+
     .info {
       width: 280px;
       height: 418px;
-      float: right;
-      user-select: all;
+      margin-left: 20px;
 
       .info-nav {
         position: absolute;
@@ -134,7 +136,7 @@ card-view {
 
     .card-pager {
       position: absolute;
-      bottom: 15px;
+      bottom: 10px;
       left: 0;
       right: 0;
       user-select: none;
@@ -168,16 +170,23 @@ card-view {
   .wing {
     flex-grow: 1;
     position: relative;
+
+    .wing-click-region {
+      height: 300px;
+      position: relative;
+      top: 120px;
+      z-index: 1000;
+      cursor: pointer;
+    }
   }
 
   .card-image.in-wing {
     position: absolute;
-    top: 50px;
+    top: 60px;
 
     width: 300px;
     height: 418px;
     overflow: visible;
-    cursor: pointer;
 
     perspective: 2000px;
     transform: scale(0.7);

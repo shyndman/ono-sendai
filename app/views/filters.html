@@ -14,7 +14,7 @@ NOTES:
        ng-class="{ active: isActiveGroup(group, filter.activeGroup) }"
        ng-show="isGroupShown(group, filter.side)">
 
-    <h5 ng-click="toggleGroup(group)">{{ group.display }}</h5>
+    <h5 ng-click="toggleGroup(group.name)">{{ group.display }}</h5>
 
     <div class="filter-group-field {{ field.name }} form-group"
          ng-repeat="field in group.fieldFilters"
@@ -30,13 +30,21 @@ NOTES:
           <input type="search"
                  id="{{ field.name }}-filter"
                  class="form-control input-sm"
+                 ng-class="{
+                   'has-input': !!filter.search
+                 }"
                  placeholder="{{ field.placeholder }}"
                  ng-model="filter.search"
                  filter-input>
+          <a class="clear-filter"
+             ng-click="filter.search = ''">&times;</a>
         </div>
 
         <div ng-switch-when="faction">
-          <div class="btn-group">
+          <div class="faction-filter btn-group"
+               ng-class="{
+                 'has-input': factionSelected
+               }">
             <button
                 class="btn btn-default btn-sm"
                 ng-repeat="faction in field.side[filter.side.toLowerCase()]"
@@ -47,27 +55,39 @@ NOTES:
               {{ faction.abbr }}
             </button>
           </div>
+          <a class="clear-filter"
+             ng-click="clearFactions()">&times;</a>
         </div>
 
         <div ng-switch-when="numeric">
           <numeric-filter
             id="{{ field.name }}-filter"
+            ng-class="{
+              'has-input': !!filter.fieldFilters[field.name].value
+            }"
             filter-attr="filter.fieldFilters[field.name]"
             placeholder="{{ field.placeholder }}"
             max="{{ field.max }}"
             ui-disabled="{{ isFieldDisabled(field, group, filter.activeGroup, filter.side) }}"
             filter-input>
           </numeric-filter>
+          <a class="clear-filter"
+             ng-click="filter.fieldFilters[field.name].value = null">&times;</a>
         </div>
 
         <div ng-switch-when="inSet">
           <inset-filter
             id="{{ field.name }}-filter"
+            ng-class="{
+              'has-input': !!filter.fieldFilters[field.name]
+            }"
             placeholder="{{ field.placeholder }}"
             ng-model="filter.fieldFilters[field.name]"
             inset-filter-source="this[field.source]"
             filter-input>
           </inset-filter>
+          <a class="clear-filter"
+             ng-click="filter.fieldFilters[field.name] = null">&times;</a>
         </div>
       </div>
     </div>

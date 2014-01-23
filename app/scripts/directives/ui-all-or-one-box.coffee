@@ -22,14 +22,15 @@ angular.module('onoSendai')
       field = attrs.uiAllOrOneBoxField
 
       # Model -> UI
-      ngModelCtrl.$render = ->
-        parentModel = getParentModel(scope)
+      scope.$watch(attrs.uiAllOrOneBox, (modelChanged = (parentModel) ->
         flag =
           if _.all(parentModel, (bool) -> bool)
             false
           else
             ngModelCtrl.$modelValue
         element.toggleClass('active', flag)
+      ), true)
+
 
       # UI -> Model
       #   TODO This seriously makes no sense. I'm completely circumventing the $setViewValue system in order

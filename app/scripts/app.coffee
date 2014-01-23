@@ -2,7 +2,6 @@ _.mixin(_.str.exports()); # Make underscore.string functions available under the
 
 angular.module('onoSendai', [
     'ui.bootstrap.buttons',
-    'ui.bootstrap.tooltip',
     'pasvaz.bindonce'])
   .config(($locationProvider) ->
     # Very important :)

@@ -5,8 +5,7 @@
       ng-show="cardsUI.layoutMode == 'grid'"
       query-result="queryResult"
       selection="selectedCard"
-      zoom="cardsUI.zoom"
-      layout-mode="cardsUI.layoutMode">
+      zoom="cardsUI.zoom">
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id"
@@ -20,8 +19,8 @@
             'other': '{} cards'
           }"></ng-pluralize>
       </small>
-      {{ group.title|primaryGroupTitle:filter.groupings }}
-      <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
+      {{ group.title | primaryGroupTitle:filter.groupings }}
+      <small class="secondary-group" ng-bind-html="group.title | secondaryGroupTitle:filter.groupings"></small>
     </h2>
 
     <!--
@@ -38,8 +37,7 @@
          bo-title="card.title"
          bo-attr-grid-id="card.id"
          bo-attr>
-      <img bo-src="card.imagesrc" width="300" height="418">
-      <div class="background"></div>
+      <img bo-src="card | cardUrl:'image'" width="300" height="418">
     </div>
 
     <!-- No results -->

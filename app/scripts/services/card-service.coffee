@@ -111,15 +111,18 @@ class CardService
     @_setsById = {}
     @subtypeCounts = corp: {}, runner: {}
     @subtypes = corp: [], runner: []
+    @illustratorCounts = corp: {}, runner: {}
+    @illustrators = corp: [], runner: []
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: { sets: @_sets, cards: @_cards }, status, headers }) =>
+      .then(({ data: { sets: @_sets, cards: @_cards, "last-modified": lastMod }, status, headers }) =>
         window.cards = @_cards # DEBUG
-        @searchService.indexCards(@_cards)
+        @searchService.indexCards(@_cards, lastMod)
         @_augmentCards(@_cards)
         @_augmentSets(@_sets)
         @_initSubtypes()
+        @_initIllustrators()
         @_cards)
 
   # Returns a promise that resolves when the card service is ready
@@ -156,9 +159,9 @@ class CardService
           resultSet
         )))
 
-  _searchCards: ({ search }) =>
+  _searchCards: ({ search, byTitle }) =>
     if _.trim(search).length > 0
-      @searchService.search(search)
+      @searchService.search(search, byTitle)
     else
       @_cards
 
@@ -178,7 +181,7 @@ class CardService
   #
   # If null is returned, all cards should be shown.
   _enabledTypes: (queryArgs) =>
-    activeName = queryArgs.activeGroup?.name
+    activeName = queryArgs.activeGroup
     if !activeName? or activeName is 'general'
       null
     else
@@ -196,9 +199,9 @@ class CardService
     groups = ['general']
     excludeds = {} # Fields that will not be used to filter
 
-    if queryArgs.activeGroup? and queryArgs.activeGroup.name isnt 'general'
-      groups.push(queryArgs.activeGroup.name)
-      excludeds = @filterDescriptors[queryArgs.activeGroup.name].excludedGeneralFields || {}
+    if queryArgs.activeGroup? and queryArgs.activeGroup isnt 'general'
+      groups.push(queryArgs.activeGroup)
+      excludeds = @filterDescriptors[queryArgs.activeGroup].excludedGeneralFields || {}
 
     _(groups)
       .chain()
@@ -244,6 +247,8 @@ class CardService
         @_buildInSetFilter(filterDesc, filterArg)
       when 'cardSet'
         @_buildCardSetFilter(filterDesc, filterArg)
+      when 'match'
+        @_buildMatchFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
@@ -284,6 +289,10 @@ class CardService
     set = @_setsById[filterArg]
     (card) ->
       card.setname == set.title
+
+  _buildMatchFilter: (filterDesc, filterArg) =>
+    (card) ->
+      fieldVal = card[filterDesc.cardField] == filterArg
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
@@ -337,7 +346,18 @@ class CardService
       when 'setname'
         (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
       else
-        (a, b) => a[fieldName].localeCompare(b[fieldName])
+        (a, b) =>
+          aVal = a[fieldName]
+          bVal = b[fieldName]
+
+          if aVal? and !bVal?
+            -1
+          else if !aVal? and bVal?
+            1
+          else if !aVal? and !bVal?
+            0
+          else
+            aVal.localeCompare(bVal)
 
   _augmentCards: (cards) =>
     _.each cards, (card) =>
@@ -359,15 +379,19 @@ class CardService
         @subtypeCounts[side][st] ?= 0
         @subtypeCounts[side][st]++
 
+      # Increment the occurrences of each of the card's illustrator counts
+      if card.illustrator?
+        card.illustratorId = _.idify(card.illustrator)
+        @illustratorCounts[side][card.illustrator] ?= 0
+        @illustratorCounts[side][card.illustrator]++
+      else if card.type != 'Identity'
+        console.warn "#{ card.title } has no illustrator"
+
       switch card.type
         when 'ICE'
           # [todo] This isn't perfect, because it doesn't consider advanceables.
-          card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
-        when 'Identity'
-          # It's unclear why the raw data has this field on identities -- it shouldn't. If it does
-          # it screws up grouping/sorting
-          # [todo] Consider whitelisting fields for specific types in cards.json
-          delete card.cost
+          card.subroutinecount ?= # If a card already has a subroutine count set, use it instead
+            card.text.match(/\[Subroutine\]/g)?.length || 0
 
   _augmentSets: (sets) =>
     _.each sets, (set, i) =>
@@ -389,6 +413,21 @@ class CardService
               title: st)
             .value()
         [side, subtypes]))
+
+  _initIllustrators: =>
+    @illustrators = _.object(
+      _.map(@illustratorCounts, (counts, side) ->
+        illustrators =
+          _(counts)
+            .chain()
+            .keys()
+            .sort()
+            .map((i) ->
+              id: _.idify(i)
+              title: i)
+            .value()
+        [side, illustrators]))
+
 
 angular.module('onoSendai')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from

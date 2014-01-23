@@ -14,7 +14,7 @@
 @import "fonts";
 @import "icons";
 @import "directives";
-@import "sidebar";
+@import "filter-bar";
 
 body, html {
   width: 100%;
@@ -64,7 +64,7 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
-#version {
+footer {
   position: absolute;
   font-size: 11px;
   left: 3px;
@@ -72,7 +72,39 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 2px 5px;
   background: rgba(255, 255, 255, 0.9);
 
-  a, a:hover, a:visited {
+  > a {
+    &, &:hover, &:visited {
+      color: #777;
+      text-decoration: none;
+    }
+  }
+
+  .about {
+    display: inline;
+    outline: 0;
+    cursor: pointer;
     color: #777;
+
+    &:focus {
+      .tooltip {
+        opacity: 1;
+        display: block;
+      }
+    }
+
+    .tooltip {
+      display: none;
+      top: -76px;
+      width: 130px;
+
+      .tooltip-inner {
+        max-width: initial;
+        text-align: left;
+      }
+
+      .tooltip-arrow {
+        left: 11%;
+      }
+    }
   }
 }

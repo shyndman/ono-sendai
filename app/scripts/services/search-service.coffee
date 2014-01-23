@@ -7,37 +7,64 @@ class SearchService
       lunr.Pipeline.registerFunction fn, lbl
 
     lunr.tokenizer = @_tokenize
-    @_index = lunr ->
+    @_fullIndex = lunr ->
       @pipeline.before (->), fn for { fn } in filters
       @ref 'title'
       @field 'title', boost: 10
       @field 'type'
       @field 'subtype'
       @field 'text'
-      # TODO Figure out whether this should stay, because it can often lead to search results that don't make sense
-      # @field 'setname'
+      @field 'setname'
 
-    # DEBUG
-    window.searchIndex = @_index
-    window.search = @_index.search.bind(@_index)
+    @_titleIndex = lunr ->
+      @pipeline.before (->), fn for { fn } in filters
+      @ref 'title'
+      @field 'title'
 
-  indexCards: (@cards) =>
+  indexCards: (@cards, lastMod) =>
     # Store a map of cards by their title, for later mapping
     @_cardsByTitle = _.object(_.zip(_.pluck(cards, 'title'), cards))
-    @_index.add(card) for card in @cards
 
-    # Remove the stop word filter, so that we can do prefix matching properly
-    @_index.pipeline.remove(lunr.stopWordFilter)
+    _.time 'Indexing cards', =>
+      @_tryCachedIndexes(_.partial(@_indexCards, cards), lastMod)
 
   # Retuns a promise that will resolve to an array of cards matching the provided query.
-  search: (query) =>
-    @_mapResultsToCards(@_index.search(query))
+  search: (query, byTitle = false) =>
+    index = if byTitle then @_titleIndex else @_fullIndex
+    @_mapResultsToCards(index.search(query))
 
   _mapResultsToCards: (results) =>
     if !results?
       []
     else
       (@_cardsByTitle[result.ref] for result in results)
+
+  # Attempts to load a version of the card indexes with the given last modified timestamp. If none
+  # is found, the indexes are computed using indexFn, and cached for future use.
+  _tryCachedIndexes: (indexFn, lastMod) ->
+    cachedIndexes = JSON.parse(localStorage.getItem('searchIndexes'))
+
+    # If we have the right index cached, load it in
+    if cachedIndexes? and cachedIndexes[lastMod]?
+      for name, data of cachedIndexes[lastMod]
+        @[name] = lunr.Index.load(data)
+      return
+
+    # Otherwise index the cards
+    indexFn()
+
+    # And write the indexes to local storage
+    jsonIndexes = {}
+    jsonIndexes[lastMod] = _titleIndex: @_titleIndex.toJSON(), _fullIndex: @_fullIndex.toJSON()
+    localStorage.setItem('searchIndexes', JSON.stringify(jsonIndexes))
+
+  _indexCards: (cards) =>
+    for index in [ @_titleIndex, @_fullIndex ]
+      for card in @cards
+        index.add(card)
+
+      # Remove the stop word filter, so that we can do prefix matching properly
+      index.pipeline.remove(lunr.stopWordFilter)
 
   # Replacement tokenizer for lunr
   _tokenize: (obj) =>

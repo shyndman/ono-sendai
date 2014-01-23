@@ -41,6 +41,10 @@
     font-weight: 200;
     letter-spacing: 0.4px;
 
+    user-select: all;
+
+    transition: color 0.3s ease-in-out;
+
     @include faction-header($neutral-color);
 
 
@@ -61,6 +65,19 @@
     }
 
 
+    // ~-~-~- CYCLE COLORING
+
+    $cycles: genesis-cycle $genesis-cycle-color,
+             spin-cycle $spin-cycle-color;
+
+    @each $c in $cycles {
+      small.secondary-group > span.#{ nth($c, 1) } {
+        color: nth($c, 2);
+      }
+    }
+
+
+
     // ~-~-~- ANCILLARY INFO
 
     small {
@@ -70,6 +87,10 @@
     small.secondary-group {
       margin-left: 10px;
       font-size: 17px;
+
+      > .cycle {
+        margin-left: -5px;
+      }
     }
 
     small.card-count {
@@ -88,13 +109,17 @@
       margin-right: 8px;
       border-bottom-color: transparent;
 
-      > li > a {
-        padding: 5px 5px 4px 5px;
-        color: #555;
+      > li {
+        top: 1px;
 
-        &:hover {
-          background-color: #f9f9f9;
-          border-bottom: none;
+        > a {
+          padding: 5px 5px 4px 5px;
+          color: #555;
+
+          &:hover {
+            background-color: #f9f9f9;
+            border-bottom: none;
+          }
         }
       }
 

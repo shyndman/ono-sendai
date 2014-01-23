@@ -1,4 +1,4 @@
-<h1 class="brand">Ono-Sendai</h1>
+<h1 class="brand" ng-click="resetState()">Ono-Sendai</h1>
 <nav>
   <ul>
     <li class="active">
@@ -8,9 +8,16 @@
       </a>
     </li>
     <li>
-      <a href="#" tabindex="-1" data-abbr="Decks">
+      <a href="#" tabindex="-1">
         <span class="unabridged">Deck Builder</span>
         <span class="abbreviated">Decks</span>
+
+        <div class="tooltip bottom">
+          <div class="tooltip-inner">
+            Coming soon...
+          </div>
+          <div class="tooltip-arrow"></div>
+        </div>
       </a>
     </li>
   </ul>
@@ -23,11 +30,27 @@
     <div class="abbreviated">
       <a href="#"><i class="icon-search"></i></a>
     </div>
-    <div class="unabridged">
+    <div class="dropdown-parent unabridged">
       <input class="form-control"
              type="search"
              placeholder="Card Search"
-             ui-hotkey="cmd+F/ctrl+F">
+             ng-model="cardSearch"
+             ui-hotkey="cmd+F/ctrl+F"
+             ui-keydown="{
+               'up'    : { action: 'previousResult()', preventDefault: true },
+               'down'  : { action: 'nextResult()', preventDefault: true },
+               'enter' : { action: 'clearSearch()', preventDefault: true }
+             }"
+             autofocus
+             filter-input>
+      <ul class="dropdown-menu">
+        <li ng-repeat="card in cardSearchResults"
+            ng-class="{
+              active: $index == cardSearchResults.selectedIndex
+            }">
+          <a href="{{ card | cardUrl:'card' }}" ng-bind-html="resultTitle(card, cardSearch)"></a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

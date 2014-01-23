@@ -1,7 +1,7 @@
 <div class="cards">
   <card-view ng-show="cardsUI.layoutMode == 'detail'"></card-view>
 
-  <matrix ng-show="cardsUI.layoutMode == 'grid'" query-result="queryResult" selection="selectedCard" zoom="cardsUI.zoom" layout-mode="cardsUI.layoutMode">
+  <matrix ng-show="cardsUI.layoutMode == 'grid'" query-result="queryResult" selection="selectedCard" zoom="cardsUI.zoom">
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id" grid-id="{{ group.id }}" class="{{ group.id }} grid-header invisible" title="{{ group.id }}">
@@ -10,8 +10,8 @@
             'other': '{} cards'
           }"></ng-pluralize>
       </small>
-      {{ group.title|primaryGroupTitle:filter.groupings }}
-      <small class="secondary-group">{{ group.title|secondaryGroupTitle:filter.groupings }}</small>
+      {{ group.title | primaryGroupTitle:filter.groupings }}
+      <small class="secondary-group" ng-bind-html="group.title | secondaryGroupTitle:filter.groupings"></small>
     </h2>
 
     <!--
@@ -22,8 +22,7 @@
       again. All sorting and show/hide logic for cards exists in the ui-matrix directive.
     -->
     <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item hidden" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
-      <img bo-src="card.imagesrc" width="300" height="418">
-      <div class="background"></div>
+      <img bo-src="card | cardUrl:'image'" width="300" height="418">
     </div>
 
     <!-- No results -->

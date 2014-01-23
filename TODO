@@ -3,13 +3,11 @@
 [todo] Add calculated max for filters
 [todo] Make it clear that moving back to the general filter will remove filters (or not -- color change made this better)
 [todo] Screensaver with random flavor text
-[todo] Ditch the $q promises in nr-cards-view. They slow down the UI with all their ticking
 [todo] Jinteki/Haas-Bioroid special deck URLs
-[todo] humans.txt -- add it!
 [todo] Excluded general controls should explain through a tooltip why they're disabled
-[todo] Rewrite sidebar to include the logo. That way we can start playing around with collapses for smaller screens
 [todo] Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then modified as time goes on. No more clearing (as you see in performGridLayout).
 [todo] Rename "filter" to "queryArgs" across the board
+[todo] Rename "grid" to "matrix" across the board
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
 [todo] Cost to break calculator filter should have a tooltip to tell you that you can filter in various ways
@@ -17,6 +15,44 @@
 [todo] Look into what this means (http://www.reddit.com/r/Netrunner/comments/1s5gu4/i_made_a_spreadsheet_of_probabilities_to_have_x/cdu7hpf)
 [todo] Full screen mode for mobile
 [todo] Versions for decks, and changes tab for telling you how to move between versions
+[todo] Filter down the subtype list to the currently selected group (maybe)
+[todo] .nav-tabs conflicts with something in bootstrap
+[todo] One stop search
+[todo] Consider adding all applicable attributes to groupings, depending on active group
+[todo] Off the Grid, in card search
+[todo] Sort by card number
+[todo] Markdown export for Cost to Break
+
+  | Left align | Right align | Center align |
+  |:-----------|------------:|:------------:|
+  | This       |        This |     This
+  | column     |      column |    column
+  | will       |        will |     will
+  | be         |          be |      be
+  | left       |       right |    center
+  | aligned    |     aligned |   aligned
+
+[todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
+[todo] Make clearing searches more obvious
+[idea] Efficiency improvement:
+  Cards only have to be sorted once up front, then grouping them will always yield sorted results.
+  Single pass group by.
+[todo] Cycle icons
+[todo] Card groups
+[todo] Interesting comment:
+
+  On the deck side - one thing that I'm dying for is a collection organizer...
+  i want to be able to tell the site what sets I have - and then be able to figure
+  out which decks I can build concurrently - ie flag decks as "currently constructed" -
+  and then be able to filter / sort your other decks based on how much swapping would
+  be necessary to build them.
+
+
+COST TO BREAK NOTES
+* Deus X and Sharpshooter have to work in both directions
+* Variable strength ICE (Curtain Wall, Hadrian's Wall*, Ice Wall*, Salvage*, Draco*)
+* Variable subroutines (NEXT Bronze, Ireress, Salvage*, Swarm*, Tyrant*, Woodcutter*)
+* Sort by title or credits
 
 RESPONSIVE NOTES
   iPhone  - zoom: 0.24
@@ -36,4 +72,3 @@ IDEA FOR RESPONSIVE DESIGNS
   control with a smaller representation.
 
   Seems like annotating HTML and generating the breakpoint variables would be an interesting project.
-

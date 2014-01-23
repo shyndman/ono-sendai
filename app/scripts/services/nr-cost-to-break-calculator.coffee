@@ -1,5 +1,6 @@
 class CostToBreakCalculator
   constructor: (@$log, $q, @cardService, @breakScripts) ->
+    @$log.debug 'Performing cost-to-break startup queries'
     $q.all(
         'sentry':    @_performQuery('Corp', 'ice', 'sentry')
         'barrier':   @_performQuery('Corp', 'ice', 'barrier')
@@ -43,16 +44,16 @@ class CostToBreakCalculator
       ice = _.extend angular.copy(ice), originalstrength: ice.strength, strength: ice.strength + iceAdjust
 
     # Collect all potential opponent cards
-    if ice.subtypesSet['sentry']
+    if ice.subtypesSet['sentry'] or options.tinkering
       breakers = breakers.concat @_killers.orderedCards
 
-    if ice.subtypesSet['barrier']
+    if ice.subtypesSet['barrier'] or options.tinkering
       breakers = breakers.concat @_fracters.orderedCards
 
-    if ice.subtypesSet['code-gate']
+    if ice.subtypesSet['code-gate'] or options.tinkering
       breakers = breakers.concat @_decoders.orderedCards
 
-    # [todo] How does Deus X fit in here
+    # [todo] How do Deus X / Sharpshooter fit in here
 
     breakers = breakers.concat @_ais.orderedCards
 
@@ -75,7 +76,7 @@ class CostToBreakCalculator
     if breaker.subtypesSet['decoder']
       ice = ice.concat @_codeGates.orderedCards
 
-    if breaker.subtypesSet['ai']
+    if breaker.subtypesSet['ai'] or options.tinkering
       ice = ice.concat @_allIce.orderedCards
 
     if breaker.breakcardsscript?
@@ -142,8 +143,7 @@ class CostToBreakCalculator
   _performQuery: (side, type, subtype) ->
     @cardService.query(
       side: side,
-      activeGroup:
-        name: type
+      activeGroup: type
       fieldFilters:
         subtype: subtype
     )
@@ -172,9 +172,9 @@ class BreakScripts
     interaction.breakerCondition = "= #{ ice.strength }"
     breaker.strength = ice.strength
 
-  crypsis: (interaction, breaker, strengthCost, breakCost, ice) =>
+  genericAI: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
-      return true # break complete
+          return true # break complete
 
   # If breakerStrength is specified, Darwin
   darwin: (interaction, breaker, strengthCost, breakCost, ice, { breakerStrength } = {}) =>
@@ -189,6 +189,9 @@ class BreakScripts
 
   deusxCards: (breaker, allIce) =>
     _.filter(allIce, (i) -> i.subtypesSet.ap)
+
+  sharpshooterCards: (breaker, allIce) =>
+    _.filter(allIce, (i) -> i.subtypesSet.destroyer)
 
   wyrm: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)

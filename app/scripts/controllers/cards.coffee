@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService) ->
+  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService, queryArgDefaults) ->
 
     # ~-~-~- INITIALIZATION
 
@@ -26,7 +26,7 @@ angular.module('onoSendai')
 
     loadVersion = ->
       $http.get('/data/version.json').success((data) ->
-        $scope.version = data.version)
+        $scope.version = "v#{ data.version }")
 
     # Kick it all off
     $q.all([cardService.getCards(), cardService.query(urlStateService.queryArgs)]).then(initialize)
@@ -46,7 +46,6 @@ angular.module('onoSendai')
         $log.info 'Card deselected'
 
       $scope.selectedCard = card
-
       updateUrl()
 
     $scope.deselectCard = ->
@@ -78,8 +77,8 @@ angular.module('onoSendai')
 
     #~-~-~- LAYOUT
 
-    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = ->
-      $scope.$broadcast 'layout'
+    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = (layoutMode) ->
+      $scope.$broadcast 'layout', layoutMode
 
 
     #~-~-~- QUERYING
@@ -101,6 +100,12 @@ angular.module('onoSendai')
           setQueryResult(queryResult)
       ), true) # True to make sure field changes trigger this watch
 
+    # Resets query args, and deselects the selected card, if any
+    $scope.resetState = ->
+      $scope.deselectCard()
+      $scope.filter = _.extend(angular.copy(queryArgDefaults), side: $scope.filter.side)
+      updateUrlNow(true)
+
 
     # ~-~-~- URL SYNC
 
@@ -121,12 +126,14 @@ angular.module('onoSendai')
           $scope.deselectCard()
           $scope.cardsUI.layoutMode = 'grid')
 
-    # Limits URL updates. I find it distracting if it happens to ofter.
-    updateUrl = _.debounce((updateUrlNow = ->
+    updateUrlNow = (pushState = false) ->
       selCard = $scope.selectedCard
       cardPage = $scope.cardsUI.cardPage
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
-    ), 500)
+      $scope.$safeApply ->
+        urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage, pushState)
+
+    # Limits URL updates. I find it distracting if it happens to ofter.
+    updateUrl = _.debounce(updateUrlNow, 500)
 
 
     # ~-~-~- COMMUNICATION BETWEEN DIRECTIVES / CONTROLLERS

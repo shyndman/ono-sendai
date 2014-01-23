@@ -182,6 +182,9 @@ module.exports = function (grunt) {
       }
     },
     concat: {
+      options: {
+        separator: ';'
+      },
       dist: {
         src: [ '.tmp/scripts/app.js', '.tmp/scripts/templateCache.js' ],
         dest: '.tmp/scripts/app.js'
@@ -405,7 +408,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'bump:minor',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',

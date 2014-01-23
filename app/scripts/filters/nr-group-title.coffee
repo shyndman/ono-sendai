@@ -22,8 +22,16 @@ groupTitle = (groupName, grouping) ->
         "#{ groupName } Influence"
       else
         "Influence N/A"
+    when 'illustrator'
+      if groupName != ''
+        groupName
+      else
+        'None'
     else
       groupName
+
+span = (contents, cls) ->
+  "<span class=\"#{ cls }\">#{ contents }</span>"
 
 angular.module('onoSendai')
   .filter('primaryGroupTitle', ->
@@ -33,17 +41,30 @@ angular.module('onoSendai')
       else
         groupTitle(groupTitles[0], groupings[0])
     )
-  .filter('secondaryGroupTitle', (cardService, dateFilter) ->
+  .filter('secondaryGroupTitle', (cardService, dateFilter, $sce) ->
     (groupTitles, groupings) ->
-      if groupings.length > 1
-        groupTitle(groupTitles[0], groupings[0])
-      else
-        if groupings[0] == 'setname'
-          releaseDate = cardService.getSetByTitle(groupTitles[0])?.released
-          if releaseDate?
-            dateFilter(releaseDate,'MMM. y')
+      $sce.trustAsHtml(
+        if groupings.length > 1
+          groupTitle(groupTitles[0], groupings[0])
+        else if groupings[0] == 'setname'
+          set = cardService.getSetByTitle(groupTitles[0])
+          if set? # [fixme] This check shouldn't be necessary
+            dateStr =
+              if set.released?
+                dateFilter(set.released, 'MMM. y')
+              else
+                ''
+
+            cycleStr =
+              if set.cycle?
+                span("#{ set.cycle } Cycle", "cycle #{ set.cycle.toLowerCase() }-cycle") + " - "
+              else
+                ''
+
+            cycleStr + dateStr
           else
             ''
         else
           ''
+      )
     )

@@ -27,7 +27,7 @@
 .select2-container-active {
   .select2-choice, .select2-choices  {
     box-shadow: none;
-    border: 1px solid $active-color;
+    border: 1px solid $active-color !important;
   }
 
   &.select2-dropdown-open {

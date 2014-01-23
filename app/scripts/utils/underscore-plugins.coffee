@@ -92,18 +92,18 @@ _.mixin
   # Times the provided function.
   time: (name, fn) ->
     try
-      console.time(name)
+      console.time?(name)
       fn()
     finally
-      console.timeEnd(name)
+      console.timeEnd?(name)
 
   # Creates a new log group (console.group) around the specified function.
   logGroup: (name, fn) ->
     try
-      console.group(name)
+      console.group?(name)
       fn()
     finally
-      console.groupEnd(name)
+      console.groupEnd?(name)
 
   # Returns a function that will be profiled whenever invoked
   profiled: wrap('profile')
@@ -117,8 +117,8 @@ _.mixin
 
 # ~*~*~* DIACRITICS
 
-accentsFrom  = "ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź"
-accentsTo    = "aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz"
+accentsFrom  = 'ąàáäâãåæăćęèéëêìíïîłńòóöôõōøśșțùúüûñçżź'
+accentsTo    = 'aaaaaaaaaceeeeeiiiilnooooooosstuuuunczz'
 accentsRegex = ///[#{accentsFrom}]///g
 accentsMapping = _.object(_.zip(_.str.chars(accentsFrom), _.str.chars(accentsTo)))
 

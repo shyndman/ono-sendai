@@ -1,5 +1,3 @@
-$dirty-color: #E59409; // TODO Integrate
-
 .sidebar {
   @extend .scrollable;
   user-select: none;
@@ -24,6 +22,7 @@ $dirty-color: #E59409; // TODO Integrate
         display: block;
       }
     }
+
     &.general h5 {
       padding-bottom: 4px; // Tweaking to make some lines connect
     }
@@ -54,8 +53,10 @@ $dirty-color: #E59409; // TODO Integrate
   }
 
   .filter-group-field {
+    position: relative;
     padding: 0 15px 0 3px;
     margin: 8px 0;
+    white-space: nowrap;
 
     > .control-label {
       float: left;
@@ -64,13 +65,61 @@ $dirty-color: #E59409; // TODO Integrate
       color: #777;
     }
 
+    .clear-filter {
+      position: absolute;
+      top: 2px;
+      font-size: 16px;
+      display: none;
+      color: #555;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    input.has-input, .has-input input, .has-input .select2-choice {
+      background: $has-input-color;
+      border-color: $has-input-border-color;
+    }
+
+    .has-input + .clear-filter {
+      display: inline;
+    }
+
     input[type=search] {
       width: calc(100% - 45px);
+
+      & + .clear-filter {
+        right: 23px;
+      }
+    }
+
+    .faction-filter {
+      > .active {
+        background: $has-input-color;
+        border-color: $has-input-border-color;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.06);
+      }
+
+      & + .clear-filter {
+        margin-left: 5px;
+      }
     }
 
     inset-filter {
       .input {
         width: calc(100% - 45px);
+      }
+
+      & + .clear-filter {
+        right: 38px;
+        top: 3px;
+      }
+    }
+
+    numeric-filter {
+      & + .clear-filter {
+        right: 23px;
       }
     }
 
@@ -94,6 +143,8 @@ $dirty-color: #E59409; // TODO Integrate
         color: $disabled-label-color;
       }
     }
+
+    // Hide all the clear buttons in IE
+    input::-ms-clear { display: none; }
   }
 }
-
