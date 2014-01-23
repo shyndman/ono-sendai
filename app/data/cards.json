@@ -8947,27 +8947,33 @@
     },
     {
       "released": "2012-12-01T00:00:00",
-      "title": "What Lies Ahead"
+      "title": "What Lies Ahead",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-01-01T00:00:00",
-      "title": "Trace Amount"
+      "title": "Trace Amount",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-02-01T00:00:00",
-      "title": "Cyber Exodus"
+      "title": "Cyber Exodus",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-03-01T00:00:00",
-      "title": "A Study in Static"
+      "title": "A Study in Static",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-05-01T00:00:00",
-      "title": "Humanity's Shadow"
+      "title": "Humanity's Shadow",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-06-01T00:00:00",
-      "title": "Future Proof"
+      "title": "Future Proof",
+      "cycle": "Genesis"
     },
     {
       "released": "2013-07-01T00:00:00",
@@ -8975,27 +8981,33 @@
     },
     {
       "released": "2013-09-01T00:00:00",
-      "title": "Opening Moves"
+      "title": "Opening Moves",
+      "cycle": "Spin"
     },
     {
       "released": "2013-11-01T00:00:00",
-      "title": "Second Thoughts"
+      "title": "Second Thoughts",
+      "cycle": "Spin"
     },
     {
       "released": "2013-12-01T00:00:00",
-      "title": "Mala Tempora"
+      "title": "Mala Tempora",
+      "cycle": "Spin"
     },
     {
       "released": "2014-01-01T00:00:00",
-      "title": "True Colors"
+      "title": "True Colors",
+      "cycle": "Spin"
     },
     {
       "released": null,
-      "title": "Fear and Loathing"
+      "title": "Fear and Loathing",
+      "cycle": "Spin"
     },
     {
       "released": null,
-      "title": "Double Time"
+      "title": "Double Time",
+      "cycle": "Spin"
     }
   ]
 }
