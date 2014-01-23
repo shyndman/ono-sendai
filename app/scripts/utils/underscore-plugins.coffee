@@ -32,7 +32,7 @@ _.mixin
 
   # Generates a URL friendly ID string from the provided string
   idify: (str) ->
-    _.stripDiacritics(_.dasherize(str.toLowerCase().replace(/["|'|:|*]/g, '')))
+    _.stripDiacritics(_.dasherize(str.toLowerCase().replace(/["|'|:|*|\.]/g, '')))
 
   # Returns an object containing only properties that pass a truth test. The
   # iterator is called with key and value arguments.
