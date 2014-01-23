@@ -362,12 +362,8 @@ class CardService
       switch card.type
         when 'ICE'
           # [todo] This isn't perfect, because it doesn't consider advanceables.
-          card.subroutinecount = card.text.match(/\[Subroutine\]/g)?.length || 0
-        when 'Identity'
-          # It's unclear why the raw data has this field on identities -- it shouldn't. If it does
-          # it screws up grouping/sorting
-          # [todo] Consider whitelisting fields for specific types in cards.json
-          delete card.cost
+          card.subroutinecount ?= # If a card already has a subroutine count set, use it instead
+            card.text.match(/\[Subroutine\]/g)?.length || 0
 
   _augmentSets: (sets) =>
     _.each sets, (set, i) =>

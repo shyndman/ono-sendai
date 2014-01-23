@@ -37,10 +37,10 @@
   </div>
 
   <div class="abbreviated dropdown">
-    <button class="btn btn-default dropdown-toggle">Faction <span class="caret"></span></button>
+    <button class="btn btn-default dropdown-toggle" dropdown-toggle>Faction <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li ng-repeat="grouping in groupingUI">
-        <a href="#">{{ grouping.display }}</a>
+        <a ng-click="filter.groupings = grouping.groupings">{{ grouping.display }}</a>
       </li>
     </ul>
   </div>

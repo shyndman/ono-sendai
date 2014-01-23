@@ -16,12 +16,29 @@
 [todo] Full screen mode for mobile
 [todo] Versions for decks, and changes tab for telling you how to move between versions
 [todo] Filter down the subtype list to the currently selected group (maybe)
-[todo] Deus X and Sharpshooter have to work in both directions
 [todo] .nav-tabs conflicts with something in bootstrap
 [todo] One stop search
 [todo] Consider adding all applicable attributes to groupings, depending on active group
 [todo] Off the Grid, in card search
 [todo] Sort by card number
+[todo] Markdown export for Cost to Break
+
+  | Left align | Right align | Center align |
+  |:-----------|------------:|:------------:|
+  | This       |        This |     This
+  | column     |      column |    column
+  | will       |        will |     will
+  | be         |          be |      be
+  | left       |       right |    center
+  | aligned    |     aligned |   aligned
+
+[todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
+
+COST TO BREAK NOTES
+* Deus X and Sharpshooter have to work in both directions
+* Variable strength ICE (Curtain Wall, Hadrian's Wall*, Ice Wall*, Salvage*, Draco*)
+* Variable subroutines (NEXT Bronze, Ireress, Salvage*, Swarm*, Tyrant*, Woodcutter*)
+* Sort by title or credits
 
 RESPONSIVE NOTES
   iPhone  - zoom: 0.24
