@@ -65,6 +65,19 @@
     }
 
 
+    // ~-~-~- CYCLE COLORING
+
+    $cycles: genesis-cycle $genesis-cycle-color,
+             spin-cycle $spin-cycle-color;
+
+    @each $c in $cycles {
+      small.secondary-group > span.#{ nth($c, 1) } {
+        color: nth($c, 2);
+      }
+    }
+
+
+
     // ~-~-~- ANCILLARY INFO
 
     small {
@@ -74,6 +87,10 @@
     small.secondary-group {
       margin-left: 10px;
       font-size: 17px;
+
+      > .cycle {
+        margin-left: -5px;
+      }
     }
 
     small.card-count {
