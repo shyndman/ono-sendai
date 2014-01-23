@@ -34,7 +34,9 @@
 
 [todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
 [todo] Make clearing searches more obvious
-[todo] Genesis/Spin Cycle colours in the set view
+[idea] Efficiency improvement:
+  Cards only have to be sorted once up front, then grouping them will always yield sorted results.
+  Single pass group by.
 [todo] Cycle icons
 [todo] Card groups
 [todo] Interesting comment:
