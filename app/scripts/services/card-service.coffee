@@ -247,6 +247,8 @@ class CardService
         @_buildInSetFilter(filterDesc, filterArg)
       when 'cardSet'
         @_buildCardSetFilter(filterDesc, filterArg)
+      when 'match'
+        @_buildMatchFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
@@ -287,6 +289,10 @@ class CardService
     set = @_setsById[filterArg]
     (card) ->
       card.setname == set.title
+
+  _buildMatchFilter: (filterDesc, filterArg) =>
+    (card) ->
+      fieldVal = card[filterDesc.cardField] == filterArg
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
