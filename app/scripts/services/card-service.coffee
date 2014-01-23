@@ -111,6 +111,8 @@ class CardService
     @_setsById = {}
     @subtypeCounts = corp: {}, runner: {}
     @subtypes = corp: [], runner: []
+    @illustratorCounts = corp: {}, runner: {}
+    @illustrators = corp: [], runner: []
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -120,6 +122,7 @@ class CardService
         @_augmentCards(@_cards)
         @_augmentSets(@_sets)
         @_initSubtypes()
+        @_initIllustrators()
         @_cards)
 
   # Returns a promise that resolves when the card service is ready
@@ -359,6 +362,14 @@ class CardService
         @subtypeCounts[side][st] ?= 0
         @subtypeCounts[side][st]++
 
+      # Increment the occurrences of each of the card's illustrator counts
+      if card.illustrator?
+        card.illustratorId = _.idify(card.illustrator)
+        @illustratorCounts[side][card.illustrator] ?= 0
+        @illustratorCounts[side][card.illustrator]++
+      else if card.type != 'Identity'
+        console.warn "#{ card.title } has no illustrator"
+
       switch card.type
         when 'ICE'
           # [todo] This isn't perfect, because it doesn't consider advanceables.
@@ -385,6 +396,21 @@ class CardService
               title: st)
             .value()
         [side, subtypes]))
+
+  _initIllustrators: =>
+    @illustrators = _.object(
+      _.map(@illustratorCounts, (counts, side) ->
+        illustrators =
+          _(counts)
+            .chain()
+            .keys()
+            .sort()
+            .map((i) ->
+              id: _.idify(i)
+              title: i)
+            .value()
+        [side, illustrators]))
+
 
 angular.module('onoSendai')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
