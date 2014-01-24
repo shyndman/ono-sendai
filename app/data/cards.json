@@ -8673,6 +8673,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04067",
       "number": 67,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-24T18:52:24Z",
+          "id": "1w1wwh",
+          "title": "[COTD] Sharpshooter (24 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1w1wwh/cotd_sharpshooter_24_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "strength": 3,
