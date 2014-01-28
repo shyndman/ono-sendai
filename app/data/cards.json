@@ -8705,6 +8705,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04068",
       "number": 68,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-27T18:40:45Z",
+          "id": "1warcg",
+          "title": "[COTD] Capstone (27 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1warcg/cotd_capstone_27_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "[Click]: Trash any number of cards from your grip. For each trashed card of which you have another copy installed, draw 1 card.",
