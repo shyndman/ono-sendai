@@ -252,7 +252,7 @@ angular.module('onoSendai')
 
       # *~*~*~*~ SCROLLING
 
-      # Optimization to prevent unnecessary reflows by invoking jQuery.css. We store the scroll parent's overflow
+      # Optimization to prevent unnecessary reflows by invoking jQuery.css(). We store the scroll parent's overflow
       # value around, and only set it if required. This assumes no one else is tinkering with the value.
       setScrollerOverflow = (val) ->
         if scrollParentOverflow != val
