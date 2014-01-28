@@ -8652,6 +8652,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04066",
       "number": 66,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-23T17:57:46Z",
+          "id": "1vyhnm",
+          "title": "[COTD] LLDS Processor (23 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vyhnm/cotd_llds_processor_23_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "subtype": "Chip",
@@ -8677,6 +8685,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04067",
       "number": 67,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-24T18:52:24Z",
+          "id": "1w1wwh",
+          "title": "[COTD] Sharpshooter (24 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1w1wwh/cotd_sharpshooter_24_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "strength": 3,
@@ -8701,6 +8717,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04068",
       "number": 68,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-27T18:40:45Z",
+          "id": "1warcg",
+          "title": "[COTD] Capstone (27 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1warcg/cotd_capstone_27_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "[Click]: Trash any number of cards from your grip. For each trashed card of which you have another copy installed, draw 1 card.",
