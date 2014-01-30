@@ -1931,7 +1931,6 @@
       "type": "Program"
     },
     {
-      "breakcardsscript": "deusxCards",
       "breakcost": {
         "credits": 0,
         "subroutines": 1
@@ -8675,7 +8674,6 @@
       "uniqueness": false
     },
     {
-      "breakcardsscript": "sharpshooterCards",
       "breakcost": {
         "credits": 0,
         "subroutines": 1

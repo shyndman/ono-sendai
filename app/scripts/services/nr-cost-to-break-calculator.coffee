@@ -1,24 +1,33 @@
 class CostToBreakCalculator
   constructor: (@$log, $q, @cardService, @breakScripts) ->
     @$log.debug 'Performing cost-to-break startup queries'
+
     $q.all(
-        'sentry':    @_performQuery('Corp', 'ice', 'sentry')
-        'barrier':   @_performQuery('Corp', 'ice', 'barrier')
-        'code-gate': @_performQuery('Corp', 'ice', 'code-gate')
-        'allIce':    @_performQuery('Corp', 'ice')
-        'killer':    @_performQuery('Runner', 'program', 'killer')
-        'fracter':   @_performQuery('Runner', 'program', 'fracter')
-        'decoder':   @_performQuery('Runner', 'program', 'decoder')
-        'ai':        @_performQuery('Runner', 'program', 'ai')
+        'sentry':         @_performQuery('Corp', 'ice', 'sentry')
+        'barrier':        @_performQuery('Corp', 'ice', 'barrier')
+        'code-gate':      @_performQuery('Corp', 'ice', 'code-gate')
+        'ap':             @_performQuery('Corp', 'ice', 'ap')
+        'destroyer':      @_performQuery('Corp', 'ice', 'destroyer')
+        'allIce':         @_performQuery('Corp', 'ice')
+        'killer':         @_performQuery('Runner', 'program', 'killer')
+        'fracter':        @_performQuery('Runner', 'program', 'fracter')
+        'decoder':        @_performQuery('Runner', 'program', 'decoder')
+        'anti-ap':        @_performQuery('Runner', 'program', 'anti-ap')
+        'anti-destroyer': @_performQuery('Runner', 'program', 'anti-destroyer')
+        'ai':             @_performQuery('Runner', 'program', 'ai')
       ).then(({
-        'sentry':    @_sentries
-        'barrier':   @_barriers
-        'code-gate': @_codeGates
-        'allIce':    @_allIce
-        'killer':    @_killers
-        'fracter':   @_fracters
-        'decoder':   @_decoders
-        'ai':        @_ais
+        'sentry':         @_sentries
+        'barrier':        @_barriers
+        'code-gate':      @_codeGates
+        'ap':             @_aps
+        'destroyer':      @_destroyers
+        'allIce':         @_allIce
+        'killer':         @_killers
+        'fracter':        @_fracters
+        'decoder':        @_decoders
+        'anti-ap':        @_antiAps
+        'anti-destroyer': @_antiDestroyers
+        'ai':             @_ais
       }) => @$log.debug('Cost to Break queries complete'))
 
   isCardApplicable: (card) =>
@@ -53,6 +62,12 @@ class CostToBreakCalculator
     if ice.subtypesSet['code-gate'] or options.tinkering
       breakers = breakers.concat @_decoders.orderedCards
 
+    if ice.subtypesSet['ap']
+      breakers = breakers.concat @_antiAps.orderedCards
+
+    if ice.subtypesSet['destroyer']
+      breakers = breakers.concat @_antiDestroyers.orderedCards
+
     # [todo] How do Deus X / Sharpshooter fit in here
 
     breakers = breakers.concat @_ais.orderedCards
@@ -75,6 +90,12 @@ class CostToBreakCalculator
 
     if breaker.subtypesSet['decoder']
       ice = ice.concat @_codeGates.orderedCards
+
+    if breaker.subtypesSet['anti-ap']
+      ice = ice.concat @_aps.orderedCards
+
+    if breaker.subtypesSet['anti-destroyer']
+      ice = ice.concat @_destroyers.orderedCards
 
     if breaker.subtypesSet['ai'] or options.tinkering
       ice = ice.concat @_allIce.orderedCards
@@ -185,12 +206,6 @@ class BreakScripts
     else
       breaker.strength = Math.max(ice.strength, 0)
       interaction.breakerCondition = "≥ #{ breaker.strength }"
-
-  deusxCards: (breaker, allIce) =>
-    _.filter(allIce, (i) -> i.subtypesSet.ap)
-
-  sharpshooterCards: (breaker, allIce) =>
-    _.filter(allIce, (i) -> i.subtypesSet.destroyer)
 
   wyrm: (interaction, breaker, strengthCost, breakCost, ice) =>
     if @_handleAntiAI(interaction, ice)
