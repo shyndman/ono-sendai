@@ -1959,6 +1959,7 @@
       "side": "Runner",
       "strength": 10,
       "subtype": "Icebreaker",
+      "logicalsubtypes": [ "Anti-AP" ],
       "text": "[Trash]: Break any number of <strong>AP</strong> subroutines.\n[Trash]: Prevent any amount of net damage.",
       "title": "Deus X",
       "type": "Program"
@@ -8706,6 +8707,7 @@
         "strength": 2
       },
       "subtype": "Icebreaker",
+      "logicalsubtypes": [ "Anti-destroyer" ],
       "text": "[Trash]: Break any number of <strong>destroyer</strong> subroutines.\r\n1[Credits]: +2 strength.",
       "title": "Sharpshooter",
       "type": "Program",
