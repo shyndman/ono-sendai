@@ -7380,6 +7380,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "strength": 0,
+      "variablestrength": true,
       "subtype": "Code Gate - NEXT",
       "text": "NEXT Bronze has +1 strength for each rezzed piece of <strong>NEXT</strong> ice.\n[Subroutine] End the run.",
       "title": "NEXT Bronze",
