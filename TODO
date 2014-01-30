@@ -10,7 +10,6 @@
 [todo] Rename "grid" to "matrix" across the board
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
-[todo] Cost to break calculator filter should have a tooltip to tell you that you can filter in various ways
 [fix]  Work out a better way of counting subs -- Check out sensei as an example
 [todo] Look into what this means (http://www.reddit.com/r/Netrunner/comments/1s5gu4/i_made_a_spreadsheet_of_probabilities_to_have_x/cdu7hpf)
 [todo] Full screen mode for mobile
@@ -21,17 +20,6 @@
 [todo] Consider adding all applicable attributes to groupings, depending on active group
 [todo] Off the Grid, in card search
 [todo] Sort by card number
-[todo] Markdown export for Cost to Break
-
-  | Left align | Right align | Center align |
-  |:-----------|------------:|:------------:|
-  | This       |        This |     This
-  | column     |      column |    column
-  | will       |        will |     will
-  | be         |          be |      be
-  | left       |       right |    center
-  | aligned    |     aligned |   aligned
-
 [todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
 [todo] Make clearing searches more obvious
 [idea] Efficiency improvement:
@@ -48,12 +36,6 @@
   be necessary to build them.
 
 [todo] Alternate art on card pages
-
-COST TO BREAK NOTES
-* Deus X and Sharpshooter have to work in both directions
-* Variable strength ICE (Curtain Wall, Hadrian's Wall*, Ice Wall*, Salvage*, Draco*)
-* Variable subroutines (NEXT Bronze, Ireress, Salvage*, Swarm*, Tyrant*, Woodcutter*)
-* Sort by title or credits
 
 RESPONSIVE NOTES
   iPhone  - zoom: 0.24
