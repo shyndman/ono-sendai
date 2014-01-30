@@ -371,6 +371,14 @@ class CardService
         else
           []
       subtypeIds = _.map(card.subtypes, _.idify)
+
+      # If we have logical subtypes defined (that is, semantically applied subtypes used
+      # by other parts of the system), include them in the subtypesSet.
+      if card.logicalsubtypes?
+        subtypeIds.concat(_.map(card.logicalsubtypes, _.idify))
+
+      # [note] The subtypesSet is used internally, and is never showed to the user. The
+      #        card.subtypes field has that responsibility.
       card.subtypesSet = _.object(subtypeIds, _.times(subtypeIds.length, -> true))
 
       # Increment the occurrences of each of the card's subtypes
