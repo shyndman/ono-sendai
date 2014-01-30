@@ -30,7 +30,7 @@ class CostToBreakCalculator
       return
 
     _.logGroup "Cost to break for #{ card.title }",
-      _.timed "Calculation time", =>
+      _.timed 'Calculation time', =>
         if card.type == 'ICE'
           @_calculateForIce(card, iceAdjust, options)
         else if card.type == 'Program'
@@ -105,7 +105,6 @@ class CostToBreakCalculator
 
     # If we have a custom break script, invoke it
     if breaker.breakscript?
-
       # Make copies of the cards, so that the break script can mutate their attributes
       ice = angular.copy(ice)
       breaker = angular.copy(breaker)
