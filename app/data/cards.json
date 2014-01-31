@@ -1942,6 +1942,9 @@
       "flavor": "Didn't see that coming.",
       "illustrator": "Andrew Mar",
       "imagesrc": "/images/cards/deus-x.png",
+      "logicalsubtypes": [
+        "Anti-AP"
+      ],
       "memoryunits": 1,
       "nrdb_url": "http://netrunnerdb.com/en/card/02066",
       "number": 66,
@@ -1958,7 +1961,6 @@
       "side": "Runner",
       "strength": 10,
       "subtype": "Icebreaker",
-      "logicalsubtypes": [ "Anti-AP" ],
       "text": "[Trash]: Break any number of <strong>AP</strong> subroutines.\n[Trash]: Prevent any amount of net damage.",
       "title": "Deus X",
       "type": "Program"
@@ -6477,8 +6479,8 @@
       "agendapoints": 2,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/project-beale-future-proof",
       "faction": "NBN",
-      "imagesrc": "/images/cards/project-beale.png",
       "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/project-beale.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02115",
       "number": 115,
       "quantity": 3,
@@ -7383,11 +7385,11 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "strength": 0,
-      "variablestrength": true,
       "subtype": "Code Gate - NEXT",
       "text": "NEXT Bronze has +1 strength for each rezzed piece of <strong>NEXT</strong> ice.\n[Subroutine] End the run.",
       "title": "NEXT Bronze",
-      "type": "ICE"
+      "type": "ICE",
+      "variablestrength": true
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/celebrity-gift-opening-moves",
@@ -8365,8 +8367,8 @@
       "cost": 6,
       "faction": "NBN",
       "factioncost": 2,
-      "imagesrc": "/images/cards/snoop.png",
       "illustrator": "Andreas Zafiratos",
+      "imagesrc": "/images/cards/snoop.png",
       "last-modified": "2013-12-09T04:34:33-05:00",
       "nrdb_url": "http://netrunnerdb.com/en/card/04056",
       "number": 56,
@@ -8685,6 +8687,9 @@
       "flavor": "\"One-shot icebreakers are popular among many of my prot\u00e9g\u00e9s. They don't have the patience for the hunt.\" -The Professor",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/sharpshooter.png",
+      "logicalsubtypes": [
+        "Anti-destroyer"
+      ],
       "memoryunits": 1,
       "nrdb_url": "http://netrunnerdb.com/en/card/04067",
       "number": 67,
@@ -8705,7 +8710,6 @@
         "strength": 2
       },
       "subtype": "Icebreaker",
-      "logicalsubtypes": [ "Anti-destroyer" ],
       "text": "[Trash]: Break any number of <strong>destroyer</strong> subroutines.\r\n1[Credits]: +2 strength.",
       "title": "Sharpshooter",
       "type": "Program",
@@ -8748,6 +8752,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04069",
       "number": 69,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-28T17:59:50Z",
+          "id": "1wdxky",
+          "title": "[COTD] Starlight Crusade Funding (28 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wdxky/cotd_starlight_crusade_funding_28_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "When your turn begins, lose [Click].\r\nIgnore any additional costs on each <strong>double</strong> event you play.",
@@ -8765,6 +8777,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04070",
       "number": 70,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-29T17:50:20Z",
+          "id": "1whawn",
+          "title": "[COTD] Rex Campaign (29 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1whawn/cotd_rex_campaign_29_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Advertisement",
@@ -8785,6 +8805,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04071",
       "number": 71,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-30T19:42:21Z",
+          "id": "1wkxl9",
+          "title": "[COTD] Fenris (30 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wkxl9/cotd_fenris_30_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 2,
@@ -8975,68 +9003,68 @@
       "title": "Core Set"
     },
     {
+      "cycle": "Genesis",
       "released": "2012-12-01T00:00:00",
-      "title": "What Lies Ahead",
-      "cycle": "Genesis"
+      "title": "What Lies Ahead"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-01-01T00:00:00",
-      "title": "Trace Amount",
-      "cycle": "Genesis"
+      "title": "Trace Amount"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-02-01T00:00:00",
-      "title": "Cyber Exodus",
-      "cycle": "Genesis"
+      "title": "Cyber Exodus"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-03-01T00:00:00",
-      "title": "A Study in Static",
-      "cycle": "Genesis"
+      "title": "A Study in Static"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-05-01T00:00:00",
-      "title": "Humanity's Shadow",
-      "cycle": "Genesis"
+      "title": "Humanity's Shadow"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-06-01T00:00:00",
-      "title": "Future Proof",
-      "cycle": "Genesis"
+      "title": "Future Proof"
     },
     {
       "released": "2013-07-01T00:00:00",
       "title": "Creation and Control"
     },
     {
+      "cycle": "Spin",
       "released": "2013-09-01T00:00:00",
-      "title": "Opening Moves",
-      "cycle": "Spin"
+      "title": "Opening Moves"
     },
     {
+      "cycle": "Spin",
       "released": "2013-11-01T00:00:00",
-      "title": "Second Thoughts",
-      "cycle": "Spin"
+      "title": "Second Thoughts"
     },
     {
+      "cycle": "Spin",
       "released": "2013-12-01T00:00:00",
-      "title": "Mala Tempora",
-      "cycle": "Spin"
+      "title": "Mala Tempora"
     },
     {
+      "cycle": "Spin",
       "released": "2014-01-01T00:00:00",
-      "title": "True Colors",
-      "cycle": "Spin"
+      "title": "True Colors"
     },
     {
+      "cycle": "Spin",
       "released": null,
-      "title": "Fear and Loathing",
-      "cycle": "Spin"
+      "title": "Fear and Loathing"
     },
     {
+      "cycle": "Spin",
       "released": null,
-      "title": "Double Time",
-      "cycle": "Spin"
+      "title": "Double Time"
     }
   ]
 }
