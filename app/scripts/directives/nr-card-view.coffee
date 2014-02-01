@@ -81,6 +81,15 @@ angular.module('onoSendai')
     $scope.isFavourite = userPreferences.isCardFavourite
 
 
+    # ~-~-~- ALTERNATE ART
+
+    $scope.hasAltArt = (card) ->
+      card.altart?
+
+    $scope.toggleAltArt = (card) ->
+      $scope.cardUI.altArtShown = !$scope.cardUI.altArtShown
+
+
     # ~-~-~- URL UPDATES
 
     # Limits URL updates. I find it distracting if it happens to ofter.
