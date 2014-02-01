@@ -3,8 +3,6 @@ angular.module('onoSendai')
 
     # ~-~-~- INITIALIZATION
 
-    $scope.cardUI =
-      page: urlStateService.cardPage ? 'info'
     $scope.wingCardCount = 5
 
 
@@ -35,6 +33,9 @@ angular.module('onoSendai')
 
     $scope.$watch 'selectedCard', selectedCardChanged = (card, oldCard) ->
       $scope.card = card
+      $scope.cardUI =
+        page: urlStateService.cardPage ? 'info'
+        altArtShown: false
 
       if card?
         invalidateBeforeAfter()
