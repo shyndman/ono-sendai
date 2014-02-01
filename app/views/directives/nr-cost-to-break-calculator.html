@@ -57,7 +57,7 @@
         'not-broken': !opponent.interaction.broken
       }">
     <div class="card">
-      <a ng-href="{{ opponent.card | cardUrl:'card' }}">{{ opponent.card.title }}</a>
+      <a ng-href="{{ opponent.card | cardUrl:'calculator' }}">{{ opponent.card.title }}</a>
       <span ng-if="opponent.interaction.breakerCondition"
             class="text-muted">
         <span ng-if="costToBreakInfo.opponentType == 'ICE'">
