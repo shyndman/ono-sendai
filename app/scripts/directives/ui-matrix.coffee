@@ -111,6 +111,8 @@ angular.module('onoSendai')
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
         #       event listener to *an* item, and the first item doesn't necessarily move. :)
+        # SECOND NOTE:
+        #       Transitions are currently not supported, but I'm leaving this around in case I change my mind.
         notFirst = true
         secondItem = $(_.find(items, (item) -> item.classList.contains('grid-item') and (notFirst = !notFirst)))
 
