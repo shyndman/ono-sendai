@@ -11,7 +11,7 @@ angular.module('onoSendai')
     }
     link: (scope, element, attrs) ->
       container = element.find('.content-container')
-      containerWidth = null # container.width()
+      containerWidth = null
       inContinuousZoom = false
       needsLayout = false
 
