@@ -39,7 +39,6 @@ angular.module('onoSendai')
       $scope.clearFactions()
       delete $scope.filter.fieldFilters.subtype
       updateSubtypes()
-      delete $scope.filter.fieldFilters.illustrator
       updateIllustrators()
 
     $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
