@@ -27,14 +27,21 @@ angular.module('onoSendai')
       side = card.side.toLowerCase()
 
       switch urlType
-        when 'card'
-          "#{ urlPrefix }/cards/#{ side }/card/#{ card.id }"
+        when 'card', 'calculator'
+          suffix = if urlType == 'calculator' then '/$' else ''
+          "#{ urlPrefix }/cards/#{ side }/card/#{ card.id }#{ suffix }"
         when 'type'
           "#{ urlPrefix }/cards/#{ side }/#{ pluralizeType(card.type.toLowerCase()) }"
         when 'set'
           "#{ urlPrefix }/cards/#{ side }?setname=#{ _.idify(card.setname) }&group=setname"
-        when 'illustrator'
-          "#{ urlPrefix }/cards/#{ side }?illustrator=#{ card.illustratorId }&group=illustrator"
+        when 'illustrator', 'alt-illustrator'
+          id =
+            if urlType == 'illustrator'
+              card.illustratorId
+            else
+              card.altart.illustratorId
+
+          "#{ urlPrefix }/cards/#{ side }?illustrator=#{ id }&group=illustrator"
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         when 'image'
