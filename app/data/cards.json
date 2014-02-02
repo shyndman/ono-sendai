@@ -724,7 +724,8 @@
       "title": "Kate \"Mac\" McCaffrey: Digital Tinker",
       "type": "Identity",
       "altart": {
-        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png"
+        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png",
+        "illustrator": "Viktoria Gavrilenko"
       }
     },
     {
@@ -4751,7 +4752,8 @@
       "title": "Scorched Earth",
       "type": "Operation",
       "altart": {
-        "imagesrc": "/images/cards/scorched-earth-alt.png"
+        "imagesrc": "/images/cards/scorched-earth-alt.png",
+        "illustrator": "Ignacio Bazan Lazcano"
       }
     },
     {
@@ -4912,7 +4914,8 @@
       "title": "Private Security Force",
       "type": "Agenda",
       "altart": {
-        "imagesrc": "/images/cards/private-security-force-alt.png"
+        "imagesrc": "/images/cards/private-security-force-alt.png",
+        "illustrator": "Adam Schumpert"
       }
     },
     {
@@ -6391,7 +6394,8 @@
       "title": "Eli 1.0",
       "type": "ICE",
       "altart": {
-        "imagesrc": "/images/cards/eli-10-alt.png"
+        "imagesrc": "/images/cards/eli-10-alt.png",
+        "illustrator": "Sandara Tang"
       }
     },
     {
