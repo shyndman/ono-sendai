@@ -404,6 +404,9 @@ class CardService
       else if card.type != 'Identity'
         console.warn "#{ card.title } has no illustrator"
 
+      if card.altart? and card.altart.illustrator?
+        card.altart.illustratorId = _.idify(card.altart.illustrator)
+
       switch card.type
         when 'ICE'
           # [todo] This isn't perfect, because it doesn't consider advanceables.

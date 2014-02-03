@@ -157,7 +157,11 @@
       "subtype": "Virus",
       "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n<strong>Hosted virus counter</strong>: Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
       "title": "Datasucker",
-      "type": "Program"
+      "type": "Program",
+      "altart": {
+        "imagesrc": "/images/cards/datasucker-alt.png",
+        "illustrator": "Ed Mattinian"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/djinn-core",
@@ -365,7 +369,11 @@
       "subtype": "Cyborg",
       "text": "The first time you make a successful run on HQ each turn, gain 2[Credits].",
       "title": "Gabriel Santiago: Consummate Professional",
-      "type": "Identity"
+      "type": "Identity",
+      "altart": {
+        "imagesrc": "/images/cards/gabriel-santiago-consummate-professional-alt.png",
+        "illustrator": "Matt Zeilinger"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/account-siphon-core",
@@ -714,7 +722,11 @@
       "subtype": "Natural",
       "text": "Lower the install cost of the first program or piece of hardware you install each turn by 1.",
       "title": "Kate \"Mac\" McCaffrey: Digital Tinker",
-      "type": "Identity"
+      "type": "Identity",
+      "altart": {
+        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png",
+        "illustrator": "Viktoria Gavrilenko"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/diesel-core",
@@ -1069,7 +1081,11 @@
       "subtype": "Icebreaker - AI - Virus",
       "text": "1[Credits]: Break ice subroutine.\n1[Credits]: +1 strength.\n[Click]: Place 1 virus counter on Crypsis.\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
       "title": "Crypsis",
-      "type": "Program"
+      "type": "Program",
+      "altart": {
+        "imagesrc": "/images/cards/crypsis-alt.png",
+        "illustrator": "Christina Davis"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/access-to-globalsec-core",
@@ -3871,7 +3887,11 @@
       "text": "Put 12[Credits] from the bank on Adonis Campaign when rezzed. When there are no credits left on this card, trash it.\nTake 3[Credits] from Adonis Campaign when your turn begins.",
       "title": "Adonis Campaign",
       "trash": 3,
-      "type": "Asset"
+      "type": "Asset",
+      "altart": {
+        "imagesrc": "/images/cards/adonis-campaign-alt.png",
+        "illustrator": "Ed Mattinian"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aggressive-secretary-core",
@@ -4730,7 +4750,11 @@
       "subtype": "Black Ops",
       "text": "Play only if the runner is tagged.\nDo 4 meat damage.",
       "title": "Scorched Earth",
-      "type": "Operation"
+      "type": "Operation",
+      "altart": {
+        "imagesrc": "/images/cards/scorched-earth-alt.png",
+        "illustrator": "Ignacio Bazan Lazcano"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shipment-from-kaguya-core",
@@ -4888,7 +4912,11 @@
       "subtype": "Security",
       "text": "If the Runner is tagged, Private Security Force gains: \"[Click]: Do 1 meat damage.\"",
       "title": "Private Security Force",
-      "type": "Agenda"
+      "type": "Agenda",
+      "altart": {
+        "imagesrc": "/images/cards/private-security-force-alt.png",
+        "illustrator": "Adam Schumpert"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/melange-mining-corp-core",
@@ -4906,7 +4934,11 @@
       "text": "[Click], [Click], [Click]: Gain 7[Credits].",
       "title": "Melange Mining Corp.",
       "trash": 1,
-      "type": "Asset"
+      "type": "Asset",
+      "altart": {
+        "imagesrc": "/images/cards/melange-mining-corp-alt.png",
+        "illustrator": "Emilio Rodriguez"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/pad-campaign-core",
@@ -6360,7 +6392,11 @@
       "subtype": "Barrier - Bioroid",
       "text": "The Runner may spend [Click] to break any subroutine on Eli 1.0.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Eli 1.0",
-      "type": "ICE"
+      "type": "ICE",
+      "altart": {
+        "imagesrc": "/images/cards/eli-10-alt.png",
+        "illustrator": "Sandara Tang"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ruhr-valley-future-proof",
