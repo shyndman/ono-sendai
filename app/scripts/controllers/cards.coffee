@@ -25,8 +25,9 @@ angular.module('onoSendai')
       loadVersion()
 
     loadVersion = ->
-      $http.get('/data/version.json').success((data) ->
-        $scope.version = "v#{ data.version }")
+      $http.get('/data/version.json').success(({ version, codename }) ->
+        $scope.version = "v#{ version }"
+        $scope.codename = codename)
 
     # Kick it all off
     $q.all([cardService.getCards(), cardService.query(urlStateService.queryArgs)]).then(initialize)
