@@ -249,6 +249,8 @@ class CardService
         @_buildCardSetFilter(filterDesc, filterArg)
       when 'match'
         @_buildMatchFilter(filterDesc, filterArg)
+      when 'showSpoilers'
+        @_buildSpoilerFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
@@ -293,6 +295,13 @@ class CardService
   _buildMatchFilter: (filterDesc, filterArg) =>
     (card) ->
       fieldVal = card[filterDesc.cardField] == filterArg
+
+  _buildSpoilerFilter: (filterDesc, filterArg) =>
+    if filterArg
+      null
+    else
+      (card) =>
+        @_setsByTitle[card.setname].released?
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =
@@ -371,6 +380,14 @@ class CardService
         else
           []
       subtypeIds = _.map(card.subtypes, _.idify)
+
+      # If we have logical subtypes defined (that is, semantically applied subtypes used
+      # by other parts of the system), include them in the subtypesSet.
+      if card.logicalsubtypes?
+        subtypeIds = subtypeIds.concat(_.map(card.logicalsubtypes, _.idify))
+
+      # [note] The subtypesSet is used internally, and is never showed to the user. The
+      #        card.subtypes field has that responsibility.
       card.subtypesSet = _.object(subtypeIds, _.times(subtypeIds.length, -> true))
 
       # Increment the occurrences of each of the card's subtypes
@@ -386,6 +403,9 @@ class CardService
         @illustratorCounts[side][card.illustrator]++
       else if card.type != 'Identity'
         console.warn "#{ card.title } has no illustrator"
+
+      if card.altart? and card.altart.illustrator?
+        card.altart.illustratorId = _.idify(card.altart.illustrator)
 
       switch card.type
         when 'ICE'

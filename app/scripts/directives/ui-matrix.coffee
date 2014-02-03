@@ -11,7 +11,7 @@ angular.module('onoSendai')
     }
     link: (scope, element, attrs) ->
       container = element.find('.content-container')
-      containerWidth = null # container.width()
+      containerWidth = null
       inContinuousZoom = false
       needsLayout = false
 
@@ -111,6 +111,8 @@ angular.module('onoSendai')
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
         #       event listener to *an* item, and the first item doesn't necessarily move. :)
+        # SECOND NOTE:
+        #       Transitions are currently not supported, but I'm leaving this around in case I change my mind.
         notFirst = true
         secondItem = $(_.find(items, (item) -> item.classList.contains('grid-item') and (notFirst = !notFirst)))
 
@@ -252,7 +254,7 @@ angular.module('onoSendai')
 
       # *~*~*~*~ SCROLLING
 
-      # Optimization to prevent unnecessary reflows by invoking jQuery.css. We store the scroll parent's overflow
+      # Optimization to prevent unnecessary reflows by invoking jQuery.css(). We store the scroll parent's overflow
       # value around, and only set it if required. This assumes no one else is tinkering with the value.
       setScrollerOverflow = (val) ->
         if scrollParentOverflow != val

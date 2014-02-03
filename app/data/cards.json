@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-01-17T21:38:53Z",
+  "last-modified": "2014-02-03T17:06:01Z",
   "cards": [
     {
       "baselink": 0,
@@ -157,7 +157,11 @@
       "subtype": "Virus",
       "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n<strong>Hosted virus counter</strong>: Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
       "title": "Datasucker",
-      "type": "Program"
+      "type": "Program",
+      "altart": {
+        "imagesrc": "/images/cards/datasucker-alt.png",
+        "illustrator": "Ed Mattinian"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/djinn-core",
@@ -365,7 +369,11 @@
       "subtype": "Cyborg",
       "text": "The first time you make a successful run on HQ each turn, gain 2[Credits].",
       "title": "Gabriel Santiago: Consummate Professional",
-      "type": "Identity"
+      "type": "Identity",
+      "altart": {
+        "imagesrc": "/images/cards/gabriel-santiago-consummate-professional-alt.png",
+        "illustrator": "Matt Zeilinger"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/account-siphon-core",
@@ -714,7 +722,11 @@
       "subtype": "Natural",
       "text": "Lower the install cost of the first program or piece of hardware you install each turn by 1.",
       "title": "Kate \"Mac\" McCaffrey: Digital Tinker",
-      "type": "Identity"
+      "type": "Identity",
+      "altart": {
+        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png",
+        "illustrator": "Viktoria Gavrilenko"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/diesel-core",
@@ -1069,7 +1081,11 @@
       "subtype": "Icebreaker - AI - Virus",
       "text": "1[Credits]: Break ice subroutine.\n1[Credits]: +1 strength.\n[Click]: Place 1 virus counter on Crypsis.\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
       "title": "Crypsis",
-      "type": "Program"
+      "type": "Program",
+      "altart": {
+        "imagesrc": "/images/cards/crypsis-alt.png",
+        "illustrator": "Christina Davis"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/access-to-globalsec-core",
@@ -1931,7 +1947,6 @@
       "type": "Program"
     },
     {
-      "breakcardsscript": "deusxCards",
       "breakcost": {
         "credits": 0,
         "subroutines": 1
@@ -1943,6 +1958,9 @@
       "flavor": "Didn't see that coming.",
       "illustrator": "Andrew Mar",
       "imagesrc": "/images/cards/deus-x.png",
+      "logicalsubtypes": [
+        "Anti-AP"
+      ],
       "memoryunits": 1,
       "nrdb_url": "http://netrunnerdb.com/en/card/02066",
       "number": 66,
@@ -3869,7 +3887,11 @@
       "text": "Put 12[Credits] from the bank on Adonis Campaign when rezzed. When there are no credits left on this card, trash it.\nTake 3[Credits] from Adonis Campaign when your turn begins.",
       "title": "Adonis Campaign",
       "trash": 3,
-      "type": "Asset"
+      "type": "Asset",
+      "altart": {
+        "imagesrc": "/images/cards/adonis-campaign-alt.png",
+        "illustrator": "Ed Mattinian"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aggressive-secretary-core",
@@ -4278,7 +4300,7 @@
       "faction": "Jinteki",
       "factioncost": 2,
       "flavor": "Forged by Ak.wa on 23.11.79-23. Filed 23.11.79-23.2 with #34k-lw3-21HH-4i.\n//Samurai included.",
-      "illustrator": "Isuardi Thenianio",
+      "illustrator": "Isuardi Therianto",
       "imagesrc": "/images/cards/neural-katana.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01077",
       "number": 77,
@@ -4521,7 +4543,7 @@
       "faction": "NBN",
       "factioncost": 2,
       "flavor": "Analyzing was great. Delegating commands turned out to be even better.",
-      "illustrator": "Isuardi Thenianio",
+      "illustrator": "Isuardi Therianto",
       "imagesrc": "/images/cards/matrix-analyzer.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/01089",
       "number": 89,
@@ -4728,7 +4750,11 @@
       "subtype": "Black Ops",
       "text": "Play only if the runner is tagged.\nDo 4 meat damage.",
       "title": "Scorched Earth",
-      "type": "Operation"
+      "type": "Operation",
+      "altart": {
+        "imagesrc": "/images/cards/scorched-earth-alt.png",
+        "illustrator": "Ignacio Bazan Lazcano"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shipment-from-kaguya-core",
@@ -4886,7 +4912,11 @@
       "subtype": "Security",
       "text": "If the Runner is tagged, Private Security Force gains: \"[Click]: Do 1 meat damage.\"",
       "title": "Private Security Force",
-      "type": "Agenda"
+      "type": "Agenda",
+      "altart": {
+        "imagesrc": "/images/cards/private-security-force-alt.png",
+        "illustrator": "Adam Schumpert"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/melange-mining-corp-core",
@@ -4904,7 +4934,11 @@
       "text": "[Click], [Click], [Click]: Gain 7[Credits].",
       "title": "Melange Mining Corp.",
       "trash": 1,
-      "type": "Asset"
+      "type": "Asset",
+      "altart": {
+        "imagesrc": "/images/cards/melange-mining-corp-alt.png",
+        "illustrator": "Emilio Rodriguez"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/pad-campaign-core",
@@ -5532,7 +5566,7 @@
       "faction": "Neutral",
       "factioncost": 0,
       "flavor": "No contract. Just a handshake and a fistful of C-6 high explosives.",
-      "illustrator": "R. J. Palmer",
+      "illustrator": "RJ Palmer",
       "imagesrc": "/images/cards/freelancer.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02040",
       "number": 40,
@@ -5722,6 +5756,7 @@
       "setname": "Cyber Exodus",
       "side": "Corp",
       "strength": 2,
+      "subroutinecount": 0,
       "subtype": "Sentry - AP",
       "text": "Woodcutter can be advanced only while rezzed and gains \"[Subroutine] Do 1 net damage.\" for each advancement token on it.",
       "title": "Woodcutter",
@@ -5777,7 +5812,7 @@
       "faction": "Neutral",
       "factioncost": 0,
       "flavor": "Three heads. One big headache.",
-      "illustrator": "Isuardi Thenianio",
+      "illustrator": "Isuardi Therianto",
       "imagesrc": "/images/cards/chimera.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02060",
       "number": 60,
@@ -6019,7 +6054,7 @@
       "faction": "Weyland Consortium",
       "factioncost": 2,
       "flavor": "Thou shall not pass.",
-      "illustrator": "Isuardi Thenianio",
+      "illustrator": "Isuardi Therianto",
       "imagesrc": "/images/cards/tyrant.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02078",
       "number": 78,
@@ -6035,6 +6070,7 @@
       "setname": "A Study in Static",
       "side": "Corp",
       "strength": 4,
+      "subroutinecount": 0,
       "subtype": "Barrier",
       "text": "Tyrant can be advanced only while rezzed and gains \"[Subroutine] End the run.\" for each advancement token on it.",
       "title": "Tyrant",
@@ -6273,6 +6309,7 @@
       "setname": "Humanity's Shadow",
       "side": "Corp",
       "strength": 0,
+      "subroutinecount": 0,
       "subtype": "Code Gate - Tracer",
       "text": "Salvage can be advanced only while rezzed and gains \u201c[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\u201d for each advancement token on it.",
       "title": "Salvage",
@@ -6355,7 +6392,11 @@
       "subtype": "Barrier - Bioroid",
       "text": "The Runner may spend [Click] to break any subroutine on Eli 1.0.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Eli 1.0",
-      "type": "ICE"
+      "type": "ICE",
+      "altart": {
+        "imagesrc": "/images/cards/eli-10-alt.png",
+        "illustrator": "Sandara Tang"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ruhr-valley-future-proof",
@@ -6474,8 +6515,8 @@
       "agendapoints": 2,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/project-beale-future-proof",
       "faction": "NBN",
-      "imagesrc": "/images/cards/project-beale.png",
       "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/project-beale.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02115",
       "number": 115,
       "quantity": 3,
@@ -7383,7 +7424,8 @@
       "subtype": "Code Gate - NEXT",
       "text": "NEXT Bronze has +1 strength for each rezzed piece of <strong>NEXT</strong> ice.\n[Subroutine] End the run.",
       "title": "NEXT Bronze",
-      "type": "ICE"
+      "type": "ICE",
+      "variablestrength": true
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/celebrity-gift-opening-moves",
@@ -7563,6 +7605,7 @@
       "setname": "Opening Moves",
       "side": "Corp",
       "strength": 5,
+      "subroutinecount": 0,
       "subtype": "Sentry - Destroyer - Illicit",
       "text": "When you rez Swarm, take 1 bad publicity.\nSwarm can be advanced and gains \"[Subroutine] Trash 1 program unless the Runner pays 3[Credits].\" for each advancement token on it.",
       "title": "Swarm",
@@ -8360,8 +8403,8 @@
       "cost": 6,
       "faction": "NBN",
       "factioncost": 2,
-      "imagesrc": "/images/cards/snoop.png",
       "illustrator": "Andreas Zafiratos",
+      "imagesrc": "/images/cards/snoop.png",
       "last-modified": "2013-12-09T04:34:33-05:00",
       "nrdb_url": "http://netrunnerdb.com/en/card/04056",
       "number": 56,
@@ -8652,6 +8695,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04066",
       "number": 66,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-23T17:57:46Z",
+          "id": "1vyhnm",
+          "title": "[COTD] LLDS Processor (23 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1vyhnm/cotd_llds_processor_23_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "subtype": "Chip",
@@ -8661,7 +8712,6 @@
       "uniqueness": false
     },
     {
-      "breakcardsscript": "sharpshooterCards",
       "breakcost": {
         "credits": 0,
         "subroutines": 1
@@ -8673,10 +8723,21 @@
       "flavor": "\"One-shot icebreakers are popular among many of my prot\u00e9g\u00e9s. They don't have the patience for the hunt.\" -The Professor",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/sharpshooter.png",
+      "logicalsubtypes": [
+        "Anti-destroyer"
+      ],
       "memoryunits": 1,
       "nrdb_url": "http://netrunnerdb.com/en/card/04067",
       "number": 67,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-24T18:52:24Z",
+          "id": "1w1wwh",
+          "title": "[COTD] Sharpshooter (24 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1w1wwh/cotd_sharpshooter_24_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "strength": 3,
@@ -8701,6 +8762,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04068",
       "number": 68,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-27T18:40:45Z",
+          "id": "1warcg",
+          "title": "[COTD] Capstone (27 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1warcg/cotd_capstone_27_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "[Click]: Trash any number of cards from your grip. For each trashed card of which you have another copy installed, draw 1 card.",
@@ -8719,6 +8788,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04069",
       "number": 69,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-28T17:59:50Z",
+          "id": "1wdxky",
+          "title": "[COTD] Starlight Crusade Funding (28 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wdxky/cotd_starlight_crusade_funding_28_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Runner",
       "text": "When your turn begins, lose [Click].\r\nIgnore any additional costs on each <strong>double</strong> event you play.",
@@ -8736,6 +8813,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04070",
       "number": 70,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-29T17:50:20Z",
+          "id": "1whawn",
+          "title": "[COTD] Rex Campaign (29 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1whawn/cotd_rex_campaign_29_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Advertisement",
@@ -8756,6 +8841,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04071",
       "number": 71,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-30T19:42:21Z",
+          "id": "1wkxl9",
+          "title": "[COTD] Fenris (30 Jan 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wkxl9/cotd_fenris_30_jan_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 2,
@@ -8938,6 +9031,464 @@
       "title": "Veterans Program",
       "type": "Agenda",
       "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Anarch",
+      "factioncost": 3,
+      "flavor": "Stick with your plan and you'll be fine. Stick with the plan.",
+      "illustrator": "Lorraine Schleter",
+      "imagesrc": "/images/cards/tallie-perrault.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04083",
+      "number": 83,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Runner",
+      "subtype": "Connection",
+      "text": "Whenever a <strong>gray ops</strong> or <strong>black ops</strong> operation is trashed after resolving, you may give the Corp 1 bad publicity and take 1 tag.\r\n[Trash]: Draw 1 card for each bad publicity the Corp has.",
+      "title": "Tallie Perrault",
+      "type": "Resource",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 11,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "The power of the focused mind is a power beyond comprehension.",
+      "illustrator": "Smirtouille",
+      "imagesrc": "/images/cards/blackguard.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04085",
+      "number": 85,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Runner",
+      "subtype": "Console",
+      "text": "+2[Memory Unit]\r\nWhenever you expose a card, the Corp must rez it by paying its rez cost, if able.\r\nLimit 1 <strong>console</strong> per player.",
+      "title": "Blackguard",
+      "type": "Hardware",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/blackmail.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04089",
+      "number": 89,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Runner",
+      "subtype": "Run",
+      "text": "Play only if the Corp has at least 1 bad publicity.\r\nMake a run. The Corp cannot rez ice for the duration of this run.",
+      "title": "Blackmail",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "Jinteki",
+      "factioncost": 2,
+      "imagesrc": "/images/cards/toshiyuki-sakai.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04094",
+      "number": 94,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Corp",
+      "subtype": "Executive",
+      "text": "Toshiyuki Sakai can be advanced.\r\nIf Toshiyuki Sakai is accessed while installed, you may swap him with an agenda or asset from HQ. The new agenda or asset is installed unrezzed, and keeps all advancement tokens on Toshiyuki Sakai. The Runner can choose not to access the new card.",
+      "title": "Toshiyuki Sakai",
+      "trash": 2,
+      "type": "Asset",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "faction": "Weyland Consortium",
+      "flavor": "<strong>G</strong>eostrategic <strong>R</strong>esearch and <strong>N</strong>eothermal <strong>D</strong>evelopment <strong>L</strong>aboratories",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/grndl-power-unleashed.png",
+      "influencelimit": 10,
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04097",
+      "number": 97,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Corp",
+      "subtype": "Division",
+      "text": "You start the game with 10[Credits] and 1 bad publicity.",
+      "title": "GRNDL: Power Unleashed",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "Weyland Consortium",
+      "factioncost": 2,
+      "flavor": "GRNDL refineries process many different rare elements unearthed during the fracking process.",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/grndl-refinery.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04099",
+      "number": 99,
+      "quantity": 3,
+      "setname": "Fear and Loathing",
+      "side": "Corp",
+      "subtype": "Facility",
+      "text": "GRNDL Refinery can be advanced.\r\n[Click], [Trash]: Gain 4[Credits] for each advancement token on GRNDL Refinery.",
+      "title": "GRNDL Refinery",
+      "trash": 2,
+      "type": "Asset",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 4,
+      "faction": "Anarch",
+      "factioncost": 3,
+      "illustrator": "Adam S. Doyle",
+      "imagesrc": "/images/cards/singularity.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04101",
+      "number": 101,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Double - Run",
+      "text": "As an additional cost to play this event, spend [Click].\r\nMake a run on a remote server. If successful, instead of accessing cards, trash all cards in the server at no cost (even if they cannot normally be trashed).",
+      "title": "Singularity",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "Anarch",
+      "factioncost": 3,
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/queens-gambit.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04102",
+      "number": 102,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Double",
+      "text": "As an additional cost to play this event, spend [Click].\r\nPlace up to 3 advancement tokens on an unrezzed card in a remote server. Gain 2[Credits] for each advancement token placed. You cannot access that card this turn.",
+      "title": "Queen's Gambit",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "NBN",
+      "factioncost": 2,
+      "flavor": "The only thing worse than being fired and replaced by a younger, cheaper worker? Begin replaced by an android.",
+      "illustrator": "Agri Karuniawan",
+      "imagesrc": "/images/cards/corporate-shuffle.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04113",
+      "number": 113,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Double",
+      "text": "As an additional cost to play this operation, spend [Click].\r\nShuffle all cards in HQ into R&D. Draw 5 cards.",
+      "title": "Corporate Shuffle",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Jinteki",
+      "factioncost": 4,
+      "flavor": "The first clone to serve as an NAPD detective.",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/caprice-nisei.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04114",
+      "number": 114,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Clone - Psi",
+      "text": "Whenever the Runner passes all of the ice protecting this server, you and the Runner secretly spend 0[Credits], 1[Credits], or 2[Credits]. Reveal spent credits. If you and the Runner spent a different number of credits, end the run.",
+      "title": "Caprice Nisei",
+      "trash": 1,
+      "type": "Upgrade",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 5,
+      "faction": "Weyland Consortium",
+      "factioncost": 2,
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/hive.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04117",
+      "number": 117,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "strength": 3,
+      "subtype": "Barrier",
+      "text": "Hive loses an \"[Subroutine] End the run.\" subroutine for each agenda point in the Corp's score area.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
+      "title": "Hive",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "baselink": 0,
+      "cgdb_url": null,
+      "faction": "Criminal",
+      "flavor": "\"Don't waste my time.\"",
+      "illustrator": "Simon Eckert",
+      "imagesrc": "/images/cards/silhouette-stealth-operative.png",
+      "influencelimit": 15,
+      "minimumdecksize": 40,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05030",
+      "number": 30,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Natural",
+      "text": "The first time you make a successful run on HQ each turn, you may expose 1 card.",
+      "title": "Silhouette: Stealth Operative",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "Tenma clones are excellent at multitasking, their brains custom-made for parallel processing.",
+      "illustrator": "Samuel R. Shimota",
+      "imagesrc": "/images/cards/early-bird.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05032",
+      "number": 32,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Priority - Run",
+      "text": "Play only as your first click.\r\nMake a run and gain [Click].",
+      "title": "Early Bird",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "\"I work by referral only, with an up-front fee. The fee is reasonable if you value results.\" -Silhouette",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/legwork.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05035",
+      "number": 35,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Run",
+      "text": "Make a run on HQ. If successful, access 2 additional cards from HQ.",
+      "title": "Legwork",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 3,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "Appearances are easy to change in cyberspace, but a high-quality render is not easy to mimic.",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/alias.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05041",
+      "number": 41,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "strength": 1,
+      "subtype": "Icebreaker - Killer",
+      "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +3 strength.\r\nAlias cannot be used on ice protecting a remote server.",
+      "title": "Alias",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/breach.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05042",
+      "number": 42,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "strength": 2,
+      "subtype": "Icebreaker - Fracter",
+      "text": "2[Credits]: Break up to 3 <strong>barrier</strong> subroutines.\r\n2[Credits]: +4 strength.\r\nBreach cannot be used on ice protecting a remote server.",
+      "title": "Breach",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "If speed is of the essence, an indirect encounter with a piece of ice is usually best.",
+      "illustrator": "Zefanya Langkan Maega",
+      "imagesrc": "/images/cards/grappling-hook.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05045",
+      "number": 45,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "text": "[Trash]: Break all but 1 subroutines on a piece of ice.",
+      "title": "Grappling Hook",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Neutral",
+      "factioncost": 1,
+      "flavor": "\"The best place to hide is in plain sight, don't you think?\"",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/oracle-may.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05054",
+      "number": 54,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Connection",
+      "text": "You cannot use Oracle May more than once per turn.\r\n[Click]: Name a card type. Reveal the top card of your stack. If the revealed card is of the named type, draw it and gain 2[Credits]. Otherwise, trash it.",
+      "title": "Oracle May",
+      "type": "Resource",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "faction": "Jinteki",
+      "flavor": "Evolving a Better You.",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/harmony-medtech-biomedical-pioneer.png",
+      "influencelimit": 12,
+      "minimumdecksize": 40,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05001",
+      "number": 1,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "subtype": "Division",
+      "text": "Each player needs 1 fewer agenda point to win the game.",
+      "title": "Harmony Medtech: Biomedical Pioneer",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 4,
+      "agendapoints": 2,
+      "cgdb_url": null,
+      "faction": "Jinteki",
+      "flavor": "\"You won't feel it. Or anything else, for that matter.\"",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/medical-breakthrough.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05005",
+      "number": 5,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "subtype": "Research",
+      "text": "Lower the advancement requirement of each Medical Breakthrough by 1. This ability is active even while Medical Breakthrough is in the Runner's score area.",
+      "title": "Medical Breakthrough",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Jinteki",
+      "factioncost": 5,
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/chairman-hiro.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05008",
+      "number": 8,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "subtype": "Executive",
+      "text": "The Runner's maximum hand size is reduced by 2.\r\nIf Chairman Hiro is trashed while being accessed, add him to the Runner's score area as an agenda worth 2 agenda points.",
+      "title": "Chairman Hiro",
+      "trash": 6,
+      "type": "Asset",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "Jinteki",
+      "factioncost": 2,
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/mushin-no-shin.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05015",
+      "number": 15,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "subtype": "Double",
+      "text": "As an additional cost to play this operation, spend [Click].\r\nInstall an asset, agenda, or upgrade from HQ in a new remote server. Place 3 advancement tokens on that card. You cannot score or rez that card until your next turn begins.",
+      "title": "Mushin No Shin",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 3,
+      "faction": "Jinteki",
+      "factioncost": 2,
+      "flavor": "Trapped in her own reality, a paralyzed runner cannot even jack out.",
+      "illustrator": "Christina Davis",
+      "imagesrc": "/images/cards/inazuma.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05016",
+      "number": 16,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "strength": 5,
+      "subtype": "Code Gate",
+      "text": "[Subroutine] The Runner cannot break any subroutines on the next piece of ice he or she encounters during this run.\r\n[Subroutine] The Runner cannot jack out until after encountering the next piece of ice during this run.",
+      "title": "Inazuma",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/plan-b.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/05023",
+      "number": 23,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Corp",
+      "subtype": "Ambush",
+      "text": "Plan B can be advanced.\r\nIf the Runner accesses Plan B, you may reveal and score an agenda from HQ with an advancement requirement equal to or less than the number of advancement tokens on Plan B.",
+      "title": "Plan B",
+      "trash": 1,
+      "type": "Asset",
+      "uniqueness": false
     }
   ],
   "sets": [
@@ -8946,68 +9497,72 @@
       "title": "Core Set"
     },
     {
+      "cycle": "Genesis",
       "released": "2012-12-01T00:00:00",
-      "title": "What Lies Ahead",
-      "cycle": "Genesis"
+      "title": "What Lies Ahead"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-01-01T00:00:00",
-      "title": "Trace Amount",
-      "cycle": "Genesis"
+      "title": "Trace Amount"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-02-01T00:00:00",
-      "title": "Cyber Exodus",
-      "cycle": "Genesis"
+      "title": "Cyber Exodus"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-03-01T00:00:00",
-      "title": "A Study in Static",
-      "cycle": "Genesis"
+      "title": "A Study in Static"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-05-01T00:00:00",
-      "title": "Humanity's Shadow",
-      "cycle": "Genesis"
+      "title": "Humanity's Shadow"
     },
     {
+      "cycle": "Genesis",
       "released": "2013-06-01T00:00:00",
-      "title": "Future Proof",
-      "cycle": "Genesis"
+      "title": "Future Proof"
     },
     {
       "released": "2013-07-01T00:00:00",
       "title": "Creation and Control"
     },
     {
+      "cycle": "Spin",
       "released": "2013-09-01T00:00:00",
-      "title": "Opening Moves",
-      "cycle": "Spin"
+      "title": "Opening Moves"
     },
     {
+      "cycle": "Spin",
       "released": "2013-11-01T00:00:00",
-      "title": "Second Thoughts",
-      "cycle": "Spin"
+      "title": "Second Thoughts"
     },
     {
+      "cycle": "Spin",
       "released": "2013-12-01T00:00:00",
-      "title": "Mala Tempora",
-      "cycle": "Spin"
+      "title": "Mala Tempora"
     },
     {
+      "cycle": "Spin",
       "released": "2014-01-01T00:00:00",
-      "title": "True Colors",
-      "cycle": "Spin"
+      "title": "True Colors"
+    },
+    {
+      "cycle": "Spin",
+      "released": null,
+      "title": "Fear and Loathing"
+    },
+    {
+      "cycle": "Spin",
+      "released": null,
+      "title": "Double Time"
     },
     {
       "released": null,
-      "title": "Fear and Loathing",
-      "cycle": "Spin"
-    },
-    {
-      "released": null,
-      "title": "Double Time",
-      "cycle": "Spin"
+      "title": "Honor and Profit"
     }
   ]
 }

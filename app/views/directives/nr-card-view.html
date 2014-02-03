@@ -2,7 +2,9 @@
   <div class="wing-click-region" ng-click="selectPreviousCard()"></div>
   <div ng-repeat="card in cardsBefore track by card.id"
        class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}">
-    <img ng-src="{{ card.imagesrc }}" width="300" height="418">
+    <img ng-src="{{ card.imagesrc }}"
+         class="primary"
+         width="300" height="418">
     <div class="background"></div>
   </div>
 </div>
@@ -12,10 +14,8 @@
     {{ card.title }}
     <small class="favourite"
            ng-click="toggleFavourite(card)"
-           ng-class="{ 'on': isFavourite(card) }"
-           ng-switch="isFavourite(card)">
-      <span ng-switch-when="false">☆</span>
-      <span ng-switch-when="true">★</span>
+           ng-class="{ 'on': isFavourite(card) }">
+      {{ isFavourite(card) ? '★' : '☆' }}
     </small>
 
     <span class="close" ng-click="deselectCard()">&times;</span>
@@ -39,8 +39,20 @@
 
   <div class="card-content">
     <div ng-repeat="cardImage in cardAndNeighbours track by cardImage.card.id"
-         class="card-image {{ cardImage.class }}">
-      <img ng-src="{{ cardImage.card.imagesrc }}" width="300" height="418">
+         class="card-image {{ cardImage.class }}"
+         ng-class="{
+           'show-alt': cardUI.altArtShown
+         }">
+
+      <img ng-src="{{ cardImage.card.imagesrc }}"
+           class="primary"
+           width="300" height="418">
+
+      <!-- Alternate art -->
+      <img ng-src="{{ cardImage.card.altart.imagesrc }}"
+           ng-if="hasAltArt(card)"
+           class="alt"
+           width="300" height="418">
     </div>
 
     <div class="info">
@@ -75,7 +87,18 @@
           <div ng-if="card.illustrator != null" class="info-row">
             <span class="info-label">Illus.:</span>
             <div class="info-value">
-              <a ng-href="{{ card | cardUrl:'illustrator' }}">{{ card.illustrator }}</a>
+              <span ng-switch="cardUI.altArtShown">
+                <a ng-switch-when="false"
+                   ng-href="{{ card | cardUrl:'illustrator' }}">{{ card.illustrator }}</a>
+                <a ng-switch-when="true"
+                   ng-href="{{ card | cardUrl:'alt-illustrator' }}">{{ card.altart.illustrator }}</a>
+              </span>
+              <br>
+              <a ng-click="toggleAltArt()" ng-if="hasAltArt(card)"
+                 class="small">
+                {{ cardUI.altArtShown ? 'Hide' : 'Show' }}
+                Alternate Art
+              </a>
             </div>
           </div>
           <div ng-if="isShortCard(card)" class="info-row">
@@ -97,17 +120,18 @@
                 <i class="icon-link-ext"></i> Comments on CardGameDB
               </a>
             </li>
-            <!--li>
+            <li>
               <a ng-href="{{ card.nrdb_url }}" target="nrdb">
                 <i class="icon-link-strength"></i> View on NetrunnerDB
               </a>
-            </li-->
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="card-pager">
+  <div class="card-pager"
+       ng-if="queryResult.cardOrdinal(card) != -1">
     <div class="card-pager-inner">
       <span class="prev-card">
         <a ng-click="selectPreviousCard()">Previous</a>
@@ -127,7 +151,9 @@
   <div class="wing-click-region" ng-click="selectNextCard()"></div>
   <div ng-repeat="card in cardsAfter track by card.id"
        class="card-image in-wing next next-{{ $index }}">
-    <img ng-src="{{ card.imagesrc }}" width="300" height="418">
+    <img ng-src="{{ card.imagesrc }}"
+         class="primary"
+         width="300" height="418">
     <div class="background"></div>
   </div>
 </div>

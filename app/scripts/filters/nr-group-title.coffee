@@ -53,7 +53,7 @@ angular.module('onoSendai')
               if set.released?
                 dateFilter(set.released, 'MMM. y')
               else
-                ''
+                'Unreleased'
 
             cycleStr =
               if set.cycle?

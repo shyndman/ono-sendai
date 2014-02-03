@@ -1,48 +1,50 @@
 angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
-  .value('queryArgDefaults',
-    side: 'Corp'
-    search: ''
-    activeGroup: 'general'
-    groupings: [ 'faction', 'type' ]
-    fieldFilters:
-      faction:
-        'Corp: Haas-Bioroid': true
-        'Corp: Jinteki': true
-        'Corp: NBN': true
-        'Corp: Weyland Consortium': true
-        'Corp: Neutral': true
-        'Runner: Anarch': true
-        'Runner: Criminal': true
-        'Runner: Shaper': true
-        'Runner: Neutral': true
-      subtype: null
-      cost:
-        operator: '='
-      factionCost:
-        operator: '='
-      setname: null
-      illustrator: null
-      influenceLimit:
-        operator: '='
-      minimumDeckSize:
-        operator: '='
-      points:
-        operator: '='
-      assetTrashCost:
-        operator: '='
-      subroutineCount:
-        operator: '='
-      iceStrength:
-        operator: '='
-      influence:
-        operator: '='
-      upgradeTrashCost:
-        operator: '='
-      memoryUnits:
-        operator: '='
-      baseLink:
-        operator: '='
+  .factory('queryArgDefaults', (userPreferences) ->
+    get: ->
+      side: 'Corp'
+      search: ''
+      activeGroup: 'general'
+      groupings: [ 'faction', 'type' ]
+      fieldFilters:
+        faction:
+          'Corp: Haas-Bioroid': true
+          'Corp: Jinteki': true
+          'Corp: NBN': true
+          'Corp: Weyland Consortium': true
+          'Corp: Neutral': true
+          'Runner: Anarch': true
+          'Runner: Criminal': true
+          'Runner: Shaper': true
+          'Runner: Neutral': true
+        subtype: null
+        cost:
+          operator: '='
+        factionCost:
+          operator: '='
+        setname: null
+        illustrator: null
+        showSpoilers: userPreferences.showSpoilers() ? true
+        influenceLimit:
+          operator: '='
+        minimumDeckSize:
+          operator: '='
+        points:
+          operator: '='
+        assetTrashCost:
+          operator: '='
+        subroutineCount:
+          operator: '='
+        iceStrength:
+          operator: '='
+        influence:
+          operator: '='
+        upgradeTrashCost:
+          operator: '='
+        memoryUnits:
+          operator: '='
+        baseLink:
+          operator: '='
   )
   # Describes the ordering, appearance and functionality of the filter sidebar
   .constant('filterUI',
@@ -258,6 +260,8 @@ angular.module('onoSendai')
         illustrator:
           type: 'match'
           cardField: 'illustratorId'
+        showSpoilers:
+          type: 'showSpoilers'
     }
     identity: {
       cardType: 'Identity'

@@ -3,8 +3,6 @@ angular.module('onoSendai')
 
     # ~-~-~- INITIALIZATION
 
-    $scope.cardUI =
-      page: urlStateService.cardPage ? 'info'
     $scope.wingCardCount = 5
 
 
@@ -19,16 +17,14 @@ angular.module('onoSendai')
 
       # WEIRDORIFICA
       # Store the card an its immediate neighbours in the scope, so we can render all three of their images
-      # and do a fast DOM switch on card switches
+      # and do a fast DOM switch on card switches. This will prevent flashes (most of the time) as the image
+      # loads.
       cards = []
       cards.push({ class: 'prev-0',  card: _.last(before) }) if before.length
       cards.push({ class: 'current', card: card })
       cards.push({ class: 'next-0',  card: _.first(after) }) if after.length
       $scope.cardAndNeighbours = cards
 
-      # WEIRDORIFICA - More of the same...
-      # We splice the current card onto these lists so that angular can render them in ngRepeats and next/prev
-      # card operations won't cause flashes.
       before.splice(before.length, 0, card)
       after.splice(0, 0, card)
 
@@ -37,6 +33,9 @@ angular.module('onoSendai')
 
     $scope.$watch 'selectedCard', selectedCardChanged = (card, oldCard) ->
       $scope.card = card
+      $scope.cardUI =
+        page: urlStateService.cardPage ? 'info'
+        altArtShown: false
 
       if card?
         invalidateBeforeAfter()
@@ -80,6 +79,15 @@ angular.module('onoSendai')
 
     # Returns true if the provided card is favourited
     $scope.isFavourite = userPreferences.isCardFavourite
+
+
+    # ~-~-~- ALTERNATE ART
+
+    $scope.hasAltArt = (card) ->
+      card.altart?
+
+    $scope.toggleAltArt = (card) ->
+      $scope.cardUI.altArtShown = !$scope.cardUI.altArtShown
 
 
     # ~-~-~- URL UPDATES
