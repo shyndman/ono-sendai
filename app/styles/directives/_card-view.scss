@@ -5,6 +5,11 @@ card-view {
   flex-direction: row;
   height: 100%;
 
+  // HACK!
+  // This seems to correct some strange pixel snapping that occurs during the
+  // alternate art card flip.
+  margin-left: -1px;
+
 
   // Common card image component
   .card-image {
