@@ -10,6 +10,7 @@ angular.module('onoSendai')
         zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid' # Will be modified by selectCard() if called
         cardPage: urlStateService.cardPage ? 'info'
+        settingsVisible: false
 
       $log.debug 'Assigning cards with initial query ordering'
       $scope.cards = queryResult.applyOrdering(cards, (card) -> card.id)
