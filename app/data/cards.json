@@ -8833,6 +8833,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04072",
       "number": 72,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-31T19:40:14Z",
+          "id": "1wo28d",
+          "title": "[COTD] Panic Button (31 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wo28d/cotd_panic_button_31_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "text": "Install only in the root of HQ.\r\n1[Credits]: Draw 1 card. Use this ability only during a run on HQ.",
@@ -8851,6 +8859,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04073",
       "number": 73,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-03T18:38:48Z",
+          "id": "1wwuhk",
+          "title": "[COTD] Shock (3 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wwuhk/cotd_shock_3_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Ambush",
