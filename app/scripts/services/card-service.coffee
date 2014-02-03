@@ -249,6 +249,8 @@ class CardService
         @_buildCardSetFilter(filterDesc, filterArg)
       when 'match'
         @_buildMatchFilter(filterDesc, filterArg)
+      when 'showSpoilers'
+        @_buildSpoilerFilter(filterDesc, filterArg)
       when 'search'
         undefined # Search is handled by another stage in the pipeline
       else
@@ -293,6 +295,13 @@ class CardService
   _buildMatchFilter: (filterDesc, filterArg) =>
     (card) ->
       fieldVal = card[filterDesc.cardField] == filterArg
+
+  _buildSpoilerFilter: (filterDesc, filterArg) =>
+    if filterArg
+      null
+    else
+      (card) =>
+        @_setsByTitle[card.setname].released?
 
   _groupCards: ({ groupings }, cards) =>
     sortFns =

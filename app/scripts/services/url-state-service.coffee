@@ -60,6 +60,8 @@ class UrlStateService
           search[name] = searchVal if searchVal
         when 'search'
           search.search = queryArgs.search
+        when 'showSpoilers'
+          # noop
         else
           search[name] = arg
 
@@ -125,7 +127,7 @@ class UrlStateService
     cardPage = null
 
     # Copy defaults and assign general as the default active group
-    queryArgs = angular.copy(@queryArgDefaults)
+    queryArgs = angular.copy(@queryArgDefaults.get())
     queryArgs.activeGroup = 'general'
 
     # Match the URL

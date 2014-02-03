@@ -14,6 +14,12 @@ class UserPreferences
     @_favs[card.id] = !@isCardFavourite(card)
     @_persistFavourites()
 
+  showSpoilers: (flag) =>
+    if flag?
+      localStorage.setItem('showSpoilers', flag)
+    else
+      JSON.parse(localStorage.getItem('showSpoilers'))
+
   zoom: (zoom) =>
     if zoom?
       localStorage.setItem('zoom', zoom)

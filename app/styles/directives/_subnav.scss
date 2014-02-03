@@ -46,13 +46,34 @@ nr-subnav {
     }
   }
 
+  .spoilers {
+    margin-right: 20px;
+
+    label {
+      @include abridged(550px, inline);
+    }
+
+    .control-label {
+      margin-right: 6px;
+    }
+
+    input {
+      position: relative;
+      top: -1px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
   .zoom {
     @include hide-at(550px);
     @include abridged($filter-bar-collapse-width + 50px, inline-block);
 
     margin-right: 20px;
 
-    .control-label {
+    > .control-label {
       margin-right: 0;
     }
 

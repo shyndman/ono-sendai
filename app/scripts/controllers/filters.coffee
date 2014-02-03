@@ -2,21 +2,37 @@ angular.module('onoSendai')
   .controller('FiltersCtrl', ($scope, filterUI, cardService) ->
     $scope.filterUI = filterUI
     factions = $scope.filter.fieldFilters.faction
+    cachedSets = null
 
-    # Supply the sets
-    cardService.getSets().then assignSets = (sets) ->
+    # ~-~-~- SETS
+
+    cardService.getSets().then updateSets = (sets = cachedSets) ->
+      cachedSets = sets
+
       # Filter out sets that aren't out yet
-      now = new Date().getTime()
-      setsToDate = _.filter sets, (set) ->
-        if set.released?
-          new Date(set.released).getTime() < now
+      visibleSets =
+        if !$scope.filter.fieldFilters.showSpoilers
+          now = new Date().getTime()
+          _.filter sets, (set) ->
+            if set.released?
+              new Date(set.released).getTime() < now
+            else
+              false
         else
-          false
+          sets
 
       # Transform the sets for select2 consumption
-      $scope.sets = _.map setsToDate, (set) ->
+      $scope.sets = _.map visibleSets, (set) ->
         id: set.id
         text: set.title
+
+    # Change the sets list if the spoiler flag toggles
+    $scope.$watch 'filter.fieldFilters.showSpoilers', (flag) ->
+      $scope.filter.fieldFilters.setname = null
+      updateSets()
+
+
+    # ~-~-~- ILLUSTRATORS AND SUBTYPES
 
     # Supply the subtypes for the current side
     cardService.ready().then updateSubtypes = ->

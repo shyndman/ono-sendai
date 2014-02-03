@@ -103,7 +103,7 @@ angular.module('onoSendai')
     # Resets query args, and deselects the selected card, if any
     $scope.resetState = ->
       $scope.deselectCard()
-      $scope.filter = _.extend(angular.copy(queryArgDefaults), side: $scope.filter.side)
+      $scope.filter = _.extend(angular.copy(queryArgDefaults.get()), side: $scope.filter.side)
       updateUrlNow(true)
 
 
@@ -134,6 +134,13 @@ angular.module('onoSendai')
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce(updateUrlNow, 500)
+
+
+    # ~-~-~- PERSISTING PREFERENCES
+
+    $scope.$watch 'filter.fieldFilters.showSpoilers', persistShowSpoilers = (flag) ->
+      if flag?
+        userPreferences.showSpoilers(flag)
 
 
     # ~-~-~- COMMUNICATION BETWEEN DIRECTIVES / CONTROLLERS
