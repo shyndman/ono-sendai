@@ -107,7 +107,8 @@
       </div>
     </div>
   </div>
-  <div class="card-pager">
+  <div class="card-pager"
+       ng-if="queryResult.cardOrdinal(card) != -1">
     <div class="card-pager-inner">
       <span class="prev-card">
         <a ng-click="selectPreviousCard()">Previous</a>
