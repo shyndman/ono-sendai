@@ -105,7 +105,9 @@ nr-nav {
     }
 
     .links {
-      margin-right: 20px;
+      .settings {
+        padding: 15px 15px;
+      }
     }
 
     .card-search {
