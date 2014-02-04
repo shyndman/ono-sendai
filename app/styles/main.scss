@@ -29,7 +29,7 @@ body {
   font-weight: 200;
 }
 
-a:focus {
+a:focus, input[type=checkbox]:focus {
   outline: 0 !important;
 }
 
