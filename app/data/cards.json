@@ -8887,6 +8887,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04074",
       "number": 74,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-04T19:06:12Z",
+          "id": "1x0atg",
+          "title": "[COTD] Tsurugi (4 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x0atg/cotd_tsurugi_4_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 2,
