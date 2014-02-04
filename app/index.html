@@ -50,7 +50,9 @@
     </div>
     &nbsp;
     <a class="version" href="https://github.com/shyndman/ono-sendai/commits/{{version}}"
-       target="_blank" ng-cloak>{{version}}</a>
+       target="_blank" ng-cloak>{{version}}
+       <span ng-if="codename != null">&nbsp;( {{codename}} )</span>
+     </a>
   </footer>
 
   <!-- build:js /scripts/lib.js -->
