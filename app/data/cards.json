@@ -9312,6 +9312,14 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 1,
+      "strengthcost": {
+        "credits": 2,
+        "strength": 3
+      },
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +3 strength.\r\nAlias cannot be used on ice protecting a remote server.",
       "title": "Alias",
@@ -9332,6 +9340,14 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 2,
+      "strengthcost": {
+        "credits": 2,
+        "strength": 4
+      },
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 3
+      },
       "subtype": "Icebreaker - Fracter",
       "text": "2[Credits]: Break up to 3 <strong>barrier</strong> subroutines.\r\n2[Credits]: +4 strength.\r\nBreach cannot be used on ice protecting a remote server.",
       "title": "Breach",
