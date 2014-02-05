@@ -136,12 +136,8 @@ class CardService
   # Returns a promise that resolves to a 2-element array of sets and released sets after they've loaded
   getSets: ->
     @_cardsPromise.then =>
-      now = new Date().getTime()
       releasedSets = _.filter @_sets, (set) ->
-        if set.released?
-          new Date(set.released).getTime() < now
-        else
-          false
+        set.isReleased()
 
       [ @_sets, releasedSets ]
 
@@ -425,6 +421,13 @@ class CardService
     _.each sets, (set, i) =>
       set.id = _.idify(set.title)
       set.ordinal = i
+      set.isReleased = ->
+        now = new Date().getTime()
+        if @released?
+          new Date(@released).getTime() < now
+        else
+          false
+
       @_setsByTitle[set.title] = set
       @_setsById[set.id] = set
 

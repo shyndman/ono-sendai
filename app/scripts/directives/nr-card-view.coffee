@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardViewCtrl', ($scope, costToBreakCalculator, userPreferences, urlStateService) ->
+  .controller('CardViewCtrl', ($scope, costToBreakCalculator, cardService, userPreferences, urlStateService) ->
 
     # ~-~-~- INITIALIZATION
 
@@ -47,6 +47,12 @@ angular.module('onoSendai')
         $scope.cardsBefore = $scope.cardsAfter = []
 
     $scope.$watch 'queryResult', invalidateBeforeAfter
+
+
+    # ~-~-~- SPOILERS
+
+    $scope.isUnreleased = (card) ->
+      !cardService.getSetByTitle(card.setname).isReleased()
 
 
     # ~-~-~- CARD SHORTAGES
