@@ -13,7 +13,8 @@ angular.module('onoSendai')
       container = element.find('.content-container')
       containerWidth = null
       inContinuousZoom = false
-      needsLayout = false
+      needsLayout = false        # true if a layout is attempted while the grid is hidden
+      pendingLayout = null       # Promise
 
       minimumGutterWidth = 20
       vMargin = 10
@@ -50,6 +51,7 @@ angular.module('onoSendai')
         if containerWidth != (newContainerWidth = container.width())
           containerWidth = newContainerWidth
           scrollParentH = scrollParent.height()
+          $log.debug 'Container width changed', containerWidth
           true
         else
           false
@@ -109,6 +111,7 @@ angular.module('onoSendai')
         setScrollerOverflow('')
 
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
+
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
         #       event listener to *an* item, and the first item doesn't necessarily move. :)
         # SECOND NOTE:
@@ -237,17 +240,21 @@ angular.module('onoSendai')
           performGridLayout()
 
         needsLayout = false
+        pendingLayout = null
 
       # We provide a debounced version, so we don't layout too much during user input
       layout = _.debounce(layoutNow, 300)
 
       # Reacts to messages sent from above triggering layouts
-      scope.$on 'layout', (e, mode) ->
+      scope.$on 'layout', layoutForced = (e, mode) ->
         if mode != 'grid'
           return
 
-        $timeout ->
+        $log.debug 'Received layout event. Queuing layout'
+
+        pendingLayout = $timeout ->
           if hasContainerChangedWidth() or needsLayout
+            $log.debug 'Laying out (layout event)'
             layoutNow(false)
           scrollToFocusedElement()
 
@@ -358,7 +365,7 @@ angular.module('onoSendai')
         changeFocusToSelection = ->
           selectionElement = element.find("[grid-id='#{ newSelection.id }']")
           if !selectionElement.length
-            console.warn "No element found with grid-id #{ newSelection.id }"
+            $log.warn "No element found with grid-id #{ newSelection.id }"
             return
 
           $log.debug 'New focus element determined "%s"', selectionElement.attr('title')
@@ -384,9 +391,16 @@ angular.module('onoSendai')
 
       firstLayout = true
       scope.$watch('queryResult', queryResultChanged = (newVal) ->
-        $log.debug 'Laying out (query)'
+        $log.debug 'Laying out (query result changed)'
         queryResult = newVal
-        $timeout ->
+
+        # If we have a pending layout (maybe due to a layout event in the same frame of the event loop),
+        # the query-result-change layout takes precedence.
+        if pendingLayout?
+          $log.debug 'Preempting queued layout'
+          $timeout.cancel pendingLayout
+
+        pendingLayout = $timeout ->
           if !queryResult?
             return
 
