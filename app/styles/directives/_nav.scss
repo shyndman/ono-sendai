@@ -106,7 +106,9 @@ nr-nav {
 
     .links {
       .settings {
-        padding: 15px 15px;
+        @include tweak($y: 2px);
+        font-size: 17px;
+        padding: 10px;
       }
     }
 
