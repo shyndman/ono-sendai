@@ -125,9 +125,7 @@
 
     // Hack to make weirdo font appear correctly
     .icon-memory-unit {
-      position: relative;
-      top: -1px;
-      left: -1px;
+      @include tweak(-1px, -1px);
       font-size: 11px;
     }
 

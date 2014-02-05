@@ -69,9 +69,7 @@ card-view {
       }
 
       .favourite {
-        position: relative;
-        top: -2px;
-        left: 4px;
+        @include tweak(-2px, 4px);
 
         color: #ccc;
         font-size: 16px;
@@ -179,8 +177,7 @@ card-view {
       > .card-pager-inner {
         width: $selected-card-width - 120px;
         margin: 0 auto;
-        position: relative;
-        left: -10px;
+        @include tweak(-10px);
 
         > .card-count {
           text-align: center;
@@ -208,8 +205,7 @@ card-view {
 
     .wing-click-region {
       height: 300px;
-      position: relative;
-      top: 120px;
+      @include tweak($y: 120px);
       z-index: 1000;
       cursor: pointer;
     }

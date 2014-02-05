@@ -94,9 +94,7 @@ cost-to-break-calculator {
       }
 
       .cost {
-        position: relative;
-        top: -1px;
-        left: 2px;
+        @include tweak(2px, -1px);
         color: $state-danger-text;
       }
     }

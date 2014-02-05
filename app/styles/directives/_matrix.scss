@@ -19,9 +19,8 @@ matrix {
   user-select: none; // Selection is mighty fucked up if we leave it on, because we re-order all the cards
 
   .content-container {
-    position: relative;
-    margin: 0 10px;
     position: relative; // Grid items are absolutely positioned, so we need this
+    margin: 0 10px;
   }
 
   .grid-header, .grid-item {
