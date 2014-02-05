@@ -28,7 +28,6 @@ angular.module('onoSendai')
 
     # Change the sets list if the spoiler flag toggles
     $scope.$watch 'filter.fieldFilters.showSpoilers', (flag) ->
-      $scope.filter.fieldFilters.setname = null
       updateSets()
 
 
