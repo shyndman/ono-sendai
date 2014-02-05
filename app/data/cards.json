@@ -8915,6 +8915,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04075",
       "number": 75,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-05T18:12:55Z",
+          "id": "1x3nwx",
+          "title": "[COTD] TGTBT (5 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x3nwx/cotd_tgtbt_5_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Ambush",
