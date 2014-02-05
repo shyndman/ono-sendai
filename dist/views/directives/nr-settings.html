@@ -1,0 +1,21 @@
+<div class="popover bottom">
+  <div class="arrow"></div>
+  <div class="popover-content">
+    <div class="checkbox">
+      <label>
+        Core Set
+        <select class="core-set-count">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </label>
+    </div>
+    <div ng-repeat="set in sets" class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        {{ set.title }}
+      </label>
+    </div>
+  </div>
+</div>
