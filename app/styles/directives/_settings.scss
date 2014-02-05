@@ -1,0 +1,19 @@
+nr-settings {
+  > .popover {
+    display: block;
+    top: 38px;
+
+    // Centers below settings link
+    left: auto;
+    right: 241px;
+    transform: translateX(50%);
+
+    z-index: 10000;
+  }
+
+  .core-set-count {
+    position: relative;
+    top: -1px;
+    margin-left: 8px;
+  }
+}

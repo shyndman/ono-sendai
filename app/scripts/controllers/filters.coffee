@@ -3,21 +3,18 @@ angular.module('onoSendai')
     $scope.filterUI = filterUI
     factions = $scope.filter.fieldFilters.faction
     cachedSets = null
+    cachedReleasedSets = null
 
     # ~-~-~- SETS
 
-    cardService.getSets().then updateSets = (sets = cachedSets) ->
+    cardService.getSets().then updateSets = ([ sets, releasedSets ] = [ cachedSets, cachedReleasedSets ]) ->
       cachedSets = sets
+      cachedReleasedSets = releasedSets
 
       # Filter out sets that aren't out yet
       visibleSets =
         if !$scope.filter.fieldFilters.showSpoilers
-          now = new Date().getTime()
-          _.filter sets, (set) ->
-            if set.released?
-              new Date(set.released).getTime() < now
-            else
-              false
+          releasedSets
         else
           sets
 

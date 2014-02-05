@@ -133,9 +133,17 @@ class CardService
   getCards: ->
     @_cardsPromise
 
-  # Returns a promise that resolves to the sets after they've loaded
+  # Returns a promise that resolves to a 2-element array of sets and released sets after they've loaded
   getSets: ->
-    @_cardsPromise.then => @_sets
+    @_cardsPromise.then =>
+      now = new Date().getTime()
+      releasedSets = _.filter @_sets, (set) ->
+        if set.released?
+          new Date(set.released).getTime() < now
+        else
+          false
+
+      [ @_sets, releasedSets ]
 
   # Consumers should be aware that this will return undefined if the cards have not loaded
   getSetByTitle: (title) ->

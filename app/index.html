@@ -27,6 +27,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <nr-settings ng-show="cardsUI.settingsVisible"></nr-settings>
   <nr-nav></nr-nav>
   <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar" ng-include="'/views/filters.html'"></div>
@@ -54,6 +55,7 @@
        <span ng-if="codename != null">&nbsp;( {{codename}} )</span>
      </a>
   </footer>
+
 
   <!-- build:js /scripts/lib.js -->
   <script src="/bower_components/underscore/underscore.js"></script>
@@ -88,6 +90,7 @@
   <script src="/scripts/directives/nr-inset-filter.js"></script>
   <script src="/scripts/directives/nr-nav.js"></script>
   <script src="/scripts/directives/nr-numeric-filter.js"></script>
+  <script src="/scripts/directives/nr-settings.js"></script>
   <script src="/scripts/directives/nr-subnav.js"></script>
   <script src="/scripts/directives/nr-subtype-filter.js"></script>
   <script src="/scripts/directives/ui-all-or-one-box.js"></script>
@@ -99,6 +102,7 @@
   <script src="/scripts/filters/nr-card-url.js"></script>
   <script src="/scripts/filters/nr-group-title.js"></script>
   <script src="/scripts/utils/safe-apply.js"></script>
+
   <!-- endbuild -->
 
   <script>
