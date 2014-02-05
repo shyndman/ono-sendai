@@ -28,6 +28,7 @@ angular.module('onoSendai')
 
     # Change the sets list if the spoiler flag toggles
     $scope.$watch 'filter.fieldFilters.showSpoilers', (flag) ->
+      # [todo] Delete the set from the queryArgs if it isn't no longer available
       updateSets()
 
 
