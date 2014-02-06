@@ -8942,6 +8942,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04076",
       "number": 76,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-06T17:35:13Z",
+          "id": "1x701t",
+          "title": "[COTD] Sweeps Week (6 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x701t/cotd_sweeps_week_6_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "text": "Gain 1[Credits] for each card in the Runner's grip.",
