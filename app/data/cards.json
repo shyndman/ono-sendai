@@ -8869,6 +8869,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04072",
       "number": 72,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-01-31T19:40:14Z",
+          "id": "1wo28d",
+          "title": "[COTD] Panic Button (31 Jan 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wo28d/cotd_panic_button_31_jan_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "text": "Install only in the root of HQ.\r\n1[Credits]: Draw 1 card. Use this ability only during a run on HQ.",
@@ -8887,6 +8895,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04073",
       "number": 73,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-03T18:38:48Z",
+          "id": "1wwuhk",
+          "title": "[COTD] Shock (3 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1wwuhk/cotd_shock_3_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Ambush",
@@ -8907,6 +8923,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04074",
       "number": 74,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-04T19:06:12Z",
+          "id": "1x0atg",
+          "title": "[COTD] Tsurugi (4 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x0atg/cotd_tsurugi_4_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 2,
@@ -8927,6 +8951,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04075",
       "number": 75,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-05T18:12:55Z",
+          "id": "1x3nwx",
+          "title": "[COTD] TGTBT (5 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x3nwx/cotd_tgtbt_5_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Ambush",
@@ -8946,6 +8978,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04076",
       "number": 76,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-06T17:35:13Z",
+          "id": "1x701t",
+          "title": "[COTD] Sweeps Week (6 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1x701t/cotd_sweeps_week_6_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "text": "Gain 1[Credits] for each card in the Runner's grip.",
