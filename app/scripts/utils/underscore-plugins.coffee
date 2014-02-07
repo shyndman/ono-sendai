@@ -98,9 +98,18 @@ _.mixin
       console.timeEnd?(name)
 
   # Creates a new log group (console.group) around the specified function.
-  logGroup: (name, fn) ->
+  logGroup: (name, fnOrCollapsed, fn) ->
     try
-      console.group?(name)
+      if _.isBoolean(fnOrCollapsed)
+        collapsed = fnOrCollapsed
+      else
+        collapsed = false
+        fn = fnOrCollapsed
+
+      if collapsed
+        console.groupCollapsed?(name)
+      else
+        console.group?(name)
       fn()
     finally
       console.groupEnd?(name)
