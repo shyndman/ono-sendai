@@ -48,7 +48,7 @@ angular.module('onoSendai')
           groupTitle(groupTitles[0], groupings[0])
         else if groupings[0] == 'setname'
           set = cardService.getSetByTitle(groupTitles[0])
-          if set? # [fixme] This check shouldn't be necessary
+          if set?
             dateStr =
               if set.released?
                 dateFilter(set.released, 'MMM. y')
@@ -62,8 +62,6 @@ angular.module('onoSendai')
                 ''
 
             cycleStr + dateStr
-          else
-            ''
         else
           ''
       )
