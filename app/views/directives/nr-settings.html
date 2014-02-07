@@ -1,22 +1,47 @@
 <div class="popover bottom">
   <div class="arrow"></div>
   <div class="popover-content">
-    <div class="checkbox">
-      <label>
-        Core Set
-        <select class="core-set-count">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-      </label>
-    </div>
-    <div ng-repeat="set in sets"
-         class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        {{ set.title }}
-      </label>
-    </div>
+    <section>
+      <h2>Spoilers</h2>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="filter.fieldFilters.showSpoilers">
+          Show Spoilers
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sets Owned</h2>
+      <div class="checkbox core-set-count">
+        <label>
+          Core Sets:
+          <select ng-model="setsOwned['core-sets']">
+            <option value="1">1x</option>
+            <option value="2">2x</option>
+            <option value="3">3x</option>
+          </select>
+        </label>
+      </div>
+      <div ng-repeat="setOrCycle in setsAndCycles"
+           ng-class="[ setOrCycle.type, setOrCycle.cycleId, setOrCycle.id ]"
+           class="checkbox">
+        <label>
+          <span ng-switch="setOrCycle.type">
+            <input ng-switch-when="cycle"
+                   ng-model="cyclesOwned[setOrCycle.id]"
+                   ng-change="cycleToggled(setOrCycle, cyclesOwned[setOrCycle.id])"
+                   ui-indeterminate="partialCycles[setOrCycle.id]"
+                   type="checkbox">
+            <input ng-switch-default
+                   ng-model="setsOwned[setOrCycle.id]"
+                   ng-change="setToggled(setOrCycle, setsOwned[setOrCycle.id])"
+                   type="checkbox" >
+
+          </span>
+          {{ setOrCycle.title }}
+        </label>
+      </div>
+    </section>
   </div>
 </div>

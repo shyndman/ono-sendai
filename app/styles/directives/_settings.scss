@@ -9,10 +9,53 @@ nr-settings {
     transform: translateX(50%);
 
     z-index: 10000;
+
+    > .popover-content {
+      padding: 9px 8px;
+    }
   }
 
   .core-set-count {
-    @include tweak($y: -1px);
-    margin-left: 8px;
+    label {
+      margin-left: -20px;
+    }
+
+    select {
+      @include tweak($y: -1px);
+      margin-left: 4px;
+    }
+  }
+
+  section {
+    $inset: 0;
+
+    padding-left: $inset;
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+
+    > h2 {
+      margin-top: 0;
+      font-size: 17px;
+      margin-left: -$inset;
+      padding-bottom: 4px;
+      padding-left: 5px;
+
+      border-bottom: 1px solid #d6d1d0;
+    }
+
+    .set {
+      margin-left: 15px;
+    }
+
+    .checkbox {
+      padding-left: 25px;
+      padding-right: 15px;
+    }
+  }
+
+  label {
+    font-weight: 200 !important;
   }
 }
