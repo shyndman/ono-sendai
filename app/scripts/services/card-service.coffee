@@ -152,7 +152,7 @@ class CardService
 
     @_cardsPromise
       .then((cards) =>
-        _.logGroup('Card query', _.timed('Query duration', =>
+        _.logGroup('Card query', true, _.timed('Query duration', =>
           @$log.debug('Args:', queryArgs)
 
           filteredCards = @_filterCards(queryArgs, @_searchCards(queryArgs, cards))
