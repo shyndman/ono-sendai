@@ -138,7 +138,10 @@ angular.module('onoSendai')
     updateUrl = _.debounce(updateUrlNow, 500)
 
 
-    # ~-~-~- HIDING SETTINGS
+    # ~-~-~- TOGGLING SETTINGS
+
+    $scope.showSettings = ->
+      $scope.cardsUI.settingsVisible = true
 
     $scope.hideSettings = ->
       if $scope.cardsUI.settingsVisible
