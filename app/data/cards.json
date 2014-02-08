@@ -8968,6 +8968,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04077",
       "number": 77,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-07T19:34:03Z",
+          "id": "1xanei",
+          "title": "[COTD] RSVP (7 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xanei/cotd_rsvp_7_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 4,
