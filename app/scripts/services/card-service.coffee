@@ -385,8 +385,9 @@ class CardService
           []
       subtypeIds = _.map(card.subtypes, _.idify)
 
-      # If we have logical subtypes defined (that is, semantically applied subtypes used
-      # by other parts of the system), include them in the subtypesSet.
+      # If we have logical subtypes defined (that is, semantic applied subtypes used
+      # by other parts of the system, but not visible to the user), include them in
+      # the subtypesSet.
       if card.logicalsubtypes?
         subtypeIds = subtypeIds.concat(_.map(card.logicalsubtypes, _.idify))
 
