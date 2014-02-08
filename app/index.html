@@ -18,7 +18,7 @@
       ng-controller="CardsCtrl"
       tabindex="0"
       ui-keydown="{
-        'esc   / alt+esc   / ctrl+esc'   : { action: 'deselectCard()', preventDefault: true },
+        'esc   / alt+esc   / ctrl+esc'   : { action: 'hideSettings() || deselectCard()', preventDefault: true },
         'left  / alt+left  / ctrl+left'  : 'selectPreviousCard()',
         'right / alt+right / ctrl+right' : 'selectNextCard()'
       }">
@@ -27,7 +27,12 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <nr-settings ng-show="cardsUI.settingsVisible"></nr-settings>
+  <nr-settings
+    ng-class="{
+      visible: cardsUI.settingsVisible
+    }"
+    hide="hideSettings()">
+  </nr-settings>
   <nr-nav></nr-nav>
   <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar" ng-include="'/views/filters.html'"></div>

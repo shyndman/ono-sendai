@@ -138,6 +138,16 @@ angular.module('onoSendai')
     updateUrl = _.debounce(updateUrlNow, 500)
 
 
+    # ~-~-~- HIDING SETTINGS
+
+    $scope.hideSettings = ->
+      if $scope.cardsUI.settingsVisible
+        $scope.cardsUI.settingsVisible = false
+        true
+      else
+        false
+
+
     # ~-~-~- PERSISTING PREFERENCES
 
     $scope.$watch 'filter.fieldFilters.showSpoilers', persistShowSpoilers = (flag) ->
