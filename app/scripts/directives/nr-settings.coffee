@@ -3,9 +3,17 @@ angular.module('onoSendai')
     templateUrl: '/views/directives/nr-settings.html'
     restrict: 'E'
     link: (scope, element, attrs) ->
-      # [todo] Hide on document click
-      # $document.click (e) ->
-      #   scope.$safeApply -> scope.$eval(attrs.hide)
+
+
+      # Hide on a document click
+      $document.click (e) ->
+        target = $(e.target)
+        toggleElement = $(attrs.toggleSelector)
+
+        if toggleElement.find(target).length > 0 or element.find(target).length > 0
+          return
+
+        scope.$safeApply -> scope.$eval(attrs.hide)
 
     controller: ($scope, $document, cardService, userPreferences) ->
       cardService.getSets().then assignSets = ([ __, releasedSets ]) ->
