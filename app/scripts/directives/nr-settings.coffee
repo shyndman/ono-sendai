@@ -26,6 +26,9 @@ angular.module('onoSendai')
 
         for set in visibleSets
           last = _.last(setsAndCycles)
+
+          # If the set has a cycle, and it differs from the cycle of the last set encountered,
+          # we're onto a new cycle and it should be added to the view model.
           if set.cycle? and (!last? or !last.cycle? or last.cycle != set.cycle)
             setsAndCycles.push type: 'cycle', title: set.cycle, id: _.idify(set.cycle)
 
