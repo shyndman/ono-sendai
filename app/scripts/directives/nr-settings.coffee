@@ -10,8 +10,11 @@ angular.module('onoSendai')
         target = $(e.target)
         toggleElement = $(attrs.toggleSelector)
 
-        if toggleElement.find(target).length > 0 or element.find(target).length > 0
-          return
+        # [todo] Factor this out into a jquery plugin
+        return if toggleElement[0] == e.target or
+                  toggleElement.find(target).length > 0 or
+                  element[0] == e.target or
+                  element.find(target).length > 0
 
         scope.$safeApply -> scope.$eval(attrs.hide)
 
