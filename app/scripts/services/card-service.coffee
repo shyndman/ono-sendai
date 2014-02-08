@@ -420,14 +420,15 @@ class CardService
 
   _augmentSets: (sets) =>
     _.each sets, (set, i) =>
-      set.id = _.idify(set.title)
-      set.ordinal = i
-      set.isReleased = ->
-        now = new Date().getTime()
-        if @released?
-          new Date(@released).getTime() < now
-        else
-          false
+      _.extend set,
+        id: _.idify(set.title)
+        ordinal: i
+        isReleased: ->
+          now = new Date().getTime()
+          if @released?
+            new Date(@released).getTime() < now
+          else
+            false
 
       @_setsByTitle[set.title] = set
       @_setsById[set.id] = set
