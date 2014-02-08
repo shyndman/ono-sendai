@@ -20,9 +20,9 @@ angular.module('onoSendai')
       # and do a fast DOM switch on card switches. This will prevent flashes (most of the time) as the image
       # loads.
       cards = []
-      cards.push({ class: 'prev-0',  card: _.last(before) }) if before.length
-      cards.push({ class: 'current', card: card })
-      cards.push({ class: 'next-0',  card: _.first(after) }) if after.length
+      cards.push(class: 'prev-0',  card: _.last(before)) if before.length
+      cards.push(class: 'current', card: card)
+      cards.push(class: 'next-0',  card: _.first(after)) if after.length
       $scope.cardAndNeighbours = cards
 
       before.splice(before.length, 0, card)
