@@ -1,12 +1,20 @@
 nr-settings {
+
   > .popover {
+    $bounce-timing: ease-out;
+
     display: block;
     top: 38px;
 
     // Centers below settings link
     left: auto;
     right: 223px;
-    transform: translateX(50%);
+    transform: translateX(50%) scale3d(0, 0, 1);
+
+    // For animation
+    transform-origin: 50% 0;
+    transition: opacity 0.15s $bounce-timing;
+    opacity: 0;
 
     z-index: 10000;
 
@@ -14,6 +22,14 @@ nr-settings {
       padding: 9px 8px;
     }
   }
+
+  &.visible {
+    > .popover {
+      transform: translateX(50%) scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  }
+
 
   .core-set-count {
     label {

@@ -1,8 +1,13 @@
 angular.module('onoSendai')
-  .directive('nrSettings', ($timeout) ->
+  .directive('nrSettings', ($document, $timeout) ->
     templateUrl: '/views/directives/nr-settings.html'
     restrict: 'E'
-    controller: ($scope, cardService, userPreferences) ->
+    link: (scope, element, attrs) ->
+      # [todo] Hide on document click
+      # $document.click (e) ->
+      #   scope.$safeApply -> scope.$eval(attrs.hide)
+
+    controller: ($scope, $document, cardService, userPreferences) ->
       cardService.getSets().then assignSets = ([ __, releasedSets ]) ->
         visibleSets = _.filter releasedSets, (set) -> set.title != 'Core Set'
         setsAndCycles = []
@@ -26,8 +31,6 @@ angular.module('onoSendai')
           if set.cycle?
             (setIdsByCycle[baseSet.cycleId] ?= []).push(set.id)
 
-        console.log setsAndCycles
-
         $scope.setsAndCycles = setsAndCycles
         $scope.cyclesOwned = {}
         $scope.partialCycles = {}
@@ -47,10 +50,8 @@ angular.module('onoSendai')
               $scope.setsOwned[sId]
 
             # A partial cycle is one where we have at least one set owned, but not all
-            console.error partial, !$scope.cyclesOwned[cycleId]
             partial = partial && !$scope.cyclesOwned[cycleId]
             $scope.partialCycles[cycleId] = partial
-          console.error '$scope.partialCycles', $scope.partialCycles
 
           return
 
