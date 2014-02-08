@@ -8,11 +8,11 @@ angular.module('onoSendai')
       # Hide on a document click
       $document.click (e) ->
         target = $(e.target)
-        toggleElement = $(attrs.toggleSelector)
+        toggleElements = $(attrs.toggleSelector)
 
         # [todo] Factor this out into a jquery plugin
-        return if toggleElement[0] == e.target or
-                  toggleElement.find(target).length > 0 or
+        return if _.any(toggleElements, (ele) -> ele == e.target) or
+                  toggleElements.find(target).length > 0 or
                   element[0] == e.target or
                   element.find(target).length > 0
 
