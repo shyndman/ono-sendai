@@ -37,7 +37,7 @@ angular.module('onoSendai')
             if set.cycle?
               type: 'set'
               cycleId: _.idify(set.cycle)
-            else
+            else # Deluxe expansions
               type: 'solo-set'
           setsAndCycles.push _.extend(baseSet, set)
 
