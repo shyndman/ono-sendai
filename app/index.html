@@ -32,14 +32,18 @@
       visible: cardsUI.settingsVisible
     }"
     hide="hideSettings()"
-    toggle-selector="nr-nav .settings">
+    toggle-selector=".show-settings">
   </nr-settings>
   <nr-nav></nr-nav>
   <div class="app-outer-layout">
     <div id="filter-bar" class="sidebar" ng-include="'/views/filters.html'"></div>
     <div class="app-inner-layout">
       <nr-subnav></nr-subnav>
-      <main class="page scrollable" ng-include="'/views/cards.html'"></main>
+      <main ng-include="'/views/cards.html'"
+            ng-class="{
+              'overlay-visible': cardsUI.settingsVisible
+            }"
+            class="page scrollable"></main>
     </div>
   </div>
   <footer>

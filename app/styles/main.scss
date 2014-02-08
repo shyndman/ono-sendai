@@ -64,6 +64,14 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
+main {
+  transition: opacity 0.2s ease-out;
+
+  &.overlay-visible {
+    opacity: 0.35;
+  }
+}
+
 footer {
   position: absolute;
   font-size: 11px;
