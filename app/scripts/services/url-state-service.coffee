@@ -85,7 +85,8 @@ class UrlStateService
     @queryArgs = angular.copy(queryArgs)
     @selectedCardId = selectedCard?.id
 
-  # Returns the search value for
+  # Returns a comma separated string of faction abbreviations, based on the factions
+  # provided.
   _factionSearchVal: (factions, arg) ->
     if !_.every(factions, (f) -> arg[f.model])
       _(factions)
