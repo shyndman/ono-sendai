@@ -46,13 +46,14 @@ angular.module('onoSendai')
             (setIdsByCycle[baseSet.cycleId] ?= []).push(set.id)
 
         $scope.setsAndCycles = setsAndCycles
-        $scope.cyclesOwned = {}
-        $scope.partialCycles = {}
         $scope.setsOwned = userPreferences.setsOwned()
 
-        $scope.$watch('setsOwned', ((newSets) ->
-          userPreferences.setsOwned(newSets)
-        ), true)
+        # These two are used for set selection/deselection, and indeterminate checks
+        $scope.cyclesOwned = {}
+        $scope.partialCycles = {}
+
+        # Update the users local storage with the sets owned when they change
+        $scope.$watch('setsOwned', userPreferences.setsOwned, true)
 
         # Walks through all the cycles to determine what sets are owned, partially owned,
         # or not owned at all.
