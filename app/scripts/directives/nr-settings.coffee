@@ -17,6 +17,7 @@ angular.module('onoSendai')
                   element.find(target).length > 0
 
         scope.$safeApply -> scope.$eval(attrs.hide)
+        return
 
     controller: ($scope, $document, cardService, userPreferences) ->
       cardService.getSets().then assignSets = ([ __, releasedSets ]) ->
