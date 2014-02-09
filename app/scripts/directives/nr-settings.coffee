@@ -3,8 +3,6 @@ angular.module('onoSendai')
     templateUrl: '/views/directives/nr-settings.html'
     restrict: 'E'
     link: (scope, element, attrs) ->
-
-
       # Hide on a document click
       $document.click (e) ->
         target = $(e.target)

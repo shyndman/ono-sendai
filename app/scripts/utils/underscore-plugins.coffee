@@ -15,14 +15,16 @@ _.mixin
   splitAt: (array, index) ->
     return [ _.take(array, index), _.drop(array, index) ]
 
-  # Weaves two or more arrays together
+  # Weaves two or more arrays together.
+  #
+  # ie. weave([a, a, a], [b, b, b]) returns [a, b, a, b, a, b]
   weave: (args...) ->
     unless _.any(args)
       return []
 
     _.compact(_.flatten(_.zip(args...), true))
 
-  # Concatenates the provided the array, and returns the result.
+  # Concatenates the provided arrays together, and returns the result.
   concat: (arrs...) ->
     _.reduce(_.compact(arrs), ((a, b) -> a.concat(b)), [])
 
@@ -68,6 +70,7 @@ _.mixin
 
 # ~*~*~* DEBUGGING UTILITIES
 
+# Returns a function that returns a function to performs one of the debug functions.
 wrap = (methodName) ->
   (name, fn) ->
     (args...) ->
