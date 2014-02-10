@@ -143,6 +143,11 @@ card-view {
         font-size: 0.85em;
       }
 
+      .unreleased {
+        font-size: 0.9em;
+        margin-left: 3px;
+      }
+
       .unreleased, .short-card {
         color: $state-danger-text;
       }

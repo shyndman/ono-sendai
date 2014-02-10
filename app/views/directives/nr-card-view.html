@@ -82,9 +82,9 @@
             <span class="info-label">From:</span>
             <div class="info-value">
               <a ng-href="{{ card | cardUrl:'set' }}">{{ card.setname }}</a>
-              <div ng-if="isUnreleased(card)" class="unreleased small">
+              <span ng-if="isUnreleased(card)" class="unreleased">
                 Unreleased
-              </div>
+              </span>
             </div>
           </div>
           <div ng-if="card.illustrator != null" class="info-row">
