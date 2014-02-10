@@ -36,8 +36,10 @@ class UserPreferences
   dateSetsConfigured: (dateConfigured) =>
     if dateConfigured?
       localStorage.setItem('dateSetsConfigured', dateConfigured.toISOString())
+    else if isoDate = localStorage.getItem('dateSetsConfigured')?
+      new Date(isoDate)
     else
-      new Date(localStorage.getItem('dateSetsConfigured'))
+      null
 
   # Returns the quantity of a set owned by the player
   quantityOfSet: (setNameOrId) ->
