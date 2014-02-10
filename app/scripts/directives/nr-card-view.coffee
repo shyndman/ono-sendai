@@ -58,10 +58,15 @@ angular.module('onoSendai')
     # ~-~-~- CARD SHORTAGES
 
     # Returns true if the user has less than 3 of this card
-    #
-    # [todo] Take into consideration ownership of datapacks and # of core sets owned.
     $scope.isShortCard = (card) ->
-      card.quantity < 3 and card.type != 'Identity'
+      $scope.cardQuantity(card) < 3 and card.type != 'Identity'
+
+    # Returns the number of cards owned by the player
+    $scope.cardQuantity = (card) ->
+      card.quantity * userPreferences.quantityOfSet(card.setname)
+
+    # Returns true if the user has manually configured set ownership
+    $scope.hasConfiguredSets = userPreferences.hasConfiguredSets
 
 
     # ~-~-~- COST TO BREAK CALCULATOR

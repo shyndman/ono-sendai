@@ -104,12 +104,18 @@
               </a>
             </div>
           </div>
-          <div ng-if="isShortCard(card)" class="info-row">
+          <div ng-if="isShortCard(card) || !hasConfiguredSets()"
+               class="info-row">
             <span class="info-label">Quantity:</span>
-            <div class="info-value">
-              <span class='short-cards'>{{ card.quantity }} in set</span>
-              <br>
-              <a class="small show-settings" ng-click="showSettings()">Configure sets owned</a>
+            <div ng-switch="hasConfiguredSets()"
+                 class="info-value">
+              <span ng-switch-when="true"
+                    class="short-card">
+                {{ cardQuantity(card) }} owned
+              </span>
+              <span ng-switch-default>
+                <a class="show-settings" ng-click="showSettings()">Configure Sets...</a>
+              </span>
             </div>
           </div>
 
