@@ -434,23 +434,15 @@ class CardService
       @_setsById[set.id] = set
 
   _initSubtypes: =>
-    @subtypes = _.object(
-      _.map(@subtypeCounts, (counts, side) ->
-        subtypes =
-          _(counts)
-            .chain()
-            .keys()
-            .sort()
-            .map((st) ->
-              id: _.idify(st)
-              title: st)
-            .value()
-        [side, subtypes]))
+    @subtypes = @_buildBySide(@subtypeCounts)
 
   _initIllustrators: =>
-    @illustrators = _.object(
-      _.map(@illustratorCounts, (counts, side) ->
-        illustrators =
+    @illustrators = @_buildBySide(@illustratorCounts)
+
+  _buildBySide: (countsBySide) ->
+    _.object(
+      _.map(countsBySide, (counts, side) ->
+        objects =
           _(counts)
             .chain()
             .keys()
@@ -459,7 +451,7 @@ class CardService
               id: _.idify(i)
               title: i)
             .value()
-        [side, illustrators]))
+        [side, objects]))
 
 
 angular.module('onoSendai')
