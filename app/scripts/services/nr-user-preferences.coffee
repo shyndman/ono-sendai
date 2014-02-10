@@ -7,7 +7,7 @@ class UserPreferences
 
   constructor: ->
     @_favs =      JSON.parse(localStorage.getItem('favourites') + '') ? {}
-    @_setsOwned = JSON.parse(localStorage.getItem('setsOwned')  + '') ? 'core-set': 1
+    @_setsOwned = JSON.parse(localStorage.getItem('setsOwned')  + '') ? 'core-set': 0
 
   isCardFavourite: (card) =>
     @_favs[card.id] ? false
