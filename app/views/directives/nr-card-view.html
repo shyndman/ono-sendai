@@ -109,9 +109,13 @@
             <span class="info-label">Quantity:</span>
             <div ng-switch="hasConfiguredSets()"
                  class="info-value">
-              <span ng-switch-when="true"
-                    class="short-card">
-                {{ cardQuantity(card) }} owned
+              <span ng-switch-when="true">
+                <span class="short-card">
+                  {{ cardQuantity(card) }} owned
+                </span>
+                <a class="show-settings" ng-click="showSettings()">
+                  <i class="icon-settings"></i>
+                </a>
               </span>
               <span ng-switch-default>
                 <a class="show-settings" ng-click="showSettings()">Configure Sets...</a>

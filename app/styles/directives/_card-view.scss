@@ -152,6 +152,19 @@ card-view {
         color: $state-danger-text;
       }
 
+      .show-settings {
+        & {
+          > .icon-settings {
+            color: $gray-light;
+          }
+        }
+        &:hover {
+          > .icon-settings {
+            color: $gray-dark;
+          }
+        }
+      }
+
       .links {
         @extend .list-unstyled;
 
