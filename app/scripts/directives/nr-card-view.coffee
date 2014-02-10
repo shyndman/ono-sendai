@@ -59,7 +59,10 @@ angular.module('onoSendai')
 
     # Returns true if the user has less than 3 of this card
     $scope.isShortCard = (card) ->
-      $scope.cardQuantity(card) < 3 and card.type != 'Identity'
+      if card.type == 'Identity'
+        $scope.cardQuantity(card) < 1
+      else
+        $scope.cardQuantity(card) < 3
 
     # Returns the number of cards owned by the player
     $scope.cardQuantity = (card) ->
