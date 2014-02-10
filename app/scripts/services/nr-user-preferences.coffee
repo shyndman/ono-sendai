@@ -4,9 +4,10 @@
 # Currently this stores everything in DOM Local Storage, but could persist to the server at
 # some point.
 class UserPreferences
+
   constructor: ->
     @_favs =      JSON.parse(localStorage.getItem('favourites') + '') ? {}
-    @_setsOwned = JSON.parse(localStorage.getItem('setsOwned')  + '') ? { 'core-sets': 1 }
+    @_setsOwned = JSON.parse(localStorage.getItem('setsOwned')  + '') ? 'core-set': 1
 
   isCardFavourite: (card) =>
     @_favs[card.id] ? false
@@ -29,8 +30,8 @@ class UserPreferences
 
   setsOwned: (sets) =>
     if sets?
-      sets['core-sets'] = parseInt(sets['core-sets'])
-      @_setsOwned = sets
+      sets['core-set'] = parseInt(sets['core-set'])
+      @_setsOwned = angular.copy(sets)
       @_persistSetsOwned()
     else
       @_setsOwned
