@@ -1,4 +1,6 @@
 # This component is responsible for laying out items in a grid, with headers above each group.
+#
+# Although this component exists in the onoSendai module, it is not specific to displaying cards.
 angular.module('onoSendai')
   .directive('grid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
