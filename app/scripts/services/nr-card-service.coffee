@@ -1,60 +1,24 @@
-# Contains information about how cards should be sorted and which cards are visible.
-class QueryResult
-  constructor: ->
-    @orderedCards = []
-    @orderingById = {}
-    @groups = {}
-    @length = 0
-    @_ordinalOffset = 0
-
-  # NOTE: cards must be inserted in order
-  addCard: (card, group) ->
-    @orderedCards.push(card)
-    if !@orderingById[group.id]?
-      @orderingById[group.id] = @length + @_ordinalOffset
-      @groups[group.id] = group
-      @_ordinalOffset++
-
-    @orderingById[card.id] = @length + @_ordinalOffset
-    @length++
-
-  isShown: (id) ->
-    @orderingById[id]?
-
-  # Applies the query result's ordering to a collection of objects. idFn is applied
-  # to each element in order to map the element to card identifiers.
-  #
-  # Elements that do not appear in the query results are placed at the end of the collection.
-  applyOrdering: (collection, idFn) ->
-    _.sortBy collection, (ele) =>
-      @orderingById[idFn(ele)] ? Number.MAX_VALUE
-
-  cardOrdinal: (card) ->
-    @orderedCards.indexOf(card)
-
-  # NOTE the equals. This is a helper function, not a method.
-  _cardAtOffset = (offset) ->
-    (card) ->
-      # NOTE, this could be optimized, but isn't likely a big deal
-      idx = @orderedCards.indexOf(card) + offset
-      @orderedCards[idx]
-
-  cardAfter: _cardAtOffset(1)
-  cardBefore: _cardAtOffset(-1)
-
-  # Returns an array of count cards before the specified card, and an array of count
-  # afterwards. If there are not enough cards in the result, as many are returned as possible.
-  beforeAndAfter: (card, count) ->
-    idx = @orderedCards.indexOf(card)
-    if idx == -1
-      return [ [], [] ]
-
-    before = @orderedCards.slice(Math.max(0, idx - count), idx)
-    after =  @orderedCards.slice(start = idx + 1, start + count)
-    [ before, after ]
-
-
-# A service for loading, filtering and grouping cards.
+# The card service is responsible for loading, filtering and grouping cards.
+#
+# Querying the card service is kicked off by a call to query(), which takes a
+# queryArgs object (default defined in filter-definitions.coffee), and performs
+# the following steps:
+#
+#   1. Performs a full-text search using the SearchService, if the user has provided
+#      a queryArgs.search value.
+#   2. Determines which filters should be applied, based on the active group
+#      (queryArgs.activeGroup) and the validity of query arguments, and generates
+#      a filter predicate.
+#   3. Applies the generated filter predicate against the pool of cards (which may be
+#      smaller if a full-text search has been performed).
+#   4. Groups/sorts the cards according to the property names defined queryArgs.groupings.
+#   5. Constructs a QueryResult instance, containing card and group information, as well
+#      as lists of objects that are mappable to card IDs (like DOM elements, for instance).
+#
+# The implementation is deliberately naïve in order to manage complexity. If the card
+# pool grows to a size where an O(n) search is no longer viable, I will be revisiting the
+# solution.
+#
 class CardService
   CARDS_URL = '/data/cards.json'
 
@@ -116,16 +80,19 @@ class CardService
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
-      .then(({ data: { sets: @_sets, cards: @_cards, "last-modified": lastMod }, status, headers }) =>
-        window.cards = @_cards # DEBUG
+      .then(({ data: { sets: @_sets, cards: @_cards, 'last-modified': lastMod }, status, headers }) =>
+        # Build up search indexes
         @searchService.indexCards(@_cards, lastMod)
-        @_augmentCards(@_cards)
-        @_augmentSets(@_sets)
+
+        # Order is important here
+        @_initCards(@_cards)
+        @_initSets(@_sets)
         @_initSubtypes()
         @_initIllustrators()
+
         @_cards)
 
-  # Returns a promise that resolves when the card service is ready
+  # Returns a promise that resolves when the card service is ready to be queried.
   ready: ->
     @_cardsPromise
 
@@ -207,17 +174,25 @@ class CardService
 
     _(groups)
       .chain()
+      # Grab the filter descriptors for each group
       .map((name) => @filterDescriptors[name])
+      # Filter out the ones that don't have field filters
       .filter((group) => group.fieldFilters?)
+      # Take the field filters
       .pluck('fieldFilters')
+      # Map onto objects containing only applicable field filters, as determined by any the
+      # validity of query arguments, and any exclusions defined by the group.
       .map((fields) =>
         _.filterObj(fields, (name, desc) =>
           fieldArg = queryArgs.fieldFilters[name]
           return !excludeds[name]? and
                 (!filterNotApplicables or @_isFilterApplicable(desc, fieldArg, queryArgs))))
+      # Turn the list of objects into a list of kv pair arrays
       .map(_.pairs)
-      .flatten(true) # Flatten down 1 level, so we're left with an array of [name, value] pairs
-      .object()      # Objectify
+      # Flatten down 1 level, so we're left with an array of [name, value] pairs
+      .flatten(true)
+      # Objectify
+      .object()
       .value()
 
   # Returns true if the query arguments satisfy a given filter's requirements. For example,
@@ -229,8 +204,11 @@ class CardService
       when 'search' # NOTE: Only ever one search field
         queryArgs.search? and !!queryArgs.search.length
       else
+        # [todo] This is confusing.
         fieldArg? and (!_.isString(fieldArg) or !!fieldArg.length)
 
+  # Builds and returns a filter predicate, determined by the contents of the provided
+  # query args.
   _buildFilterFunction: (queryArgs) =>
     relevantFilters = @relevantFilters(queryArgs)
 
@@ -357,21 +335,13 @@ class CardService
             a[fieldName] - b[fieldName]
       when 'setname'
         (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
-      else
+      else # string
         (a, b) =>
-          aVal = a[fieldName]
-          bVal = b[fieldName]
+          _.stringCompare(a[fieldName], b[fieldName])
 
-          if aVal? and !bVal?
-            -1
-          else if !aVal? and bVal?
-            1
-          else if !aVal? and !bVal?
-            0
-          else
-            aVal.localeCompare(bVal)
-
-  _augmentCards: (cards) =>
+  # Collects information about cards, and mutates them to include properties used
+  # by the application.
+  _initCards: (cards) =>
     _.each cards, (card) =>
       card.id = _.idify(card.title)
 
@@ -383,7 +353,7 @@ class CardService
           []
       subtypeIds = _.map(card.subtypes, _.idify)
 
-      # If we have logical subtypes defined (that is, semantic applied subtypes used
+      # If we have logical subtypes defined (that is, artificial subtypes used
       # by other parts of the system, but not visible to the user), include them in
       # the subtypesSet.
       if card.logicalsubtypes?
@@ -404,7 +374,7 @@ class CardService
         card.illustratorId = _.idify(card.illustrator)
         @illustratorCounts[side][card.illustrator] ?= 0
         @illustratorCounts[side][card.illustrator]++
-      else if card.type != 'Identity'
+      else if card.type != 'Identity' # Core identities have no illustrator
         console.warn "#{ card.title } has no illustrator"
 
       if card.altart? and card.altart.illustrator?
@@ -412,10 +382,13 @@ class CardService
 
       switch card.type
         when 'ICE'
+          # [todo] Why not just work this out ahead of time?
           card.subroutinecount ?= # If a card already has a subroutine count set, use it instead
             card.text.match(/\[Subroutine\]/g)?.length || 0
 
-  _augmentSets: (sets) =>
+  # Collects information about sets, and mutates them to include properties used
+  # by the application.
+  _initSets: (sets) =>
     _.each sets, (set, i) =>
       _.extend set,
         id: _.idify(set.title)
@@ -436,6 +409,12 @@ class CardService
   _initIllustrators: =>
     @illustrators = @_buildBySide(@illustratorCounts)
 
+  # Returns an object structured as follows, intended for easy UI consumption:
+  #
+  # {
+  #   corp:   [ {id: String, title: String }, ... ],
+  #   runner: [ {id: String, title: String }, ... ],
+  # }
   _buildBySide: (countsBySide) ->
     _.object(
       _.map(countsBySide, (counts, side) ->
@@ -450,6 +429,68 @@ class CardService
             .value()
         [side, objects]))
 
+
+# ~-~-~- QUERY RESULT CLASS
+
+# Contains information about how cards should be sorted and which cards are visible.
+class QueryResult
+  constructor: ->
+    @orderedCards = []
+    @orderingById = {}
+    @groups = {}
+    @length = 0
+    # Used because groups and cards both exist in the same ordering space, but groups
+    # do not contribute to the length of the query result. We use the offset to
+    @_ordinalOffset = 0
+
+  # NOTE: cards must be inserted in order
+  addCard: (card, group) ->
+    @orderedCards.push(card)
+    if !@orderingById[group.id]?
+      @orderingById[group.id] = @length + @_ordinalOffset
+      @groups[group.id] = group
+      @_ordinalOffset++
+
+    @orderingById[card.id] = @length + @_ordinalOffset
+    @length++
+
+  isShown: (id) ->
+    @orderingById[id]?
+
+  # Applies the query result's ordering to a collection of objects. idFn is applied
+  # to each element in order to map the element to card identifiers.
+  #
+  # Elements that do not appear in the query results are placed at the end of the collection.
+  applyOrdering: (collection, idFn) ->
+    _.sortBy collection, (ele) =>
+      @orderingById[idFn(ele)] ? Number.MAX_VALUE
+
+  cardOrdinal: (card) ->
+    @orderedCards.indexOf(card)
+
+  # NOTE the equals. This is a helper function, not a method.
+  _cardAtOffset = (offset) ->
+    (card) ->
+      # NOTE, this could be optimized, but isn't likely a big deal
+      idx = @orderedCards.indexOf(card) + offset
+      @orderedCards[idx]
+
+  cardAfter: _cardAtOffset(1)
+  cardBefore: _cardAtOffset(-1)
+
+  # Returns an array of count cards before the specified card, and an array of count
+  # afterwards. If there are not enough cards in the result, as many are returned as possible.
+  beforeAndAfter: (card, count) ->
+    idx = @orderedCards.indexOf(card)
+    if idx == -1
+      return [ [], [] ]
+
+    before = @orderedCards.slice(Math.max(0, idx - count), idx)
+    after =  @orderedCards.slice(start = idx + 1, start + count)
+    [ before, after ]
+
+
+# ~-~-~- ANGULAR REGISTRATION
 
 angular.module('onoSendai')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from

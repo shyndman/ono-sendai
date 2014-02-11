@@ -1,6 +1,16 @@
-# This component is responsible for laying out items in a grid, with headers above each group.
+# The grid component is responsible for laying out items in a grid/matrix style, with headers above each
+# group of items.
 #
-# Although this component exists in the onoSendai module, it is not specific to displaying cards.
+# This component operates by manipulating the visibility and position of its child elements to reflect the
+# state of a queryResult scope variable (defined in nr-card-service.coffee). All DOM elements must be
+# present in the document when the directive initializes.
+#
+# This directive is intended to be loosely bound to Ono-Sendai, and can possibly be released independently
+# at some point.
+#
+# LIMITATIONS
+#   * Grid items must all be the same size
+#
 angular.module('onoSendai')
   .directive('grid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
