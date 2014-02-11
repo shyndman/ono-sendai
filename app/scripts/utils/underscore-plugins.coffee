@@ -41,6 +41,18 @@ _.mixin
   filterObj: (obj, iterator) ->
     _.object([key, val] for key, val of obj when iterator(key, val))
 
+  # Returns a number indicating whether a string comes before or after
+  # or is the same as another string in sort order. Handles undefined strings.
+  stringCompare: (a, b) ->
+    if a? and !b?
+      -1
+    else if !a? and b?
+      1
+    else if !a? and !b?
+      0
+    else
+      a.localeCompare(b)
+
   # Nada, nothing, beans, bupkis
   noop: -> ;
 
