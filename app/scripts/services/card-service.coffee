@@ -10,13 +10,13 @@ class QueryResult
   # NOTE: cards must be inserted in order
   addCard: (card, group, ordinal) ->
     @orderedCards.push(card)
-    @length++
     if !@orderingById[group.id]?
-      @orderingById[group.id] = ordinal + @_ordinalOffset
+      @orderingById[group.id] = @length + @_ordinalOffset
       @groups[group.id] = group
       @_ordinalOffset++
 
-    @orderingById[card.id] = ordinal + @_ordinalOffset
+    @orderingById[card.id] = @length + @_ordinalOffset
+    @length++
 
   isShown: (id) ->
     @orderingById[id]?
@@ -32,7 +32,7 @@ class QueryResult
   cardOrdinal: (card) ->
     @orderedCards.indexOf(card)
 
-  # NOTE the equals. This is not a method.
+  # NOTE the equals. This is a helper function, not a method.
   _cardAtOffset = (offset) ->
     (card) ->
       # NOTE, this could be optimized, but isn't likely a big deal
@@ -190,9 +190,7 @@ class CardService
       null
     else
       cardType = @filterDescriptors[activeName].cardType
-      enabledTypes = {}
-      enabledTypes[cardType] = true
-      enabledTypes
+      _.object([ cardType, true ])
 
   # Returns the set of filter descriptors that are currently relevant to the
   # specified set of arguments.
@@ -205,7 +203,7 @@ class CardService
 
     if queryArgs.activeGroup? and queryArgs.activeGroup isnt 'general'
       groups.push(queryArgs.activeGroup)
-      excludeds = @filterDescriptors[queryArgs.activeGroup].excludedGeneralFields || {}
+      excludeds = @filterDescriptors[queryArgs.activeGroup].excludedGeneralFields ? excludeds
 
     _(groups)
       .chain()
@@ -222,6 +220,8 @@ class CardService
       .object()      # Objectify
       .value()
 
+  # Returns true if the query arguments satisfy a given filter's requirements. For example,
+  # numeric filters require a value and a comparison operator to be applicable.
   _isFilterApplicable: (desc, fieldArg, queryArgs) ->
     switch desc.type
       when 'numeric'
@@ -337,11 +337,10 @@ class CardService
       .value()
 
   _buildQueryResult: (queryArgs, groups) ->
-    ordinal = 0
     queryResult = new QueryResult
     _.each(groups, (group) ->
       _.each(group.cards, (c) ->
-        queryResult.addCard(c, group, ordinal++)))
+        queryResult.addCard(c, group)))
     queryResult
 
   _sortFnFor: (fieldName) =>
@@ -379,8 +378,7 @@ class CardService
       # Parse out subtypes
       card.subtypes =
         if card.subtype?
-          # [todo] Consider scrubbing cards.json instead of handling multiple dash styles
-          card.subtype.split(/\s+[-\u2013\ufe58]\s+/g) # [hyphen,en-dash,em-dash]
+          card.subtype.split(/\s+-\s+/g)
         else
           []
       subtypeIds = _.map(card.subtypes, _.idify)
@@ -414,7 +412,6 @@ class CardService
 
       switch card.type
         when 'ICE'
-          # [todo] This isn't perfect, because it doesn't consider advanceables.
           card.subroutinecount ?= # If a card already has a subroutine count set, use it instead
             card.text.match(/\[Subroutine\]/g)?.length || 0
 
