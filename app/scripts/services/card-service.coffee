@@ -8,7 +8,7 @@ class QueryResult
     @_ordinalOffset = 0
 
   # NOTE: cards must be inserted in order
-  addCard: (card, group, ordinal) ->
+  addCard: (card, group) ->
     @orderedCards.push(card)
     if !@orderingById[group.id]?
       @orderingById[group.id] = @length + @_ordinalOffset
