@@ -1,6 +1,6 @@
-# This component is responsible for layout out items in a matrix, with headers.
+# This component is responsible for laying out items in a grid, with headers above each group.
 angular.module('onoSendai')
-  .directive('matrix', ($window, $q, $log, $animate, $timeout, cssUtils) ->
+  .directive('grid', ($window, $q, $log, $animate, $timeout, cssUtils) ->
     restrict: 'E'
     transclude: true
     template: '<div class="content-container" ng-transclude></div>'
@@ -123,7 +123,6 @@ angular.module('onoSendai')
         headerSize = getItemSize('header', firstHeader, true)
 
         availableWidth = containerWidth - hMargin * 2
-
         numColumns = Math.floor((availableWidth + minimumGutterWidth) / (itemSize.width + minimumGutterWidth))
         numGutters = numColumns - 1 or 1
         numRows = Math.ceil(items.length / numColumns)
