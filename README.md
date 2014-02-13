@@ -3,6 +3,8 @@ Ono-Sendai
 
 Ono-Sendai is a companion application to the tabletop game, *Android: Netrunner*. 
 
+View it online at http://onosendaicorp.com
+
 Building instructions
 ---------------------
 Requirements:
