@@ -38,9 +38,18 @@
 [todo] Alternate art on card pages
 
 RESPONSIVE NOTES
-  iPhone  - zoom: 0.24
-  Nexus 4 - zoom: 0.
-  LG Optimus One 320x480
+  Card view
+
+  min-width: 1400 to 1600 - 1.2
+  min-width: 1600 to 1800 - 1.3
+  min-width: 1800 to 2000 - 1.4
+
+  1440x900 - 1.2
+  1600x900 - 1.2
+  1680x1050 - 1.3
+  1920x1080 - 1.4
+  1920x1200 - 1.4
+  2560x1440 - 1.5
 
 SIDE PROJECT
   Modernizr for performance characteristics. Maybe built with hooks so you can be constantly
