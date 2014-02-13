@@ -290,4 +290,15 @@ card-view {
       }
     }
   }
+
+
+  // Increase zoom levels as screen sizes get bigger.
+  // [todo] Figure out a good Firefox equivalent
+  @each $width-and-zoom in $card-view-zoom-levels {
+    @media (min-width: nth($width-and-zoom, 1)) {
+      & {
+        zoom: nth($width-and-zoom, 2);
+      }
+    }
+  }
 }
