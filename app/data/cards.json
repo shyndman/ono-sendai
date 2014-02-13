@@ -9052,6 +9052,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04080",
       "number": 80,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-12T18:27:12Z",
+          "id": "1xq6yg",
+          "title": "[COTD] Veteran's Program (12 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xq6yg/cotd_veterans_program_12_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Initiative",
