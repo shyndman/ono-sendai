@@ -1,7 +1,7 @@
 <div class="cards">
   <card-view ng-show="cardsUI.layoutMode == 'detail'"></card-view>
 
-  <matrix ng-show="cardsUI.layoutMode == 'grid'" query-result="queryResult" selection="selectedCard" zoom="cardsUI.zoom">
+  <grid ng-show="cardsUI.layoutMode == 'grid'" query-result="queryResult" selection="selectedCard" zoom="cardsUI.zoom">
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id" grid-id="{{ group.id }}" class="{{ group.id }} grid-header invisible" title="{{ group.id }}">
@@ -19,7 +19,7 @@
 
       Note:
       For performance reasons, this template is bound once, with all the cards, then never touched
-      again. All sorting and show/hide logic for cards exists in the ui-matrix directive.
+      again. All sorting and show/hide logic for cards exists in the ui-grid directive.
     -->
     <div ng-repeat="card in cards track by card.id" bindonce="" class="grid-item hidden" ng-click="selectCard(card)" bo-title="card.title" bo-attr-grid-id="card.id" bo-attr="">
       <img bo-src="card | cardUrl:'image'" width="300" height="418">
@@ -32,5 +32,5 @@
         No Results Found
       </h2>
     </div>
-  </matrix>
+  </grid>
 </div>

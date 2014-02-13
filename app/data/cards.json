@@ -9004,6 +9004,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04077",
       "number": 77,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-07T19:34:03Z",
+          "id": "1xanei",
+          "title": "[COTD] RSVP (7 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xanei/cotd_rsvp_7_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 4,
@@ -9024,6 +9032,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04078",
       "number": 78,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-10T18:46:28Z",
+          "id": "1xjeym",
+          "title": "[COTD] Curtain Wall (10 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xjeym/cotd_curtain_wall_10_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "strength": 6,
@@ -9044,6 +9060,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04079",
       "number": 79,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-11T18:59:58Z",
+          "id": "1xmvgm",
+          "title": "[COTD] Punitive Counterstrike (11 Feb 2013)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xmvgm/cotd_punitive_counterstrike_11_feb_2013/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Black Ops",
@@ -9064,6 +9088,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04080",
       "number": 80,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-12T18:27:12Z",
+          "id": "1xq6yg",
+          "title": "[COTD] Veteran's Program (12 Feb 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1xq6yg/cotd_veterans_program_12_feb_2014/"
+        }
+      ],
       "setname": "True Colors",
       "side": "Corp",
       "subtype": "Initiative",

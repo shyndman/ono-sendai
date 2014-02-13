@@ -1,5 +1,5 @@
 <div class="wing">
-  <div class="wing-click-region" ng-click="selectPreviousCard()"></div>
+  <div ng-click="selectPreviousCard()" ng-if="cardsBefore.length > 1" class="wing-click-region"></div>
   <div ng-repeat="card in cardsBefore track by card.id" class="card-image in-wing prev prev-{{ cardsBefore.length - $index - 1 }}">
     <img ng-src="{{ card.imagesrc }}" class="primary" width="300" height="418">
     <div class="background"></div>
@@ -69,13 +69,13 @@
             <span class="info-label">From:</span>
             <div class="info-value">
               <a ng-href="{{ card | cardUrl:'set' }}">{{ card.setname }}</a>
-              <div ng-if="isUnreleased(card)" class="unreleased small">
+              <span ng-if="isUnreleased(card)" class="unreleased">
                 Unreleased
-              </div>
+              </span>
             </div>
           </div>
           <div ng-if="card.illustrator != null" class="info-row">
-            <span class="info-label">Illus.:</span>
+            <span class="info-label">Illustrator:</span>
             <div class="info-value">
               <span ng-switch="cardUI.altArtShown">
                 <a ng-switch-when="false" ng-href="{{ card | cardUrl:'illustrator' }}">{{ card.illustrator }}</a>
@@ -88,10 +88,20 @@
               </a>
             </div>
           </div>
-          <div ng-if="isShortCard(card)" class="info-row">
+          <div ng-if="isShortCard(card) || !hasConfiguredSets()" class="info-row">
             <span class="info-label">Quantity:</span>
-            <div class="info-value">
-              <span class="short-cards">{{ card.quantity }} in set</span>
+            <div ng-switch="hasConfiguredSets()" class="info-value">
+              <span ng-switch-when="true">
+                <span class="short-card">
+                  {{ cardQuantity(card) }} owned
+                </span>
+                <a class="show-settings" ng-click="showSettings()">
+                  <i class="icon-settings"></i>
+                </a>
+              </span>
+              <span ng-switch-default="">
+                <a class="show-settings" ng-click="showSettings()">Configure Sets...</a>
+              </span>
             </div>
           </div>
 
@@ -134,7 +144,7 @@
   </div>
 </div>
 <div class="wing">
-  <div class="wing-click-region" ng-click="selectNextCard()"></div>
+  <div ng-click="selectNextCard()" ng-if="cardsAfter.length > 1" class="wing-click-region"></div>
   <div ng-repeat="card in cardsAfter track by card.id" class="card-image in-wing next next-{{ $index }}">
     <img ng-src="{{ card.imagesrc }}" class="primary" width="300" height="418">
     <div class="background"></div>

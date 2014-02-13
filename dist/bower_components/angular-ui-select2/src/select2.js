@@ -96,8 +96,12 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
               elm.select2('val', controller.$viewValue);
             } else {
               if (opts.multiple) {
+                var viewValue = controller.$viewValue;
+                if (angular.isString(viewValue)) {
+                  viewValue = viewValue.split(',');
+                }
                 elm.select2(
-                  'data', convertToSelect2Model(controller.$viewValue));
+                  'data', convertToSelect2Model(viewValue));
               } else {
                 if (angular.isObject(controller.$viewValue)) {
                   elm.select2('data', controller.$viewValue);
@@ -143,7 +147,9 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
 
           if (!isSelect) {
             // Set the view and model value and update the angular template manually for the ajax/multiple select2.
-            elm.bind("change", function () {
+            elm.bind("change", function (e) {
+              e.stopImmediatePropagation();
+              
               if (scope.$$phase || scope.$root.$$phase) {
                 return;
               }
@@ -179,6 +185,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
 
         if (attrs.ngMultiple) {
           scope.$watch(attrs.ngMultiple, function(newVal) {
+            attrs.$set('multiple', !!newVal);
             elm.select2(opts);
           });
         }
