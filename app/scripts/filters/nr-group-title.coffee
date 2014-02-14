@@ -9,14 +9,20 @@ groupTitle = (groupName, grouping) ->
           'Identities'
         else
           groupName
-    when 'cost'
+    when 'cost', 'trash'
       groupName = parseInt(groupName)
       if !_.isNaN(groupName)
         ret = "#{ groupName } Credit"
         ret += 's' if groupName == 0 or groupName > 1
         ret
       else
-        "Cost N/A"
+        'Cost N/A'
+    when 'strength'
+      groupName = parseInt(groupName)
+      if !_.isNaN(groupName)
+        "#{ groupName } Strength"
+      else
+        'Strength N/A'
     when 'factioncost'
       if groupName != ''
         "#{ groupName } Influence"

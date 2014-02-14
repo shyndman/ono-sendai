@@ -327,7 +327,7 @@ class CardService
         (a, b) => CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
       when 'faction'
         (a, b) => FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
-      when 'cost', 'factioncost'
+      when 'cost', 'factioncost', 'strength', 'trash'
         (a, b) =>
           if a[fieldName] is undefined or b[fieldName] is undefined
             0 # Allow the next sort to take precedence

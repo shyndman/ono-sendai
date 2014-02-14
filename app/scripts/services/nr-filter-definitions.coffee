@@ -350,11 +350,19 @@ angular.module('onoSendai')
         groupings: [ 'factioncost' ]
       }
       {
+        display: 'Strength'
+        groupings: [ 'strength' ]
+      }
+      {
+        display: 'Trash Cost'
+        groupings: [ 'trash' ]
+      }
+      {
         display: 'Set'
         groupings: [ 'setname' ]
       }
       {
-        display: 'Illus.'
+        display: 'Illustrator'
         groupings: [ 'illustrator' ]
       }
     ]
