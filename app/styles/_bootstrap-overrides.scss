@@ -70,9 +70,13 @@ label {
   }
 }
 
-.dropdown-menu > li > a {
-  cursor: pointer;
-  font-weight: 200;
+.dropdown-menu {
+  font-size: 12px;
+
+  li > a {
+    cursor: pointer;
+    font-weight: 200;
+  }
 }
 
 .table thead > tr > th {
