@@ -119,5 +119,4 @@ angular.module('onoSendai')
     restrict: 'E'
     controller: 'CardViewCtrl'
     link: (scope, element, attrs) ->
-
   )

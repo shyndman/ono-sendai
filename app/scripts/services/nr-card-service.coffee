@@ -351,17 +351,17 @@ class CardService
           card.subtype.split(/\s+-\s+/g)
         else
           []
-      subtypeIds = _.map(card.subtypes, _.idify)
 
-      # If we have logical subtypes defined (that is, artificial subtypes used
-      # by other parts of the system, but not visible to the user), include them in
-      # the subtypesSet.
+      # Next we build up a set of subtypes and logical subtypes. Logical subtypes are
+      # invisible to the user, but are used by other systems, including search.
+      allSubtypes = card.subtypes.slice()
+
       if card.logicalsubtypes?
-        subtypeIds = subtypeIds.concat(_.map(card.logicalsubtypes, _.idify))
+        allSubtypes = allSubtypes.concat(card.logicalsubtypes)
 
-      # [note] The subtypesSet is used internally, and is never showed to the user. The
-      #        card.subtypes field has that responsibility.
-      card.subtypesSet = _.object(subtypeIds, _.times(subtypeIds.length, -> true))
+      card.subtypesSet = _.object(
+        _.map(allSubtypes, _.idify),
+        _.times(allSubtypes.length, -> true))
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
