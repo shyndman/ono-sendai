@@ -361,7 +361,7 @@ class CardService
 
       card.subtypesSet = _.object(
         _.map(allSubtypes, _.idify),
-        _.times(subtypes.length, -> true))
+        _.times(allSubtypes.length, -> true))
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
