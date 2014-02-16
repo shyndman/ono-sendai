@@ -67,8 +67,8 @@ class UrlStateService
           search[name] = arg
 
     # Grouping
-    if !angular.equals(queryArgs.groupings, [ 'faction', 'type' ])
-      search.group = queryArgs.groupings.join(',')
+    if !angular.equals(queryArgs.groupByFields, [ 'faction', 'type' ])
+      search.group = queryArgs.groupByFields.join(',')
 
     # Set the generated URL
     @$location.url(url).search(search)
@@ -202,7 +202,7 @@ class UrlStateService
 
     # Groupings
     if search.group
-      queryArgs.groupings = search.group.split(',')
+      queryArgs.groupByFields = search.group.split(',')
 
     [ queryArgs, selectedCardId, cardPage ]
 

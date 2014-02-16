@@ -11,7 +11,7 @@
 #      a filter predicate.
 #   3. Applies the generated filter predicate against the pool of cards (which may be
 #      smaller if a full-text search has been performed).
-#   4. Groups/sorts the cards according to the property names defined queryArgs.groupings.
+#   4. Groups/sorts the cards according to the property names defined queryArgs.groupByFields.
 #   5. Constructs a QueryResult instance, containing card and group information, as well
 #      as lists of objects that are mappable to card IDs (like DOM elements, for instance).
 #
@@ -285,9 +285,9 @@ class CardService
       (card) =>
         @_setsByTitle[card.setname].released?
 
-  _groupCards: ({ groupings }, cards) =>
+  _groupCards: ({ groupByFields }, cards) =>
     sortFns =
-      _(groupings)
+      _(groupByFields)
         .chain()
         .concat(['title'])
         .map(@_sortFnFor)
@@ -304,7 +304,7 @@ class CardService
       #   "Jinteki,Asset":    [ list of Jinteki asset cards ],
       #   ...
       # }
-      .groupBy((card) -> _.map(groupings, (g) -> card[g]))
+      .groupBy((card) -> _.map(groupByFields, (g) -> card[g]))
       .pairs()
       .map((pair) =>
         # Example above becomes 'jinteki identity'
@@ -325,16 +325,20 @@ class CardService
     switch fieldName
       when 'type'
         (a, b) => CARD_ORDINALS[a.type] - CARD_ORDINALS[b.type]
+
       when 'faction'
         (a, b) => FACTION_ORDINALS[a.faction] - FACTION_ORDINALS[b.faction]
-      when 'cost', 'factioncost', 'strength', 'trash'
+
+      when 'cost', 'factioncost', 'strength', 'trash', 'minimumdecksize', 'influencelimit', 'agendapoints'
         (a, b) =>
           if a[fieldName] is undefined or b[fieldName] is undefined
             0 # Allow the next sort to take precedence
           else
             a[fieldName] - b[fieldName]
+
       when 'setname'
         (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal
+
       else # string
         (a, b) =>
           _.stringCompare(a[fieldName], b[fieldName])

@@ -5,7 +5,7 @@ angular.module('onoSendai')
       side: 'Corp'
       search: ''
       activeGroup: 'general'
-      groupings: [ 'faction', 'type' ]
+      groupByFields: [ 'faction', 'type' ]
       fieldFilters:
         faction:
           'Corp: Haas-Bioroid': true
@@ -335,35 +335,54 @@ angular.module('onoSendai')
     [
       {
         display: 'Faction'
-        groupings: [ 'faction', 'type' ]
-      }
-      {
-        display: 'Type'
-        groupings: [ 'type' ]
+        groupByFields: [ 'faction', 'type' ]
       }
       {
         display: 'Cost'
-        groupings: [ 'cost' ]
+        groupByFields: [ 'cost' ]
       }
       {
         display: 'Influence'
-        groupings: [ 'factioncost' ]
+        groupByFields: [ 'factioncost' ]
       }
       {
         display: 'Strength'
-        groupings: [ 'strength' ]
+        groupByFields: [ 'strength' ]
+      }
+      {
+        display: 'Type'
+        groupByFields: [ 'type' ]
+        inMore: true
       }
       {
         display: 'Trash Cost'
-        groupings: [ 'trash' ]
+        groupByFields: [ 'trash' ]
+        inMore: true
+      }
+      {
+        display: 'Min. Deck Size'
+        groupByFields: [ 'minimumdecksize' ]
+        inMore: true
+      }
+      {
+        display: 'Available Influence'
+        groupByFields: [ 'influencelimit' ]
+        inMore: true
+      }
+      {
+        display: 'Agenda Points'
+        groupByFields: [ 'agendapoints' ]
+        inMore: true
       }
       {
         display: 'Set'
-        groupings: [ 'setname' ]
+        groupByFields: [ 'setname' ]
+        inMore: true
       }
       {
         display: 'Illustrator'
-        groupings: [ 'illustrator' ]
+        groupByFields: [ 'illustrator' ]
+        inMore: true
       }
     ]
   )

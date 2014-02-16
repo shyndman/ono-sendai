@@ -1,0 +1,42 @@
+<span class="control-label">Group:</span>
+<div class="unabridged">
+  <div class="btn-group">
+    <!-- Primary groupings -->
+    <button ng-repeat="grouping in primaryGroupings"
+            bindonce
+            ng-click="selectGroup(grouping)"
+            ng-class="{
+              'active': selectedGrouping == grouping
+            }"
+            class="btn btn-default">{{ grouping.display }}</button>
+
+    <!-- Displays a grouping selected from the More menu -->
+    <button ng-if="moreGroupingSelected"
+            class="btn btn-default active">{{ selectedGrouping.display }}</button>
+  </div>
+
+  <!-- Additional groupings are behind a click -->
+  <div class="more-groups dropdown">
+    <button class="btn btn-default dropdown-toggle" dropdown-toggle>
+      <span class="ellipsis">&hellip;</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="grouping in moreGroupings"
+          bindonce>
+        <a ng-click="selectGroup(grouping)">{{ grouping.display }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="abbreviated dropdown">
+  <button class="btn btn-default dropdown-toggle" dropdown-toggle>{{ selectedGrouping.display }}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="grouping in allGroupings"
+        bindonce>
+      <a ng-click="selectGroup(grouping)">{{ grouping.display }}</a>
+    </li>
+  </ul>
+</div>

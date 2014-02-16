@@ -25,23 +25,4 @@
     </div>
   </div>
 </div>
-<div class="groupings">
-  <span class="control-label">Group:</span>
-  <div class="unabridged">
-    <div class="btn-group">
-      <button ng-repeat="grouping in groupingUI"
-              ng-model="filter.groupings"
-              btn-radio="grouping.groupings"
-              class="btn btn-default">{{ grouping.display }}</button>
-    </div>
-  </div>
-
-  <div class="abbreviated dropdown">
-    <button class="btn btn-default dropdown-toggle" dropdown-toggle>Faction <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li ng-repeat="grouping in groupingUI">
-        <a ng-click="filter.groupings = grouping.groupings">{{ grouping.display }}</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<group-selector class="groupings"></group-selector>
