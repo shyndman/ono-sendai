@@ -157,7 +157,7 @@ class CardService
       null
     else
       cardType = @filterDescriptors[activeName].cardType
-      _.object([ cardType, true ])
+      _.object([ cardType] , [ true ])
 
   # Returns the set of filter descriptors that are currently relevant to the
   # specified set of arguments.
