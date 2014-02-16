@@ -12,15 +12,15 @@ angular.module('onoSendai')
       $scope.primaryGroupings = _.filter(groupingUI, (grouping) -> !grouping.inMore?)
       $scope.moreGroupings = _.filter(groupingUI, (grouping) -> grouping.inMore?)
 
-      $scope.selectGroup = (group) ->
-        $scope.selectedGrouping = group
-        $scope.filter.groupByFields = group.groupByFields
-        $scope.moreGroupingSelected = _.include($scope.moreGroupings, group)
+      $scope.selectGroup = (grouping) ->
+        if !grouping? or grouping == $scope.selectedGrouping
+          return
 
-      # React to URL state changes, that may change the selected group
-      $scope.$on 'urlStateChange', urlChanged = ->
-        $scope.selectGroup(groupingWithFields(urlStateService.queryArgs.groupByFields))
+        $scope.selectedGrouping = grouping
+        $scope.filter.groupByFields = grouping.groupByFields
+        $scope.moreGroupingSelected = _.include($scope.moreGroupings, grouping)
 
-      # Set initial state
-      $scope.selectGroup(groupingWithFields($scope.filter.groupByFields))
+      # React to external group changes
+      $scope.$watch 'filter.groupByFields', groupByChanged = (groupByFields) ->
+        $scope.selectGroup(groupingWithFields(groupByFields))
   )
