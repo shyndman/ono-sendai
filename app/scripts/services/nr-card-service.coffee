@@ -331,10 +331,7 @@ class CardService
 
       when 'cost', 'factioncost', 'strength', 'trash', 'minimumdecksize', 'influencelimit', 'agendapoints', 'advancementcost'
         (a, b) =>
-          if a[fieldName] is undefined or b[fieldName] is undefined
-            0 # Allow the next sort to take precedence
-          else
-            a[fieldName] - b[fieldName]
+          _.numericCompare(a[fieldName], b[fieldName])
 
       when 'setname'
         (a, b) => @_setsByTitle[a.setname].ordinal - @_setsByTitle[b.setname].ordinal

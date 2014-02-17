@@ -53,6 +53,18 @@ _.mixin
     else
       a.localeCompare(b)
 
+  # Returns a number indicating whether a number comes before or after
+  # or is the same as another number in sort order. Handles undefined numbers.
+  numericCompare: (a, b) ->
+    if a? and !b?
+      -1
+    else if !a? and b?
+      1
+    else if !a? and !b?
+      0
+    else
+      a - b
+
   # Nada, nothing, beans, bupkis
   noop: -> ;
 
