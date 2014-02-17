@@ -2350,7 +2350,11 @@
       "subtype": "Connection",
       "text": "You cannot use Kati Jones more than once per turn.\n[Click]: Place 3[Credits] from the bank on Kati Jones.\n[Click]: Take all credits from Kati Jones.",
       "title": "Kati Jones",
-      "type": "Resource"
+      "type": "Resource",
+      "altart": {
+        "imagesrc": "/images/cards/kati-jones-alt.png",
+        "illustrator": "David A. Nash"
+      }
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/retrieval-run-future-proof",
