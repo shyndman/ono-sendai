@@ -1,6 +1,8 @@
+# [todo] These filters are soooo ugly. Rethink, maybe rewrite.
+
 # groupName is always a string, because of how the grouping process works
 groupTitle = (groupName, grouping) ->
-  numericGroupName = parseInt(groupName)
+  numGroupName = parseInt(groupName)
 
   switch grouping
     when 'type'
@@ -13,9 +15,9 @@ groupTitle = (groupName, grouping) ->
           groupName
 
     when 'cost', 'trash'
-      if !_.isNaN(numericGroupName)
+      if !_.isNaN(numGroupName)
         ret = "#{ groupName } Credit"
-        ret += 's' if numericGroupName == 0 or numericGroupName > 1
+        ret += 's' if numGroupName == 0 or numGroupName > 1
         ret += ' to Trash' if grouping == 'trash'
         ret
       else
@@ -24,24 +26,16 @@ groupTitle = (groupName, grouping) ->
         ret
 
     when 'minimumdecksize'
-      if !_.isNaN(numericGroupName)
+      if !_.isNaN(numGroupName)
         "#{ groupName } Cards"
       else
         'Min. Deck Size N/A'
 
     when 'influencelimit'
-      if !_.isNaN(numericGroupName)
+      if !_.isNaN(numGroupName)
         "#{ groupName } Influence Available"
       else
         'Available Influence N/A'
-
-    when 'agendapoints'
-      if !_.isNaN(numericGroupName)
-        ret = "#{ groupName } Agenda Point"
-        ret += 's' if numericGroupName == 0 or numericGroupName > 1
-        ret
-      else
-        'Angenda Points N/A'
 
     when 'strength'
       groupName = parseInt(groupName)
@@ -64,14 +58,26 @@ groupTitle = (groupName, grouping) ->
     else
       groupName
 
+agendaGroupTitle = ([ advancementCost, points ]) ->
+  numPoints = parseInt(points)
+
+  if !_.isNaN(numPoints)
+    "#{ advancementCost }/#{ points } Agendas"
+  else
+    'Angenda Points N/A'
+
 span = (contents, cls) ->
   "<span class=\"#{ cls }\">#{ contents }</span>"
 
-# [todo] These filters suuuuck. Rewrite.
+AGENDA_GROUP_BYS = [ 'advancementcost', 'agendapoints' ]
+
 angular.module('onoSendai')
   .filter('primaryGroupTitle', ->
     (groupTitles, groupByFields) ->
-      if groupByFields.length > 1
+      # Special case for the agenda grouping
+      if angular.equals(groupByFields, AGENDA_GROUP_BYS)
+        agendaGroupTitle(groupTitles)
+      else if groupByFields.length > 1
         groupTitle(groupTitles[1], groupByFields[1])
       else
         groupTitle(groupTitles[0], groupByFields[0])
@@ -79,7 +85,9 @@ angular.module('onoSendai')
   .filter('secondaryGroupTitle', (cardService, dateFilter, $sce) ->
     (groupTitles, groupByFields) ->
       $sce.trustAsHtml(
-        if groupByFields.length > 1
+        if angular.equals(groupByFields, AGENDA_GROUP_BYS)
+          ''
+        else if groupByFields.length > 1
           groupTitle(groupTitles[0], groupByFields[0])
         else if groupByFields[0] == 'setname' and
                (set = cardService.getSetByTitle(groupTitles[0]))?

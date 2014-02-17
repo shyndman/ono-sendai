@@ -370,8 +370,8 @@ angular.module('onoSendai')
         inMore: true
       }
       {
-        display: 'Agenda Points'
-        groupByFields: [ 'agendapoints' ]
+        display: 'Agenda Cost/Pts'
+        groupByFields: [ 'advancementcost', 'agendapoints' ]
         inMore: true
       }
       {
