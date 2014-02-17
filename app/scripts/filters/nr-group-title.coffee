@@ -60,7 +60,7 @@ groupTitle = (groupName, grouping) ->
       if groupName != ''
         groupName
       else
-        'None'
+        'None Listed'
     else
       groupName
 
