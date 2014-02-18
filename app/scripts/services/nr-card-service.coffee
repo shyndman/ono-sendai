@@ -180,8 +180,8 @@ class CardService
       .filter((group) => group.fieldFilters?)
       # Take the field filters
       .pluck('fieldFilters')
-      # Map onto objects containing only applicable field filters, as determined by any the
-      # validity of query arguments, and any exclusions defined by the group.
+      # Map onto objects containing only applicable field filters, as determined by the
+      # validity of query arguments, and any exclusions defined by the active group.
       .map((fields) =>
         _.filterObj(fields, (name, desc) =>
           fieldArg = queryArgs.fieldFilters[name]
