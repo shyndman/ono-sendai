@@ -9237,6 +9237,12 @@
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
+      "strengthcost": 1,
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI",
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUse Alpha only on the outermost piece of ice protecting a server.",
       "title": "Alpha",
@@ -9258,6 +9264,12 @@
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
+      "strengthcost": 1,
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI",
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUSe Omega only on the innermost piece of ice protecting a server.",
       "title": "Omega",
