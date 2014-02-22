@@ -85,10 +85,14 @@ angular.module('onoSendai')
   .filter('secondaryGroupTitle', (cardService, dateFilter, $sce) ->
     (groupTitles, groupByFields) ->
       $sce.trustAsHtml(
+        # The agenda group by has no secondary
         if angular.equals(groupByFields, AGENDA_GROUP_BYS)
           ''
+        # If we're grouping by multiple fields, use the first as the seconandary
+        # ie. [Jinteki, Identity] would return Jinteki as its secondary title.
         else if groupByFields.length > 1
           groupTitle(groupTitles[0], groupByFields[0])
+        # If we're dealing with sets, we print out the cycle and the release date
         else if groupByFields[0] == 'setname' and
                (set = cardService.getSetByTitle(groupTitles[0]))?
           dateStr =
