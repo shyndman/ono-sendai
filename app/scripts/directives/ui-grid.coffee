@@ -54,7 +54,6 @@ angular.module('onoSendai')
       # we're in detail mode or grid mode.
       scrollParent = element.parents('.scrollable').first()
       scrollParentOverflow = scrollParent.css('overflow')
-      scrollParentH = scrollParent.height()
       scrollTop = scrollParent.scrollTop()
 
 
@@ -62,11 +61,11 @@ angular.module('onoSendai')
       hasContainerChangedWidth = ->
         if containerWidth != (newContainerWidth = container.width())
           containerWidth = newContainerWidth
-          scrollParentH = scrollParent.height()
           $log.debug 'Container width changed', containerWidth
           true
         else
           false
+      hasContainerChangedWidth()
 
       # Returns the item identifier for the provided element.
       getItemId = (ele) ->
