@@ -119,9 +119,6 @@ angular.module('onoSendai')
         if !items? or !items.length
           return
 
-        # Remove the scroll lock-down, if we've been in detail mode previously
-        setScrollerOverflow('')
-
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
 
         # NOTE: We get the second item, and not the first, because we need an item to attach a transition
@@ -271,14 +268,6 @@ angular.module('onoSendai')
 
 
       # *~*~*~*~ SCROLLING
-
-      # Optimization to prevent unnecessary reflows by invoking jQuery.css(). We store the scroll parent's overflow
-      # value around, and only set it if required. This assumes no one else is tinkering with the value.
-      setScrollerOverflow = (val) ->
-        if scrollParentOverflow != val
-          scrollParent.css('overflow', val)
-          scrollParentOverflow = val
-          hasContainerChangedWidth()
 
       scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
