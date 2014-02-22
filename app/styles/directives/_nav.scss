@@ -107,6 +107,7 @@ nr-nav {
     .links {
       .show-settings {
         @include tweak($y: 2px);
+
         font-size: 17px;
         padding: 10px;
       }
@@ -135,5 +136,11 @@ nr-nav {
         min-width: 100%;
       }
     }
+  }
+}
+
+@include firefox-only {
+  nr-nav .controls .links .show-settings {
+    @include tweak($y: -9px);
   }
 }
