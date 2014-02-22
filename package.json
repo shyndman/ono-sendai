@@ -1,6 +1,6 @@
 {
   "name": "deck-builder",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
