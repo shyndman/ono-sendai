@@ -106,7 +106,7 @@
               </a>
             </div>
           </div>
-          <div ng-if="isShortCard(card) || !hasConfiguredSets()"
+          <div ng-if="(isShortCard(card) || !hasConfiguredSets()) && !isUnreleased(card)"
                class="info-row">
             <span class="info-label">Quantity:</span>
             <div ng-switch="hasConfiguredSets()"
