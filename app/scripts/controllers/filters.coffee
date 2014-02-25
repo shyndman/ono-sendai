@@ -65,7 +65,7 @@ angular.module('onoSendai')
       _.each findGroup(groupName).hiddenGeneralFields ? [], (__, fieldName) ->
         fieldFilter = $scope.filter.fieldFilters[fieldName]
         if fieldFilter.value?
-          $scope.filter.fieldFilters[fieldName].value = ''
+          $scope.filter.fieldFilters[fieldName].value = null
 
     $scope.clearFactions = ->
       for key, val of factions
