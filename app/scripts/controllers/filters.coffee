@@ -61,6 +61,12 @@ angular.module('onoSendai')
     findGroup = (groupName) ->
       _.findWhere(filterUI, name: groupName)
 
+    clearExcludedFields = (groupName) ->
+      _.each findGroup(groupName).hiddenGeneralFields ? [], (__, fieldName) ->
+        fieldFilter = $scope.filter.fieldFilters[fieldName]
+        if fieldFilter.value?
+          $scope.filter.fieldFilters[fieldName].value = ''
+
     $scope.clearFactions = ->
       for key, val of factions
         factions[key] = true
@@ -75,6 +81,7 @@ angular.module('onoSendai')
     $scope.toggleGroup = (group) ->
       if $scope.filter.activeGroup isnt group
         $scope.filter.activeGroup = group
+        clearExcludedFields(group)
       else
         $scope.filter.activeGroup = 'general'
 
