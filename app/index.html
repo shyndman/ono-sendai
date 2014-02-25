@@ -21,6 +21,9 @@
         'esc   / alt+esc   / ctrl+esc'   : { action: 'hideSettings() || deselectCard()', preventDefault: true },
         'left  / alt+left  / ctrl+left'  : 'selectPreviousCard()',
         'right / alt+right / ctrl+right' : 'selectNextCard()'
+      }"
+      ng-class="{
+        'overlay-visible': cardsUI.settingsVisible
       }">
 
   <!--[if lt IE 9]>
@@ -40,9 +43,6 @@
     <div class="app-inner-layout">
       <nr-subnav></nr-subnav>
       <main ng-include="'/views/cards.html'"
-            ng-class="{
-              'overlay-visible': cardsUI.settingsVisible
-            }"
             class="page scrollable"></main>
     </div>
   </div>
