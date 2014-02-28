@@ -9313,6 +9313,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04090",
       "number": 90,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-28T12:44:51Z",
+          "id": "1z6b8p",
+          "title": "[COTD] Blue Level Clearance (February 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1z6b8p/cotd_blue_level_clearance_february_28th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Double - Transaction",
