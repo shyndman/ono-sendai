@@ -9146,6 +9146,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04082",
       "number": 82,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-01T14:54:14Z",
+          "id": "1z9mqr",
+          "title": "[COTD] Hemorrhage (March 1st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1z9mqr/cotd_hemorrhage_march_1st_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Virus",
