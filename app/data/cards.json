@@ -9347,6 +9347,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04091",
       "number": 91,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-02T14:43:40Z",
+          "id": "1zcijf",
+          "title": "[COTD] Strongbox (March 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zcijf/cotd_strongbox_march_2nd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "text": "Each time the Runner accesses an agenda from this server, he or she must spend [Click] as an additional cost in order to steal it. This applies even during the run on which the Runner trashes Strongbox.",
