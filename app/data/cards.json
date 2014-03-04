@@ -9173,6 +9173,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04083",
       "number": 83,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-03T16:14:54Z",
+          "id": "1zfx6c",
+          "title": "[COTD] \u2666 Tallie Perrault (March 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zfx6c/cotd_tallie_perrault_march_3rd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Connection",
@@ -9372,6 +9380,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04092",
       "number": 92,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-04T14:54:17Z",
+          "id": "1zj61l",
+          "title": "[COTD] \u2666 Toshiyuki Sakai (March 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zj61l/cotd_toshiyuki_sakai_march_4th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Executive",
