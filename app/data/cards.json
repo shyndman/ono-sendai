@@ -9200,6 +9200,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04084",
       "number": 84,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-05T16:51:14Z",
+          "id": "1zmydm",
+          "title": "[COTD] Executive Wiretaps (March 5th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zmydm/cotd_executive_wiretaps_march_5th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Double",
