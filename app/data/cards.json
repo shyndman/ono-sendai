@@ -142,6 +142,10 @@
       "type": "Program"
     },
     {
+      "altart": {
+        "illustrator": "Ed Mattinian",
+        "imagesrc": "/images/cards/datasucker-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/datasucker-core",
       "cost": 1,
       "faction": "Anarch",
@@ -157,11 +161,7 @@
       "subtype": "Virus",
       "text": "Whenever you make a successful run on a central server, place 1 virus counter on Datasucker.\n<strong>Hosted virus counter</strong>: Rezzed piece of ice currently being encountered has -1 strength until the end of the encounter.",
       "title": "Datasucker",
-      "type": "Program",
-      "altart": {
-        "imagesrc": "/images/cards/datasucker-alt.png",
-        "illustrator": "Ed Mattinian"
-      }
+      "type": "Program"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/djinn-core",
@@ -345,6 +345,10 @@
       "type": "Resource"
     },
     {
+      "altart": {
+        "illustrator": "Matt Zeilinger",
+        "imagesrc": "/images/cards/gabriel-santiago-consummate-professional-alt.png"
+      },
       "baselink": 0,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/gabriel-santiago-consummate-professional-core",
       "faction": "Criminal",
@@ -369,11 +373,7 @@
       "subtype": "Cyborg",
       "text": "The first time you make a successful run on HQ each turn, gain 2[Credits].",
       "title": "Gabriel Santiago: Consummate Professional",
-      "type": "Identity",
-      "altart": {
-        "imagesrc": "/images/cards/gabriel-santiago-consummate-professional-alt.png",
-        "illustrator": "Matt Zeilinger"
-      }
+      "type": "Identity"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/account-siphon-core",
@@ -698,6 +698,10 @@
       "type": "Resource"
     },
     {
+      "altart": {
+        "illustrator": "Viktoria Gavrilenko",
+        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png"
+      },
       "baselink": 1,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/kate-mac-mccaffrey-digital-tinker-core",
       "faction": "Shaper",
@@ -722,11 +726,7 @@
       "subtype": "Natural",
       "text": "Lower the install cost of the first program or piece of hardware you install each turn by 1.",
       "title": "Kate \"Mac\" McCaffrey: Digital Tinker",
-      "type": "Identity",
-      "altart": {
-        "imagesrc": "/images/cards/kate-mac-mccaffrey-digital-tinker-alt.png",
-        "illustrator": "Viktoria Gavrilenko"
-      }
+      "type": "Identity"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/diesel-core",
@@ -1051,6 +1051,10 @@
       "type": "Event"
     },
     {
+      "altart": {
+        "illustrator": "Christina Davis",
+        "imagesrc": "/images/cards/crypsis-alt.png"
+      },
       "breakcost": {
         "credits": 1,
         "subroutines": 1
@@ -1081,11 +1085,7 @@
       "subtype": "Icebreaker - AI - Virus",
       "text": "1[Credits]: Break ice subroutine.\n1[Credits]: +1 strength.\n[Click]: Place 1 virus counter on Crypsis.\nWhen an encounter with a piece of ice in which you used Crypsis to break a subroutine ends, remove 1 hosted virus counter or trash Crypsis.",
       "title": "Crypsis",
-      "type": "Program",
-      "altart": {
-        "imagesrc": "/images/cards/crypsis-alt.png",
-        "illustrator": "Christina Davis"
-      }
+      "type": "Program"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/access-to-globalsec-core",
@@ -2327,6 +2327,10 @@
       "type": "Event"
     },
     {
+      "altart": {
+        "illustrator": "David A. Nash",
+        "imagesrc": "/images/cards/kati-jones-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/kati-jones-humanitys-shadow",
       "cost": 2,
       "faction": "Neutral",
@@ -2350,11 +2354,7 @@
       "subtype": "Connection",
       "text": "You cannot use Kati Jones more than once per turn.\n[Click]: Place 3[Credits] from the bank on Kati Jones.\n[Click]: Take all credits from Kati Jones.",
       "title": "Kati Jones",
-      "type": "Resource",
-      "altart": {
-        "imagesrc": "/images/cards/kati-jones-alt.png",
-        "illustrator": "David A. Nash"
-      }
+      "type": "Resource"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/retrieval-run-future-proof",
@@ -3876,6 +3876,10 @@
       "type": "Agenda"
     },
     {
+      "altart": {
+        "illustrator": "Ed Mattinian",
+        "imagesrc": "/images/cards/adonis-campaign-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/adonis-campaign-core",
       "cost": 4,
       "faction": "Haas-Bioroid",
@@ -3891,11 +3895,7 @@
       "text": "Put 12[Credits] from the bank on Adonis Campaign when rezzed. When there are no credits left on this card, trash it.\nTake 3[Credits] from Adonis Campaign when your turn begins.",
       "title": "Adonis Campaign",
       "trash": 3,
-      "type": "Asset",
-      "altart": {
-        "imagesrc": "/images/cards/adonis-campaign-alt.png",
-        "illustrator": "Ed Mattinian"
-      }
+      "type": "Asset"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aggressive-secretary-core",
@@ -4731,6 +4731,10 @@
       "type": "Operation"
     },
     {
+      "altart": {
+        "illustrator": "Ignacio Bazan Lazcano",
+        "imagesrc": "/images/cards/scorched-earth-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/scorched-earth-core",
       "cost": 3,
       "faction": "Weyland Consortium",
@@ -4754,11 +4758,7 @@
       "subtype": "Black Ops",
       "text": "Play only if the runner is tagged.\nDo 4 meat damage.",
       "title": "Scorched Earth",
-      "type": "Operation",
-      "altart": {
-        "imagesrc": "/images/cards/scorched-earth-alt.png",
-        "illustrator": "Ignacio Bazan Lazcano"
-      }
+      "type": "Operation"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shipment-from-kaguya-core",
@@ -4902,6 +4902,10 @@
     {
       "advancementcost": 4,
       "agendapoints": 2,
+      "altart": {
+        "illustrator": "Adam Schumpert",
+        "imagesrc": "/images/cards/private-security-force-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/private-security-force-core",
       "faction": "Neutral",
       "factioncost": 0,
@@ -4916,13 +4920,13 @@
       "subtype": "Security",
       "text": "If the Runner is tagged, Private Security Force gains: \"[Click]: Do 1 meat damage.\"",
       "title": "Private Security Force",
-      "type": "Agenda",
-      "altart": {
-        "imagesrc": "/images/cards/private-security-force-alt.png",
-        "illustrator": "Adam Schumpert"
-      }
+      "type": "Agenda"
     },
     {
+      "altart": {
+        "illustrator": "Emilio Rodriguez",
+        "imagesrc": "/images/cards/melange-mining-corp-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/melange-mining-corp-core",
       "cost": 1,
       "faction": "Neutral",
@@ -4938,11 +4942,7 @@
       "text": "[Click], [Click], [Click]: Gain 7[Credits].",
       "title": "Melange Mining Corp.",
       "trash": 1,
-      "type": "Asset",
-      "altart": {
-        "imagesrc": "/images/cards/melange-mining-corp-alt.png",
-        "illustrator": "Emilio Rodriguez"
-      }
+      "type": "Asset"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/pad-campaign-core",
@@ -6372,6 +6372,10 @@
       "type": "Operation"
     },
     {
+      "altart": {
+        "illustrator": "Sandara Tang",
+        "imagesrc": "/images/cards/eli-10-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/eli-1-0-future-proof",
       "cost": 3,
       "faction": "Haas-Bioroid",
@@ -6396,11 +6400,7 @@
       "subtype": "Barrier - Bioroid",
       "text": "The Runner may spend [Click] to break any subroutine on Eli 1.0.\n[Subroutine] End the run.\n[Subroutine] End the run.",
       "title": "Eli 1.0",
-      "type": "ICE",
-      "altart": {
-        "imagesrc": "/images/cards/eli-10-alt.png",
-        "illustrator": "Sandara Tang"
-      }
+      "type": "ICE"
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/ruhr-valley-future-proof",
@@ -9119,6 +9119,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04081",
       "number": 81,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-27T15:19:13Z",
+          "id": "1z39e4",
+          "title": "[COTD] Quest Completed (February 27th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1z39e4/cotd_quest_completed_february_27th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "text": "Play only if you made a successful run on R&D, HQ, and Archives this turn.\r\nAccess 1 installed card (non-ice).",
@@ -9138,6 +9146,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04082",
       "number": 82,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-01T14:54:14Z",
+          "id": "1z9mqr",
+          "title": "[COTD] Hemorrhage (March 1st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1z9mqr/cotd_hemorrhage_march_1st_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Virus",
@@ -9157,6 +9173,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04083",
       "number": 83,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-03T16:14:54Z",
+          "id": "1zfx6c",
+          "title": "[COTD] \u2666 Tallie Perrault (March 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zfx6c/cotd_tallie_perrault_march_3rd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Connection",
@@ -9223,6 +9247,11 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/alpha-fear-and-loathing",
       "cost": 7,
       "faction": "Shaper",
@@ -9238,11 +9267,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
-      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI",
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUse Alpha only on the outermost piece of ice protecting a server.",
       "title": "Alpha",
@@ -9250,6 +9274,11 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
+      "breakscript": "genericAI",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/omega-fear-and-loathing",
       "cost": 7,
       "faction": "Shaper",
@@ -9265,11 +9294,6 @@
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
-      "breakscript": "genericAI",
       "subtype": "Icebreaker - AI",
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUSe Omega only on the innermost piece of ice protecting a server.",
       "title": "Omega",
@@ -9305,6 +9329,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04090",
       "number": 90,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-02-28T12:44:51Z",
+          "id": "1z6b8p",
+          "title": "[COTD] Blue Level Clearance (February 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1z6b8p/cotd_blue_level_clearance_february_28th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Double - Transaction",
@@ -9323,6 +9355,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04091",
       "number": 91,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-02T14:43:40Z",
+          "id": "1zcijf",
+          "title": "[COTD] Strongbox (March 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zcijf/cotd_strongbox_march_2nd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "text": "Each time the Runner accesses an agenda from this server, he or she must spend [Click] as an additional cost in order to steal it. This applies even during the run on which the Runner trashes Strongbox.",
@@ -9340,6 +9380,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04092",
       "number": 92,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-04T14:54:17Z",
+          "id": "1zj61l",
+          "title": "[COTD] \u2666 Toshiyuki Sakai (March 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zj61l/cotd_toshiyuki_sakai_march_4th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Executive",
@@ -9954,6 +10002,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "cost": 3,
       "faction": "Criminal",
@@ -9972,10 +10024,6 @@
         "credits": 2,
         "strength": 3
       },
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
       "subtype": "Icebreaker - Killer",
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +3 strength.\r\nAlias cannot be used on ice protecting a remote server.",
       "title": "Alias",
@@ -9983,6 +10031,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 2,
+        "subroutines": 3
+      },
       "cgdb_url": null,
       "cost": 2,
       "faction": "Criminal",
@@ -9999,10 +10051,6 @@
       "strengthcost": {
         "credits": 2,
         "strength": 4
-      },
-      "breakcost": {
-        "credits": 2,
-        "subroutines": 3
       },
       "subtype": "Icebreaker - Fracter",
       "text": "2[Credits]: Break up to 3 <strong>barrier</strong> subroutines.\r\n2[Credits]: +4 strength.\r\nBreach cannot be used on ice protecting a remote server.",
