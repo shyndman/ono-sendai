@@ -9416,6 +9416,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04093",
       "number": 93,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-06T15:55:19Z",
+          "id": "1zq5ng",
+          "title": "[COTD] Yagura (March 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zq5ng/cotd_yagura_march_6th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "strength": 0,
