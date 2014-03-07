@@ -9227,6 +9227,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04085",
       "number": 85,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-07T17:25:50Z",
+          "id": "1ztm9i",
+          "title": "[COTD] Blackguard (March 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ztm9i/cotd_blackguard_march_7th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Console",
