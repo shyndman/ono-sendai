@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-02-23T00:35:20Z",
+  "last-modified": "2014-03-11T07:35:37Z",
   "cards": [
     {
       "baselink": 0,
@@ -9200,6 +9200,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04084",
       "number": 84,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-05T16:51:14Z",
+          "id": "1zmydm",
+          "title": "[COTD] Executive Wiretaps (March 5th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zmydm/cotd_executive_wiretaps_march_5th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Double",
@@ -9219,6 +9227,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04085",
       "number": 85,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-07T17:25:50Z",
+          "id": "1ztm9i",
+          "title": "[COTD] Blackguard (March 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1ztm9i/cotd_blackguard_march_7th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Console",
@@ -9238,6 +9254,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04086",
       "number": 86,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-09T20:48:50Z",
+          "id": "1zzpd6",
+          "title": "[COTD] CyberSolutions Mem Chip (March 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zzpd6/cotd_cybersolutions_mem_chip_march_9th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Chip",
@@ -9408,6 +9432,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04093",
       "number": 93,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-06T15:55:19Z",
+          "id": "1zq5ng",
+          "title": "[COTD] Yagura (March 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zq5ng/cotd_yagura_march_6th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "strength": 0,
@@ -9428,6 +9460,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04094",
       "number": 94,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-08T14:58:42Z",
+          "id": "1zw5yh",
+          "title": "[COTD] Restoring Face (March 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zw5yh/cotd_restoring_face_march_8th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "text": "Trash one of your installed <strong>sysops</strong>, <strong>executives</strong>, or <strong>clones</strong>. If you do, remove up to 2 bad publicity.",
@@ -9445,6 +9485,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04095",
       "number": 95,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-10T16:14:08Z",
+          "id": "202109",
+          "title": "[COTD] Market Research (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/202109/cotd_market_research_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Research",
@@ -9588,6 +9636,44 @@
     {
       "cgdb_url": null,
       "cost": 0,
+      "faction": "Shaper",
+      "factioncost": 2,
+      "flavor": "\"When I said I could hack it in my sleep, did you think I was joking?\" -Chaos Theory",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/power-nap.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04107",
+      "number": 107,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Double",
+      "text": "As an additional cost to play this event, spend [Click].\r\nGain 2[Credits]. Gain an additional 1[Credits] for each <strong>double</strong> event in your heap.",
+      "title": "Power Nap",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 3,
+      "faction": "Neutral",
+      "factioncost": 2,
+      "flavor": "Data hunters always pay top dollar for old drives. The more useless the data, the higher the payout.",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/lucky-find.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04109",
+      "number": 109,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Double",
+      "text": "As an additional cost to play this event, spend [Click].\r\nGain 9[Credits].",
+      "title": "Lucky Find",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 0,
       "faction": "NBN",
       "factioncost": 2,
       "flavor": "The only thing worse than being fired and replaced by a younger, cheaper worker? Begin replaced by an android.",
@@ -9640,6 +9726,45 @@
       "subtype": "Barrier",
       "text": "Hive loses an \"[Subroutine] End the run.\" subroutine for each agenda point in the Corp's score area.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
       "title": "Hive",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 4,
+      "agendapoints": 2,
+      "cgdb_url": null,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "illustrator": "Viktoria Gavrilenko",
+      "imagesrc": "/images/cards/napd-contract.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04119",
+      "number": 119,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Security",
+      "text": "The advancement requirement of NAPD Contract is increased by 1 for each bad publicity the Corp has.\r\nAs an additional cost to steal NAPD Contract, the Runner must pay 4[Credits].",
+      "title": "NAPD Contract",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "flavor": "It wants to have two subroutines when it grows up.",
+      "illustrator": "Laura Wilson",
+      "imagesrc": "/images/cards/quandary.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04120",
+      "number": 120,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "strength": 0,
+      "subtype": "Code Gate",
+      "text": "[Subroutine] End the run.",
+      "title": "Quandary",
       "type": "ICE",
       "uniqueness": false
     },
@@ -9880,7 +10005,7 @@
       "side": "Corp",
       "strength": 1,
       "subtype": "Sentry - AP",
-      "text": "When the Runner encounters Komainu, it gains \"[Subroutine] Do 1 net damage.\" for each card in the Runner's grip for the remainder of the turn.",
+      "text": "When the Runner encounters Komainu, it gains \"[Subroutine] Do 1 net damage.\" for each card in the Runner's grip for the remainder of this run.",
       "title": "Komainu",
       "type": "ICE",
       "uniqueness": false
@@ -9941,6 +10066,46 @@
       "text": "Gain 1[Credits] for each remote server with a card installed in it.",
       "title": "Diversified Portfolio",
       "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "baselink": 1,
+      "cgdb_url": null,
+      "faction": "Criminal",
+      "flavor": "\"Truth is a fickle mistress.\"",
+      "illustrator": "Simon Eckert",
+      "imagesrc": "/images/cards/iain-stirling-retired-spook.png",
+      "influencelimit": 10,
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05028",
+      "number": 28,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Natural",
+      "text": "When your turn begins, gain 2[Credits] if the Corp has more scored agenda points than you.",
+      "title": "Iain Stirling: Retired Spook",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "baselink": 0,
+      "cgdb_url": null,
+      "faction": "Criminal",
+      "flavor": "\"Try to keep up.\"",
+      "illustrator": "Simon Eckert",
+      "imagesrc": "/images/cards/ken-express-tenma-disappeared-clone.png",
+      "influencelimit": 17,
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05029",
+      "number": 29,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "subtype": "Clone",
+      "text": "The first time you play a <strong>run</strong> event each turn, gain 1[Credits].",
+      "title": "Ken \"Express\" Tenma: Disappeared Clone",
+      "type": "Identity",
       "uniqueness": false
     },
     {
@@ -10080,6 +10245,27 @@
     {
       "cgdb_url": null,
       "cost": 1,
+      "faction": "Criminal",
+      "factioncost": 2,
+      "flavor": "Nothing is secure when you have the right documentation.",
+      "illustrator": "Adam S. Doyle",
+      "imagesrc": "/images/cards/passport.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/05046",
+      "number": 46,
+      "quantity": 3,
+      "setname": "Honor and Profit",
+      "side": "Runner",
+      "strength": 2,
+      "subtype": "Icebreaker - Decoder",
+      "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n2[Credits]: +2 strength.\r\nPassport cannot be used on ice protecting a remote server.",
+      "title": "Passport",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
       "faction": "Neutral",
       "factioncost": 1,
       "flavor": "\"The best place to hide is in plain sight, don't you think?\"",
@@ -10095,6 +10281,119 @@
       "title": "Oracle May",
       "type": "Resource",
       "uniqueness": true
+    },
+    {
+      "baselink": 1,
+      "cgdb_url": null,
+      "faction": "Shaper",
+      "illustrator": "Matt Zeilinger",
+      "imagesrc": "/images/cards/nasir-meidan-cyber-explorer.png",
+      "influencelimit": 15,
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06017",
+      "number": 17,
+      "quantity": 3,
+      "setname": "Upstalk",
+      "side": "Runner",
+      "subtype": "Cyborg",
+      "text": "Whenever you encounter a piece of ice that was just rezzed, lose all credits in your credit pool. Gain credits equal to the rez cost of that ice.",
+      "title": "Nasir Meidan: Cyber Explorer",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Jinteki",
+      "factioncost": 2,
+      "flavor": "Her eyes were the color of a vidscreen, tuned to a dead channel.",
+      "illustrator": "Lili Ibrahim",
+      "imagesrc": "/images/cards/cerebral-static.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06025",
+      "number": 25,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Current",
+      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nThe Runner's identity text box is blank.",
+      "title": "Cerebral Static",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "flavor": "\"I don't care how good your console is, or how tricked out your rig is. The lag time on a run on the moon from earthside can be a killer.\" -Leela Patel",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/lag-time.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06031",
+      "number": 31,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Current",
+      "text": "This operation is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nAll <strong>ice</strong> have +1 strength.",
+      "title": "Lag Time",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 4,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "illustrator": "Adam S. Doyle",
+      "imagesrc": "/images/cards/willothewisp.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06032",
+      "number": 32,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "text": "Whenever there is a successful run on this server, you may trash Will-o'-the-Wisp. If you do, choose an <strong>icebreaker</strong> that was used to break at least 1 subroutine during this run. The Runner adds that <strong>icebreaker</strong> to the bottom of his or her stack.",
+      "title": "Will-o'-the-Wisp",
+      "trash": 1,
+      "type": "Upgrade",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Anarch",
+      "factioncost": 2,
+      "illustrator": "Chris Newman",
+      "imagesrc": "/images/cards/scrubbed.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06034",
+      "number": 34,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Runner",
+      "subtype": "Current",
+      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\r\nThe first piece of ice encountered each turn has -2 strength for the remainder of the run.",
+      "title": "Scrubbed",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Criminal",
+      "factioncost": 1,
+      "flavor": "\"People keep saying that 'Cash is king' in the business, like it's untraceable in the days of DNA sniffers and microtracers. Digital credits can be just as anonymous, and they're just as easy to counterfeit.\" -Silhouette",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/cache.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06037",
+      "number": 37,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Runner",
+      "subtype": "Virus",
+      "text": "Place 3 virus counters on Cache when it is installed.\r\n<strong>Hosted virus counter</strong>: Gain 1[Credits].",
+      "title": "Cache",
+      "type": "Program",
+      "uniqueness": false
     }
   ],
   "sets": [
@@ -10169,6 +10468,16 @@
     {
       "released": null,
       "title": "Honor and Profit"
+    },
+    {
+      "cycle": "Lunar",
+      "released": null,
+      "title": "Upstalk"
+    },
+    {
+      "cycle": "Lunar",
+      "released": null,
+      "title": "The Spaces Between"
     }
   ]
 }
