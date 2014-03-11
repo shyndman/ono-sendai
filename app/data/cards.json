@@ -9287,11 +9287,20 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04087",
       "number": 87,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
       "strengthcost": 1,
       "subtype": "Icebreaker - AI",
+
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUse Alpha only on the outermost piece of ice protecting a server.",
       "title": "Alpha",
       "type": "Program",
@@ -9314,6 +9323,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04088",
       "number": 88,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
