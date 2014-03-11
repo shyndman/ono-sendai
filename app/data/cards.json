@@ -9254,6 +9254,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04086",
       "number": 86,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-09T20:48:50Z",
+          "id": "1zzpd6",
+          "title": "[COTD] CyberSolutions Mem Chip (March 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zzpd6/cotd_cybersolutions_mem_chip_march_9th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Chip",
@@ -9452,6 +9460,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04094",
       "number": 94,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-08T14:58:42Z",
+          "id": "1zw5yh",
+          "title": "[COTD] Restoring Face (March 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/1zw5yh/cotd_restoring_face_march_8th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "text": "Trash one of your installed <strong>sysops</strong>, <strong>executives</strong>, or <strong>clones</strong>. If you do, remove up to 2 bad publicity.",
@@ -9469,6 +9485,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04095",
       "number": 95,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-10T16:14:08Z",
+          "id": "202109",
+          "title": "[COTD] Market Research (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/202109/cotd_market_research_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Research",
