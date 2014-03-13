@@ -9300,7 +9300,6 @@
       "strength": 1,
       "strengthcost": 1,
       "subtype": "Icebreaker - AI",
-
       "text": "1[Credits]: Break ice subroutine.\r\n1[Credits]: +1 strength.\r\nUse Alpha only on the outermost piece of ice protecting a server.",
       "title": "Alpha",
       "type": "Program",
@@ -9529,6 +9528,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04096",
       "number": 96,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-13T17:15:09Z",
+          "id": "20bwvq",
+          "title": "[COTD] Wraparound (March 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20bwvq/cotd_wraparound_march_13th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "strength": 0,
