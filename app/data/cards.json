@@ -9350,6 +9350,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04089",
       "number": 89,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-14T21:27:54Z",
+          "id": "20fn9w",
+          "title": "[COTD] Blackmail (March 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20fn9w/cotd_blackmail_march_14th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Run",
