@@ -9564,6 +9564,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04097",
       "number": 97,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-16T21:02:44Z",
+          "id": "20kswr",
+          "title": "[COTD] GRNDL: Power Unleashed (March 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20kswr/cotd_grndl_power_unleashed_march_16th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Division",
@@ -9583,6 +9591,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04098",
       "number": 98,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-18T15:54:06Z",
+          "id": "20q4vf",
+          "title": "[COTD] Vulcan Coverup (March 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20q4vf/cotd_vulcan_coverup_march_18th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Security",
