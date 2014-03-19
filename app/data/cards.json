@@ -9287,6 +9287,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04087",
       "number": 87,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
@@ -9314,6 +9322,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04088",
       "number": 88,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
@@ -9334,6 +9350,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04089",
       "number": 89,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-14T21:27:54Z",
+          "id": "20fn9w",
+          "title": "[COTD] Blackmail (March 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20fn9w/cotd_blackmail_march_14th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Run",
@@ -9512,6 +9536,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04096",
       "number": 96,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-13T17:15:09Z",
+          "id": "20bwvq",
+          "title": "[COTD] Wraparound (March 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20bwvq/cotd_wraparound_march_13th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "strength": 0,
@@ -9532,6 +9564,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04097",
       "number": 97,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-16T21:02:44Z",
+          "id": "20kswr",
+          "title": "[COTD] GRNDL: Power Unleashed (March 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20kswr/cotd_grndl_power_unleashed_march_16th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Division",
@@ -9551,6 +9591,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04098",
       "number": 98,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-18T15:54:06Z",
+          "id": "20q4vf",
+          "title": "[COTD] Vulcan Coverup (March 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20q4vf/cotd_vulcan_coverup_march_18th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Security",
