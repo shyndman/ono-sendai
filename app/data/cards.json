@@ -9637,6 +9637,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04100",
       "number": 100,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-22T20:15:14Z",
+          "id": "213j81",
+          "title": "[COTD] Subliminal Messaging (March 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/213j81/cotd_subliminal_messaging_march_22nd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Gray Ops",
