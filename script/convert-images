@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+Dir['*.png'].each do |img|
+  puts "Converting #{ img }"
+  base = img.split('.').slice(0...-1).join('')
+  # `convert -quality 80 #{ base }.png #{ base }.jpg`
+  `cwebp -q 80 -noalpha -m 6 #{ base }.png -o #{ base }.webp`
+end
