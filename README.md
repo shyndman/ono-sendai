@@ -20,4 +20,4 @@ The server should now be up at `http://localhost:9000`
 
 Licensing
 ---------
-All code is offered under a [permissive license](https://github.com/shyndman/ono-sendai/blob/develop/LICENSE), but the card images and text are copyrighted by Fantasy Flight Publishing, Inc. Ono-Sendai is not affiliated with or approved by Fantasy Flight.
+All code is offered under a [copyleft license](https://github.com/shyndman/ono-sendai/blob/develop/LICENSE) (GPL v3). All card images and text are copyrighted by Fantasy Flight Publishing, Inc. Ono-Sendai is not affiliated with or approved by Fantasy Flight.
