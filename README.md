@@ -8,9 +8,12 @@ View it online at http://onosendaicorp.com
 Building instructions
 ---------------------
 Requirements:
-  node.js, bower (`npm install -g bower`), grunt (`npm install -g grunt-cli`)
+  node.js, bower, grunt
 
 1. Clone the repo
+1. Install dependencies if necessary
+    * Run `npm install -g bower`
+    * Run `npm install -g grunt-cli`
 1. Run `npm install`
 1. Run `bower install`
 1. Run `grunt server`
