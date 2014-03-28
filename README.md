@@ -12,11 +12,11 @@ Requirements:
 
 1. Clone the repo
 1. Install dependencies if necessary
-    * Run `npm install -g bower`
-    * Run `npm install -g grunt-cli`
-1. Run `npm install`
-1. Run `bower install`
-1. Run `grunt server`
+    * `npm install -g bower`
+    * `npm install -g grunt-cli`
+1. `npm install`
+1. `bower install`
+1. `grunt server`
 
 The server should now be up at `http://localhost:9000`
 
