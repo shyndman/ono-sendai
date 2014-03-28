@@ -12,7 +12,7 @@
     "underscore.string": "~2.3.3",
     "lunr.js": "~0.4.2",
     "jwerty": "~0.3.2",
-    "angular-bootstrap": "https://github.com/angular-ui/bootstrap.git#8cbeff0ffe960f5f46b9b886fa3db2d0c1ff2a9f",
+    "angular-bootstrap": "https://github.com/angular-ui/bootstrap.git#4b811b7adc84d752599d06f5f82db5f4d5d3b058",
     "fastclick": "~0.6.10",
     "angular-bindonce": "~0.2.1",
     "select2": "~3.4.5",
