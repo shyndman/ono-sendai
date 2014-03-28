@@ -10510,6 +10510,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "cost": 1,
       "faction": "Criminal",
@@ -10524,6 +10528,10 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 2,
+      "strengthcost": {
+        "credits": 2,
+        "strength": 2
+      },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n2[Credits]: +2 strength.\r\nPassport cannot be used on ice protecting a remote server.",
       "title": "Passport",
