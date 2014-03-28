@@ -9953,6 +9953,7 @@
       "side": "Corp",
       "strength": 3,
       "subtype": "Code Gate",
+      "subroutinecount": 1,
       "text": "[Subroutine] The next piece of ice the Runner encounters gains \"[Subroutine] End the run.\" after all its other subroutines for the remainder of this run.",
       "title": "Marker",
       "type": "ICE",
