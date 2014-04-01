@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-03-11T07:35:37Z",
+  "last-modified": "2014-03-28T00:00:00Z",
   "cards": [
     {
       "baselink": 0,
@@ -9287,6 +9287,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04087",
       "number": 87,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
@@ -9314,6 +9322,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04088",
       "number": 88,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-11T16:19:44Z",
+          "id": "20571w",
+          "title": "[CsOTD] Alpha & Omega (March 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20571w/csotd_alpha_omega_march_10th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "strength": 1,
@@ -9334,6 +9350,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04089",
       "number": 89,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-14T21:27:54Z",
+          "id": "20fn9w",
+          "title": "[COTD] Blackmail (March 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20fn9w/cotd_blackmail_march_14th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Runner",
       "subtype": "Run",
@@ -9512,6 +9536,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04096",
       "number": 96,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-13T17:15:09Z",
+          "id": "20bwvq",
+          "title": "[COTD] Wraparound (March 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20bwvq/cotd_wraparound_march_13th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "strength": 0,
@@ -9532,6 +9564,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04097",
       "number": 97,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-16T21:02:44Z",
+          "id": "20kswr",
+          "title": "[COTD] GRNDL: Power Unleashed (March 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20kswr/cotd_grndl_power_unleashed_march_16th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Division",
@@ -9551,6 +9591,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04098",
       "number": 98,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-18T15:54:06Z",
+          "id": "20q4vf",
+          "title": "[COTD] Vulcan Coverup (March 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/20q4vf/cotd_vulcan_coverup_march_18th_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Security",
@@ -9589,6 +9637,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04100",
       "number": 100,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-03-22T20:15:14Z",
+          "id": "213j81",
+          "title": "[COTD] Subliminal Messaging (March 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/213j81/cotd_subliminal_messaging_march_22nd_2014/"
+        }
+      ],
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Gray Ops",
@@ -9598,7 +9654,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/singularity-double-time",
       "cost": 4,
       "faction": "Anarch",
       "factioncost": 3,
@@ -9616,7 +9672,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/queens-gambit-double-time",
       "cost": 0,
       "faction": "Anarch",
       "factioncost": 3,
@@ -9634,7 +9690,83 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/dyson-fractal-generator-double-time",
+      "cost": 1,
+      "faction": "Anarch",
+      "factioncost": 3,
+      "flavor": "The Dyson Fractal Generator is a useless lump of silicon; all it does is produce truly random results. What kind of madman slaps that in his rig? What's the use of a totally random number? -John Masamori",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/dyson-fractal-generator.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04103",
+      "number": 103,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Chip - Stealth",
+      "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>fracters</strong>.",
+      "title": "Dyson Fractal Generator",
+      "type": "Hardware",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/silencer-double-time",
+      "cost": 1,
+      "faction": "Criminal",
+      "factioncost": 3,
+      "flavor": "Take Moore's Law, iterate it over a century or two, and mix in quantum computing. You get to the point where you're developing the software on a hardware platform that you design at the same time. Tailor-made for each other. Exciting time to be alive! -William Knuth, The Tower of Babbage",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/silencer.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04104",
+      "number": 104,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Chip - Stealth",
+      "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>killers</strong>.",
+      "title": "Silencer",
+      "type": "Hardware",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/savoir-faire-double-time",
+      "cost": 0,
+      "faction": "Criminal",
+      "factioncost": 3,
+      "flavor": "\"Predictive algorithms that fetch you the program you need before you even need before it. My second favorite lady.\" -Gabriel Santiago",
+      "illustrator": "RC Torres",
+      "imagesrc": "/images/cards/savoirfaire.png",
+      "memoryunits": 1,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04105",
+      "number": 105,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "text": "You cannot use Savoir-faire more than once each turn.\r\n2[Credits]: Install a program from your grip, paying the install cost.",
+      "title": "Savoir-faire",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/fall-guy-double-time",
+      "cost": 0,
+      "faction": "Criminal",
+      "factioncost": 1,
+      "flavor": "There are good, honest, hardworking cops in the NAPD. Officers who do their best to bring justice to the guilty and protect the innocent. Fortunately for the criminals, they're outnumbered by the other kind. The kind who are much easier to work with.",
+      "illustrator": "Agri Karuniawan",
+      "imagesrc": "/images/cards/fall-guy.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04106",
+      "number": 106,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "subtype": "Connection",
+      "text": "[Trash]: Prevent another installed resource from being trashed.\r\n[Trash]: Gain 2[Credits].",
+      "title": "Fall Guy",
+      "type": "Resource",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/power-nap-double-time",
       "cost": 0,
       "faction": "Shaper",
       "factioncost": 2,
@@ -9653,7 +9785,26 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/paintbrush-double-time",
+      "cost": 3,
+      "faction": "Shaper",
+      "factioncost": 4,
+      "flavor": "\"Hand-made code is like hand-made art. You can see the brush strokes, which lets you see the artist. And then you can see everything in a new way.\" -Kate \"Mac\" McCaffrey",
+      "illustrator": "Viktoria Gavrilenko",
+      "imagesrc": "/images/cards/paintbrush.png",
+      "memoryunits": 2,
+      "nrdb_url": "http://netrunnerdb.com/en/card/04108",
+      "number": 108,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Runner",
+      "text": "[Click]: Choose a rezzed piece of ice. That ice gains <strong>sentry</strong>, <strong>code gate</strong> or <strong>barrier</strong> until the end of the next run this turn.",
+      "title": "Paintbrush",
+      "type": "Program",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/lucky-find-double-time",
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 2,
@@ -9672,7 +9823,65 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/gyri-labyrinth-double-time",
+      "cost": 2,
+      "faction": "Haas-Bioroid",
+      "factioncost": 2,
+      "flavor": "Once inside, the only way out is through your own mind.",
+      "illustrator": "Liiga Smilshkalne",
+      "imagesrc": "/images/cards/gyri-labyrinth.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04110",
+      "number": 110,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "strength": 2,
+      "subtype": "Code Gate",
+      "text": "[Subroutine] The Runner's maximum hand size is reduced by 2 until the start of the Corp's next turn.",
+      "title": "Gyri Labyrinth",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/reclamation-order-double-time",
+      "cost": 1,
+      "faction": "Haas-Bioroid",
+      "factioncost": 2,
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/reclamation-order.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04111",
+      "number": 111,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Double",
+      "text": "As an additional cost to play this operation, spend [Click].\r\nName a card other than Reclamation Order. Reveal any number of copies of the named card from Archives and add them to HQ.",
+      "title": "Reclamation Order",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/broadcast-square-double-time",
+      "cost": 2,
+      "faction": "NBN",
+      "factioncost": 3,
+      "flavor": "Tourists have flocked to Broadcast Square in even greater numbers ever since the notorious Ho-meh's crime spree ended there in a hail of flechettes. Well, that's how it happened in the sensie.",
+      "illustrator": "Henning Ludvigsen",
+      "imagesrc": "/images/cards/broadcast-square.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04112",
+      "number": 112,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Facility",
+      "text": "Whenever you are about to take at least 1 bad publicity, <strong>trace<sup>3</sup></strong>&ndash; if successful, avoid taking the bad publicity.",
+      "title": "Broadcast Square",
+      "trash": 5,
+      "type": "Asset",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corporate-shuffle-double-time",
       "cost": 0,
       "faction": "NBN",
       "factioncost": 2,
@@ -9691,7 +9900,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/caprice-nisei-double-time",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -9711,7 +9920,47 @@
       "uniqueness": true
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shinobi-double-time",
+      "cost": 7,
+      "faction": "Jinteki",
+      "factioncost": 3,
+      "illustrator": "Chris Newman",
+      "imagesrc": "/images/cards/shinobi.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04115",
+      "number": 115,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "strength": 5,
+      "subtype": "Sentry - Tracer - AP - Illicit",
+      "text": "When you rez Shinobi, take 1 bad publicity.\r\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, do 1 net damage.\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, do 2 net damage.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, do 3 net damage and end the run.",
+      "title": "Shinobi",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/marker-double-time",
+      "cost": 0,
+      "faction": "Jinteki",
+      "factioncost": 1,
+      "flavor": "\"It doesn't do anything in and of itself. It just marks you as an intruder and makes the next ice do all the work.\" -Kate \"Mac\" McCaffrey",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/marker.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04116",
+      "number": 116,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "strength": 3,
+      "subtype": "Code Gate",
+      "subroutinecount": 1,
+      "text": "[Subroutine] The next piece of ice the Runner encounters gains \"[Subroutine] End the run.\" after all its other subroutines for the remainder of this run.",
+      "title": "Marker",
+      "type": "ICE",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/hive-double-time",
       "cost": 5,
       "faction": "Weyland Consortium",
       "factioncost": 2,
@@ -9730,9 +9979,28 @@
       "uniqueness": false
     },
     {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/witness-tampering-double-time",
+      "cost": 4,
+      "faction": "Weyland Consortium",
+      "factioncost": 1,
+      "flavor": "\"Now, let's talk about how little you remember of the events of June sixth through sixteenth.\"",
+      "illustrator": "Lorraine Schleter",
+      "imagesrc": "/images/cards/witness-tampering.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/04118",
+      "number": 118,
+      "quantity": 3,
+      "setname": "Double Time",
+      "side": "Corp",
+      "subtype": "Double",
+      "text": "As an additional cost to play this operation, spend [Click].\r\nRemove up to 2 bad publicity.",
+      "title": "Witness Tampering",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
       "advancementcost": 4,
       "agendapoints": 2,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/napd-contract-double-time",
       "faction": "Neutral",
       "factioncost": 0,
       "illustrator": "Viktoria Gavrilenko",
@@ -9749,7 +10017,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/quandary-double-time",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10243,6 +10511,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "cost": 1,
       "faction": "Criminal",
@@ -10257,6 +10529,10 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 2,
+      "strengthcost": {
+        "credits": 2,
+        "strength": 2
+      },
       "subtype": "Icebreaker - Decoder",
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n2[Credits]: +2 strength.\r\nPassport cannot be used on ice protecting a remote server.",
       "title": "Passport",
@@ -10462,7 +10738,7 @@
     },
     {
       "cycle": "Spin",
-      "released": null,
+      "released": "2014-03-28T00:00:00",
       "title": "Double Time"
     },
     {

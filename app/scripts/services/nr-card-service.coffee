@@ -239,13 +239,13 @@ class CardService
         console.warn "Unknown filter type: #{ filterDesc.type }"
 
   _buildNumericFilter: (filterDesc, filterArg) ->
-    (card) ->
-      cardFields =
-        if _.isArray(filterDesc.cardField)
-          filterDesc.cardField
-        else
-          [filterDesc.cardField]
+    cardFields =
+      if _.isArray(filterDesc.cardField)
+        filterDesc.cardField
+      else
+        [filterDesc.cardField]
 
+    (card) ->
       for field in cardFields when card[field]?
         fieldVal = card[field]
         return OPERATORS[filterArg.operator](fieldVal, filterArg.value)
@@ -469,7 +469,7 @@ class QueryResult
   cardOrdinal: (card) ->
     @orderedCards.indexOf(card)
 
-  # NOTE the equals. This is a helper function, not a method.
+  # NOTE the equals sign. This is a helper function, not a method.
   _cardAtOffset = (offset) ->
     (card) ->
       # NOTE, this could be optimized, but isn't likely a big deal

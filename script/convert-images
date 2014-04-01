@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+if ARGV.empty?
+  puts 'Usage: convert-images directory/containing/pngs'
+  exit(1)
+end
+
+Dir["#{ ARGV[0] }/*.png"].each do |img|
+  puts "Converting #{ img }"
+  base = img.split('.').slice(0...-1).join('')
+  `convert -quality 80 #{ base }.png #{ base }.jpg`
+  `cwebp -q 80 -noalpha -m 6 #{ base }.png -o #{ base }.webp`
+end
