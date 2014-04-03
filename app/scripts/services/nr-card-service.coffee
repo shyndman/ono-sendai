@@ -283,7 +283,7 @@ class CardService
       null
     else
       (card) =>
-        @_setsByTitle[card.setname].released?
+        @_setsByTitle[card.setname].isReleased()
 
   _groupCards: ({ groupByFields }, cards) =>
     sortFns =
