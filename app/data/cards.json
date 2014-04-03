@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-03-28T00:00:00Z",
+  "last-modified": "2014-04-03T00:00:00Z",
   "cards": [
     {
       "baselink": 0,
@@ -10671,6 +10671,92 @@
       "title": "Cache",
       "type": "Program",
       "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 4,
+      "cyclenumber": 6,
+      "faction": "Haas-Bioroid",
+      "faction_letter": "h",
+      "factioncost": 2,
+      "flavor": "Eliza's Toybox is the preeminent purveyor of high-class debauchery on the moon, courtesy of its bioroid pleasure models and other exotica. Every fantasy has its price.",
+      "illustrator": "Henning Ludvigsen",
+      "imagesrc": "/images/cards/elizas-toybox.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06042",
+      "number": 42,
+      "quantity": 3,
+      "setname": "First Contact",
+      "side": "Corp",
+      "subtype": "Ritzy",
+      "text": "[Click],[Click],[Click]: Rez a card, ignoring all costs.",
+      "title": "Eliza's Toybox",
+      "trash": 4,
+      "type": "Asset",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "cyclenumber": 6,
+      "faction": "Jinteki",
+      "faction_letter": "j",
+      "factioncost": 2,
+      "flavor": "The port was first built as a remote location to unload and offload dangerous felons.",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/port-anson-grid.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06044",
+      "number": 44,
+      "quantity": 3,
+      "setname": "First Contact",
+      "side": "Corp",
+      "subtype": "Region",
+      "text": "The Runner cannot jack out while running on this server unless he or she trashes 1 installed program .\r\nLimit 1 <strong>region</strong> per server.",
+      "title": "Port Anson Grid",
+      "trash": 5,
+      "type": "Upgrade",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "cyclenumber": 6,
+      "faction": "Anarch",
+      "faction_letter": "a",
+      "factioncost": 4,
+      "flavor": "Carved directly out of the lunar rock, Duggar's is a popular spot among blue-collar loonies and slumming risties. A place where you could find what you're looking for&ndash;if you knew who to look for, and didn't get distracted by the energetic dancers.",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/duggars.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06054",
+      "number": 54,
+      "quantity": 3,
+      "setname": "First Contact",
+      "side": "Runner",
+      "subtype": "Location - Seedy",
+      "text": "[Click],[Click],[Click],[Click]: Draw 10 cards.",
+      "title": "Duggar's",
+      "type": "Resource",
+      "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "cost": 8,
+      "cyclenumber": 6,
+      "faction": "Neutral",
+      "faction_letter": "n",
+      "factioncost": 1,
+      "flavor": "\"This is Rachel Beckman. She's in the business of keeping people alive.\"\r\nRachel smiled. \"Only when I'm not in the business of killing them.\"",
+      "illustrator": "Ashley Witter",
+      "imagesrc": "/images/cards/rachel-beckman.png",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06060",
+      "number": 60,
+      "quantity": 3,
+      "setname": "First Contact",
+      "side": "Runner",
+      "subtype": "Connection",
+      "text": "You have 1 additional [Click] to spend each turn.\r\nTrash Rachel Beckman if you are tagged.",
+      "title": "Rachel Beckman",
+      "type": "Resource",
+      "uniqueness": true
     }
   ],
   "sets": [
@@ -10755,6 +10841,11 @@
       "cycle": "Lunar",
       "released": null,
       "title": "The Spaces Between"
+    },
+    {
+      "cycle": "Lunar",
+      "released": null,
+      "title": "First Contact"
     }
   ]
 }
