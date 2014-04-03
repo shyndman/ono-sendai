@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CostToBreakCtrl', ($scope, $attrs, costToBreakCalculator) ->
+  .controller('CostToBreakCtrl', ($scope, $attrs, costToBreakCalculator, cardService, userPreferences) ->
       lastCard = null
 
       # Sets and filters the opponents and calculates stats
@@ -21,6 +21,10 @@ angular.module('onoSendai')
           (
             !$scope.maxIceStrength? or
             (opponent.card.originalstrength ? opponent.card.strength) <= $scope.maxIceStrength
+          ) and
+          (
+            userPreferences.showSpoilers() or
+            cardService.getSetByTitle(opponent.card.setname).isReleased()
           )
 
         # Stats!
@@ -49,6 +53,7 @@ angular.module('onoSendai')
 
       $scope.$watch 'opponentFilter', displayValueChanged
       $scope.$watch 'maxIceStrength', displayValueChanged
+      $scope.$watch (-> userPreferences.showSpoilers()), displayValueChanged
 
       inputValueChanged = (newVal, oldVal) ->
         if newVal != oldVal
