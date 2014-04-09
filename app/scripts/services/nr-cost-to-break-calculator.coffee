@@ -196,7 +196,6 @@ class BreakScripts
     if @_handleAntiAI(interaction, ice)
           return true # break complete
 
-  # If breakerStrength is specified, Darwin
   darwin: (interaction, breaker, strengthCost, breakCost, ice, { breakerStrength } = {}) =>
     if @_handleAntiAI(interaction, ice)
       return true # break complete

@@ -76,5 +76,5 @@ class UserPreferences
     localStorage.setItem('favourites', JSON.stringify(@_favs))
 
 angular.module('onoSendai')
-  .service 'userPreferences', () ->
+  .service 'userPreferences', ->
     new UserPreferences(arguments...)
