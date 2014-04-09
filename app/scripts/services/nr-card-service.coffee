@@ -68,7 +68,7 @@ class CardService
     { display: '≥', typed: '>=' }
   ]
 
-  constructor: ($http, @$log, @searchService, @filterDescriptors) ->
+  constructor: ($http, @$log, @imageService, @searchService, @filterDescriptors) ->
     @_cards = []
     @_sets = []
     @_setsByTitle = {}
@@ -364,6 +364,9 @@ class CardService
         _.map(allSubtypes, _.idify),
         _.times(allSubtypes.length, -> true))
 
+      # Load the card image
+      card.image = @imageService.load(card.imagesrc)
+
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
@@ -496,5 +499,5 @@ class QueryResult
 angular.module('onoSendai')
   # Note that we do not pass the constructor function directly, as it prevents ngMin from
   # properly rewriting the code to be minify-friendly.
-  .service('cardService', ($http, $log, searchService, filterDescriptors) ->
+  .service('cardService', ($http, $log, imageService, searchService, filterDescriptors) ->
     new CardService(arguments...))
