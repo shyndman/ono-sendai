@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="300" height="418"></canvas>
+
+  <script>
+    var loadImage = function(src) {
+      var image = document.createElement('img');
+      image.src = src;
+      return image;
+    };
+
+    var srcs = [
+      '/images/cards/rielle-kit-peddler-transhuman.png',
+      '/images/cards/indexing.png',
+      '/images/cards/rd-interface.png',
+      '/images/cards/deep-thought.png',
+      '/images/cards/new-angeles-city-hall.png',
+      '/images/cards/escher.png',
+      '/images/cards/exploratory-romp.png',
+      '/images/cards/freelance-coding-contract.png',
+      '/images/cards/scavenge.png',
+      '/images/cards/levy-ar-lab-access.png',
+      '/images/cards/monolith.png',
+      '/images/cards/feedback-filter.png',
+      '/images/cards/clone-chip.png',
+      '/images/cards/omnidrive.png',
+      '/images/cards/atman.png',
+      '/images/cards/cloak.png',
+      "/images/cards/whirlpool.png",
+      "/images/cards/willothewisp.png",
+      "/images/cards/witness-tampering.png",
+      "/images/cards/woman-in-the-red-dress.png",
+      "/images/cards/woodcutter.png",
+      "/images/cards/wotan.png",
+      "/images/cards/wraparound.png",
+      "/images/cards/wyldside.png",
+      "/images/cards/wyrm.png",
+      "/images/cards/xanadu.png",
+      "/images/cards/yagura.png",
+      "/images/cards/yog0.png"
+    ];
+
+    var images = {};
+    var loadCount = 0;
+    srcs.forEach(function(src) {
+      var image = images[src] = loadImage(src);
+      image.onload = function() {
+        if (++loadCount == srcs.length) {
+          onCardsLoaded();
+        }
+      }
+    });
+
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+
+    var onCardsLoaded = function() {
+
+      canvas.addEventListener('mousemove', function(e) {
+        var idx = Math.floor((e.x / 300) * srcs.length);
+        ctx.drawImage(images[srcs[idx]], 0, 0);
+      });
+
+      canvas.addEventListener('mouseout', function() {
+        ctx.drawImage(images[srcs[0]], 0, 0);
+      });
+    };
+  </script>
+</body>
+</html>
