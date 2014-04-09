@@ -4,6 +4,6 @@ class DeckService
 
   decks: ->
 
-angular.module('onoSendaiApp')
+angular.module('onoSendai')
   .service 'deckService', () ->
     new DeckService(arguments...)
