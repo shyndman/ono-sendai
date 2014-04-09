@@ -1,7 +1,7 @@
 # A service responsible for loading images.
 class ImageService
 
-  constructor: (@$q) ->
+  constructor: (@$q, @$document) ->
 
   # Begins loading the image found at url, and returns the Image
   # object. The image object is decorated with an additional property
@@ -9,7 +9,7 @@ class ImageService
   # loading.
   load: (url) ->
     d = @$q.defer()
-    img = new Image(url)
+    img = @$document.get(0).createElement('img')
     img.src = url
     img.onload = ->
       d.resolve(img)
@@ -18,5 +18,5 @@ class ImageService
 
 
 angular.module('onoSendai')
-  .service 'imageService', ($q) ->
+  .service 'imageService', ($q, $document) ->
     new ImageService(arguments...)
