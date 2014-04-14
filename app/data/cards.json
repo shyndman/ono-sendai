@@ -10589,6 +10589,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "subroutines": "all",
+        "credits": 0
+      },
       "cgdb_url": null,
       "cost": 4,
       "cyclenumber": 5,
@@ -10604,6 +10608,7 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 0,
+      "strengthcost": 1,
       "subtype": "Icebreaker - AI",
       "text": "Place 1 power counter on Overmind when it is installed for each unused MU.\r\n<strong>Hosted power counter</strong>: Break ice subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Overmind",
