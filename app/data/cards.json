@@ -9424,8 +9424,8 @@
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
-      "imagesrc": "/images/cards/toshiyuki-sakai.png",
       "illustrator": "RC Torres",
+      "imagesrc": "/images/cards/toshiyuki-sakai.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/04092",
       "number": 92,
       "quantity": 3,
@@ -9953,8 +9953,8 @@
       "setname": "Double Time",
       "side": "Corp",
       "strength": 3,
-      "subtype": "Code Gate",
       "subroutinecount": 1,
+      "subtype": "Code Gate",
       "text": "[Subroutine] The next piece of ice the Runner encounters gains \"[Subroutine] End the run.\" after all its other subroutines for the remainder of this run.",
       "title": "Marker",
       "type": "ICE",
@@ -10028,6 +10028,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04120",
       "number": 120,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-04-14T01:03:42Z",
+          "id": "22ysnr",
+          "title": "[COTD] Quandry (Monday - April 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/22ysnr/cotd_quandry_monday_april_14th_2014/"
+        }
+      ],
       "setname": "Double Time",
       "side": "Corp",
       "strength": 0,
@@ -10580,8 +10588,11 @@
       "type": "Hardware",
       "uniqueness": false
     },
-
     {
+      "breakcost": {
+        "subroutines": "all",
+        "credits": 0
+      },
       "cgdb_url": null,
       "cost": 4,
       "cyclenumber": 5,
@@ -10597,6 +10608,7 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 0,
+      "strengthcost": 1,
       "subtype": "Icebreaker - AI",
       "text": "Place 1 power counter on Overmind when it is installed for each unused MU.\r\n<strong>Hosted power counter</strong>: Break ice subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Overmind",
