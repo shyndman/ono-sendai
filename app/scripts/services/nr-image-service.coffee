@@ -20,7 +20,7 @@ class ImageService
 class ImageWrapper
 
   constructor: (imageEle) ->
-    @getImage = -> imageEle
+    @getImageElement = -> imageEle
 
   loaded: ->
     @getImage().loadedPromise
