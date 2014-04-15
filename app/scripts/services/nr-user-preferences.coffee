@@ -5,28 +5,28 @@
 # some point.
 class UserPreferences
 
-  constructor: ->
-    @_favs =      JSON.parse(localStorage.getItem('favourites') + '') ? {}
-    @_setsOwned = JSON.parse(localStorage.getItem('setsOwned')  + '') ? 'core-set': 0
+  constructor: (@_localStorage) ->
+    @_favs      = @_localStorage.getItem('favourites') ? {}
+    @_setsOwned = @_localStorage.getItem('setsOwned')  ? { 'core-set': 0 }
 
   isCardFavourite: (card) =>
     @_favs[card.id] ? false
 
   toggleCardFavourite: (card) =>
     @_favs[card.id] = !@isCardFavourite(card)
-    @_persistFavourites()
+    @_localStorage.setItem('favourites', @_favs)
 
   showSpoilers: (flag) =>
     if flag?
-      localStorage.setItem('showSpoilers', flag)
+      @_localStorage.setItem('showSpoilers', flag)
     else
-      JSON.parse(localStorage.getItem('showSpoilers'))
+      @_localStorage.getItem('showSpoilers')
 
   zoom: (zoom) =>
     if zoom?
-      localStorage.setItem('zoom', zoom)
+      @_localStorage.setItem('zoom', zoom)
     else
-      localStorage.getItem('zoom')
+      @_localStorage.getItem('zoom')
 
   # Returns true if the user has configurd their set ownership
   hasConfiguredSets: =>
@@ -35,11 +35,9 @@ class UserPreferences
   # Returns the date the user last configured their sets
   dateSetsConfigured: (dateConfigured) =>
     if dateConfigured?
-      localStorage.setItem('dateSetsConfigured', dateConfigured.toISOString())
-    else if isoDate = localStorage.getItem('dateSetsConfigured')?
-      new Date(isoDate)
+      @_localStorage.setDate('dateSetsConfigured', dateConfigured)
     else
-      null
+      @_localStorage.getDate('dateSetsConfigured')
 
   # Returns the quantity of a set owned by the player
   quantityOfSet: (setNameOrId) ->
@@ -63,18 +61,13 @@ class UserPreferences
 
       # We need to copy the sets hash so that we can perform future comparisons.
       @_setsOwned = angular.copy(sets)
-      @_persistSetsOwned()
+      @_localStorage.setItem('setsOwned', @_setsOwned)
     else
       # We need to copy the sets hash so that we can perform the comparison
       # in the setter.
       angular.copy(@_setsOwned)
 
-  _persistSetsOwned: =>
-    localStorage.setItem('setsOwned', JSON.stringify(@_setsOwned))
-
-  _persistFavourites: =>
-    localStorage.setItem('favourites', JSON.stringify(@_favs))
 
 angular.module('onoSendai')
-  .service 'userPreferences', ->
+  .service 'userPreferences', (localStorage) ->
     new UserPreferences(arguments...)
