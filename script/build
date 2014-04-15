@@ -10,4 +10,5 @@ git commit --amend
 LAST_TAG=$(git describe $(git rev-list --tags --max-count=1))
 git tag -d $LAST_TAG
 git tag $LAST_TAG
-git push && git push --tags
+git push
+git push --tags
