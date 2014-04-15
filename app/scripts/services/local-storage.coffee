@@ -1,3 +1,4 @@
+# Thin wrapper around LocalStorage that provides JSON (de/)serialization.
 class LocalStorageUtil
 
   getItem: (key) ->
@@ -14,6 +15,7 @@ class LocalStorageUtil
 
   setDate: (key, date) ->
     localStorage.setItem(key, date.toISOString())
+
 
 angular.module('onoSendai')
   .service 'localStorage', ->
