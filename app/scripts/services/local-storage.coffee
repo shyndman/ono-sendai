@@ -7,6 +7,9 @@ class LocalStorageUtil
   setItem: (key, obj) ->
     localStorage.setItem(key, JSON.stringify(obj))
 
+  deleteItem: (key) ->
+    localStorage.deleteItem(key)
+
   getDate: (key) ->
     if (isoDate = localStorage.getItem(key))?
       new Date(isoDate)
