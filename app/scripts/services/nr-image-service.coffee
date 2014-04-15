@@ -10,18 +10,21 @@ class ImageService
   load: (url) ->
     d = @$q.defer()
     img = @$document.get(0).createElement('img')
+    wrapper = new ImageWrapper(img)
     img.src = url
     img.onload = ->
-      d.resolve(img)
+      d.resolve(wrapper)
     img.loadedPromise = d.promise
-    new ImageWrapper(img)
+    wrapper
 
-# Wraps a DOM node, and exposes a promise that is resolved when the
+# Wraps a DOM node, and exposes a promise that is resolved when the image
+# finishes loading.
 class ImageWrapper
 
   constructor: (imageEle) ->
     @getImageElement = -> imageEle
 
+  # Returns a promise that resolves to the receiver when it finishes loading
   loaded: ->
     @getImage().loadedPromise
 
