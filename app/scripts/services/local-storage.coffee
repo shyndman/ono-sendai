@@ -1,5 +1,5 @@
 # Thin wrapper around LocalStorage that provides JSON (de/)serialization.
-class LocalStorageUtil
+class LocalStorageUtils
 
   getItem: (key) ->
     JSON.parse(localStorage.getItem(key) ? 'null')
@@ -22,4 +22,4 @@ class LocalStorageUtil
 
 angular.module('onoSendai')
   .service 'localStorage', ->
-    new LocalStorageUtil(arguments...)
+    new LocalStorageUtils(arguments...)
