@@ -10009,6 +10009,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04119",
       "number": 119,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-04-15T04:14:23Z",
+          "id": "232fsc",
+          "title": "[COTD] NAPD Contract (Tuesday - April 15th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/232fsc/cotd_napd_contract_tuesday_april_15th_2014/"
+        }
+      ],
       "setname": "Double Time",
       "side": "Corp",
       "subtype": "Security",
@@ -10590,8 +10598,8 @@
     },
     {
       "breakcost": {
-        "subroutines": "all",
-        "credits": 0
+        "credits": 0,
+        "subroutines": "all"
       },
       "cgdb_url": null,
       "cost": 4,
