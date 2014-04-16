@@ -11,7 +11,7 @@ CARDS_PATH = 'app/data/cards.json'
 def write_out(cards)
   puts "Writing out cards to #{CARDS_PATH}"
   open CARDS_PATH, 'w' do |io|
-    io.write cards.to_json
+    io.write JSON.pretty_generate(cards)
   end
 end
 
