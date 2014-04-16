@@ -9853,6 +9853,14 @@
       "nrdb_url": "http://netrunnerdb.com/en/card/04111",
       "number": 111,
       "quantity": 3,
+      "reddit_cotds": [
+        {
+          "created": "2014-04-16T06:20:03Z",
+          "id": "235uxx",
+          "title": "[COTD] Reclamation Order (Wednesday - April 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/235uxx/cotd_reclamation_order_wednesday_april_16th_2014/"
+        }
+      ],
       "setname": "Double Time",
       "side": "Corp",
       "subtype": "Double",
