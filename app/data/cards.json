@@ -327,6 +327,10 @@
       "type": "Resource"
     },
     {
+      "altart": {
+        "illustrator": "Wylie Beckert",
+        "imagesrc": "/images/cards/wyldside-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/wyldside-core",
       "cost": 3,
       "faction": "Anarch",
