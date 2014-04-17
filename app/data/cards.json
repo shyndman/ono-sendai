@@ -42,7 +42,7 @@
       "setname": "Core Set",
       "side": "Runner",
       "text": "Add 1 card (or up to 2 <strong>virus</strong> cards) from your heap to your grip.",
-      "title": "D\u00e9j\u00e0 Vu",
+      "title": "Déjà Vu",
       "type": "Event"
     },
     {
@@ -1701,7 +1701,7 @@
       "side": "Runner",
       "subtype": "G-mod",
       "text": "+1[Memory Unit]",
-      "title": "Chaos Theory: W\u00fcnderkind",
+      "title": "Chaos Theory: Wünderkind",
       "type": "Identity"
     },
     {
@@ -1814,7 +1814,7 @@
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 1,
-      "flavor": "\"Saved my bacon more than once, but gives a wicked sense of d\u00e9j\u00e0 vu.\" - Whizzard",
+      "flavor": "\"Saved my bacon more than once, but gives a wicked sense of déjà vu.\" - Whizzard",
       "illustrator": "Adam S. Doyle",
       "imagesrc": "/images/cards/disrupter.png",
       "memoryunits": 1,
@@ -1917,7 +1917,7 @@
       "side": "Runner",
       "subtype": "Console",
       "text": "+1[Memory Unit]\nOnce per turn, you may immediately make another run when a successful run ends.\nLimit 1 <strong>console</strong> per player.",
-      "title": "Doppelg\u00e4nger",
+      "title": "Doppelgänger",
       "type": "Hardware"
     },
     {
@@ -2277,7 +2277,7 @@
       "cost": 5,
       "faction": "Shaper",
       "factioncost": 1,
-      "flavor": "\"The itsy bitsy spider went up the data spout\u2026\"\n-Chaos Theory",
+      "flavor": "\"The itsy bitsy spider went up the data spout…\"\n-Chaos Theory",
       "illustrator": "JuanManuel Tumburus",
       "imagesrc": "/images/cards/creeper.png",
       "memoryunits": 1,
@@ -3260,7 +3260,7 @@
       "cost": 2,
       "faction": "Neutral",
       "factioncost": 0,
-      "flavor": "The data was better than she could have ever imagined. This Santiago fellow really knew what he was doing. She began to imagine the havoc she could wreak at the upcoming charity dinner\u2026",
+      "flavor": "The data was better than she could have ever imagined. This Santiago fellow really knew what he was doing. She began to imagine the havoc she could wreak at the upcoming charity dinner…",
       "illustrator": "Christina Davis",
       "imagesrc": "/images/cards/dirty-laundry.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/03052",
@@ -3404,8 +3404,8 @@
       ],
       "setname": "Opening Moves",
       "side": "Runner",
-      "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>Ca\u00efssa</strong> program from your grip or heap, ignoring all costs.",
+      "subtype": "Caïssa",
+      "text": "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>Caïssa</strong> program from your grip or heap, ignoring all costs.",
       "title": "Pawn",
       "type": "Program"
     },
@@ -3430,8 +3430,8 @@
       ],
       "setname": "Opening Moves",
       "side": "Runner",
-      "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Rook on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
+      "subtype": "Caïssa",
+      "text": "[Click]: Host Rook on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
       "title": "Rook",
       "type": "Program"
     },
@@ -3611,8 +3611,8 @@
       ],
       "setname": "Second Thoughts",
       "side": "Runner",
-      "subtype": "Ca\u00efssa",
-      "text": "[Click]: Host Bishop on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\nHost ice has -2 strength.",
+      "subtype": "Caïssa",
+      "text": "[Click]: Host Bishop on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\nHost ice has -2 strength.",
       "title": "Bishop",
       "type": "Program"
     },
@@ -5288,8 +5288,8 @@
       "side": "Corp",
       "strength": 0,
       "subtype": "Sentry - Tracer",
-      "text": "When you rez Drac\u014d, you may pay X[Credits] to place X power counters on it.\nDrac\u014d has +1 strength for each power counter on it.\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
-      "title": "Drac\u014d",
+      "text": "When you rez Dracō, you may pay X[Credits] to place X power counters on it.\nDracō has +1 strength for each power counter on it.\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
+      "title": "Dracō",
       "type": "ICE"
     },
     {
@@ -6315,7 +6315,7 @@
       "strength": 0,
       "subroutinecount": 0,
       "subtype": "Code Gate - Tracer",
-      "text": "Salvage can be advanced only while rezzed and gains \u201c[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\u201d for each advancement token on it.",
+      "text": "Salvage can be advanced only while rezzed and gains “[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.” for each advancement token on it.",
       "title": "Salvage",
       "type": "ICE"
     },
@@ -6434,7 +6434,7 @@
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 4,
-      "flavor": "I will serve you\u2026for a time.",
+      "flavor": "I will serve you…for a time.",
       "illustrator": "Adam S. Doyle",
       "imagesrc": "/images/cards/ronin.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/02112",
@@ -7462,7 +7462,7 @@
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 2,
-      "flavor": "Himitsu-Bako is a simple ice barrier that appears as a digital puzzle box. What makes it special is the ease with which it can be uninstalled and installed in a different server, throwing up barriers in unexpected places and giving any intruder a curious feeling of d\u00e9j\u00e0 vu.",
+      "flavor": "Himitsu-Bako is a simple ice barrier that appears as a digital puzzle box. What makes it special is the ease with which it can be uninstalled and installed in a different server, throwing up barriers in unexpected places and giving any intruder a curious feeling of déjà vu.",
       "illustrator": "Andrew Mar",
       "imagesrc": "/images/cards/himitsubako.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/04013",
@@ -8006,7 +8006,7 @@
       "setname": "Mala Tempora",
       "side": "Runner",
       "subtype": "Console",
-      "text": "+3[Memory Unit]\r\nUse the MU on Deep Red only for <strong>Ca\u00efssa</strong> programs.\r\nWhenever you install a <strong>Ca\u00efssa</strong> program, you may trigger its [Click] ability without spending [Click].\r\nLimit 1 <strong>console</strong> per player.",
+      "text": "+3[Memory Unit]\r\nUse the MU on Deep Red only for <strong>Caïssa</strong> programs.\r\nWhenever you install a <strong>Caïssa</strong> program, you may trigger its [Click] ability without spending [Click].\r\nLimit 1 <strong>console</strong> per player.",
       "title": "Deep Red",
       "type": "Hardware",
       "uniqueness": true
@@ -8041,8 +8041,8 @@
       "setname": "Mala Tempora",
       "side": "Runner",
       "strength": 7,
-      "subtype": "Icebreaker - AI - Ca\u00efssa",
-      "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Ca\u00efssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
+      "subtype": "Icebreaker - AI - Caïssa",
+      "text": "2[Credits]: Break subroutine on host ice.\r\n[Click]: Host Knight on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
       "title": "Knight",
       "type": "Program",
       "uniqueness": false
@@ -8724,7 +8724,7 @@
       "cost": 1,
       "faction": "Shaper",
       "factioncost": 1,
-      "flavor": "\"One-shot icebreakers are popular among many of my prot\u00e9g\u00e9s. They don't have the patience for the hunt.\" -The Professor",
+      "flavor": "\"One-shot icebreakers are popular among many of my protégés. They don't have the patience for the hunt.\" -The Professor",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/sharpshooter.png",
       "logicalsubtypes": [
@@ -9177,7 +9177,7 @@
         {
           "created": "2014-03-03T16:14:54Z",
           "id": "1zfx6c",
-          "title": "[COTD] \u2666 Tallie Perrault (March 3rd, 2014)",
+          "title": "[COTD] ♦ Tallie Perrault (March 3rd, 2014)",
           "url": "http://www.reddit.com/r/Netrunner/comments/1zfx6c/cotd_tallie_perrault_march_3rd_2014/"
         }
       ],
@@ -9433,7 +9433,7 @@
         {
           "created": "2014-03-04T14:54:17Z",
           "id": "1zj61l",
-          "title": "[COTD] \u2666 Toshiyuki Sakai (March 4th, 2014)",
+          "title": "[COTD] ♦ Toshiyuki Sakai (March 4th, 2014)",
           "url": "http://www.reddit.com/r/Netrunner/comments/1zj61l/cotd_toshiyuki_sakai_march_4th_2014/"
         }
       ],
@@ -9479,7 +9479,7 @@
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
-      "flavor": "He slowly pried open the lid, and the tant\u014d glinted madly in the half-light. The executive motioned to the blade. Looks like the meeting was being cut short.",
+      "flavor": "He slowly pried open the lid, and the tantō glinted madly in the half-light. The executive motioned to the blade. Looks like the meeting was being cut short.",
       "illustrator": "Gong Studios",
       "imagesrc": "/images/cards/restoring-face.png",
       "nrdb_url": "http://netrunnerdb.com/en/card/04094",
@@ -9603,7 +9603,7 @@
       "setname": "Fear and Loathing",
       "side": "Corp",
       "subtype": "Security",
-      "text": "When you score Vulcan Coverup, do 2 meat damage.\r\nWhen the Runner steals Vulcan Coverup, take 1 bad p\u00fbblicity.",
+      "text": "When you score Vulcan Coverup, do 2 meat damage.\r\nWhen the Runner steals Vulcan Coverup, take 1 bad pûblicity.",
       "title": "Vulcan Coverup",
       "type": "Agenda",
       "uniqueness": false
@@ -9841,7 +9841,15 @@
       "text": "[Subroutine] The Runner's maximum hand size is reduced by 2 until the start of the Corp's next turn.",
       "title": "Gyri Labyrinth",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2391kx",
+          "title": "[COTD] Gyri Labyrinth (Thursday - April 17th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2391kx/cotd_gyri_labyrinth_thursday_april_17th_2014/",
+          "created": "2014-04-17T06:30:23Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/reclamation-order-double-time",
@@ -10609,6 +10617,7 @@
         "credits": 0,
         "subroutines": "all"
       },
+      "breakscript": "genericAI",
       "cgdb_url": null,
       "cost": 4,
       "cyclenumber": 5,
