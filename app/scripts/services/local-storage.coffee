@@ -19,6 +19,9 @@ class LocalStorageUtils
   setDate: (key, date) ->
     localStorage.setItem(key, date.toISOString())
 
+  setNumber: (key, num) ->
+    @setItem(key, Number(num))
+
 
 angular.module('onoSendai')
   .service 'localStorage', ->

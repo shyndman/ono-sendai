@@ -24,7 +24,7 @@ class UserPreferences
 
   zoom: (zoom) =>
     if zoom?
-      @_localStorage.setItem('zoom', zoom)
+      @_localStorage.setNumber('zoom', zoom)
     else
       @_localStorage.getItem('zoom')
 
