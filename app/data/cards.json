@@ -10609,6 +10609,7 @@
         "credits": 0,
         "subroutines": "all"
       },
+      "breakscript": "genericAI",
       "cgdb_url": null,
       "cost": 4,
       "cyclenumber": 5,
