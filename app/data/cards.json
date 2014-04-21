@@ -9899,7 +9899,15 @@
       "title": "Broadcast Square",
       "trash": 5,
       "type": "Asset",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "23ls0e",
+          "title": "[COTD] Broadcast Square (Monday - April 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ls0e/cotd_broadcast_square_monday_april_21st_2014/",
+          "created": "2014-04-21T17:25:16Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corporate-shuffle-double-time",
