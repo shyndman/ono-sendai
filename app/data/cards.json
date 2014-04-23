@@ -9954,7 +9954,15 @@
       "title": "Caprice Nisei",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "23ot80",
+          "title": "[COTD] Caprice Nisei (Tuesday - April 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ot80/cotd_caprice_nisei_tuesday_april_22nd_2014/",
+          "created": "2014-04-22T16:19:54Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shinobi-double-time",
