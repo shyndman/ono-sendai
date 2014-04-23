@@ -327,6 +327,10 @@
       "type": "Resource"
     },
     {
+      "altart": {
+        "illustrator": "Wylie Beckert",
+        "imagesrc": "/images/cards/wyldside-alt.png"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/wyldside-core",
       "cost": 3,
       "faction": "Anarch",
@@ -9895,7 +9899,15 @@
       "title": "Broadcast Square",
       "trash": 5,
       "type": "Asset",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "23ls0e",
+          "title": "[COTD] Broadcast Square (Monday - April 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ls0e/cotd_broadcast_square_monday_april_21st_2014/",
+          "created": "2014-04-21T17:25:16Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corporate-shuffle-double-time",
@@ -9914,7 +9926,15 @@
       "text": "As an additional cost to play this operation, spend [Click].\r\nShuffle all cards in HQ into R&D. Draw 5 cards.",
       "title": "Corporate Shuffle",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "23ctoa",
+          "title": "[COTD] Corporate Shuffle (Friday - April 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ctoa/cotd_corporate_shuffle_friday_april_18th_2014/",
+          "created": "2014-04-18T14:03:54Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/caprice-nisei-double-time",
@@ -9934,7 +9954,15 @@
       "title": "Caprice Nisei",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "23ot80",
+          "title": "[COTD] Caprice Nisei (Tuesday - April 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ot80/cotd_caprice_nisei_tuesday_april_22nd_2014/",
+          "created": "2014-04-22T16:19:54Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/shinobi-double-time",
