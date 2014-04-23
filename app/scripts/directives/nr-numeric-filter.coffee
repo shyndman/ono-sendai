@@ -29,7 +29,7 @@ angular.module('onoSendai')
         if jwerty.is('esc', e)
           scope.$apply -> scope.filter.value = undefined
 
-      # All the user to type operators into the input field to change the operator dropdown value
+      # Allow the user to type operators into the input field to change the operator dropdown value
       _.each cardService.comparisonOperators, (op) ->
         keys = op.typed.split('').map(keyToJwertyCombo).join(',')
         inputElement.keydown(jwerty.event(keys, (e) ->
