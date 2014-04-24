@@ -10002,7 +10002,15 @@
       "text": "[Subroutine] The next piece of ice the Runner encounters gains \"[Subroutine] End the run.\" after all its other subroutines for the remainder of this run.",
       "title": "Marker",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "23ryml",
+          "title": "[COTD] Marker (Wednesday - April 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23ryml/cotd_marker_wednesday_april_23rd_2014/",
+          "created": "2014-04-23T16:05:13Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/hive-double-time",
