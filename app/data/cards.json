@@ -9749,7 +9749,15 @@
       "text": "You cannot use Savoir-faire more than once each turn.\r\n2[Credits]: Install a program from your grip, paying the install cost.",
       "title": "Savoir-faire",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24mrzm",
+          "title": "[COTD] Savoir-Faire (Saturday - May 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24mrzm/cotd_savoirfaire_saturday_may_3rd_2014/",
+          "created": "2014-05-03T17:19:53Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/fall-guy-double-time",
@@ -9806,7 +9814,15 @@
       "text": "[Click]: Choose a rezzed piece of ice. That ice gains <strong>sentry</strong>, <strong>code gate</strong> or <strong>barrier</strong> until the end of the next run this turn.",
       "title": "Paintbrush",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24kiqi",
+          "title": "[COTD] Paintbrush (Friday - May 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24kiqi/cotd_paintbrush_friday_may_2nd_2014/",
+          "created": "2014-05-02T20:21:03Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/lucky-find-double-time",
@@ -9981,7 +9997,15 @@
       "text": "When you rez Shinobi, take 1 bad publicity.\r\n[Subroutine] <strong>Trace<sup>1</sup></strong>&ndash; If successful, do 1 net damage.\r\n[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, do 2 net damage.\r\n[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, do 3 net damage and end the run.",
       "title": "Shinobi",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "23vd9k",
+          "title": "[COTD] Shinobi (Thursday - April 24th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23vd9k/cotd_shinobi_thursday_april_24th_2014/",
+          "created": "2014-04-24T16:33:29Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/marker-double-time",
@@ -10029,7 +10053,15 @@
       "text": "Hive loses an \"[Subroutine] End the run.\" subroutine for each agenda point in the Corp's score area.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.\r\n[Subroutine] End the run.",
       "title": "Hive",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "23yikq",
+          "title": "[COTD] Hive (Friday - April 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/23yikq/cotd_hive_friday_april_25th_2014/",
+          "created": "2014-04-25T15:40:40Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/witness-tampering-double-time",
@@ -10048,7 +10080,15 @@
       "text": "As an additional cost to play this operation, spend [Click].\r\nRemove up to 2 bad publicity.",
       "title": "Witness Tampering",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24a5qr",
+          "title": "[COTD] Witness Tampering (Tuesday - April 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24a5qr/cotd_witness_tampering_tuesday_april_29th_2014/",
+          "created": "2014-04-29T15:14:36Z"
+        }
+      ]
     },
     {
       "advancementcost": 4,
