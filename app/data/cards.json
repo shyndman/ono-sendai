@@ -10977,6 +10977,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "cost": 2,
       "faction": "Criminal",
@@ -10991,6 +10995,10 @@
       "setname": "Honor and Profit",
       "side": "Runner",
       "strength": 2,
+      "strengthcost": {
+        "credits": 2,
+        "strength": 3
+      },
       "subtype": "Icebreaker",
       "text": "1[Credits]: Break <strong>tracer</strong> subroutine.\r\n2[Credits]: +3 strength.",
       "title": "Gingerbread",
