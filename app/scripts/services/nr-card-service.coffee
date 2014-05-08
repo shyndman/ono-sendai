@@ -39,10 +39,10 @@ class CardService
   FACTION_ORDINALS =
     'Anarch':             0
     'Criminal':           1
-    'Haas-Bioroid':       2
-    'Jinteki':            3
-    'NBN':                4
-    'Shaper':             5
+    'Shaper':             2
+    'Haas-Bioroid':       3
+    'Jinteki':            4
+    'NBN':                5
     'Weyland Consortium': 6
     'Neutral':            7
 
