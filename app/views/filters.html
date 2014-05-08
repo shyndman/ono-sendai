@@ -47,7 +47,7 @@ NOTES:
                }">
             <button
                 class="btn btn-default btn-sm"
-                ng-repeat="faction in field.side[filter.side.toLowerCase()]"
+                ng-repeat="faction in field.sideFactions[filter.side.toLowerCase()]"
                 ng-model="filter.fieldFilters.faction[faction.model]"
                 ui-all-or-one-box="filter.fieldFilters.faction"
                 ui-all-or-one-box-field="{{ faction.model }}"
@@ -92,4 +92,9 @@ NOTES:
       </div>
     </div>
   </div>
+
+  <aside ng-if="filter.side == null">
+    For additional filter options, please select
+    <a href="/cards/corp">Corporation</a> or <a href="/cards/runner">Runner</a>
+  </aside>
 </div>

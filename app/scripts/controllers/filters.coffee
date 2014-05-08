@@ -33,13 +33,17 @@ angular.module('onoSendai')
 
     # Supply the subtypes for the current side
     cardService.ready().then updateSubtypes = ->
-      subtypes = cardService.subtypes[$scope.filter.side.toLowerCase()]
+      side = $scope.filter.side?.toLowerCase() ? 'all'
+      subtypes = cardService.subtypes[side]
       $scope.subtypes = _.map subtypes, (st) ->
         id: st.id
         text: st.title
 
+    # Supply the illustrators for the current side
     cardService.ready().then updateIllustrators = ->
-      illustrators = cardService.illustrators[$scope.filter.side.toLowerCase()]
+      side = $scope.filter.side?.toLowerCase() ? 'all'
+      illustrators = cardService.illustrators[side]
+      console.log 'SIDE', side, cardService.illustrators, illustrators
       $scope.illustrators = _.map illustrators, (i) ->
         id: i.id
         text: i.title
@@ -92,15 +96,25 @@ angular.module('onoSendai')
         false
 
     $scope.isGroupShown = (group, currentSide) ->
-      if group.side?
-        group.side == currentSide
-      else
-        true
+      !group.sideVisibility? or
+      (
+        _.isFunction(group.sideVisibility) and
+        group.sideVisibility(currentSide)
+      ) or
+      group.sideVisibility == currentSide
 
     $scope.isFieldShown = (field, group, activeGroup, currentSide) ->
-      group.name is 'general' or ( # General fields are always shown...
-        activeGroup == group.name and # ...so are the active group fields...
-        (field.side is undefined or field.side == currentSide) # ...but are sometimes filtered if they have a side
+      (
+        group.name == 'general' or
+        activeGroup == group.name
+      ) and
+      (
+        !field.sideVisibility? or
+        (
+          _.isFunction(field.sideVisibility) and
+          field.sideVisibility(currentSide)
+        ) or
+        field.sideVisibility == currentSide
       )
 
     $scope.isFieldDisabled = (field, group, activeGroup, currentSide) ->

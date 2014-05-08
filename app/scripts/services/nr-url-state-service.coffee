@@ -18,7 +18,7 @@ class UrlStateService
     generalFields = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
 
     # Used to provide pretty faction abbreviations to the URL
-    @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').side
+    @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').sideFactions
 
     # Build the initial filter from the URL
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
@@ -27,7 +27,10 @@ class UrlStateService
   updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
     @$log.debug('Updating URL with latest query arguments')
 
-    url = "/cards/#{ queryArgs.side.toLowerCase() }"
+    url = '/cards'
+
+    if queryArgs.side?
+      url += "/#{ queryArgs.side.toLowerCase() }"
 
     if queryArgs.activeGroup != 'general'
       group = _.findWhere(@filterUI, name: queryArgs.activeGroup)
@@ -51,8 +54,11 @@ class UrlStateService
         when 'inSet'
           searchVal =
             if name is 'faction'
-              relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
-              @_factionSearchVal(relevantFactions, arg)
+              if queryArgs.side?
+                relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+                @_factionSearchVal(relevantFactions, arg)
+              else
+                ''
             else
               if _.isArray(arg)
                 arg.join(',')
@@ -109,16 +115,18 @@ class UrlStateService
     ///
       ^
       /cards
-      /(corp|runner) # 1 - side
+      (?:
+        /(corp|runner) # 1 - side
+      )?
       (?:
         /
-        ([^c][^/]+)  # 2 - card type -- [note] the ^c is to prevent a match on /card/ (kind of gross)
+        ([^c][^/]+)    # 2 - card type -- [note] the ^c is to prevent a match on /card/ (kind of gross)
       )?
       (?:
         /card/
-        ([^/]+)      # 3 - card
+        ([^/]+)        # 3 - card
         (?:
-          /([^/])    # 4 - card page
+          /([^/])      # 4 - card page
         )?
       )?
     ///
@@ -141,8 +149,8 @@ class UrlStateService
       return [ queryArgs, undefined ]
 
     # Side
-    side =  cardsMatch[1]
-    queryArgs.side = _.capitalize(side)
+    side = cardsMatch[1]
+    queryArgs.side = if side? then _.capitalize(side) else null
 
     # Active group
     if cardsMatch[2]
