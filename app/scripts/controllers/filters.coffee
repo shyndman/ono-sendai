@@ -92,15 +92,23 @@ angular.module('onoSendai')
         false
 
     $scope.isGroupShown = (group, currentSide) ->
-      if group.side?
-        group.side == currentSide
+      if group.sideVisibility?
+        group.sideVisibility == currentSide
       else
         true
 
     $scope.isFieldShown = (field, group, activeGroup, currentSide) ->
-      group.name is 'general' or ( # General fields are always shown...
-        activeGroup == group.name and # ...so are the active group fields...
-        (field.side is undefined or field.side == currentSide) # ...but are sometimes filtered if they have a side
+      (
+        group.name == 'general' or
+        activeGroup == group.name
+      ) and
+      (
+        !field.sideVisibility? or
+        (
+          _.isFunction(field.side) and
+          field.sideVisibility(currentSide)
+        ) or
+        field.sideVisibility == currentSide
       )
 
     $scope.isFieldDisabled = (field, group, activeGroup, currentSide) ->
