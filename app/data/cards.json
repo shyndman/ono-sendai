@@ -9711,7 +9711,15 @@
       "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>fracters</strong>.",
       "title": "Dyson Fractal Generator",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24vcjo",
+          "title": "[COTD] Dyson Fractal Generator (Tuesday - May 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24vcjo/cotd_dyson_fractal_generator_tuesday_may_6th_2014/",
+          "created": "2014-05-06T15:36:15Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/silencer-double-time",
@@ -9730,7 +9738,15 @@
       "text": "1[Recurring Credits]\r\nUse this credit to pay for using <strong>killers</strong>.",
       "title": "Silencer",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24yp4v",
+          "title": "[COTD] Silencer (Wednesday - May 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24yp4v/cotd_silencer_wednesday_may_7th_2014/",
+          "created": "2014-05-07T16:42:58Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/savoir-faire-double-time",
@@ -9776,7 +9792,15 @@
       "text": "[Trash]: Prevent another installed resource from being trashed.\r\n[Trash]: Gain 2[Credits].",
       "title": "Fall Guy",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25186f",
+          "title": "[COTD] Fall Guy (Thursday - May 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25186f/cotd_fall_guy_thursday_may_8th_2014/",
+          "created": "2014-05-08T11:39:08Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/power-nap-double-time",
@@ -9841,7 +9865,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nGain 9[Credits].",
       "title": "Lucky Find",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "24rvxu",
+          "title": "[COTD] Lucky Find (Monday - May 5th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/24rvxu/cotd_lucky_find_monday_may_5th_2014/",
+          "created": "2014-05-05T13:51:48Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/gyri-labyrinth-double-time",
@@ -10345,8 +10377,8 @@
       "setname": "Honor and Profit",
       "side": "Corp",
       "subtype": "Ambush",
-      "text": "When the Runner accesses Shi.Ky\u016b, you may pay X[Credits]. The Runner must take either X net damage or add Shi.Ky\u016b to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.Ky\u016b from R&D.",
-      "title": "Shi.Ky\u016b",
+      "text": "When the Runner accesses Shi.Kyū, you may pay X[Credits]. The Runner must take either X net damage or add Shi.Kyū to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.Kyū from R&D.",
+      "title": "Shi.Kyū",
       "trash": 0,
       "type": "Asset",
       "uniqueness": false
@@ -10550,7 +10582,7 @@
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 4,
-      "flavor": "Known as the Red Woman, Hanz\u014d is notorious for her ruthless methods of server protection.",
+      "flavor": "Known as the Red Woman, Hanzō is notorious for her ruthless methods of server protection.",
       "illustrator": "Smirtouille",
       "imagesrc": "/images/cards/tori-hanz.jpg",
       "nrdb_url": "http://netrunnerdb.com/en/card/05022",
@@ -10560,7 +10592,7 @@
       "side": "Corp",
       "subtype": "Sysop",
       "text": "The first time you would do any amount of net damage during each run on this server, instead you may pay 2[Credits] to do 1 brain damage.",
-      "title": "Tori Hanz\u014d",
+      "title": "Tori Hanzō",
       "trash": 2,
       "type": "Upgrade",
       "uniqueness": true
@@ -11113,7 +11145,7 @@
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
-      "flavor": "She slipped back onto her hopper. \"I'm your family now, so don't twist me, d\u01d2ng ma?\"\r\nHe flicked the e-cig away from his mouth, and nodded. What had he gotten himself into?",
+      "flavor": "She slipped back onto her hopper. \"I'm your family now, so don't twist me, dǒng ma?\"\r\nHe flicked the e-cig away from his mouth, and nodded. What had he gotten himself into?",
       "illustrator": "Ashley Witter",
       "imagesrc": "/images/cards/trimaf-contact.jpg",
       "nrdb_url": "http://netrunnerdb.com/en/card/05050",
