@@ -57,7 +57,7 @@ angular.module('onoSendai')
             name: 'faction'
             type: 'faction'
             icon: 'faction'
-            side:
+            sideFactions:
               corp: [
                 { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'Corp: Haas-Bioroid' }
                 { name: 'Jinteki',            abbr: 'J',   model: 'Corp: Jinteki' }
