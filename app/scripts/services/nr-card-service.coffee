@@ -73,10 +73,10 @@ class CardService
     @_sets = []
     @_setsByTitle = {}
     @_setsById = {}
-    @subtypeCounts = corp: {}, runner: {}
-    @subtypes = corp: [], runner: []
-    @illustratorCounts = corp: {}, runner: {}
-    @illustrators = corp: [], runner: []
+    @subtypeCounts = all: {}, corp: {}, runner: {}
+    @subtypes = all: [], corp: [], runner: []
+    @illustratorCounts = all: {}, corp: {}, runner: {}
+    @illustrators = all: [], corp: [], runner: []
 
     # Begin loading immediately
     @_cardsPromise = $http.get(CARDS_URL)
@@ -367,12 +367,16 @@ class CardService
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
+        @subtypeCounts['all'][st] ?= 0
+        @subtypeCounts['all'][st]++
         @subtypeCounts[side][st] ?= 0
         @subtypeCounts[side][st]++
 
       # Increment the occurrences of each of the card's illustrator counts
       if card.illustrator?
         card.illustratorId = _.idify(card.illustrator)
+        @illustratorCounts['all'][card.illustrator] ?= 0
+        @illustratorCounts['all'][card.illustrator]++
         @illustratorCounts[side][card.illustrator] ?= 0
         @illustratorCounts[side][card.illustrator]++
       else if card.type != 'Identity' # Core identities have no illustrator

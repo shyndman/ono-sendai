@@ -121,6 +121,7 @@ angular.module('onoSendai')
         hiddenGeneralFields:
           cost: true
           factionCost: true
+        sideVisibility: (side) -> side != null
         fieldFilters: [
           {
             name: 'influenceLimit'
