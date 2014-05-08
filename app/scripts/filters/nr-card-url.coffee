@@ -41,7 +41,7 @@ angular.module('onoSendai')
             else
               card.altart.illustratorId
 
-          "#{ urlPrefix }/cards/#{ side }?illustrator=#{ id }&group=illustrator"
+          "#{ urlPrefix }/cards?illustrator=#{ id }&group=illustrator"
         when 'subtype'
           "#{ urlPrefix }/cards/#{ side }?subtype=#{ _.idify(arg) }"
         when 'image'

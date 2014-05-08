@@ -140,4 +140,11 @@
     // Hide all the clear buttons in IE
     input::-ms-clear { display: none; }
   }
+
+  aside {
+    padding: 9px 0 0 10px;
+    margin: 14px 8px 0;
+    border-top: 1px solid #e7e7e7;
+    font-size: 12px;
+  }
 }

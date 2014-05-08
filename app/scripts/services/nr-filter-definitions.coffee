@@ -57,7 +57,8 @@ angular.module('onoSendai')
             name: 'faction'
             type: 'faction'
             icon: 'faction'
-            side:
+            sideVisibility: (side) -> side != null
+            sideFactions:
               corp: [
                 { name: 'Haas-Bioroid',       abbr: 'HB',  model: 'Corp: Haas-Bioroid' }
                 { name: 'Jinteki',            abbr: 'J',   model: 'Corp: Jinteki' }
@@ -120,6 +121,7 @@ angular.module('onoSendai')
         hiddenGeneralFields:
           cost: true
           factionCost: true
+        sideVisibility: (side) -> side != null
         fieldFilters: [
           {
             name: 'influenceLimit'
@@ -134,7 +136,7 @@ angular.module('onoSendai')
             icon: 'minimum-deck-size'
           }
           {
-            side: 'Runner'
+            sideVisibility: 'Runner'
             name: 'baseLink'
             type: 'numeric'
             placeholder: 'Base Link'
@@ -145,7 +147,7 @@ angular.module('onoSendai')
       {
         name: 'agenda'
         display: 'agendas'
-        side: 'Corp'
+        sideVisibility: 'Corp'
         fieldFilters: [
           {
             name: 'points'
@@ -158,7 +160,7 @@ angular.module('onoSendai')
       {
         name: 'asset'
         display: 'assets'
-        side: 'Corp'
+        sideVisibility: 'Corp'
         fieldFilters: [
           {
             name: 'assetTrashCost'
@@ -171,12 +173,12 @@ angular.module('onoSendai')
       {
         name: 'operation'
         display: 'operations'
-        side: 'Corp'
+        sideVisibility: 'Corp'
       },
       {
         name: 'ice'
         display: 'ice'
-        side: 'Corp'
+        sideVisibility: 'Corp'
         fieldFilters: [
           {
             name: 'subroutineCount'
@@ -195,7 +197,7 @@ angular.module('onoSendai')
       {
         name: 'upgrade'
         display: 'upgrades'
-        side: 'Corp'
+        sideVisibility: 'Corp'
         fieldFilters: [
           {
             name: 'upgradeTrashCost'
@@ -208,17 +210,17 @@ angular.module('onoSendai')
       {
         name: 'event'
         display: 'events'
-        side: 'Runner'
+        sideVisibility: 'Runner'
       },
       {
         name: 'hardware'
         display: 'hardware'
-        side: 'Runner'
+        sideVisibility: 'Runner'
       },
       {
         name: 'program'
         display: 'programs'
-        side: 'Runner'
+        sideVisibility: 'Runner'
         fieldFilters: [
           {
             name: 'memoryUnits'
@@ -231,7 +233,7 @@ angular.module('onoSendai')
       {
         name: 'resource'
         display: 'resources'
-        side: 'Runner'
+        sideVisibility: 'Runner'
       }
     ]
   )
@@ -278,7 +280,6 @@ angular.module('onoSendai')
         baseLink:
           type: 'numeric'
           cardField: 'baselink'
-          inclusionPredicate: (queryArgs) -> queryArgs.side is 'Runner'
     }
     ice: {
       cardType: 'ICE'
