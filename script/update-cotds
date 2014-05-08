@@ -12,6 +12,7 @@ def write_out(cards)
   puts "Writing out cards to #{CARDS_PATH}"
   open CARDS_PATH, 'w' do |io|
     io.write JSON.pretty_generate(cards)
+    io.write "\n"
   end
 end
 
