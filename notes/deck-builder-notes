@@ -1,7 +1,8 @@
 When deck builder is selected, the user can:
 
-* List existing decks
+/decks - list decks
+/decks/new - new deck
+/decks/{deck-id} - view
+/decks/{deck-id}/edit - edit
 
-
-* Oracle May card-type percentages
 * Type/subtype percentages and counts
