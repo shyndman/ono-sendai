@@ -11,7 +11,6 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
-  # Matches deck URLs
   DECKS_URL_MATCHER =
     ///
       ^
@@ -24,7 +23,6 @@ class UrlStateService
       )?
     ///
 
-  # Matches card grid URLs
   CARD_URL_MATCHER =
     ///
       ^
@@ -176,8 +174,7 @@ class UrlStateService
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
       return [ queryArgs, undefined, undefined ]
 
-    side = cardsMatch[1]
-    if side?
+    if (side = cardsMatch[1])?
       queryArgs.side = _.capitalize(cardsMatch[1])
 
     if cardsMatch[2]
