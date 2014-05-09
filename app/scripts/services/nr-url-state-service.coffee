@@ -11,6 +11,40 @@ class UrlStateService
 
   URL_TO_DATA_OPERATORS = _.invert(DATA_TO_URL_OPERATORS)
 
+  # Matches deck URLs
+  DECKS_URL_MATCHER =
+    ///
+      ^
+      /decks
+      (?:
+        /([^/]*) # 1 - new or deck ID
+        (?:/edit
+          (.*)   # 2 - card filters - passed along to cards URL matcher
+        )?
+      )?
+    ///
+
+  # Matches card grid URLs
+  CARD_URL_MATCHER =
+    ///
+      ^
+      /cards
+      (?:
+        /(corp|runner) # 1 - side
+      )?
+      (?:
+        /
+        ([^c][^/]+)    # 2 - card type -- [note] the ^c is to prevent a match on /card/ (kind of gross)
+      )?
+      (?:
+        /card/
+        ([^/]+)        # 3 - card
+        (?:
+          /([^/])      # 4 - card page
+        )?
+      )?
+    ///
+
   constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @queryArgDefaults) ->
     @generatedUrl = undefined
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
@@ -23,11 +57,22 @@ class UrlStateService
     # Build the initial filter from the URL
     @_setStateFromUrl()
 
+  # Invoked when the location changes to update the query arguments
+  _locationChanged: (e, newUrl, oldUrl) =>
+    # If this service is responsible for the last URL update, don't react to it
+    if @$location.url() == @generatedUrl
+      return
+
+    @$log.debug "URL changed to #{ @$location.url() }"
+    @_setStateFromUrl()
+    @$rootScope.$broadcast('urlStateChange')
+
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
     @$log.debug('Updating URL with latest query arguments')
 
     url = '/cards'
+    search = {}
 
     if queryArgs.side?
       url += "/#{ queryArgs.side.toLowerCase() }"
@@ -38,11 +83,11 @@ class UrlStateService
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
+
     if cardPage? and cardPage == 'cost-to-break'
       url += "/$"
 
     # Build up the query string parameters
-    search = {}
     for name, desc of @cardService.relevantFilters(queryArgs)
       arg = queryArgs.fieldFilters[name]
       searchVal = @_filterSearchVal(queryArgs, name, desc, arg)
@@ -116,74 +161,25 @@ class UrlStateService
         .value()
         .join(',')
 
-  _locationChanged: (e, newUrl, oldUrl) =>
-    # If this service is responsible for the last URL update, don't react to it
-    if @$location.url() == @generatedUrl
-      return
-
-    @$log.debug "URL changed to #{ @$location.url() }"
-    @_setStateFromUrl()
-    @$rootScope.$broadcast('urlStateChange')
-
   _setStateFromUrl: =>
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
-  # Matches deck URLs
-  _decksUrlMatcher:
-    ///
-      ^
-      /decks
-      (?:
-        /([^/]*) # 1 - new or deck ID
-        (?:/edit
-          (.*)   # 2 - card filters - passed along to cards URL matcher
-        )?
-      )?
-    ///
-
-  # Matches card grid URLs
-  _cardsUrlMatcher:
-    ///
-      ^
-      /cards
-      (?:
-        /(corp|runner) # 1 - side
-      )?
-      (?:
-        /
-        ([^c][^/]+)    # 2 - card type -- [note] the ^c is to prevent a match on /card/ (kind of gross)
-      )?
-      (?:
-        /card/
-        ([^/]+)        # 3 - card
-        (?:
-          /([^/])      # 4 - card page
-        )?
-      )?
-    ///
-
-  # [todo] This is getting a bit ugly. Consider a refactor
   _stateFromUrl: ->
     selectedCardId = null
     cardPage = null
-
-    # Copy defaults and assign general as the default active group
     queryArgs = angular.copy(@queryArgDefaults.get())
-    queryArgs.activeGroup = 'general'
-
-    # Match the URL
-    cardsMatch = @$location.path().match(@_cardsUrlMatcher)
+    search = @$location.search()
+    cardsMatch = @$location.path().match(CARD_URL_MATCHER)
 
     # No URL match. Return default query arguments.
     if !cardsMatch?
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
-      return [ queryArgs, undefined ]
+      return [ queryArgs, undefined, undefined ]
 
-    # Side
     side = cardsMatch[1]
-    queryArgs.side = if side? then _.capitalize(side) else null
+    if side?
+      queryArgs.side = _.capitalize(cardsMatch[1])
 
-    # Active group
     if cardsMatch[2]
       queryArgs.activeGroup = _.findWhere(@filterUI, display: cardsMatch[2])?.name ? queryArgs.activeGroup
 
@@ -194,55 +190,53 @@ class UrlStateService
       switch cardsMatch[4].trim()
         when '$'
           cardPage = 'cost-to-break'
+        else
+          @$log.warn("Unrecognized card page #{ cardsMatch[4] }")
 
-    search = @$location.search()
-
-    for name, desc of @cardService.relevantFilters(queryArgs, false)
-      if !search[name]?
-        continue
-
-      switch desc.type
-        when 'search'
-          queryArgs.search = search.search
-
-        when 'numeric'
-          [ op, val ] = search[name].split(':')
-          if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
-            break
-
-          queryArgs.fieldFilters[name] =
-            operator: URL_TO_DATA_OPERATORS[op]
-            value: Number(val)
-
-        when 'inSet'
-          if name == 'faction'
-            queryFactions = queryArgs.fieldFilters.faction
-            factions = @factionUiMappingsBySide[side]
-
-            modelFlags = _.object(
-              _.map(
-                search[name].split(','),
-                (f) -> _.findWhere(factions, abbr: f)?.model)
-            , [])
-
-            # Remove unrecognized model flags
-            delete modelFlags['undefined']
-
-            # If we have any recognized model flags, set them
-            if _.keys(modelFlags).length != 0
-              _.each queryFactions, (val, key) ->
-                queryFactions[key] = key of modelFlags
-          else
-            queryArgs.fieldFilters[name] = search[name]
-
-        else # switch
-          queryArgs.fieldFilters[name] = search[name]
+    for name, desc of @cardService.relevantFilters(queryArgs, false) when search[name]?
+      @_setQueryValFromSearch(queryArgs, search, name, desc, side)
 
     # Groupings
     if search.group
       queryArgs.groupByFields = search.group.split(',')
 
     [ queryArgs, selectedCardId, cardPage ]
+
+  # Populates the supplied queryArgs with a single argument, as described
+  # by name and desc.
+  _setQueryValFromSearch: (queryArgs, search, name, desc, side) =>
+    switch desc.type
+      when 'search'
+        queryArgs.search = search.search
+
+      when 'numeric'
+        [ op, val ] = search[name].split(':')
+        if !val? or !op? or !URL_TO_DATA_OPERATORS[op]?
+          break
+
+        queryArgs.fieldFilters[name] =
+          operator: URL_TO_DATA_OPERATORS[op]
+          value: Number(val)
+
+      when 'inSet'
+        if name == 'faction'
+          queryFactions = queryArgs.fieldFilters.faction
+          factions = @factionUiMappingsBySide[side]
+
+          modelFlags = _(search[name].split(','))
+            .chain()
+            .map((f) -> _.findWhere(factions, abbr: f)?.model)
+            .compact()
+            .object([])
+            .value()
+
+          _.each queryFactions, (val, key) ->
+            queryFactions[key] = key of modelFlags
+        else
+          queryArgs.fieldFilters[name] = search[name]
+
+      else
+        queryArgs.fieldFilters[name] = search[name]
 
 
 angular
