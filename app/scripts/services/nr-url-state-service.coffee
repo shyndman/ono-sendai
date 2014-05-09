@@ -38,58 +38,72 @@ class UrlStateService
 
     if selectedCard?
       url += "/card/#{ selectedCard.id }"
-
-    if cardPage and cardPage == 'cost-to-break'
+    if cardPage? and cardPage == 'cost-to-break'
       url += "/$"
 
     # Build up the query string parameters
     search = {}
     for name, desc of @cardService.relevantFilters(queryArgs)
       arg = queryArgs.fieldFilters[name]
-      switch desc.type
-        when 'numeric'
-          urlVal = arg.value
-          urlOp = DATA_TO_URL_OPERATORS[arg.operator]
-          search[name] = "#{ urlOp }:#{ urlVal }"
-        when 'inSet'
-          searchVal =
-            if name is 'faction'
-              if queryArgs.side?
-                relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
-                @_factionSearchVal(relevantFactions, arg)
-              else
-                ''
-            else
-              if _.isArray(arg)
-                arg.join(',')
-              else
-                arg
-          search[name] = searchVal if searchVal
-        when 'search'
-          search.search = queryArgs.search
-        when 'showSpoilers'
-          # noop
-        else
-          search[name] = arg
+      searchVal = @_filterSearchVal(queryArgs, name, desc, arg)
 
-    # Grouping
+      if !searchVal?
+        continue
+      else if _.isArray(searchVal)
+        search[searchVal[0]] = searchVal[1]
+      else
+        search[name] = searchVal
+
+    # Grouping (if not default)
     if !angular.equals(queryArgs.groupByFields, [ 'faction', 'type' ])
       search.group = queryArgs.groupByFields.join(',')
 
-    # Set the generated URL
-    @$location.url(url).search(search)
-
     # Determine whether we should push the URL, or whether we should replace it.
-    pushUrl = (!selectedCard? and  @selectedCardId?) or
+    pushUrl = forcePushState or
+              (!selectedCard? and  @selectedCardId?) or
               ( selectedCard? and !@selectedCardId?) or
               (@queryArgs.side != queryArgs.side)
 
-    @$location.replace() if !pushUrl and !forcePushState
+    # Set the generated URL
+    @$location.url(url).search(search)
+    @$location.replace() if !pushUrl
 
     # Update local state
     @generatedUrl = @$location.url()
     @queryArgs = angular.copy(queryArgs)
     @selectedCardId = selectedCard?.id
+
+  # Returns the query string variable value for the filter with the
+  # specified name, description and argument. If this method returns
+  # a two-element array,
+  _filterSearchVal: (queryArgs, name, desc, arg) =>
+    switch desc.type
+      when 'numeric'
+        urlVal = arg.value
+        urlOp = DATA_TO_URL_OPERATORS[arg.operator]
+        "#{ urlOp }:#{ urlVal }"
+
+      when 'inSet'
+        if name is 'faction'
+          if queryArgs.side?
+            relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+            @_factionSearchVal(relevantFactions, arg)
+          else
+            null
+        else
+          if _.isArray(arg)
+            arg.join(',')
+          else
+            arg
+
+      when 'search'
+        [ 'search', queryArgs.search ]
+
+      when 'showSpoilers'
+        # noop
+
+      else
+        arg
 
   # Returns a comma separated string of faction abbreviations, based on the factions
   # provided.
@@ -167,10 +181,9 @@ class UrlStateService
         when '$'
           cardPage = 'cost-to-break'
 
-    relevantFilters = @cardService.relevantFilters(queryArgs, false)
     search = @$location.search()
 
-    for name, desc of relevantFilters
+    for name, desc of @cardService.relevantFilters(queryArgs, false)
       if !search[name]?
         continue
 
