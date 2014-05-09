@@ -2,7 +2,7 @@ angular.module('onoSendai')
   # Contains default values for the filters manipulated by the user interface
   .factory('queryArgDefaults', (userPreferences) ->
     get: ->
-      side: 'Corp'
+      side: null
       search: ''
       activeGroup: 'general'
       groupByFields: [ 'faction', 'type' ]
