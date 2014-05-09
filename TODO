@@ -39,6 +39,7 @@
 [todo] Don't scroll to top when toggling spoilers
 [todo] If I decide to go with public decks, allow searching decks by datapack
 [bug] Filter to set and subtype, jump to a card, go back, subtype is no longer selected
+[bug] Text colors are different depending on the input control
 
 RESPONSIVE NOTES
   Card view
