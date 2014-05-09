@@ -128,6 +128,20 @@ class UrlStateService
   _setStateFromUrl: =>
     [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
+  # Matches deck URLs
+  _decksUrlMatcher:
+    ///
+      ^
+      /decks
+      (?:
+        /([^/]*) # 1 - new or deck ID
+        (?:/edit
+          (.*)   # 2 - card filters - passed along to cards URL matcher
+        )?
+      )?
+    ///
+
+  # Matches card grid URLs
   _cardsUrlMatcher:
     ///
       ^
