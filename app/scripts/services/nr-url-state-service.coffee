@@ -21,7 +21,7 @@ class UrlStateService
     @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').sideFactions
 
     # Build the initial filter from the URL
-    [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
+    @_setStateFromUrl()
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
@@ -108,8 +108,11 @@ class UrlStateService
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
-    [ @queryArgs, @selectedCardId, @cardPage ]  = @_stateFromUrl()
+    @_setStateFromUrl()
     @$rootScope.$broadcast('urlStateChange')
+
+  _setStateFromUrl: =>
+    [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
 
   _cardsUrlMatcher:
     ///
