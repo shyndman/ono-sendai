@@ -8,12 +8,14 @@ class CostToBreakCalculator
         'code-gate':      @_performQuery('Corp', 'ice', 'code-gate')
         'ap':             @_performQuery('Corp', 'ice', 'ap')
         'destroyer':      @_performQuery('Corp', 'ice', 'destroyer')
+        'tracer':         @_performQuery('Corp', 'ice', 'tracer')
         'allIce':         @_performQuery('Corp', 'ice')
         'killer':         @_performQuery('Runner', 'program', 'killer')
         'fracter':        @_performQuery('Runner', 'program', 'fracter')
         'decoder':        @_performQuery('Runner', 'program', 'decoder')
         'anti-ap':        @_performQuery('Runner', 'program', 'anti-ap')
         'anti-destroyer': @_performQuery('Runner', 'program', 'anti-destroyer')
+        'anti-tracer':    @_performQuery('Runner', 'program', 'anti-tracer')
         'ai':             @_performQuery('Runner', 'program', 'ai')
       ).then(({
         'sentry':         @_sentries
@@ -21,12 +23,14 @@ class CostToBreakCalculator
         'code-gate':      @_codeGates
         'ap':             @_aps
         'destroyer':      @_destroyers
+        'tracer':         @_tracers
         'allIce':         @_allIce
         'killer':         @_killers
         'fracter':        @_fracters
         'decoder':        @_decoders
         'anti-ap':        @_antiAps
         'anti-destroyer': @_antiDestroyers
+        'anti-tracer':    @_antiTracers
         'ai':             @_ais
       }) => @$log.debug('Cost to Break queries complete'))
 
@@ -68,6 +72,10 @@ class CostToBreakCalculator
     if ice.subtypesSet['destroyer']
       breakers = breakers.concat @_antiDestroyers.orderedCards
 
+    if ice.subtypesSet['tracer']
+      breakers = breakers.concat @_antiTracers.orderedCards
+
+
     # [todo] How do Deus X / Sharpshooter fit in here
 
     breakers = breakers.concat @_ais.orderedCards
@@ -96,6 +104,9 @@ class CostToBreakCalculator
 
     if breaker.subtypesSet['anti-destroyer']
       ice = ice.concat @_destroyers.orderedCards
+
+    if breaker.subtypesSet['anti-tracer']
+      ice = ice.concat @_tracers.orderedCards
 
     if breaker.subtypesSet['ai'] or options.tinkering
       ice = ice.concat @_allIce.orderedCards
