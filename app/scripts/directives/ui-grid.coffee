@@ -405,7 +405,7 @@ angular.module('onoSendai')
         queryResult = newVal
 
         # If we have a pending layout (maybe due to a layout event in the same frame of the event loop),
-        # the query-result-change layout takes precedence.
+        # the new query result takes precedence.
         if pendingLayout?
           $log.debug 'Preempting queued layout'
           $timeout.cancel pendingLayout
