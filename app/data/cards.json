@@ -10941,6 +10941,10 @@
       "uniqueness": false
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines": 1
+      },
       "cgdb_url": null,
       "cost": 3,
       "faction": "Criminal",
@@ -11020,6 +11024,9 @@
       "flavor": "Catch me if you can!",
       "illustrator": "Adam S. Doyle",
       "imagesrc": "/images/cards/gingerbread.jpg",
+      "logicalsubtypes": [
+        "Anti-tracer"
+      ],
       "memoryunits": 1,
       "nrdb_url": "http://netrunnerdb.com/en/card/05044",
       "number": 44,

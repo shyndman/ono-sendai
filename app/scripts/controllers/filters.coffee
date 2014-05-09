@@ -43,7 +43,6 @@ angular.module('onoSendai')
     cardService.ready().then updateIllustrators = ->
       side = $scope.filter.side?.toLowerCase() ? 'all'
       illustrators = cardService.illustrators[side]
-      console.log 'SIDE', side, cardService.illustrators, illustrators
       $scope.illustrators = _.map illustrators, (i) ->
         id: i.id
         text: i.title
