@@ -117,5 +117,14 @@ angular.module('onoSendai')
       )
 
     $scope.isFieldDisabled = (field, group, activeGroup, currentSide) ->
-      group.name is 'general' and findGroup(activeGroup).hiddenGeneralFields?[field.name]
+      group.name is 'general' and
+      findGroup(activeGroup).hiddenGeneralFields?[field.name]
+
+    $scope.fieldHasInput = (val) ->
+      if _.isString(val)
+        val.length > 0
+      else if _.isNumber(val)
+        true
+      else
+        false
   )

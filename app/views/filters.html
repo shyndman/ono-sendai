@@ -31,7 +31,7 @@ NOTES:
                  id="{{ field.name }}-filter"
                  class="form-control input-sm"
                  ng-class="{
-                   'has-input': !!filter.search
+                   'has-input': fieldHasInput(filter.search)
                  }"
                  placeholder="{{ field.placeholder }}"
                  ng-model="filter.search"
@@ -63,7 +63,7 @@ NOTES:
           <numeric-filter
             id="{{ field.name }}-filter"
             ng-class="{
-              'has-input': !!filter.fieldFilters[field.name].value
+              'has-input': fieldHasInput(filter.fieldFilters[field.name].value)
             }"
             filter-attr="filter.fieldFilters[field.name]"
             placeholder="{{ field.placeholder }}"
@@ -79,7 +79,7 @@ NOTES:
           <inset-filter
             id="{{ field.name }}-filter"
             ng-class="{
-              'has-input': !!filter.fieldFilters[field.name]
+              'has-input': fieldHasInput(filter.fieldFilters[field.name])
             }"
             placeholder="{{ field.placeholder }}"
             ng-model="filter.fieldFilters[field.name]"
