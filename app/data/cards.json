@@ -9819,7 +9819,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nGain 2[Credits]. Gain an additional 1[Credits] for each <strong>double</strong> event in your heap.",
       "title": "Power Nap",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "257dzj",
+          "title": "[COTD] Power Nap (Saturday - May 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/257dzj/cotd_power_nap_saturday_may_10th_2014/",
+          "created": "2014-05-10T13:14:24Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/paintbrush-double-time",
