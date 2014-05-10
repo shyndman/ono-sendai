@@ -157,7 +157,7 @@ class CardService
       null
     else
       cardType = @filterDescriptors[activeName].cardType
-      _.object([ cardType] , [ true ])
+      _.object([ cardType ] , [ true ])
 
   # Returns the set of filter descriptors that are currently relevant to the
   # specified set of arguments.
@@ -355,33 +355,22 @@ class CardService
 
       # Next we build up a set of subtypes and logical subtypes. Logical subtypes are
       # invisible to the user, but are used by other systems, including search.
-      allSubtypes = card.subtypes.slice()
-
-      if card.logicalsubtypes?
-        allSubtypes = allSubtypes.concat(card.logicalsubtypes)
-
+      allSubtypes = card.subtypes.slice().concat(card.logicalsubtypes ? [])
       card.subtypesSet = _.object(
         _.map(allSubtypes, _.idify),
         _.times(allSubtypes.length, -> true))
 
-      # Load the card image
       card.image = @imageService.load(card.imagesrc)
 
       # Increment the occurrences of each of the card's subtypes
       side = card.side.toLowerCase()
       for st in card.subtypes
-        @subtypeCounts['all'][st] ?= 0
-        @subtypeCounts['all'][st]++
-        @subtypeCounts[side][st] ?= 0
-        @subtypeCounts[side][st]++
+        @_recordSubtype(side, st)
 
       # Increment the occurrences of each of the card's illustrator counts
       if card.illustrator?
         card.illustratorId = _.idify(card.illustrator)
-        @illustratorCounts['all'][card.illustrator] ?= 0
-        @illustratorCounts['all'][card.illustrator]++
-        @illustratorCounts[side][card.illustrator] ?= 0
-        @illustratorCounts[side][card.illustrator]++
+        @_recordIllustrator(side, card.illustrator)
       else if card.type != 'Identity' # Core identities have no illustrator
         console.warn "#{ card.title } has no illustrator"
 
@@ -393,6 +382,18 @@ class CardService
           # [todo] Why not just work this out ahead of time?
           card.subroutinecount ?= # If a card already has a subroutine count set, use it instead
             card.text.match(/\[Subroutine\]/g)?.length || 0
+
+  _recordIllustrator: (side, illustrator) =>
+    @illustratorCounts['all'][illustrator] ?= 0
+    @illustratorCounts['all'][illustrator]++
+    @illustratorCounts[side][illustrator] ?= 0
+    @illustratorCounts[side][illustrator]++
+
+  _recordSubtype: (side, subtype) =>
+    @subtypeCounts['all'][subtype] ?= 0
+    @subtypeCounts['all'][subtype]++
+    @subtypeCounts[side][subtype] ?= 0
+    @subtypeCounts[side][subtype]++
 
   # Collects information about sets, and mutates them to include properties used
   # by the application.

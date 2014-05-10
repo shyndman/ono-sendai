@@ -13,7 +13,7 @@ _.mixin
   # Returns an array with two internal arrays built from taking an original array
   # and spliting it at an index.
   splitAt: (array, index) ->
-    return [ _.take(array, index), _.drop(array, index) ]
+    [ _.take(array, index), _.drop(array, index) ]
 
   # Weaves two or more arrays together.
   #
