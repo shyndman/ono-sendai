@@ -3,6 +3,7 @@ angular.module('onoSendai')
 
     # ~-~-~- INITIALIZATION
 
+    $scope.selectedCard = null
     $scope.filter = urlStateService.queryArgs
 
     initialize = ([cards, queryResult]) ->
@@ -37,6 +38,9 @@ angular.module('onoSendai')
     # ~-~-~- CARD SELECTION
 
     $scope.selectCard = (card) ->
+      if card == $scope.selectedCard
+        return
+
       if card?
         $log.info "Selected card changing to #{ card.title }"
 
@@ -97,6 +101,9 @@ angular.module('onoSendai')
 
     initializeFilterWatch = ->
       $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
+        if angular.equals(filter, oldFilter)
+          return
+
         updateUrl()
         cardService.query(filter).then (queryResult) ->
           setQueryResult(queryResult)
