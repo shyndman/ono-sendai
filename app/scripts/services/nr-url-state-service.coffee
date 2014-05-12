@@ -17,15 +17,12 @@ class UrlStateService
       /decks
       (?:
         /([^/]*) # 1 - new or deck ID
-        (?:/edit
-          (.*)   # 2 - card filters - passed along to cards URL matcher
-        )?
       )?
+      # Followed by card URL pattern
     ///
 
   CARD_URL_MATCHER =
     ///
-      ^
       /cards
       (?:
         /(corp|runner) # 1 - side
@@ -44,21 +41,20 @@ class UrlStateService
     ///
 
   constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @queryArgDefaults) ->
-    @generatedUrl = undefined
+    @_generatedUrl = @$location.url()
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
     generalFields = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
 
     # Used to provide pretty faction abbreviations to the URL
-    @factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').sideFactions
+    @_factionUiMappingsBySide = _.find(generalFields, (field) -> field.name is 'faction').sideFactions
 
-    # Build the initial filter from the URL
     @_setStateFromUrl()
 
   # Invoked when the location changes to update the query arguments
   _locationChanged: (e, newUrl, oldUrl) =>
     # If this service is responsible for the last URL update, don't react to it
-    if @$location.url() == @generatedUrl
+    if @$location.url() == @_generatedUrl
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
@@ -112,7 +108,7 @@ class UrlStateService
     @$location.replace() if !pushUrl
 
     # Update local state
-    @generatedUrl = @$location.url()
+    @_generatedUrl = @$location.url()
     @queryArgs = angular.copy(queryArgs)
     @selectedCardId = selectedCard?.id
 
@@ -129,7 +125,7 @@ class UrlStateService
       when 'inSet'
         if name is 'faction'
           if queryArgs.side?
-            relevantFactions = @factionUiMappingsBySide[queryArgs.side.toLowerCase()]
+            relevantFactions = @_factionUiMappingsBySide[queryArgs.side.toLowerCase()]
             @_factionSearchVal(relevantFactions, arg)
           else
             null
@@ -160,19 +156,47 @@ class UrlStateService
         .join(',')
 
   _setStateFromUrl: =>
-    [ @queryArgs, @selectedCardId, @cardPage ] = @_stateFromUrl()
+    {
+      @queryArgs,
+      @selectedCardId,
+      @cardPage,
+      @deckPage,
+      @selectedDeckId
+    } = @_stateFromUrl()
+
+    console.warn('activeGroup', @queryArgs.activeGroup)
 
   _stateFromUrl: ->
+    state = _.extend(@_deckStateFromUrl(), @_cardStateFromUrl())
+    console.debug('State determined from URL', state)
+    state
+
+  _deckStateFromUrl: ->
+    selectedDeckId = null
+    match = @$location.path().match(DECKS_URL_MATCHER)
+
+    if !match?
+      {}
+    else
+      switch match[1]
+        when 'new'
+          { deckPage: 'new' }
+        when undefined
+          { deckPage: 'list' }
+        else
+          { deckPage: 'edit', selectedDeckId: match[1] }
+
+  _cardStateFromUrl: ->
     selectedCardId = null
     cardPage = null
-    queryArgs = angular.copy(@queryArgDefaults.get())
+    queryArgs = @queryArgDefaults.get()
     search = @$location.search()
     cardsMatch = @$location.path().match(CARD_URL_MATCHER)
 
     # No URL match. Return default query arguments.
     if !cardsMatch?
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
-      return [ queryArgs, undefined, undefined ]
+      return { queryArgs }
 
     if (side = cardsMatch[1])?
       queryArgs.side = _.capitalize(cardsMatch[1])
@@ -193,11 +217,10 @@ class UrlStateService
     for name, desc of @cardService.relevantFilters(queryArgs, false) when search[name]?
       @_setQueryValFromSearch(queryArgs, search, name, desc, side)
 
-    # Groupings
     if search.group
       queryArgs.groupByFields = search.group.split(',')
 
-    [ queryArgs, selectedCardId, cardPage ]
+    { queryArgs, selectedCardId, cardPage }
 
   # Populates the supplied queryArgs with a single argument, as described
   # by name and desc.
@@ -218,7 +241,7 @@ class UrlStateService
       when 'inSet'
         if name == 'faction'
           queryFactions = queryArgs.fieldFilters.faction
-          factions = @factionUiMappingsBySide[side]
+          factions = @_factionUiMappingsBySide[side]
 
           modelFlags = _(search[name].split(','))
             .chain()
