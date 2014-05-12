@@ -1,7 +1,6 @@
 class CostToBreakCalculator
   constructor: (@$log, $q, @cardService, @breakScripts) ->
-    @$log.debug 'Performing cost-to-break startup queries'
-
+    console.groupCollapsed?('Cost to break queries')
     $q.all(
         'sentry':         @_performQuery('Corp', 'ice', 'sentry')
         'barrier':        @_performQuery('Corp', 'ice', 'barrier')
@@ -32,7 +31,7 @@ class CostToBreakCalculator
         'anti-destroyer': @_antiDestroyers
         'anti-tracer':    @_antiTracers
         'ai':             @_ais
-      }) => @$log.debug('Cost to Break queries complete'))
+      }) => console.groupEnd?('Cost to break queries'))
 
   isCardApplicable: (card) =>
     card.type == 'ICE' or 'icebreaker' of card.subtypesSet

@@ -5,7 +5,7 @@ angular.module('onoSendai')
 
     restrict: 'A'
     link: (scope, element, attrs) ->
-      $log.debug 'Binding element to %s %o', attrs.uiHotkey, element.get(0)
+      $log.debug 'Binding element to %s', attrs.uiHotkey
 
       # Focuses or clicks the hotkeyed element, depending on its type
       invokeHotkey = (e) ->
