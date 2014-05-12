@@ -49,7 +49,11 @@ angular.module('onoSendai')
 
     $scope.$watch 'filter.side', sideChanged = (newSide, oldSide) ->
       # Ignore the first "change", because it screws with URL state
-      return if newSide is oldSide
+      # [todo] The !oldSide? condition exists to fix a bug when moving
+      #        from the "all" side to a specific card subtype. This code
+      #        should live elsewhere (like in the subnav code)
+      if newSide is oldSide or !oldSide?
+        return
 
       $scope.filter.activeGroup = 'general'
       $scope.clearFactions()
