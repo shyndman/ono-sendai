@@ -7,10 +7,9 @@ angular.module('onoSendai')
     $scope.filter = urlStateService.queryArgs
 
     initialize = ([cards, queryResult]) ->
-      $scope.cardsUI =
+      $scope.uiState =
         zoom: userPreferences.zoom() ? 0.50
-        layoutMode: 'grid' # Will be modified by selectCard() if called
-        cardPage: urlStateService.cardPage ? 'info'
+        layoutMode: 'grid'
         settingsVisible: false
 
       $log.debug 'Assigning cards with initial query ordering'
@@ -47,7 +46,7 @@ angular.module('onoSendai')
         # Note that we change layout mode to 'detail' when a card is supplied, but do not change it to 'grid'
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
-        $scope.cardsUI.layoutMode = 'detail'
+        $scope.uiState.layoutMode = 'detail'
       else
         $log.info 'Card deselected'
 
@@ -55,7 +54,7 @@ angular.module('onoSendai')
       updateUrl()
 
     $scope.deselectCard = ->
-      $scope.cardsUI.layoutMode = 'grid'
+      $scope.uiState.layoutMode = 'grid'
       $scope.selectCard(null)
 
     $scope.selectPreviousCard = ->
@@ -83,7 +82,7 @@ angular.module('onoSendai')
 
     #~-~-~- LAYOUT
 
-    $scope.$watch 'cardsUI.layoutMode', layoutModeChanged = (layoutMode) ->
+    $scope.$watch 'uiState.layoutMode', layoutModeChanged = (layoutMode) ->
       $scope.$broadcast 'layout', layoutMode
 
 
@@ -96,8 +95,8 @@ angular.module('onoSendai')
       selCard = $scope.selectedCard ? {}
       # If we're in detail mode, and the selected card isn't visible (or doesn't exist), select the first
       # query result.
-      if $scope.cardsUI.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
-        $scope.selectCard(queryResult.orderedCards[0])
+      if $scope.uiState.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
+        $scope.selectCard(queryResult.orderedElements[0])
 
     initializeFilterWatch = ->
       $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
@@ -133,11 +132,11 @@ angular.module('onoSendai')
           $scope.selectCard(selCard)
         else
           $scope.deselectCard()
-          $scope.cardsUI.layoutMode = 'grid')
+          $scope.uiState.layoutMode = 'grid')
 
     updateUrlNow = (pushState = false) ->
       selCard = $scope.selectedCard
-      cardPage = $scope.cardsUI.cardPage
+      cardPage = $scope.uiState.cardPage
       $scope.$safeApply ->
         urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage, pushState)
 
@@ -148,11 +147,11 @@ angular.module('onoSendai')
     # ~-~-~- TOGGLING SETTINGS
 
     $scope.showSettings = ->
-      $scope.cardsUI.settingsVisible = true
+      $scope.uiState.settingsVisible = true
 
     $scope.hideSettings = ->
-      if $scope.cardsUI.settingsVisible
-        $scope.cardsUI.settingsVisible = false
+      if $scope.uiState.settingsVisible
+        $scope.uiState.settingsVisible = false
         true
       else
         false
@@ -172,5 +171,5 @@ angular.module('onoSendai')
 
     $scope.broadcastZoomEnd = ->
       $scope.$broadcast 'zoomEnd'
-      userPreferences.zoom($scope.cardsUI.zoom)
+      userPreferences.zoom($scope.uiState.zoom)
   )

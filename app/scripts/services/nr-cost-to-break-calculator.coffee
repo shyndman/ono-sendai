@@ -57,27 +57,27 @@ class CostToBreakCalculator
 
     # Collect all potential opponent cards
     if ice.subtypesSet['sentry'] or options.tinkering
-      breakers = breakers.concat @_killers.orderedCards
+      breakers = breakers.concat @_killers.orderedElements
 
     if ice.subtypesSet['barrier'] or options.tinkering
-      breakers = breakers.concat @_fracters.orderedCards
+      breakers = breakers.concat @_fracters.orderedElements
 
     if ice.subtypesSet['code-gate'] or options.tinkering
-      breakers = breakers.concat @_decoders.orderedCards
+      breakers = breakers.concat @_decoders.orderedElements
 
     if ice.subtypesSet['ap']
-      breakers = breakers.concat @_antiAps.orderedCards
+      breakers = breakers.concat @_antiAps.orderedElements
 
     if ice.subtypesSet['destroyer']
-      breakers = breakers.concat @_antiDestroyers.orderedCards
+      breakers = breakers.concat @_antiDestroyers.orderedElements
 
     if ice.subtypesSet['tracer']
-      breakers = breakers.concat @_antiTracers.orderedCards
+      breakers = breakers.concat @_antiTracers.orderedElements
 
 
     # [todo] How do Deus X / Sharpshooter fit in here
 
-    breakers = breakers.concat @_ais.orderedCards
+    breakers = breakers.concat @_ais.orderedElements
 
     {
       opponentType: 'Icebreakers'
@@ -90,28 +90,28 @@ class CostToBreakCalculator
     ice = []
 
     if breaker.subtypesSet['killer']
-      ice = ice.concat @_sentries.orderedCards
+      ice = ice.concat @_sentries.orderedElements
 
     if breaker.subtypesSet['fracter']
-      ice = ice.concat @_barriers.orderedCards
+      ice = ice.concat @_barriers.orderedElements
 
     if breaker.subtypesSet['decoder']
-      ice = ice.concat @_codeGates.orderedCards
+      ice = ice.concat @_codeGates.orderedElements
 
     if breaker.subtypesSet['anti-ap']
-      ice = ice.concat @_aps.orderedCards
+      ice = ice.concat @_aps.orderedElements
 
     if breaker.subtypesSet['anti-destroyer']
-      ice = ice.concat @_destroyers.orderedCards
+      ice = ice.concat @_destroyers.orderedElements
 
     if breaker.subtypesSet['anti-tracer']
-      ice = ice.concat @_tracers.orderedCards
+      ice = ice.concat @_tracers.orderedElements
 
     if breaker.subtypesSet['ai'] or options.tinkering
-      ice = ice.concat @_allIce.orderedCards
+      ice = ice.concat @_allIce.orderedElements
 
     if breaker.breakcardsscript?
-      ice = ice.concat @breakScripts[breaker.breakcardsscript](breaker, @_allIce.orderedCards)
+      ice = ice.concat @breakScripts[breaker.breakcardsscript](breaker, @_allIce.orderedElements)
 
     # If the user has specified an ICE strength adjustment, apply it to copies of the cards
     if @_validIceAdjust(iceAdjust)

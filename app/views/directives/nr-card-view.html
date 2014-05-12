@@ -148,7 +148,7 @@
     </div>
   </div>
   <div class="card-pager"
-       ng-if="queryResult.cardOrdinal(card) != -1">
+       ng-if="queryResult.elementOrdinal(card) != -1">
     <div class="card-pager-inner">
       <span class="prev-card">
         <a ng-click="selectPreviousCard()">Previous</a>
@@ -157,7 +157,7 @@
         <a ng-click="selectNextCard()">Next</a>
       </span>
       <div class="card-count">
-        <span class="current">{{ queryResult.cardOrdinal(card) + 1 }}</span>
+        <span class="current">{{ queryResult.elementOrdinal(card) + 1 }}</span>
         of
         <span class="total">{{ queryResult.length }}</span>
       </div>

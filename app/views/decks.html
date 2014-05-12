@@ -1,8 +1,8 @@
 <div class="decks">
-  <grid ng-show="cardsUI.layoutMode == 'grid'"
+  <grid ng-show="uiState.layoutMode == 'grid'"
         query-result="queryResult"
         selection="selectedCard"
-        zoom="cardsUI.zoom">
+        zoom="uiState.zoom">
 
     <!-- HEADERS -->
     <h2 ng-repeat="(id, group) in queryResult.groups track by id"

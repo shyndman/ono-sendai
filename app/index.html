@@ -23,7 +23,7 @@
         'right / alt+right / ctrl+right' : 'selectNextCard()'
       }"
       ng-class="{
-        'overlay-visible': cardsUI.settingsVisible
+        'overlay-visible': uiState.settingsVisible
       }">
 
   <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
 
   <nr-settings
     ng-class="{
-      visible: cardsUI.settingsVisible
+      visible: uiState.settingsVisible
     }"
     hide="hideSettings()"
     toggle-selector=".show-settings">

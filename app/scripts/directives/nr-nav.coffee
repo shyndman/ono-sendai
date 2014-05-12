@@ -46,7 +46,7 @@ angular.module('onoSendai')
         else
           cardService.query(search: newVal, byTitle: true)
             .then (cards) ->
-              $scope.cardSearchResults = cards.orderedCards.slice(0, maxResults)
+              $scope.cardSearchResults = cards.orderedElements.slice(0, maxResults)
               $scope.cardSearchResults.selectedIndex = 0
 
     link: (scope, element) ->
