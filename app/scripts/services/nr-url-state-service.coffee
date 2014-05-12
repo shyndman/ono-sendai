@@ -164,8 +164,6 @@ class UrlStateService
       @selectedDeckId
     } = @_stateFromUrl()
 
-    console.warn('activeGroup', @queryArgs.activeGroup)
-
   _stateFromUrl: ->
     state = _.extend(@_deckStateFromUrl(), @_cardStateFromUrl())
     console.debug('State determined from URL', state)
