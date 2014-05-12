@@ -1,14 +1,18 @@
 <h1 class="brand" ng-click="resetState()">Ono-Sendai</h1>
 <nav>
   <ul>
-    <li class="active">
-      <a href="#" tabindex="-1">
+    <li ng-class="{
+          'active': isNavActive('/cards')
+        }">
+      <a href="/cards" tabindex="-1">
         <span class="unabridged">Card Browser</span>
         <span class="abbreviated">Cards</span>
       </a>
     </li>
-    <li>
-      <a href="#" tabindex="-1">
+    <li ng-class="{
+          'active': isNavActive('/decks')
+        }">
+      <a href="/decks" tabindex="-1">
         <span class="unabridged">Deck Builder</span>
         <span class="abbreviated">Decks</span>
       </a>

@@ -3,13 +3,22 @@
 # [todo] It's kind of messy to handle the card search in here. The autocomplete should be componentized, or possibly
 #        merged with ui-dropdown (they're very similar).
 angular.module('onoSendai')
-  .directive('nrNav', ($document, cardService, $timeout, $sce) ->
+  .directive('nrNav', ($document, $timeout, $location, $sce, cardService) ->
     maxResults = 10
 
     templateUrl: '/views/directives/nr-nav.html'
     replace: false
     restrict: 'E'
     controller: ($scope) ->
+
+      # ~-~-~ Navigation
+
+      $scope.isNavActive = (navPath) ->
+        ///^#{ navPath }///.test($location.path())
+
+
+      # ~-~-~ Jump to Card Autocomplete
+
       $scope.previousResult = ->
         if $scope.cardSearchResults?.selectedIndex - 1 >= 0
           $scope.cardSearchResults.selectedIndex--
