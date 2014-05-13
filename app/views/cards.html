@@ -7,7 +7,7 @@
       grid-id="{{ group.id }}"
       class="{{ group.id }} grid-header invisible"
       title="{{ group.id }}">
-    <small class="card-count"><ng-pluralize
+    <small class="element-count"><ng-pluralize
         count="group.cards.length"
         when="{
           '1': '1 card',
@@ -39,7 +39,7 @@
   <div ng-show="queryResult.length == 0"
        class="no-results">
     <h2>
-      <small class="card-count">0 cards</small>
+      <small class="element-count">0 cards</small>
       No Results Found
     </h2>
   </div>
