@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .directive('groupSelector', (groupingUI, urlStateService) ->
+  .directive('nrGroupingSelector', (groupingUI, urlStateService) ->
     templateUrl: '/views/directives/nr-grouping-selector.html'
     restrict: 'E'
     controller: ($scope) ->
