@@ -17,10 +17,10 @@ angular.module('onoSendai')
           return
 
         $scope.selectedGrouping = grouping
-        $scope.filter.groupByFields = grouping.groupByFields
+        $scope.queryArgs.groupByFields = grouping.groupByFields
         $scope.moreGroupingSelected = _.include($scope.moreGroupings, grouping)
 
       # React to external group changes
-      $scope.$watch 'filter.groupByFields', groupByChanged = (groupByFields) ->
+      $scope.$watch 'queryArgs.groupByFields', groupByChanged = (groupByFields) ->
         $scope.selectGroup(groupingWithFields(groupByFields))
   )

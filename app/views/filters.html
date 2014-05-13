@@ -11,8 +11,8 @@ NOTES:
 
   <div class="filter-group {{ group.name }}"
        ng-repeat="group in filterUI"
-       ng-class="{ active: isActiveGroup(group, filter.activeGroup) }"
-       ng-show="isGroupShown(group, filter.side)">
+       ng-class="{ active: isActiveGroup(group, queryArgs.activeGroup) }"
+       ng-show="isGroupShown(group, queryArgs.side)">
 
     <h5 ng-click="toggleGroup(group.name)">
       <span class="unabridged">{{ group.display }}</span>
@@ -22,8 +22,8 @@ NOTES:
     <div class="filter-group-fields">
       <div class="filter-group-field {{ field.name }} form-group"
            ng-repeat="field in group.fieldFilters"
-           ng-class="{ disabled: isFieldDisabled(field, group, filter.activeGroup, filter.side) }"
-           ng-show="isFieldShown(field, group, filter.activeGroup, filter.side)">
+           ng-class="{ disabled: isFieldDisabled(field, group, queryArgs.activeGroup, queryArgs.side) }"
+           ng-show="isFieldShown(field, group, queryArgs.activeGroup, queryArgs.side)">
 
         <label for="{{ labelledFieldId(field) }}" class="control-label">
           <i class="icon-{{ field.icon }}"></i>
@@ -35,13 +35,13 @@ NOTES:
                    id="{{ field.name }}-filter"
                    class="form-control input-sm"
                    ng-class="{
-                     'has-input': fieldHasInput(filter.search)
+                     'has-input': fieldHasInput(queryArgs.search)
                    }"
                    placeholder="{{ field.placeholder }}"
-                   ng-model="filter.search"
+                   ng-model="queryArgs.search"
                    filter-input>
             <a class="clear-filter"
-               ng-click="filter.search = ''">&times;</a>
+               ng-click="queryArgs.search = ''">&times;</a>
           </div>
 
           <div ng-switch-when="faction">
@@ -51,9 +51,9 @@ NOTES:
                  }">
               <button
                   class="btn btn-default btn-sm"
-                  ng-repeat="faction in field.sideFactions[filter.side.toLowerCase()]"
-                  ng-model="filter.fieldFilters.faction[faction.model]"
-                  ui-all-or-one-box="filter.fieldFilters.faction"
+                  ng-repeat="faction in field.sideFactions[queryArgs.side.toLowerCase()]"
+                  ng-model="queryArgs.fieldFilters.faction[faction.model]"
+                  ui-all-or-one-box="queryArgs.fieldFilters.faction"
                   ui-all-or-one-box-field="{{ faction.model }}"
                   title="{{ faction.name }}">
                 {{ faction.abbr }}
@@ -67,38 +67,38 @@ NOTES:
             <numeric-filter
               id="{{ field.name }}-filter"
               ng-class="{
-                'has-input': fieldHasInput(filter.fieldFilters[field.name].value)
+                'has-input': fieldHasInput(queryArgs.fieldFilters[field.name].value)
               }"
-              filter-attr="filter.fieldFilters[field.name]"
+              filter-attr="queryArgs.fieldFilters[field.name]"
               placeholder="{{ field.placeholder }}"
               max="{{ field.max }}"
-              ui-disabled="{{ isFieldDisabled(field, group, filter.activeGroup, filter.side) }}"
+              ui-disabled="{{ isFieldDisabled(field, group, queryArgs.activeGroup, queryArgs.side) }}"
               filter-input>
             </numeric-filter>
             <a class="clear-filter"
-               ng-click="filter.fieldFilters[field.name].value = null">&times;</a>
+               ng-click="queryArgs.fieldFilters[field.name].value = null">&times;</a>
           </div>
 
           <div ng-switch-when="inSet">
             <inset-filter
               id="{{ field.name }}-filter"
               ng-class="{
-                'has-input': fieldHasInput(filter.fieldFilters[field.name])
+                'has-input': fieldHasInput(queryArgs.fieldFilters[field.name])
               }"
               placeholder="{{ field.placeholder }}"
-              ng-model="filter.fieldFilters[field.name]"
+              ng-model="queryArgs.fieldFilters[field.name]"
               inset-filter-source="this[field.source]"
               filter-input>
             </inset-filter>
             <a class="clear-filter"
-               ng-click="filter.fieldFilters[field.name] = null">&times;</a>
+               ng-click="queryArgs.fieldFilters[field.name] = null">&times;</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <aside ng-if="filter.side == null">
+  <aside ng-if="queryArgs.side == null">
     For additional filter options, please select
     <a href="/cards/corp">Corporation</a> or <a href="/cards/runner">Runner</a>
   </aside>

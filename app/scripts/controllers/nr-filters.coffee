@@ -1,7 +1,7 @@
 angular.module('onoSendai')
   .controller('FiltersCtrl', ($scope, filterUI, cardService) ->
     $scope.filterUI = filterUI
-    factions = $scope.filter.fieldFilters.faction
+    factions = $scope.queryArgs.fieldFilters.faction
     cachedSets = null
     cachedReleasedSets = null
 
@@ -13,7 +13,7 @@ angular.module('onoSendai')
 
       # Filter out sets that aren't out yet
       visibleSets =
-        if !$scope.filter.fieldFilters.showSpoilers
+        if !$scope.queryArgs.fieldFilters.showSpoilers
           releasedSets
         else
           sets
@@ -24,7 +24,7 @@ angular.module('onoSendai')
         text: set.title
 
     # Change the sets list if the spoiler flag toggles
-    $scope.$watch 'filter.fieldFilters.showSpoilers', (flag) ->
+    $scope.$watch 'queryArgs.fieldFilters.showSpoilers', (flag) ->
       # [todo] Delete the set from the queryArgs if it isn't no longer available
       updateSets()
 
@@ -33,7 +33,7 @@ angular.module('onoSendai')
 
     # Supply the subtypes for the current side
     cardService.ready().then updateSubtypes = ->
-      side = $scope.filter.side?.toLowerCase() ? 'all'
+      side = $scope.queryArgs.side?.toLowerCase() ? 'all'
       subtypes = cardService.subtypes[side]
       $scope.subtypes = _.map subtypes, (st) ->
         id: st.id
@@ -41,13 +41,13 @@ angular.module('onoSendai')
 
     # Supply the illustrators for the current side
     cardService.ready().then updateIllustrators = ->
-      side = $scope.filter.side?.toLowerCase() ? 'all'
+      side = $scope.queryArgs.side?.toLowerCase() ? 'all'
       illustrators = cardService.illustrators[side]
       $scope.illustrators = _.map illustrators, (i) ->
         id: i.id
         text: i.title
 
-    $scope.$watch 'filter.side', sideChanged = (newSide, oldSide) ->
+    $scope.$watch 'queryArgs.side', sideChanged = (newSide, oldSide) ->
       # Ignore the first "change", because it screws with URL state
       # [todo] The !oldSide? condition exists to fix a bug when moving
       #        from the "all" side to a specific card subtype. This code
@@ -55,13 +55,13 @@ angular.module('onoSendai')
       if newSide is oldSide or !oldSide?
         return
 
-      $scope.filter.activeGroup = 'general'
+      $scope.queryArgs.activeGroup = 'general'
       $scope.clearFactions()
-      delete $scope.filter.fieldFilters.subtype
+      delete $scope.queryArgs.fieldFilters.subtype
       updateSubtypes()
       updateIllustrators()
 
-    $scope.$watch('filter.fieldFilters.faction', (factionsChanged = (newFactions) ->
+    $scope.$watch('queryArgs.fieldFilters.faction', (factionsChanged = (newFactions) ->
       $scope.factionSelected = _.any factions, (flag) -> !flag
     ), true)
 
@@ -70,9 +70,9 @@ angular.module('onoSendai')
 
     clearExcludedFields = (groupName) ->
       _.each findGroup(groupName).hiddenGeneralFields ? [], (__, fieldName) ->
-        fieldFilter = $scope.filter.fieldFilters[fieldName]
+        fieldFilter = $scope.queryArgs.fieldFilters[fieldName]
         if fieldFilter.value?
-          $scope.filter.fieldFilters[fieldName].value = null
+          $scope.queryArgs.fieldFilters[fieldName].value = null
 
     $scope.clearFactions = ->
       for key, val of factions
@@ -86,11 +86,11 @@ angular.module('onoSendai')
           "#{field.name}-filter"
 
     $scope.toggleGroup = (group) ->
-      if $scope.filter.activeGroup isnt group
-        $scope.filter.activeGroup = group
+      if $scope.queryArgs.activeGroup isnt group
+        $scope.queryArgs.activeGroup = group
         clearExcludedFields(group)
       else
-        $scope.filter.activeGroup = 'general'
+        $scope.queryArgs.activeGroup = 'general'
 
     $scope.isActiveGroup = (group, activeGroup) ->
       if activeGroup

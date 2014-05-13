@@ -6,7 +6,6 @@
 [todo] Jinteki/Haas-Bioroid special deck URLs
 [todo] Excluded general controls should explain through a tooltip why they're disabled
 [todo] Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then modified as time goes on. No more clearing (as you see in performGridLayout).
-[todo] Rename "filter" to "queryArgs" across the board
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
 [fix]  Work out a better way of counting subs -- Check out sensei as an example

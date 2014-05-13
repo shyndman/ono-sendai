@@ -111,7 +111,7 @@ angular.module('onoSendai')
       selCard = $scope.card
       cardPage = $scope.cardUI.page
       # selCard && cardPage resolves to cardPage if selCard is truthy
-      $scope.$apply -> urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage)
+      $scope.$apply -> urlStateService.updateUrl($scope.queryArgs, selCard, selCard && cardPage)
     ), 500)
   )
   .directive('cardView', ->

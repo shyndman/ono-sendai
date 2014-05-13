@@ -4,7 +4,7 @@ angular.module('onoSendai')
     # ~-~-~- INITIALIZATION
 
     $scope.selectedCard = null
-    $scope.filter = urlStateService.queryArgs
+    $scope.queryArgs = urlStateService.queryArgs
 
     initialize = ([ cards, queryResult ]) ->
       $scope.uiState =
@@ -22,7 +22,7 @@ angular.module('onoSendai')
       if selCard?
         $scope.selectCard(selCard)
 
-      initializeFilterWatch()
+      initializeQueryArgsWatch()
       initializeUrlSync()
       loadVersion()
 
@@ -99,20 +99,20 @@ angular.module('onoSendai')
       if $scope.uiState.mainContent == 'card' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedElements[0])
 
-    initializeFilterWatch = ->
-      $scope.$watch('filter', (filterChanged = (filter, oldFilter) ->
-        if angular.equals(filter, oldFilter)
+    initializeQueryArgsWatch = ->
+      $scope.$watch('queryArgs', (queryArgsChanged = (queryArgs, oldQueryArgs) ->
+        if angular.equals(queryArgs, oldQueryArgs)
           return
 
         updateUrl()
-        cardService.query(filter).then (queryResult) ->
+        cardService.query(queryArgs).then (queryResult) ->
           setQueryResult(queryResult)
       ), true) # True to make sure field changes trigger this watch
 
     # Resets query args, and deselects the selected card, if any
     $scope.resetState = ->
       $scope.deselectCard()
-      $scope.filter = _.extend(angular.copy(queryArgDefaults.get()), side: $scope.filter.side)
+      $scope.queryArgs = _.extend(angular.copy(queryArgDefaults.get()), side: $scope.queryArgs.side)
       updateUrlNow(true)
 
 
@@ -121,7 +121,7 @@ angular.module('onoSendai')
     initializeUrlSync = ->
       # Watches for URL changes, to change application state
       $scope.$on('urlStateChange', urlChanged = ->
-        $scope.filter = urlStateService.queryArgs
+        $scope.queryArgs = urlStateService.queryArgs
         $scope.uiState.section = urlStateService.section
 
         selCard =
@@ -140,7 +140,7 @@ angular.module('onoSendai')
       selCard = $scope.selectedCard
       cardPage = $scope.uiState.cardPage
       $scope.$safeApply ->
-        urlStateService.updateUrl($scope.filter, selCard, selCard && cardPage, pushState)
+        urlStateService.updateUrl($scope.queryArgs, selCard, selCard && cardPage, pushState)
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce(updateUrlNow, 500)
@@ -161,7 +161,7 @@ angular.module('onoSendai')
 
     # ~-~-~- PERSISTING PREFERENCES
 
-    $scope.$watch 'filter.fieldFilters.showSpoilers', persistShowSpoilers = (flag) ->
+    $scope.$watch 'queryArgs.fieldFilters.showSpoilers', persistShowSpoilers = (flag) ->
       if flag?
         userPreferences.showSpoilers(flag)
 
