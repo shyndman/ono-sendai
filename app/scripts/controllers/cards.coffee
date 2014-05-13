@@ -6,7 +6,7 @@ angular.module('onoSendai')
     $scope.selectedCard = null
     $scope.filter = urlStateService.queryArgs
 
-    initialize = ([cards, queryResult]) ->
+    initialize = ([ cards, queryResult ]) ->
       $scope.uiState =
         zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid'
