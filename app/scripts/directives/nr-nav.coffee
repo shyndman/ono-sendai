@@ -4,7 +4,7 @@
 #        merged with ui-dropdown (they're very similar).
 angular.module('onoSendai')
   .directive('nrNav', ($document, cardService, $timeout, $sce) ->
-    maxResults = 10
+    MAX_RESULTS = 10
 
     templateUrl: '/views/directives/nr-nav.html'
     replace: false
@@ -37,7 +37,7 @@ angular.module('onoSendai')
         else
           cardService.query(search: newVal, byTitle: true)
             .then (cards) ->
-              $scope.cardSearchResults = cards.orderedCards.slice(0, maxResults)
+              $scope.cardSearchResults = cards.orderedCards.slice(0, MAX_RESULTS)
               $scope.cardSearchResults.selectedIndex = 0
 
     link: (scope, element) ->
