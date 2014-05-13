@@ -1,5 +1,5 @@
 angular.module('onoSendai')
-  .controller('CardsCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService, queryArgDefaults) ->
+  .controller('ApplicationCtrl', ($scope, $http, $log, $q, cardService, userPreferences, urlStateService, queryArgDefaults) ->
 
     # ~-~-~- INITIALIZATION
 

@@ -15,7 +15,7 @@
   <!-- endbuild -->
 </head>
 <body ng-app="onoSendai"
-      ng-controller="CardsCtrl"
+      ng-controller="ApplicationCtrl"
       tabindex="0"
       ui-keydown="{
         'esc   / alt+esc   / ctrl+esc'   : { action: 'hideSettings() || deselectCard()', preventDefault: true },
@@ -85,8 +85,8 @@
   <!-- build:js({.tmp,app}) /scripts/app.js -->
   <script src="/scripts/utils/underscore-plugins.js"></script>
   <script src="/scripts/app.js"></script>
-  <script src="/scripts/controllers/cards.js"></script>
-  <script src="/scripts/controllers/filters.js"></script>
+  <script src="/scripts/controllers/nr-application.js"></script>
+  <script src="/scripts/controllers/nr-filters.js"></script>
   <script src="/scripts/directives/nr-card-view.js"></script>
   <script src="/scripts/directives/nr-cost-to-break-calculator.js"></script>
   <script src="/scripts/directives/nr-filter-input.js"></script>
