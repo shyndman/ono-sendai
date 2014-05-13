@@ -1,5 +1,7 @@
 <div class="main-content">
   <card-view  ng-show="uiState.layoutMode == 'detail'"></card-view>
   <ng-include ng-show="uiState.layoutMode == 'grid'"
-              src="'/views/card-grid.html'"></ng-include>
+              src="'/views/cards.html'"></ng-include>
+  <ng-include ng-show="false"
+              src="'/views/decks.html'"></ng-include>
 </div>
