@@ -1,17 +1,13 @@
 [todo] Collapsed mode for card groups
 [todo] Hotkeys
 [todo] Add calculated max for filters
-[todo] Make it clear that moving back to the general filter will remove filters (or not -- color change made this better)
 [todo] Screensaver with random flavor text
 [todo] Jinteki/Haas-Bioroid special deck URLs
-[todo] Excluded general controls should explain through a tooltip why they're disabled
 [todo] Rethink itemLayouts in cards-view. I'm thinking that maybe they should be set to default values up front, then modified as time goes on. No more clearing (as you see in performGridLayout).
 [todo] Randomized deck generation (draft decks), along with a couple special identity print outs
 [todo] Scrolling on the card view
-[fix]  Work out a better way of counting subs -- Check out sensei as an example
 [todo] Write this (http://www.reddit.com/r/Netrunner/comments/1s5gu4/i_made_a_spreadsheet_of_probabilities_to_have_x/cdu7hpf)
 [todo] Full screen mode for mobile
-[todo] Versions for decks, and changes tab for telling you how to move between versions
 [todo] Filter down the subtype list to the currently selected group (maybe)
 [todo] .nav-tabs conflicts with something in bootstrap
 [todo] One stop search
@@ -20,9 +16,6 @@
 [todo] Sort by card number
 [todo] Hosted power counters on ICE -- Any ideas here? (Victor 2.0)
 [todo] Make clearing searches more obvious
-[idea] Efficiency improvement:
-  Cards only have to be sorted once up front, then grouping them will always yield sorted results.
-  Single pass group by.
 [todo] Cycle icons
 [todo] Card groups
 [todo] Interesting comment:
@@ -33,11 +26,16 @@
   and then be able to filter / sort your other decks based on how much swapping would
   be necessary to build them.
 
+And related:
+
+  Versions for decks, and changes tab for telling you how to move between versions
+
 [todo] Cost to break bug -- click on opponent, then go next/prev. URL is not correct.
 [todo] Have you bought the new datapack yet?
 [todo] Don't scroll to top when toggling spoilers
 [todo] If I decide to go with public decks, allow searching decks by datapack
-[bug] Filter to set and subtype, jump to a card, go back, subtype is no longer selected
+[todo] The URL state manager is completely out of line with the logic that decides which
+       views should be shown.
 
 RESPONSIVE NOTES
   Card view
