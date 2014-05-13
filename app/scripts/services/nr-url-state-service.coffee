@@ -41,7 +41,7 @@ class UrlStateService
     ///
 
   constructor: (@$rootScope, @$location, @$log, @cardService, @filterUI, @queryArgDefaults) ->
-    @_generatedUrl = @$location.url()
+    @_lastUrl = @$location.url()
     @$rootScope.$on '$locationChangeSuccess', @_locationChanged
 
     generalFields = _.find(@filterUI, (group) -> group.name is 'general').fieldFilters
@@ -54,12 +54,13 @@ class UrlStateService
   # Invoked when the location changes to update the query arguments
   _locationChanged: (e, newUrl, oldUrl) =>
     # If this service is responsible for the last URL update, don't react to it
-    if @$location.url() == @_generatedUrl
+    if @$location.url() == @_lastUrl
       return
 
     @$log.debug "URL changed to #{ @$location.url() }"
     @_setStateFromUrl()
     @$rootScope.$broadcast('urlStateChange')
+    @_lastUrl = @$location.url()
 
   # Updates the URL to reflect the current query arguments
   updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
@@ -108,7 +109,7 @@ class UrlStateService
     @$location.replace() if !pushUrl
 
     # Update local state
-    @_generatedUrl = @$location.url()
+    @_lastUrl = @$location.url()
     @queryArgs = angular.copy(queryArgs)
     @selectedCardId = selectedCard?.id
 
@@ -157,6 +158,7 @@ class UrlStateService
 
   _setStateFromUrl: =>
     {
+      @section,
       @queryArgs,
       @selectedCardId,
       @cardPage,
@@ -174,15 +176,15 @@ class UrlStateService
     match = @$location.path().match(DECKS_URL_MATCHER)
 
     if !match?
-      {}
+      { section: 'cards' }
     else
       switch match[1]
         when 'new'
-          { deckPage: 'new' }
+          { section: 'decks', deckPage: 'new' }
         when undefined
-          { deckPage: 'list' }
+          { section: 'decks', deckPage: 'list' }
         else
-          { deckPage: 'edit', selectedDeckId: match[1] }
+          { section: 'decks', deckPage: 'edit', selectedDeckId: match[1] }
 
   _cardStateFromUrl: ->
     selectedCardId = null

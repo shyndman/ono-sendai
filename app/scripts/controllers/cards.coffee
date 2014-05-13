@@ -8,6 +8,7 @@ angular.module('onoSendai')
 
     initialize = ([ cards, queryResult ]) ->
       $scope.uiState =
+        section: 'cards'
         zoom: userPreferences.zoom() ? 0.50
         layoutMode: 'grid'
         settingsVisible: false
@@ -121,6 +122,7 @@ angular.module('onoSendai')
       # Watches for URL changes, to change application state
       $scope.$on('urlStateChange', urlChanged = ->
         $scope.filter = urlStateService.queryArgs
+        $scope.uiState.section = urlStateService.section
 
         selCard =
           if urlStateService.selectedCardId?

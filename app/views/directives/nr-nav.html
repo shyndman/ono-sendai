@@ -2,7 +2,7 @@
 <nav>
   <ul>
     <li ng-class="{
-          'active': isNavActive('/cards')
+          'active': uiState.section == 'cards'
         }">
       <a href="/cards" tabindex="-1">
         <span class="unabridged">Card Browser</span>
@@ -10,7 +10,7 @@
       </a>
     </li>
     <li ng-class="{
-          'active': isNavActive('/decks')
+          'active': uiState.section == 'decks'
         }">
       <a href="/decks" tabindex="-1">
         <span class="unabridged">Deck Builder</span>
