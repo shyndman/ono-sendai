@@ -5,7 +5,7 @@
     <li><a ng-model="filter.side" btn-radio="'Runner'">Runner</a></li>
   </ul>
 </nav>
-<div class="zoom dropdown" ng-if="uiState.layoutMode == 'grid'">
+<div class="zoom dropdown" ng-if="isZoomVisible()">
   <span class="control-label">Zoom:</span>
 
   <div class="unabridged">

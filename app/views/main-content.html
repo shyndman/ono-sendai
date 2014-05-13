@@ -1,7 +1,7 @@
 <div class="main-content">
-  <card-view  ng-show="uiState.layoutMode == 'detail'"></card-view>
-  <ng-include ng-show="uiState.layoutMode == 'grid'"
+  <card-view  ng-show="uiState.mainContent == 'card'"></card-view>
+  <ng-include ng-show="uiState.mainContent == 'cardGrid'"
               src="'/views/cards.html'"></ng-include>
-  <ng-include ng-show="false"
+  <ng-include ng-show="uiState.mainContent == 'deckGrid'"
               src="'/views/decks.html'"></ng-include>
 </div>

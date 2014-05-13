@@ -10,7 +10,7 @@ angular.module('onoSendai')
       $scope.uiState =
         section: 'cards'
         zoom: userPreferences.zoom() ? 0.50
-        layoutMode: 'grid'
+        mainContent: 'cardGrid'
         settingsVisible: false
 
       $log.debug 'Assigning cards with initial query ordering'
@@ -47,7 +47,7 @@ angular.module('onoSendai')
         # Note that we change layout mode to 'detail' when a card is supplied, but do not change it to 'grid'
         # when card == null. This is so that searches (in detail mode) don't boot us out to grid mode when
         # there are no results.
-        $scope.uiState.layoutMode = 'detail'
+        $scope.uiState.mainContent = 'card'
       else
         $log.info 'Card deselected'
 
@@ -55,7 +55,7 @@ angular.module('onoSendai')
       updateUrl()
 
     $scope.deselectCard = ->
-      $scope.uiState.layoutMode = 'grid'
+      $scope.uiState.mainContent = 'cardGrid'
       $scope.selectCard(null)
 
     $scope.selectPreviousCard = ->
@@ -83,8 +83,8 @@ angular.module('onoSendai')
 
     #~-~-~- LAYOUT
 
-    $scope.$watch 'uiState.layoutMode', layoutModeChanged = (layoutMode) ->
-      $scope.$broadcast 'layout', layoutMode
+    $scope.$watch 'uiState.mainContent', mainContentChanged = (mainContent) ->
+      $scope.$broadcast 'layout', mainContent
 
 
     #~-~-~- QUERYING
@@ -96,7 +96,7 @@ angular.module('onoSendai')
       selCard = $scope.selectedCard ? {}
       # If we're in detail mode, and the selected card isn't visible (or doesn't exist), select the first
       # query result.
-      if $scope.uiState.layoutMode == 'detail' and !queryResult.isShown(selCard.id)
+      if $scope.uiState.mainContent == 'card' and !queryResult.isShown(selCard.id)
         $scope.selectCard(queryResult.orderedElements[0])
 
     initializeFilterWatch = ->
@@ -134,7 +134,7 @@ angular.module('onoSendai')
           $scope.selectCard(selCard)
         else
           $scope.deselectCard()
-          $scope.uiState.layoutMode = 'grid')
+          $scope.uiState.mainContent = 'cardGrid')
 
     updateUrlNow = (pushState = false) ->
       selCard = $scope.selectedCard
