@@ -6,9 +6,5 @@ angular.module('onoSendai')
     restrict: 'E'
     controller: ($scope) ->
       $scope.isZoomVisible = ->
-        $scope.uiState? and
-        (
-          $scope.uiState.mainContent == 'cardGrid' or
-          $scope.uiState.mainContent == 'deckGrid'
-        )
+        $scope.uiState?.mainContent == 'cardGrid'
   )
