@@ -125,10 +125,5 @@ angular.module('onoSendai')
       findGroup(activeGroup).hiddenGeneralFields?[field.name]
 
     $scope.fieldHasInput = (val) ->
-      if _.isString(val)
-        val.length > 0
-      else if _.isNumber(val)
-        true
-      else
-        false
+      (_.isString(val) and val.length > 0) or _.isNumber(val)
   )

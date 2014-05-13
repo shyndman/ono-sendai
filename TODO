@@ -36,6 +36,7 @@ And related:
 [todo] If I decide to go with public decks, allow searching decks by datapack
 [todo] The URL state manager is completely out of line with the logic that decides which
        views should be shown.
+[bug] Text colors are different depending on the input control
 
 RESPONSIVE NOTES
   Card view

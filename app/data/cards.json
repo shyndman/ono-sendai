@@ -9692,7 +9692,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nPlace up to 3 advancement tokens on an unrezzed card in a remote server. Gain 2[Credits] for each advancement token placed. You cannot access that card this turn.",
       "title": "Queen's Gambit",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25h6rx",
+          "title": "[COTD] Queen's Gambit (Tuesday - May 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25h6rx/cotd_queens_gambit_tuesday_may_13th_2014/",
+          "created": "2014-05-13T20:10:47Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/dyson-fractal-generator-double-time",
@@ -9819,7 +9827,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nGain 2[Credits]. Gain an additional 1[Credits] for each <strong>double</strong> event in your heap.",
       "title": "Power Nap",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "257dzj",
+          "title": "[COTD] Power Nap (Saturday - May 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/257dzj/cotd_power_nap_saturday_may_10th_2014/",
+          "created": "2014-05-10T13:14:24Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/paintbrush-double-time",
@@ -11457,6 +11473,79 @@
       "title": "Rachel Beckman",
       "type": "Resource",
       "uniqueness": true
+    },
+    {
+      "cgdb_url": null,
+      "faction": "Weyland Consortium",
+      "flavor": "Unlimited Energy. Reasonable Prices.",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/blue-sun-powering-the-future.jpg",
+      "influencelimit": 15,
+      "minimumdecksize": 45,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06068",
+      "number": 68,
+      "quantity": 3,
+      "setname": "Up and Over",
+      "side": "Corp",
+      "subtype": "Corp",
+      "text": "When your turn begins, you may add 1 rezzed card to HQ to gain credits equal to its rez cost.",
+      "title": "Blue Sun: Powering the Future",
+      "type": "Identity",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 2,
+      "faction": "Neutral",
+      "factioncost": 0,
+      "illustrator": "Alex Kim",
+      "imagesrc": "/images/cards/docklands-crackdown.jpg",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06072",
+      "number": 72,
+      "quantity": 3,
+      "setname": "Up and Over",
+      "side": "Corp",
+      "text": "[Click], [Click]: Place 1 power counter on Docklands Crackdown.\r\nThe install cost of the first card the Runner installs each turn is increased by 1 for each power counter on Docklands Crackdown.",
+      "title": "Docklands Crackdown",
+      "trash": 3,
+      "type": "Asset",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Shaper",
+      "factioncost": 2,
+      "illustrator": "Ralph Beisner",
+      "imagesrc": "/images/cards/tradein.jpg",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06078",
+      "number": 78,
+      "quantity": 3,
+      "setname": "Up and Over",
+      "side": "Runner",
+      "text": "As an additional cost to play this event, trash an installed piece of hardware.\r\nGain credits equal to half the install cost of the trashed hardware (rounded down) and search your stack for a piece of hardware, reveal it, and add it to your grip. Shuffle your stack.",
+      "title": "Trade-In",
+      "type": "Event",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": null,
+      "cost": 1,
+      "faction": "Shaper",
+      "factioncost": 2,
+      "flavor": "\"There is no better tool for charting the empty spaces of the net.\" -Nasir Meidan",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/astrolabe.jpg",
+      "nrdb_url": "http://netrunnerdb.com/en/card/06079",
+      "number": 79,
+      "quantity": 3,
+      "setname": "Up and Over",
+      "side": "Runner",
+      "subtype": "Console",
+      "text": "+1[Memory Unit]\r\nDraw 1 card whenever the Corp creates a server.\r\nLimit 1 <strong>console</strong> per player.",
+      "title": "Astrolabe",
+      "type": "Hardware",
+      "uniqueness": true
     }
   ],
   "sets": [
@@ -11546,6 +11635,11 @@
       "cycle": "Lunar",
       "released": null,
       "title": "First Contact"
+    },
+    {
+      "cycle": "Lunar",
+      "released": null,
+      "title": "Up and Over"
     }
   ]
 }
