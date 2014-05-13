@@ -391,12 +391,6 @@ angular.module('onoSendai')
           changeFocusToSelection()
 
 
-      scope.$watch 'layoutMode', (layoutMode) ->
-        if layoutMode == 'grid'
-          scrollToFocusedElement()
-
-
-
       # *~*~*~*~ QUERY CHANGES
 
       firstLayout = true
