@@ -1,0 +1,28 @@
+.groupings {
+  $abridged-width: $filter-bar-collapse-width + 50px;
+  @include abridged($abridged-width, inline-block);
+
+  .dropdown-menu {
+    left: initial;
+    right: 0;
+    min-width: inherit;
+  }
+
+  .more-groups {
+    @include tweak($x: -4px);
+    display: inline-block;
+
+    .ellipsis {
+      @include tweak($y: -3px);
+      font-size: 15px;
+      font-weight: bold;
+      color: #666;
+    }
+  }
+
+  @media (max-width: $abridged-width) {
+    .control-label {
+      margin-right: 0;
+    }
+  }
+}

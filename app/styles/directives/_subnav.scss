@@ -1,5 +1,5 @@
 nr-subnav {
-  $subnav-height: 30px;
+  $subnav-height: 31px;
 
   display: flex;
   height: $subnav-height; // Required for Firefox
@@ -19,7 +19,7 @@ nr-subnav {
         float: left;
 
         a {
-          padding: 5px 23px;
+          padding: 6px 23px;
           line-height: $subnav-height;
           font-size: 13px;
           color: #777;
@@ -74,33 +74,8 @@ nr-subnav {
     }
   }
 
-  .groupings {
-    $abridged-width: $filter-bar-collapse-width + 50px;
-    @include abridged($abridged-width, inline-block);
-
-    .dropdown-menu {
-      left: initial;
-      right: 0;
-      min-width: inherit;
-    }
-
-    .more-groups {
-      @include tweak($x: -4px);
-      display: inline-block;
-
-      .ellipsis {
-        @include tweak($y: -3px);
-        font-size: 15px;
-        font-weight: bold;
-        color: #666;
-      }
-    }
-
-    @media (max-width: $abridged-width) {
-      .control-label {
-        margin-right: 0;
-      }
-    }
+  nr-grouping-selector {
+    @include tweak($y: -1px);
   }
 
   .control-label {
