@@ -1,19 +1,23 @@
-<grid class="decks"
-      query-result="queryResult"
-      selection="selectedCard"
-      zoom="uiState.zoom">
-
-  <!-- HEADERS -->
-  <h2 ng-repeat="(id, group) in queryResult.groups track by id"
-      grid-id="{{ group.id }}"
-      class="{{ group.id }} grid-header invisible"
-      title="{{ group.id }}">
-    <small class="card-count"><ng-pluralize
+<div class="decks">
+  <h2 class="grid-header">
+    Corporation Decks
+    <small class="element-count"><ng-pluralize
         count="group.cards.length"
         when="{
-          '1': '1 card',
-          'other': '{} cards'
+          '1': '1 deck',
+          'other': '{} decks'
         }"></ng-pluralize>
     </small>
   </h2>
-</grid>
+
+  <h2 class="grid-header">
+    Runner Decks
+    <small class="element-count"><ng-pluralize
+        count="group.cards.length"
+        when="{
+          '1': '1 deck',
+          'other': '{} decks'
+        }"></ng-pluralize>
+    </small>
+  </h2>
+</div>
