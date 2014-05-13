@@ -30,7 +30,7 @@ nr-nav {
     @include logo('/images/logo.png');
 
     width: 211px;
-    height: 51px;
+    height: 50px;
     margin: 0;
     padding-top: 18px;
     cursor: pointer;
@@ -39,8 +39,12 @@ nr-nav {
       @include logo('/images/logo@2x.png');
     }
 
-    @media (max-width: $filter-bar-collapse-width) {
+    &.collapsed {
       width: 48px;
+    }
+
+    @media (max-width: $filter-bar-collapse-width) {
+      @extend .brand.collapsed;
     }
   }
 
