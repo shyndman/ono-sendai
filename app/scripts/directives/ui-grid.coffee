@@ -50,10 +50,7 @@ angular.module('onoSendai')
       # in lower resolution images before doing most transformations.
       inverseDownscaleFactor = 1
 
-      # First scrollable element containing this one. We toggle its overflow state depending on whether
-      # we're in detail mode or grid mode.
       scrollParent = element.parents('.scrollable').first()
-      scrollParentOverflow = scrollParent.css('overflow')
       scrollTop = scrollParent.scrollTop()
 
 
@@ -117,9 +114,6 @@ angular.module('onoSendai')
         items = gridItemsAndHeaders
         if !items? or !items.length
           return
-
-        # Remove the scroll lock-down, if we've been in detail mode previously
-        setScrollerOverflow('')
 
         firstHeader = $(_.find(items, (item) -> item.classList.contains('grid-header')))
 
@@ -270,14 +264,6 @@ angular.module('onoSendai')
 
 
       # *~*~*~*~ SCROLLING
-
-      # Optimization to prevent unnecessary reflows by invoking jQuery.css(). We store the scroll parent's overflow
-      # value around, and only set it if required. This assumes no one else is tinkering with the value.
-      setScrollerOverflow = (val) ->
-        if scrollParentOverflow != val
-          scrollParent.css('overflow', val)
-          scrollParentOverflow = val
-          hasContainerChangedWidth()
 
       scrollToFocusedElement = ->
         if !focusedElement? or rowInfos.length <= focusedElement.row
