@@ -10,7 +10,7 @@ angular.module('onoSendai')
       $scope.uiState =
         section: 'cards'
         zoom: userPreferences.zoom() ? 0.50
-        mainContent: 'cardGrid'
+        mainContent: urlStateService.mainContent
         settingsVisible: false
 
       $log.debug 'Assigning cards with initial query ordering'
@@ -121,9 +121,6 @@ angular.module('onoSendai')
     initializeUrlSync = ->
       # Watches for URL changes, to change application state
       $scope.$on('urlStateChange', urlChanged = ->
-        $scope.queryArgs = urlStateService.queryArgs
-        $scope.uiState.section = urlStateService.section
-
         selCard =
           if urlStateService.selectedCardId?
             card = _.findWhere($scope.cards, id: urlStateService.selectedCardId)
@@ -134,13 +131,19 @@ angular.module('onoSendai')
           $scope.selectCard(selCard)
         else
           $scope.deselectCard()
-          $scope.uiState.mainContent = 'cardGrid')
+
+        # Update these variables after selecting a card, overwriting any
+        # changes to scope variables selectCard makes
+        $scope.queryArgs = urlStateService.queryArgs
+        $scope.uiState.section = urlStateService.section
+        $scope.uiState.mainContent = urlStateService.mainContent)
 
     updateUrlNow = (pushState = false) ->
       selCard = $scope.selectedCard
       cardPage = $scope.uiState.cardPage
       $scope.$safeApply ->
-        urlStateService.updateUrl($scope.queryArgs, selCard, selCard && cardPage, pushState)
+        urlStateService.updateUrl($scope.queryArgs, selCard,
+          selCard && cardPage, null, pushState) # [todo] selectedDeck
 
     # Limits URL updates. I find it distracting if it happens to ofter.
     updateUrl = _.debounce(updateUrlNow, 500)

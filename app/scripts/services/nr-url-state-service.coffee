@@ -63,10 +63,15 @@ class UrlStateService
     @_lastUrl = @$location.url()
 
   # Updates the URL to reflect the current query arguments
-  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, forcePushState = false) ->
+  updateUrl: (queryArgs = @queryArgs, selectedCard, cardPage, selectedDeck, forcePushState = false) ->
     @$log.debug('Updating URL with latest query arguments')
 
-    url = '/cards'
+    url = ''
+
+    if selectedDeck?
+      url += "/decks/#{ selectedDeck.id }"
+
+    url += '/cards'
     search = {}
 
     if queryArgs.side?
@@ -159,15 +164,16 @@ class UrlStateService
   _setStateFromUrl: =>
     {
       @section,
+      @mainContent,
       @queryArgs,
       @selectedCardId,
       @cardPage,
-      @deckPage,
+      @deckSidebar,
       @selectedDeckId
     } = @_stateFromUrl()
 
   _stateFromUrl: ->
-    state = _.extend(@_deckStateFromUrl(), @_cardStateFromUrl())
+    state = _.extend(@_cardStateFromUrl(), @_deckStateFromUrl())
     console.debug('State determined from URL', state)
     state
 
@@ -180,15 +186,16 @@ class UrlStateService
     else
       switch match[1]
         when 'new'
-          { section: 'decks', deckPage: 'new' }
+          { section: 'decks', deckSidebar: 'new' }
         when undefined
-          { section: 'decks', deckPage: 'list' }
+          { section: 'decks', mainContent: 'deckGrid' }
         else
-          { section: 'decks', deckPage: 'edit', selectedDeckId: match[1] }
+          { section: 'decks', deckSidebar: 'edit', selectedDeckId: match[1] }
 
   _cardStateFromUrl: ->
     selectedCardId = null
     cardPage = null
+    mainContent = 'cardGrid'
     queryArgs = @queryArgDefaults.get()
     search = @$location.search()
     cardsMatch = @$location.path().match(CARD_URL_MATCHER)
@@ -196,7 +203,7 @@ class UrlStateService
     # No URL match. Return default query arguments.
     if !cardsMatch?
       @$log.debug('No matching URL pattern. Assigning query arg defaults')
-      return { queryArgs }
+      return { queryArgs, mainContent }
 
     if (side = cardsMatch[1])?
       queryArgs.side = _.capitalize(cardsMatch[1])
@@ -206,6 +213,7 @@ class UrlStateService
 
     if cardsMatch[3]
       selectedCardId = cardsMatch[3]
+      mainContent = 'card'
 
     if cardsMatch[4]
       switch cardsMatch[4].trim()
@@ -220,7 +228,7 @@ class UrlStateService
     if search.group
       queryArgs.groupByFields = search.group.split(',')
 
-    { queryArgs, selectedCardId, cardPage }
+    { mainContent, queryArgs, selectedCardId, cardPage }
 
   # Populates the supplied queryArgs with a single argument, as described
   # by name and desc.
