@@ -9692,7 +9692,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nPlace up to 3 advancement tokens on an unrezzed card in a remote server. Gain 2[Credits] for each advancement token placed. You cannot access that card this turn.",
       "title": "Queen's Gambit",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25h6rx",
+          "title": "[COTD] Queen's Gambit (Tuesday - May 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25h6rx/cotd_queens_gambit_tuesday_may_13th_2014/",
+          "created": "2014-05-13T20:10:47Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/dyson-fractal-generator-double-time",
