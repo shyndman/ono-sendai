@@ -9674,7 +9674,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nMake a run on a remote server. If successful, instead of accessing cards, trash all cards in the server at no cost (even if they cannot normally be trashed).",
       "title": "Singularity",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25iqsp",
+          "title": "[COTD] Singularity (Wednesday - May 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25iqsp/cotd_singularity_wednesday_may_14th_2014/",
+          "created": "2014-05-14T07:07:51Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/queens-gambit-double-time",
@@ -10785,7 +10793,15 @@
       "text": "Gain 1[Credits] for each installed <strong>connection</strong> resource.",
       "title": "Calling in Favors",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25iqz6",
+          "title": "[COTD] Calling in Favors (Wednesday - May 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25iqz6/cotd_calling_in_favors_wednesday_may_14th_2014/",
+          "created": "2014-05-14T07:11:54Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
