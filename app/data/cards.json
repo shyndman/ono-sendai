@@ -10273,7 +10273,15 @@
       "text": "Place 3 agenda counters on House of Knives when you score it.\r\n<strong>Hosted agenda counter</strong>: Do 1 net damage. Use this ability only during a run and only once per run.",
       "title": "House of Knives",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25mwcl",
+          "title": "[COTD] House of Knives (Thursday - May 15th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25mwcl/cotd_house_of_knives_thursday_may_15th_2014/",
+          "created": "2014-05-15T16:22:10Z"
+        }
+      ]
     },
     {
       "advancementcost": 4,
