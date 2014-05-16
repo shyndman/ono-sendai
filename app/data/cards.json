@@ -10828,7 +10828,15 @@
       "text": "Play only as your first click.\r\nMake a run and gain [Click].",
       "title": "Early Bird",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25q826",
+          "title": "[COTD] Early Bird (Friday - May 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25q826/cotd_early_bird_friday_may_16th_2014/",
+          "created": "2014-05-16T17:45:20Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
