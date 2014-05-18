@@ -10300,7 +10300,15 @@
       "text": "Lower the advancement requirement of each Medical Breakthrough by 1. This ability is active even while Medical Breakthrough is in the Runner's score area.",
       "title": "Medical Breakthrough",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25snrk",
+          "title": "[COTD] Medical Breakthrough (Saturday - May 17th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25snrk/cotd_medical_breakthrough_saturday_may_17th_2014/",
+          "created": "2014-05-17T15:30:57Z"
+        }
+      ]
     },
     {
       "advancementcost": 3,
