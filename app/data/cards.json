@@ -10326,7 +10326,15 @@
       "text": "When you score Philotic Entanglement, do 1 net damage for each agenda in the Runner's score area.\r\nLimit 1 Philotic Entanglement per deck.",
       "title": "Philotic Entanglement",
       "type": "Agenda",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "25x8my",
+          "title": "[COTD] Philotic Entanglement (Monday - May 19th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25x8my/cotd_philotic_entanglement_monday_may_19th_2014/",
+          "created": "2014-05-19T06:35:27Z"
+        }
+      ]
     },
     {
       "advancementcost": 5,
@@ -10862,7 +10870,15 @@
       "text": "Look at the top 4 cards of your stack and add 1 of those cards to your grip. Shuffle your stack.",
       "title": "Express Delivery",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "25vk3j",
+          "title": "[COTD] Express Delivery (Sunday - May 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/25vk3j/cotd_express_delivery_sunday_may_18th_2014/",
+          "created": "2014-05-18T18:00:47Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
