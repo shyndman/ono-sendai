@@ -10897,7 +10897,15 @@
       "text": "Make a run on HQ. Bypass the first 2 pieces of ice encountered during this run. If the run is successful, you cannot access any cards.",
       "title": "Feint",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2619ms",
+          "title": "[COTD] Feint (Tuesday - May 20th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2619ms/cotd_feint_tuesday_may_20th_2014/",
+          "created": "2014-05-20T15:05:19Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
