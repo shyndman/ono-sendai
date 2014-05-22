@@ -10352,7 +10352,15 @@
       "text": "When the Runner accesses The Future Perfect, you and the Runner secretly spend 0[Credits], 1[Credits], or 2[Credits]. Reveal spent credits. If you and the Runner spent a different number of credits, prevent The Future Perfect from being stolen. Ignore this ability if the Runner accesses The Future Perfect while it is installed.",
       "title": "The Future Perfect",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "264icc",
+          "title": "[COTD] The Future Perfect (Wednesday - May 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/264icc/cotd_the_future_perfect_wednesday_may_21st_2014/",
+          "created": "2014-05-21T15:17:24Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
