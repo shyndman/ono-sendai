@@ -10932,7 +10932,15 @@
       "text": "Make a run on HQ. If successful, access 2 additional cards from HQ.",
       "title": "Legwork",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "268c9r",
+          "title": "[COTD] Legwork (Thursday - May 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/268c9r/cotd_legwork_thursday_may_22nd_2014/",
+          "created": "2014-05-22T18:40:30Z"
+        }
+      ]
     },
     {
       "breakcost": {
