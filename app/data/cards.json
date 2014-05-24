@@ -10379,7 +10379,15 @@
       "title": "Chairman Hiro",
       "trash": 6,
       "type": "Asset",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "26bwbe",
+          "title": "[COTD] Chairman Hiro (Friday - May 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26bwbe/cotd_chairman_hiro_friday_may_23rd_2014/",
+          "created": "2014-05-23T21:25:20Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
