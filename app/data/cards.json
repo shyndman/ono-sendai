@@ -10407,7 +10407,15 @@
       "title": "Mental Health Clinic",
       "trash": 3,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26gnmr",
+          "title": "[COTD] Mental Health Clinic (Sunday - May 25, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26gnmr/cotd_mental_health_clinic_sunday_may_25_2014/",
+          "created": "2014-05-25T18:49:34Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10970,7 +10978,15 @@
       "text": "As an additional cost to play this event, spend [Click].\r\nSearch your stack for a <strong>run</strong> event and play that <strong>run</strong> event (paying its play cost), ignoring any additional costs. Shuffle your stack.",
       "title": "Planned Assault",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26ex67",
+          "title": "[COTD] Planned Assault (Saturday - May 24th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26ex67/cotd_planned_assault_saturday_may_24th_2014/",
+          "created": "2014-05-25T00:58:19Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11211,7 +11227,15 @@
       "text": "Secretly spend any number of credits. The Corp guesses if you spent an even or odd amount. Reveal spent credits. If the Corp guessed incorrectly, gain credits equal to twice the amount spent.",
       "title": "Push Your Luck",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26m852",
+          "title": "[COTD] Push Your Luck (Tuesday - May 27th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26m852/cotd_push_your_luck_tuesday_may_27th_2014/",
+          "created": "2014-05-27T16:37:03Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
