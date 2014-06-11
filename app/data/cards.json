@@ -10434,7 +10434,15 @@
       "title": "Psychic Field",
       "trash": 2,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26pa5i",
+          "title": "[COTD] Psychic Field (Wednesday - May 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26pa5i/cotd_psychic_field_wednesday_may_28th_2014/",
+          "created": "2014-05-28T15:27:37Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10453,7 +10461,15 @@
       "title": "Shi.Kyū",
       "trash": 0,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26vp69",
+          "title": "[COTD] Shi.Kyū (Friday - May 30th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26vp69/cotd_shikyū_friday_may_30th_2014/",
+          "created": "2014-05-30T15:18:33Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10473,7 +10489,15 @@
       "title": "Tenma Line",
       "trash": 4,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "271mvn",
+          "title": "[COTD] Tenma Line (Sunday - June 1st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/271mvn/cotd_tenma_line_sunday_june_1st_2014/",
+          "created": "2014-06-01T18:11:45Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10491,7 +10515,15 @@
       "text": "Play only if the Runner made a successful run during his or her last turn.\r\nYou and the Runner secretly spend 0[Credits], 1[Credits], or 2[Credits]. Reveal spent credits. If you and the Runner spent a different number of credits, he or she chooses to suffer 1 brain damage or take 1 tag.",
       "title": "Cerebral Cast",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "278ef6",
+          "title": "[COTD] Cerebral Cast (Tuesday - June 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/278ef6/cotd_cerebral_cast_tuesday_june_3rd_2014/",
+          "created": "2014-06-03T20:40:51Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10510,7 +10542,15 @@
       "text": "Gain 8[Credits]. The Runner gains 3[Credits].",
       "title": "Medical Research Fundraiser",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27eppw",
+          "title": "[COTD] Medical Research Fundraiser (Thursday - June 5th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27eppw/cotd_medical_research_fundraiser_thursday_june/",
+          "created": "2014-06-05T19:37:46Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10528,7 +10568,15 @@
       "text": "As an additional cost to play this operation, spend [Click].\r\nInstall an asset, agenda, or upgrade from HQ in a new remote server. Place 3 advancement tokens on that card. You cannot score or rez that card until your next turn begins.",
       "title": "Mushin No Shin",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27hs9y",
+          "title": "[COTD] Mushin No Shin (Saturday - June 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27hs9y/cotd_mushin_no_shin_saturday_june_7th_2014/",
+          "created": "2014-06-06T19:22:33Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10548,7 +10596,15 @@
       "text": "[Subroutine] The Runner cannot break any subroutines on the next piece of ice he or she encounters during this run.\r\n[Subroutine] The Runner cannot jack out until after encountering the next piece of ice during this run.",
       "title": "Inazuma",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27qmrf",
+          "title": "[COTD] Inazuma (Monday - June 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27qmrf/cotd_inazuma_monday_june_9th_2014/",
+          "created": "2014-06-09T23:11:28Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11004,7 +11060,15 @@
       "text": "+1[Memory Unit]\r\nYour maximum hand size is increased by 1.\r\nWhenever the Corp scores an agenda, you may search your stack for a card and add it to your grip. Shuffle your stack.\r\nLimit 1 <strong>console</strong> per player.",
       "title": "Logos",
       "type": "Hardware",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "26s4ft",
+          "title": "[COTD] Logos (Thursday - May 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26s4ft/cotd_logos_thursday_may_29th_2014/",
+          "created": "2014-05-29T12:26:39Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11022,7 +11086,15 @@
       "text": "1[Recurring Credits]\r\nUse this credit to play <strong>run</strong> events.",
       "title": "Public Terminal",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "26yd3o",
+          "title": "[COTD] Public Terminal (Saturday - May 31st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/26yd3o/cotd_public_terminal_saturday_may_31st_2014/",
+          "created": "2014-05-31T13:12:22Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11040,7 +11112,15 @@
       "text": "Use Unregistered S&W '35 only if you have made a successful run on HQ this turn.\r\n[Click], [Click]: Trash 1 rezzed <strong>bioroid</strong>, <strong>clone</strong>, <strong>executive</strong>, or <strong>sysop</strong> in a server without paying its trash cost.",
       "title": "Unregistered S&W '35",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "274twj",
+          "title": "[COTD] Unregistered S&amp;W '35 (Monday - June 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/274twj/cotd_unregistered_sw_35_monday_june_2nd_2014/",
+          "created": "2014-06-02T18:59:45Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11058,7 +11138,15 @@
       "text": "[Click]: Draw 1 card from the bottom of your stack.",
       "title": "Window",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27aq9s",
+          "title": "[COTD] Window (Wednesday - June 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27aq9s/cotd_window_wednesday_june_4th_2014/",
+          "created": "2014-06-04T15:30:24Z"
+        }
+      ]
     },
     {
       "breakcost": {
@@ -11087,7 +11175,15 @@
       "text": "1[Credits]: Break <strong>sentry</strong> subroutine.\r\n2[Credits]: +3 strength.\r\nAlias cannot be used on ice protecting a remote server.",
       "title": "Alias",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27h7gi",
+          "title": "[COTD] Alias (Friday - June 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27h7gi/cotd_alias_friday_june_6th_2014/",
+          "created": "2014-06-06T15:52:18Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11111,7 +11207,15 @@
       "text": "2[Credits]: Break up to 3 <strong>barrier</strong> subroutines.\r\n2[Credits]: +4 strength.\r\nBreach cannot be used on ice protecting a remote server.",
       "title": "Breach",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27my6r",
+          "title": "[COTD] Breach (Sunday - June 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27my6r/cotd_breach_sunday_june_8th_2014/",
+          "created": "2014-06-08T19:15:19Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11130,7 +11234,15 @@
       "text": "Install only if you made a successful run on HQ this turn.\r\nWhenever the Corp draws a card, you may pay 2[Credits] to reveal that card.",
       "title": "Bug",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27si2q",
+          "title": "[COTD] Bug (Tuesday - June 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27si2q/cotd_bug_tuesday_june_10th_2014/",
+          "created": "2014-06-10T15:16:59Z"
+        }
+      ]
     },
     {
       "breakcost": {
