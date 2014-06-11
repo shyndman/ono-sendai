@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-05-07T00:00:00Z",
+  "last-modified": "2014-06-11T00:00:00Z",
   "cards": [
     {
       "baselink": 0,
@@ -11770,6 +11770,66 @@
       "title": "Astrolabe",
       "type": "Hardware",
       "uniqueness": true
+    },
+    {
+      "advancementcost": 3,
+      "agendapoints": 1,
+      "cgdb_url": null,
+      "faction": "Haas-Bioroid",
+      "flavor": "\"'What does it do?' Whatever I bloody want it to do.\" -Director Haas",
+      "illustrator": "Veli Nystr\u00f6m",
+      "imagesrc": "/images/cards/bifrost-array.jpg",
+      "limited": false,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06081",
+      "number": 81,
+      "quantity": 3,
+      "setname": "All That Remains",
+      "side": "Corp",
+      "subtype": "Initiative",
+      "text": "When you score Bifrost Array, you may trigger the \"when scored\" ability of another agenda that is not a copy of Bifrost Array in your score area.",
+      "title": "Bifrost Array",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 3,
+      "agendapoints": 1,
+      "cgdb_url": null,
+      "faction": "NBN",
+      "flavor": "\"We've received seventeen crates from ChiLo. We'll hit stores the same day we sign the licence agreement.\"",
+      "illustrator": "Crystal Ben",
+      "imagesrc": "/images/cards/license-acquisition.jpg",
+      "limited": false,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06085",
+      "number": 85,
+      "quantity": 3,
+      "setname": "All That Remains",
+      "side": "Corp",
+      "subtype": "Expansion",
+      "text": "When you score License Acquisition, install and rez an asset or upgrade from Archives or HQ, ignoring all costs.",
+      "title": "License Acquisition",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 3,
+      "agendapoints": 1,
+      "cgdb_url": null,
+      "faction": "Weyland Consortium",
+      "flavor": "\"Our new barriers will be built on the rubble of our enemies\".",
+      "illustrator": "Gong Studios",
+      "imagesrc": "/images/cards/superior-cyberwalls.jpg",
+      "limited": false,
+      "nrdb_url": "http://netrunnerdb.com/en/card/06087",
+      "number": 87,
+      "quantity": 3,
+      "setname": "All That Remains",
+      "side": "Corp",
+      "subtype": "Security",
+      "text": "All <strong>barrier</strong> ice have +1 strength.\r\nWhen you score Superior Cyberwalls, gain 1[Credits] for each rezzed <strong>barrier</strong>.",
+      "title": "Superior Cyberwalls",
+      "type": "Agenda",
+      "uniqueness": false
     }
   ],
   "sets": [
@@ -11864,6 +11924,11 @@
       "cycle": "Lunar",
       "released": null,
       "title": "Up and Over"
+    },
+    {
+      "cycle": "Lunar",
+      "released": null,
+      "title": "All That Remains"
     }
   ]
 }
