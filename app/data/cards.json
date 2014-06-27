@@ -10623,7 +10623,15 @@
       "text": "When the Runner encounters Komainu, it gains \"[Subroutine] Do 1 net damage.\" for each card in the Runner's grip for the remainder of this run.",
       "title": "Komainu",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27vrar",
+          "title": "[COTD] Komainu (Wednesday - June 11, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27vrar/cotd_komainu_wednesday_june_11_2014/",
+          "created": "2014-06-11T15:16:21Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10643,7 +10651,15 @@
       "text": "[Subroutine] Do 1 net damage unless the Runner pays 1[Credits].\r\n[Subroutine] Do 1 net damage unless the Runner pays 1[Credits].",
       "title": "Pup",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2821sv",
+          "title": "[COTD] Pup (Friday - June 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2821sv/cotd_pup_friday_june_13th_2014/",
+          "created": "2014-06-13T15:14:34Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10663,7 +10679,15 @@
       "text": "[Subroutine] Look at the top 3 cards of R&D and arrange them in any order.\r\n[Subroutine] The Runner accesses the top card of R&D unless the Corp pays 1[Credits].",
       "title": "Shiro",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "289e90",
+          "title": "[COTD] Shiro (Monday - June 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/289e90/cotd_shiro_monday_june_16th_2014/",
+          "created": "2014-06-16T06:12:20Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10683,7 +10707,15 @@
       "text": "[Subroutine] If not already running on Archives, the Runner is now running on Archives instead of passing Susanoo-No-Mikoto. The Runner cannot jack out until after he or she encounters a piece of ice.",
       "title": "Susanoo-No-Mikoto",
       "type": "ICE",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "28gyx2",
+          "title": "[COTD] Susanoo-No-Mikoto (Wednesday - June 18, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28gyx2/cotd_susanoonomikoto_wednesday_june_18_2014/",
+          "created": "2014-06-18T16:29:32Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10703,7 +10735,15 @@
       "title": "NeoTokyo Grid",
       "trash": 5,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "28ne76",
+          "title": "[COTD] NeoTokyo Grid (Friday - June 20th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28ne76/cotd_neotokyo_grid_friday_june_20th_2014/",
+          "created": "2014-06-20T15:54:43Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10723,7 +10763,15 @@
       "title": "Tori Hanzō",
       "trash": 2,
       "type": "Upgrade",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "28tatd",
+          "title": "[COTD] Tori Hanzō (Sunday - June 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28tatd/cotd_tori_hanzō_sunday_june_22nd_2014/",
+          "created": "2014-06-22T19:38:47Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10742,7 +10790,15 @@
       "title": "Plan B",
       "trash": 1,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "28z48p",
+          "title": "[COTD] Plan B (Tuesday - June 24th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28z48p/cotd_plan_b_tuesday_june_24th_2014/",
+          "created": "2014-06-24T16:08:11Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10801,7 +10857,15 @@
       "text": "Gain 1[Credits] for each remote server with a card installed in it.",
       "title": "Diversified Portfolio",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "295e7u",
+          "title": "[COTD] Diversified Portfolio (Thursday - June 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/295e7u/cotd_diversified_portfolio_thursday_june_25th_2014/",
+          "created": "2014-06-26T13:57:27Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11274,7 +11338,15 @@
       "text": "1[Credits]: Break <strong>tracer</strong> subroutine.\r\n2[Credits]: +3 strength.",
       "title": "Gingerbread",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "27xym4",
+          "title": "[COTD] Gingerbread (Thursday - June 12, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/27xym4/cotd_gingerbread_thursday_june_12_2014/",
+          "created": "2014-06-12T05:32:13Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11293,7 +11365,15 @@
       "text": "[Trash]: Break all but 1 subroutines on a piece of ice.",
       "title": "Grappling Hook",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "287vb4",
+          "title": "[COTD] Grappling Hook (Sunday - June 15, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/287vb4/cotd_grappling_hook_sunday_june_15_2014/",
+          "created": "2014-06-15T18:42:58Z"
+        }
+      ]
     },
     {
       "breakcost": {
@@ -11322,7 +11402,15 @@
       "text": "1[Credits]: Break <strong>code gate</strong> subroutine.\r\n2[Credits]: +2 strength.\r\nPassport cannot be used on ice protecting a remote server.",
       "title": "Passport",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "28cnfb",
+          "title": "[COTD] Passport (Tuesday - June 17th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28cnfb/cotd_passport_tuesday_june_17th_2014/",
+          "created": "2014-06-17T07:11:48Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11366,7 +11454,15 @@
       "text": "When your turn begins, choose a server. The first time you make a successful run on that server this turn, instead of accessing cards, gain 2[Credits].",
       "title": "Security Testing",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "28kgkk",
+          "title": "[COTD] Security Testing (Thursday - June 19, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28kgkk/cotd_security_testing_thursday_june_19_2014/",
+          "created": "2014-06-19T17:32:58Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11385,7 +11481,15 @@
       "text": "When you install Theophilius Bagbiter, lose all credits in your credit pool.\r\nYour maximum hand size is equal to the number of credits in your credit pool.",
       "title": "Theophilius Bagbiter",
       "type": "Resource",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "28pro8",
+          "title": "[COTD] Theophilius Bagbiter (Saturday - June 21, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28pro8/cotd_theophilius_bagbiter_saturday_june_21_2014/",
+          "created": "2014-06-21T11:26:23Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11404,7 +11508,15 @@
       "text": "You cannot use Tri-maf Contact more than once per turn.\r\n[Click]: Gain 2[Credits].\r\nWhen Tri-maf Contact is trashed, suffer 3 meat damage.",
       "title": "Tri-maf Contact",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "28vz8i",
+          "title": "[COTD] Tri-maf Contact (Monday - June 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/28vz8i/cotd_trimaf_contact_monday_june_23rd_2014/",
+          "created": "2014-06-23T17:23:51Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11422,7 +11534,15 @@
       "text": "Install up to 3 programs from your grip (paying the install costs).",
       "title": "Mass Install",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2929um",
+          "title": "[COTD] Mass Install (Wednesday - June 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2929um/cotd_mass_install_wednesday_june_25th_2014/",
+          "created": "2014-06-25T15:16:00Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11441,7 +11561,15 @@
       "text": "+1[Memory Unit]\r\nTrash Q-Coherence Chip when a program is trashed.",
       "title": "Q-Coherence Chip",
       "type": "Hardware",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2994op",
+          "title": "[COTD] Q-Coherence Chip (Friday - June 27th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2994op/cotd_qcoherence_chip_friday_june_27th_2014/",
+          "created": "2014-06-27T16:53:02Z"
+        }
+      ]
     },
     {
       "breakcost": {
@@ -11777,7 +11905,7 @@
       "cgdb_url": null,
       "faction": "Haas-Bioroid",
       "flavor": "\"'What does it do?' Whatever I bloody want it to do.\" -Director Haas",
-      "illustrator": "Veli Nystr\u00f6m",
+      "illustrator": "Veli Nyström",
       "imagesrc": "/images/cards/bifrost-array.jpg",
       "limited": false,
       "nrdb_url": "http://netrunnerdb.com/en/card/06081",
