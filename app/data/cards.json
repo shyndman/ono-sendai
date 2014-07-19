@@ -324,7 +324,15 @@
       "subtype": "Virtual",
       "text": "All ice is encountered with its strength lowered by 1.",
       "title": "Ice Carver",
-      "type": "Resource"
+      "type": "Resource",
+      "reddit_cotds": [
+        {
+          "id": "2aedix",
+          "title": "[COTD] Ice Carver (Friday - July 11th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2aedix/cotd_ice_carver_friday_july_11th_2014/",
+          "created": "2014-07-11T04:29:11Z"
+        }
+      ]
     },
     {
       "altart": {
@@ -499,7 +507,15 @@
       "subtype": "Console",
       "text": "+1[Memory Unit]\n\nGain 1[Credits] whenever you make a successful run.\n\nLimit 1 <strong>console</strong> per player.",
       "title": "Desperado",
-      "type": "Hardware"
+      "type": "Hardware",
+      "reddit_cotds": [
+        {
+          "id": "2anpbp",
+          "title": "[COTD] Desperado (Monday - July 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2anpbp/cotd_desperado_monday_july_14th_2014/",
+          "created": "2014-07-14T11:14:57Z"
+        }
+      ]
     },
     {
       "breakcost": {
@@ -872,7 +888,15 @@
       "subtype": "Console",
       "text": "+2[Memory Unit] +2[Link]\n2[Recurring Credits]\nUse the credits to pay for using <strong>icebreakers.</strong>\nLimit 1 <strong>console</strong> per player.",
       "title": "The Toolbox",
-      "type": "Hardware"
+      "type": "Hardware",
+      "reddit_cotds": [
+        {
+          "id": "2alfta",
+          "title": "[COTD] The Toolbox (Sunday - July 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2alfta/cotd_the_toolbox_sunday_july_13th_2014/",
+          "created": "2014-07-13T17:10:49Z"
+        }
+      ]
     },
     {
       "breakcost": {
@@ -5002,7 +5026,15 @@
       "subtype": "Code Gate",
       "text": "[Subroutine] The Runner loses [Click], if able.\n[Subroutine] End the run.",
       "title": "Enigma",
-      "type": "ICE"
+      "type": "ICE",
+      "reddit_cotds": [
+        {
+          "id": "2as1ih",
+          "title": "[COTD] Enigma (Tuesday - July 15th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2as1ih/cotd_enigma_tuesday_july_15th_2014/",
+          "created": "2014-07-15T17:23:24Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/hunter-core",
@@ -5021,7 +5053,15 @@
       "subtype": "Sentry - Tracer - Observer",
       "text": "[Subroutine] <strong>Trace<sup>3</sup></strong>&ndash; If successful, give the Runner 1 tag.",
       "title": "Hunter",
-      "type": "ICE"
+      "type": "ICE",
+      "reddit_cotds": [
+        {
+          "id": "2av4r6",
+          "title": "[COTD] Hunter (Wednesday - July 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2av4r6/cotd_hunter_wednesday_july_16th_2014/",
+          "created": "2014-07-16T15:23:43Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/wall-of-static-core",
@@ -10218,7 +10258,15 @@
       "text": "Each player needs 1 fewer agenda point to win the game.",
       "title": "Harmony Medtech: Biomedical Pioneer",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2a5f3a",
+          "title": "[COTD] Harmony Medtech (Tuesday - July 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2a5f3a/cotd_harmony_medtech_tuesday_july_8th_2014/",
+          "created": "2014-07-08T15:30:25Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10237,7 +10285,15 @@
       "text": "Whenever you and the Runner reveal secretly spent credits, gain 1[Credits].",
       "title": "Nisei Division: The Next Generation",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2a979q",
+          "title": "[COTD] Nisei Division (Wednesday - July 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2a979q/cotd_nisei_division_wednesday_july_9th_2014/",
+          "created": "2014-07-09T17:29:40Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10255,7 +10311,15 @@
       "text": "When your turn begins, you may place 1 advancement token on a card if the Runner did not make a successful run during his or her last turn.",
       "title": "Tennin Institute: The Secrets Within",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2acp6y",
+          "title": "[COTD] Tennin Institute (Thursday - July 10th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2acp6y/cotd_tennin_institute_thursday_july_10th_2014/",
+          "created": "2014-07-10T18:16:35Z"
+        }
+      ]
     },
     {
       "advancementcost": 3,
@@ -10818,7 +10882,15 @@
       "text": "Guard cannot be bypassed.\r\n[Subroutine] End the run.",
       "title": "Guard",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29l34l",
+          "title": "[COTD] Guard (Tuesday - July 1st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29l34l/cotd_guard_tuesday_july_1st_2014/",
+          "created": "2014-07-01T18:56:52Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10838,7 +10910,15 @@
       "text": "[Subroutine] End the run.",
       "title": "Rainbow",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29r909",
+          "title": "[COTD] Rainbow (Thursday - July 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29r909/cotd_rainbow_thursday_july_3rd_2014/",
+          "created": "2014-07-03T17:35:34Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -10883,7 +10963,15 @@
       "text": "Search R&D for an agenda, reveal it, and add it to HQ. Shuffle R&D.",
       "title": "Fast Track",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29ejsn",
+          "title": "[COTD] Fast Track (Sunday - July 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29ejsn/cotd_fast_track_sunday_july_29th_2014/",
+          "created": "2014-06-29T17:11:14Z"
+        }
+      ]
     },
     {
       "baselink": 1,
@@ -10903,7 +10991,15 @@
       "text": "When your turn begins, gain 2[Credits] if the Corp has more scored agenda points than you.",
       "title": "Iain Stirling: Retired Spook",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29wkw6",
+          "title": "[COTD] Iain Stirling (Saturday - July 5th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29wkw6/cotd_iain_stirling_saturday_july_5th_2014/",
+          "created": "2014-07-05T16:16:49Z"
+        }
+      ]
     },
     {
       "baselink": 0,
@@ -10923,7 +11019,15 @@
       "text": "The first time you play a <strong>run</strong> event each turn, gain 1[Credits].",
       "title": "Ken \"Express\" Tenma: Disappeared Clone",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29zcyl",
+          "title": "[COTD] Ken \"Express\" Tenma (Sunday - July 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29zcyl/cotd_ken_express_tenma_sunday_july_6th_2014/",
+          "created": "2014-07-06T18:03:44Z"
+        }
+      ]
     },
     {
       "baselink": 0,
@@ -10943,7 +11047,15 @@
       "text": "The first time you make a successful run on HQ each turn, you may expose 1 card.",
       "title": "Silhouette: Stealth Operative",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2a2oaq",
+          "title": "[COTD] Silhouette (Monday - July 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2a2oaq/cotd_silhouette_monday_july_7th_2014/",
+          "created": "2014-07-07T19:17:12Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11595,7 +11707,15 @@
       "text": "Place 1 power counter on Overmind when it is installed for each unused MU.\r\n<strong>Hosted power counter</strong>: Break ice subroutine.\r\n1[Credits]: +1 strength.",
       "title": "Overmind",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "29hjln",
+          "title": "[COTD] Overmind (Monday - June 30th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29hjln/cotd_overmind_monday_june_30th_2014/",
+          "created": "2014-06-30T17:11:25Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11614,7 +11734,15 @@
       "text": "You cannot use Oracle May more than once per turn.\r\n[Click]: Name a card type. Reveal the top card of your stack. If the revealed card is of the named type, draw it and gain 2[Credits]. Otherwise, trash it.",
       "title": "Oracle May",
       "type": "Resource",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "29ui6i",
+          "title": "[COTD] Oracle May (Friday - July 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29ui6i/cotd_oracle_may_friday_july_4th_2014/",
+          "created": "2014-07-04T19:10:17Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11633,7 +11761,15 @@
       "text": "The play cost of operations and events is increased by 1.",
       "title": "Donut Taganes",
       "type": "Resource",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "29np7i",
+          "title": "[COTD] Donut Taganes (Wednesday - July 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/29np7i/cotd_donut_taganes_wednesday_july_2nd_2014/",
+          "created": "2014-07-02T15:49:38Z"
+        }
+      ]
     },
     {
       "baselink": 1,
