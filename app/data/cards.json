@@ -3901,7 +3901,15 @@
       "subtype": "Research",
       "text": "When you score Accelerated Beta Test, you may look at the top 3 cards of R&D. If any of those cards are ice, you may install and rez them, ignoring all costs. Trash the rest of the cards you looked at.",
       "title": "Accelerated Beta Test",
-      "type": "Agenda"
+      "type": "Agenda",
+      "reddit_cotds": [
+        {
+          "id": "2babpr",
+          "title": "[COTD] Accelerated Beta Test (Monday - July 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2babpr/cotd_accelerated_beta_test_monday_july_21st_2014/",
+          "created": "2014-07-21T11:19:57Z"
+        }
+      ]
     },
     {
       "altart": {
@@ -4234,7 +4242,15 @@
       "subtype": "Gray Ops",
       "text": "Play only if the Runner made a run during his or her last turn.\nDo 1 net damage.",
       "title": "Neural EMP",
-      "type": "Operation"
+      "type": "Operation",
+      "reddit_cotds": [
+        {
+          "id": "2bm8tw",
+          "title": "[COTD] Neural EMP (Thursday - July 24th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bm8tw/cotd_neural_emp_thursday_july_24th_2014/",
+          "created": "2014-07-24T18:35:12Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/precognition-core",
@@ -4456,7 +4472,15 @@
       "side": "Corp",
       "text": "Draw 3 cards.",
       "title": "Anonymous Tip",
-      "type": "Operation"
+      "type": "Operation",
+      "reddit_cotds": [
+        {
+          "id": "2bewyv",
+          "title": "[COTD] Anonymous Tip (Tuesday - July 22nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bewyv/cotd_anonymous_tip_tuesday_july_22nd_2014/",
+          "created": "2014-07-22T17:48:00Z"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/closed-accounts-core",
@@ -4756,7 +4780,15 @@
       "subtype": "Transaction",
       "text": "Gain 3[Credits].",
       "title": "Beanstalk Royalties",
-      "type": "Operation"
+      "type": "Operation",
+      "reddit_cotds": [
+        {
+          "id": "2bizky",
+          "title": "[COTD] Beanstalk Royalties (Wednesday - July 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bizky/cotd_beanstalk_royalties_wednesday_july_23rd_2014/",
+          "created": "2014-07-23T20:04:09Z"
+        }
+      ]
     },
     {
       "altart": {
@@ -11793,7 +11825,15 @@
       "text": "[Click][Click][Click]: Place 1 agenda counter on Domestic Sleepers. Domestic Sleepers is worth 1 agenda point while it has at least 1 agenda counter on it.",
       "title": "Domestic Sleepers",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2bpmuz",
+          "title": "[COTD] Domestic Sleepers (Friday - July 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bpmuz/cotd_domestic_sleepers_friday_july_25th_2014/",
+          "created": "2014-07-25T18:08:53Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11815,7 +11855,15 @@
       "text": "NEXT Silver gains \"[Subroutine] End the run.\" for each rezzed piece of <strong>NEXT</strong> ice.",
       "title": "NEXT Silver",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2bxca7",
+          "title": "[COTD] NEXT Silver (Monday - July 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bxca7/cotd_next_silver_monday_july_28th_2014/",
+          "created": "2014-07-28T07:13:41Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11836,7 +11884,15 @@
       "text": "The strength of Lotus Field cannot be lowered.\r\n[Subroutine] End the run.",
       "title": "Lotus Field",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2c5ec1",
+          "title": "[COTD] Lotus Field (Wednesday - July 30th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2c5ec1/cotd_lotus_field_wednesday_july_30th_2014/",
+          "created": "2014-07-30T15:50:29Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11856,7 +11912,15 @@
       "text": "As an additional cost to play this operation, trash a rezzed piece of ice.\r\nReveal cards from the top of R&D until you reveal a piece of ice. Install and rez that ice in the same position as the ice that was trashed, ignoring all costs. Shuffle R&D.",
       "title": "Mutate",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2cd0uq",
+          "title": "[COTD] Mutate (Friday - August 1st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2cd0uq/cotd_mutate_friday_august_1st_2014/",
+          "created": "2014-08-01T19:19:26Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11972,7 +12036,12 @@
       "imagesrc": "/images/cards/mother-goddess.png",
       "limited": false,
       "logicalsubtypes": [
-        "Barrier", "Code Gate", "Sentry", "AP", "Tracer", "Destroyer"
+        "Barrier",
+        "Code Gate",
+        "Sentry",
+        "AP",
+        "Tracer",
+        "Destroyer"
       ],
       "nrdb_url": "http://netrunnerdb.com/en/card/06010",
       "number": 10,
@@ -12127,7 +12196,15 @@
       "text": "Whenever you encounter a piece of ice that was just rezzed, lose all credits in your credit pool. Gain credits equal to the rez cost of that ice.",
       "title": "Nasir Meidan: Cyber Explorer",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2cfa36",
+          "title": "[COTD] Nasir Meidan (Saturday - August 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2cfa36/cotd_nasir_meidan_saturday_august_2nd_2014/",
+          "created": "2014-08-02T14:11:26Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12147,7 +12224,15 @@
       "text": "Play only as your first [Click].\r\nChoose an unrezzed piece of ice. If the Corp rezzes that piece of ice this turn, gain credits equal to its rez cost.",
       "title": "Social Engineering",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2c899l",
+          "title": "[COTD] Social Engineering (Thursday - July 31st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2c899l/cotd_social_engineering_thursday_july_31st_2014/",
+          "created": "2014-07-31T10:54:43Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12168,7 +12253,15 @@
       "text": "Leprechaun can host up to 2 programs. The memory cost of hosted programs do not count against your memory limit.",
       "title": "Leprechaun",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2c1run",
+          "title": "[COTD] Leprechaun (Monday - July 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2c1run/cotd_leprechaun_monday_july_29th_2014/",
+          "created": "2014-07-29T15:19:05Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12188,7 +12281,15 @@
       "text": "Whenever you make a successful run on R&D, instead of accessing cards, you may install Eden Shard from your grip, ignoring all costs.\r\n[Trash]: The Corp draws 2 cards.\r\nLimit 1 per deck.",
       "title": "Eden Shard",
       "type": "Resource",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "2bss1g",
+          "title": "[COTD] Eden Shard (Saturday - July 26th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2bss1g/cotd_eden_shard_saturday_july_26th_2014/",
+          "created": "2014-07-26T19:08:14Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
