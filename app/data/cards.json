@@ -11940,7 +11940,15 @@
       "text": "The first time you create a server each turn, draw 1 card.",
       "title": "Near-Earth Hub: Broadcast Center",
       "type": "Identity",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2chfqa",
+          "title": "[COTD] Near-Earth Hub (Sunday - August 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2chfqa/cotd_nearearth_hub_sunday_august_3rd_2014/",
+          "created": "2014-08-03T06:14:08Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11961,7 +11969,15 @@
       "title": "Primary Transmission Dish",
       "trash": 3,
       "type": "Asset",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2cp36e",
+          "title": "[COTD] Primary Transmission Dish (Tuesday - August, 5th 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2cp36e/cotd_primary_transmission_dish_tuesday_august_5th/",
+          "created": "2014-08-05T15:39:56Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -11982,7 +11998,15 @@
       "title": "Midway Station Grid",
       "trash": 4,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2cw6hu",
+          "title": "[COTD] Midway Station Grid (Thursday - August 7th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2cw6hu/cotd_midway_station_grid_thursday_august_7th_2014/",
+          "created": "2014-08-07T16:03:14Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12135,7 +12159,15 @@
       "text": "Whenever you make a successful run on HQ, the Corp loses 1[Credits].\r\nTrash Lamprey if the Corp purges virus counters.",
       "title": "Lamprey",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2czkh2",
+          "title": "[COTD] Lamprey (Friday - August 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2czkh2/cotd_lamprey_friday_august_8th_2014/",
+          "created": "2014-08-08T15:40:39Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12155,7 +12187,15 @@
       "text": "Play only as your first [Click].\r\nRemove all tags.",
       "title": "Paper Tripping",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2cs0fm",
+          "title": "[COTD] Paper Tripping (Wednesday - August 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2cs0fm/cotd_paper_tripping_wednesday_august_6th_2014/",
+          "created": "2014-08-06T11:15:37Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12175,7 +12215,15 @@
       "text": "Gain 1[Credits] whenever a trace is initiated.",
       "title": "Power Tap",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2clzgg",
+          "title": "[COTD] Power Tap (Monday - August 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2clzgg/cotd_power_tap_monday_august_4th_2014/",
+          "created": "2014-08-04T18:27:34Z"
+        }
+      ]
     },
     {
       "baselink": 1,
