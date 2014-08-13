@@ -12027,7 +12027,15 @@
       "title": "The Root",
       "trash": 4,
       "type": "Asset",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "2d31tu",
+          "title": "[COTD] The Root (Saturday - August 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2d31tu/cotd_the_root_saturday_august_9th_2014/",
+          "created": "2014-08-09T18:01:33Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12138,7 +12146,15 @@
       "text": "Play only as your first [Click].\r\nChoose a server. The Corp may rez a piece of ice protecting this server. If she does not, make a run on this server during which the Corp cannot rez ice.",
       "title": "Cyber Threat",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dbhiz",
+          "title": "[COTD] Cyber Threat (Tuesday - August 12th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dbhiz/cotd_cyber_threat_tuesday_august_12th_2014/",
+          "created": "2014-08-12T08:21:59Z"
+        }
+      ]
     },
     {
       "cgdb_url": null,
