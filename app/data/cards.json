@@ -1,5 +1,5 @@
 {
-  "last-modified": "2014-08-02T00:00:00Z",
+  "last-modified": "2014-09-18T16:42:00",
   "cards": [
     {
       "baselink": 0,
@@ -12356,6 +12356,78 @@
       ]
     },
     {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/the-foundry-refining-the-process-r486",
+      "faction": "Haas-Bioroid",
+      "illustrator": "Emilio Rodriguez",
+      "imagesrc": "/images/cards/the-foundry.png",
+	  "nrdb_url": null,
+      "influencelimit": 15,
+      "minimumdecksize": 45,
+      "number": 21,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Division",
+      "text": "The first time you rez a piece of ice each turn, you may search R&D for another copy of that ice, reveal it, and add it to HQ. Shuffle R&D.",
+      "title": "The Foundry: Refining the Process",
+      "type": "Identity"
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/enhanced-login-protocol-r487",
+      "cost": 2,
+      "faction": "Haas-Bioroid",
+      "factioncost": 2,
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/enhanced-login-protocol.png",
+      "number": 22,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Current",
+      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nAs an additional cost to make the first run not made through a card ability on his or her turn, the Runner must spend [Click].", 
+      "title": "Enhanced Login Protocol",
+      "type": "Operation",
+      "uniqueness": false
+    },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/heinlein-grid-r488",
+      "cost": 3,
+      "faction": "Haas-Bioroid",
+      "factioncost": 0,
+      "illustrator": "Henning Ludvigsen",
+      "imagesrc": "/images/cards/heinlein-grid.png",
+      "flavor": "\"There are many advantages to having facilities on the moon. Less traffic, for example.\" -Director Haas",
+      "number": 23,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Region",
+      "text": "If the Runner loses or spends a click during a run on this server, he or she loses all credits in his or her credit pool.\r\nLimit 1 <strong>region</strong> per server.",
+      "title": "Heinlein Grid",
+      "trash": 1,
+      "type": "Upgrade",
+      "uniqueness": false
+    },
+    {
+      "advancementcost": 3,
+      "agendapoints": 1,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/encrypted-portals-r489",
+      "faction": "Jinteki",
+      "flavor": "\"Binary computing is obsolete. I use a base-4 structure for this system; it’s modeled on our DNA. Well, my DNA, anyway.\" -Doctor Endo, Jinteki researcher ",
+      "illustrator": "Adam S. Doyle",
+      "imagesrc": "/images/cards/encrypted-portal.png",
+      "limited": false,
+      "number": 24,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "subtype": "Security",
+      "text": "All <strong>code gate</strong> ice have +1 strength.\r\nWhen you score Encrypted Portals, gain 1[Credit] for each rezzed <strong>code gate.</strong>.",
+      "title": "Encrypted Portals",
+      "type": "Agenda",
+      "uniqueness": false
+    },
+    {
       "cgdb_url": null,
       "cost": 2,
       "faction": "Jinteki",
@@ -12374,6 +12446,25 @@
       "type": "Operation",
       "uniqueness": false
     },
+    {
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/information-overload-r492",
+      "cost": 6,
+      "faction": "NBN",
+      "factioncost": 2,
+      "flavor": "Throw enough data at a runner and it ceases to have any meaning at all.",
+      "illustrator": "Ed Mattinian",
+      "imagesrc": "/images/cards/information-overload.png",
+      "number": 27,
+      "quantity": 3,
+      "setname": "The Spaces Between",
+      "side": "Corp",
+      "strength": 4,
+      "subtype": "Sentry - Tracer",
+      "text": "When the Runner encounters Information Overload, <strong>Trace<sup>1</sup></strong>&ndash; if successful, give the Runner 1 tag.\r\nInformation Overload gains\n\n \"[Subroutine]: The Runner trashes 1 of his or her installed cards.\" for each tag the Runner has.",
+      "title": "Information Overload",
+      "type": "ICE"
+    },
+
     {
       "cgdb_url": null,
       "cost": 2,
@@ -12741,12 +12832,12 @@
     },
     {
       "cycle": "Lunar",
-      "released": null,
+      "released": "2014-08-14T00:00:00",
       "title": "The Spaces Between"
     },
     {
       "cycle": "Lunar",
-      "released": null,
+      "released": "2014-09-15T00:00:00",
       "title": "First Contact"
     },
     {
