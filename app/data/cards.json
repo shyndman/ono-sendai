@@ -12478,6 +12478,7 @@
       "subtype": "Sentry - Tracer",
       "text": "When the Runner encounters Information Overload, <strong>Trace<sup>1</sup></strong>&ndash; if successful, give the Runner 1 tag.\r\nInformation Overload gains\n\n \"[Subroutine]: The Runner trashes 1 of his or her installed cards.\" for each tag the Runner has.",
       "title": "Information Overload",
+      "strength": 4,
       "type": "ICE"
     },
 
@@ -12793,13 +12794,19 @@
       "faction": "Haas-Bioroid"
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines":1 
+      },
       "title": "BlacKat",
+      "strength": 3,
       "subtype": "Icebreaker - Fracter",
       "type": "Program",
       "memory units": 1,
       "number": 53,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/blackat-r518",
       "strength": 3,
+      "strengthcost": 2,
       "faction": "Anarch",
       "cost": 4,
       "illustrator": "Seage",
@@ -12867,6 +12874,7 @@
     },
     {
       "title": "Lancelot",
+      "strength": 2,
       "setname": "First Contact",
       "quantity": 3,
       "flavor": "He who wields the sword of valor.",
@@ -12975,6 +12983,7 @@
     },
     {
       "title": "Wendigo",
+      "strength": 4,
       "type": "ICE",
       "text": "Wendigo can be advanced.\r\nWhile Wendigo has an odd number of advancement tokens on it, it gains <strong>barrier</strong> and loses <strong>code gate</strong>.\r\n[Subroutine] Choose a program. The Runner cannot use the chosen program for the remainder of this run.",
       "imagesrc": "/images/cards/wendigo.png",
@@ -12982,7 +12991,7 @@
       "illustrator": "Wylie Beckert",
       "uniqueness": false,
       "cost": 2,
-      "subtype": "Code Gate - Morph",
+      "subtype": "Code Gate - Morph - Barrier",
       "faction": "Weyland Consortium",
       "strength": 4,
       "quantity": 3,
@@ -13031,6 +13040,7 @@
     {
       "title": "Kitsune",
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/kitsune-r508",
+      "strength":3,
       "side": "Corp",
       "number": 43,
       "setname": "First Contact",
@@ -13048,6 +13058,10 @@
       "factioncost": 2
     },
     {
+      "breakcost": {
+        "credits": 1,
+        "subroutines":1 
+      },
       "title": "Refractor",
       "text": "1[Credit]: Break <strong>code gate</strong> subroutine.\r\n1[Credit]: +3 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
       "imagesrc": "/images/cards/refractor.png",
@@ -13063,6 +13077,7 @@
       "type": "Program",
       "subtype": "Icebreaker - Decoder",
       "strength": 2,
+      "strengthcost": 1,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/refractor-r522",
       "number": 57,
       "memory units": 1
