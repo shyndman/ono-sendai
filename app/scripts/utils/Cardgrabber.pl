@@ -25,7 +25,7 @@ use strict;
 use warnings;
 use utf8;
 use HTML::TreeBuilder;
-
+no warnings qw/experimental/;
 my $doc = "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/";
 
 my $tree = HTML::TreeBuilder->new_from_url($doc);
