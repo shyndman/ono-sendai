@@ -1920,7 +1920,15 @@
       "subtype": "Connection - Seedy",
       "text": "2[Recurring Credits]\nUse these credits to trash cards.",
       "title": "Scrubber",
-      "type": "Resource"
+      "type": "Resource",
+      "reddit_cotds": [
+        {
+          "id": "2fnsiy",
+          "title": "[COTD] Scrubbed (Saturday - September 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fnsiy/cotd_scrubbed_saturday_september_6th_2014/",
+          "created": "2014-09-06T19:42:32"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/doppelganger-a-study-in-static",
@@ -12056,7 +12064,15 @@
       "text": "[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, trash a piece of hardware. If your trace strength is 5 or greater, trash a piece of hardware.",
       "title": "Taurus",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dgs52",
+          "title": "[COTD] Taurus (Wednesday - August 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dgs52/cotd_taurus_wednesday_august_13th_2014/",
+          "created": "2014-08-13T12:27:25"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12085,7 +12101,15 @@
       "text": "Mother Goddess gains the subtypes of all other rezzed ice.\r\n[Subroutine] End the run.",
       "title": "Mother Goddess",
       "type": "ICE",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "2dkm08",
+          "title": "[COTD] Mother Goddess (Thursday - August 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dkm08/cotd_mother_goddess_thursday_august_14th_2014/",
+          "created": "2014-08-14T20:19:23"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12106,7 +12130,15 @@
       "text": "When the Runner encounters Galahad, you may reveal up to 2 <strong>grail</strong> ice from HQ. For the remainder of the run, Galahad gains the subroutine of the revealed ice in the order of your choice.\r\n[Subroutine] End the run.",
       "title": "Galahad",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dqnby",
+          "title": "[COTD] Galahad (Saturday - August 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dqnby/cotd_galahad_saturday_august_16th_2014/",
+          "created": "2014-08-16T18:45:28"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12126,7 +12158,15 @@
       "text": "Play only if the Runner is tagged.\r\nThe Runner's memory limit is reduced by 2 until the end of the turn.",
       "title": "Bad Times",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dw7nm",
+          "title": "[COTD] Bad Times (Monday - August 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dw7nm/cotd_bad_times_monday_august_18th_2014/",
+          "created": "2014-08-18T16:04:19"
+        }
+      ]
     },
     {
       "cgdb_url": null,
@@ -12369,7 +12409,15 @@
       "subtype": "Division",
       "text": "The first time you rez a piece of ice each turn, you may search R&D for another copy of that ice, reveal it, and add it to HQ. Shuffle R&D.",
       "title": "The Foundry: Refining the Process",
-      "type": "Identity"
+      "type": "Identity",
+      "reddit_cotds": [
+        {
+          "id": "2e3wqf",
+          "title": "[COTD] The Foundry (Wednesday - August 20th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2e3wqf/cotd_the_foundry_wednesday_august_20th_2014/",
+          "created": "2014-08-20T19:14:11"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/enhanced-login-protocol-r487",
@@ -12386,7 +12434,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nAs an additional cost to make the first run not made through a card ability on his or her turn, the Runner must spend [Click].", 
       "title": "Enhanced Login Protocol",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2edhnc",
+          "title": "[COTD] Enhanced Login Protocol (Saturday - August 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2edhnc/cotd_enhanced_login_protocol_saturday_august_23rd/",
+          "created": "2014-08-23T16:29:01"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/heinlein-grid-r488",
@@ -12405,7 +12461,15 @@
       "title": "Heinlein Grid",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2em1o6",
+          "title": "[COTD] Heinlein Grid (Tuesday - August 26th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2em1o6/cotd_heinlein_grid_tuesday_august_26th_2014/",
+          "created": "2014-08-26T09:07:29"
+        }
+      ]
     },
     {
       "advancementcost": 3,
@@ -12424,7 +12488,15 @@
       "text": "All <strong>code gate</strong> ice have +1 strength.\r\nWhen you score Encrypted Portals, gain 1[Credit] for each rezzed <strong>code gate.</strong>.",
       "title": "Encrypted Portals",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2euobk",
+          "title": "[COTD] Encrypted Portals (Thursday - August 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2euobk/cotd_encrypted_portals_thursday_august_28th_2014/",
+          "created": "2014-08-28T19:49:25"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/cerebral-static-r490",
@@ -12443,7 +12515,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nThe Runner's identity text box is blank.",
       "title": "Cerebral Static",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2f0v24",
+          "title": "[COTD] Cerebral Static (Saturday - August 30, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2f0v24/cotd_cerebral_static_saturday_august_30_2014/",
+          "created": "2014-08-30T18:38:47"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/targeted-marketing-r491",
@@ -12460,7 +12540,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nName a card. Gain 10 [Credit] whenever the Runner plays or installs a copy of that card.",
       "title": "Targeted Marketing",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fdwnf",
+          "title": "[COTD] Targeted Marketing (Wednesday - September 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fdwnf/cotd_targeted_marketing_wednesday_september_3rd/",
+          "created": "2014-09-03T19:52:09"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/information-overload-r492",
@@ -12571,7 +12659,15 @@
       "title": "Will-o'-the-Wisp",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fy6rg",
+          "title": "[COTD] Will-O'-The-Wisp (Tuesday - September 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fy6rg/cotd_willothewisp_tuesday_september_9th_2014/",
+          "created": "2014-09-09T15:15:33"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/d4v1d-r498",
@@ -12589,7 +12685,15 @@
       "text": "Place 3 power counters on D4v1d when it is installed.\r\n<strong>Hosted power counter</strong>: Break ice subroutine on a piece of ice that has a strength of 5 or greater.",  
       "title": "D4v1d",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fttsc",
+          "title": "[COTD] D4v1d (Monday - September 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fttsc/cotd_d4v1d_monday_september_8th_2014/",
+          "created": "2014-09-08T18:10:37"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/scrubbed-r499",
@@ -12625,7 +12729,15 @@
       "text": "Play only as your first [Click].\r\nWhen this turn ends, gain 2[Credit] for each successful run you made during it.", 
       "title": "Three Steps Ahead",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fh3lh",
+          "title": "[COTD] Three Steps Ahead (Thursday - September 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fh3lh/cotd_three_steps_ahead_thursday_september_4th_2014/",
+          "created": "2014-09-04T18:05:14"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/unscheduled-maintenance-r501",
@@ -12643,7 +12755,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\r\nThe Corp cannot install more than 1 piece of ice each turn.",
       "title": "Unscheduled Maintenance",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2f9urs",
+          "title": "[COTD] Unscheduled Maintenance (Tuesday - September 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2f9urs/cotd_unscheduled_maintenance_tuesday_september/",
+          "created": "2014-09-02T17:01:49"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/cache-r502",
@@ -12663,7 +12783,15 @@
       "text": "Place 3 virus counters on Cache when it is installed.\r\n<strong>Hosted virus counter</strong>: Gain 1[Credits].",
       "title": "Cache",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2eycoo",
+          "title": "[COTD] Cache (Friday - August 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2eycoo/cotd_cache_friday_august_29th_2014/",
+          "created": "2014-08-29T21:21:31"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/net-celebrity-r503",
@@ -12681,7 +12809,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\r\n1 [Recurring Credit]",
       "title": "Net Celebrity",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2erlpc",
+          "title": "[COTD] Net Celebrity (Wednesday - August 27th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2erlpc/cotd_net_celebrity_wednesday_august_27th_2014/",
+          "created": "2014-08-27T15:05:05"
+        }
+      ]
      },
      {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/llds-energy-regulator-r504",
@@ -12699,7 +12835,15 @@
       "text": "3[Credit] or [Trash]: Prevent an installed piece of hardware from being trashed.",
       "title": "LLDS Energy Regulator",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2ejtad",
+          "title": "[COTD] LLDS Energy Regulator (Monday - August 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2ejtad/cotd_llds_energy_regulator_monday_august_25th_2014/",
+          "created": "2014-08-25T18:09:21"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/ghost-runner-r505",
@@ -12716,7 +12860,15 @@
       "text": "Place 3[Credit] on Ghost Runner when it is installed. When there are no credits left on Ghost Runner, trash it.",
       "title": "Ghost Runner",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2e7j0m",
+          "title": "[COTD] Ghost Runner (Thursday - August 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2e7j0m/cotd_ghost_runner_thursday_august_21st_2014/",
+          "created": "2014-08-21T19:35:46"
+        }
+      ]
     },
     {
       "title": "The News Now Hour",
@@ -12991,7 +13143,11 @@
       "illustrator": "Wylie Beckert",
       "uniqueness": false,
       "cost": 2,
-      "subtype": "Code Gate - Morph - Barrier",
+      "subtype": "Code Gate - Morph",
+      "logicalsubtypes": [
+        "Barrier",
+        "Code Gate"
+      ],
       "faction": "Weyland Consortium",
       "strength": 4,
       "quantity": 3,
