@@ -2,6 +2,10 @@
   "last-modified": "2014-09-20T00:50:00",
   "cards": [
     {
+      "altart": {
+        "illustrator": "Matt Zeilinger",
+        "imagesrc": "/images/cards/noise-hacker-extraordinaire-alt.jpg"
+      },
       "baselink": 0,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/noise-hacker-extraordinaire-core",
       "faction": "Anarch",
@@ -1009,6 +1013,10 @@
       "type": "Program"
     },
     {
+      "altart": {
+        "illustrator": "Matt Zeilinger",
+        "imagesrc": "/images/cards/aesops-pawnshop-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aesops-pawnshop-core",
       "cost": 1,
       "faction": "Shaper",
@@ -3870,6 +3878,10 @@
       "type": "Hardware"
     },
     {
+      "altart": {
+        "illustrator": "Adrian Dadich",
+        "imagesrc": "/images/cards/haasbioroid-engineering-the-future-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/haas-bioroid-engineering-the-future-core",
       "faction": "Haas-Bioroid",
       "flavor": "Effective. Reliable. Humane.",
@@ -4103,6 +4115,10 @@
       "type": "ICE"
     },
     {
+      "altart": {
+        "illustrator": "Angga Satriohadi",
+        "imagesrc": "/images/cards/corporate-troubleshooter-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corporate-troubleshooter-core",
       "cost": 0,
       "faction": "Haas-Bioroid",
@@ -4408,6 +4424,10 @@
       "type": "Upgrade"
     },
     {
+      "altart": {
+        "illustrator": "Christer Wibert",
+        "imagesrc": "/images/cards/nbn-making-news-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/nbn-making-news-core",
       "faction": "NBN",
       "flavor": "Someone is Always Watching.",
