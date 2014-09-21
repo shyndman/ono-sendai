@@ -10282,7 +10282,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/harmony-medtech-biomedical-pioneer-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "Evolving a Better You.",
       "illustrator": "Emilio Rodriguez",
@@ -10309,7 +10309,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/nisei-division-the-next-generation-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "Perfecting the Imperfect.",
       "illustrator": "Emilio Rodriguez",
@@ -10336,7 +10336,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tennin-institute-the-secrets-within-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Emilio Rodriguez",
       "imagesrc": "/images/cards/tennin-institute-the-secrets-within.jpg",
@@ -10364,7 +10364,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/house-of-knives-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Alexandr Elichev",
       "imagesrc": "/images/cards/house-of-knives.jpg",
@@ -10390,7 +10390,7 @@
     {
       "advancementcost": 4,
       "agendapoints": 2,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/medical-breakthrough-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "\"You won't feel it. Or anything else, for that matter.\"",
       "illustrator": "Gong Studios",
@@ -10417,7 +10417,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 2,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/philotic-entanglement-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/philotic-entanglement.jpg",
@@ -10443,7 +10443,7 @@
     {
       "advancementcost": 5,
       "agendapoints": 3,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/the-future-perfect-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Christina Davis",
       "imagesrc": "/images/cards/the-future-perfect.jpg",
@@ -10467,7 +10467,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/chairman-hiro-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 5,
@@ -10494,7 +10494,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mental-health-clinic-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10522,7 +10522,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/psychic-field-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10549,7 +10549,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/shi-kyu-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10576,7 +10576,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tenma-line-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10604,7 +10604,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/cerebral-cast-honor-and-profit",
       "cost": 1,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10630,7 +10630,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/medical-research-fundraiser-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10657,7 +10657,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mushin-no-shin-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10683,7 +10683,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/inazuma-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10711,7 +10711,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/komainu-honor-and-profit",
       "cost": 5,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10738,7 +10738,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/pup-honor-and-profit",
       "cost": 1,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10766,7 +10766,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/shiro-honor-and-profit",
       "cost": 6,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10794,7 +10794,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/susanoo-no-mikoto-honor-and-profit",
       "cost": 9,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10822,7 +10822,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/neotokyo-grid-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10850,7 +10850,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tori-hanzo-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10878,7 +10878,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/plan-b-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10905,7 +10905,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/guard-honor-and-profit",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10933,7 +10933,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/rainbow-honor-and-profit",
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10961,7 +10961,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/diversified-portfolio-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10988,7 +10988,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/fast-track-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11015,7 +11015,7 @@
     },
     {
       "baselink": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/ian-stirling-retired-spook-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Truth is a fickle mistress.\"",
       "illustrator": "Simon Eckert",
@@ -11043,7 +11043,7 @@
     },
     {
       "baselink": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/ken-express-tenma-disappeared-clone-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Try to keep up.\"",
       "illustrator": "Simon Eckert",
@@ -11071,7 +11071,7 @@
     },
     {
       "baselink": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/silhouette-stealth-operative-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Don't waste my time.\"",
       "illustrator": "Simon Eckert",
@@ -11098,7 +11098,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/calling-in-favors-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11124,7 +11124,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/early-bird-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11151,7 +11151,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/express-delivery-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11177,7 +11177,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/feint-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11204,7 +11204,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/legwork-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11231,11 +11231,7 @@
       ]
     },
     {
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/planned-assault-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11261,7 +11257,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/logos-honor-and-profit",
       "cost": 4,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11287,7 +11283,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/public-terminal-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11313,7 +11309,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/unregistered-s-w-35-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11339,7 +11335,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/window-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11369,7 +11365,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/alias-honor-and-profit",
       "cost": 3,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11406,7 +11402,7 @@
         "credits": 2,
         "subroutines": 3
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/breach-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11438,7 +11434,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/bug-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11469,7 +11465,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/gingerbread-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11505,7 +11501,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/grappling-hook-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11536,7 +11532,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/passport-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11569,7 +11565,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/push-your-luck-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11594,7 +11590,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/security-testing-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11621,7 +11617,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/theophilius-bagbiter-honor-and-profit",
       "cost": 3,
       "faction": "Criminal",
       "factioncost": 4,
@@ -11648,7 +11644,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tri-maf-contact-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11675,7 +11671,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mass-install-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11701,7 +11697,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/q-coherence-chip-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11733,7 +11729,7 @@
         "subroutines": "all"
       },
       "breakscript": "genericAI",
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/overmind-honor-and-profit",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11762,7 +11758,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/oracle-may-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 1,
@@ -11789,7 +11785,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/donut-taganes-honor-and-profit",
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 2,
@@ -11818,7 +11814,7 @@
     {
       "advancementcost": 2,
       "agendapoints": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/domestic-sleepers-r466",
       "faction": "Haas-Bioroid",
       "flavor": "",
       "illustrator": "Adrian Dadich",
@@ -11844,7 +11840,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/next-silver-r467",
       "cost": 3,
       "faction": "Haas-Bioroid",
       "factioncost": 2,
@@ -11874,7 +11870,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/lotus-field-r468",
       "cost": 5,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -11903,7 +11899,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/mutate-r469",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -11931,7 +11927,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/near-earth-hub-broadcast-center-r470",
       "faction": "NBN",
       "flavor": "Only the News You Need.",
       "illustrator": "Emilio Rodriguez",
@@ -11959,7 +11955,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/primary-transmission-dish-r471",
       "cost": 2,
       "faction": "NBN",
       "factioncost": 2,
@@ -11988,7 +11984,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/midway-station-grid-r472",
       "cost": 4,
       "faction": "NBN",
       "factioncost": 4,
@@ -12017,7 +12013,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/the-root-r473",
       "cost": 6,
       "faction": "Weyland Consortium",
       "factioncost": 3,
@@ -12046,7 +12042,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/taurus-r474",
       "cost": 5,
       "faction": "Weyland Consortium",
       "factioncost": 2,
@@ -12075,7 +12071,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/mother-goddess-r475",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -12112,7 +12108,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/galahad-r476",
       "cost": 2,
       "faction": "Neutral",
       "factioncost": 1,
@@ -12141,7 +12137,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/bad-times-r477",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -12169,7 +12165,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/cyber-threat-r478",
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 3,
@@ -12197,7 +12193,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/lamprey-r479",
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 2,
@@ -12226,7 +12222,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/paper-tripping-r480",
       "cost": 4,
       "faction": "Criminal",
       "factioncost": 2,
@@ -12254,7 +12250,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/power-tap-r481",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -12283,7 +12279,7 @@
     },
     {
       "baselink": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/nasir-meidan-cyber-explorer-r482",
       "faction": "Shaper",
       "flavor": "",
       "illustrator": "Matt Zeilinger",
@@ -12311,7 +12307,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/social-engineering-r483",
       "cost": 2,
       "faction": "Shaper",
       "factioncost": 2,
@@ -12339,7 +12335,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/leprechaun-r484",
       "cost": 2,
       "faction": "Shaper",
       "factioncost": 2,
@@ -12368,7 +12364,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/eden-shard-r485",
       "cost": 7,
       "faction": "Neutral",
       "factioncost": 1,
