@@ -1,7 +1,11 @@
 {
-  "last-modified": "2014-09-19T00:00:00",
+  "last-modified": "2014-09-20T00:50:00",
   "cards": [
     {
+      "altart": {
+        "illustrator": "Matt Zeilinger",
+        "imagesrc": "/images/cards/noise-hacker-extraordinaire-alt.jpg"
+      },
       "baselink": 0,
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/noise-hacker-extraordinaire-core",
       "faction": "Anarch",
@@ -1009,6 +1013,10 @@
       "type": "Program"
     },
     {
+      "altart": {
+        "illustrator": "Matt Zeilinger",
+        "imagesrc": "/images/cards/aesops-pawnshop-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/aesops-pawnshop-core",
       "cost": 1,
       "faction": "Shaper",
@@ -1920,7 +1928,15 @@
       "subtype": "Connection - Seedy",
       "text": "2[Recurring Credits]\nUse these credits to trash cards.",
       "title": "Scrubber",
-      "type": "Resource"
+      "type": "Resource",
+      "reddit_cotds": [
+        {
+          "id": "2fnsiy",
+          "title": "[COTD] Scrubbed (Saturday - September 6th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fnsiy/cotd_scrubbed_saturday_september_6th_2014/",
+          "created": "2014-09-06T19:42:32"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/doppelganger-a-study-in-static",
@@ -3862,6 +3878,10 @@
       "type": "Hardware"
     },
     {
+      "altart": {
+        "illustrator": "Adrian Dadich",
+        "imagesrc": "/images/cards/haasbioroid-engineering-the-future-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/haas-bioroid-engineering-the-future-core",
       "faction": "Haas-Bioroid",
       "flavor": "Effective. Reliable. Humane.",
@@ -4095,6 +4115,10 @@
       "type": "ICE"
     },
     {
+      "altart": {
+        "illustrator": "Angga Satriohadi",
+        "imagesrc": "/images/cards/corporate-troubleshooter-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/corporate-troubleshooter-core",
       "cost": 0,
       "faction": "Haas-Bioroid",
@@ -4400,6 +4424,10 @@
       "type": "Upgrade"
     },
     {
+      "altart": {
+        "illustrator": "Christer Wibert",
+        "imagesrc": "/images/cards/nbn-making-news-alt.jpg"
+      },
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/nbn-making-news-core",
       "faction": "NBN",
       "flavor": "Someone is Always Watching.",
@@ -10274,7 +10302,7 @@
       "uniqueness": false
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/harmony-medtech-biomedical-pioneer-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "Evolving a Better You.",
       "illustrator": "Emilio Rodriguez",
@@ -10301,7 +10329,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/nisei-division-the-next-generation-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "Perfecting the Imperfect.",
       "illustrator": "Emilio Rodriguez",
@@ -10328,7 +10356,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tennin-institute-the-secrets-within-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Emilio Rodriguez",
       "imagesrc": "/images/cards/tennin-institute-the-secrets-within.jpg",
@@ -10356,7 +10384,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/house-of-knives-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Alexandr Elichev",
       "imagesrc": "/images/cards/house-of-knives.jpg",
@@ -10382,7 +10410,7 @@
     {
       "advancementcost": 4,
       "agendapoints": 2,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/medical-breakthrough-honor-and-profit",
       "faction": "Jinteki",
       "flavor": "\"You won't feel it. Or anything else, for that matter.\"",
       "illustrator": "Gong Studios",
@@ -10409,7 +10437,7 @@
     {
       "advancementcost": 3,
       "agendapoints": 2,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/philotic-entanglement-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Ed Mattinian",
       "imagesrc": "/images/cards/philotic-entanglement.jpg",
@@ -10435,7 +10463,7 @@
     {
       "advancementcost": 5,
       "agendapoints": 3,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/the-future-perfect-honor-and-profit",
       "faction": "Jinteki",
       "illustrator": "Christina Davis",
       "imagesrc": "/images/cards/the-future-perfect.jpg",
@@ -10459,7 +10487,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/chairman-hiro-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 5,
@@ -10486,7 +10514,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mental-health-clinic-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10514,7 +10542,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/psychic-field-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10541,7 +10569,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/shi-kyu-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10568,7 +10596,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tenma-line-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10596,7 +10624,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/cerebral-cast-honor-and-profit",
       "cost": 1,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10622,7 +10650,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/medical-research-fundraiser-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10649,7 +10677,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mushin-no-shin-honor-and-profit",
       "cost": 0,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10675,7 +10703,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/inazuma-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10703,7 +10731,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/komainu-honor-and-profit",
       "cost": 5,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10730,7 +10758,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/pup-honor-and-profit",
       "cost": 1,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -10758,7 +10786,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/shiro-honor-and-profit",
       "cost": 6,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10786,7 +10814,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/susanoo-no-mikoto-honor-and-profit",
       "cost": 9,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -10814,7 +10842,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/neotokyo-grid-honor-and-profit",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 2,
@@ -10842,7 +10870,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tori-hanzo-honor-and-profit",
       "cost": 3,
       "faction": "Jinteki",
       "factioncost": 4,
@@ -10870,7 +10898,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/plan-b-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10897,7 +10925,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/guard-honor-and-profit",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10925,7 +10953,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/rainbow-honor-and-profit",
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10953,7 +10981,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/diversified-portfolio-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -10980,7 +11008,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/fast-track-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11007,7 +11035,7 @@
     },
     {
       "baselink": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/ian-stirling-retired-spook-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Truth is a fickle mistress.\"",
       "illustrator": "Simon Eckert",
@@ -11035,7 +11063,7 @@
     },
     {
       "baselink": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/ken-express-tenma-disappeared-clone-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Try to keep up.\"",
       "illustrator": "Simon Eckert",
@@ -11063,7 +11091,7 @@
     },
     {
       "baselink": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/silhouette-stealth-operative-honor-and-profit",
       "faction": "Criminal",
       "flavor": "\"Don't waste my time.\"",
       "illustrator": "Simon Eckert",
@@ -11090,7 +11118,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/calling-in-favors-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11116,7 +11144,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/early-bird-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11143,7 +11171,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/express-delivery-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11169,7 +11197,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/feint-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11196,7 +11224,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/legwork-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11223,11 +11251,7 @@
       ]
     },
     {
-      "breakcost": {
-        "credits": 1,
-        "subroutines": 1
-      },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/planned-assault-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11253,7 +11277,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/logos-honor-and-profit",
       "cost": 4,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11279,7 +11303,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/public-terminal-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11305,7 +11329,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/unregistered-s-w-35-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11331,7 +11355,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/window-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11361,7 +11385,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/alias-honor-and-profit",
       "cost": 3,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11398,7 +11422,7 @@
         "credits": 2,
         "subroutines": 3
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/breach-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11430,7 +11454,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/bug-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11461,7 +11485,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/gingerbread-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11497,7 +11521,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/grappling-hook-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11528,7 +11552,7 @@
         "credits": 1,
         "subroutines": 1
       },
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/passport-honor-and-profit",
       "cost": 1,
       "faction": "Criminal",
       "factioncost": 2,
@@ -11561,7 +11585,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/push-your-luck-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11586,7 +11610,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/security-testing-honor-and-profit",
       "cost": 0,
       "faction": "Criminal",
       "factioncost": 3,
@@ -11613,7 +11637,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/theophilius-bagbiter-honor-and-profit",
       "cost": 3,
       "faction": "Criminal",
       "factioncost": 4,
@@ -11640,7 +11664,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/tri-maf-contact-honor-and-profit",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -11667,7 +11691,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/mass-install-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11693,7 +11717,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/q-coherence-chip-honor-and-profit",
       "cost": 0,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11725,7 +11749,7 @@
         "subroutines": "all"
       },
       "breakscript": "genericAI",
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/overmind-honor-and-profit",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -11754,7 +11778,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/oracle-may-honor-and-profit",
       "cost": 1,
       "faction": "Neutral",
       "factioncost": 1,
@@ -11781,7 +11805,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/donut-taganes-honor-and-profit",
       "cost": 3,
       "faction": "Neutral",
       "factioncost": 2,
@@ -11810,7 +11834,7 @@
     {
       "advancementcost": 2,
       "agendapoints": 0,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/domestic-sleepers-r466",
       "faction": "Haas-Bioroid",
       "flavor": "",
       "illustrator": "Adrian Dadich",
@@ -11836,7 +11860,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/next-silver-r467",
       "cost": 3,
       "faction": "Haas-Bioroid",
       "factioncost": 2,
@@ -11866,7 +11890,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/lotus-field-r468",
       "cost": 5,
       "faction": "Jinteki",
       "factioncost": 1,
@@ -11895,7 +11919,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/mutate-r469",
       "cost": 2,
       "faction": "Jinteki",
       "factioncost": 3,
@@ -11923,7 +11947,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/near-earth-hub-broadcast-center-r470",
       "faction": "NBN",
       "flavor": "Only the News You Need.",
       "illustrator": "Emilio Rodriguez",
@@ -11951,7 +11975,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/primary-transmission-dish-r471",
       "cost": 2,
       "faction": "NBN",
       "factioncost": 2,
@@ -11980,7 +12004,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/midway-station-grid-r472",
       "cost": 4,
       "faction": "NBN",
       "factioncost": 4,
@@ -12009,7 +12033,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/the-root-r473",
       "cost": 6,
       "faction": "Weyland Consortium",
       "factioncost": 3,
@@ -12038,7 +12062,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/taurus-r474",
       "cost": 5,
       "faction": "Weyland Consortium",
       "factioncost": 2,
@@ -12056,10 +12080,18 @@
       "text": "[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, trash a piece of hardware. If your trace strength is 5 or greater, trash a piece of hardware.",
       "title": "Taurus",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dgs52",
+          "title": "[COTD] Taurus (Wednesday - August 13th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dgs52/cotd_taurus_wednesday_august_13th_2014/",
+          "created": "2014-08-13T12:27:25"
+        }
+      ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/mother-goddess-r475",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -12085,10 +12117,18 @@
       "text": "Mother Goddess gains the subtypes of all other rezzed ice.\r\n[Subroutine] End the run.",
       "title": "Mother Goddess",
       "type": "ICE",
-      "uniqueness": true
+      "uniqueness": true,
+      "reddit_cotds": [
+        {
+          "id": "2dkm08",
+          "title": "[COTD] Mother Goddess (Thursday - August 14th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dkm08/cotd_mother_goddess_thursday_august_14th_2014/",
+          "created": "2014-08-14T20:19:23"
+        }
+      ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/galahad-r476",
       "cost": 2,
       "faction": "Neutral",
       "factioncost": 1,
@@ -12106,10 +12146,18 @@
       "text": "When the Runner encounters Galahad, you may reveal up to 2 <strong>grail</strong> ice from HQ. For the remainder of the run, Galahad gains the subroutine of the revealed ice in the order of your choice.\r\n[Subroutine] End the run.",
       "title": "Galahad",
       "type": "ICE",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dqnby",
+          "title": "[COTD] Galahad (Saturday - August 16th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dqnby/cotd_galahad_saturday_august_16th_2014/",
+          "created": "2014-08-16T18:45:28"
+        }
+      ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/bad-times-r477",
       "cost": 4,
       "faction": "Neutral",
       "factioncost": 0,
@@ -12126,10 +12174,18 @@
       "text": "Play only if the Runner is tagged.\r\nThe Runner's memory limit is reduced by 2 until the end of the turn.",
       "title": "Bad Times",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2dw7nm",
+          "title": "[COTD] Bad Times (Monday - August 18th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2dw7nm/cotd_bad_times_monday_august_18th_2014/",
+          "created": "2014-08-18T16:04:19"
+        }
+      ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/cyber-threat-r478",
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 3,
@@ -12157,7 +12213,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/lamprey-r479",
       "cost": 1,
       "faction": "Anarch",
       "factioncost": 2,
@@ -12186,7 +12242,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/paper-tripping-r480",
       "cost": 4,
       "faction": "Criminal",
       "factioncost": 2,
@@ -12214,7 +12270,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/power-tap-r481",
       "cost": 2,
       "faction": "Criminal",
       "factioncost": 1,
@@ -12243,7 +12299,7 @@
     },
     {
       "baselink": 1,
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/nasir-meidan-cyber-explorer-r482",
       "faction": "Shaper",
       "flavor": "",
       "illustrator": "Matt Zeilinger",
@@ -12271,7 +12327,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/social-engineering-r483",
       "cost": 2,
       "faction": "Shaper",
       "factioncost": 2,
@@ -12299,7 +12355,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/leprechaun-r484",
       "cost": 2,
       "faction": "Shaper",
       "factioncost": 2,
@@ -12328,7 +12384,7 @@
       ]
     },
     {
-      "cgdb_url": null,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/upstalk/eden-shard-r485",
       "cost": 7,
       "faction": "Neutral",
       "factioncost": 1,
@@ -12369,7 +12425,15 @@
       "subtype": "Division",
       "text": "The first time you rez a piece of ice each turn, you may search R&D for another copy of that ice, reveal it, and add it to HQ. Shuffle R&D.",
       "title": "The Foundry: Refining the Process",
-      "type": "Identity"
+      "type": "Identity",
+      "reddit_cotds": [
+        {
+          "id": "2e3wqf",
+          "title": "[COTD] The Foundry (Wednesday - August 20th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2e3wqf/cotd_the_foundry_wednesday_august_20th_2014/",
+          "created": "2014-08-20T19:14:11"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/enhanced-login-protocol-r487",
@@ -12386,7 +12450,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nAs an additional cost to make the first run not made through a card ability on his or her turn, the Runner must spend [Click].", 
       "title": "Enhanced Login Protocol",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2edhnc",
+          "title": "[COTD] Enhanced Login Protocol (Saturday - August 23rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2edhnc/cotd_enhanced_login_protocol_saturday_august_23rd/",
+          "created": "2014-08-23T16:29:01"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/heinlein-grid-r488",
@@ -12405,7 +12477,15 @@
       "title": "Heinlein Grid",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2em1o6",
+          "title": "[COTD] Heinlein Grid (Tuesday - August 26th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2em1o6/cotd_heinlein_grid_tuesday_august_26th_2014/",
+          "created": "2014-08-26T09:07:29"
+        }
+      ]
     },
     {
       "advancementcost": 3,
@@ -12424,7 +12504,15 @@
       "text": "All <strong>code gate</strong> ice have +1 strength.\r\nWhen you score Encrypted Portals, gain 1[Credit] for each rezzed <strong>code gate.</strong>.",
       "title": "Encrypted Portals",
       "type": "Agenda",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2euobk",
+          "title": "[COTD] Encrypted Portals (Thursday - August 28th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2euobk/cotd_encrypted_portals_thursday_august_28th_2014/",
+          "created": "2014-08-28T19:49:25"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/cerebral-static-r490",
@@ -12443,7 +12531,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nThe Runner's identity text box is blank.",
       "title": "Cerebral Static",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2f0v24",
+          "title": "[COTD] Cerebral Static (Saturday - August 30, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2f0v24/cotd_cerebral_static_saturday_august_30_2014/",
+          "created": "2014-08-30T18:38:47"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/targeted-marketing-r491",
@@ -12460,7 +12556,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nName a card. Gain 10 [Credit] whenever the Runner plays or installs a copy of that card.",
       "title": "Targeted Marketing",
       "type": "Operation",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fdwnf",
+          "title": "[COTD] Targeted Marketing (Wednesday - September 3rd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fdwnf/cotd_targeted_marketing_wednesday_september_3rd/",
+          "created": "2014-09-03T19:52:09"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/information-overload-r492",
@@ -12478,6 +12582,7 @@
       "subtype": "Sentry - Tracer",
       "text": "When the Runner encounters Information Overload, <strong>Trace<sup>1</sup></strong>&ndash; if successful, give the Runner 1 tag.\r\nInformation Overload gains\n\n \"[Subroutine]: The Runner trashes 1 of his or her installed cards.\" for each tag the Runner has.",
       "title": "Information Overload",
+      "strength": 4,
       "type": "ICE"
     },
 
@@ -12570,7 +12675,15 @@
       "title": "Will-o'-the-Wisp",
       "trash": 1,
       "type": "Upgrade",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fy6rg",
+          "title": "[COTD] Will-O'-The-Wisp (Tuesday - September 9th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fy6rg/cotd_willothewisp_tuesday_september_9th_2014/",
+          "created": "2014-09-09T15:15:33"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/d4v1d-r498",
@@ -12588,7 +12701,15 @@
       "text": "Place 3 power counters on D4v1d when it is installed.\r\n<strong>Hosted power counter</strong>: Break ice subroutine on a piece of ice that has a strength of 5 or greater.",  
       "title": "D4v1d",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fttsc",
+          "title": "[COTD] D4v1d (Monday - September 8th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fttsc/cotd_d4v1d_monday_september_8th_2014/",
+          "created": "2014-09-08T18:10:37"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/scrubbed-r499",
@@ -12624,7 +12745,15 @@
       "text": "Play only as your first [Click].\r\nWhen this turn ends, gain 2[Credit] for each successful run you made during it.", 
       "title": "Three Steps Ahead",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2fh3lh",
+          "title": "[COTD] Three Steps Ahead (Thursday - September 4th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2fh3lh/cotd_three_steps_ahead_thursday_september_4th_2014/",
+          "created": "2014-09-04T18:05:14"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/unscheduled-maintenance-r501",
@@ -12642,7 +12771,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\r\nThe Corp cannot install more than 1 piece of ice each turn.",
       "title": "Unscheduled Maintenance",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2f9urs",
+          "title": "[COTD] Unscheduled Maintenance (Tuesday - September 2nd, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2f9urs/cotd_unscheduled_maintenance_tuesday_september/",
+          "created": "2014-09-02T17:01:49"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/cache-r502",
@@ -12662,7 +12799,15 @@
       "text": "Place 3 virus counters on Cache when it is installed.\r\n<strong>Hosted virus counter</strong>: Gain 1[Credits].",
       "title": "Cache",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2eycoo",
+          "title": "[COTD] Cache (Friday - August 29th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2eycoo/cotd_cache_friday_august_29th_2014/",
+          "created": "2014-08-29T21:21:31"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/net-celebrity-r503",
@@ -12680,7 +12825,15 @@
       "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is scored.\r\n1 [Recurring Credit]",
       "title": "Net Celebrity",
       "type": "Event",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2erlpc",
+          "title": "[COTD] Net Celebrity (Wednesday - August 27th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2erlpc/cotd_net_celebrity_wednesday_august_27th_2014/",
+          "created": "2014-08-27T15:05:05"
+        }
+      ]
      },
      {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/llds-energy-regulator-r504",
@@ -12698,7 +12851,15 @@
       "text": "3[Credit] or [Trash]: Prevent an installed piece of hardware from being trashed.",
       "title": "LLDS Energy Regulator",
       "type": "Program",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2ejtad",
+          "title": "[COTD] LLDS Energy Regulator (Monday - August 25th, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2ejtad/cotd_llds_energy_regulator_monday_august_25th_2014/",
+          "created": "2014-08-25T18:09:21"
+        }
+      ]
     },
     {
       "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/the-spaces-between/ghost-runner-r505",
@@ -12715,84 +12876,401 @@
       "text": "Place 3[Credit] on Ghost Runner when it is installed. When there are no credits left on Ghost Runner, trash it.",
       "title": "Ghost Runner",
       "type": "Resource",
-      "uniqueness": false
+      "uniqueness": false,
+      "reddit_cotds": [
+        {
+          "id": "2e7j0m",
+          "title": "[COTD] Ghost Runner (Thursday - August 21st, 2014)",
+          "url": "http://www.reddit.com/r/Netrunner/comments/2e7j0m/cotd_ghost_runner_thursday_august_21st_2014/",
+          "created": "2014-08-21T19:35:46"
+        }
+      ]
     },
     {
-      "cgdb_url": null,
-      "cost": 4,
-      "faction": "Haas-Bioroid",
-      "factioncost": 2,
-      "flavor": "Eliza's Toybox is the preeminent purveyor of high-class debauchery on the moon, courtesy of its bioroid pleasure models and other exotica. Every fantasy has its price.",
-      "illustrator": "Henning Ludvigsen",
-      "imagesrc": "/images/cards/elizas-toybox.jpg",
-      "nrdb_url": "http://netrunnerdb.com/en/card/06042",
-      "number": 42,
-      "quantity": 3,
-      "setname": "First Contact",
-      "side": "Corp",
-      "subtype": "Ritzy",
-      "text": "[Click],[Click],[Click]: Rez a card, ignoring all costs.",
-      "title": "Eliza's Toybox",
-      "trash": 4,
+      "title": "The News Now Hour",
+      "uniqueness": false,
+      "illustrator": "Ed Mattinian",
+      "cost": 0,
+      "factioncost": 3,
+      "text": "The Runner cannot play current events.",
+      "imagesrc": "/images/cards/the-news-now-hour.png",
       "type": "Asset",
-      "uniqueness": true
-    },
-    {
-      "cgdb_url": null,
-      "cost": 2,
-      "faction": "Jinteki",
-      "factioncost": 2,
-      "flavor": "The port was first built as a remote location to unload and offload dangerous felons.",
-      "illustrator": "Emilio Rodriguez",
-      "imagesrc": "/images/cards/port-anson-grid.jpg",
-      "nrdb_url": "http://netrunnerdb.com/en/card/06044",
-      "number": 44,
-      "quantity": 3,
+      "trash": 4,
+      "faction": "NBN",
+      "subtype": "Cast",
       "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "\"There are reports of a terrorist threat at Starport Kaguya. The NAPD is offering a reward for anyone who can provide them with information about the current whereabouts of the individual pictured here. He is considered extremely dangerous and is armed with a PAD and portable rig.\"",
       "side": "Corp",
-      "subtype": "Region",
-      "text": "The Runner cannot jack out while running on this server unless he or she trashes 1 installed program .\r\nLimit 1 <strong>region</strong> per server.",
-      "title": "Port Anson Grid",
-      "trash": 5,
-      "type": "Upgrade",
-      "uniqueness": false
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/the-news-now-hour-r510",
+      "number": 45
     },
     {
-      "cgdb_url": null,
-      "cost": 2,
-      "faction": "Anarch",
-      "factioncost": 4,
-      "flavor": "Carved directly out of the lunar rock, Duggar's is a popular spot among blue-collar loonies and slumming risties. A place where you could find what you're looking for&ndash;if you knew who to look for, and didn't get distracted by the energetic dancers.",
-      "illustrator": "Gong Studios",
-      "imagesrc": "/images/cards/duggars.jpg",
-      "nrdb_url": "http://netrunnerdb.com/en/card/06054",
-      "number": 54,
-      "quantity": 3,
-      "setname": "First Contact",
-      "side": "Runner",
-      "subtype": "Location - Seedy",
-      "text": "[Click],[Click],[Click],[Click]: Draw 10 cards.",
-      "title": "Duggar's",
-      "type": "Resource",
-      "uniqueness": true
-    },
-    {
-      "cgdb_url": null,
-      "cost": 8,
+      "title": "Rachel Beckman",
       "faction": "Neutral",
-      "factioncost": 1,
-      "flavor": "\"This is Rachel Beckman. She's in the business of keeping people alive.\"\r\nRachel smiled. \"Only when I'm not in the business of killing them.\"",
+      "subtype": "Connection",
+      "uniqueness": true,
       "illustrator": "Ashley Witter",
-      "imagesrc": "/images/cards/rachel-beckman.jpg",
-      "nrdb_url": "http://netrunnerdb.com/en/card/06060",
+      "cost": 8,
+      "factioncost": 1,
+      "text": "You have 1 additional [Click] to spend each turn.\r\nTrash Rachel Beckman if you are tagged.",
+      "flavor": "\"This is Rachel Beckman. She's in the business of keeping people alive.\"\r\nRachel smiled. \"Only when I'm not in the business of killing them.\"",
+      "imagesrc": "/images/cards/rachel-beckman.png",
+      "type": "Resource",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/rachel-beckman-r525",
+      "side": "Runner",
       "number": 60,
       "quantity": 3,
+      "setname": "First Contact"
+    },
+    {
+      "title": "Crisium Grid",
+      "text": "Successful runs against this server are not considered to be successful or unsuccessful for the purposes of card abilities.\r\nLimit 1 <strong>region</strong> per server.",
+      "imagesrc": "/images/cards/crisium-grid.png",
+      "factioncost": 1,
+      "type": "Upgrade",
+      "uniqueness": false,
+      "illustrator": "Camille Kuo",
+      "cost": 3,
+      "subtype": "Region",
+      "faction": "Weyland Consortium",
+      "trash": 5,
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "Mars would never have been colonized if not for the Gagarian facilities at Promontorium Agarum.",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/crisium-grid-r513",
+      "side": "Corp",
+      "number": 48
+    },
+    {
+      "title": "IQ",
+      "strength": 0,
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "Created by merging the brainscans of over a hundred of the most intelligent people in Haas-Bioroid's cerebral database, its effectiveness is limited either by its lack of imagination or the imagination of the sysops who employ it.",
+      "side": "Corp",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/iq-r506",
+      "number": 41,
+      "factioncost": 2,
+      "text": "The rez cost of IQ is increased by 1 for each card in HQ.\r\nIQ has +1 strength for each card in HQ.\r\n[Subroutine] End the run.",
+      "imagesrc": "/images/cards/IQ.png",
+      "type": "ICE",
+      "illustrator": "Eko Puteh",
+      "uniqueness": false,
+      "cost": 0,
+      "subtype": "Code Gate",
+      "faction": "Haas-Bioroid"
+    },
+    {
+      "breakcost": {
+        "credits": 1,
+        "subroutines":1 
+      },
+      "title": "BlacKat",
+      "strength": 3,
+      "subtype": "Icebreaker - Fracter",
+      "type": "Program",
+      "memory units": 1,
+      "number": 53,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/blackat-r518",
+      "strength": 3,
+      "strengthcost": 2,
+      "faction": "Anarch",
+      "cost": 4,
+      "illustrator": "Seage",
+      "uniqueness": false,
+      "factioncost": 3,
+      "text": "1[Credit]: Break 1 barrier subroutine (or up to 3 subroutines if you spent a credit from a <strong>stealth</strong> card).\r\n2[Credit]: +1 strength (or +2 strength if you spent at least 1 credit from a <strong>stealth</strong> card).",
+      "imagesrc": "/images/cards/blackat.png",
+      "side": "Runner",
+      "quantity": 53,
+      "setname": "First Contact",
+      "flavor": "Bad luck for any sysop blind enough to cross its path."
+    },
+    {
+      "title": "Box-E",
+      "subtype": "Console",
+      "faction": "Criminal",
+      "factioncost": 1,
+      "text": "+2 [Memory]\r\nYour maximum hand size is increased by 2.\r\nLimit 1 <strong>console</strong> per player.",
+      "imagesrc": "/images/cards/box-e.png",
+      "type": "Hardware",
+      "illustrator": "Aaron Agregado",
+      "uniqueness": true,
+      "cost": 4,
+      "side": "Runner",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/box-e-r520",
+      "number": 55,
+      "quantity": 3,
+      "setname": "First Contact"
+    },
+    {
+      "title": "Hades Shard",
+      "subtype": "Virtual - Source",
+      "faction": "Neutral",
+      "type": "Resource",
+      "text": "Whenever you make a successful run on Archives, instead of accessing cards, you may install Hades Shard from your grip, ignoring all costs.\r\n[Trash]: Access all cards in Archives.\r\nLimit 1 per deck.",
+      "imagesrc": "/images/cards/hades-shard.png",
+      "factioncost": 1,
+      "cost": 7,
+      "illustrator": "Seage",
+      "uniqueness": true,
+      "number": 59,
+      "side": "Runner",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/hades-shard-r524",
+      "setname": "First Contact",
+      "quantity": 3
+    },
+    {
+      "title": "Quetzal: Free Spirit",
+      "quantity": 3,
+      "setname": "First Contact",
+      "flavor": "\"Why should we be slaves to our genetic heritage?\"",
+      "baselink": 0,
+      "number": 52,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/quetzal-free-spirit-r517",
+      "side": "Runner",
+      "minimumdecksize": 45,
+      "influencelimit": 15,
+      "type": "Identity",
+      "text": "Once per turn, break 1 <strong>barrier</strong> subroutine.",
+      "imagesrc": "/images/cards/quetzal-free-spirit.png",
+      "illustrator": "Matt Zeilinger",
+      "uniqueness": false,
+      "subtype": "G-mod",
+      "faction": "Anarch"
+    },
+    {
+      "title": "Lancelot",
+      "strength": 2,
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "He who wields the sword of valor.",
+      "strength": 2,
+      "number": 51,
+      "side": "Corp",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/lancelot-r516",
+      "cost": 4,
+      "uniqueness": false,
+      "illustrator": "Andreas Zafiratos",
+      "text": "When the Runner encounters Lancelot, you may reveal up to 2 <strong>grail</strong> ice from HQ. For the remainder of this run, Lancelot gains the subroutines of the revealed ice in the order of your choice.\r\n[Subroutine] Trash 1 program.",
+      "imagesrc": "/images/cards/lancelot.png",
+      "factioncost": 1,
+      "type": "ICE",
+      "faction": "Neutral",
+      "subtype": "Sentry - Grail - Destroyer"
+    },
+    {
+      "title": "Manhunt",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/manhunt-r511",
+      "side": "Corp",
+      "number": 46,
+      "quantity": 3,
+      "setname": "First Contact",
+      "subtype": "Current",
+      "faction": "NBN",
+      "text": "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nThe first time the Runner makes a successful run each turn, trace2&ndash; if successful, give the Runner 1 tag.",
+      "imagesrc": "/images/cards/manhunt.png",
+      "factioncost": 3,
+      "type": "Operation",
+      "illustrator": "Mauricio Herrera",
+      "uniqueness": false,
+      "cost": 3
+    },
+    {
+      "title": "Order of Sol",
+      "number": 58,
+      "side": "Runner",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/order-of-sol-r523",
+      "quantity": 3,
+      "flavor": "There have been several attempts to create a \"world church,\" uniting all human faiths into a single, harmonious whole. The irony, of course, is that each new \"world church\" is another schism in humanity's shared religious experience.",
+      "setname": "First Contact",
+      "faction": "Shaper",
+      "subtype": "Location",
+      "cost": 2,
+      "uniqueness": true,
+      "illustrator": "Henning Ludvigsen",
+      "type": "Resource",
+      "text": "The first time you have no credits in your credit pool each turn, gain 1[Credit].",
+      "imagesrc": "/images/cards/order-of-sol.png",
+      "factioncost": 1
+    },
+    {
+      "title": "The Supplier",
+      "side": "Runner",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/the-supplier-r521",
+      "number": 56,
+      "flavor": "\"I can get you anything, and guarantee the best prices in town.\"",
+      "quantity": 3,
+      "setname": "First Contact",
+      "subtype": "Connection",
+      "faction": "Criminal",
+      "text": "[Click]: Host a resource or piece of hardware from your grip on The Supplier.\r\nWhen your turn begins, you may install a hosted card, lowering the install cost by 2.",
+      "imagesrc": "/images/cards/the-supplier.png",
+      "factioncost": 2,
+      "type": "Resource",
+      "illustrator": "Samuel R. Shimota",
+      "uniqueness": true,
+      "cost": 3
+    },
+    {
+      "title": "Chronos Project",
+      "number": 49,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/chronos-project-r514",
+      "side": "Corp",
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "The irony is that those who'd want to destroy certain memories can't afford to do so, and those who can afford it-well, they're too busy sipping on dreamwine.",
+      "subtype": "Research",
+      "faction": "Neutral",
+      "advancement cost": 3,
+      "text": "When you score Chronos Project, the Runner removes all cards in his or her heap from the game.",
+      "imagesrc": "/images/cards/chronos-project.png",
+      "agenda points": 1,
+      "type": "Agenda",
+      "uniqueness": false,
+      "illustrator": "Adam S. Doyle"
+    },
+    {
+      "title": "Duggar's",
+      "text": "[Click], [Click], [Click], [Click]: Draw 10 cards.",
+      "imagesrc": "/images/cards/duggars.png",
+      "factioncost": 4,
+      "type": "Resource",
+      "cost": 2,
+      "uniqueness": true,
+      "illustrator": "Gong Studios",
+      "subtype": "Location - Seedy",
+      "faction": "Anarch",
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "Carved directly out of the lunar rock, Duggar's is a popular spot among blue-collar loonies and slumming risties. A place where you could find what you're looking for - if you knew who to look for, and didn't get distracted by the energetic dancers.",
+      "number": 54,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/duggar%e2%80%99s-r519",
+      "side": "Runner"
+    },
+    {
+      "title": "Wendigo",
+      "strength": 4,
+      "type": "ICE",
+      "text": "Wendigo can be advanced.\r\nWhile Wendigo has an odd number of advancement tokens on it, it gains <strong>barrier</strong> and loses <strong>code gate</strong>.\r\n[Subroutine] Choose a program. The Runner cannot use the chosen program for the remainder of this run.",
+      "imagesrc": "/images/cards/wendigo.png",
+      "factioncost": 2,
+      "illustrator": "Wylie Beckert",
+      "uniqueness": false,
+      "cost": 2,
+      "subtype": "Code Gate - Morph",
+      "logicalsubtypes": [
+        "Barrier",
+        "Code Gate"
+      ],
+      "faction": "Weyland Consortium",
+      "strength": 4,
+      "quantity": 3,
+      "setname": "First Contact",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/wendigo-r512",
+      "side": "Corp",
+      "number": 47
+    },
+    {
+      "title": "Shattered Remains",
+      "type": "Asset",
+      "text": "Shattered Remains can be advanced.\r\nIf you pay 1[Credit] when the Runner accesses Shattered Remains, trash 1 piece of hardware for each advancement token on Shattered Remains.",
+      "imagesrc": "/images/cards/shattered-remains.png",
+      "factioncost": 0,
+      "cost": 0,
+      "uniqueness": false,
+      "illustrator": "Matt Zeilinger",
+      "subtype": "Ambush",
+      "trash": 0,
+      "faction": "Neutral",
+      "setname": "First Contact",
+      "quantity": 3,
+      "number": 50,
+      "side": "Corp",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/shattered-remains-r515"
+    },
+    {
+      "title": "Port Anson Grid",
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "The port was first built as a remote location to unload and offload dangerous felons.",
+      "number": 44,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/port-anson-grid-r509",
+      "side": "Corp",
+      "factioncost": 2,
+      "text": "The Runner cannot jack out while running on this server unless he or she trashes 1 installed program.\r\nLimit 1 region per server.",
+      "imagesrc": "/images/cards/port-anson-grid.png",
+      "type": "Upgrade",
+      "cost": 2,
+      "uniqueness": false,
+      "illustrator": "Emilio Rodriguez",
+      "subtype": "Region",
+      "trash": 5,
+      "faction": "Jinteki"
+    },
+    {
+      "title": "Kitsune",
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/kitsune-r508",
+      "strength":3,
+      "side": "Corp",
+      "number": 43,
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "There are those who believe the nine-tailed fox is an angel in disguise. And then there are those who have followed, and discovered her secret...",
+      "strength": 3,
+      "faction": "Jinteki",
+      "subtype": "Mythic - Trap",
+      "illustrator": "Smirtouille",
+      "uniqueness": false,
+      "cost": 2,
+      "text": "[Subroutine] The Corp may choose a card in HQ. The Runner accesses that card. If he or she does, trash Kitsune.",
+      "imagesrc": "/images/cards/kitsune.png",
+      "type": "ICE",
+      "factioncost": 2
+    },
+    {
+      "breakcost": {
+        "credits": 1,
+        "subroutines":1 
+      },
+      "title": "Refractor",
+      "text": "1[Credit]: Break <strong>code gate</strong> subroutine.\r\n1[Credit]: +3 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
+      "imagesrc": "/images/cards/refractor.png",
+      "factioncost": 2,
+      "illustrator": "Hannah Christenson",
+      "uniqueness": false,
+      "cost": 1,
+      "faction": "Shaper",
+      "quantity": 3,
+      "flavor": "\"If you look like you belong, people will ignore you for hours. Or years. It's only when you don't fit in that things start to go wrong.\" -Exile",
       "setname": "First Contact",
       "side": "Runner",
-      "subtype": "Connection",
-      "text": "You have 1 additional [Click] to spend each turn.\r\nTrash Rachel Beckman if you are tagged.",
-      "title": "Rachel Beckman",
-      "type": "Resource",
+      "type": "Program",
+      "subtype": "Icebreaker - Decoder",
+      "strength": 2,
+      "strengthcost": 1,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/refractor-r522",
+      "number": 57,
+      "memory units": 1
+    },
+    {
+      "title": "Eliza's Toybox",
+      "number": 42,
+      "cgdb_url": "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/eliza%e2%80%99s-toybox-r507",
+      "side": "Corp",
+      "setname": "First Contact",
+      "quantity": 3,
+      "flavor": "Eliza's Toybox is the preeminent purveyor of high-class debauchery on the moon, courtesy of its bioroid pleasure models and other exotica. Every fantasy has its price.",
+      "subtype": "Ritzy",
+      "faction": "Haas-Bioroid",
+      "trash": 4,
+      "factioncost": 2,
+      "text": "[Click], [Click], [Click]: Rez a card, ignoring all costs.",
+      "imagesrc": "/images/cards/elizas-toybox.png",
+      "type": "Asset",
+      "cost": 4,
+      "illustrator": "Henning Ludvigsen",
       "uniqueness": true
     },
     {
