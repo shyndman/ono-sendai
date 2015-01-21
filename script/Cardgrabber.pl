@@ -26,7 +26,7 @@ use warnings;
 use utf8;
 use HTML::TreeBuilder;
 no warnings qw/experimental/;
-my $doc = "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/first-contact/";
+my $doc = "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/up-and-over/";
 
 my $tree = HTML::TreeBuilder->new_from_url($doc);
 
@@ -60,6 +60,14 @@ for my $tr ($table->look_down('_tag', 'tr')){
 					$data =~ s/<br \/>/\n/g;
 					$data =~ s/<td.*>/\n/g;
 					$data =~ s/\s(<b>)/\n$1/g;
+					$data =~ s/&ldquo;/\\"/g;
+					$data =~ s/&rdquo;/\\"/g;
+					$data =~ s/&rsquo;/\\'/g;
+					$data =~ s/&amp;/&/g;
+					$data =~ s/&hellip;/.../g;
+					$data =~ s/“/\\"/g;
+					$data =~ s/”/\\"/g;
+					$data =~ s/<\/span>//g;
 					my @data = split(/\n/,$data);
 					for my $d (@data) {
 						next if $d =~ m/^$/;
@@ -87,6 +95,7 @@ for my $tr ($table->look_down('_tag', 'tr')){
 								my $subtype = $2 if defined $2;
 								$cards->{$name}->{type} = $type;
 								$cards->{$name}->{subtype} = $subtype if defined $subtype;
+								$cards->{$name}->{type} = $field_data unless defined $type;
 								next;
 							}
 						}
