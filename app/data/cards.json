@@ -764,7 +764,7 @@
          "strength" : 0,
          "strengthcost" : {
             "credits" : 3,
-            "strength" : "5"
+            "strength" : 5
          },
          "subtype" : "Icebreaker - Killer",
          "text" : "1[Credits]: Break <strong>sentry</strong> subroutine.\n3[Credits]: +5 strength.",
@@ -1071,7 +1071,7 @@
       {
          "breakcost" : {
             "credits" : 2,
-            "subroutines" : 1
+            "subroutines" : 2
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/core/battering-ram-core",
          "cost" : 5,
@@ -2754,7 +2754,7 @@
       {
          "breakcost" : {
             "credits" : 1,
-            "subroutines" : 1
+            "subroutines" : "all"
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/what-lies-ahead/morning-star-what-lies-ahead",
          "cost" : 8,
@@ -4232,7 +4232,7 @@
       {
          "breakcost" : {
             "credits" : 2,
-            "subroutines" : 1
+            "subroutines" : 2
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/force-of-nature-a-study-in-static",
          "cost" : 5,
@@ -8060,7 +8060,7 @@
       {
          "breakcost" : {
             "credits" : 3,
-            "subroutines" : 1
+            "subroutines" : 3
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-spin-cycle/second-thoughts/leviathan-second-thoughts",
          "cost" : 6,
@@ -8086,7 +8086,7 @@
          "strength" : 3,
          "strengthcost" : {
             "credits" : 3,
-            "strength" : "5"
+            "strength" : 5
          },
          "subtype" : "Icebreaker - Decoder",
          "text" : "3[Credits]: Break up to 3 <strong>code gate</strong> subroutines.\n3[Credits]: +5 strength.",
@@ -11763,7 +11763,7 @@
       {
          "breakcost" : {
             "credits" : 2,
-            "subroutines" : 1
+            "subroutines" : 3
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/breach-honor-and-profit",
          "cost" : 2,
@@ -11788,7 +11788,7 @@
          "strength" : 2,
          "strengthcost" : {
             "credits" : 2,
-            "strength" : "4"
+            "strength" : 4
          },
          "subtype" : "Icebreaker - Fracter",
          "text" : "2[Credits]: Break up to 3 <strong>barrier</strong> subroutines.\n2[Credits]: +4 strength.\nBreach cannot be used on ice protecting a remote server.",
@@ -11852,7 +11852,7 @@
          "strength" : 2,
          "strengthcost" : {
             "credits" : 2,
-            "strength" : "3"
+            "strength" : 3
          },
          "subtype" : "Icebreaker",
          "text" : "1[Credits]: Break <strong>tracer</strong> subroutine.\n2[Credits]: +3 strength.",
@@ -11916,7 +11916,7 @@
          "strength" : 2,
          "strengthcost" : {
             "credits" : 2,
-            "strength" : "2"
+            "strength" : 2
          },
          "subtype" : "Icebreaker - Decoder",
          "text" : "1[Credits]: Break <strong>code gate</strong> subroutine.\n2[Credits]: +2 strength.\nPassport cannot be used on ice protecting a remote server.",
@@ -12084,7 +12084,7 @@
       {
          "breakcost" : {
             "credits" : 0,
-            "subroutines" : "all"
+            "subroutines" : 1
          },
          "breakscript" : "genericAI",
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/honor-and-profit/overmind-honor-and-profit",
@@ -13548,7 +13548,7 @@
          "strength" : 3,
          "strengthcost" : {
             "credits" : 2,
-            "strength" : "2"
+            "strength" : 1
          },
          "subtype" : "Icebreaker - Fracter",
          "text" : "1[Credits]: Break 1 <strong>barrier</strong> subroutine (or up to 3 subroutines if you spent a credit from a <strong>stealth</strong> card).\n2[Credits]: +1 strength (or +2 strength if you spent at least 1 credit from a <strong>stealth</strong> card).",
@@ -13663,7 +13663,7 @@
          "strength" : 2,
          "strengthcost" : {
             "credits" : 1,
-            "strength" : "3"
+            "strength" : 3
          },
          "subtype" : "Icebreaker - Decoder",
          "text" : "1[Credits]: Break <strong>code gate</strong> subroutine.\n1[Credits]: +3 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
@@ -14185,7 +14185,7 @@
       {
          "breakcost" : {
             "credits" : 1,
-            "subroutines" : 1
+            "subroutines" : "all"
          },
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/up-and-over/switchblade-r542",
          "cost" : 3,
@@ -14203,7 +14203,7 @@
          "strength" : 0,
          "strengthcost" : {
             "credits" : 1,
-            "strength" : "7"
+            "strength" : 7
          },
          "subtype" : "Icebreaker - Killer",
          "text" : "1[Credits]: Break any number of <strong>sentry</strong> subroutines. Use this ability only by spending a credit from a <strong>stealth</strong> card.\n1[Credits]: +7 strength. Use this ability only by spending a credit from a <strong>stealth</strong> card.",
@@ -14644,6 +14644,10 @@
          "uniqueness" : true
       },
       {
+         "breakcost" : {
+            "credits" : 0,
+            "subroutines" : 1
+         },
          "cost" : 3,
          "faction" : "Anarch",
          "factioncost" : 3,
@@ -14700,6 +14704,10 @@
          "uniqueness" : false
       },
       {
+         "breakcost" : {
+            "credits" : 0,
+            "subroutines" : 1
+         },
          "cost" : 3,
          "faction" : "Criminal",
          "factioncost" : 3,
@@ -14781,6 +14789,10 @@
          "uniqueness" : false
       },
       {
+         "breakcost" : {
+            "credits" : 0,
+            "subroutines" : 1
+         },
          "cost" : 4,
          "faction" : "Shaper",
          "factioncost" : 3,
@@ -15965,26 +15977,8 @@
          "uniqueness" : false
       }
    ],
-   "last-modified" : "2015-01-21T21:39:00",
+   "last-modified" : "2015-01-22T10:20:00",
    "sets" : [
-      {
-         "title" : "Special",
-         "released" : null
-      },
-      {
-         "title" : "Order and Chaos",
-         "released" : null
-      },
-      {
-         "cycle" : "SanSan",
-         "title" : "The Valley",
-         "released" : null
-      },
-      {
-         "cycle" : "SanSan",
-         "title" : "Breaker Bay",
-         "released" : null
-      },
       {
          "title" : "Core Set",
          "released" : "2012-09-06T00:00:00"
@@ -16086,6 +16080,25 @@
          "cycle" : "Lunar",
          "title" : "The Source",
          "released" : "2014-12-18T00:00:00"
+      },
+      {
+         "title" : "Order and Chaos",
+         "released" : null
+      },
+      {
+         "cycle" : "SanSan",
+         "title" : "The Valley",
+         "released" : null
+      },
+      {
+         "cycle" : "SanSan",
+         "title" : "Breaker Bay",
+         "released" : null
+      },
+      {
+         "title" : "Special",
+         "released" : null
       }
+
    ]
 }
