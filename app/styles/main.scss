@@ -2,7 +2,7 @@
 @import "variables";
 
 // Library imports
-@import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap";
 
 // Application imports
 @import "common";
@@ -38,6 +38,9 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .app-outer-layout {
