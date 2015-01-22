@@ -51,7 +51,7 @@
          "side" : "Corp",
          "subtype" : "Division",
          "text" : "For the first net damage the Runner suffers each turn, you may look at the Runner's grip and select the card that is trashed.",
-         "title" : "Chronos Protocol: Selective Mind-mapping",
+         "title" : "Chronos Protocol: Selective Mind-mapping (Jinteki)",
          "type" : "Identity",
          "uniqueness" : false
       },
@@ -68,7 +68,7 @@
          "side" : "Corp",
          "subtype" : "Division",
          "text" : "Whenever the Runner trashes a card for brain damage, he or she removes all copies of that card from the game (installed, in the heap, stack, or grip). The Runner shuffles his or her stack.",
-         "title" : "Chronos Protocol: Selective Mind-mapping",
+         "title" : "Chronos Protocol: Selective Mind-mapping (Haas-Bioroid)",
          "type" : "Identity",
          "uniqueness" : false
       },
@@ -15965,126 +15965,126 @@
          "uniqueness" : false
       }
    ],
-   "last-modified" : "2015-01-20T16:42:44",
+   "last-modified" : "2015-01-21T21:39:00",
    "sets" : [
       {
-         "name" : "Special",
+         "title" : "Special",
          "released" : null
       },
       {
-         "name" : "Order and Chaos",
-         "released" : null
-      },
-      {
-         "cycle" : "SanSan",
-         "name" : "The Valley",
+         "title" : "Order and Chaos",
          "released" : null
       },
       {
          "cycle" : "SanSan",
-         "name" : "Breaker Bay",
+         "title" : "The Valley",
          "released" : null
       },
       {
-         "name" : "Core Set",
+         "cycle" : "SanSan",
+         "title" : "Breaker Bay",
+         "released" : null
+      },
+      {
+         "title" : "Core Set",
          "released" : "2012-09-06T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "What Lies Ahead",
+         "title" : "What Lies Ahead",
          "released" : "2012-12-14T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "Trace Amount",
+         "title" : "Trace Amount",
          "released" : "2013-01-09T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "Cyber Exodus",
+         "title" : "Cyber Exodus",
          "released" : "2013-02-14T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "A Study in Static",
+         "title" : "A Study in Static",
          "released" : "2013-03-21T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "Humanity's Shadow",
+         "title" : "Humanity's Shadow",
          "released" : "2013-05-02T00:00:00"
       },
       {
          "cycle" : "Genesis",
-         "name" : "Future Proof",
+         "title" : "Future Proof",
          "released" : "2013-05-30T00:00:00"
       },
       {
-         "name" : "Creation and Control",
+         "title" : "Creation and Control",
          "released" : "2013-07-29T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "Opening Moves",
+         "title" : "Opening Moves",
          "released" : "2013-09-27T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "Second Thoughts",
+         "title" : "Second Thoughts",
          "released" : "2013-11-07T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "Mala Tempora",
+         "title" : "Mala Tempora",
          "released" : "2013-12-13T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "True Colors",
+         "title" : "True Colors",
          "released" : "2014-01-17T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "Fear and Loathing",
+         "title" : "Fear and Loathing",
          "released" : "2014-02-21T00:00:00"
       },
       {
          "cycle" : "Spin",
-         "name" : "Double Time",
+         "title" : "Double Time",
          "released" : "2014-03-28T00:00:00"
       },
       {
-         "name" : "Honor and Profit",
+         "title" : "Honor and Profit",
          "released" : "2014-05-02T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "Upstalk",
+         "title" : "Upstalk",
          "released" : "2014-07-25T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "The Spaces Between",
+         "title" : "The Spaces Between",
          "released" : "2014-08-15T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "First Contact",
+         "title" : "First Contact",
          "released" : "2014-09-15T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "Up and Over",
+         "title" : "Up and Over",
          "released" : "2014-10-16T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "All That Remains",
+         "title" : "All That Remains",
          "released" : "2014-11-13T00:00:00"
       },
       {
          "cycle" : "Lunar",
-         "name" : "The Source",
+         "title" : "The Source",
          "released" : "2014-12-18T00:00:00"
       }
    ]
