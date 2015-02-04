@@ -16359,25 +16359,6 @@
          "uniqueness" : false
       },
       {
-         "ancurLink" : "http://ancur.wikia.com/wiki/Shi.Ky%C5%AB",
-         "cost" : 0,
-         "faction" : "Jinteki",
-         "factioncost" : 4,
-         "illustrator" : "Alexandr Elichev",
-         "imagesrc" : "/images/cards/shiky.png",
-         "nrdb_url" : "http://netrunnerdb.com/en/card/05011",
-         "number" : 11,
-         "quantity" : 3,
-         "setname" : "Honor and Profit",
-         "side" : "Corp",
-         "subtype" : "Ambush",
-         "text" : "When the Runner accesses Shi.Kyū, you may pay X[Credits]. The Runner must take either X net damage or add Shi.Kyū to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.Kyū from R&amp;D.",
-         "title" : "Shi.Kyū",
-         "trash" : 0,
-         "type" : "Asset",
-         "uniqueness" : false
-      },
-      {
          "ancurLink" : "http://ancur.wikia.com/wiki/Comet",
          "cost" : 4,
          "faction" : "Shaper",
