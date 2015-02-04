@@ -4130,7 +4130,7 @@
          "cost" : 1,
          "faction" : "Anarch",
          "factioncost" : 1,
-         "flavor" : "\"Saved my bacon more than once, but gives a wicked sense of dÃ©jÃ  vu.\" - Whizzard",
+         "flavor" : "\"Saved my bacon more than once, but gives a wicked sense of déjà vu.\" - Whizzard",
          "illustrator" : "Adam S. Doyle",
          "imagesrc" : "/images/cards/disrupter.png",
          "memoryunits" : 1,
@@ -5151,7 +5151,7 @@
          "side" : "Corp",
          "strength" : 0,
          "subtype" : "Code Gate - Tracer",
-         "text" : "Salvage can be advanced only while rezzed and gains â[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.â for each advancement token on it.",
+         "text" : "Salvage can be advanced only while rezzed and gains \"[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\" for each advancement token on it.",
          "title" : "Salvage",
          "type" : "ICE",
          "uniqueness" : false
@@ -7329,8 +7329,8 @@
          ],
          "setname" : "Opening Moves",
          "side" : "Runner",
-         "subtype" : "CaÃ¯ssa",
-         "text" : "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>CaÃ¯ssa</strong> program from your grip or heap, ignoring all costs.",
+         "subtype" : "Caïssa",
+         "text" : "[Click]: Host Pawn on an outermost piece of ice protecting a central server.\nWhenever you make a successful run, move Pawn to the piece of ice directly after the current ice hosting Pawn, if able; otherwise, trash Pawn instead and install a <strong>Caïssa</strong> program from your grip or heap, ignoring all costs.",
          "title" : "Pawn",
          "type" : "Program",
          "uniqueness" : false
@@ -7356,8 +7356,8 @@
          ],
          "setname" : "Opening Moves",
          "side" : "Runner",
-         "subtype" : "CaÃ¯ssa",
-         "text" : "[Click]: Host Rook on a piece of ice not hosting a <strong>CaÃ¯ssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
+         "subtype" : "Caïssa",
+         "text" : "[Click]: Host Rook on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Rook can be hosted only on ice protecting this server or on ice in the same position (counting from the innermost spot) protecting another server.\nThe rez cost of each piece of ice protecting this server is increased by 2.",
          "title" : "Rook",
          "type" : "Program",
          "uniqueness" : false
@@ -7842,8 +7842,8 @@
          ],
          "setname" : "Second Thoughts",
          "side" : "Runner",
-         "subtype" : "CaÃ¯ssa",
-         "text" : "[Click]: Host Bishop on a piece of ice not hosting a <strong>CaÃ¯ssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\nHost ice has -2 strength.",
+         "subtype" : "Caïssa",
+         "text" : "[Click]: Host Bishop on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Bishop can be hosted only on ice protecting a central server if Bishop is on ice protecting a remote server, or on ice protecting a remote server if Bishop is on ice protecting a central server.\nHost ice has -2 strength.",
          "title" : "Bishop",
          "type" : "Program",
          "uniqueness" : false
@@ -8416,7 +8416,7 @@
          "setname" : "Mala Tempora",
          "side" : "Runner",
          "subtype" : "Console",
-         "text" : "+3[Memory Unit]\nUse the MU on Deep Red only for <strong>CaÃ¯ssa</strong> programs.\nWhenever you install a <strong>CaÃ¯ssa</strong> program, you may trigger its [Click] ability without spending [Click].\nLimit 1 <strong>console</strong> per player.",
+         "text" : "+3[Memory Unit]\nUse the MU on Deep Red only for <strong>Caïssa</strong> programs.\nWhenever you install a <strong>Caïssa</strong> program, you may trigger its [Click] ability without spending [Click].\nLimit 1 <strong>console</strong> per player.",
          "title" : "Deep Red",
          "type" : "Hardware",
          "uniqueness" : true
@@ -8449,8 +8449,8 @@
          "setname" : "Mala Tempora",
          "side" : "Runner",
          "strength" : 7,
-         "subtype" : "Icebreaker - AI - CaÃ¯ssa",
-         "text" : "2[Credits]: Break subroutine on host ice.\n[Click]: Host Knight on a piece of ice not hosting a <strong>CaÃ¯ssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
+         "subtype" : "Icebreaker - AI - Caïssa",
+         "text" : "2[Credits]: Break subroutine on host ice.\n[Click]: Host Knight on a piece of ice not hosting a <strong>Caïssa</strong>. If already hosted, Knight can be hosted only on ice that is not installed directly before or after the current piece of ice hosting Knight.",
          "title" : "Knight",
          "type" : "Program",
          "uniqueness" : false
@@ -9086,7 +9086,7 @@
          "cost" : 1,
          "faction" : "Shaper",
          "factioncost" : 1,
-         "flavor" : "\"One-shot icebreakers are popular among many of my protÃ©gÃ©s. They don't have the patience for the hunt.\" -The Professor",
+         "flavor" : "\"One-shot icebreakers are popular among many of my protégés. They don't have the patience for the hunt.\" -The Professor",
          "illustrator" : "Ed Mattinian",
          "imagesrc" : "/images/cards/sharpshooter.png",
          "memoryunits" : 1,
@@ -9535,7 +9535,7 @@
             {
                "created" : "2014-03-03T16:14:54Z",
                "id" : "1zfx6c",
-               "title" : "[COTD] â¦ Tallie Perrault (March 3rd, 2014)",
+               "title" : "[COTD] ♦ Tallie Perrault (March 3rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/1zfx6c/cotd_tallie_perrault_march_3rd_2014/"
             }
          ],
@@ -9773,7 +9773,7 @@
             {
                "created" : "2014-03-04T14:54:17Z",
                "id" : "1zj61l",
-               "title" : "[COTD] â¦ Toshiyuki Sakai (March 4th, 2014)",
+               "title" : "[COTD] ♦ Toshiyuki Sakai (March 4th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/1zj61l/cotd_toshiyuki_sakai_march_4th_2014/"
             }
          ],
@@ -9819,7 +9819,7 @@
          "cost" : 0,
          "faction" : "Jinteki",
          "factioncost" : 2,
-         "flavor" : "He slowly pried open the lid, and the tantÅ glinted madly in the half-light. The executive motioned to the blade. Looks like the meeting was being cut short.",
+         "flavor" : "He slowly pried open the lid, and the tantō glinted madly in the half-light. The executive motioned to the blade. Looks like the meeting was being cut short.",
          "illustrator" : "Gong Studios",
          "imagesrc" : "/images/cards/restoring-face.png",
          "nrdb_url" : "http://netrunnerdb.com/en/card/04094",
@@ -10824,15 +10824,15 @@
             {
                "created" : "2014-05-30T15:18:33Z",
                "id" : "26vp69",
-               "title" : "[COTD] Shi.KyÅ« (Friday - May 30th, 2014)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/26vp69/cotd_shikyÅ«_friday_may_30th_2014/"
+               "title" : "[COTD] Shi.Kyū (Friday - May 30th, 2014)",
+               "url" : "http://www.reddit.com/r/Netrunner/comments/26vp69/cotd_shikyū_friday_may_30th_2014/"
             }
          ],
          "setname" : "Honor and Profit",
          "side" : "Corp",
          "subtype" : "Ambush",
          "text" : "When the Runner accesses Shi.KyÅ«, you may pay X[Credits]. The Runner must take either X net damage or add Shi.KyÅ« to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.KyÅ« from R&D.",
-         "title" : "Shi.KyÅ«",
+         "title" : "Shi.Kyū",
          "trash" : 0,
          "type" : "Asset",
          "uniqueness" : false
@@ -11114,7 +11114,7 @@
          "cost" : 3,
          "faction" : "Jinteki",
          "factioncost" : 4,
-         "flavor" : "Known as the Red Woman, HanzÅ is notorious for her ruthless methods of server protection.",
+         "flavor" : "Known as the Red Woman, Hanzō is notorious for her ruthless methods of server protection.",
          "illustrator" : "Smirtouille",
          "imagesrc" : "/images/cards/tori-hanz.png",
          "nrdb_url" : "http://netrunnerdb.com/en/card/05022",
@@ -11124,15 +11124,15 @@
             {
                "created" : "2014-06-22T19:38:47Z",
                "id" : "28tatd",
-               "title" : "[COTD] Tori HanzÅ (Sunday - June 22nd, 2014)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/28tatd/cotd_tori_hanzÅ_sunday_june_22nd_2014/"
+               "title" : "[COTD] Tori Hanzō (Sunday - June 22nd, 2014)",
+               "url" : "http://www.reddit.com/r/Netrunner/comments/28tatd/cotd_tori_hanzō_sunday_june_22nd_2014/"
             }
          ],
          "setname" : "Honor and Profit",
          "side" : "Corp",
          "subtype" : "Sysop",
          "text" : "The first time you would do any amount of net damage during each run on this server, instead you may pay 2[Credits] to do 1 brain damage.",
-         "title" : "Tori HanzÅ",
+         "title" : "Tori Hanzō",
          "trash" : 2,
          "type" : "Upgrade",
          "uniqueness" : true
@@ -15030,7 +15030,7 @@
             {
                "created" : "2015-01-01T16:42:38Z",
                "id" : "2r0k2y",
-               "title" : "[COTD] Excalibur (Thursday â January 1st, 2015)",
+               "title" : "[COTD] Excalibur (Thursday - January 1st, 2015)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r0k2y/cotd_excalibur_thursday_january_1st_2015/"
             }
          ],
@@ -15056,7 +15056,7 @@
             {
                "created" : "2015-01-02T15:04:17Z",
                "id" : "2r3rr8",
-               "title" : "[COTD] Self-destruct (Friday â January 2nd, 2015)",
+               "title" : "[COTD] Self-destruct (Friday - January 2nd, 2015)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r3rr8/cotd_selfdestruct_friday_january_2nd_2015/"
             }
          ],
@@ -15084,7 +15084,7 @@
             {
                "created" : "2015-01-03T15:57:40Z",
                "id" : "2r7kl8",
-               "title" : "[COTD] Incubator (Saturday â January 3rd, 2014)",
+               "title" : "[COTD] Incubator (Saturday - January 3rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r7kl8/cotd_incubator_saturday_january_3rd_2014/"
             }
          ],
@@ -15112,7 +15112,7 @@
             {
                "created" : "2015-01-04T07:58:28Z",
                "id" : "2raabi",
-               "title" : "[COTD] Ixodidae (Sunday â January 4th, 2014)",
+               "title" : "[COTD] Ixodidae (Sunday - January 4th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2raabi/cotd_ixodidae_sunday_january_4th_2014/"
             }
          ],
@@ -15138,7 +15138,7 @@
             {
                "created" : "2015-01-05T15:12:08Z",
                "id" : "2remrp",
-               "title" : "[COTD] Code Siphon (Monday â January 5th, 2014)",
+               "title" : "[COTD] Code Siphon (Monday - January 5th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2remrp/cotd_code_siphon_monday_january_5th_2014/"
             }
          ],
@@ -15166,7 +15166,7 @@
             {
                "created" : "2015-01-06T07:51:01Z",
                "id" : "2rhu1z",
-               "title" : "[COTD] Collective Consciousness (Tuesday â January 6th, 2014)",
+               "title" : "[COTD] Collective Consciousness (Tuesday - January 6th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rhu1z/cotd_collective_consciousness_tuesday_january_6th/"
             }
          ],
@@ -15186,7 +15186,7 @@
          "cost" : 4,
          "faction" : "Shaper",
          "factioncost" : 3,
-         "flavor" : "Î´á½¶Ï á¼Ï Ïá½¸Î½ Î±á½Ïá½¸Î½ ÏÎ¿ÏÎ±Î¼á½¸Î½ Î¿á½Îº á¼Î½ á¼Î¼Î²Î±Î¯Î·Ï",
+         "flavor" : "δὶς ἐς τὸν αὐτὸν ποταμὸν οὐκ ἂν ἐμβαίης",
          "illustrator" : "Alexandra Douglass",
          "imagesrc" : "/images/cards/sage.png",
          "memoryunits" : 2,
@@ -15197,7 +15197,7 @@
             {
                "created" : "2015-01-07T15:09:17Z",
                "id" : "2rmt9z",
-               "title" : "[COTD] Sage (Wednesday â January 7th, 2014)",
+               "title" : "[COTD] Sage (Wednesday - January 7th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rmt9z/cotd_sage_wednesday_january_7th_2014/"
             }
          ],
@@ -15225,7 +15225,7 @@
             {
                "created" : "2015-01-08T06:53:51Z",
                "id" : "2rpysl",
-               "title" : "[COTD] Bribery (Thursday â January 8th, 2014)",
+               "title" : "[COTD] Bribery (Thursday - January 8th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rpysl/cotd_bribery_thursday_january_8th_2014/"
             }
          ],
@@ -15253,7 +15253,7 @@
             {
                "created" : "2015-01-09T14:41:44Z",
                "id" : "2ruyl5",
-               "title" : "[COTD] Au Revoir (Friday â January 9th, 2014)",
+               "title" : "[COTD] Au Revoir (Friday - January 9th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2ruyl5/cotd_au_revoir_friday_january_9th_2014/"
             }
          ],
@@ -15278,7 +15278,7 @@
             {
                "created" : "2015-01-10T17:02:58Z",
                "id" : "2rz43e",
-               "title" : "[COTD] Earthrise Hotel (Saturday â January 10th, 2014)",
+               "title" : "[COTD] Earthrise Hotel (Saturday - January 10th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rz43e/cotd_earthrise_hotel_saturday_january_10th_2014/"
             }
          ],
@@ -16659,7 +16659,7 @@
          "uniqueness" : false
       }
    ],
-   "last-modified" : "2015-02-04T01:09:15",
+   "last-modified" : "2015-02-04T01:41:15",
    "sets" : [
       {
          "released" : "2012-09-06",
