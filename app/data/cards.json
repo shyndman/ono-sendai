@@ -3761,39 +3761,6 @@
          "uniqueness" : false
       },
       {
-         "baselink" : 0,
-         "faction" : "Shaper",
-         "flavor" : "\"Have you met Dinosaurus?\"",
-         "illustrator" : "Matt Zeilinger",
-         "imagesrc" : "/images/cards/chaos-theory-wnderkind.png",
-         "influencelimit" : 15,
-         "minimumdecksize" : 40,
-         "nrdb_url" : "http://netrunnerdb.com/en/card/02046",
-         "number" : 46,
-         "quantity" : 3,
-         "reddit_cotds" : [
-            {
-               "created" : "2013-01-21T19:10:54Z",
-               "id" : "1705i7",
-               "title" : "[CotD] Chaos Theory: Wunderkind (Jan. 21st, 2013)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/1705i7/cotd_chaos_theory_wunderkind_jan_21st_2013/"
-            },
-            {
-               "created" : "2013-11-01T16:09:23Z",
-               "id" : "1pp01o",
-               "title" : "[COTD] Chaos Theory: Wunderkind (1 Nov 2013)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/1pp01o/cotd_chaos_theory_wunderkind_1_nov_2013/"
-            }
-         ],
-         "setname" : "Cyber Exodus",
-         "side" : "Runner",
-         "subtype" : "G-mod",
-         "text" : "+1[Memory Unit]",
-         "title" : "Chaos Theory: WÃ¼nderkind",
-         "type" : "Identity",
-         "uniqueness" : false
-      },
-      {
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/cyber-exodus/test-run-cyber-exodus",
          "cost" : 3,
          "faction" : "Shaper",
