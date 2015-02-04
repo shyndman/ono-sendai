@@ -1,11 +1,11 @@
 #!/usr/bin/env perl 
 #===============================================================================
 #
-#         FILE: cards_refresh.pl
+#         FILE: update_cards.pl
 #
-#        USAGE: ./cards_refresh.pl  
+#        USAGE: ./update_cards.pl  
 #
-#  DESCRIPTION: Rebuild the cards.json dataset from netrunnerdb
+#  DESCRIPTION: update cards dataset from netrunnerdb
 #
 #      OPTIONS: ---
 # REQUIREMENTS: ---
@@ -23,16 +23,21 @@ use utf8;
 use JSON;
 use LWP::Simple;
 use File::Slurp;
+use Image::Magick;
 
 # Load the existing card database
-my $ExistCardsFile = 'app/data/cards.json';
-my $existing_cards = from_json(read_file($ExistCardsFile));
-
-# Clear out Chronos Protocol Id's here
-
+my $cardsfile = 'app/data/cards.json';
+my $existing_cards = from_json(read_file($cardsfile));
 
 # Change the Cards array to a Hash, keyed by card title
 my %Cur_Cards = map { $_->{title} => $_ } @{$existing_cards->{cards}};
+
+# Delete the Chronos Protocol cards, they cause problems
+for (keys %Cur_Cards) {
+	if ($_ =~ m/^Chronos Protocol.*/){
+		delete $Cur_Cards{$_};
+	}
+}
 
 # Grab the full list of cards from the NRDB Database
 my $nrdb_export = get ("http://netrunnerdb.com/api/cards/");
@@ -67,14 +72,76 @@ for my $card (@$cards_dataset) {
 	push @$NoAltsList, $card;
 }
 
-# Clear out Chronos Protocol Id's here
-
-
 # Change the Cards array to a Hash, keyed by card title
-my %Imp_Cards = map { $_->{title} => $_ } @$cards_dataset;
+my %Imp_Cards = map { $_->{title} => $_ } @$NoAltsList;
+
+# Clear out Chronos Protocol Id's here
+for (keys %Imp_Cards) {
+	if ($_ =~ m/^Chronos Protocol.*/){
+		delete $Imp_Cards{$_};
+	}
+}
+
+for (keys %Cur_Cards) {
+	delete $Imp_Cards{$_};
+}
 
 
+# Add in new cards
+for (keys %Imp_Cards){
 
+	#Download Images
+	my $image = Image::Magick->new(magick=>'png');
+	$image->BlobToImage(get ("http://netrunnerdb.com/" . $Imp_Cards{$_}->{nrdb_art}));
+	print "Downloading and converting " . $Imp_Cards{$_}->{imagesrc} ." From " . $Imp_Cards{$_}->{nrdb_art} . "\n";
+	#Convert Images to the correct format
+	$image->Quantize(colors=>256, colorspace=>'RGB', dither=>1);
+	my $err = $image->Write("app" . $Imp_Cards{$_}->{imagesrc});
+	warn "$err" if $err;
+
+	delete $Imp_Cards{$_}->{nrdb_art};
+
+	#Add Breaker Calc info
+	if ($Imp_Cards{$_}->{subtype} =~ m/Icebreaker/) {
+		$Imp_Cards{$_}->{text} =~ m/(\d).*(\d*).*subroutine.*(\d*).*(\d*)/;
+		my $br_credits;
+		my $br_subs;
+		my $str_cost;
+		my $str_amt;
+		if ( $1 ne '' ) {
+			$br_credits = int $1;
+		}
+		else {
+			$br_credits = int 1;
+		}
+		if ( $2 ne '' ) {
+			$br_subs = int $2;
+		}
+		else {
+			$br_subs = int 1;
+		}
+		if ( $3 ne '' ) {
+			$str_cost = int $3;
+		}
+		else {
+			$str_cost = int 1;
+		}
+		if ( $4 ne '' ) {
+			$str_amt = int $4;
+		}
+		else {
+			$str_amt = int 1;
+		}
+		if ($str_amt == 1) {
+			$Imp_Cards{$_}->{strengthcost} = $str_cost;
+		}
+		else {
+			$Imp_Cards{$_}->{strengthcost} = {credits=> $str_cost, strength=> $str_amt};
+		}
+		$Imp_Cards{$_}->{breakcost} = {credits=> $br_credits, subroutines=> $br_subs};
+	}
+	push @{$existing_cards->{cards}}, $Imp_Cards{$_};
+}
 
 my $setname_export = get ("http://netrunnerdb.com/api/sets/");
 my $sets_dataset = decode_json $setname_export;
@@ -100,17 +167,23 @@ for my $set (@$sets_dataset) {
 	$set->{"cycle"} = "Spin" if ($set->{"cyclenumber"} == 4);
 	$set->{"cycle"} = "Lunar" if ($set->{"cyclenumber"} == 6);
 	$set->{"cycle"} = "SanSan" if ($set->{"cyclenumber"} == 8);
+	$set->{"title"} = delete $set->{"name"};
 	delete $set->{"cyclenumber"};
 	push @$sets_proper, $set;
 }
 
+@$sets_proper = sort {$a->{released} cmp $b->{released}} @$sets_proper;
+
 # Update the Datestamp
 $dataset->{"last-modified"} = modifiedDate();
-$dataset->{"cards"} = $NoAltsList;
+$dataset->{"cards"} = $existing_cards->{cards};
 $dataset->{"sets"} = $sets_proper;
 
 my $json_text = to_json($dataset, {utf8 => 1, pretty => 1, canonical => 1});
-print $json_text;
+
+open my $cards_out, '>', "app/data/cards.json";
+print $cards_out $json_text;
+close $cards_out;
 
 exit 0;
 
