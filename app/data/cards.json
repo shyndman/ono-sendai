@@ -140,31 +140,6 @@
          "uniqueness" : false
       },
       {
-         "cost" : 2,
-         "faction" : "Anarch",
-         "factioncost" : 2,
-         "flavor" : "Anything worth doing is worth doing twice.",
-         "illustrator" : "Tim Durning",
-         "imagesrc" : "/images/cards/dj-vu.png",
-         "nrdb_url" : "http://netrunnerdb.com/en/card/01002",
-         "number" : 2,
-         "quantity" : 2,
-         "reddit_cotds" : [
-            {
-               "created" : "2015-01-16T18:54:37Z",
-               "id" : "2snlfk",
-               "title" : "[COTD] Déjà Vu (Friday - January 16th, 2014)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/2snlfk/cotd_déjà_vu_friday_january_16th_2014/"
-            }
-         ],
-         "setname" : "Core Set",
-         "side" : "Runner",
-         "text" : "Add 1 card (or up to 2 <strong>virus</strong> cards) from your heap to your grip.",
-         "title" : "Déjà Vu",
-         "type" : "Event",
-         "uniqueness" : false
-      },
-      {
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/core/demolition-run-core",
          "cost" : 2,
          "faction" : "Anarch",
@@ -3157,25 +3132,6 @@
          "uniqueness" : false
       },
       {
-         "cost" : 1,
-         "faction" : "Neutral",
-         "factioncost" : 0,
-         "flavor" : "Victōs dracons numquam deride.",
-         "illustrator" : "Sandara Tang",
-         "imagesrc" : "/images/cards/drac.png",
-         "nrdb_url" : "http://netrunnerdb.com/en/card/02020",
-         "number" : 20,
-         "quantity" : 3,
-         "setname" : "What Lies Ahead",
-         "side" : "Corp",
-         "strength" : 0,
-         "subtype" : "Sentry - Tracer",
-         "text" : "When you rez Dracō, you may pay X[Credits] to place X power counters on it.\nDracō has +1 strength for each power counter on it.\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
-         "title" : "Dracō",
-         "type" : "ICE",
-         "uniqueness" : false
-      },
-      {
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/trace-amount/vamp-trace-amount",
          "cost" : 0,
          "faction" : "Anarch",
@@ -3805,39 +3761,6 @@
          "uniqueness" : false
       },
       {
-         "baselink" : 0,
-         "faction" : "Shaper",
-         "flavor" : "\"Have you met Dinosaurus?\"",
-         "illustrator" : "Matt Zeilinger",
-         "imagesrc" : "/images/cards/chaos-theory-wnderkind.png",
-         "influencelimit" : 15,
-         "minimumdecksize" : 40,
-         "nrdb_url" : "http://netrunnerdb.com/en/card/02046",
-         "number" : 46,
-         "quantity" : 3,
-         "reddit_cotds" : [
-            {
-               "created" : "2013-01-21T19:10:54Z",
-               "id" : "1705i7",
-               "title" : "[CotD] Chaos Theory: Wunderkind (Jan. 21st, 2013)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/1705i7/cotd_chaos_theory_wunderkind_jan_21st_2013/"
-            },
-            {
-               "created" : "2013-11-01T16:09:23Z",
-               "id" : "1pp01o",
-               "title" : "[COTD] Chaos Theory: Wunderkind (1 Nov 2013)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/1pp01o/cotd_chaos_theory_wunderkind_1_nov_2013/"
-            }
-         ],
-         "setname" : "Cyber Exodus",
-         "side" : "Runner",
-         "subtype" : "G-mod",
-         "text" : "+1[Memory Unit]",
-         "title" : "Chaos Theory: Wünderkind",
-         "type" : "Identity",
-         "uniqueness" : false
-      },
-      {
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/cyber-exodus/test-run-cyber-exodus",
          "cost" : 3,
          "faction" : "Shaper",
@@ -4289,32 +4212,6 @@
          "title" : "Scrubber",
          "type" : "Resource",
          "uniqueness" : false
-      },
-      {
-         "cost" : 3,
-         "faction" : "Criminal",
-         "factioncost" : 2,
-         "flavor" : "Twice the fun.",
-         "illustrator" : "Howard Schechlman",
-         "imagesrc" : "/images/cards/doppelgnger.png",
-         "nrdb_url" : "http://netrunnerdb.com/en/card/02064",
-         "number" : 64,
-         "quantity" : 3,
-         "reddit_cotds" : [
-            {
-               "created" : "2013-04-03T16:20:31Z",
-               "id" : "1blfvq",
-               "title" : "[CotD] Doppelganger (03 Apr 2013)",
-               "url" : "http://www.reddit.com/r/Netrunner/comments/1blfvq/cotd_doppelganger_03_apr_2013/"
-            }
-         ],
-         "setname" : "A Study in Static",
-         "side" : "Runner",
-         "subtype" : "Console",
-         "text" : "+1[Memory Unit]\nOnce per turn, you may immediately make another run when a successful run ends.\nLimit 1 <strong>console</strong> per player.",
-         "title" : "Doppelgänger",
-         "type" : "Hardware",
-         "uniqueness" : true
       },
       {
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/genesis/a-study-in-static/crescentus-a-study-in-static",
@@ -5254,7 +5151,7 @@
          "side" : "Corp",
          "strength" : 0,
          "subtype" : "Code Gate - Tracer",
-         "text" : "Salvage can be advanced only while rezzed and gains “[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.” for each advancement token on it.",
+         "text" : "Salvage can be advanced only while rezzed and gains \"[Subroutine] <strong>Trace<sup>2</sup></strong>&ndash; If successful, give the Runner 1 tag.\" for each advancement token on it.",
          "title" : "Salvage",
          "type" : "ICE",
          "uniqueness" : false
@@ -7713,7 +7610,7 @@
          "cost" : 2,
          "faction" : "Jinteki",
          "factioncost" : 2,
-         "flavor" : "Himitsu-Bako is a simple ice barrier that appears as a digital puzzle box. What makes it special is the ease with which it can be uninstalled and installed in a different server, throwing up barriers in unexpected places and giving any intruder a curious feeling of déjà vu.",
+         "flavor" : "Himitsu-Bako is a simple ice barrier that appears as a digital puzzle box. What makes it special is the ease with which it can be uninstalled and installed in a different server, throwing up barriers in unexpected places and giving any intruder a curious feeling of dÃ©jÃ  vu.",
          "illustrator" : "Andrew Mar",
          "imagesrc" : "/images/cards/himitsu-bako.png",
          "nrdb_url" : "http://netrunnerdb.com/en/card/04013",
@@ -10934,7 +10831,7 @@
          "setname" : "Honor and Profit",
          "side" : "Corp",
          "subtype" : "Ambush",
-         "text" : "When the Runner accesses Shi.Kyū, you may pay X[Credits]. The Runner must take either X net damage or add Shi.Kyū to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.Kyū from R&D.",
+         "text" : "When the Runner accesses Shi.KyÅ«, you may pay X[Credits]. The Runner must take either X net damage or add Shi.KyÅ« to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.KyÅ« from R&D.",
          "title" : "Shi.Kyū",
          "trash" : 0,
          "type" : "Asset",
@@ -12006,7 +11903,7 @@
          "cost" : 2,
          "faction" : "Criminal",
          "factioncost" : 1,
-         "flavor" : "She slipped back onto her hopper. \"I'm your family now, so don't twist me, dǒng ma?\"\nHe flicked the e-cig away from his mouth, and nodded. What had he gotten himself into?",
+         "flavor" : "She slipped back onto her hopper. \"I'm your family now, so don't twist me, dÇng ma?\"\nHe flicked the e-cig away from his mouth, and nodded. What had he gotten himself into?",
          "illustrator" : "Ashley Witter",
          "imagesrc" : "/images/cards/tri-maf-contact.png",
          "nrdb_url" : "http://netrunnerdb.com/en/card/05050",
@@ -13766,7 +13663,7 @@
             {
                "created" : "2014-11-24T15:56:38Z",
                "id" : "2n9sdo",
-               "title" : "[COTD] Architect (Monday – November 23rd, 2014)",
+               "title" : "[COTD] Architect (Monday â November 23rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2n9sdo/cotd_architect_monday_november_23rd_2014/"
             }
          ],
@@ -13794,7 +13691,7 @@
             {
                "created" : "2014-11-25T17:08:46Z",
                "id" : "2ndy36",
-               "title" : "[COTD] Peak Efficiency (Tuesday – November 24th, 2014)",
+               "title" : "[COTD] Peak Efficiency (Tuesday â November 24th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2ndy36/cotd_peak_efficiency_tuesday_november_24th_2014/"
             }
          ],
@@ -13819,7 +13716,7 @@
             {
                "created" : "2014-11-26T16:29:38Z",
                "id" : "2nhmni",
-               "title" : "[COTD] Labyrinthine Servers (Wednesday – November 25th, 2014)",
+               "title" : "[COTD] Labyrinthine Servers (Wednesday â November 25th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2nhmni/cotd_labyrinthine_servers_wednesday_november_25th/"
             }
          ],
@@ -14038,7 +13935,7 @@
             {
                "created" : "2014-12-03T07:15:47Z",
                "id" : "2o4v25",
-               "title" : "[COTD] Hades Fragment (Wednesday – December 3rd, 2014)",
+               "title" : "[COTD] Hades Fragment (Wednesday â December 3rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2o4v25/cotd_hades_fragment_wednesday_december_3rd_2014/"
             }
          ],
@@ -14064,7 +13961,7 @@
             {
                "created" : "2014-12-03T07:16:01Z",
                "id" : "2o4v2m",
-               "title" : "[COTD] Docklands Crackdown (Wednesday – December 3rd, 2014)",
+               "title" : "[COTD] Docklands Crackdown (Wednesday â December 3rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2o4v2m/cotd_docklands_crackdown_wednesday_december_3rd/"
             }
          ],
@@ -14091,7 +13988,7 @@
             {
                "created" : "2014-11-24T16:00:18Z",
                "id" : "2n9ss0",
-               "title" : "[COTD] Inject (Monday – November 23rd, 2014)",
+               "title" : "[COTD] Inject (Monday â November 23rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2n9ss0/cotd_inject_monday_november_23rd_2014/"
             }
          ],
@@ -14118,7 +14015,7 @@
             {
                "created" : "2014-11-25T17:10:03Z",
                "id" : "2ndy9h",
-               "title" : "[COTD] Origami (Tuesday – November 24th, 2014)",
+               "title" : "[COTD] Origami (Tuesday â November 24th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2ndy9h/cotd_origami_tuesday_november_24th_2014/"
             }
          ],
@@ -14144,7 +14041,7 @@
             {
                "created" : "2014-11-26T16:30:08Z",
                "id" : "2nhmpt",
-               "title" : "[COTD] Fester (Wednesday – November 25th, 2014)",
+               "title" : "[COTD] Fester (Wednesday â November 25th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2nhmpt/cotd_fester_wednesday_november_25th_2014/"
             }
          ],
@@ -14171,7 +14068,7 @@
             {
                "created" : "2014-11-27T16:48:44Z",
                "id" : "2nl8ds",
-               "title" : "[COTD] Autoscripter (Thursday – November 27th, 2014)",
+               "title" : "[COTD] Autoscripter (Thursday â November 27th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2nl8ds/cotd_autoscripter_thursday_november_27th_2014/"
             }
          ],
@@ -14250,7 +14147,7 @@
             {
                "created" : "2014-11-30T16:22:25Z",
                "id" : "2nuoga",
-               "title" : "[COTD] Astrolabe (Sunday – November 30th, 2014)",
+               "title" : "[COTD] Astrolabe (Sunday â November 30th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2nuoga/cotd_astrolabe_sunday_november_30th_2014/"
             }
          ],
@@ -14277,7 +14174,7 @@
             {
                "created" : "2014-12-01T16:03:14Z",
                "id" : "2ny652",
-               "title" : "[COTD] Angel Arena (Monday – Dec 1st, 2014)",
+               "title" : "[COTD] Angel Arena (Monday â Dec 1st, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2ny652/cotd_angel_arena_monday_dec_1st_2014/"
             }
          ],
@@ -14295,7 +14192,7 @@
          "cgdb_url" : "http://www.cardgamedb.com/index.php/netrunner/android-netrunner-card-spoilers/_/the-lunar-cycle/all-that-remains/bifrost-array-r546",
          "faction" : "Haas-Bioroid",
          "flavor" : "\"'What does it do?' Whatever I bloody want it to do.\" -Director Haas",
-         "illustrator" : "Veli Nyström",
+         "illustrator" : "Veli NystrÃ¶m",
          "imagesrc" : "/images/cards/bifrost-array.png",
          "nrdb_url" : "http://netrunnerdb.com/en/card/06081",
          "number" : 81,
@@ -14331,7 +14228,7 @@
             {
                "created" : "2014-12-05T16:46:40Z",
                "id" : "2odjvc",
-               "title" : "[COTD] Sagittarius (Friday – December 5th, 2014)",
+               "title" : "[COTD] Sagittarius (Friday â December 5th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2odjvc/cotd_sagittarius_friday_december_5th_2014/"
             }
          ],
@@ -14359,7 +14256,7 @@
             {
                "created" : "2014-12-06T17:55:11Z",
                "id" : "2oh3nn",
-               "title" : "[COTD] Hostile Infrastructure (Saturday – December 6th, 2014)",
+               "title" : "[COTD] Hostile Infrastructure (Saturday â December 6th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2oh3nn/cotd_hostile_infrastructure_saturday_december_6th/"
             }
          ],
@@ -14631,7 +14528,7 @@
             {
                "created" : "2014-12-04T16:16:24Z",
                "id" : "2o9q3w",
-               "title" : "[COTD] Ekomind (Thursday – December 4th, 2014)",
+               "title" : "[COTD] Ekomind (Thursday â December 4th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2o9q3w/cotd_ekomind_thursday_december_4th_2014/"
             }
          ],
@@ -14662,7 +14559,7 @@
             {
                "created" : "2014-12-05T16:47:11Z",
                "id" : "2odjx4",
-               "title" : "[COTD] Cerberus \"Cuj.0\" H3 (Friday – December 5th, 2014)",
+               "title" : "[COTD] Cerberus \"Cuj.0\" H3 (Friday â December 5th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2odjx4/cotd_cerberus_cuj0_h3_friday_december_5th_2014/"
             }
          ],
@@ -14862,7 +14759,7 @@
             {
                "created" : "2014-12-22T07:40:43Z",
                "id" : "2q1ubs",
-               "title" : "[COTD] Helium-3 Deposit (Monday – December 22nd, 2014)",
+               "title" : "[COTD] Helium-3 Deposit (Monday â December 22nd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2q1ubs/cotd_helium3_deposit_monday_december_22nd_2014/"
             }
          ],
@@ -14888,7 +14785,7 @@
             {
                "created" : "2014-12-23T15:37:00Z",
                "id" : "2q6jow",
-               "title" : "[COTD] Errand Boy (Tuesday – December 23rd, 2014)",
+               "title" : "[COTD] Errand Boy (Tuesday â December 23rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2q6jow/cotd_errand_boy_tuesday_december_23rd_2014/"
             }
          ],
@@ -14915,7 +14812,7 @@
             {
                "created" : "2014-12-24T15:42:42Z",
                "id" : "2qa8so",
-               "title" : "[COTD] IT Department (Wednesday – December 24th, 2014)",
+               "title" : "[COTD] IT Department (Wednesday â December 24th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qa8so/cotd_it_department_wednesday_december_24th_2014/"
             }
          ],
@@ -14942,7 +14839,7 @@
             {
                "created" : "2014-12-25T15:11:48Z",
                "id" : "2qd81q",
-               "title" : "[COTD] Markus 1.0 (Thursday – December 25th, 2014)",
+               "title" : "[COTD] Markus 1.0 (Thursday â December 25th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qd81q/cotd_markus_10_thursday_december_25th_2014/"
             }
          ],
@@ -14969,7 +14866,7 @@
             {
                "created" : "2014-12-26T17:22:17Z",
                "id" : "2qghq2",
-               "title" : "[COTD] Industrial Genomics (Friday – December 26th, 2014)",
+               "title" : "[COTD] Industrial Genomics (Friday â December 26th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qghq2/cotd_industrial_genomics_friday_december_26th_2014/"
             }
          ],
@@ -14996,7 +14893,7 @@
             {
                "created" : "2014-12-27T17:24:23Z",
                "id" : "2qjkxw",
-               "title" : "[COTD] Turtlebacks (Monday – December 29th, 2014)",
+               "title" : "[COTD] Turtlebacks (Monday â December 29th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qjkxw/cotd_turtlebacks_monday_december_29th_2014/"
             }
          ],
@@ -15023,7 +14920,7 @@
             {
                "created" : "2014-12-28T15:26:02Z",
                "id" : "2qmdk4",
-               "title" : "[COTD] Shoot the Moon (Sunday – December 28th, 2014)",
+               "title" : "[COTD] Shoot the Moon (Sunday â December 28th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qmdk4/cotd_shoot_the_moon_sunday_december_28th_2014/"
             }
          ],
@@ -15050,7 +14947,7 @@
             {
                "created" : "2014-12-29T08:03:32Z",
                "id" : "2qp17q",
-               "title" : "[COTD] Troll (Monday – December 29th, 2014)",
+               "title" : "[COTD] Troll (Monday â December 29th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qp17q/cotd_troll_monday_december_29th_2014/"
             }
          ],
@@ -15078,7 +14975,7 @@
             {
                "created" : "2014-12-30T16:10:16Z",
                "id" : "2qto0f",
-               "title" : "[COTD] Virgo (Tuesday – December 30th, 2014)",
+               "title" : "[COTD] Virgo (Tuesday â December 30th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qto0f/cotd_virgo_tuesday_december_30th_2014/"
             }
          ],
@@ -15106,7 +15003,7 @@
             {
                "created" : "2014-12-31T15:59:52Z",
                "id" : "2qxdxl",
-               "title" : "[COTD] Utopia Fragment (Wednesday – December 31st, 2014)",
+               "title" : "[COTD] Utopia Fragment (Wednesday â December 31st, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2qxdxl/cotd_utopia_fragment_wednesday_december_31st_2014/"
             }
          ],
@@ -15133,7 +15030,7 @@
             {
                "created" : "2015-01-01T16:42:38Z",
                "id" : "2r0k2y",
-               "title" : "[COTD] Excalibur (Thursday – January 1st, 2015)",
+               "title" : "[COTD] Excalibur (Thursday - January 1st, 2015)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r0k2y/cotd_excalibur_thursday_january_1st_2015/"
             }
          ],
@@ -15159,7 +15056,7 @@
             {
                "created" : "2015-01-02T15:04:17Z",
                "id" : "2r3rr8",
-               "title" : "[COTD] Self-destruct (Friday – January 2nd, 2015)",
+               "title" : "[COTD] Self-destruct (Friday - January 2nd, 2015)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r3rr8/cotd_selfdestruct_friday_january_2nd_2015/"
             }
          ],
@@ -15187,7 +15084,7 @@
             {
                "created" : "2015-01-03T15:57:40Z",
                "id" : "2r7kl8",
-               "title" : "[COTD] Incubator (Saturday – January 3rd, 2014)",
+               "title" : "[COTD] Incubator (Saturday - January 3rd, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2r7kl8/cotd_incubator_saturday_january_3rd_2014/"
             }
          ],
@@ -15215,7 +15112,7 @@
             {
                "created" : "2015-01-04T07:58:28Z",
                "id" : "2raabi",
-               "title" : "[COTD] Ixodidae (Sunday – January 4th, 2014)",
+               "title" : "[COTD] Ixodidae (Sunday - January 4th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2raabi/cotd_ixodidae_sunday_january_4th_2014/"
             }
          ],
@@ -15241,7 +15138,7 @@
             {
                "created" : "2015-01-05T15:12:08Z",
                "id" : "2remrp",
-               "title" : "[COTD] Code Siphon (Monday – January 5th, 2014)",
+               "title" : "[COTD] Code Siphon (Monday - January 5th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2remrp/cotd_code_siphon_monday_january_5th_2014/"
             }
          ],
@@ -15269,7 +15166,7 @@
             {
                "created" : "2015-01-06T07:51:01Z",
                "id" : "2rhu1z",
-               "title" : "[COTD] Collective Consciousness (Tuesday – January 6th, 2014)",
+               "title" : "[COTD] Collective Consciousness (Tuesday - January 6th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rhu1z/cotd_collective_consciousness_tuesday_january_6th/"
             }
          ],
@@ -15300,7 +15197,7 @@
             {
                "created" : "2015-01-07T15:09:17Z",
                "id" : "2rmt9z",
-               "title" : "[COTD] Sage (Wednesday – January 7th, 2014)",
+               "title" : "[COTD] Sage (Wednesday - January 7th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rmt9z/cotd_sage_wednesday_january_7th_2014/"
             }
          ],
@@ -15328,7 +15225,7 @@
             {
                "created" : "2015-01-08T06:53:51Z",
                "id" : "2rpysl",
-               "title" : "[COTD] Bribery (Thursday – January 8th, 2014)",
+               "title" : "[COTD] Bribery (Thursday - January 8th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rpysl/cotd_bribery_thursday_january_8th_2014/"
             }
          ],
@@ -15356,7 +15253,7 @@
             {
                "created" : "2015-01-09T14:41:44Z",
                "id" : "2ruyl5",
-               "title" : "[COTD] Au Revoir (Friday – January 9th, 2014)",
+               "title" : "[COTD] Au Revoir (Friday - January 9th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2ruyl5/cotd_au_revoir_friday_january_9th_2014/"
             }
          ],
@@ -15381,7 +15278,7 @@
             {
                "created" : "2015-01-10T17:02:58Z",
                "id" : "2rz43e",
-               "title" : "[COTD] Earthrise Hotel (Saturday – January 10th, 2014)",
+               "title" : "[COTD] Earthrise Hotel (Saturday - January 10th, 2014)",
                "url" : "http://www.reddit.com/r/Netrunner/comments/2rz43e/cotd_earthrise_hotel_saturday_january_10th_2014/"
             }
          ],
@@ -15975,129 +15872,919 @@
          "title" : "Beach Party",
          "type" : "Resource",
          "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/MemStrips",
+         "cost" : 3,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "\"The trick is remembering which virus you loaded onto which strip. That's why I draw emoji on 'em. Then I just have to remember which emoji stands for which virus.\" -Princess Space Kitten",
+         "illustrator" : "Maciej Rebisz",
+         "imagesrc" : "/images/cards/memstrips.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07046",
+         "number" : 46,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Chip",
+         "text" : "+3[Memory Unit]\r\nUse the MU on MemStrips only for <strong>virus</strong> programs.",
+         "title" : "MemStrips",
+         "type" : "Hardware",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Housekeeping",
+         "cost" : 2,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 3,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/housekeeping.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07020",
+         "number" : 20,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "Current - Gray Ops",
+         "text" : "This card is not trashed until another <strong>current</strong> is played or an agenda is stolen.\r\nThe first time the Runner installs a card each turn, he or she must trash 1 card from his or her grip.",
+         "title" : "Housekeeping",
+         "type" : "Operation",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Day_Job",
+         "cost" : 2,
+         "faction" : "Anarch",
+         "factioncost" : 1,
+         "flavor" : "\"Hello thank you for vidding MegaBuy I'm Carol how can I help you.\"",
+         "imagesrc" : "/images/cards/day-job.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07036",
+         "number" : 36,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "As an additional cost to play this event, spend [Click] [Click] [Click].\r\nGain 10[Credits].",
+         "title" : "Day Job",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/D%C3%A9j%C3%A0_Vu",
+         "cost" : 2,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "Anything worth doing is worth doing twice.",
+         "illustrator" : "Tim Durning",
+         "imagesrc" : "/images/cards/dj-vu.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/01002",
+         "number" : 2,
+         "quantity" : 2,
+         "setname" : "Core Set",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "Add 1 card (or up to 2 <strong>virus</strong> cards) from your heap to your grip.",
+         "title" : "Déjà Vu",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Showing_Off",
+         "cost" : 2,
+         "faction" : "Anarch",
+         "factioncost" : 3,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/showing-off.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07034",
+         "number" : 34,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Run",
+         "text" : "Make a run on R&amp;D. If successful, instead of accessing cards from the top of R&amp;D, access cards from the bottom of R&amp;D (starting with the bottom card and work your way up).",
+         "title" : "Showing Off",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Tori_Hanz%C5%8D",
+         "cost" : 3,
+         "faction" : "Jinteki",
+         "factioncost" : 4,
+         "flavor" : "Known as the Red Woman, Hanzō is notorious for her ruthless methods of server protection.",
+         "illustrator" : "Smirtouille",
+         "imagesrc" : "/images/cards/tori-hanz.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/05022",
+         "number" : 22,
+         "quantity" : 3,
+         "setname" : "Honor and Profit",
+         "side" : "Corp",
+         "subtype" : "Sysop",
+         "text" : "The first time you would do any amount of net damage during each run on this server, instead you may pay 2[Credits] to do 1 brain damage.",
+         "title" : "Tori Hanzō",
+         "trash" : 2,
+         "type" : "Upgrade",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Enhanced_Vision",
+         "cost" : 1,
+         "faction" : "Criminal",
+         "factioncost" : 3,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/enhanced-vision.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08005",
+         "number" : 5,
+         "quantity" : 3,
+         "setname" : "The Valley",
+         "side" : "Runner",
+         "subtype" : "Genetics",
+         "text" : "The first time you make a successful run each turn, the Corp reveals 1 card at random from HQ.",
+         "title" : "Enhanced Vision",
+         "type" : "Resource",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Chop_Bot_3000",
+         "cost" : 1,
+         "faction" : "Anarch",
+         "factioncost" : 1,
+         "flavor" : "There was a sickly smell coming from his closet. He hoped it was only a mouse this time.",
+         "imagesrc" : "/images/cards/chop-bot-3000.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07045",
+         "number" : 45,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "When your turn begins, you may trash another of your installed cards. If you do, draw 1 card or remove 1 tag.",
+         "title" : "Chop Bot 3000",
+         "type" : "Hardware",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Archives_Interface",
+         "cost" : 3,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "A black box that makes data disappear forever.",
+         "imagesrc" : "/images/cards/archives-interface.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07044",
+         "number" : 44,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "Whenever you access cards in Archives, remove 1 card in Archives from the game, instead of accessing it.",
+         "title" : "Archives Interface",
+         "type" : "Hardware",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Searchlight",
+         "cost" : 1,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 1,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/searchlight.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07019",
+         "number" : 19,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "strength" : 3,
+         "subtype" : "Sentry",
+         "text" : "Searchlight can be advanced. X is the number of advancement tokens on Searchlight.\r\n[Subroutine]<strong>Trace<sup>x</sup></strong>&ndash; If successful, give the Runner 1 tag.\r\n[Subroutine]<strong>Trace<sup>x</sup></strong>&ndash; If successful, give the Runner 1 tag.",
+         "title" : "Searchlight",
+         "type" : "ICE",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Uninstall",
+         "cost" : 0,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "Runner software is notoriously scratch-built and under-tested, and the shadow net has no tech support. It works, mostly, but sometimes a fresh install is just the ticket.",
+         "illustrator" : "Andreas Zafiratos",
+         "imagesrc" : "/images/cards/uninstall.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07053",
+         "number" : 53,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "Add an installed program or piece of hardware to your grip.",
+         "title" : "Uninstall",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Hivemind",
+         "cost" : 3,
+         "faction" : "Anarch",
+         "factioncost" : 5,
+         "flavor" : "\"We built the network. But then the network evolved. Can we be sure that it is not alive?\" -g00ru",
+         "imagesrc" : "/images/cards/hivemind.png",
+         "memoryunits" : 2,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07042",
+         "number" : 42,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Virus",
+         "text" : "Place 1 virus counter on Hivemind when it is installed.\r\nVirus counters on Hivemind are considered to be hosted on all other <strong>virus</strong> programs for the purposes of card effects (and can be spent as if on them).",
+         "title" : "Hivemind",
+         "type" : "Program",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Gravedigger",
+         "cost" : 2,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "\"Once your sniffer finds the protocols the server uses to trash its own data, you can spoof those same protocols. It's quite the show.\" -Ji \"Noise\" Reilly",
+         "imagesrc" : "/images/cards/gravedigger.png",
+         "memoryunits" : 1,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07041",
+         "number" : 41,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Virus",
+         "text" : "Whenever an installed Corp card is trashed, place 1 virus counter on Gravedigger.\r\n[Click], <strong>hosted virus counter</strong>: The Corp trashes the top card of R&amp;D.",
+         "title" : "Gravedigger",
+         "type" : "Program",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Gene_Conditioning_Shoppe",
+         "cost" : 2,
+         "faction" : "Shaper",
+         "factioncost" : 1,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/gene-conditioning-shoppe.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08006",
+         "number" : 6,
+         "quantity" : 3,
+         "setname" : "The Valley",
+         "side" : "Runner",
+         "subtype" : "Location",
+         "text" : "<strong>Genetics</strong> also trigger the second time each turn their trigger condition is met.",
+         "title" : "Gene Conditioning Shoppe",
+         "type" : "Resource",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Checkpoint",
+         "cost" : 4,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 2,
+         "flavor" : "\"I passed right through one once. It didn't seem to do anything at first. It wasn't until I jacked out that I realized they were busting down the door of my apartment.\" -Valencia Estevez",
+         "imagesrc" : "/images/cards/checkpoint.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07017",
+         "number" : 17,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "strength" : 7,
+         "subtype" : "Code Gate - Tracer - Illicit",
+         "text" : "When you rez Checkpoint, take 1 bad publicity.\r\n[Subroutine] <strong>Trace<sup>5</sup></strong>&ndash; If successful, do 3 meat damage when this run is successful.",
+         "title" : "Checkpoint",
+         "type" : "ICE",
+         "uniqueness" : false
+      },
+      {
+         "advancementcost" : 3,
+         "agendapoints" : 1,
+         "ancurLink" : "http://ancur.wikia.com/wiki/Self-Destruct_Chips",
+         "faction" : "Haas-Bioroid",
+         "flavor" : "Cyber enhancements can be dangerous in the wrong hands.",
+         "imagesrc" : "/images/cards/self-destruct-chips.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08051",
+         "number" : 51,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Corp",
+         "subtype" : "Security",
+         "text" : "The Runner's maximum hand size is reduced by 1.",
+         "title" : "Self-Destruct Chips",
+         "type" : "Agenda",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Jinteki_Biotech",
+         "faction" : "Jinteki",
+         "flavor" : "",
+         "imagesrc" : "/images/cards/jinteki-biotech-life-imagined.png",
+         "influencelimit" : 15,
+         "minimumdecksize" : 45,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08012",
+         "number" : 12,
+         "quantity" : 3,
+         "setname" : "The Valley",
+         "side" : "Corp",
+         "subtype" : "Division",
+         "text" : "Before taking your first turn, you may swap this card with any copy of Jinteki Biotech.\r\n[Click],[Click],[Click]: Flip this identity.\r\nThe Brewery: When you flip this identity, do 2 net damage.\r\nThe Tank: When you flip this identity, shuffle Archives into R&amp;D.\r\nThe Greenhouse: When you flip this identity, place 4 advancement tokens on a card that can be advanced.",
+         "title" : "Jinteki Biotech: Life imagined",
+         "type" : "Identity",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Qianju_PT",
+         "cost" : 2,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/qianju-pt.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07054",
+         "number" : 54,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Vehicle",
+         "text" : "When your turn begins, you may lose [Click]. If you do, avoid the first tag you would take until the start of your next turn.",
+         "title" : "Qianju PT",
+         "type" : "Hardware",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Brain_Cage",
+         "cost" : 1,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "The skull is not one bone, but 22. The surgery is even more complex than it sounds.",
+         "illustrator" : "Mike Nesbitt",
+         "imagesrc" : "/images/cards/brain-cage.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08049",
+         "number" : 49,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Runner",
+         "subtype" : "Cybernetic",
+         "text" : "When you install Brain Cage, suffer 1 brain damage.\r\nYour maximum hand size is increased by 3.",
+         "title" : "Brain Cage",
+         "type" : "Hardware",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Fire_Wall",
+         "cost" : 5,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 2,
+         "flavor" : "\"Definitely a literalist.\" -Liz Campbell, VP Project Security",
+         "imagesrc" : "/images/cards/fire-wall.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07018",
+         "number" : 18,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "strength" : 5,
+         "subtype" : "Barrier",
+         "text" : "Fire Wall can be advanced and gains +1 strength for each advancement token on it.\r\n[Subroutine] End the run.",
+         "title" : "Fire Wall",
+         "type" : "ICE",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Hayley_Kaplan",
+         "baselink" : 0,
+         "faction" : "Shaper",
+         "illustrator" : "Matt Zeilinger",
+         "imagesrc" : "/images/cards/hayley-kaplan-universal-scholar.png",
+         "influencelimit" : 15,
+         "minimumdecksize" : 45,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08025",
+         "number" : 25,
+         "quantity" : 3,
+         "setname" : "Breaker Bay",
+         "side" : "Runner",
+         "subtype" : "G-Mod",
+         "text" : "The first time you install a card each turn, you may install another card of the same type from your grip (paying its install cost).",
+         "title" : "Hayley Kaplan: Universal Scholar",
+         "type" : "Identity",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Dedicated_Technician_Team",
+         "cost" : 1,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/dedicated-technician-team.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07026",
+         "number" : 26,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "",
+         "text" : "2[Recurring Credits]\r\nUse these credits to install ice protecting this server.",
+         "title" : "Dedicated Technician Team",
+         "trash" : 1,
+         "type" : "Upgrade",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Progenitor",
+         "cost" : 0,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/progenitor.png",
+         "memoryunits" : 0,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07043",
+         "number" : 43,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Daemon",
+         "text" : "You may host a single <strong>virus</strong> program on Progenitor.\r\nThe memory cost of the hosted program does not count against your memory limit.\r\nWhenever virus counters are purged, remove all but 1 virus counter from the hosted card.",
+         "title" : "Progenitor",
+         "type" : "Program",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/I%27ve_Had_Worse",
+         "cost" : 1,
+         "faction" : "Anarch",
+         "factioncost" : 2,
+         "flavor" : "",
+         "imagesrc" : "/images/cards/ive-had-worse.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07032",
+         "number" : 32,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "Draw 3 cards.\r\nWhenever I've Had Worse is trashed by taking net or meat damage, draw 3 cards.",
+         "title" : "I've Had Worse",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/The_Twins",
+         "cost" : 2,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 1,
+         "flavor" : "Anything worth doing is worth doing twice.",
+         "imagesrc" : "/images/cards/the-twins.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07024",
+         "number" : 24,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "Sysop",
+         "text" : "Whenever the Runner passes a rezzed piece of ice protecting this server, you can reveal and trash another copy of that ice from HQ to force the Runner to encounter the piece of ice just passed again.",
+         "title" : "The Twins",
+         "trash" : 2,
+         "type" : "Upgrade",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Cyberdex_Virus_Suite",
+         "cost" : 3,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "",
+         "illustrator" : "Ed Mattinian",
+         "imagesrc" : "/images/cards/cyberdex-virus-suite.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07027",
+         "number" : 27,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "Ambush",
+         "text" : "If Cyberdex Virus Suite is accessed from R&amp;D, the Runner must reveal it.\r\nWhen the Runner accesses Cyberdex Virus Suite, you may purge virus counters.\r\n[Trash]: Purge virus counters.",
+         "title" : "Cyberdex Virus Suite",
+         "trash" : 1,
+         "type" : "Upgrade",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Shi.Ky%C5%AB",
+         "cost" : 0,
+         "faction" : "Jinteki",
+         "factioncost" : 4,
+         "illustrator" : "Alexandr Elichev",
+         "imagesrc" : "/images/cards/shiky.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/05011",
+         "number" : 11,
+         "quantity" : 3,
+         "setname" : "Honor and Profit",
+         "side" : "Corp",
+         "subtype" : "Ambush",
+         "text" : "When the Runner accesses Shi.Kyū, you may pay X[Credits]. The Runner must take either X net damage or add Shi.Kyū to his or her score area as an agenda worth &minus;1 agenda point. Ignore this ability if the Runner accesses Shi.Kyū from R&amp;D.",
+         "title" : "Shi.Kyū",
+         "trash" : 0,
+         "type" : "Asset",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Comet",
+         "cost" : 4,
+         "faction" : "Shaper",
+         "factioncost" : 2,
+         "imagesrc" : "/images/cards/comet.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08027",
+         "number" : 27,
+         "quantity" : 3,
+         "setname" : "Breaker Bay",
+         "side" : "Runner",
+         "subtype" : "Console",
+         "text" : "+1[Memory Unit]\r\nThe first time you play an event each turn, you may play another event (without spending a click) after the first one resolves.\r\nLimit 1 <strong>console</strong> per player.",
+         "title" : "Comet",
+         "type" : "Hardware",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Mark_Yale",
+         "cost" : 1,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 1,
+         "flavor" : "\"This is a one-of-a-kind opportunity\"",
+         "illustrator" : "Ralph Beisner",
+         "imagesrc" : "/images/cards/mark-yale.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07009",
+         "number" : 9,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "Executive",
+         "text" : "Whenever you spend an agenda counter, gain 1[Credits].\r\n[Trash] or <strong>any agenda counter</strong>: Gain 2[Credits].",
+         "title" : "Mark Yale",
+         "trash" : 3,
+         "type" : "Asset",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Chaos_Theory",
+         "baselink" : 0,
+         "faction" : "Shaper",
+         "flavor" : "\"Have you met Dinosaurus?\"",
+         "illustrator" : "Matt Zeilinger",
+         "imagesrc" : "/images/cards/chaos-theory-wnderkind.png",
+         "influencelimit" : 15,
+         "minimumdecksize" : 40,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/02046",
+         "number" : 46,
+         "quantity" : 3,
+         "setname" : "Cyber Exodus",
+         "side" : "Runner",
+         "subtype" : "G-mod",
+         "text" : "+1[Memory Unit]",
+         "title" : "Chaos Theory: Wünderkind",
+         "type" : "Identity",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Ryon_Knight",
+         "cost" : 2,
+         "faction" : "Haas-Bioroid",
+         "factioncost" : 2,
+         "flavor" : "\"Bioroids recognize consciousness in others, but not in themselves.\"",
+         "illustrator" : "Roderick Constance",
+         "imagesrc" : "/images/cards/ryon-knight.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08054",
+         "number" : 54,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Corp",
+         "subtype" : "Sysop",
+         "text" : "[Trash]: Do 1 brain damage. Use this ability only during a run on this server and only if the Runner has no unspent clicks.",
+         "title" : "Ryon Knight",
+         "trash" : 3,
+         "type" : "Asset",
+         "uniqueness" : true
+      },
+      {
+         "advancementcost" : 9,
+         "agendapoints" : 6,
+         "ancurLink" : "http://ancur.wikia.com/wiki/Government_Takeover",
+         "faction" : "Weyland Consortium",
+         "flavor" : "It is essential to liberate a populace from tyranny before that tyranny takes root.",
+         "imagesrc" : "/images/cards/government-takeover.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07006",
+         "number" : 6,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "",
+         "text" : "[Click]: Gain 3[Credits].\r\nLimit 1 Government Takeover per deck.",
+         "title" : "Government Takeover",
+         "type" : "Agenda",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Doppelg%C3%A4nger",
+         "cost" : 3,
+         "faction" : "Criminal",
+         "factioncost" : 2,
+         "flavor" : "Twice the fun.",
+         "illustrator" : "Howard Schechlman",
+         "imagesrc" : "/images/cards/doppelgnger.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/02064",
+         "number" : 64,
+         "quantity" : 3,
+         "setname" : "A Study in Static",
+         "side" : "Runner",
+         "subtype" : "Console",
+         "text" : "+1[Memory Unit]\r\nOnce per turn, you may immediately make another run when a successful run ends.\r\nLimit 1 <strong>console</strong> per player.",
+         "title" : "Doppelgänger",
+         "type" : "Hardware",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Data_Folding",
+         "cost" : 3,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "\"Sometimes I like to make origami cranes out of old newsrag. It helps me think, putting it back on the subconscious. I figure it's the same principle for my rig &ndash; keep it busy and it makes me a few creds for my trouble.\" -Quetzal",
+         "illustrator" : "Liiga Smilshkaine",
+         "imagesrc" : "/images/cards/data-folding.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07055",
+         "number" : 55,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "Virtual",
+         "text" : "When your turn begins, gain 1[Credits] if you have 2 or more unused MU.",
+         "title" : "Data Folding",
+         "type" : "Resource",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Sacrificial_Clone",
+         "cost" : 3,
+         "faction" : "Anarch",
+         "factioncost" : 4,
+         "flavor" : "\"Don't worry, me. You won't have to vertical park.\" -Ji \"Noise\" Reilly",
+         "illustrator" : "Matt Zeilinger",
+         "imagesrc" : "/images/cards/sacrificial-clone.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07050",
+         "number" : 50,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Runner",
+         "subtype" : "",
+         "text" : "[Trash]: Prevent all damage. Trash all installed hardware, all installed non-<strong>virtual</strong> resources, and all cards in your grip. Lose all credits in your credit pool. Remove all tags.",
+         "title" : "Sacrificial Clone",
+         "type" : "Resource",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Game_Day",
+         "cost" : 1,
+         "faction" : "Shaper",
+         "factioncost" : 3,
+         "illustrator" : "Matt Zeilinger",
+         "imagesrc" : "/images/cards/game-day.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08026",
+         "number" : 26,
+         "quantity" : 3,
+         "setname" : "Breaker Bay",
+         "side" : "Runner",
+         "subtype" : "Double",
+         "text" : "As an additional cost to play this event, spend [Click].\r\nIf you have fewer cards in your grip than your maximum hand size, draw cards until you have cards in your grip equal to your maximum hand size.",
+         "title" : "Game Day",
+         "type" : "Event",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Drac%C5%8D",
+         "cost" : 1,
+         "faction" : "Neutral",
+         "factioncost" : 0,
+         "flavor" : "Victōs dracons numquam deride.",
+         "illustrator" : "Sandara Tang",
+         "imagesrc" : "/images/cards/drac.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/02020",
+         "number" : 20,
+         "quantity" : 3,
+         "setname" : "What Lies Ahead",
+         "side" : "Corp",
+         "strength" : 0,
+         "subtype" : "Sentry - Tracer",
+         "text" : "When you rez Dracō, you may pay X[Credits] to place X power counters on it.\r\nDracō has +1 strength for each power counter on it.\r\n[Subroutine] <strong>Trace<sup>2</sup> -</strong> If successful, give the Runner 1 tag and end the run.",
+         "title" : "Dracō",
+         "type" : "ICE",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Cybernetics_Division",
+         "faction" : "Haas-Bioroid",
+         "flavor" : "Define Yourself.",
+         "imagesrc" : "/images/cards/cybernetics-division-humanity-upgraded.png",
+         "influencelimit" : 15,
+         "minimumdecksize" : 40,
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08050",
+         "number" : 50,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Corp",
+         "subtype" : "Division",
+         "text" : "Each player's maximum hand size is reduced by 1.",
+         "title" : "Cybernetics Division: Humanity Upgraded",
+         "type" : "Identity",
+         "uniqueness" : false
+      },
+      {
+         "advancementcost" : 3,
+         "agendapoints" : 1,
+         "ancurLink" : "http://ancur.wikia.com/wiki/Genetic_Resequencing",
+         "faction" : "Jinteki",
+         "flavor" : "",
+         "imagesrc" : "/images/cards/genetic-resequencing.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08013",
+         "number" : 13,
+         "quantity" : 3,
+         "setname" : "The Valley",
+         "side" : "Corp",
+         "subtype" : "Research",
+         "text" : "When you score Genetic Resequencing, you may place 1 agenda counter on an agenda in your score area.",
+         "title" : "Genetic Resequencing",
+         "type" : "Agenda",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Chrome_Parlor",
+         "cost" : 1,
+         "faction" : "Anarch",
+         "factioncost" : 1,
+         "flavor" : "Picking a chopper might be the last decision you make. If you find a good one, stick with her for life.",
+         "illustrator" : "James Ives",
+         "imagesrc" : "/images/cards/chrome-parlor.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08044",
+         "number" : 44,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Runner",
+         "subtype" : "Location",
+         "text" : "Prevent all meat damage and brain damage from installing <strong>cybernetics</strong>.",
+         "title" : "Chrome Parlor",
+         "type" : "Resource",
+         "uniqueness" : false
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Net-Ready_Eyes",
+         "cost" : 0,
+         "faction" : "Shaper",
+         "factioncost" : 2,
+         "illustrator" : "Ethan Patrick Harris",
+         "imagesrc" : "/images/cards/net-ready-eyes.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/08047",
+         "number" : 47,
+         "quantity" : 3,
+         "setname" : "Chrome City",
+         "side" : "Runner",
+         "subtype" : "Cybernetic",
+         "text" : "When you install Net-Ready Eyes, suffer 2 meat damage.\r\nWhenever you initiate a run, choose an <strong>icebreaker</strong>. That <strong>icebreaker</strong> has +1 strength for the remainder of the run.",
+         "title" : "Net-Ready Eyes",
+         "type" : "Hardware",
+         "uniqueness" : true
+      },
+      {
+         "ancurLink" : "http://ancur.wikia.com/wiki/Patch",
+         "cost" : 0,
+         "faction" : "Weyland Consortium",
+         "factioncost" : 2,
+         "flavor" : "Update 1.1:\n-Fixes some stability issues. //maybe",
+         "imagesrc" : "/images/cards/patch.png",
+         "nrdb_url" : "http://netrunnerdb.com/en/card/07021",
+         "number" : 21,
+         "quantity" : 3,
+         "setname" : "Order and Chaos",
+         "side" : "Corp",
+         "subtype" : "Condition",
+         "text" : "Install Patch on a rezzed piece of ice as a hosted condition with the text \"Host ice has +2 strength.\"",
+         "title" : "Patch",
+         "type" : "Operation",
+         "uniqueness" : false
       }
    ],
-   "last-modified" : "2015-01-22T10:20:00",
+   "last-modified" : "2015-02-04T01:41:15",
    "sets" : [
       {
-         "title" : "Core Set",
-         "released" : "2012-09-06T00:00:00"
+         "released" : "2012-09-06",
+         "title" : "Core Set"
       },
       {
          "cycle" : "Genesis",
-         "title" : "What Lies Ahead",
-         "released" : "2012-12-14T00:00:00"
+         "released" : "2012-12-14",
+         "title" : "What Lies Ahead"
       },
       {
          "cycle" : "Genesis",
-         "title" : "Trace Amount",
-         "released" : "2013-01-09T00:00:00"
+         "released" : "2013-01-09",
+         "title" : "Trace Amount"
       },
       {
          "cycle" : "Genesis",
-         "title" : "Cyber Exodus",
-         "released" : "2013-02-14T00:00:00"
+         "released" : "2013-02-14",
+         "title" : "Cyber Exodus"
       },
       {
          "cycle" : "Genesis",
-         "title" : "A Study in Static",
-         "released" : "2013-03-21T00:00:00"
+         "released" : "2013-03-21",
+         "title" : "A Study in Static"
       },
       {
          "cycle" : "Genesis",
-         "title" : "Humanity's Shadow",
-         "released" : "2013-05-02T00:00:00"
+         "released" : "2013-05-02",
+         "title" : "Humanity's Shadow"
       },
       {
          "cycle" : "Genesis",
-         "title" : "Future Proof",
-         "released" : "2013-05-30T00:00:00"
+         "released" : "2013-05-30",
+         "title" : "Future Proof"
       },
       {
-         "title" : "Creation and Control",
-         "released" : "2013-07-29T00:00:00"
-      },
-      {
-         "cycle" : "Spin",
-         "title" : "Opening Moves",
-         "released" : "2013-09-27T00:00:00"
+         "released" : "2013-07-29",
+         "title" : "Creation and Control"
       },
       {
          "cycle" : "Spin",
-         "title" : "Second Thoughts",
-         "released" : "2013-11-07T00:00:00"
+         "released" : "2013-09-27",
+         "title" : "Opening Moves"
       },
       {
          "cycle" : "Spin",
-         "title" : "Mala Tempora",
-         "released" : "2013-12-13T00:00:00"
+         "released" : "2013-11-07",
+         "title" : "Second Thoughts"
       },
       {
          "cycle" : "Spin",
-         "title" : "True Colors",
-         "released" : "2014-01-17T00:00:00"
+         "released" : "2013-12-13",
+         "title" : "Mala Tempora"
       },
       {
          "cycle" : "Spin",
-         "title" : "Fear and Loathing",
-         "released" : "2014-02-21T00:00:00"
+         "released" : "2014-01-17",
+         "title" : "True Colors"
       },
       {
          "cycle" : "Spin",
-         "title" : "Double Time",
-         "released" : "2014-03-28T00:00:00"
+         "released" : "2014-02-21",
+         "title" : "Fear and Loathing"
       },
       {
-         "title" : "Honor and Profit",
-         "released" : "2014-05-02T00:00:00"
+         "cycle" : "Spin",
+         "released" : "2014-03-28",
+         "title" : "Double Time"
       },
       {
-         "cycle" : "Lunar",
-         "title" : "Upstalk",
-         "released" : "2014-07-25T00:00:00"
-      },
-      {
-         "cycle" : "Lunar",
-         "title" : "The Spaces Between",
-         "released" : "2014-08-15T00:00:00"
+         "released" : "2014-05-02",
+         "title" : "Honor and Profit"
       },
       {
          "cycle" : "Lunar",
-         "title" : "First Contact",
-         "released" : "2014-09-15T00:00:00"
+         "released" : "2014-07-25",
+         "title" : "Upstalk"
       },
       {
          "cycle" : "Lunar",
-         "title" : "Up and Over",
-         "released" : "2014-10-16T00:00:00"
+         "released" : "2014-08-15",
+         "title" : "The Spaces Between"
       },
       {
          "cycle" : "Lunar",
-         "title" : "All That Remains",
-         "released" : "2014-11-13T00:00:00"
+         "released" : "2014-09-15",
+         "title" : "First Contact"
       },
       {
          "cycle" : "Lunar",
-         "title" : "The Source",
-         "released" : "2014-12-18T00:00:00"
+         "released" : "2014-10-16",
+         "title" : "Up and Over"
       },
       {
-         "title" : "Order and Chaos",
-         "released" : null
+         "cycle" : "Lunar",
+         "released" : "2014-11-13",
+         "title" : "All That Remains"
+      },
+      {
+         "cycle" : "Lunar",
+         "released" : "2014-12-18",
+         "title" : "The Source"
+      },
+      {
+         "released" : "2015-01-28",
+         "title" : "Order and Chaos"
       },
       {
          "cycle" : "SanSan",
-         "title" : "The Valley",
-         "released" : null
+         "released" : null,
+         "title" : "The Valley"
       },
       {
          "cycle" : "SanSan",
-         "title" : "Breaker Bay",
-         "released" : null
+         "released" : null,
+         "title" : "Breaker Bay"
       },
       {
-         "title" : "Special",
-         "released" : null
+         "cycle" : "SanSan",
+         "released" : null,
+         "title" : "Chrome City"
+      },
+      {
+         "released" : null,
+         "title" : "Special"
       }
    ]
 }
