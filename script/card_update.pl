@@ -22,6 +22,17 @@ use warnings;
 use utf8;
 use JSON;
 use LWP::Simple;
+use File::Slurp;
+
+# Load the existing card database
+my $ExistCardsFile = 'app/data/cards.json';
+my $existing_cards = from_json(read_file($ExistCardsFile));
+
+# Clear out Chronos Protocol Id's here
+
+
+# Change the Cards array to a Hash, keyed by card title
+my %Cur_Cards = map { $_->{title} => $_ } @{$existing_cards->{cards}};
 
 # Grab the full list of cards from the NRDB Database
 my $nrdb_export = get ("http://netrunnerdb.com/api/cards/");
@@ -51,9 +62,19 @@ for my $card (@$cards_dataset) {
 		}
 	}
 	$card->{"nrdb_url"} = delete $card->{"url"};
+	$card->{"nrdb_art"} = delete $card->{"imagesrc"};
 	$card->{"imagesrc"} = "/images/cards/" . ImageName($card->{"title"}) . ".png";
 	push @$NoAltsList, $card;
 }
+
+# Clear out Chronos Protocol Id's here
+
+
+# Change the Cards array to a Hash, keyed by card title
+my %Imp_Cards = map { $_->{title} => $_ } @$cards_dataset;
+
+
+
 
 my $setname_export = get ("http://netrunnerdb.com/api/sets/");
 my $sets_dataset = decode_json $setname_export;
