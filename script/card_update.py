@@ -3,7 +3,6 @@
 import urllib.request
 import json
 import re
-import string
 
 NRDB_URL = "http://netrunnerdb.com/api/cards/"
 EXISTING_CARDS_PATH = 'app/data/cards.json'
@@ -17,20 +16,32 @@ def main():
     nrdb_json = urllib.request.urlopen(NRDB_URL).readall().decode('utf-8')  # unicode_escape'?
     nrdb_cards = json.loads(nrdb_json)
 
+    # Remove the Chronos Protocol cards
     existing_cards['cards'] = remove_chronos_protocol(existing_cards['cards'])
     nrdb_cards = remove_chronos_protocol(nrdb_cards)
 
-    # Remove unused attributes from nrdb cards
+    # Remove the following unused attributes from nrdb cards
     attr_to_remove = ['code', 'set_code', 'side_code', 'faction_code', 'cyclenumber', 'limited', 'faction_letter',
                       'type_code', 'subtype_code', 'last-modified', 'url']
+
+    alt_art_cards = []
     for card in nrdb_cards:
+        if card['setname'] == 'Alternates':
+            alt_art_cards.append(card)
+            continue
         card['nrdb_url'] = card['url']
         card['nrdb_art'] = card['imagesrc']
         card['imagesrc'] = "/images/cards/" + image_name(card['title']) + ".png"
         for attr in attr_to_remove:
             del card[attr]
 
-    print(nrdb_cards[0])
+    for card in nrdb_cards:
+        for alt_card in alt_art_cards:
+            if alt_card['title'] == card['title']:
+                print(card['title'])
+                card['altart'] = alt_card
+
+    # print(nrdb_cards[0])
 
 
 def remove_chronos_protocol(cards):
@@ -47,11 +58,11 @@ def remove_chronos_protocol(cards):
     return cards
 
 
-#Make card titles friendly for filenames.
+# Make card titles friendly for file names.
 def image_name(title):
     title = title.replace(' ', '-')
     title = title.lower()
-    #Replace all characters that aren't alphanumeric or -.
+    # Replace all characters that aren't alphanumeric or -.
     title = re.sub('[^a-z0-9-]', '', title)
 
     return title
