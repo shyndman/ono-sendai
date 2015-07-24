@@ -8,7 +8,10 @@ from wand.image import Image
 import ctypes
 
 NRDB_URL = "http://netrunnerdb.com/api/cards/"
+NRDB_IMG_URL = "http://netrunnerdb.com/"
+NRDB_SETS_URL = "http://netrunnerdb.com/api/sets/"
 EXISTING_CARDS_PATH = 'app/data/cards.json'
+EXISTING_CARDS_PATH2 = 'app/data/cards2.json'
 
 # Register C-type arguments
 #library.MagickQuantizeImage.argtypes = [ctypes.c_void_p,
@@ -48,8 +51,36 @@ def main():
 
         for attr in attr_to_remove:
             del card[attr]
-
-    print(nrdb_cards[0])
+            
+    nrdb_sets_json = urllib.request.urlopen(NRDB_SETS_URL).readall().decode('utf-8')  # unicode_escape'?
+    nrdb_sets = json.loads(nrdb_sets_json)
+    
+    # Remove the following unused attributes from the card sets
+    sets_attr_to_remove = ['code', 'number', 'known', 'total', 'url', 'available', 'name', 'cyclenumber']
+    for set in nrdb_sets:
+        set['released'] = set['available'] if set['available'] != '' else None
+        set['title'] = set['name']
+        
+        if set['cyclenumber'] == 2:
+            set['cycle'] = "Genesis"
+        elif set['cyclenumber'] == 4:
+            set['cycle'] = "Spin"
+        elif set['cyclenumber'] == 6:
+            set['cycle'] = "Lunar"
+        elif set['cyclenumber'] == 8:
+            set['cycle'] = "SanSan"
+        
+        for attr in sets_attr_to_remove:
+            del set[attr]
+            
+        if set['title'] == "Alternates" or set['title'] == 'Special':
+            continue
+            
+    dataset = {"last-modified" : "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
+    existing_cards_file2 = open(EXISTING_CARDS_PATH2, 'a', encoding='utf-8')
+    json.dump(dataset, existing_cards_file2, indent=4)
+    print(json.dumps(dataset, indent=4))
+    
     
 # Attempts to read the breakers text and calculate the amount it costs to break ice.
 def calculate_breaker_info(card):
@@ -85,7 +116,7 @@ def calculate_breaker_info(card):
     return card
     
 def save_card_image(url_to_card, path_to_save):
-    image_response = urllib.request.urlopen('http://netrunnerdb.com/' + url_to_card)
+    image_response = urllib.request.urlopen(NRDB_IMG_URL + url_to_card)
     try:
         with Image(file=image_response, format='png') as img:
             # Update the image settings
