@@ -34,20 +34,55 @@ def main():
 
     # Remove the following unused attributes from nrdb cards
     attr_to_remove = ['code', 'set_code', 'side_code', 'faction_code', 'cyclenumber', 'limited', 'faction_letter',
-                      'type_code', 'subtype_code', 'last-modified', 'url']
+                      'type_code', 'subtype_code', 'last-modified', 'url', 'nrdb_art']
 
     for card in nrdb_cards:
         card['nrdb_url'] = card['url']
         card['nrdb_art'] = card['imagesrc']
         card['imagesrc'] = "/images/cards/" + image_name(card['title']) + ".png"
+
+        if 'icebreaker' in card['subtype_code']:
+            card = calculate_breaker_info(card)            
+        
+        #save_card_image(card['nrdb_art'], card['imagesrc'])
+
         for attr in attr_to_remove:
             del card[attr]
 
-        save_card_image(card['nrdb_art'], card['imagesrc'])
-
-        del card['nrdb_art']
-
     print(nrdb_cards[0])
+    
+# Attempts to read the breakers text and calculate the amount it costs to break ice.
+def calculate_breaker_info(card):
+    text_matches = re.match(r".*(\d)\[Credits](\d*).+subroutine\D+(\d*)\[Credits].*\+(\d*).*", card['text'])
+    break_credits = 1
+    break_subs = 1
+    strength_cost = 1
+    strength_amount = 1
+    
+    # print(card['text'])
+    
+    if text_matches:
+        if text_matches.group(1) != '':
+            break_credits = int(text_matches.group(1))
+            
+        if text_matches.group(2) != '':
+            break_subs = int(text_matches.group(2))
+            
+        if text_matches.group(3) != '':
+            strength_cost = int(text_matches.group(3))
+            
+        if text_matches.group(4) != '':
+            strength_amount = int(text_matches.group(4))
+    else:
+        print("Cannot parse breaker cost for - " + card['title'])
+        
+    if strength_amount == 1:
+        card['strengthcost'] = strength_cost
+    else:
+        card['strengthcost'] = {'credits': strength_cost, 'strength': strength_amount}
+    card['breakcost'] = {'credits': break_credits, 'subroutines':break_subs}
+    
+    return card
     
 def save_card_image(url_to_card, path_to_save):
     image_response = urllib.request.urlopen('http://netrunnerdb.com/' + url_to_card)
