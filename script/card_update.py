@@ -3,13 +3,14 @@
 import urllib.request
 import json
 import re
+from wand.image import Image
 
 NRDB_URL = "http://netrunnerdb.com/api/cards/"
 EXISTING_CARDS_PATH = 'app/data/cards.json'
 
 
 def main():
-    existing_cards_file = open(EXISTING_CARDS_PATH)
+    existing_cards_file = open(EXISTING_CARDS_PATH, encoding='utf-8')
     existing_cards = json.load(existing_cards_file)
     existing_cards_file.close()
 
@@ -24,24 +25,25 @@ def main():
     attr_to_remove = ['code', 'set_code', 'side_code', 'faction_code', 'cyclenumber', 'limited', 'faction_letter',
                       'type_code', 'subtype_code', 'last-modified', 'url']
 
-    alt_art_cards = []
     for card in nrdb_cards:
-        if card['setname'] == 'Alternates':
-            alt_art_cards.append(card)
-            continue
         card['nrdb_url'] = card['url']
         card['nrdb_art'] = card['imagesrc']
         card['imagesrc'] = "/images/cards/" + image_name(card['title']) + ".png"
         for attr in attr_to_remove:
             del card[attr]
 
-    for card in nrdb_cards:
-        for alt_card in alt_art_cards:
-            if alt_card['title'] == card['title']:
-                print(card['title'])
-                card['altart'] = alt_card
+        image_response = urllib.request.urlopen('http://netrunnerdb.com/' + card['nrdb_art'])
 
-    # print(nrdb_cards[0])
+        try:
+            with Image(file=image_response) as img:
+                print('format =', img.format)
+                print('size =', img.size)
+        finally:
+            image_response.close()
+
+        del card['nrdb_art']
+
+    print(nrdb_cards[0])
 
 
 def remove_chronos_protocol(cards):
