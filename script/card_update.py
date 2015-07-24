@@ -76,8 +76,11 @@ def remove_chronos_protocol(cards):
         if 'Chronos Protocol' in card['title']:
             cards_to_remove.append(i)
 
+    num_removed = 0
     for i in cards_to_remove:
-        del cards[i]
+        print("Removing: " + cards[i - num_removed]['title'])
+        del cards[i - num_removed]
+        num_removed = num_removed + 1
 
     return cards
 
