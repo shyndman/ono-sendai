@@ -47,7 +47,7 @@ def main():
         if 'icebreaker' in card['subtype_code']:
             card = calculate_breaker_info(card)            
         
-        save_card_image(card['nrdb_art'], card['imagesrc'])
+        # save_card_image(card['nrdb_art'], card['imagesrc'])
 
         if 'subtype' in card and card['subtype'] == "":
             del card['subtype']
@@ -94,8 +94,6 @@ def calculate_breaker_info(card):
     break_subs = 1
     strength_cost = 1
     strength_amount = 1
-    
-    # print(card['text'])
     
     if text_matches:
         if text_matches.group(1) != '':
@@ -145,7 +143,7 @@ def remove_chronos_protocol(cards):
 
     for i in range(len(cards)):
         card = cards[i]
-        if 'Chronos Protocol' in card['title']:
+        if 'Chronos Protocol' in card['title'] or ('url' in card and 'http://netrunnerdb.com/en/card/08104' in card['url']):
             cards_to_remove.append(i)
 
     num_removed = 0
