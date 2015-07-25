@@ -18610,10 +18610,6 @@
       "title": "Data and Destiny"
     },
     {
-      "released": null,
-      "title": "Special"
-    },
-    {
       "cycle": "SanSan",
       "released": null,
       "title": "Old Hollywood"
@@ -18622,6 +18618,10 @@
       "cycle": "SanSan",
       "released": null,
       "title": "The Universe of Tomorrow"
+    },
+    {
+      "released": null,
+      "title": "Special"
     }
   ]
 }
