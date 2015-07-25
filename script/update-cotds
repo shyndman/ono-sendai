@@ -8,6 +8,8 @@ require 'time'
 BASE_URL = 'http://www.reddit.com/r/Netrunner/search.json?q=CotD&restrict_sr=on&limit=100&sort=new&t=all'
 CARDS_PATH = 'app/data/cards.json'
 
+I18n.config.enforce_available_locales = false
+
 def write_out(cards)
   puts "Writing out cards to #{CARDS_PATH}"
   open CARDS_PATH, 'w' do |io|
