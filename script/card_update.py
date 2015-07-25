@@ -11,7 +11,6 @@ NRDB_URL = "http://netrunnerdb.com/api/cards/"
 NRDB_IMG_URL = "http://netrunnerdb.com/"
 NRDB_SETS_URL = "http://netrunnerdb.com/api/sets/"
 EXISTING_CARDS_PATH = 'app/data/cards.json'
-EXISTING_CARDS_PATH2 = 'app/data/cards2.json'
 
 # Register C-type arguments
 # library.MagickQuantizeImage.argtypes = [ctypes.c_void_p,
@@ -29,8 +28,7 @@ def main():
     existing_cards = json.load(existing_cards_file)
     existing_cards_file.close()
 
-    nrdb_json = urllib.request.urlopen(NRDB_URL).readall().decode('utf-8')  # unicode_escape'?
-    # nrdb_json = re.sub(r"\\u(\w{4})", decode(), title)
+    nrdb_json = urllib.request.urlopen(NRDB_URL).readall().decode('raw_unicode_escape')
     nrdb_cards = json.loads(nrdb_json)
 
     # Remove the Chronos Protocol cards
@@ -39,7 +37,7 @@ def main():
 
     # Remove the following unused attributes from nrdb cards
     attr_to_remove = ['code', 'set_code', 'side_code', 'faction_code', 'cyclenumber', 'limited', 'faction_letter',
-                      'type_code', 'subtype_code', 'last-modified', 'url', 'nrdb_art']
+                      'type_code', 'subtype_code', 'last-modified', 'url', 'nrdb_art', 'ancurLink']
 
     for card in nrdb_cards:
         card['nrdb_url'] = card['url']
@@ -49,7 +47,10 @@ def main():
         if 'icebreaker' in card['subtype_code']:
             card = calculate_breaker_info(card)            
         
-        # save_card_image(card['nrdb_art'], card['imagesrc'])
+        save_card_image(card['nrdb_art'], card['imagesrc'])
+
+        if 'subtype' in card and card['subtype'] == "":
+            del card['subtype']
 
         for attr in attr_to_remove:
             del card[attr]
@@ -77,11 +78,13 @@ def main():
             
         if card_set['title'] == "Alternates" or card_set['title'] == 'Special':
             continue
-            
-    dataset = {"last-modified": "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
-    existing_cards_file2 = open(EXISTING_CARDS_PATH2, 'w', encoding='utf-8')
-    json.dump(dataset, existing_cards_file2, indent=4)
-    print(json.dumps(dataset, indent=4))
+
+    # Write the json to a file.
+    data_set = {"last-modified": "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
+    existing_cards_file2 = open(EXISTING_CARDS_PATH, 'w', encoding='utf-8')
+    json_str = json.dumps(data_set, ensure_ascii=False, sort_keys=True, indent=4)
+    existing_cards_file2.write(json_str)
+    print("Finished!")
     
     
 # Attempts to read the breakers text and calculate the amount it costs to break ice.
