@@ -1,7 +1,7 @@
 {
   "name": "deck-builder",
-  "version": "1.1.64",
-  "license": "GPL v3",
+  "version": "1.1.65",
+  "license": "GPL-3.0",
   "repository": "http://github.com:shyndman/ono-sendai.git",
   "dependencies": {},
   "devDependencies": {
