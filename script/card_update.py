@@ -3,7 +3,7 @@
 import urllib.request
 import json
 import re
-from wand.image import Image
+# from wand.image import Image
 # from wand.api import library
 # import ctypes
 
@@ -24,16 +24,16 @@ EXISTING_CARDS_PATH = 'app/data/cards.json'
 
 
 def main():
-    existing_cards_file = open(EXISTING_CARDS_PATH, encoding='utf-8')
-    existing_cards = json.load(existing_cards_file)
-    existing_cards_file.close()
+    # existing_cards_file = open(EXISTING_CARDS_PATH, encoding='utf-8')
+    # existing_cards = json.load(existing_cards_file)
+    # existing_cards_file.close()
 
     nrdb_json = urllib.request.urlopen(NRDB_URL).readall().decode('raw_unicode_escape')
     nrdb_cards = json.loads(nrdb_json)
 
     # Remove the Chronos Protocol cards
-    existing_cards['cards'] = remove_chronos_protocol(existing_cards['cards'])
-    nrdb_cards = remove_chronos_protocol(nrdb_cards)
+    # existing_cards['cards'] = remove_chronos_protocol(existing_cards['cards'])
+    nrdb_cards = remove_problem_cards(nrdb_cards)
 
     # Remove the following unused attributes from nrdb cards
     attr_to_remove = ['code', 'set_code', 'side_code', 'faction_code', 'cyclenumber', 'limited', 'faction_letter',
@@ -47,7 +47,7 @@ def main():
         if 'icebreaker' in card['subtype_code']:
             card = calculate_breaker_info(card)            
         
-        # save_card_image(card['nrdb_art'], card['imagesrc'])
+        save_card_image(card['nrdb_art'], card['imagesrc'])
 
         if 'subtype' in card and card['subtype'] == "":
             del card['subtype']
@@ -120,30 +120,20 @@ def calculate_breaker_info(card):
 
 
 def save_card_image(url_to_card, path_to_save):
-    image_response = urllib.request.urlopen(NRDB_IMG_URL + url_to_card)
-    try:
-        with Image(file=image_response, format='png') as img:
-            # Update the image settings
-            # color_count = 256
-            # colorspace = 1 # RGB
-            # treedepth = 8
-            # dither = 1 # True
-            # merror = 0 # False
-            # library.MagickQuantizeImage(img.wand,color_count,colorspace,treedepth,dither,merror)
-            
-            # Save the new image
-            img.save(filename='app' + path_to_save)
-            print("Saving - app" + path_to_save)
-    finally:
-        image_response.close()
+    print("Saving - app" + path_to_save)
+    with urllib.request.urlopen(NRDB_IMG_URL + url_to_card) as response, open('app' + path_to_save, 'wb') as out_file:
+        data = response.read()
+        out_file.write(data)
 
 
-def remove_chronos_protocol(cards):
+def remove_problem_cards(cards):
     cards_to_remove = []
 
     for i in range(len(cards)):
         card = cards[i]
-        if 'Chronos Protocol' in card['title'] or ('url' in card and 'http://netrunnerdb.com/en/card/00002' in card['url']):
+        # Card 00002 is a copy of Laramy Fisk from before his set was known. Duplicates cause errors.
+        if ('Chronos Protocol' in card['title'] or
+                ('url' in card and 'http://netrunnerdb.com/en/card/00002' in card['url'])):
             cards_to_remove.append(i)
 
     num_removed = 0
