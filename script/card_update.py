@@ -4,6 +4,7 @@ import urllib.request
 import json
 import re
 from datetime import datetime
+import os.path
 # from wand.image import Image
 # from wand.api import library
 # import ctypes
@@ -121,10 +122,14 @@ def calculate_breaker_info(card):
 
 
 def save_card_image(url_to_card, path_to_save):
-    print("Saving - app" + path_to_save)
-    with urllib.request.urlopen(NRDB_IMG_URL + url_to_card) as response, open('app' + path_to_save, 'wb') as out_file:
-        data = response.read()
-        out_file.write(data)
+    if os.path.isfile('app' + path_to_save):
+        print('Ignoring Card download for - app' + path_to_save)
+    else:
+        print("Saving - app" + path_to_save)
+        with urllib.request.urlopen(NRDB_IMG_URL + url_to_card) as response, \
+                open('app' + path_to_save, 'wb') as out_file:
+            data = response.read()
+            out_file.write(data)
 
 
 def remove_problem_cards(cards):
