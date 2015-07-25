@@ -18480,24 +18480,6 @@
   "last-modified": "2015-07-25T10:32:56.526124",
   "sets": [
     {
-      "released": null,
-      "title": "Data and Destiny"
-    },
-    {
-      "released": null,
-      "title": "Special"
-    },
-    {
-      "cycle": "SanSan",
-      "released": null,
-      "title": "Old Hollywood"
-    },
-    {
-      "cycle": "SanSan",
-      "released": null,
-      "title": "The Universe of Tomorrow"
-    },
-    {
       "released": "2012-09-06",
       "title": "Core Set"
     },
@@ -18622,6 +18604,24 @@
       "cycle": "SanSan",
       "released": "2015-07-02",
       "title": "The Underway"
+    },
+    {
+      "released": null,
+      "title": "Data and Destiny"
+    },
+    {
+      "released": null,
+      "title": "Special"
+    },
+    {
+      "cycle": "SanSan",
+      "released": null,
+      "title": "Old Hollywood"
+    },
+    {
+      "cycle": "SanSan",
+      "released": null,
+      "title": "The Universe of Tomorrow"
     }
   ]
 }
