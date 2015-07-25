@@ -4,8 +4,8 @@ import urllib.request
 import json
 import re
 from wand.image import Image
-#from wand.api import library
-import ctypes
+# from wand.api import library
+# import ctypes
 
 NRDB_URL = "http://netrunnerdb.com/api/cards/"
 NRDB_IMG_URL = "http://netrunnerdb.com/"
@@ -14,14 +14,15 @@ EXISTING_CARDS_PATH = 'app/data/cards.json'
 EXISTING_CARDS_PATH2 = 'app/data/cards2.json'
 
 # Register C-type arguments
-#library.MagickQuantizeImage.argtypes = [ctypes.c_void_p,
+# library.MagickQuantizeImage.argtypes = [ctypes.c_void_p,
 #                                        ctypes.c_size_t,
 #                                        ctypes.c_int,
 #                                        ctypes.c_size_t,
 #                                        ctypes.c_int,
 #                                        ctypes.c_int
 #                                       ]   
-#library.MagickQuantizeImage.restype = None
+# library.MagickQuantizeImage.restype = None
+
 
 def main():
     existing_cards_file = open(EXISTING_CARDS_PATH, encoding='utf-8')
@@ -29,6 +30,7 @@ def main():
     existing_cards_file.close()
 
     nrdb_json = urllib.request.urlopen(NRDB_URL).readall().decode('utf-8')  # unicode_escape'?
+    # nrdb_json = re.sub(r"\\u(\w{4})", decode(), title)
     nrdb_cards = json.loads(nrdb_json)
 
     # Remove the Chronos Protocol cards
@@ -47,7 +49,7 @@ def main():
         if 'icebreaker' in card['subtype_code']:
             card = calculate_breaker_info(card)            
         
-        #save_card_image(card['nrdb_art'], card['imagesrc'])
+        # save_card_image(card['nrdb_art'], card['imagesrc'])
 
         for attr in attr_to_remove:
             del card[attr]
@@ -57,27 +59,27 @@ def main():
     
     # Remove the following unused attributes from the card sets
     sets_attr_to_remove = ['code', 'number', 'known', 'total', 'url', 'available', 'name', 'cyclenumber']
-    for set in nrdb_sets:
-        set['released'] = set['available'] if set['available'] != '' else None
-        set['title'] = set['name']
+    for card_set in nrdb_sets:
+        card_set['released'] = card_set['available'] if card_set['available'] != '' else None
+        card_set['title'] = card_set['name']
         
-        if set['cyclenumber'] == 2:
-            set['cycle'] = "Genesis"
-        elif set['cyclenumber'] == 4:
-            set['cycle'] = "Spin"
-        elif set['cyclenumber'] == 6:
-            set['cycle'] = "Lunar"
-        elif set['cyclenumber'] == 8:
-            set['cycle'] = "SanSan"
+        if card_set['cyclenumber'] == 2:
+            card_set['cycle'] = "Genesis"
+        elif card_set['cyclenumber'] == 4:
+            card_set['cycle'] = "Spin"
+        elif card_set['cyclenumber'] == 6:
+            card_set['cycle'] = "Lunar"
+        elif card_set['cyclenumber'] == 8:
+            card_set['cycle'] = "SanSan"
         
         for attr in sets_attr_to_remove:
-            del set[attr]
+            del card_set[attr]
             
-        if set['title'] == "Alternates" or set['title'] == 'Special':
+        if card_set['title'] == "Alternates" or card_set['title'] == 'Special':
             continue
             
-    dataset = {"last-modified" : "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
-    existing_cards_file2 = open(EXISTING_CARDS_PATH2, 'a', encoding='utf-8')
+    dataset = {"last-modified": "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
+    existing_cards_file2 = open(EXISTING_CARDS_PATH2, 'w', encoding='utf-8')
     json.dump(dataset, existing_cards_file2, indent=4)
     print(json.dumps(dataset, indent=4))
     
@@ -111,21 +113,22 @@ def calculate_breaker_info(card):
         card['strengthcost'] = strength_cost
     else:
         card['strengthcost'] = {'credits': strength_cost, 'strength': strength_amount}
-    card['breakcost'] = {'credits': break_credits, 'subroutines':break_subs}
+    card['breakcost'] = {'credits': break_credits, 'subroutines': break_subs}
     
     return card
-    
+
+
 def save_card_image(url_to_card, path_to_save):
     image_response = urllib.request.urlopen(NRDB_IMG_URL + url_to_card)
     try:
         with Image(file=image_response, format='png') as img:
             # Update the image settings
-            #color_count = 256
-            #colorspace = 1 # RGB
-            #treedepth = 8                
-            #dither = 1 # True
-            #merror = 0 # False
-            #library.MagickQuantizeImage(img.wand,color_count,colorspace,treedepth,dither,merror)
+            # color_count = 256
+            # colorspace = 1 # RGB
+            # treedepth = 8
+            # dither = 1 # True
+            # merror = 0 # False
+            # library.MagickQuantizeImage(img.wand,color_count,colorspace,treedepth,dither,merror)
             
             # Save the new image
             img.save(filename='app' + path_to_save)
@@ -146,7 +149,7 @@ def remove_chronos_protocol(cards):
     for i in cards_to_remove:
         print("Removing: " + cards[i - num_removed]['title'])
         del cards[i - num_removed]
-        num_removed = num_removed + 1
+        num_removed += 1
 
     return cards
 
