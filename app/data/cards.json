@@ -20,25 +20,6 @@
             "uniqueness": false
         },
         {
-            "baselink": 0,
-            "faction": "Criminal",
-            "flavor": "\"Timing is everything.\"",
-            "illustrator": "Matt Zeilinger",
-            "imagesrc": "/images/cards/laramy-fisk-savvy-investor.png",
-            "influencelimit": 15,
-            "minimumdecksize": 45,
-            "nrdb_url": "http://netrunnerdb.com/en/card/00002",
-            "number": 2,
-            "quantity": 1,
-            "setname": "Special",
-            "side": "Runner",
-            "subtype": "Natural",
-            "text": "The first time you make a successful run on a central server each turn, you may force the Corp to draw 1 card.",
-            "title": "Laramy Fisk: Savvy Investor",
-            "type": "Identity",
-            "uniqueness": false
-        },
-        {
             "faction": "Neutral",
             "flavor": "The Past is the Future.",
             "illustrator": "Sławomir Maniak",
@@ -13457,6 +13438,24 @@
             "title": "Explode-a-palooza",
             "type": "Agenda",
             "uniqueness": false
+        },
+        {
+            "baselink": 0,
+            "faction": "Criminal",
+            "illustrator": "Matt Zeilinger",
+            "imagesrc": "/images/cards/laramy-fisk-savvy-investor.png",
+            "influencelimit": 15,
+            "minimumdecksize": 45,
+            "nrdb_url": "http://netrunnerdb.com/en/card/08104",
+            "number": 104,
+            "quantity": 3,
+            "setname": "The Universe of Tomorrow",
+            "side": "Runner",
+            "subtype": "Natural",
+            "text": "The first time you make a successful run on a central server each turn, you may force the Corp to draw 1 card.",
+            "title": "Laramy Fisk: Savvy Investor",
+            "type": "Identity",
+            "uniqueness": true
         },
         {
             "cost": 0,

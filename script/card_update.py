@@ -143,7 +143,7 @@ def remove_chronos_protocol(cards):
 
     for i in range(len(cards)):
         card = cards[i]
-        if 'Chronos Protocol' in card['title'] or ('url' in card and 'http://netrunnerdb.com/en/card/08104' in card['url']):
+        if 'Chronos Protocol' in card['title'] or ('url' in card and 'http://netrunnerdb.com/en/card/00002' in card['url']):
             cards_to_remove.append(i)
 
     num_removed = 0
