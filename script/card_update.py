@@ -3,6 +3,7 @@
 import urllib.request
 import json
 import re
+from datetime import datetime
 # from wand.image import Image
 # from wand.api import library
 # import ctypes
@@ -80,7 +81,7 @@ def main():
             continue
 
     # Write the json to a file.
-    data_set = {"last-modified": "2015-07-24T03:27:15", "cards": nrdb_cards, "sets": nrdb_sets}
+    data_set = {"last-modified": datetime.now().isoformat(), "cards": nrdb_cards, "sets": nrdb_sets}
     existing_cards_file2 = open(EXISTING_CARDS_PATH, 'w', encoding='utf-8')
     json_str = json.dumps(data_set, ensure_ascii=False, sort_keys=True, indent=4)
     existing_cards_file2.write(json_str)
